@@ -1,0 +1,213 @@
+import { useEffect, useMemo, useState } from 'react'
+import { ChevronDown, ExternalLink, Search } from 'lucide-react'
+import { MathText } from './MathText'
+import { loadIndex, loadRecord, type CollectionIndex, type FormalProof, type InformalProof, type InformalRecord, type Item, type Kind, type RecordDetail } from './collection'
+import type { ReactNode } from 'react'
+
+const names: Record<string, string> = {
+  'proofwiki-math': 'ProofWiki',
+  'Nemotron-Math-Proofs-v2': 'Nemotron',
+  'NuminaMath-LEAN-Proof-Artifacts': 'NuminaMath Lean',
+}
+const sourcePages: Record<string, string> = {
+  'proofwiki-math': 'https://huggingface.co/datasets/avewright/proofwiki-math',
+  'Nemotron-Math-Proofs-v2': 'https://huggingface.co/datasets/nvidia/Nemotron-Math-Proofs-v2',
+  'NuminaMath-LEAN-Proof-Artifacts': 'https://huggingface.co/datasets/iiis-lean/NuminaMath-LEAN-Proof-Artifacts',
+}
+function sourceName(value: string) { return names[value] ?? value }
+function pageFromUrl() { return Math.max(1, Number(new URLSearchParams(window.location.search).get('page')) || 1) }
+function initialKind(): Kind { return new URLSearchParams(window.location.search).get('kind') === 'formal' ? 'formal' : 'informal' }
+function errorText(error: unknown) { return error instanceof Error ? error.message : 'The collection could not be loaded.' }
+function isInformal(record: RecordDetail): record is InformalRecord { return 'proofs' in record }
+
+function proofLabel(proof: InformalProof) {
+  if (proof.method_cluster) return `${proof.method_cluster.id} · ${proof.method_cluster.name}`
+  if (proof.content_type === 'proof_summary') return 'Human solution summary'
+  if (proof.origin === 'synthetic') return 'Synthetic proof candidate'
+  return 'Published proof text'
+}
+
+function FormalProofBody({ proof }: { proof: FormalProof }) {
+  const code = proof.main_theorem_split_valid && proof.main_theorem_proof_code ? proof.main_theorem_proof_code : proof.code
+  return <><p className="collection-proof-note">Source validation: {proof.validation_status}</p><pre><code>{code}</code></pre></>
+}
+
+function ProofContent({ record, proofId }: { record: RecordDetail; proofId: string }) {
+  if (isInformal(record)) {
+    const proof = record.proofs.find((candidate) => candidate.proof_id === proofId)
+    if (!proof) return null
+    return <>
+      {proof.method_cluster && <div className="collection-method-detail"><span>Source method group {proof.method_cluster.id}</span><p>{proof.method_cluster.defining_approach}</p>{proof.method_fingerprint?.primary_approach && <p><strong>Approach:</strong> {proof.method_fingerprint.primary_approach}</p>}</div>}
+      <div className="collection-proof-text"><MathText text={proof.text} /></div>
+      {proof.source_url && <a className="collection-source-link" href={proof.source_url} target="_blank" rel="noreferrer">Original proof <ExternalLink size={13} /></a>}
+    </>
+  }
+  const proof = proofId === 'human' ? record.human_proof : record.prover_proof
+  return <FormalProofBody proof={proof} />
+}
+
+function proofIds(record: RecordDetail) {
+  return isInformal(record) ? record.proofs.map((proof) => proof.proof_id) : ['human', 'prover']
+}
+function proofTitle(record: RecordDetail, proofId: string, index: number) {
+  if (!isInformal(record)) return proofId === 'human' ? 'Human Lean proof' : 'Prover Lean proof'
+  return proofLabel(record.proofs[index])
+}
+function proofOrigin(record: RecordDetail, proofId: string) {
+  if (!isInformal(record)) return proofId === 'human' ? 'Human' : 'Automated prover'
+  const proof = record.proofs.find((candidate) => candidate.proof_id === proofId)
+  return proof?.origin === 'synthetic' ? 'Synthetic candidate' : proof?.origin === 'human' ? 'Human' : sourceName(record.dataset)
+}
+
+function ProofDisclosure({ id, number, label, openProof, setOpenProof, selected, onCompare, compareDisabled, children }: {
+  id: string; number: number; label: string; openProof: string | null; setOpenProof: (value: string | null) => void
+  selected: boolean; onCompare: (id: string) => void; compareDisabled: boolean; children: ReactNode
+}) {
+  const open = openProof === id
+  return <div className="collection-proof-row">
+    <section className="collection-proof">
+      <button type="button" className="collection-proof-toggle" aria-expanded={open} onClick={() => setOpenProof(open ? null : id)}>
+        <span className="collection-proof-number">{String(number).padStart(2, '0')}</span><span>{label}</span><ChevronDown size={17} aria-hidden="true" />
+      </button>
+      {open && <div className="collection-proof-body">{children}</div>}
+    </section>
+    <button type="button" className="collection-compare-select" aria-pressed={selected} disabled={compareDisabled} onClick={() => onCompare(id)}>{selected ? 'Selected' : 'Compare'}</button>
+  </div>
+}
+
+function StatementProofs({ record, openProof, setOpenProof, selectedProofs, onToggleCompare }: {
+  record: RecordDetail; openProof: string | null; setOpenProof: (value: string | null) => void
+  selectedProofs: string[]; onToggleCompare: (id: string) => void
+}) {
+  const ids = proofIds(record)
+  const labels = new Map(ids.map((id, index) => [id, proofTitle(record, id, index)]))
+  const comparisonReady = selectedProofs.length === 2
+  return <section className="collection-expanded" aria-label="Proof artifacts">
+    {isInformal(record) && record.answer && <p className="collection-answer"><span>Answer</span>{record.answer}</p>}
+    <div className="collection-proofs-heading"><span>Proof artifacts</span><span>{ids.length} {ids.length === 1 ? 'record' : 'records'}</span></div>
+    {!comparisonReady && <p className="collection-compare-help">Select two artifacts to read them side by side. Comparison is limited to proofs grouped under this source record.</p>}
+    {comparisonReady && <div className="collection-compare-grid" aria-label="Side-by-side proof comparison">
+      {selectedProofs.map((id) => <article className="collection-compare-panel" key={id}>
+        <header><strong>{labels.get(id)}</strong><span>{proofOrigin(record, id)}</span></header>
+        <div className="collection-compare-content"><ProofContent record={record} proofId={id} /></div>
+      </article>)}
+    </div>}
+    <div className="collection-proof-list">
+      {ids.map((id, index) => <ProofDisclosure key={id} id={id} number={index + 1} label={labels.get(id) ?? 'Proof'} openProof={openProof} setOpenProof={setOpenProof} selected={selectedProofs.includes(id)} onCompare={onToggleCompare} compareDisabled={selectedProofs.length === 2 && !selectedProofs.includes(id)}>
+        <ProofContent record={record} proofId={id} />
+      </ProofDisclosure>)}
+    </div>
+  </section>
+}
+
+function writeUrl(kind: Kind, page: number, query: string, dataset: string, id?: string | null) {
+  const url = new URL(window.location.href)
+  url.search = ''
+  url.searchParams.set('kind', kind)
+  url.searchParams.set('page', String(page))
+  if (query.trim()) url.searchParams.set('q', query.trim())
+  if (dataset !== 'all') url.searchParams.set('dataset', dataset)
+  if (id) url.searchParams.set('id', id)
+  window.history.replaceState(null, '', url)
+}
+
+export default function DatasetExplorer() {
+  const [index, setIndex] = useState<CollectionIndex | null>(null)
+  const [indexError, setIndexError] = useState('')
+  const [kind, setKind] = useState<Kind>(initialKind)
+  const [dataset, setDataset] = useState(new URLSearchParams(window.location.search).get('dataset') ?? 'all')
+  const [query, setQuery] = useState(new URLSearchParams(window.location.search).get('q') ?? '')
+  const [page, setPage] = useState(pageFromUrl)
+  const [deepLinkId, setDeepLinkId] = useState(new URLSearchParams(window.location.search).get('id'))
+  const [record, setRecord] = useState<RecordDetail | null>(null)
+  const [recordError, setRecordError] = useState('')
+  const [openProof, setOpenProof] = useState<string | null>(null)
+  const [selectedProofs, setSelectedProofs] = useState<string[]>([])
+
+  useEffect(() => { document.title = 'Proofscape — explore mathematical proofs' }, [])
+  useEffect(() => { loadIndex().then(setIndex).catch((error) => setIndexError(errorText(error))) }, [])
+
+  useEffect(() => {
+    if (!index || !deepLinkId) return
+    const target = index.items.find((item) => item.id === deepLinkId)
+    const position = index.position[deepLinkId]
+    if (!target || !position) { setIndexError('This proof record is not part of the public collection.'); setDeepLinkId(null); return }
+    setKind(target.kind)
+    setDataset('all')
+    setPage(position)
+    setDeepLinkId(null)
+  }, [index, deepLinkId])
+
+  const sourceOptions = useMemo(() => index?.sources.filter((item) => item.kind === kind) ?? [], [index, kind])
+  const visibleItems = useMemo(() => {
+    if (!index) return []
+    const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean)
+    return index.items.filter((item) => item.kind === kind && (dataset === 'all' || item.dataset === dataset) && terms.every((term) => `${item.statement} ${item.title ?? ''} ${item.source_id ?? ''}`.toLocaleLowerCase().includes(term)))
+  }, [index, kind, dataset, query])
+  const totalPages = visibleItems.length
+  const item: Item | null = visibleItems[page - 1] ?? null
+
+  useEffect(() => {
+    if (!item) { setRecord(null); return }
+    const controller = new AbortController()
+    setRecord(null); setRecordError(''); setOpenProof(null); setSelectedProofs([])
+    loadRecord(item.record_file, controller.signal).then(setRecord).catch((error) => { if (!controller.signal.aborted) setRecordError(errorText(error)) })
+    return () => controller.abort()
+  }, [item?.id])
+
+  useEffect(() => { writeUrl(kind, page, query, dataset, item?.id ?? deepLinkId) }, [kind, page, query, dataset, item?.id, deepLinkId])
+
+  const informalCount = index?.sources.filter((source) => source.kind === 'informal').reduce((sum, source) => sum + source.count, 0) ?? 0
+  const formalCount = index?.sources.filter((source) => source.kind === 'formal').reduce((sum, source) => sum + source.count, 0) ?? 0
+
+  function changeKind(next: Kind) { setKind(next); setDataset('all'); setPage(1); setOpenProof(null); setSelectedProofs([]) }
+  function toggleCompare(id: string) {
+    setSelectedProofs((current) => current.includes(id) ? current.filter((value) => value !== id) : current.length < 2 ? [...current, id] : current)
+  }
+  function resetSearch() { setPage(1); setOpenProof(null); setSelectedProofs([]) }
+
+  return <div className="dataset-page">
+    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><span className="proofscape-mark" aria-hidden="true">P</span><strong>Proofscape</strong></a><span>A proof-diversity collection · Ouliproof</span></header>
+    <main className="collection-main">
+      <header className="collection-intro"><p className="collection-eyebrow">Proof records · sources · comparison</p><h1>Explore proofs side by side.</h1><p className="collection-intro-copy">Browse informal arguments and formal Lean artifacts in separate tracks. Compare proofs grouped under the same source record, with provenance and validation details close at hand.</p></header>
+
+      <nav className="proof-track-tabs" role="tablist" aria-label="Proof type">
+        <button id="informal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'informal'} aria-controls="collection-results" onClick={() => changeKind('informal')}>Informal <span>{informalCount.toLocaleString()}</span></button>
+        <button id="formal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'formal'} aria-controls="collection-results" onClick={() => changeKind('formal')}>Formal Lean <span>{formalCount.toLocaleString()}</span></button>
+      </nav>
+
+      <section className="collection-controls" aria-label="Collection filters">
+        <div className="proof-filter-row">
+          <label className="collection-search"><Search size={17} /><span className="sr-only">Search statements</span><input value={query} onChange={(event) => { resetSearch(); setQuery(event.target.value) }} placeholder={kind === 'formal' ? 'Search statements or Lean problem text…' : 'Search theorem statements and source titles…'} /></label>
+          <label className="sr-only" htmlFor="source-filter">Filter by source</label>
+          <select id="source-filter" value={dataset} onChange={(event) => { setDataset(event.target.value); setPage(1); setSelectedProofs([]) }}><option value="all">All sources</option>{sourceOptions.map((source) => <option key={source.dataset} value={source.dataset}>{sourceName(source.dataset)} · {source.count.toLocaleString()}</option>)}</select>
+        </div>
+      </section>
+
+      {indexError && <div className="collection-offline" role="alert"><strong>Collection unavailable.</strong> {indexError}</div>}
+      <nav className="collection-pagination collection-pagination-top" aria-label="Browse statements"><button type="button" aria-label="Previous statement" disabled={page <= 1 || !index} onClick={() => { setPage((value) => Math.max(1, value - 1)); setSelectedProofs([]) }}>←</button><span>{index ? (totalPages ? `${page.toLocaleString()} / ${totalPages.toLocaleString()}` : 'No matches') : 'Loading collection…'}</span><button type="button" aria-label="Next statement" disabled={page >= totalPages || !index} onClick={() => { setPage((value) => Math.min(totalPages, value + 1)); setSelectedProofs([]) }}>→</button></nav>
+
+      <section id="collection-results" className="collection-list" aria-label={`${kind} proof records`} role="tabpanel" aria-labelledby={kind === 'informal' ? 'informal-tab' : 'formal-tab'} aria-live="polite">
+        {item && <article className="collection-item">
+          <div className="collection-item-meta"><span>{sourceName(item.dataset)} · {item.kind === 'formal' ? 'Lean' : 'Informal'}</span><span>{item.n_proofs} {item.n_proofs === 1 ? 'proof' : 'proofs'}</span></div>
+          {item.title && <p className="collection-item-title">{item.title}</p>}
+          <div className="collection-statement"><MathText text={item.statement} /></div>
+          {recordError && <div className="collection-offline" role="alert">{recordError}</div>}
+          {!record && !recordError && <div className="collection-loading" role="status">Loading proof artifacts…</div>}
+          {record && <>
+            {isInformal(record) && <p className="collection-statement-hint">Informal source texts are shown as recorded; inclusion is not a correctness certificate.</p>}
+            {!isInformal(record) && <div className="collection-formal-statement"><h2>Formalized statement</h2><pre><code>{record.formal_statement}</code></pre></div>}
+            <StatementProofs record={record} openProof={openProof} setOpenProof={setOpenProof} selectedProofs={selectedProofs} onToggleCompare={toggleCompare} />
+            <div className="collection-provenance"><span>Source ID: <code>{record.source_id}</code></span><a href={sourcePages[record.dataset]} target="_blank" rel="noreferrer">Source dataset <ExternalLink size={12} /></a></div>
+          </>}
+        </article>}
+        {index && !item && <div className="collection-empty">No records found. Try a shorter search or choose another source.</div>}
+      </section>
+
+      {item && <nav className="collection-pagination" aria-label="Browse statements after reading"><button type="button" aria-label="Previous statement" disabled={page <= 1} onClick={() => { setPage((value) => Math.max(1, value - 1)); setSelectedProofs([]) }}>←</button><span>{page.toLocaleString()} / {totalPages.toLocaleString()}</span><button type="button" aria-label="Next statement" disabled={page >= totalPages} onClick={() => { setPage((value) => Math.min(totalPages, value + 1)); setSelectedProofs([]) }}>→</button></nav>}
+
+      <aside className="proofscape-note">Comparisons include proofs grouped under one source record, which gives them a shared source statement. Records from different datasets are not yet matched across sources. Informal texts are source artifacts; formal proof validation is shown per artifact.</aside>
+    </main>
+    <footer className="proofscape-footer"><span>Proofscape · a separate Ouliproof research tool</span><a href="https://github.com/dsleo/proofscape">Source and dataset notes</a></footer>
+  </div>
+}

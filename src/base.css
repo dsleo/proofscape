@@ -1,0 +1,13 @@
+@font-face { font-family: 'CMU Serif'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('./fonts/cmu-serif.woff2') format('woff2'); }
+@font-face { font-family: 'CMU Sans'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('./fonts/cmu-sans.woff2') format('woff2'); }
+@font-face { font-family: 'CMU Typewriter'; font-style: normal; font-weight: 400; font-display: swap; src: url('./fonts/cmu-typewriter.woff2') format('woff2'); }
+:root { font-family: 'CMU Sans', sans-serif; color: #282522; background: #f2efe7; font-synthesis: none; -webkit-font-smoothing: antialiased; --ink: #282522; --muted: #6e665d; --line: #cbc2b4; --accent: #ae6b1f; --accent-wash: #f1e3c8; --paper: #f2efe7; --paper-light: #faf7f0; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+::selection { background: #ecd6ae; }

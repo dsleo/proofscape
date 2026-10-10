@@ -1,0 +1,48 @@
+{
+  "schema_version": 3,
+  "release": "Proofscape public edition",
+  "description": "Recorded proof artifacts, filtered to sources with declared redistribution terms and paired within their source statement records.",
+  "counts": {
+    "informal": 6265,
+    "formal": 3578,
+    "total": 9843
+  },
+  "sources": {
+    "proofwiki": {
+      "repository": "avewright/proofwiki-math",
+      "revision": "7d49431dd99f83236cc9c34ae9ec907581164c7f",
+      "license": "CC BY-SA 3.0",
+      "rows": 1606
+    },
+    "nemotron": {
+      "repository": "nvidia/Nemotron-Math-Proofs-v2",
+      "revision": "7665d7f1d006fd89aa852a9dab8060c60b63f814",
+      "license": "CC BY 4.0",
+      "rows": 4659
+    },
+    "numinamath_lean": {
+      "repository": "iiis-lean/NuminaMath-LEAN-Proof-Artifacts",
+      "revision": "43f4ea4da40c48be8e89edb84cb0825d8a4dfe2d",
+      "license": "Apache-2.0; upstream attribution context retained",
+      "rows": 3578
+    }
+  },
+  "excluded": [
+    {
+      "source": "INSAIT-Institute/ProofRank",
+      "revision": "9a6ec576e2de7929d9b72cc7964eccf6577adb35",
+      "rows": 119,
+      "reason": "The base dataset card specifies no license. Its separately published method-clustering outputs are CC BY-NC-SA 4.0."
+    }
+  ],
+  "inputs": {
+    "informal.jsonl.gz": {
+      "sha256": "4ea6468efe19393f95c6de8c7737cf7374880e75e231ea1c571109ee3c3c57cf",
+      "bytes": 42350222
+    },
+    "formal.jsonl.gz": {
+      "sha256": "422c26fa936186c5eecc9bcb34607840aba6624d9bec51922f14758eca24208e",
+      "bytes": 2809925
+    }
+  }
+}
