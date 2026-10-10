@@ -14,7 +14,9 @@
 .proof-track-tab span { color: #9a8c7a; font: 10px 'CMU Typewriter', monospace; }
 .proof-filter-row { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 14px; }
 .proof-filter-row .collection-search { box-shadow: none; }
-.proof-filter-row select { min-height: 48px; border: 1px solid #81776a; background: #fffdf8; padding: 0 12px; color: #51483f; font-size: 12px; }
+.proof-source-filter { display: grid; align-content: start; gap: 6px; color: #756758; font-size: 11px; }
+.proof-filter-row .proof-source-filter select { width: 100%; min-height: 48px; border: 1px solid #81776a; background: #fffdf8; padding: 0 12px; color: #51483f; font-size: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 .collection-pagination-top { border-top: 1px solid var(--line); }
 .collection-item { padding-top: 22px; }
 .collection-item-meta { letter-spacing: .08em; }

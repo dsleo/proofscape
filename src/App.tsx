@@ -179,8 +179,10 @@ export default function DatasetExplorer() {
       <section className="collection-controls" aria-label="Collection filters">
         <div className="proof-filter-row">
           <label className="collection-search"><Search size={17} /><span className="sr-only">Search statements</span><input value={query} onChange={(event) => { resetSearch(); setQuery(event.target.value) }} placeholder={kind === 'formal' ? 'Search statements or Lean problem text…' : 'Search theorem statements and source titles…'} /></label>
-          <label className="sr-only" htmlFor="source-filter">Filter by source</label>
-          <select id="source-filter" value={dataset} onChange={(event) => { setDataset(event.target.value); setPage(1); setSelectedProofs([]) }}><option value="all">All sources</option>{sourceOptions.map((source) => <option key={source.dataset} value={source.dataset}>{sourceName(source.dataset)} · {source.count.toLocaleString()}</option>)}</select>
+          <div className="proof-source-filter">
+            <label htmlFor="source-filter">Filter by source</label>
+            <select id="source-filter" value={dataset} onChange={(event) => { setDataset(event.target.value); setPage(1); setSelectedProofs([]) }}><option value="all">All sources</option>{sourceOptions.map((source) => <option key={source.dataset} value={source.dataset}>{sourceName(source.dataset)} · {source.count.toLocaleString()}</option>)}</select>
+          </div>
         </div>
       </section>
 
