@@ -1,8 +1,7 @@
-.proofscape-header { min-height: 72px; padding: 0 max(24px, calc((100vw - 1080px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); }
+.proofscape-header { min-height: 72px; padding: 0 max(24px, calc((100vw - 1080px) / 2)); display: flex; align-items: center; justify-content: flex-start; gap: 20px; border-bottom: 1px solid var(--line); }
 .proofscape-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.proofscape-mark { width: 34px; height: 34px; display: grid; place-items: center; background: #463a2b; color: #fff9ee; font: 500 22px 'CMU Serif', serif; }
+.proofscape-mark { display: block; width: 38px; height: 38px; }
 .proofscape-brand strong { color: #332d26; font: 500 23px 'CMU Serif', serif; letter-spacing: -.03em; }
-.proofscape-header > span { color: #766d61; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; }
 .collection-main { max-width: 1080px; }
 .collection-intro { padding-top: 48px; }
 .collection-intro h1 { max-width: 720px; font-size: clamp(42px, 6vw, 74px); }
@@ -35,12 +34,10 @@
 .collection-compare-select[aria-pressed='true'] { background: #e9d7b8; }
 .collection-compare-select:disabled { opacity: .4; }
 .collection-loading { padding: 18px; }
-.proofscape-note { padding: 14px 16px; border-left: 2px solid #b39261; background: #f4ecdd; color: #675846; font-size: 11px; line-height: 1.6; }
 .proofscape-footer { max-width: 1080px; margin: 0 auto; padding: 24px 36px 34px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 20px; color: #82796e; font-size: 10px; }
 .proofscape-footer a { color: #704719; }
 @media (max-width: 650px) {
   .proofscape-header { min-height: 62px; padding: 0 20px; }
-  .proofscape-header > span { font-size: 9px; }
   .proofscape-brand strong { font-size: 21px; }
   .collection-intro { padding-top: 33px; }
   .proof-track-tab { flex: 1; justify-content: center; padding: 0 6px; font-size: 15px; }

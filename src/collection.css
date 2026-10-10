@@ -22,7 +22,6 @@
 .collection-statement.truncated { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 .dataset-math-display { display: block; max-width: 100%; overflow-x: auto; margin: 8px 0; font-size: .86em; }
 .dataset-math-inline .katex { font-size: 1em; }
-.collection-statement-hint { margin: 10px 0 0; color: #8a7f73; font-size: 11px; }
 .collection-show-proofs { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; border: 1px solid #bf965b; background: var(--accent-wash); padding: 9px 13px; color: #70440f; font-size: 12px; font-weight: 700; cursor: pointer; }
 .collection-show-proofs:hover { background: #ead2aa; }
 .collection-show-proofs .up { transform: rotate(180deg); }

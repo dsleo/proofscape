@@ -163,13 +163,13 @@ export default function DatasetExplorer() {
   function resetSearch() { setPage(1); setOpenProof(null); setSelectedProofs([]) }
 
   return <div className="dataset-page">
-    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><span className="proofscape-mark" aria-hidden="true">P</span><strong>Proofscape</strong></a></header>
+    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
     <main className="collection-main">
-      <header className="collection-intro"><h1>Explore proofs</h1><p className="collection-intro-copy">Informal proof records come from <a href={sourcePages['proofwiki-math']} target="_blank" rel="noreferrer">ProofWiki Math</a> and <a href={sourcePages['Nemotron-Math-Proofs-v2']} target="_blank" rel="noreferrer">Nemotron Math Proofs v2</a>. Formal Lean pairs come from <a href={sourcePages['NuminaMath-LEAN-Proof-Artifacts']} target="_blank" rel="noreferrer">NuminaMath Lean Proof Artifacts</a>.</p></header>
+      <header className="collection-intro"><h1>Explore proofs</h1><p className="collection-intro-copy">Proofscape is a collection for exploring proof diversity: how different arguments approach the same mathematical statement. Browse records from <a href={sourcePages['proofwiki-math']} target="_blank" rel="noreferrer">ProofWiki Math</a>, <a href={sourcePages['Nemotron-Math-Proofs-v2']} target="_blank" rel="noreferrer">Nemotron Math Proofs v2</a>, and <a href={sourcePages['NuminaMath-LEAN-Proof-Artifacts']} target="_blank" rel="noreferrer">NuminaMath Lean Proof Artifacts</a>.</p></header>
 
       <nav className="proof-track-tabs" role="tablist" aria-label="Proof type">
         <button id="informal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'informal'} aria-controls="collection-results" onClick={() => changeKind('informal')}>Informal <span>{informalCount.toLocaleString()}</span></button>
-        <button id="formal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'formal'} aria-controls="collection-results" onClick={() => changeKind('formal')}>Formal Lean <span>{formalCount.toLocaleString()}</span></button>
+        <button id="formal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'formal'} aria-controls="collection-results" onClick={() => changeKind('formal')}>Formal <span>{formalCount.toLocaleString()}</span></button>
       </nav>
 
       <section className="collection-controls" aria-label="Search the collection">
@@ -189,7 +189,6 @@ export default function DatasetExplorer() {
           {recordError && <div className="collection-offline" role="alert">{recordError}</div>}
           {!record && !recordError && <div className="collection-loading" role="status">Loading proof artifacts…</div>}
           {record && <>
-            {isInformal(record) && <p className="collection-statement-hint">Informal source texts are shown as recorded; inclusion is not a correctness certificate.</p>}
             {!isInformal(record) && <div className="collection-formal-statement"><h2>Formalized statement</h2><pre><code>{record.formal_statement}</code></pre></div>}
             <StatementProofs record={record} openProof={openProof} setOpenProof={setOpenProof} selectedProofs={selectedProofs} onToggleCompare={toggleCompare} />
             <div className="collection-provenance"><span>Source ID: <code>{record.source_id}</code></span><a href={sourcePages[record.dataset]} target="_blank" rel="noreferrer">Source dataset <ExternalLink size={12} /></a></div>
@@ -200,7 +199,6 @@ export default function DatasetExplorer() {
 
       {item && <nav className="collection-pagination" aria-label="Browse statements after reading"><button type="button" aria-label="Previous statement" disabled={page <= 1} onClick={() => { setPage((value) => Math.max(1, value - 1)); setSelectedProofs([]) }}>←</button><span>{page.toLocaleString()} / {totalPages.toLocaleString()}</span><button type="button" aria-label="Next statement" disabled={page >= totalPages} onClick={() => { setPage((value) => Math.min(totalPages, value + 1)); setSelectedProofs([]) }}>→</button></nav>}
 
-      <aside className="proofscape-note">Comparisons include proofs grouped under one source record, which gives them a shared source statement. Records from different datasets are not yet matched across sources. Informal texts are source artifacts; formal proof validation is shown per artifact.</aside>
     </main>
     <footer className="proofscape-footer"><a href="https://github.com/dsleo/proofscape">Source and dataset notes</a></footer>
   </div>
