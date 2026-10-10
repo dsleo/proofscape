@@ -41,7 +41,10 @@ def main() -> None:
                     "statement": statement,
                     "source_id": row.get("source_id"),
                     "n_proofs": row["n_proofs"] if kind == "informal" else 2,
-                    "record_file": f"{hashlib.sha256(row['id'].encode('utf-8')).hexdigest()}.json.gz",
+                    # Avoid the .gz extension: static hosts may transparently
+                    # serve it with Content-Encoding: gzip, which makes the
+                    # browser decompress it before our client-side decoder.
+                    "record_file": f"{hashlib.sha256(row['id'].encode('utf-8')).hexdigest()}.json.bin",
                 }
                 items.append(item)
                 kind_positions[kind] += 1
