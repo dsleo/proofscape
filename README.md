@@ -1,11 +1,11 @@
 # Proofscape
 
-Proofscape is a standalone browser for comparing recorded mathematical proofs. It separates informal proof texts from formal Lean artifacts and lets you place two artifacts from the same source record side by side.
+Proofscape is a browser for exploring proof diversity: how different arguments approach the same mathematical statement. It brings together informal proof texts and formal proof artifacts, with side-by-side comparison where records share a source statement.
 
 ## What can be compared
 
 - **Informal:** the multiple proof texts grouped under one ProofWiki or Nemotron statement record.
-- **Formal Lean:** the human proof and prover proof paired in one NuminaMath record, with the source validation status shown for each.
+- **Formal:** the human proof and prover proof paired in one NuminaMath record, with the source validation status shown for each.
 
 The comparison keeps the shared source statement and provenance visible. Records from different datasets are not automatically matched, so Proofscape does not present cross-source pairs as proofs of the same statement. Informal records are source artifacts, not correctness certificates; source annotations are not expert-verified ground truth.
 

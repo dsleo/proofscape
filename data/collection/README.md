@@ -3,7 +3,7 @@
 This public release is a filtered proof-diversity collection. It contains 9,843 statement records:
 
 - 1,606 ProofWiki records and 4,659 Nemotron records in the informal track.
-- 3,578 NuminaMath human/prover pairs in the formal Lean track.
+- 3,578 NuminaMath human/prover pairs in the formal track.
 
 ProofRank's 119 records are deliberately excluded. Its base dataset card declares no license, and its separately released method-clustering outputs are CC BY-NC-SA 4.0. Excluding those records avoids republishing material under unclear or incompatible terms.
 
