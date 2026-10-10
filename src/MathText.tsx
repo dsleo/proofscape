@@ -11,7 +11,7 @@ const PROOFWIKI_MACROS = {
   '\\paren': '\\left(#1\\right)',
 }
 
-type TableauStep = { number: string; rule: string; formula: string; references: string }
+type TableauStep = { number: string; rule: string; formula: string; context: string; references: string; note: string }
 
 function fields(token: string) {
   return token.slice(2, -2).split('|').map((part) => part.trim())
@@ -36,18 +36,28 @@ function tableauParts(text: string) {
 
     let number = args[0] ?? String(steps.length + 1)
     let formula = ''
+    let context = ''
     let references = ''
+    let note = ''
     if (rule.toLowerCase() === 'tableauline') {
       const numberMatch = number.match(/(?:n\s*=\s*)?(\d+)/i)
       number = numberMatch?.[1] ?? number
       formula = args.slice(1).join('|')
     } else if (/^(premise|assumption)$/i.test(rule)) {
       formula = args[1] ?? ''
+    } else if (/^noncontradiction$/i.test(rule)) {
+      context = args[1] ?? ''
+      formula = '\\bot'
+      references = args.slice(2, 4).filter(Boolean).join(', ')
+      note = args[4] ?? ''
     } else {
-      references = args[1] ?? ''
+      context = args[1] ?? ''
       formula = args[2] ?? ''
+      const extra = args.slice(3)
+      references = extra.filter((value) => /^(?:\d+\s*,\s*)*\d+$/.test(value)).join(', ')
+      note = extra.filter((value) => !/^(?:\d+\s*,\s*)*\d+$/.test(value)).join(' · ')
     }
-    steps.push({ number, rule: rule.replace(/([a-z])([A-Z])/g, '$1 $2'), formula, references })
+    steps.push({ number, rule: rule.replace(/([a-z])([A-Z])/g, '$1 $2'), formula, context, references, note })
   }
 
   const trailing = text.slice(endToken.index + endToken[0].length)
@@ -76,7 +86,7 @@ function Tableau({ goal, steps, qed }: { goal: string; steps: TableauStep[]; qed
         <span className="proofwiki-line-number">{step.number}</span>
         <div className="proofwiki-line-content">
           <div className="proofwiki-line-formula">{step.formula ? <MathFormula value={step.formula} /> : <span className="proofwiki-no-formula">—</span>}</div>
-          <div className="proofwiki-line-rule">{step.rule}{step.references && <span>from {step.references}</span>}</div>
+          <div className="proofwiki-line-rule">{step.rule}{step.context && <span>under {step.context}</span>}{step.references && <span>from {step.references}</span>}{step.note && <span>{step.note}</span>}</div>
         </div>
       </li>)}
     </ol>
