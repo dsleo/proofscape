@@ -1,6 +1,6 @@
 # Proofscape release data
 
-This public release is a filtered edition of the Ouliproof proof-diversity collection. It contains 9,843 statement records:
+This public release is a filtered proof-diversity collection. It contains 9,843 statement records:
 
 - 1,606 ProofWiki records and 4,659 Nemotron records in the informal track.
 - 3,578 NuminaMath human/prover pairs in the formal Lean track.

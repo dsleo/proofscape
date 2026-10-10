@@ -100,13 +100,12 @@ function StatementProofs({ record, openProof, setOpenProof, selectedProofs, onTo
   </section>
 }
 
-function writeUrl(kind: Kind, page: number, query: string, dataset: string, id?: string | null) {
+function writeUrl(kind: Kind, page: number, query: string, id?: string | null) {
   const url = new URL(window.location.href)
   url.search = ''
   url.searchParams.set('kind', kind)
   url.searchParams.set('page', String(page))
   if (query.trim()) url.searchParams.set('q', query.trim())
-  if (dataset !== 'all') url.searchParams.set('dataset', dataset)
   if (id) url.searchParams.set('id', id)
   window.history.replaceState(null, '', url)
 }
@@ -115,7 +114,6 @@ export default function DatasetExplorer() {
   const [index, setIndex] = useState<CollectionIndex | null>(null)
   const [indexError, setIndexError] = useState('')
   const [kind, setKind] = useState<Kind>(initialKind)
-  const [dataset, setDataset] = useState(new URLSearchParams(window.location.search).get('dataset') ?? 'all')
   const [query, setQuery] = useState(new URLSearchParams(window.location.search).get('q') ?? '')
   const [page, setPage] = useState(pageFromUrl)
   const [deepLinkId, setDeepLinkId] = useState(new URLSearchParams(window.location.search).get('id'))
@@ -133,17 +131,15 @@ export default function DatasetExplorer() {
     const position = index.position[deepLinkId]
     if (!target || !position) { setIndexError('This proof record is not part of the public collection.'); setDeepLinkId(null); return }
     setKind(target.kind)
-    setDataset('all')
     setPage(position)
     setDeepLinkId(null)
   }, [index, deepLinkId])
 
-  const sourceOptions = useMemo(() => index?.sources.filter((item) => item.kind === kind) ?? [], [index, kind])
   const visibleItems = useMemo(() => {
     if (!index) return []
     const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean)
-    return index.items.filter((item) => item.kind === kind && (dataset === 'all' || item.dataset === dataset) && terms.every((term) => `${item.statement} ${item.title ?? ''} ${item.source_id ?? ''}`.toLocaleLowerCase().includes(term)))
-  }, [index, kind, dataset, query])
+    return index.items.filter((item) => item.kind === kind && terms.every((term) => `${item.statement} ${item.title ?? ''} ${item.source_id ?? ''}`.toLocaleLowerCase().includes(term)))
+  }, [index, kind, query])
   const totalPages = visibleItems.length
   const item: Item | null = visibleItems[page - 1] ?? null
 
@@ -155,34 +151,30 @@ export default function DatasetExplorer() {
     return () => controller.abort()
   }, [item?.id])
 
-  useEffect(() => { writeUrl(kind, page, query, dataset, item?.id ?? deepLinkId) }, [kind, page, query, dataset, item?.id, deepLinkId])
+  useEffect(() => { writeUrl(kind, page, query, item?.id ?? deepLinkId) }, [kind, page, query, item?.id, deepLinkId])
 
   const informalCount = index?.sources.filter((source) => source.kind === 'informal').reduce((sum, source) => sum + source.count, 0) ?? 0
   const formalCount = index?.sources.filter((source) => source.kind === 'formal').reduce((sum, source) => sum + source.count, 0) ?? 0
 
-  function changeKind(next: Kind) { setKind(next); setDataset('all'); setPage(1); setOpenProof(null); setSelectedProofs([]) }
+  function changeKind(next: Kind) { setKind(next); setPage(1); setOpenProof(null); setSelectedProofs([]) }
   function toggleCompare(id: string) {
     setSelectedProofs((current) => current.includes(id) ? current.filter((value) => value !== id) : current.length < 2 ? [...current, id] : current)
   }
   function resetSearch() { setPage(1); setOpenProof(null); setSelectedProofs([]) }
 
   return <div className="dataset-page">
-    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><span className="proofscape-mark" aria-hidden="true">P</span><strong>Proofscape</strong></a><span>A proof-diversity collection · Ouliproof</span></header>
+    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><span className="proofscape-mark" aria-hidden="true">P</span><strong>Proofscape</strong></a></header>
     <main className="collection-main">
-      <header className="collection-intro"><p className="collection-eyebrow">Proof records · sources · comparison</p><h1>Explore proofs side by side.</h1><p className="collection-intro-copy">Browse informal arguments and formal Lean artifacts in separate tracks. Compare proofs grouped under the same source record, with provenance and validation details close at hand.</p></header>
+      <header className="collection-intro"><h1>Explore proofs</h1><p className="collection-intro-copy">Informal proof records come from <a href={sourcePages['proofwiki-math']} target="_blank" rel="noreferrer">ProofWiki Math</a> and <a href={sourcePages['Nemotron-Math-Proofs-v2']} target="_blank" rel="noreferrer">Nemotron Math Proofs v2</a>. Formal Lean pairs come from <a href={sourcePages['NuminaMath-LEAN-Proof-Artifacts']} target="_blank" rel="noreferrer">NuminaMath Lean Proof Artifacts</a>.</p></header>
 
       <nav className="proof-track-tabs" role="tablist" aria-label="Proof type">
         <button id="informal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'informal'} aria-controls="collection-results" onClick={() => changeKind('informal')}>Informal <span>{informalCount.toLocaleString()}</span></button>
         <button id="formal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'formal'} aria-controls="collection-results" onClick={() => changeKind('formal')}>Formal Lean <span>{formalCount.toLocaleString()}</span></button>
       </nav>
 
-      <section className="collection-controls" aria-label="Collection filters">
+      <section className="collection-controls" aria-label="Search the collection">
         <div className="proof-filter-row">
           <label className="collection-search"><Search size={17} /><span className="sr-only">Search statements</span><input value={query} onChange={(event) => { resetSearch(); setQuery(event.target.value) }} placeholder={kind === 'formal' ? 'Search statements or Lean problem text…' : 'Search theorem statements and source titles…'} /></label>
-          <div className="proof-source-filter">
-            <label htmlFor="source-filter">Filter by source</label>
-            <select id="source-filter" value={dataset} onChange={(event) => { setDataset(event.target.value); setPage(1); setSelectedProofs([]) }}><option value="all">All sources</option>{sourceOptions.map((source) => <option key={source.dataset} value={source.dataset}>{sourceName(source.dataset)} · {source.count.toLocaleString()}</option>)}</select>
-          </div>
         </div>
       </section>
 
@@ -191,7 +183,7 @@ export default function DatasetExplorer() {
 
       <section id="collection-results" className="collection-list" aria-label={`${kind} proof records`} role="tabpanel" aria-labelledby={kind === 'informal' ? 'informal-tab' : 'formal-tab'} aria-live="polite">
         {item && <article className="collection-item">
-          <div className="collection-item-meta"><span>{sourceName(item.dataset)} · {item.kind === 'formal' ? 'Lean' : 'Informal'}</span><span>{item.n_proofs} {item.n_proofs === 1 ? 'proof' : 'proofs'}</span></div>
+          <div className="collection-item-meta"><span>{sourceName(item.dataset)}</span><span>{item.n_proofs} {item.n_proofs === 1 ? 'proof' : 'proofs'}</span></div>
           {item.title && <p className="collection-item-title">{item.title}</p>}
           <div className="collection-statement"><MathText text={item.statement} /></div>
           {recordError && <div className="collection-offline" role="alert">{recordError}</div>}
@@ -210,6 +202,6 @@ export default function DatasetExplorer() {
 
       <aside className="proofscape-note">Comparisons include proofs grouped under one source record, which gives them a shared source statement. Records from different datasets are not yet matched across sources. Informal texts are source artifacts; formal proof validation is shown per artifact.</aside>
     </main>
-    <footer className="proofscape-footer"><span>Proofscape · a separate Ouliproof research tool</span><a href="https://github.com/dsleo/proofscape">Source and dataset notes</a></footer>
+    <footer className="proofscape-footer"><a href="https://github.com/dsleo/proofscape">Source and dataset notes</a></footer>
   </div>
 }

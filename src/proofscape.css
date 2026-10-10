@@ -12,10 +12,8 @@
 .proof-track-tab { display: inline-flex; align-items: baseline; gap: 10px; min-height: 48px; margin-bottom: -1px; border: 0; border-bottom: 2px solid transparent; background: transparent; padding: 0 13px; color: #746a5e; font: 500 17px 'CMU Serif', serif; }
 .proof-track-tab[aria-selected='true'] { border-color: var(--accent); color: #513a1d; }
 .proof-track-tab span { color: #9a8c7a; font: 10px 'CMU Typewriter', monospace; }
-.proof-filter-row { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 14px; }
+.proof-filter-row { max-width: 680px; }
 .proof-filter-row .collection-search { box-shadow: none; }
-.proof-source-filter { display: grid; align-content: start; gap: 6px; color: #756758; font-size: 11px; }
-.proof-filter-row .proof-source-filter select { width: 100%; min-height: 48px; border: 1px solid #81776a; background: #fffdf8; padding: 0 12px; color: #51483f; font-size: 12px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 .collection-pagination-top { border-top: 1px solid var(--line); }
 .collection-item { padding-top: 22px; }
@@ -38,14 +36,13 @@
 .collection-compare-select:disabled { opacity: .4; }
 .collection-loading { padding: 18px; }
 .proofscape-note { padding: 14px 16px; border-left: 2px solid #b39261; background: #f4ecdd; color: #675846; font-size: 11px; line-height: 1.6; }
-.proofscape-footer { max-width: 1080px; margin: 0 auto; padding: 24px 36px 34px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: #82796e; font-size: 10px; }
+.proofscape-footer { max-width: 1080px; margin: 0 auto; padding: 24px 36px 34px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 20px; color: #82796e; font-size: 10px; }
 .proofscape-footer a { color: #704719; }
 @media (max-width: 650px) {
   .proofscape-header { min-height: 62px; padding: 0 20px; }
   .proofscape-header > span { font-size: 9px; }
   .proofscape-brand strong { font-size: 21px; }
   .collection-intro { padding-top: 33px; }
-  .proof-filter-row { grid-template-columns: 1fr; }
   .proof-track-tab { flex: 1; justify-content: center; padding: 0 6px; font-size: 15px; }
   .collection-compare-grid { grid-template-columns: 1fr; }
   .collection-compare-content { max-height: 420px; }
