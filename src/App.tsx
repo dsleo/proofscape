@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { ChevronDown, ExternalLink, Search } from 'lucide-react'
 import { MathText } from './MathText'
 import { loadIndex, loadRecord, type CollectionIndex, type FormalProof, type InformalProof, type InformalRecord, type Item, type Kind, type RecordDetail } from './collection'
@@ -17,6 +17,8 @@ const sourcePages: Record<string, string> = {
 function sourceName(value: string) { return names[value] ?? value }
 function pageFromUrl() { return Math.max(1, Number(new URLSearchParams(window.location.search).get('page')) || 1) }
 function initialKind(): Kind { return new URLSearchParams(window.location.search).get('kind') === 'formal' ? 'formal' : 'informal' }
+const initialParams = new URLSearchParams(window.location.search)
+const initialRecordId = initialParams.get('id')
 function errorText(error: unknown) { return error instanceof Error ? error.message : 'The collection could not be loaded.' }
 function isInformal(record: RecordDetail): record is InformalRecord { return 'proofs' in record }
 
@@ -100,13 +102,15 @@ function StatementProofs({ record, openProof, setOpenProof, selectedProofs, onTo
   </section>
 }
 
-function writeUrl(kind: Kind, page: number, query: string, id?: string | null) {
+function writeUrl(kind: Kind, page: number, query: string, id?: string | null, compare: string[] = [], proof?: string | null) {
   const url = new URL(window.location.href)
   url.search = ''
   url.searchParams.set('kind', kind)
   url.searchParams.set('page', String(page))
   if (query.trim()) url.searchParams.set('q', query.trim())
   if (id) url.searchParams.set('id', id)
+  compare.slice(0, 2).forEach((proofId) => url.searchParams.append('compare', proofId))
+  if (proof) url.searchParams.set('proof', proof)
   window.history.replaceState(null, '', url)
 }
 
@@ -117,10 +121,12 @@ export default function DatasetExplorer() {
   const [query, setQuery] = useState(new URLSearchParams(window.location.search).get('q') ?? '')
   const [page, setPage] = useState(pageFromUrl)
   const [deepLinkId, setDeepLinkId] = useState(new URLSearchParams(window.location.search).get('id'))
+  const [urlReady, setUrlReady] = useState(!initialRecordId)
   const [record, setRecord] = useState<RecordDetail | null>(null)
   const [recordError, setRecordError] = useState('')
   const [openProof, setOpenProof] = useState<string | null>(null)
   const [selectedProofs, setSelectedProofs] = useState<string[]>([])
+  const pendingDeepLink = useRef({ id: initialRecordId, compare: initialParams.getAll('compare').slice(0, 2), proof: initialParams.get('proof') })
 
   useEffect(() => { document.title = 'Proofscape — explore mathematical proofs' }, [])
   useEffect(() => { loadIndex().then(setIndex).catch((error) => setIndexError(errorText(error))) }, [])
@@ -129,11 +135,17 @@ export default function DatasetExplorer() {
     if (!index || !deepLinkId) return
     const target = index.items.find((item) => item.id === deepLinkId)
     const position = index.position[deepLinkId]
-    if (!target || !position) { setIndexError('This proof record is not part of the public collection.'); setDeepLinkId(null); return }
+    if (!target || !position) { setIndexError('This proof record is not part of the public collection.'); setDeepLinkId(null); setUrlReady(true); return }
     setKind(target.kind)
-    setPage(position)
+    const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean)
+    const filteredPosition = index.items.filter((candidate) => candidate.kind === target.kind && terms.every((term) => `${candidate.statement} ${candidate.title ?? ''} ${candidate.source_id ?? ''}`.toLocaleLowerCase().includes(term))).findIndex((candidate) => candidate.id === target.id)
+    if (filteredPosition >= 0) setPage(filteredPosition + 1)
+    else {
+      setQuery('')
+      setPage(index.items.filter((candidate) => candidate.kind === target.kind).findIndex((candidate) => candidate.id === target.id) + 1)
+    }
     setDeepLinkId(null)
-  }, [index, deepLinkId])
+  }, [index, deepLinkId, query])
 
   const visibleItems = useMemo(() => {
     if (!index) return []
@@ -147,11 +159,24 @@ export default function DatasetExplorer() {
     if (!item) { setRecord(null); return }
     const controller = new AbortController()
     setRecord(null); setRecordError(''); setOpenProof(null); setSelectedProofs([])
-    loadRecord(item.record_file, controller.signal).then(setRecord).catch((error) => { if (!controller.signal.aborted) setRecordError(errorText(error)) })
+    loadRecord(item.record_file, controller.signal).then((loaded) => {
+      if (controller.signal.aborted) return
+      setRecord(loaded)
+      const pending = pendingDeepLink.current
+      if (pending.id === item.id) {
+        const validIds = new Set(proofIds(loaded))
+        const compare = [...new Set(pending.compare)].filter((proofId) => validIds.has(proofId)).slice(0, 2)
+        const proof = pending.proof && validIds.has(pending.proof) ? pending.proof : null
+        setSelectedProofs(compare)
+        setOpenProof(proof)
+        pendingDeepLink.current = { id: null, compare: [], proof: null }
+        setUrlReady(true)
+      }
+    }).catch((error) => { if (!controller.signal.aborted) { setRecordError(errorText(error)); if (pendingDeepLink.current.id === item.id) setUrlReady(true) } })
     return () => controller.abort()
   }, [item?.id])
 
-  useEffect(() => { writeUrl(kind, page, query, item?.id ?? deepLinkId) }, [kind, page, query, item?.id, deepLinkId])
+  useEffect(() => { if (urlReady) writeUrl(kind, page, query, item?.id ?? deepLinkId, selectedProofs, openProof) }, [kind, page, query, item?.id, deepLinkId, selectedProofs, openProof, urlReady])
 
   const informalCount = index?.sources.filter((source) => source.kind === 'informal').reduce((sum, source) => sum + source.count, 0) ?? 0
   const formalCount = index?.sources.filter((source) => source.kind === 'formal').reduce((sum, source) => sum + source.count, 0) ?? 0
