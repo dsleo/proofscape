@@ -45,6 +45,21 @@
 .proofwiki-line-rule { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 2px; color: #756758; font-size: 9px; letter-spacing: .025em; }
 .proofwiki-line-rule span { color: #987648; }
 .proofwiki-no-formula { color: #a79a88; }
+.proofwiki-equation-block { max-width: 100%; margin: 13px 0 18px; border-left: 2px solid #d0b891; padding: 7px 0 7px 12px; }
+.proofwiki-equation-title { margin-bottom: 7px; color: #756758; font-size: 11px; font-weight: 700; }
+.proofwiki-equation-scroll { max-width: 100%; overflow-x: auto; }
+.proofwiki-equations { width: max-content; min-width: 100%; border-collapse: collapse; color: #403932; font-size: 14px; }
+.proofwiki-equations tr + tr { border-top: 1px solid #eee8de; }
+.proofwiki-equations td { padding: 4px 5px; vertical-align: middle; white-space: nowrap; }
+.proofwiki-equation-number { color: #9a7450; font: 10px 'CMU Typewriter', monospace; }
+.proofwiki-equation-keyword { color: #756758; font-size: 11px; font-style: italic; }
+.proofwiki-equation-lll, .proofwiki-equation-ll, .proofwiki-equation-lo, .proofwiki-equation-l { text-align: right; }
+.proofwiki-equation-o, .proofwiki-equation-mo, .proofwiki-equation-ro { text-align: center; }
+.proofwiki-equation-r, .proofwiki-equation-rr, .proofwiki-equation-rrr { text-align: left; }
+.proofwiki-equation-comment { min-width: 150px; max-width: 300px; color: #756758; font-size: 11px; line-height: 1.4; white-space: normal !important; }
+.proofwiki-equation-comment-extra { color: #928779; }
+.proofwiki-equation-cell .dataset-math-inline { font-size: 1em; }
+.proofwiki-equation-cell .katex { font-size: 1em; }
 .collection-proofs-heading { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 9px; color: #756758; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .collection-method-summary { margin: 0 0 12px; color: #6b6055; font-size: 11px; line-height: 1.5; }
 .collection-method-detail { margin-bottom: 16px; border-left: 2px solid #b77b2a; padding-left: 12px; color: #584d43; font-size: 12px; line-height: 1.5; }
