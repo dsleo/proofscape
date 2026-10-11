@@ -67,7 +67,6 @@
 .collection-empty { border-top: 1px solid var(--line); padding: 35px 0; color: #6d6359; font-size: 13px; }
 .collection-loading { padding: 10px 0 18px; color: #6d6359; font-size: 12px; }
 .collection-pagination { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid var(--line); padding: 20px 0; color: #6f665e; font-size: 11px; }
-.collection-pagination-top { padding: 10px 0 18px; }
 .collection-pagination button { display: grid; place-items: center; width: 38px; height: 38px; border: 0; background: transparent; color: var(--accent); font-size: 22px; line-height: 1; cursor: pointer; }
 .collection-pagination button:hover:not(:disabled) { background: var(--accent-wash); }
 .collection-pagination button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

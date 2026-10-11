@@ -204,8 +204,6 @@ export default function DatasetExplorer() {
       </section>
 
       {indexError && <div className="collection-offline" role="alert"><strong>Collection unavailable.</strong> {indexError}</div>}
-      <nav className="collection-pagination collection-pagination-top" aria-label="Browse statements"><button type="button" aria-label="Previous statement" disabled={page <= 1 || !index} onClick={() => { setPage((value) => Math.max(1, value - 1)); setSelectedProofs([]) }}>←</button><span>{index ? (totalPages ? `${page.toLocaleString()} / ${totalPages.toLocaleString()}` : 'No matches') : 'Loading collection…'}</span><button type="button" aria-label="Next statement" disabled={page >= totalPages || !index} onClick={() => { setPage((value) => Math.min(totalPages, value + 1)); setSelectedProofs([]) }}>→</button></nav>
-
       <section id="collection-results" className="collection-list" aria-label={`${kind} proof records`} role="tabpanel" aria-labelledby={kind === 'informal' ? 'informal-tab' : 'formal-tab'} aria-live="polite">
         {item && <article className="collection-item">
           <div className="collection-item-meta"><span>{sourceName(item.dataset)}</span><span>{item.n_proofs} {item.n_proofs === 1 ? 'proof' : 'proofs'}</span></div>
