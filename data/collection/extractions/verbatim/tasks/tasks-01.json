@@ -1,0 +1,497 @@
+{
+ "agent": 1,
+ "tasks": [
+  {
+   "routeId": "1-r1",
+   "entryId": 1,
+   "entryName": "Pythagorean theorem",
+   "entryDescription": "Euclid I.47: area comparisons and constructed squares; drop an altitude and use similar triangles; rearrangement/dissection; algebraic coordinates or vectors. Euclid also gives a broader similar-figures version in VI.31.",
+   "level": "School",
+   "routeTitle": "Euclid I.47: area comparisons and constructed squares",
+   "currentSketch": "Build squares on the sides of the right triangle. The altitude-parallel through the right-angle vertex cuts each half of the hypotenuse square into a triangle equal in area to one leg square's corresponding triangle; base and height show each constructed parallelogram is twice its triangle. Adding the two equalities gives c²=a²+b².",
+   "existingReferences": [
+    {
+     "label": "Euclid, Elements I.47",
+     "url": "https://www.euclids-elements.org/elements/books/bookI/propositions/propI47/",
+     "locator": "Elements, Book I, Proposition 47"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures/diagrams omitted. Justification labels appear on separate lines above the step they support, as on the page. Source: Euclid's Elements, Book I, Proposition 47 (David E. Joyce's English edition as hosted at euclids-elements.org) — Book I, Proposition 47: statement, enunciation and proof through Q.E.D.; interleaved justific"
+  },
+  {
+   "routeId": "1-r2",
+   "entryId": 1,
+   "entryName": "Pythagorean theorem",
+   "entryDescription": "Euclid I.47: area comparisons and constructed squares; drop an altitude and use similar triangles; rearrangement/dissection; algebraic coordinates or vectors. Euclid also gives a broader similar-figures version in VI.31.",
+   "level": "School",
+   "routeTitle": "drop an altitude and use similar triangles",
+   "currentSketch": "Let the altitude meet hypotenuse c in segments x and c−x. Similarity gives a²=cx and b²=c(c−x); add to get a²+b²=c².",
+   "existingReferences": [
+    {
+     "label": "Euclid VI.31 and similarity route",
+     "url": "https://personal.math.ubc.ca/~cass/courses/m308-7b/similarity.html",
+     "locator": "“Proofs of Pythagoras’ Theorem using similarity,” lines 5–10; compare Euclid I.47 and VI.31"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Exponents appear without superscripts ('a2' for a squared) as in the page's plain text; the accompanying figure is omitted. Source: Proofs of Pythagoras' Theorem using similarity (course page, UBC Mathematics, M308) — Page 'Proofs of Pythagoras' Theorem using similarity': the paragraph beginning 'There is a very simple proof' through 'a2 + b2 = c2'. Attribution: Course page at personal.math.ubc.ca"
+  },
+  {
+   "routeId": "1-r3",
+   "entryId": 1,
+   "entryName": "Pythagorean theorem",
+   "entryDescription": "Euclid I.47: area comparisons and constructed squares; drop an altitude and use similar triangles; rearrangement/dissection; algebraic coordinates or vectors. Euclid also gives a broader similar-figures version in VI.31.",
+   "level": "School",
+   "routeTitle": "rearrangement/dissection",
+   "currentSketch": "Place four congruent copies of the right triangle inside a square of side a+b so their hypotenuses enclose a square of side c. Comparing areas gives (a+b)²=4(ab/2)+c², hence c²=a²+b².",
+   "existingReferences": [
+    {
+     "label": "Euclid, Elements I.47",
+     "url": "https://www.euclids-elements.org/elements/books/bookI/propositions/propI47/",
+     "locator": "Elements I.47 alternate-method notes, lines 60–65: Zhao Shuang’s 3–4–5 hypotenuse diagram. The text gives a worked dissection example, not a general rearrangement proof."
+    },
+    {
+     "label": "Cut the Knot, Pythagorean theorem proof collection",
+     "url": "https://www.cut-the-knot.org/pythagoras/index.shtml",
+     "locator": "Collection index of visual and algebraic proof variants; exact central-square arrangement not verified in this source during this batch."
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page; the diagram is omitted. The passage argues only the 3–4–5 case (a dissection around a unit square), not the general theorem, so it does not by itself contain a complete rearrangement proof of the theorem. The cut-the-knot index also cited for this route lists many proofs but contains no single complete proof to transcribe (index page). Source:"
+  },
+  {
+   "routeId": "1-r4",
+   "entryId": 1,
+   "entryName": "Pythagorean theorem",
+   "entryDescription": "Euclid I.47: area comparisons and constructed squares; drop an altitude and use similar triangles; rearrangement/dissection; algebraic coordinates or vectors. Euclid also gives a broader similar-figures version in VI.31.",
+   "level": "School",
+   "routeTitle": "algebraic coordinates or vectors. Euclid also gives a broader similar-figures version in VI.31",
+   "currentSketch": "Place the right-angle vertex at 0 and legs as perpendicular vectors u,v. The hypotenuse vector is u−v, so ‖u−v‖²=‖u‖²+‖v‖²−2u·v=‖u‖²+‖v‖² because u·v=0.",
+   "existingReferences": [
+    {
+     "label": "Euclid, Elements I.47",
+     "url": "https://www.euclids-elements.org/elements/books/bookI/propositions/propI47/",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "Euclid VI.31 and similarity route",
+     "url": "https://personal.math.ubc.ca/~cass/courses/m308-7b/similarity.html",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "UT Austin-hosted Euclid text and introduction",
+     "url": "https://farside.ph.utexas.edu/books/Euclid/Euclid.html",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "NRICH overview of proof history",
+     "url": "https://nrich.maths.org/articles/proof-brief-historical-survey",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "OSU Ximera, assigned alternative Pythagorean proofs",
+     "url": "https://ximera.osu.edu/history/historyOfMathematics/05EuclidAndGeometry/ProofsPythagoreanTheorem",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "Pythagorean theorem collection",
+     "url": "https://www.cut-the-knot.org/pythagoras/index.shtml",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "2-r1",
+   "entryId": 2,
+   "entryName": "Irrationality of √2",
+   "entryDescription": "Lowest-terms parity/divisibility; infinite descent on a smaller integer pair; geometric descent on an isosceles right triangle; rational-root theorem. The geometric/descent sources explicitly compare routes.",
+   "level": "School",
+   "routeTitle": "Lowest-terms parity/divisibility",
+   "currentSketch": "If √2=m/n in lowest terms, m²=2n² makes m even. Put m=2k; then n²=2k² makes n even too, contradicting coprimality.",
+   "existingReferences": [
+    {
+     "label": "HMC, infinite descent",
+     "url": "https://math.hmc.edu/funfacts/irrationality-by-infinite-descent/",
+     "locator": "“Square Root of Two is Irrational,” proof"
+    },
+    {
+     "label": "Paradoxes of Impossibility: Irrationality, Incommensurability — 'Algebraic Proof of the Irrationality of √2' (John D. Norton, Univ. of Pittsburgh)",
+     "url": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+     "locator": "Section 'Algebraic Proof of the Irrationality of √2' (paragraph beginning 'The traditional demonstration of the irrationality of √2')"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Superscript exponents are flattened in the page text (p2 = 2q2 means p squared = 2 q squared). No other changes. Source: Paradoxes of Impossibility: Irrationality, Incommensurability — 'Algebraic Proof of the Irrationality of √2' (John D. Norton, Univ. of Pittsburgh) — Section 'Algebraic Proof of the Irrationality of √2' (paragraph beginning 'The traditional demonstration of the irrationality of √"
+  },
+  {
+   "routeId": "2-r2",
+   "entryId": 2,
+   "entryName": "Irrationality of √2",
+   "entryDescription": "Lowest-terms parity/divisibility; infinite descent on a smaller integer pair; geometric descent on an isosceles right triangle; rational-root theorem. The geometric/descent sources explicitly compare routes.",
+   "level": "School",
+   "routeTitle": "infinite descent on a smaller integer pair",
+   "currentSketch": "From x²=2y², x is even; writing x=2u gives y²=2u², so y is even. Thus any integer pair representing √2 has a common factor 2; repeated division contradicts a least positive denominator (infinite descent).",
+   "existingReferences": [
+    {
+     "label": "LibreTexts, Borovik & Gardiner",
+     "url": "https://math.libretexts.org/Bookshelves/Applied_Mathematics/The_Essence_of_Mathematics_Through_Elementary_Problems_%28Borovik_and_Gardiner%29/06%3A_Infinity_-_Recursion_Induction_Infinite_Descent/6.09%3A_Infinite_descent",
+     "locator": "“Irrationality by Infinite Descent,” proof, especially the denominator reduction"
+    },
+    {
+     "label": "Irrationality by Infinite Descent (Math Fun Facts, Harvey Mudd College; Francis Su et al.; from Landau, Foundations of Analysis, Thm 162)",
+     "url": "https://math.hmc.edu/funfacts/irrationality-by-infinite-descent/",
+     "locator": "Page 'Irrationality by Infinite Descent': paragraphs from 'Proof. Suppose Sqrt[2] were rational' through 'QED.'"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Superscripts flattened (x2 = 2y2, (x/y)2). The page's earlier mention of the traditional parity proof is only described, not proved, and is not included. Source: Irrationality by Infinite Descent (Math Fun Facts, Harvey Mudd College; Francis Su et al.; from Landau, Foundations of Analysis, Thm 162) — Page 'Irrationality by Infinite Descent': paragraphs from 'Proof. Suppose Sqrt[2] were rational' t"
+  },
+  {
+   "routeId": "2-r3",
+   "entryId": 2,
+   "entryName": "Irrationality of √2",
+   "entryDescription": "Lowest-terms parity/divisibility; infinite descent on a smaller integer pair; geometric descent on an isosceles right triangle; rational-root theorem. The geometric/descent sources explicitly compare routes.",
+   "level": "School",
+   "routeTitle": "geometric descent on an isosceles right triangle",
+   "currentSketch": "Assume an isosceles right triangle has integer hypotenuse p and equal integer legs q, with p chosen least; then p²=2q² makes p even. Bisect the hypotenuse and join its midpoint to the right-angle vertex. The two resulting right triangles each have hypotenuse q and equal legs p/2, so q/(p/2)=p/q=√2. Since q<p this is a smaller integer hypotenuse, contradiction.",
+   "existingReferences": [
+    {
+     "label": "Norton, algebraic and geometric proofs",
+     "url": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+     "locator": "“Geometric Proof of the Irrationality of √2,” paragraphs beginning “An isosceles, right angle triangle…”"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Figures omitted. Some equations adjacent to figures are flattened by the page text ('hypotenuse/side = p/q'). The passage relies on the evenness result from the algebraic proof (2-r1's passage). Source: Paradoxes of Impossibility: Irrationality, Incommensurability — 'Geometric Proof of the Irrationality of √2' (John D. Norton, Univ. of Pittsburgh) — Section 'Geometric Proof of the Irrationality of"
+  },
+  {
+   "routeId": "2-r4",
+   "entryId": 2,
+   "entryName": "Irrationality of √2",
+   "entryDescription": "Lowest-terms parity/divisibility; infinite descent on a smaller integer pair; geometric descent on an isosceles right triangle; rational-root theorem. The geometric/descent sources explicitly compare routes.",
+   "level": "School",
+   "routeTitle": "rational-root theorem. The geometric/descent sources explicitly compare routes",
+   "currentSketch": "Use the rational-root theorem: if √2 is a rational root of X²−2, in lowest terms its numerator divides 2 and denominator divides 1; the only candidates ±1,±2 fail when squared. More generally, the rational-root theorem's divisibility conclusion gives the contradiction directly.",
+   "existingReferences": [
+    {
+     "label": "Norton, algebraic and geometric proofs",
+     "url": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "HMC, infinite descent",
+     "url": "https://math.hmc.edu/funfacts/irrationality-by-infinite-descent/",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "3-r1",
+   "entryId": 3,
+   "entryName": "Infinitely many primes",
+   "entryDescription": "Euclid's product-plus-one; Euler's harmonic-series/Euler-product argument; Furstenberg's topology on the integers; analytic counting arguments. A historical survey catalogs about 200 variants.",
+   "level": "School–graduate",
+   "routeTitle": "Euclid's product-plus-one",
+   "currentSketch": "If p₁,…,pₖ were all primes, N=p₁⋯pₖ+1 has a prime divisor q. No pᵢ divides N, so q is absent from the list.",
+   "existingReferences": [
+    {
+     "label": "Meštrović, historical survey of roughly 200 proofs (arXiv)",
+     "url": "https://arxiv.org/abs/1202.3670",
+     "locator": "Section 1.2, “Euclid’s proof of Euclid’s theorem,” especially the product-plus-one argument"
+    },
+    {
+     "label": "Euclid's theorem on the infinitude of primes: a historical survey of its proofs (300 B.C.–2022) and another new proof, Romeo Meštrović, arXiv:1202.3670v4",
+     "url": "https://arxiv.org/pdf/1202.3670",
+     "locator": "§1.2 'Euclid's proof of Euclid's theorem': the 'Elegant proof…' paragraph and the later 'Proof. Call the primes in our finite list…' (arXiv v4, p. 4)"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Extracted from the PDF text layer with pdftotext; subscripts are flattened (p1 for p-sub-1). One correction was made and is flagged here: the three-dot glyph run, extracted as replacement characters, was restored to '· · ·' from context. Page checked against the rendered page image (p. 4). Two back-to-back proofs (one modern, one closer to Euclid) are both included. Source: Euclid's theorem on the"
+  },
+  {
+   "routeId": "3-r3",
+   "entryId": 3,
+   "entryName": "Infinitely many primes",
+   "entryDescription": "Euclid's product-plus-one; Euler's harmonic-series/Euler-product argument; Furstenberg's topology on the integers; analytic counting arguments. A historical survey catalogs about 200 variants.",
+   "level": "School–graduate",
+   "routeTitle": "Furstenberg's topology on the integers",
+   "currentSketch": "Let S=Z with the topology generated by all two-sided arithmetic progressions. Each progression is clopen, so any finite union of progressions is closed. Let A be the union of pZ over all primes p. Every integer except −1 and 1 is divisible by a prime, hence Z\\A={−1,1}; this two-point set is not open in this topology, so A is not closed. Thus A cannot be a finite union of the closed sets pZ, and there must be infinitely many primes.",
+   "existingReferences": [
+    {
+     "label": "Meštrović, historical survey of roughly 200 proofs (arXiv)",
+     "url": "https://arxiv.org/abs/1202.3670",
+     "locator": "Section 2.7, “Furstenberg’s topological proof of IP and its modifications”"
+    },
+    {
+     "label": "Euclid's theorem on the infinitude of primes: a historical survey of its proofs (300 B.C.–2022) and another new proof, Romeo Meštrović, arXiv:1202.3670v4 (quoting H. Furstenberg, 1955)",
+     "url": "https://arxiv.org/pdf/1202.3670",
+     "locator": "§2.7 'Furstenberg's topological proof of IP and its modifications', p. 25: the survey's quotation of Furstenberg's note ('In this note we would like to offer…' through '…there are an infinite of primes.')"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered page image (italic quotation). The survey's own wording is kept, including 'though' and 'an infinite of primes'. Typeset as plain text: '⋃ A_p' stands for the large union over primes of A_p. The survey's framing sentence before the quote is not included. Source: Euclid's theorem on the infinitude of primes: a historical survey of its proofs (300 B.C.–2022) "
+  },
+  {
+   "routeId": "3-r4",
+   "entryId": 3,
+   "entryName": "Infinitely many primes",
+   "entryDescription": "Euclid's product-plus-one; Euler's harmonic-series/Euler-product argument; Furstenberg's topology on the integers; analytic counting arguments. A historical survey catalogs about 200 variants.",
+   "level": "School–graduate",
+   "routeTitle": "analytic counting arguments. A historical survey catalogs about 200 variants",
+   "currentSketch": "For s>1, unique factorization gives ζ(s)=∏ₚ(1−p^(−s))⁻¹. If there were finitely many primes, the right side would remain bounded as s↓1, whereas ζ(s)=Σn⁻ˢ diverges by comparison with ∫₁∞x⁻ˢdx. Contradiction. This is an analytic Euler-product proof and overlaps route 3-r2; it is not a distinct strategy unless the ζ-function argument is developed separately.",
+   "existingReferences": [
+    {
+     "label": "Meštrović, historical survey of roughly 200 proofs (arXiv)",
+     "url": "https://arxiv.org/abs/1202.3670",
+     "locator": "Sections 2.4–2.8, survey of analytic and other proof families"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "4-r1",
+   "entryId": 4,
+   "entryName": "Infinitely many primes in an arithmetic progression (selected cases)",
+   "entryDescription": "Euclid-style products with congruence control; algebraic norms/cyclotomic factors for suitable progressions. State the progression and hypotheses precisely; do not conflate these special cases with Dirichlet's theorem.",
+   "level": "Undergraduate",
+   "routeTitle": "Euclid-style products with congruence control",
+   "currentSketch": "For a fixed modulus m, let P be the finite set of primes dividing m or a₁⋯aₖ. Choose N divisible by m and by all listed primes, and consider aN+1; any prime divisor q is new and q∤aN. This alone controls only q∤m when q is chosen with additional congruence constraints; a general product-plus-one is insufficient to force q≡a (mod m). The route is valid only for specially engineered progressions, as the catalog says.",
+   "existingReferences": [
+    {
+     "label": "Meštrović, historical survey of roughly 200 proofs (arXiv)",
+     "url": "https://arxiv.org/abs/1202.3670",
+     "locator": "Section 3.2, “A survey of elementary proofs of IP in special arithmetic progressions”"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "4-r2",
+   "entryId": 4,
+   "entryName": "Infinitely many primes in an arithmetic progression (selected cases)",
+   "entryDescription": "Euclid-style products with congruence control; algebraic norms/cyclotomic factors for suitable progressions. State the progression and hypotheses precisely; do not conflate these special cases with Dirichlet's theorem.",
+   "level": "Undergraduate",
+   "routeTitle": "algebraic norms/cyclotomic factors for suitable progressions. State the progression and hypotheses precisely",
+   "currentSketch": "For a suitable cyclotomic value Φ_n(A), any prime divisor not dividing nA has multiplicative order n modulo q, hence n|(q−1), so q≡1 (mod n). Taking A arbitrarily large yields new such prime divisors; exclude finitely many exceptional divisors by choosing A. This establishes infinitely many primes ≡1 mod n, not arbitrary reduced residue classes.",
+   "existingReferences": [
+    {
+     "label": "Meštrović, historical survey of roughly 200 proofs (arXiv)",
+     "url": "https://arxiv.org/abs/1202.3670",
+     "locator": "Sections 2.3 and 3.2, algebraic-number-theory methods and special arithmetic progressions"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "4-r3",
+   "entryId": 4,
+   "entryName": "Infinitely many primes in an arithmetic progression (selected cases)",
+   "entryDescription": "Euclid-style products with congruence control; algebraic norms/cyclotomic factors for suitable progressions. State the progression and hypotheses precisely; do not conflate these special cases with Dirichlet's theorem.",
+   "level": "Undergraduate",
+   "routeTitle": "do not conflate these special cases with Dirichlet's theorem",
+   "currentSketch": "Dirichlet's theorem for every gcd(a,m)=1 requires analytic input (nonvanishing of Dirichlet L-functions at 1); neither Euclid-style products nor the preceding cyclotomic norm argument proves it. This route is a scope warning, not a proof of the full theorem.",
+   "existingReferences": [
+    {
+     "label": "Meštrović, historical survey of roughly 200 proofs (arXiv)",
+     "url": "https://arxiv.org/abs/1202.3670",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "Aigner & Ziegler, *Proofs from THE BOOK*, publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "5-r1",
+   "entryId": 5,
+   "entryName": "Sum of first n integers: 1+…+n=n(n+1)/2",
+   "entryDescription": "Pair terms from opposite ends; induction; count pairs (i,j) with i≤j; sum an arithmetic progression geometrically.",
+   "level": "School",
+   "routeTitle": "Pair terms from opposite ends",
+   "currentSketch": "Write S=1+2+…+n. Reverse the same sum: S=n+(n−1)+…+1. Add termwise to get 2S=n(n+1), hence S=n(n+1)/2.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Precalculus 2e, relevant algebra/sequence section",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "5-r2",
+   "entryId": 5,
+   "entryName": "Sum of first n integers: 1+…+n=n(n+1)/2",
+   "entryDescription": "Pair terms from opposite ends; induction; count pairs (i,j) with i≤j; sum an arithmetic progression geometrically.",
+   "level": "School",
+   "routeTitle": "induction",
+   "currentSketch": "Base n=1. If Sₙ=n(n+1)/2, then Sₙ₊₁=Sₙ+n+1=(n+1)(n+2)/2; induction proves the identity.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Precalculus 2e, relevant algebra/sequence section",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "5-r3",
+   "entryId": 5,
+   "entryName": "Sum of first n integers: 1+…+n=n(n+1)/2",
+   "entryDescription": "Pair terms from opposite ends; induction; count pairs (i,j) with i≤j; sum an arithmetic progression geometrically.",
+   "level": "School",
+   "routeTitle": "count pairs (i,j) with i≤j",
+   "currentSketch": "Count pairs (i,j) with 1≤i≤j≤n. There are ∑_{j=1}ⁿj such pairs, while choosing two elements with repetition from n options gives n(n+1)/2.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Precalculus 2e, relevant algebra/sequence section",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "5-r4",
+   "entryId": 5,
+   "entryName": "Sum of first n integers: 1+…+n=n(n+1)/2",
+   "entryDescription": "Pair terms from opposite ends; induction; count pairs (i,j) with i≤j; sum an arithmetic progression geometrically.",
+   "level": "School",
+   "routeTitle": "sum an arithmetic progression geometrically",
+   "currentSketch": "Let S(x)=1+x+…+xⁿ=(1−xⁿ⁺¹)/(1−x). Differentiate and take x→1 (or differentiate the polynomial sum directly): S′(1)=1+2+…+n=n(n+1)/2.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Precalculus 2e, relevant algebra/sequence section",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "6-r1",
+   "entryId": 6,
+   "entryName": "Sum of first n odd integers is n²",
+   "entryDescription": "Square-layer dissection; induction using (n+1)²−n²=2n+1; telescoping finite differences.",
+   "level": "School",
+   "routeTitle": "Square-layer dissection",
+   "currentSketch": "Add successive L-shaped borders to a unit square: the nth border has 2n−1 unit cells. After n borders the n×n square contains 1+3+…+(2n−1)=n² cells.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Precalculus 2e, relevant algebra/sequence section",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "6-r2",
+   "entryId": 6,
+   "entryName": "Sum of first n odd integers is n²",
+   "entryDescription": "Square-layer dissection; induction using (n+1)²−n²=2n+1; telescoping finite differences.",
+   "level": "School",
+   "routeTitle": "induction using (n+1)²−n²=2n+1",
+   "currentSketch": "Induct: 1=1². If the first n odd numbers sum to n², adjoining 2n+1 gives (n+1)².",
+   "existingReferences": [
+    {
+     "label": "OpenStax Precalculus 2e, relevant algebra/sequence section",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "6-r3",
+   "entryId": 6,
+   "entryName": "Sum of first n odd integers is n²",
+   "entryDescription": "Square-layer dissection; induction using (n+1)²−n²=2n+1; telescoping finite differences.",
+   "level": "School",
+   "routeTitle": "telescoping finite differences",
+   "currentSketch": "Sum (k²−(k−1)²)=2k−1 from k=1 to n. The left telescopes to n², the right is the sum of the first n odd numbers.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Precalculus 2e, relevant algebra/sequence section",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "7-r1",
+   "entryId": 7,
+   "entryName": "Binomial theorem",
+   "entryDescription": "Induct on exponent; count subsets by size; multiply out and group monomials.",
+   "level": "School",
+   "routeTitle": "Induct on exponent",
+   "currentSketch": "Assume (x+y)ⁿ=Σ C(n,k)xⁿ⁻ᵏyᵏ. Multiply by x+y and collect adjacent terms; Pascal's identity C(n,k)+C(n,k−1)=C(n+1,k) gives the formula for n+1. Start at n=0.",
+   "existingReferences": [
+    {
+     "label": "OpenStax, Precalculus 2e, §11.6 Binomial Theorem",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "§11.6, Binomial Theorem (the expansion and combinatorial coefficient discussion)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "7-r2",
+   "entryId": 7,
+   "entryName": "Binomial theorem",
+   "entryDescription": "Induct on exponent; count subsets by size; multiply out and group monomials.",
+   "level": "School",
+   "routeTitle": "count subsets by size",
+   "currentSketch": "In multiplying n copies of (x+y), a term xⁿ⁻ᵏyᵏ is obtained by choosing y from exactly k of the n factors. There are C(n,k) such subsets, yielding the expansion.",
+   "existingReferences": [
+    {
+     "label": "OpenStax, Precalculus 2e, §11.6 Binomial Theorem",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "§11.6, Binomial Theorem (the expansion and combinatorial coefficient discussion)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "7-r3",
+   "entryId": 7,
+   "entryName": "Binomial theorem",
+   "entryDescription": "Induct on exponent; count subsets by size; multiply out and group monomials.",
+   "level": "School",
+   "routeTitle": "multiply out and group monomials",
+   "currentSketch": "Distributivity expands the product into 2ⁿ monomials indexed by subsets of the n factors; grouping subsets by their size k gives C(n,k) copies of xⁿ⁻ᵏyᵏ.",
+   "existingReferences": [
+    {
+     "label": "OpenStax, Precalculus 2e, §11.6 Binomial Theorem",
+     "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+     "locator": "§11.6, Binomial Theorem (the expansion and combinatorial coefficient discussion)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

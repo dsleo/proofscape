@@ -1,0 +1,395 @@
+{
+ "agent": 9,
+ "tasks": [
+  {
+   "routeId": "63-r1",
+   "entryId": 63,
+   "entryName": "Jensen's inequality",
+   "entryDescription": "Supporting-line characterization of convexity; finite weighted induction then approximation; convex combinations/expectation.",
+   "level": "Undergraduate",
+   "routeTitle": "Supporting-line characterization of convexity",
+   "currentSketch": "For a differentiable convex g, the tangent line L at μ=E[X] lies below g. Therefore E[g(X)]≥E[L(X)]=L(E[X])=g(E[X]), which is Jensen’s inequality (when the stated expectations exist).",
+   "existingReferences": [
+    {
+     "label": "MIT 18.600 Lecture 31",
+     "url": "https://math.mit.edu/~sheffield/2017600/Lecture31.pdf",
+     "locator": "Jensen inequality tangent-line proof"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered slide image. Slide builds are repeated in the PDF; this is the final build. A further sentence on utility functions appears on the following build and is not included. The proof is a short tangent-line sketch (no justification of the existence of a tangent line). Source: 18.600 Probability and Random Variables, Lecture 31: Strong law of large numbers and Je"
+  },
+  {
+   "routeId": "63-r2",
+   "entryId": 63,
+   "entryName": "Jensen's inequality",
+   "entryDescription": "Supporting-line characterization of convexity; finite weighted induction then approximation; convex combinations/expectation.",
+   "level": "Undergraduate",
+   "routeTitle": "finite weighted induction then approximation",
+   "currentSketch": "Prove finite Jensen by induction: combine the first n−1 points into their weighted mean, then apply the two-point convexity inequality. Approximate a probability distribution by finite simple distributions and use continuity/lower-semicontinuity plus integrability to pass to expectations.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "63-r3",
+   "entryId": 63,
+   "entryName": "Jensen's inequality",
+   "entryDescription": "Supporting-line characterization of convexity; finite weighted induction then approximation; convex combinations/expectation.",
+   "level": "Undergraduate",
+   "routeTitle": "convex combinations/expectation",
+   "currentSketch": "The expectation E X is a barycenter. Convexity says φ preserves the order φ(∑λ_i x_i)≤∑λ_iφ(x_i); approximation by simple random variables gives the integral form. This is the probabilistic restatement of finite Jensen, not an independent proof.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.600 Lecture 31",
+     "url": "https://math.mit.edu/~sheffield/2017600/Lecture31.pdf",
+     "locator": "Jensen inequality tangent-line proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "64-r1",
+   "entryId": 64,
+   "entryName": "Hölder's inequality",
+   "entryDescription": "Young's inequality and normalization; convex duality; duality of Lᵖ spaces (with standard hypotheses).",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Young's inequality and normalization",
+   "currentSketch": "For conjugate exponents p,q, Young's inequality ab≤a^p/p+b^q/q. Normalize f,g to unit Lp,Lq norms and integrate Young pointwise; rescaling yields ∫|fg|≤||f||p||g||q.",
+   "existingReferences": [
+    {
+     "label": "Functional Analysis Lecture Notes, Part 1",
+     "url": "https://profs.scienze.univr.it/~baldo/AAcorrente/FunctionalAnalysisNotes.pdf",
+     "locator": "Proposition: Hölder inequality proved by normalization and Young’s inequality"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "64-r2",
+   "entryId": 64,
+   "entryName": "Hölder's inequality",
+   "entryDescription": "Young's inequality and normalization; convex duality; duality of Lᵖ spaces (with standard hypotheses).",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "convex duality",
+   "currentSketch": "Young is the Fenchel inequality for φ(t)=t^p/p: its convex conjugate is φ*(s)=s^q/q. Apply pointwise to |f|/||f||p and |g|/||g||q and integrate.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "64-r3",
+   "entryId": 64,
+   "entryName": "Hölder's inequality",
+   "entryDescription": "Young's inequality and normalization; convex duality; duality of Lᵖ spaces (with standard hypotheses).",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "duality of Lᵖ spaces (with standard hypotheses)",
+   "currentSketch": "For 1<p<∞, represent the norm by duality ||f||p=sup_{||g||q≤1}|∫fg|; this equality follows by choosing g=sgn(f)|f|^{p−1}/||f||p^{p−1}. The ≤ direction is Hölder, so using this as a proof of Hölder is circular unless duality is established independently.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "65-r1",
+   "entryId": 65,
+   "entryName": "Baire category theorem",
+   "entryDescription": "Nested closed balls with radii→0; complete metric space plus Cauchy construction; locally compact Hausdorff/open-set formulation.",
+   "level": "Graduate",
+   "routeTitle": "Nested closed balls with radii→0",
+   "currentSketch": "Assume a complete metric space M is the union of closed sets C_n, each with empty interior. Starting with a point in C₁, choose a point outside C₁ and a small closed ball around it disjoint from C₁. Inductively choose nested centers and radii shrinking by a fixed factor, with the kth ball disjoint from C_k. The centers are Cauchy; completeness gives a limit lying in every nested ball, hence outside every C_k, contradicting the assumed cover.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.102 notes",
+     "url": "https://math.mit.edu/~rbm/18.102-S13/Chapter1.pdf",
+     "locator": "§8, Baire’s theorem"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered page images (pp. 25–26); wording and order follow the source, mathematics as LaTeX-style text. Source slips kept as printed: 'it has non-empty interior' in the inductive step (where empty interior is meant) and 'p_l ∈ B(p_k, 2ε_k/3) for all k > l'. Routes 65-r1 and 65-r2 cite the same single proof, which constructs nested balls and a Cauchy sequence; they a"
+  },
+  {
+   "routeId": "65-r2",
+   "entryId": 65,
+   "entryName": "Baire category theorem",
+   "entryDescription": "Nested closed balls with radii→0; complete metric space plus Cauchy construction; locally compact Hausdorff/open-set formulation.",
+   "level": "Graduate",
+   "routeTitle": "complete metric space plus Cauchy construction",
+   "currentSketch": "Assume a complete metric space M is covered by closed sets C_n with empty interiors. Choose nested closed balls B_n with radii shrinking geometrically, where B_n avoids C_n and lies inside the preceding ball. Their centers form a Cauchy sequence; its limit lies in every B_n, so it avoids every C_n, contradicting the cover.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.102 notes",
+     "url": "https://math.mit.edu/~rbm/18.102-S13/Chapter1.pdf",
+     "locator": "§8, Baire’s theorem"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered page images (pp. 25–26); wording and order follow the source, mathematics as LaTeX-style text. Source slips kept as printed: 'it has non-empty interior' in the inductive step (where empty interior is meant) and 'p_l ∈ B(p_k, 2ε_k/3) for all k > l'. Routes 65-r1 and 65-r2 cite the same single proof, which constructs nested balls and a Cauchy sequence; they a"
+  },
+  {
+   "routeId": "65-r3",
+   "entryId": 65,
+   "entryName": "Baire category theorem",
+   "entryDescription": "Nested closed balls with radii→0; complete metric space plus Cauchy construction; locally compact Hausdorff/open-set formulation.",
+   "level": "Graduate",
+   "routeTitle": "locally compact Hausdorff/open-set formulation",
+   "currentSketch": "In a locally compact Hausdorff space, suppose a nonempty open set is covered by countably many closed sets with empty interior. Choose a nonempty relatively compact open subset avoiding the first closed set; within it choose one avoiding the second, and so on, with nested compact closures. Compactness gives a point in all closures, contradicting the cover.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.102 notes",
+     "url": "https://math.mit.edu/~rbm/18.102-S13/Chapter1.pdf",
+     "locator": "§8, Baire’s theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "66-r1",
+   "entryId": 66,
+   "entryName": "Banach fixed-point theorem",
+   "entryDescription": "Iteration and geometric error estimate; contraction mapping on complete metric space via Cauchy sequences; applications through successive approximation to ODEs.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Iteration and geometric error estimate",
+   "currentSketch": "Let x_{n+1}=T(x_n), contraction constant c<1. Then d(x_{n+1},x_n)≤c^n d(x_1,x_0); the geometric tail makes (x_n) Cauchy. Completeness gives x*, continuity gives T(x*)=x*, and contraction gives uniqueness.",
+   "existingReferences": [
+    {
+     "label": "Peter Howard, M615 lecture notes",
+     "url": "https://people.tamu.edu/~phoward/M615.html",
+     "locator": "Proof of the Contraction Mapping Theorem (linked full lecture PDF)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "66-r2",
+   "entryId": 66,
+   "entryName": "Banach fixed-point theorem",
+   "entryDescription": "Iteration and geometric error estimate; contraction mapping on complete metric space via Cauchy sequences; applications through successive approximation to ODEs.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "contraction mapping on complete metric space via Cauchy sequences",
+   "currentSketch": "The same iteration proof establishes the contraction mapping theorem: bound d(x_m,x_n) by d(x_1,x_0)c^n/(1−c), pass to a complete-space limit, and use the Lipschitz bound for fixedness and uniqueness. It is equivalent to route 1, differing only in how the estimate is organized.",
+   "existingReferences": [
+    {
+     "label": "Peter Howard, M615 lecture notes",
+     "url": "https://people.tamu.edu/~phoward/M615.html",
+     "locator": "Proof of the Contraction Mapping Theorem (linked full lecture PDF)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "66-r3",
+   "entryId": 66,
+   "entryName": "Banach fixed-point theorem",
+   "entryDescription": "Iteration and geometric error estimate; contraction mapping on complete metric space via Cauchy sequences; applications through successive approximation to ODEs.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "applications through successive approximation to ODEs",
+   "currentSketch": "For an ODE, write y(t)=y0+∫f(s,y(s))ds on a short interval. The integral operator is a contraction in sup norm when interval length times the Lipschitz constant is <1; the fixed point is the solution, extended interval by interval.",
+   "existingReferences": [
+    {
+     "label": "Peter Howard, M615 lecture notes",
+     "url": "https://people.tamu.edu/~phoward/M615.html",
+     "locator": "Applications to ODEs I–II (linked full lecture PDFs)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "67-r1",
+   "entryId": 67,
+   "entryName": "Arzelà–Ascoli theorem",
+   "entryDescription": "Diagonal subsequence on a dense countable set plus equicontinuity; finite ε-net/total boundedness; compactness in C(K).",
+   "level": "Graduate",
+   "routeTitle": "Diagonal subsequence on a dense countable set plus equicontinuity",
+   "currentSketch": "Choose a countable dense set {x_j} in compact metric K. Boundedness lets diagonal extraction make f_n(x_j) converge for every j. Equicontinuity and finite ε-nets upgrade pointwise convergence on the dense set to uniform Cauchy convergence, hence a uniformly convergent subsequence.",
+   "existingReferences": [
+    {
+     "label": "The Arzela-Ascoli Theorem",
+     "url": "https://users.math.msu.edu/users/shapiro/Pubvit/Downloads/ArzNotes/ArzNotes.pdf",
+     "locator": "Proof, diagonal subsequence on dense set followed by equicontinuity"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "67-r2",
+   "entryId": 67,
+   "entryName": "Arzelà–Ascoli theorem",
+   "entryDescription": "Diagonal subsequence on a dense countable set plus equicontinuity; finite ε-net/total boundedness; compactness in C(K).",
+   "level": "Graduate",
+   "routeTitle": "finite ε-net/total boundedness",
+   "currentSketch": "Uniform boundedness plus equicontinuity implies a finite ε-net of functions in C(K): cover K by finitely many small balls and quantize the bounded values at their centers. Thus the family is totally bounded; completeness of C(K) gives sequential compactness.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "67-r3",
+   "entryId": 67,
+   "entryName": "Arzelà–Ascoli theorem",
+   "entryDescription": "Diagonal subsequence on a dense countable set plus equicontinuity; finite ε-net/total boundedness; compactness in C(K).",
+   "level": "Graduate",
+   "routeTitle": "compactness in C(K)",
+   "currentSketch": "In C(K), Arzelà–Ascoli says relative compactness is equivalent to pointwise relative compactness plus equicontinuity (for compact K). The compactness statement itself is an application/consequence, so it is not a separate proof unless a compactness criterion is independently established.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "68-r1",
+   "entryId": 68,
+   "entryName": "Stone–Weierstrass theorem",
+   "entryDescription": "Lattice/max-min approximation; polynomial algebra via Bernstein polynomials in the interval case; separating subalgebra and compactness.",
+   "level": "Graduate",
+   "routeTitle": "Lattice/max-min approximation",
+   "currentSketch": "For a real subalgebra A⊂C(K) separating points and containing constants, take f∈C(K). For each x,y construct g_xy∈A matching f at x,y. Finite covers and max/min lattice operations combine these into a function uniformly ε-close to f; hence A is dense.",
+   "existingReferences": [
+    {
+     "label": "The Weierstrass and Stone Approximation Theorems",
+     "url": "https://web.math.utk.edu/~freire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+     "locator": "Proof of Stone’s theorem via lattice and two-point interpolation"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "68-r2",
+   "entryId": 68,
+   "entryName": "Stone–Weierstrass theorem",
+   "entryDescription": "Lattice/max-min approximation; polynomial algebra via Bernstein polynomials in the interval case; separating subalgebra and compactness.",
+   "level": "Graduate",
+   "routeTitle": "polynomial algebra via Bernstein polynomials in the interval case",
+   "currentSketch": "On [0,1], the Bernstein polynomial B_n f(x)=∑_{k=0}^n f(k/n)binom(n,k)x^k(1−x)^{n−k} converges uniformly to f. View it as E f(S_n/n); uniform continuity controls |S_n/n−x|≤δ and variance/Chebyshev bounds the tail.",
+   "existingReferences": [
+    {
+     "label": "The Weierstrass and Stone Approximation Theorems",
+     "url": "https://web.math.utk.edu/~freire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+     "locator": "Proof of Weierstrass theorem using Bernstein polynomials"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "68-r3",
+   "entryId": 68,
+   "entryName": "Stone–Weierstrass theorem",
+   "entryDescription": "Lattice/max-min approximation; polynomial algebra via Bernstein polynomials in the interval case; separating subalgebra and compactness.",
+   "level": "Graduate",
+   "routeTitle": "separating subalgebra and compactness",
+   "currentSketch": "For compact Hausdorff K, point-separation gives local functions matching f at pairs; compactness selects finite subcovers, and max/min patching yields uniform approximation. This is the lattice proof of real Stone–Weierstrass; the complex version requires a self-adjoint subalgebra.",
+   "existingReferences": [
+    {
+     "label": "The Weierstrass and Stone Approximation Theorems",
+     "url": "https://web.math.utk.edu/~freire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+     "locator": "Proof of Stone’s theorem, compactness/lattice argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "69-r1",
+   "entryId": 69,
+   "entryName": "Hahn–Banach theorem",
+   "entryDescription": "Zorn maximal extension; analytic one-step extension plus transfinite/maximality argument; separation of convex sets. Distinguish real/complex and normed/locally convex forms.",
+   "level": "Graduate",
+   "routeTitle": "Zorn maximal extension",
+   "currentSketch": "Order all linear extensions of a bounded functional on subspaces by extension. A chain's union is an upper bound; Zorn gives a maximal extension. If its domain omits x, Hahn–Banach's one-dimensional extension lemma extends to span{x}, contradiction.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.102 Functional Analysis lecture notes",
+     "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/3d4cc88026d44a01f936cd6a0aa995cb_MIT18_102s20_lec_FA.pdf",
+     "locator": "Chapter 5, Hahn–Banach theorem and Zorn proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "69-r2",
+   "entryId": 69,
+   "entryName": "Hahn–Banach theorem",
+   "entryDescription": "Zorn maximal extension; analytic one-step extension plus transfinite/maximality argument; separation of convex sets. Distinguish real/complex and normed/locally convex forms.",
+   "level": "Graduate",
+   "routeTitle": "analytic one-step extension plus transfinite/maximality argument",
+   "currentSketch": "For each new vector x, choose its value in the interval constrained by p(y−tx) bounds so the extension remains dominated by the sublinear p. This one-step lemma plus Zorn/maximality extends to the full vector space. The one-step lemma is the analytic core; choice enters in maximal extension.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.102 Functional Analysis lecture notes",
+     "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/3d4cc88026d44a01f936cd6a0aa995cb_MIT18_102s20_lec_FA.pdf",
+     "locator": "Chapter 5, analytic one-step Hahn–Banach extension then maximality"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "69-r3",
+   "entryId": 69,
+   "entryName": "Hahn–Banach theorem",
+   "entryDescription": "Zorn maximal extension; analytic one-step extension plus transfinite/maximality argument; separation of convex sets. Distinguish real/complex and normed/locally convex forms.",
+   "level": "Graduate",
+   "routeTitle": "separation of convex sets. Distinguish real/complex and normed/locally convex forms",
+   "currentSketch": "Separate a point from an open convex set by applying Hahn–Banach to the Minkowski gauge of its translate (locally convex version uses continuous seminorms). This yields a continuous linear functional separating them. This proves a separation corollary of Hahn–Banach, not an independent derivation of the extension theorem.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "70-r1",
+   "entryId": 70,
+   "entryName": "Tychonoff theorem (product compactness)",
+   "entryDescription": "Ultrafilter convergence; Alexander subbase theorem; choice/finite intersection property.",
+   "level": "Graduate",
+   "routeTitle": "Ultrafilter convergence",
+   "currentSketch": "An ultrafilter on ∏X_i projects to an ultrafilter on each compact X_i, which converges to x_i. Every basic product neighborhood constrains finitely many coordinates, so belongs to the original ultrafilter; thus it converges to (x_i), proving product compactness.",
+   "existingReferences": [
+    {
+     "label": "Notes on Ultrafilters",
+     "url": "https://faculty.ksu.edu.sa/sites/default/files/ultra.pdf",
+     "locator": "Theorem 0.0.14, Tychonoff by ultrafilter convergence"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "70-r2",
+   "entryId": 70,
+   "entryName": "Tychonoff theorem (product compactness)",
+   "entryDescription": "Ultrafilter convergence; Alexander subbase theorem; choice/finite intersection property.",
+   "level": "Graduate",
+   "routeTitle": "Alexander subbase theorem",
+   "currentSketch": "Alexander subbase theorem: if every cover by subbasic open sets has a finite subcover, the space is compact. For a product, a cover by subbasic cylinders with no finite subcover would induce coordinate closed sets with the finite intersection property, contradicting compactness of a factor; equivalently use the standard subbase proof.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "70-r3",
+   "entryId": 70,
+   "entryName": "Tychonoff theorem (product compactness)",
+   "entryDescription": "Ultrafilter convergence; Alexander subbase theorem; choice/finite intersection property.",
+   "level": "Graduate",
+   "routeTitle": "choice/finite intersection property",
+   "currentSketch": "A family of closed subsets of the product with the finite intersection property is extended to an ultrafilter by choice. Its coordinate projections converge by compactness of each factor; the coordinate limit point belongs to every closed set in the family. This is the closed-set/choice formulation of the ultrafilter proof.",
+   "existingReferences": [
+    {
+     "label": "Notes on Ultrafilters",
+     "url": "https://faculty.ksu.edu.sa/sites/default/files/ultra.pdf",
+     "locator": "Theorem 0.0.14, closed-set finite-intersection / ultrafilter proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

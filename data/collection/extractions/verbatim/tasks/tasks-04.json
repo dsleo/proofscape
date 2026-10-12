@@ -1,0 +1,439 @@
+{
+ "agent": 4,
+ "tasks": [
+  {
+   "routeId": "24-r1",
+   "entryId": 24,
+   "entryName": "Euler's polyhedron formula V−E+F=2 (convex polyhedra/planar graphs)",
+   "entryDescription": "Remove edges/faces inductively in a planar graph; triangulate and count incidences; topological Euler characteristic.",
+   "level": "School–undergraduate",
+   "routeTitle": "Remove edges/faces inductively in a planar graph",
+   "currentSketch": "Induct on the number F of faces of a connected planar graph. If F=1, the graph has no cycle and is a tree, so E=V−1 and V−E+F=2. Otherwise choose an edge incident to two distinct faces and delete it. The graph stays connected, while E and F each decrease by one; therefore V−E+F is unchanged. Induction proves the formula.",
+   "existingReferences": [
+    {
+     "label": "Eppstein, Euler’s Formula: Proof 10 via Pick’s theorem",
+     "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+     "locator": "Proof 10: Pick’s Theorem; the page also describes planar graph / Euler formula routes"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures omitted. LaTeX delimiters \\( \\) as on the page. Source: The Geometry Junkyard: Euler's Formula, 'Proof 2: Induction on Faces' (David Eppstein, UC Irvine) — Page 'Euler's Formula' (all.html), Proof 2: Induction on Faces — the first two paragraphs only (argument); the author's commentary paragraph after it is not included. "
+  },
+  {
+   "routeId": "24-r3",
+   "entryId": 24,
+   "entryName": "Euler's polyhedron formula V−E+F=2 (convex polyhedra/planar graphs)",
+   "entryDescription": "Remove edges/faces inductively in a planar graph; triangulate and count incidences; topological Euler characteristic.",
+   "level": "School–undergraduate",
+   "routeTitle": "topological Euler characteristic",
+   "currentSketch": "View a convex polyhedron's boundary as a cell decomposition of the sphere. The Euler characteristic of S² is 2, and its cell count is V−E+F; hence the formula. This is topological and requires the surface be sphere-like (genus zero).",
+   "existingReferences": [
+    {
+     "label": "Eppstein, Euler’s Formula: Proof 10 via Pick’s theorem",
+     "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+     "locator": "Proof 10: Pick’s Theorem; the page also describes planar graph / Euler formula routes"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "25-r1",
+   "entryId": 25,
+   "entryName": "There are irrational numbers / R is uncountable",
+   "entryDescription": "Cantor diagonal construction; nested intervals avoiding a proposed enumeration; cardinality via binary sequences.",
+   "level": "School–undergraduate",
+   "routeTitle": "Cantor diagonal construction",
+   "currentSketch": "Given any proposed list x₁,x₂,… of infinite binary sequences, form y by choosing yₙ≠(xₙ)ₙ. Then y differs from every listed sequence at its nth coordinate, so no enumeration is complete; Cantor's diagonal proves uncountability of {0,1}^N and hence R.",
+   "existingReferences": [
+    {
+     "label": "Eppstein, Euler’s Formula: multiple proofs and related results",
+     "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+     "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "25-r2",
+   "entryId": 25,
+   "entryName": "There are irrational numbers / R is uncountable",
+   "entryDescription": "Cantor diagonal construction; nested intervals avoiding a proposed enumeration; cardinality via binary sequences.",
+   "level": "School–undergraduate",
+   "routeTitle": "nested intervals avoiding a proposed enumeration",
+   "currentSketch": "Assume [0,1] is enumerated. Choose a closed subinterval inside [0,1] avoiding x₁, then recursively choose nested closed subintervals avoiding xₙ with lengths tending to zero. Completeness gives a point in their intersection, absent from the list.",
+   "existingReferences": [
+    {
+     "label": "Eppstein, Euler’s Formula: multiple proofs and related results",
+     "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+     "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "25-r3",
+   "entryId": 25,
+   "entryName": "There are irrational numbers / R is uncountable",
+   "entryDescription": "Cantor diagonal construction; nested intervals avoiding a proposed enumeration; cardinality via binary sequences.",
+   "level": "School–undergraduate",
+   "routeTitle": "cardinality via binary sequences",
+   "currentSketch": "Binary sequences are uncountable by diagonalization; map each sequence to its ternary expansion using digits 0 and 2, an injective map into [0,1] (the two-expansion ambiguity is absent for this restricted digit set except endpoint conventions). Therefore R is uncountable.",
+   "existingReferences": [
+    {
+     "label": "Eppstein, Euler’s Formula: multiple proofs and related results",
+     "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+     "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "26-r1",
+   "entryId": 26,
+   "entryName": "Fundamental theorem of algebra",
+   "entryDescription": "Complex analysis: Liouville applied to 1/P; topology: winding number/fundamental group or degree; algebraic proof via symmetric polynomials/Galois theory. MIT topology notes explicitly contrast the analytic and topological routes.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Complex analysis: Liouville applied to 1/P",
+   "currentSketch": "If nonconstant complex polynomial P has no zero, 1/P is entire and tends to 0 at infinity, hence bounded. Liouville says 1/P is constant, contradiction. Factor out a root and repeat to count deg(P) roots with multiplicity.",
+   "existingReferences": [
+    {
+     "label": "MIT complex analysis notes, Liouville proof",
+     "url": "https://math.mit.edu/~dunkel/Teach/18.04_2019S/notes/1804_Main.pdf",
+     "locator": "MIT 18.04 notes, §6.5.3, “Liouville’s theorem,” and the following corollary to the fundamental theorem of algebra"
+    },
+    {
+     "label": "MIT complex analysis notes, Liouville proof",
+     "url": "https://math.mit.edu/~dunkel/Teach/18.04_2019S/notes/1804_Main.pdf",
+     "locator": "MIT 18.04 notes, §6.5.3, Corollary (fundamental theorem of algebra)"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered PDF page images (pp. 78–79); wording and order follow the source; mathematics rendered as LaTeX-style text. The figure is replaced by a bracketed description (the bracket text is the assistant's, not the source's). Source typo 'But this a contradiction' kept; the figure's horizontal axis is mislabelled 'Im(z)' in the source. The Cauchy inequality is cited f"
+  },
+  {
+   "routeId": "26-r2",
+   "entryId": 26,
+   "entryName": "Fundamental theorem of algebra",
+   "entryDescription": "Complex analysis: Liouville applied to 1/P; topology: winding number/fundamental group or degree; algebraic proof via symmetric polynomials/Galois theory. MIT topology notes explicitly contrast the analytic and topological routes.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "topology: winding number/fundamental group or degree",
+   "currentSketch": "Let f(z)=P(z)/zⁿ on a large circle; by the argument principle the winding number of P(z) around 0 equals n for sufficiently large radius (dominant leading term). If P had no zero inside, its boundary winding number would be 0, contradiction. Rouché's theorem formalizes this comparison.",
+   "existingReferences": [
+    {
+     "label": "Munkres, *A First Course in Topology*, topological proof and comparison with algebra/analysis",
+     "url": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "MIT complex analysis notes, Liouville proof",
+     "url": "https://math.mit.edu/~dunkel/Teach/18.04_2019S/notes/1804_Main.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "26-r3",
+   "entryId": 26,
+   "entryName": "Fundamental theorem of algebra",
+   "entryDescription": "Complex analysis: Liouville applied to 1/P; topology: winding number/fundamental group or degree; algebraic proof via symmetric polynomials/Galois theory. MIT topology notes explicitly contrast the analytic and topological routes.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "algebraic proof via symmetric polynomials/Galois theory. MIT topology notes explicitly contrast the analytic and topological routes",
+   "currentSketch": "A nonconstant complex polynomial has |P(z)|→∞ as |z|→∞, so |P| attains a global minimum. If the minimum at z₀ were nonzero, write P(z₀+w)=a₀+aₖwᵏ+… with first nonzero k≥1. Choose w so aₖwᵏ/a₀ is small negative real; higher terms are lower order, making |P(z₀+w)|<|a₀|, contradiction.",
+   "existingReferences": [
+    {
+     "label": "Munkres, *A First Course in Topology*, topological proof and comparison with algebra/analysis",
+     "url": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "MIT complex analysis notes, Liouville proof",
+     "url": "https://math.mit.edu/~dunkel/Teach/18.04_2019S/notes/1804_Main.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "27-r1",
+   "entryId": 27,
+   "entryName": "Fundamental theorem of calculus",
+   "entryDescription": "Difference quotients and local area strips for derivative-of-integral; telescoping/Riemann sums for integral-of-derivative; measure-theoretic absolute continuity formulation.",
+   "level": "School–graduate",
+   "routeTitle": "Difference quotients and local area strips for derivative-of-integral",
+   "currentSketch": "For G(t)=∫ₐᵗf(x)dx, the difference quotient is the average value of f over [t,t+h]; continuity makes it tend to f(t), so G′=f. If F′=f, then (F−G)′=0, so F−G is constant and ∫ₐᵇf=F(b)−F(a).",
+   "existingReferences": [
+    {
+     "label": "MIT calculus text, both directions and area/telescoping explanations",
+     "url": "https://math.mit.edu/~djk/calculus_beginners/chapter13/section02.html",
+     "locator": "§13.2, derivative of the integral from local area strips"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures omitted. Math as \\( \\) LaTeX from the page. The page itself writes 'g(t) = ∫_t^{t+d} sin(x) dx' for g(t+d)−g(t); kept as printed. Source: Calculus for Beginners, §13.2 The Fundamental Theorem of Calculus and Determining Areas (MIT, course site math.mit.edu/~djk) — §13.2, first part: derivative of the integral with respect"
+  },
+  {
+   "routeId": "27-r2",
+   "entryId": 27,
+   "entryName": "Fundamental theorem of calculus",
+   "entryDescription": "Difference quotients and local area strips for derivative-of-integral; telescoping/Riemann sums for integral-of-derivative; measure-theoretic absolute continuity formulation.",
+   "level": "School–graduate",
+   "routeTitle": "telescoping/Riemann sums for integral-of-derivative",
+   "currentSketch": "Partition [a,b]; on each interval the mean value theorem gives f′(ξᵢ)Δxᵢ=f(xᵢ)−f(xᵢ₋₁). Sum telescopes to f(b)−f(a); as mesh→0, the left Riemann sums converge to ∫f′.",
+   "existingReferences": [
+    {
+     "label": "MIT calculus text, both directions and area/telescoping explanations",
+     "url": "https://math.mit.edu/~djk/calculus_beginners/chapter13/section02.html",
+     "locator": "§13.2, integral of a derivative via telescoping sums"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures omitted. Math as \\( \\) LaTeX from the page. Source: Calculus for Beginners, §13.2 The Fundamental Theorem of Calculus and Determining Areas (MIT, course site math.mit.edu/~djk) — §13.2, second part: 'Suppose we start with a differentiable function…' through 'This is the standard form for the fundamental theorem.'. Attribu"
+  },
+  {
+   "routeId": "27-r3",
+   "entryId": 27,
+   "entryName": "Fundamental theorem of calculus",
+   "entryDescription": "Difference quotients and local area strips for derivative-of-integral; telescoping/Riemann sums for integral-of-derivative; measure-theoretic absolute continuity formulation.",
+   "level": "School–graduate",
+   "routeTitle": "measure-theoretic absolute continuity formulation",
+   "currentSketch": "If f is absolutely continuous, f(x)=f(a)+∫ₐˣg almost everywhere where g=f′; this is the Lebesgue FTC. Conversely, indefinite integrals of L¹ functions are absolutely continuous and have derivative f a.e. Distinguish this a.e. statement from the classical continuous-derivative version.",
+   "existingReferences": [
+    {
+     "label": "MIT calculus text, both directions and area/telescoping explanations",
+     "url": "https://math.mit.edu/~djk/calculus_beginners/chapter13/section02.html",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "MIT real-analysis course schedule and Rudin reading",
+     "url": "https://math.mit.edu/classes/18.100/Lectsched.html",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "28-r1",
+   "entryId": 28,
+   "entryName": "Intermediate value theorem",
+   "entryDescription": "Supremum/least-upper-bound argument; bisection/nested intervals; connectedness of an interval and continuous images.",
+   "level": "School–undergraduate",
+   "routeTitle": "Supremum/least-upper-bound argument",
+   "currentSketch": "Let f continuous on [a,b], f(a)<0<f(b). Let c=sup{x:f(x)<0}. Continuity rules out f(c)<0 (then points just right remain negative) and f(c)>0 (then points just left positive), so f(c)=0.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "28-r2",
+   "entryId": 28,
+   "entryName": "Intermediate value theorem",
+   "entryDescription": "Supremum/least-upper-bound argument; bisection/nested intervals; connectedness of an interval and continuous images.",
+   "level": "School–undergraduate",
+   "routeTitle": "bisection/nested intervals",
+   "currentSketch": "Bisect [a,b] repeatedly, retaining a half whose endpoints have opposite signs. Nested intervals shrink to a point c by completeness; continuity forces f(c)=0.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "28-r3",
+   "entryId": 28,
+   "entryName": "Intermediate value theorem",
+   "entryDescription": "Supremum/least-upper-bound argument; bisection/nested intervals; connectedness of an interval and continuous images.",
+   "level": "School–undergraduate",
+   "routeTitle": "connectedness of an interval and continuous images",
+   "currentSketch": "An interval is connected, and a continuous image of a connected set is connected. If f(a)<0<f(b), f([a,b]) contains both values, so as an interval it contains 0; hence f(c)=0 for some c.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "29-r1",
+   "entryId": 29,
+   "entryName": "Extreme value theorem on a compact interval",
+   "entryDescription": "Supremum plus convergent maximizing subsequence; open-cover compactness and finite subcover; sequential compactness.",
+   "level": "School–undergraduate",
+   "routeTitle": "Supremum plus convergent maximizing subsequence",
+   "currentSketch": "Let M=sup f([a,b]); choose xₙ with f(xₙ)→M. Compactness gives a convergent subsequence xₙⱼ→c∈[a,b]; continuity gives f(c)=M. Similarly obtain a minimum.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "29-r2",
+   "entryId": 29,
+   "entryName": "Extreme value theorem on a compact interval",
+   "entryDescription": "Supremum plus convergent maximizing subsequence; open-cover compactness and finite subcover; sequential compactness.",
+   "level": "School–undergraduate",
+   "routeTitle": "open-cover compactness and finite subcover",
+   "currentSketch": "If f([a,b]) were unbounded, the sets Uₙ={x:|f(x)|<n} form an open cover with no finite subcover; compactness contradiction. Thus it is bounded; the image is compact as a continuous image and hence contains its supremum/infimum.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "29-r3",
+   "entryId": 29,
+   "entryName": "Extreme value theorem on a compact interval",
+   "entryDescription": "Supremum plus convergent maximizing subsequence; open-cover compactness and finite subcover; sequential compactness.",
+   "level": "School–undergraduate",
+   "routeTitle": "sequential compactness",
+   "currentSketch": "Every sequence in [a,b] has a convergent subsequence. Apply this to a maximizing sequence; continuity carries the limit to the supremum. Compactness of a closed bounded interval supplies the subsequence.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "30-r1",
+   "entryId": 30,
+   "entryName": "Bolzano–Weierstrass theorem",
+   "entryDescription": "Nested interval/bisection construction; repeated finite-cover pigeonhole argument; compactness/sequential compactness equivalences.",
+   "level": "Undergraduate",
+   "routeTitle": "Nested interval/bisection construction",
+   "currentSketch": "If a bounded sequence has infinitely many terms in one half of a containing closed interval, keep that half and repeat. Nested intervals with lengths tending to zero have a common point; choosing increasing indices in them yields a subsequence converging to it.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "30-r2",
+   "entryId": 30,
+   "entryName": "Bolzano–Weierstrass theorem",
+   "entryDescription": "Nested interval/bisection construction; repeated finite-cover pigeonhole argument; compactness/sequential compactness equivalences.",
+   "level": "Undergraduate",
+   "routeTitle": "repeated finite-cover pigeonhole argument",
+   "currentSketch": "Cover a bounded interval by finitely many intervals of length 1; one contains infinitely many sequence terms. Subdivide that interval into finitely many pieces of length ≤1/2, retain one with infinitely many terms, and repeat. Diagonal selection yields a Cauchy, hence convergent, subsequence in R.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "30-r3",
+   "entryId": 30,
+   "entryName": "Bolzano–Weierstrass theorem",
+   "entryDescription": "Nested interval/bisection construction; repeated finite-cover pigeonhole argument; compactness/sequential compactness equivalences.",
+   "level": "Undergraduate",
+   "routeTitle": "compactness/sequential compactness equivalences",
+   "currentSketch": "Closed bounded intervals are compact. The sequence lies in such an interval; compactness is equivalent in metric spaces to sequential compactness, so it has a convergent subsequence. This route depends on the compactness equivalence theorem.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "31-r1",
+   "entryId": 31,
+   "entryName": "Heine–Borel theorem in Rⁿ",
+   "entryDescription": "Supremum/finite-subcover argument on a box; sequential compactness plus Bolzano–Weierstrass; total boundedness and completeness.",
+   "level": "Undergraduate",
+   "routeTitle": "Supremum/finite-subcover argument on a box",
+   "currentSketch": "Closed boxes are compact by repeated one-dimensional Heine–Borel. A closed subset K of a compact box is compact; any bounded subset lies in a box, so closed and bounded K is compact.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "31-r2",
+   "entryId": 31,
+   "entryName": "Heine–Borel theorem in Rⁿ",
+   "entryDescription": "Supremum/finite-subcover argument on a box; sequential compactness plus Bolzano–Weierstrass; total boundedness and completeness.",
+   "level": "Undergraduate",
+   "routeTitle": "sequential compactness plus Bolzano–Weierstrass",
+   "currentSketch": "For a bounded sequence in Rⁿ, apply Bolzano–Weierstrass coordinate by coordinate to obtain a subsequence converging in every coordinate. If the set is closed, the limit lies in it. This proves sequential compactness and hence compactness in Euclidean metric spaces.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "31-r3",
+   "entryId": 31,
+   "entryName": "Heine–Borel theorem in Rⁿ",
+   "entryDescription": "Supremum/finite-subcover argument on a box; sequential compactness plus Bolzano–Weierstrass; total boundedness and completeness.",
+   "level": "Undergraduate",
+   "routeTitle": "total boundedness and completeness",
+   "currentSketch": "Rⁿ is complete and totally bounded on bounded subsets: cover a bounding box by finitely many cubes of side ε. A closed subset is complete; complete plus totally bounded implies compact, proving Heine–Borel.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

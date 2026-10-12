@@ -1,0 +1,72 @@
+.historical-view { padding-bottom: 24px; }
+.historical-intro { max-width: 760px; padding: 6px 0 25px; }
+.historical-eyebrow { margin: 0 0 10px; color: #956126; font-size: 9px; font-weight: 700; letter-spacing: .16em; }
+.historical-intro h1 { margin: 0; color: #332d26; font: 400 clamp(34px, 4.5vw, 52px)/1.06 'CMU Serif', serif; letter-spacing: -.03em; }
+.historical-intro > p:not(.historical-eyebrow) { color: #645b51; font-size: 13px; line-height: 1.6; }
+.historical-controls { display: grid; grid-template-columns: minmax(220px, 1.7fr) repeat(2, minmax(120px, 1fr)); gap: 11px; align-items: end; border-top: 1px solid var(--line); padding: 18px 0 15px; }
+.historical-controls label { display: grid; gap: 5px; color: #776b5d; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.historical-controls select { height: 42px; min-width: 0; border: 1px solid #b9ae9f; background: #fffdf8; padding: 0 10px; color: #39332c; font-size: 11px; text-transform: none; }
+.historical-search { display: flex !important; align-items: center; gap: 9px !important; height: 42px; border: 1px solid #81776a; background: #fffdf8; padding: 0 11px; color: #76501f !important; box-shadow: none; }
+.historical-search input { width: 100%; border: 0; outline: 0; background: transparent; font-size: 12px; font-weight: 400; letter-spacing: normal; text-transform: none; }
+.historical-count { display: flex; justify-content: space-between; gap: 14px; padding: 6px 0 11px; color: #746b60; font-size: 10px; }
+.historical-count button { border: 0; background: transparent; color: #704719; font-size: 10px; text-decoration: underline; }
+.historical-entry { display: grid; grid-template-columns: 43px minmax(0, 1fr); gap: 15px; border-top: 1px solid #d3c9bc; padding: 18px 0 20px; }
+.historical-entry-number { padding-top: 4px; color: #a18460; font: 11px 'CMU Typewriter', monospace; }
+.historical-entry-main { min-width: 0; }
+.historical-entry-main > header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.historical-entry-main h2 { margin: 0; color: #332d26; font: 400 clamp(19px, 2.4vw, 25px)/1.25 'CMU Serif', serif; }
+.historical-statement { margin: 11px 0 9px; border-left: 3px solid #a96f2d; background: #f5eee2; padding: 11px 13px; color: #383128; font: 400 15px/1.65 'CMU Serif', serif; }
+.historical-statement-label { display: block; margin-bottom: 4px; color: #89602e; font: 700 8px/1.3 'CMU Sans', sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.historical-entry details { border-top: 1px solid #e2dace; }
+.historical-entry details summary { display: flex; align-items: center; justify-content: space-between; min-height: 35px; color: #79521f; font-size: 10px; font-weight: 700; cursor: pointer; }
+.historical-approaches > summary { max-width: 260px; }
+.historical-approaches > summary span { color: #8b8073; font-weight: 400; }
+.historical-routes { margin: 2px 0 17px; padding-left: 22px; color: #4f473e; font-size: 11px; line-height: 1.65; }
+.historical-routes li { margin: 0 0 10px; border-top: 1px solid #e7ded2; padding: 7px 0 3px 5px; }
+.historical-approach { border: 0 !important; }
+.historical-approach > summary { min-height: 30px !important; color: #453c32 !important; font: 500 14px/1.4 'CMU Serif', serif !important; }
+.historical-approach-content { padding: 2px 0 5px; }
+.historical-proof-sketch { margin: 7px 0 9px; color: #554d44; font-size: 11px; line-height: 1.6; }
+.historical-proof-sketch strong { color: #66502d; }
+.historical-sketch { margin: 7px 0 10px; border-left: 2px solid #b27b3c; padding: 7px 10px; color: #554d44; font-size: 11px; line-height: 1.65; }
+.historical-sketch strong { color: #66502d; }
+.historical-excerpt { margin: 9px 0 12px; border: 1px solid #d8c8ad; background: #fffdf8; padding: 9px; }
+.historical-excerpt > summary { color: #63471f; cursor: pointer; font-size: 10px; font-weight: 700; }
+.historical-excerpt figure { margin: 9px 0 0; }
+.historical-excerpt img { display: block; max-width: 100%; height: auto; border: 1px solid #e0d9cf; }
+.historical-excerpt figcaption { margin-top: 4px; color: #756b5e; font-size: 9px; line-height: 1.45; }
+.historical-route-source { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 7px 0; color: #5e5346; font-size: 11px; }
+.historical-route-source > span a { color: #7a4911; font-weight: 700; text-decoration: underline; text-decoration-color: #c8a87f; text-underline-offset: 2px; }
+.historical-source-info > summary { display: inline-flex !important; align-items: center; justify-content: center !important; width: 20px; height: 20px; min-height: 20px !important; border: 0; border-radius: 50%; background: transparent; color: #9b8b75 !important; cursor: pointer; transition: background-color .15s, color .15s; }
+.historical-source-info > summary:hover { background: #f3e8d6; color: #68491f !important; }
+.historical-source-info { position: relative; border: 0 !important; }
+.historical-source-info > summary { list-style: none; }
+.historical-source-info > summary::-webkit-details-marker { display: none; }
+.historical-source-info[open] > summary { background: #f3e8d6; color: #68491f !important; }
+.historical-source-popover { position: absolute; z-index: 5; top: 38px; left: 0; width: min(320px, calc(100vw - 64px)); border: 1px solid #cfc0aa; background: #fffdf8; box-shadow: 0 8px 24px rgba(48, 38, 25, .14); padding: 12px 14px; color: #453c32; font-size: 11px; line-height: 1.5; }
+.historical-source-popover strong { font-family: 'CMU Serif', serif; font-size: 12px; font-weight: 500; }
+.historical-source-popover p { margin: 5px 0 0; color: #6e6254; }
+.historical-source-popover small { color: #8b8073; font-size: 9px; }
+.historical-related-sources { margin: 8px 0; color: #756b5e; font-size: 10px; }
+.historical-related-sources > span { color: #817568; font-size: 9px; }
+.historical-view button:focus-visible, .historical-view a:focus-visible, .historical-view summary:focus-visible, .historical-view input:focus-visible, .historical-view select:focus-visible { outline: 2px solid #8f5e27; outline-offset: 3px; }
+.historical-reference { margin: 0 0 8px; border: 1px solid #ddd3c5; background: rgba(255, 253, 248, .85); padding: 10px 11px; }
+.historical-reference > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 12px; color: #4c4132; font-size: 10px; }
+.historical-reference > div span { color: #7d7162; }
+.historical-reference a { display: inline-flex; align-items: center; gap: 4px; margin-top: 7px; color: #7a4911; font-size: 10px; font-weight: 700; }
+.historical-reference p { margin: 5px 0 0; color: #756b5e; font-size: 10px; line-height: 1.45; }
+.historical-reference .historical-locator { color: #8a6540; }
+.historical-missing { border-left: 2px solid #aaa096; margin: 4px 0 12px; padding: 7px 10px; color: #766d63; font-size: 10px; }
+.historical-pagination { display: flex; justify-content: space-between; align-items: center; gap: 12px; max-width: 380px; margin: 15px auto 0; color: #756b5e; font-size: 11px; }
+.historical-pagination button { min-height: 36px; border: 1px solid #b99b70; background: #f7efdf; padding: 0 13px; color: #674c29; font: 11px 'CMU Sans', sans-serif; cursor: pointer; }
+.historical-pagination button:disabled { border-color: #ddd5c9; background: #f4f0e9; color: #a69d91; cursor: not-allowed; }
+.historical-source-register { margin-top: 28px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 12px 0; }
+.historical-source-register > summary { display: flex; justify-content: space-between; gap: 10px; color: #68491f; font: 500 18px 'CMU Serif', serif; cursor: pointer; }
+.historical-source-register > summary span { color: #817568; font: 10px 'CMU Sans', sans-serif; }
+.historical-source-register > p { max-width: 760px; color: #756b5e; font-size: 10px; line-height: 1.5; }
+.historical-source-register section { border-top: 1px solid #ded5c9; padding: 12px 0 5px; }
+.historical-source-register h3 { margin: 0; color: #4c4132; font: 500 16px 'CMU Serif', serif; }
+.historical-source-register section > p { color: #756b5e; font-size: 10px; line-height: 1.5; }
+.historical-sources-note { max-width: 800px; margin: 25px 0 0; border-top: 1px solid var(--line); padding-top: 12px; color: #80766b; font-size: 10px; line-height: 1.55; }
+@media (max-width: 760px) { .historical-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } .historical-search { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .historical-entry { grid-template-columns: 28px minmax(0, 1fr); gap: 8px; } .historical-entry-main > header { align-items: flex-start; flex-direction: column; gap: 6px; } .historical-controls { grid-template-columns: 1fr; } .historical-search { grid-column: auto; } }

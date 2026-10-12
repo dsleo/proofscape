@@ -1,0 +1,122 @@
+{
+ "137-r1": {
+  "routeId": "137-r1",
+  "sourceTitle": "Euler Calculus with Applications to Signals and Sensing",
+  "sourceUrl": "https://arxiv.org/abs/1202.0275",
+  "locator": "Section 7, Lemma 7.1 and its proof, p. 11",
+  "routeMatch": "verified",
+  "proofSketch": "Over a chain complex of vector spaces, write $Z_k=\\ker\\partial_k$ and $B_k=\\operatorname{im}\\partial_{k+1}$. Since $H_k=Z_k/B_k$ one has $\\dim Z_k=\\dim H_k+\\dim B_k$. Because $\\partial^2=0$, $C_k/Z_k\\cong B_{k-1}$, so $\\dim C_k=\\dim Z_k+\\dim B_{k-1}$. Combining, $\\dim C_k=\\dim H_k+\\dim B_k+\\dim B_{k-1}$. Multiply by $(-1)^k$ and sum over $k$; the boundary terms telescope, leaving $\\sum(-1)^k\\dim C_k=\\sum(-1)^k\\dim H_k$.",
+  "images": [
+   {
+    "file": "137-r1-1.png",
+    "caption": "Ghrist, arXiv:1202.0275, p. 11: Lemma 7.1 and proof"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Robert Ghrist, Euler calculus with applications to signals and sensing (arXiv:1202.0275)",
+  "transcriptionNotes": "Cropped to the lemma and its proof; the definition of $\\chi$ in (7.1) is just above.",
+  "reasonNotReproduced": null
+ },
+ "137-r2": {
+  "routeId": "137-r2",
+  "sourceTitle": "Euler Calculus with Applications to Signals and Sensing",
+  "sourceUrl": "https://arxiv.org/abs/1202.0275",
+  "locator": "Section 7, Lemma 7.1 and its proof, p. 11",
+  "routeMatch": "uncertain",
+  "proofSketch": "Over a field, set $Z_k=\\ker\\partial_k$, $B_k=\\operatorname{im}\\partial_{k+1}\\subseteq Z_k$, $H_k=Z_k/B_k$. Splitting $Z_k=B_k\\oplus H_k'$ and $C_k=Z_k\\oplus D_k$ with $D_k\\cong B_{k-1}$ via $\\partial_k$ gives $\\dim C_k=\\dim B_k+\\dim H_k+\\dim B_{k-1}$; the alternating sum then telescopes to the homology dimensions. The cited source argues with quotients and dimension counts rather than explicit complements.",
+  "images": [
+   {
+    "file": "137-r2-1.png",
+    "caption": "Ghrist, arXiv:1202.0275, p. 11: Lemma 7.1 and proof (dimension-count version of the same decomposition)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Robert Ghrist, Euler calculus with applications to signals and sensing (arXiv:1202.0275)",
+  "transcriptionNotes": "The source never writes explicit complement subspaces; it uses $\\dim Z_k=\\dim H_k+\\dim B_k$ and $C_k/Z_k\\cong B_{k-1}$, which is the same decomposition at the level of dimensions.",
+  "reasonNotReproduced": "No openly accessible source found that writes the explicit direct-sum splitting into boundaries, homology representatives and complements; the nearest proof is the dimension-count argument shown."
+ },
+ "137-r3": {
+  "routeId": "137-r3",
+  "sourceTitle": "Algebraic Topology",
+  "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+  "locator": "Section 2.2, Theorem 2.44 and proof, pp. 146-147",
+  "routeMatch": "verified",
+  "proofSketch": "For a chain complex of finitely generated abelian groups with cycles $Z_n$, boundaries $B_n$ and homology $H_n=Z_n/B_n$ there are short exact sequences $0\\to Z_n\\to C_n\\to B_{n-1}\\to 0$ and $0\\to B_n\\to Z_n\\to H_n\\to 0$. Additivity of rank on short exact sequences gives $\\operatorname{rank}C_n=\\operatorname{rank}Z_n+\\operatorname{rank}B_{n-1}$ and $\\operatorname{rank}Z_n=\\operatorname{rank}B_n+\\operatorname{rank}H_n$. Substitute, multiply by $(-1)^n$ and sum: boundary ranks cancel, giving $\\sum(-1)^n\\operatorname{rank}C_n=\\sum(-1)^n\\operatorname{rank}H_n$. Applied to cellular chains this gives $\\chi(X)=\\sum(-1)^n\\operatorname{rank}H_n(X)$.",
+  "images": [
+   {
+    "file": "137-r3-1.png",
+    "caption": "Hatcher, Algebraic Topology, pp. 146-147: Theorem 2.44 and its proof (short exact sequences and rank additivity)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Allen Hatcher, Algebraic Topology (Cambridge University Press, 2002), freely downloadable from the author's page",
+  "transcriptionNotes": "Image stitches the bottom of p. 146 and the top of p. 147.",
+  "reasonNotReproduced": null
+ },
+ "142-r1": {
+  "routeId": "142-r1",
+  "sourceTitle": "Cyclotomic Extensions",
+  "sourceUrl": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+  "locator": "Section 1, Theorem 1.1 and proof, p. 1",
+  "routeMatch": "verified",
+  "proofSketch": "Let $G$ be a finite subgroup of $F^\\times$. In a finite abelian group, elements of orders $n_1,n_2$ yield an element of order $\\operatorname{lcm}(n_1,n_2)$. Hence if $n$ is the maximal element order, every element order divides $n$. So every element of $G$ is a root of $X^n-1$, giving $\\#G\\le n$ since a polynomial has at most $\\deg$ roots in a field. Also $n$ divides $\\#G$ by Lagrange, so $n=\\#G$ and some element has order $\\#G$, i.e. $G$ is cyclic.",
+  "images": [
+   {
+    "file": "142-r1-1.png",
+    "caption": "Conrad, Cyclotomic Extensions, p. 1: Theorem 1.1 and proof"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Keith Conrad, Cyclotomic Extensions (UConn handout)",
+  "transcriptionNotes": null,
+  "reasonNotReproduced": null
+ },
+ "142-r2": {
+  "routeId": "142-r2",
+  "sourceTitle": "Finite Multiplicative Subgroups of a Field",
+  "sourceUrl": "https://math.stanford.edu/~conrad/210BPage/handouts/math210b-finite-mult-groups-cyclic.pdf",
+  "locator": "Proof (I), p. 1",
+  "routeMatch": "verified",
+  "proofSketch": "All proofs rest on the fact that $x^d=1$ has at most $d$ solutions in a field. Using the structure theorem for finite abelian groups: if $|G|=n$ and $G$ is not cyclic, the invariant-factor decomposition gives a $d<n$ (the exponent) with $x^d=1$ for all $x\\in G$. That gives more than $d$ roots of $x^d-1$, a contradiction, so $G$ is cyclic.",
+  "images": [
+   {
+    "file": "142-r2-1.png",
+    "caption": "Conrad (Stanford Math 210B handout), p. 1: Proof (I)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Keith Conrad, Finite Multiplicative Subgroups of a Field (Stanford Math 210B handout)",
+  "transcriptionNotes": "Proof (I) is two sentences; the handout's Proofs (II) and (III) are omitted.",
+  "reasonNotReproduced": null
+ },
+ "142-r3": {
+  "routeId": "142-r3",
+  "sourceTitle": "Finite Multiplicative Subgroups of a Field",
+  "sourceUrl": "https://math.stanford.edu/~conrad/210BPage/handouts/math210b-finite-mult-groups-cyclic.pdf",
+  "locator": "Proof (I), p. 1",
+  "routeMatch": "uncertain",
+  "proofSketch": "Apply the structure theorem to the finite abelian group $G\\subset F^\\times$: if $G$ is not cyclic there is $d<|G|$ with $x^d=1$ for all $x\\in G$, impossible because $X^d-1$ has at most $d$ roots in a field. For $\\mu_n$ in a field, the same argument shows the roots of unity form a cyclic group.",
+  "images": [
+   {
+    "file": "142-r3-1.png",
+    "caption": "Conrad (Stanford Math 210B handout), p. 1: Proof (I)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Keith Conrad, Finite Multiplicative Subgroups of a Field (Stanford Math 210B handout)",
+  "transcriptionNotes": "Same proof as 142-r2; the handout treats general finite subgroups of $F^\\times$ (which includes roots of unity) and does not separately discuss roots of unity.",
+  "reasonNotReproduced": "Route differs from 142-r2 only in framing (roots of unity); no separate source found."
+ }
+}

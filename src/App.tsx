@@ -1,8 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { ChevronDown, ExternalLink, Search } from 'lucide-react'
 import { MathText } from './MathText'
+import HistoricalResults from './HistoricalResults'
+import './historical.css'
 import { loadIndex, loadRecord, type CollectionIndex, type FormalProof, type InformalProof, type InformalRecord, type Item, type Kind, type RecordDetail } from './collection'
 import type { ReactNode } from 'react'
+
+type Tab = Kind | 'historical'
 
 const names: Record<string, string> = {
   'proofwiki-math': 'ProofWiki',
@@ -18,6 +22,7 @@ function sourceName(value: string) { return names[value] ?? value }
 function pageFromUrl() { return Math.max(1, Number(new URLSearchParams(window.location.search).get('page')) || 1) }
 function initialKind(): Kind { return new URLSearchParams(window.location.search).get('kind') === 'formal' ? 'formal' : 'informal' }
 const initialParams = new URLSearchParams(window.location.search)
+function initialTab(): Tab { return initialParams.get('tab') === 'historical' ? 'historical' : initialKind() }
 const initialRecordId = initialParams.get('id')
 function errorText(error: unknown) { return error instanceof Error ? error.message : 'The collection could not be loaded.' }
 function isInformal(record: RecordDetail): record is InformalRecord { return 'proofs' in record }
@@ -102,10 +107,11 @@ function StatementProofs({ record, openProof, setOpenProof, selectedProofs, onTo
   </section>
 }
 
-function writeUrl(kind: Kind, page: number, query: string, id?: string | null, compare: string[] = [], proof?: string | null) {
+function writeUrl(tab: Tab, kind: Kind, page: number, query: string, id?: string | null, compare: string[] = [], proof?: string | null) {
   const url = new URL(window.location.href)
   url.search = ''
   url.searchParams.set('kind', kind)
+  if (tab === 'historical') url.searchParams.set('tab', 'historical')
   url.searchParams.set('page', String(page))
   if (query.trim()) url.searchParams.set('q', query.trim())
   if (id) url.searchParams.set('id', id)
@@ -118,6 +124,7 @@ export default function DatasetExplorer() {
   const [index, setIndex] = useState<CollectionIndex | null>(null)
   const [indexError, setIndexError] = useState('')
   const [kind, setKind] = useState<Kind>(initialKind)
+  const [tab, setTab] = useState<Tab>(initialTab)
   const [query, setQuery] = useState(new URLSearchParams(window.location.search).get('q') ?? '')
   const [page, setPage] = useState(pageFromUrl)
   const [deepLinkId, setDeepLinkId] = useState(new URLSearchParams(window.location.search).get('id'))
@@ -156,6 +163,7 @@ export default function DatasetExplorer() {
   const item: Item | null = visibleItems[page - 1] ?? null
 
   useEffect(() => {
+    if (tab === 'historical') { setRecord(null); return }
     if (!item) { setRecord(null); return }
     const controller = new AbortController()
     setRecord(null); setRecordError(''); setOpenProof(null); setSelectedProofs([])
@@ -174,14 +182,14 @@ export default function DatasetExplorer() {
       }
     }).catch((error) => { if (!controller.signal.aborted) { setRecordError(errorText(error)); if (pendingDeepLink.current.id === item.id) setUrlReady(true) } })
     return () => controller.abort()
-  }, [item?.id])
+  }, [item?.id, tab])
 
-  useEffect(() => { if (urlReady) writeUrl(kind, page, query, item?.id ?? deepLinkId, selectedProofs, openProof) }, [kind, page, query, item?.id, deepLinkId, selectedProofs, openProof, urlReady])
+  useEffect(() => { if (urlReady) writeUrl(tab, kind, page, query, item?.id ?? deepLinkId, selectedProofs, openProof) }, [tab, kind, page, query, item?.id, deepLinkId, selectedProofs, openProof, urlReady])
 
   const informalCount = index?.sources.filter((source) => source.kind === 'informal').reduce((sum, source) => sum + source.count, 0) ?? 0
   const formalCount = index?.sources.filter((source) => source.kind === 'formal').reduce((sum, source) => sum + source.count, 0) ?? 0
 
-  function changeKind(next: Kind) { setKind(next); setPage(1); setOpenProof(null); setSelectedProofs([]) }
+  function changeKind(next: Kind) { setTab(next); setKind(next); setPage(1); setOpenProof(null); setSelectedProofs([]) }
   function toggleCompare(id: string) {
     setSelectedProofs((current) => current.includes(id) ? current.filter((value) => value !== id) : current.length < 2 ? [...current, id] : current)
   }
@@ -190,13 +198,15 @@ export default function DatasetExplorer() {
   return <div className="dataset-page">
     <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
     <main className="collection-main">
-      <header className="collection-intro"><h1>Explore proofs</h1><p className="collection-intro-copy">Proofscape is a collection for exploring proof diversity: how different arguments approach the same mathematical statement. Browse records from <a href={sourcePages['proofwiki-math']} target="_blank" rel="noreferrer">ProofWiki Math</a>, <a href={sourcePages['Nemotron-Math-Proofs-v2']} target="_blank" rel="noreferrer">Nemotron Math Proofs v2</a>, and <a href={sourcePages['NuminaMath-LEAN-Proof-Artifacts']} target="_blank" rel="noreferrer">NuminaMath Lean Proof Artifacts</a>.</p></header>
+      <header className="collection-intro"><h1>{tab === 'historical' ? 'Explore course-level results' : 'Explore proofs'}</h1><p className="collection-intro-copy">Proofscape explores how different arguments approach the same mathematical statement. Browse proof records from <a href={sourcePages['proofwiki-math']} target="_blank" rel="noreferrer">ProofWiki Math</a>, <a href={sourcePages['Nemotron-Math-Proofs-v2']} target="_blank" rel="noreferrer">Nemotron Math Proofs v2</a>, and <a href={sourcePages['NuminaMath-LEAN-Proof-Artifacts']} target="_blank" rel="noreferrer">NuminaMath Lean Proof Artifacts</a>, or explore historical results taught across the mathematics curriculum.</p></header>
 
       <nav className="proof-track-tabs" role="tablist" aria-label="Proof type">
-        <button id="informal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'informal'} aria-controls="collection-results" onClick={() => changeKind('informal')}>Informal <span>{informalCount.toLocaleString()}</span></button>
-        <button id="formal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={kind === 'formal'} aria-controls="collection-results" onClick={() => changeKind('formal')}>Formal <span>{formalCount.toLocaleString()}</span></button>
+        <button id="informal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={tab === 'informal'} aria-controls="collection-results" onClick={() => changeKind('informal')}>Informal <span>{informalCount.toLocaleString()}</span></button>
+        <button id="formal-tab" type="button" className="proof-track-tab" role="tab" aria-selected={tab === 'formal'} aria-controls="collection-results" onClick={() => changeKind('formal')}>Formal <span>{formalCount.toLocaleString()}</span></button>
+        <button id="historical-tab" type="button" className="proof-track-tab" role="tab" aria-selected={tab === 'historical'} aria-controls="collection-results" onClick={() => { setTab('historical'); setQuery(''); setPage(1); setOpenProof(null); setSelectedProofs([]) }}>Course results <span>150</span></button>
       </nav>
 
+      {tab === 'historical' ? <HistoricalResults /> : <>
       <section className="collection-controls" aria-label="Search the collection">
         <div className="proof-filter-row">
           <label className="collection-search"><Search size={17} /><span className="sr-only">Search statements</span><input value={query} onChange={(event) => { resetSearch(); setQuery(event.target.value) }} placeholder={kind === 'formal' ? 'Search statements or Lean problem text…' : 'Search theorem statements and source titles…'} /></label>
@@ -221,6 +231,7 @@ export default function DatasetExplorer() {
       </section>
 
       {item && <nav className="collection-pagination" aria-label="Browse statements after reading"><button type="button" aria-label="Previous statement" disabled={page <= 1} onClick={() => { setPage((value) => Math.max(1, value - 1)); setSelectedProofs([]) }}>←</button><span>{page.toLocaleString()} / {totalPages.toLocaleString()}</span><button type="button" aria-label="Next statement" disabled={page >= totalPages} onClick={() => { setPage((value) => Math.min(totalPages, value + 1)); setSelectedProofs([]) }}>→</button></nav>}
+      </>}
 
     </main>
     <footer className="proofscape-footer"><a href="https://github.com/dsleo/proofscape">Source and dataset notes</a></footer>

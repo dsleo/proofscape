@@ -2,10 +2,11 @@
 
 Proofscape is a browser for exploring proof diversity: how different arguments approach the same mathematical statement. It brings together informal proof texts and formal proof artifacts, with side-by-side comparison where records share a source statement.
 
-## What can be compared
+## What can be explored
 
 - **Informal:** the multiple proof texts grouped under one ProofWiki or Nemotron statement record.
 - **Formal:** the human proof and prover proof paired in one NuminaMath record, with the source validation status shown for each.
+- **Course results:** a curated index of 150 historically central results taught from secondary school through graduate courses, with 462 separately tracked proof approaches. Where a source has been reviewed, its citation and paraphrased proof sketch appear together on that approach.
 
 The comparison keeps the shared source statement and provenance visible. Records from different datasets are not automatically matched, so Proofscape does not present cross-source pairs as proofs of the same statement. Informal records are source artifacts, not correctness certificates; source annotations are not expert-verified ground truth.
 
@@ -36,6 +37,8 @@ This release contains 9,843 records: 6,265 informal records from ProofWiki Math 
 The 119 ProofRank records are excluded from this public release because the base dataset card does not specify a license. Its separately published method-label output is CC BY-NC-SA 4.0. Source identifiers, links, validation labels, and applicable license metadata remain attached to included records. See [`data/collection/README.md`](data/collection/README.md) and [`data/collection/manifest.json`](data/collection/manifest.json) for pinned revisions and details.
 
 The dataset is a research collection, not a uniform proof-verification set. The formal source's validation field describes the upstream validation result; it is not recomputed by Proofscape.
+
+The course-results tab is maintained in [`data/collection/historical-proof-catalog.json`](data/collection/historical-proof-catalog.json). Citations and sketches are attached to individual approaches; source-extracted sketches are distinguished from assistant reconstructions. The route-by-route [`proof-extraction-ledger.json`](data/collection/proof-extraction-ledger.json) and batch files track sources checked and remaining work so extraction can continue without repeating reviews. See [`data/collection/README.md`](data/collection/README.md) for the evidence rules and merge workflow.
 
 ## Deployment
 

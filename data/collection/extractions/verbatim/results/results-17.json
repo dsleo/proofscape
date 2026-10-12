@@ -1,0 +1,133 @@
+{
+ "122-r1": {
+  "routeId": "122-r1",
+  "sourceTitle": "Sagitov, Weak Convergence of Probability Measures (lecture notes, Chalmers/Gothenburg)",
+  "sourceUrl": "https://arxiv.org/pdf/2007.10293",
+  "locator": "Section 3.2 'Proof of Prokhorov's theorem' (Theorem 3.9, direct part), pp. 12-13 of the notes",
+  "routeMatch": "uncertain",
+  "proofSketch": "Given a tight family, pick compacts $K_1\\subset K_2\\subset\\dots$ with $P_n(K_i)>1-i^{-1}$ for all $n$. The union $K_\\infty$ is separable, so there is a countable class of open sets whose closures refine any open neighbourhood; form the countable class $\\mathcal H$ of finite unions of $\\bar A\\cap K_i$. A diagonal argument gives a subsequence along which $\\alpha(H)=\\lim P_{n'}(H)$ exists for every $H\\in\\mathcal H$. Define $\\beta(G)=\\sup_{H\\subset G}\\alpha(H)$ on open sets and $\\gamma(M)=\\inf_{G\\supset M}\\beta(G)$. Seven steps show $\\gamma$ is an outer measure for which closed sets are measurable and whose restriction $P$ is a probability measure (mass 1 because $K_i\\in\\mathcal H$), with $P(G)=\\beta(G)\\le\\liminf P_{n'}(G)$ for open $G$, hence weak convergence.",
+  "images": [
+   {
+    "file": "122-r1-1.png",
+    "caption": "Sagitov notes, Sec. 3.2: setup of the diagonal subsequence, Steps 1-4"
+   },
+   {
+    "file": "122-r1-2.png",
+    "caption": "Sagitov notes, Sec. 3.2: Steps 5-7, construction of P"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Serik Sagitov, Weak Convergence of Probability Measures, lecture notes, Chalmers University of Technology and University of Gothenburg (arXiv:2007.10293)",
+  "transcriptionNotes": "Proof is a diagonal argument over a countable class of sets built from compact exhaustion (Billingsley-style); it does not use finite partitions explicitly. No licence stated in the PDF text checked; arXiv licence not verified.",
+  "reasonNotReproduced": "Closest available proof; route label mentions finite partitions, source uses a countable base plus compact exhaustion."
+ },
+ "122-r2": {
+  "routeId": "122-r2",
+  "sourceTitle": "Sagitov, Weak Convergence of Probability Measures (lecture notes, Chalmers/Gothenburg)",
+  "sourceUrl": "https://arxiv.org/pdf/2007.10293",
+  "locator": "Section 3.1, Theorem 3.10 (Prokhorov's theorem, reverse part), p. 11 of the notes",
+  "routeMatch": "uncertain",
+  "proofSketch": "For the converse (relative compactness implies tightness on a complete separable metric space): first show that for open sets $G_n\\uparrow S$ and $\\epsilon>0$ some $n$ has $P(G_n)>1-\\epsilon$ for all $P$ in the family, otherwise a weakly convergent subsequence $P_{n'}\\Rightarrow Q$ would give $Q(G_n)\\le\\liminf P_{n'}(G_n)\\le1-\\epsilon$ for all $n$, impossible. Cover $S$ by balls of radius $1/k$, choose finitely many with mass $>1-\\epsilon2^{-k}$, and take the closure of the totally bounded intersection over $k$: it is compact by completeness and has mass $>1-\\epsilon$.",
+  "images": [
+   {
+    "file": "122-r2-1.png",
+    "caption": "Sagitov notes p. 11: Theorems 3.9-3.10, reverse part of Prokhorov's theorem"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Serik Sagitov, Weak Convergence of Probability Measures, lecture notes (arXiv:2007.10293)",
+  "transcriptionNotes": "Route label is vague; this is the metric/portmanteau tightness argument for the reverse direction. Statement of Thm 3.9 included in crop.",
+  "reasonNotReproduced": "Uncertain mapping of route label to this argument."
+ },
+ "122-r3": {
+  "routeId": "122-r3",
+  "sourceTitle": "Hough, Math 639 Lecture 5 (slides): Characteristic functions, central limit theorems (Stony Brook, 2017)",
+  "sourceUrl": "https://www.math.stonybrook.edu/~rdhough/mat639-spring17/lectures/lecture5.pdf",
+  "locator": "Slides 22-25: Helly's selection theorem with proof; tight sequences definition and theorem (proof deferred to Durrett p. 104)",
+  "routeMatch": "uncertain",
+  "proofSketch": "Helly selection on the line: enumerate the rationals and by diagonalisation extract a subsequence of distribution functions converging at every rational to some $G$; set $G(x)=\\inf\\{G(q):q>x\\}$, which is right-continuous and nondecreasing, and convergence at continuity points follows from convergence at rationals. Tightness ($\\limsup_n 1-F_n(M_\\epsilon)+F_n(-M_\\epsilon)\\le\\epsilon$) is exactly the condition that every subsequential limit is a probability distribution function, ruling out escape of mass; this last equivalence is only cited, not proved, in the source.",
+  "images": [
+   {
+    "file": "122-r3-1.png",
+    "caption": "Hough slides 22-25: Helly selection (with proof), tightness definition and theorem"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Bob Hough, Math 639 Lecture 5, Stony Brook University, February 7, 2017",
+  "transcriptionNotes": "Slides give Helly's proof but defer the tightness equivalence to Durrett; only a partial match to the route.",
+  "reasonNotReproduced": "Source proves Helly selection only; tightness-to-probability-limit step is cited, not proved."
+ },
+ "123-r1": {
+  "routeId": "123-r1",
+  "sourceTitle": "P.J.C. Spreij, The Radon-Nikodym theorem (telegram style notes)",
+  "sourceUrl": "https://staff.fnwi.uva.nl/p.j.c.spreij/onderwijs/master/radonnikodym.pdf",
+  "locator": "Section 4 Lemma 4.4 (p. 4) and Section 5 Theorem 5.1 with proof (pp. 5-6)",
+  "routeMatch": "verified",
+  "proofSketch": "For finite $\\mu$ and finite positive $\\lambda$, put $\\phi=\\lambda+\\mu$. The functional $f\\mapsto\\lambda(f)$ is bounded on $L^2(\\phi)$ by Cauchy-Schwarz, so Riesz-Frechet gives $g$ with $\\lambda(f)=\\phi(fg)$. Testing on indicators and using Lemma 4.4 (averages) gives $0\\le g\\le1$ a.e. The set $B=\\{g=1\\}$ is $\\mu$-null, which splits $\\lambda=\\lambda_a+\\lambda_s$ with $\\lambda_s\\perp\\mu$. Rewriting as $\\lambda((1-g)f)=\\mu(fg)$ and testing with $f=1_{A\\cap E}(1+g+\\dots+g^{n-1})$, dominated and monotone convergence give $\\lambda_a(E)=\\mu(1_Eh)$ with $h=1_Ag/(1-g)$. The $\\sigma$-finite case is by partition, then signed and complex by decomposition.",
+  "images": [
+   {
+    "file": "123-r1-1.png",
+    "caption": "Spreij notes p. 4: Lemma 4.4 and its proof"
+   },
+   {
+    "file": "123-r1-2.png",
+    "caption": "Spreij notes p. 5: Theorem 5.1 and proof, finite case"
+   },
+   {
+    "file": "123-r1-3.png",
+    "caption": "Spreij notes p. 6 (top): sigma-finite extension"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "P.J.C. Spreij, University of Amsterdam, The Radon-Nikodym theorem (telegram style notes), version October 11, 2007",
+  "transcriptionNotes": "Uses density of lambda wrt phi=lambda+mu rather than a quotient of two densities (von Neumann's argument); no licence stated in the text.",
+  "reasonNotReproduced": null
+ },
+ "123-r2": {
+  "routeId": "123-r2",
+  "sourceTitle": "Wikipedia, Radon-Nikodym theorem",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Radon%E2%80%93Nikodym_theorem",
+  "locator": "Section 'Proof' > 'For finite measures' (constructing the candidate, proving equality via Hahn decomposition)",
+  "routeMatch": "verified",
+  "proofSketch": "For finite $\\mu,\\nu$ with $\\nu\\ll\\mu$, let $F$ be the set of measurable $f\\ge0$ with $\\int_Af\\,d\\mu\\le\\nu(A)$ for all $A$; $F$ is closed under pairwise max. Choose an increasing sequence in $F$ whose integrals approach the supremum; its limit $g$ lies in $F$ by monotone convergence and attains the supremum. Then $\\nu_0=\\nu-\\int g\\,d\\mu\\ge0$. If $\\nu_0\\ne0$, pick $\\epsilon$ with $\\nu_0(X)>\\epsilon\\mu(X)$ and take a Hahn decomposition $(P,N)$ for $\\nu_0-\\epsilon\\mu$; then $\\mu(P)>0$ and $g+\\epsilon1_P\\in F$ has larger integral, contradicting maximality. Hence $\\nu_0=0$; $g$ is finite a.e. The sigma-finite and signed cases follow by partition and Jordan decomposition.",
+  "images": [
+   {
+    "file": "123-r2-1.png",
+    "caption": "Wikipedia, Proof: candidate construction of g as supremum"
+   },
+   {
+    "file": "123-r2-2.png",
+    "caption": "Wikipedia, Proof: Hahn decomposition argument and restriction to finite values"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, Radon-Nikodym theorem, Wikipedia (CC BY-SA 4.0; content as retrieved 2026-10-12)",
+  "transcriptionNotes": "Uniqueness and sigma-finite/signed extension cropped out.",
+  "reasonNotReproduced": null
+ },
+ "123-r3": {
+  "routeId": "123-r3",
+  "sourceTitle": null,
+  "sourceUrl": null,
+  "locator": null,
+  "routeMatch": "mismatch",
+  "proofSketch": null,
+  "images": [],
+  "reuseStatus": "unavailable",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": null,
+  "transcriptionNotes": null,
+  "reasonNotReproduced": "No source located that proves Radon-Nikodym via a maximal-function / differentiation argument in the searched material; candidate leads (Hunter UC Davis ch. 5-6 notes, CUHK real analysis ch. 6) were not verified."
+ }
+}

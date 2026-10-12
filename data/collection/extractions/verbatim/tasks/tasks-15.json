@@ -1,0 +1,500 @@
+{
+ "agent": 15,
+ "tasks": [
+  {
+   "routeId": "107-r1",
+   "entryId": 107,
+   "entryName": "Catalan number formula Cₙ=(1/(n+1)) binom(2n,n)",
+   "entryDescription": "Reflection principle/ballot paths; first-return recurrence and generating functions; triangulations of a polygon; parenthesizations/binary trees.",
+   "level": "Undergraduate",
+   "routeTitle": "Reflection principle/ballot paths",
+   "currentSketch": "Encode a Dyck path of length 2n by a word with n up-steps and n down-steps. Reflect the initial segment through the first step below zero; this bijects bad paths with words having n−1 up-steps, giving C_n=binom(2n,n)−binom(2n,n−1)=binom(2n,n)/(n+1).",
+   "existingReferences": [
+    {
+     "label": "Richard Stanley, Catalan Numbers",
+     "url": "https://math.mit.edu/~rstan/papers/catadd.pdf",
+     "locator": "Catalan interpretations and generating functions; identify exact proof by section in paper"
+    },
+    {
+     "label": "Richard Stanley, Catalan Numbers lecture slides",
+     "url": "https://math.mit.edu/~rstan/transparencies/catalan.pdf",
+     "locator": "Slides on Catalan-number interpretations; reflection principle/ballot-path arguments"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "107-r2",
+   "entryId": 107,
+   "entryName": "Catalan number formula Cₙ=(1/(n+1)) binom(2n,n)",
+   "entryDescription": "Reflection principle/ballot paths; first-return recurrence and generating functions; triangulations of a polygon; parenthesizations/binary trees.",
+   "level": "Undergraduate",
+   "routeTitle": "first-return recurrence and generating functions",
+   "currentSketch": "Decompose a nonempty Dyck path at its first return to height zero into U P D Q. Thus C_0=1 and C_n=∑_{i=0}^{n−1}C_i C_{n−1−i}; the generating function C=1+xC² has the solution C=(1−√(1−4x))/(2x), whose coefficients are the claimed binomial quotient.",
+   "existingReferences": [
+    {
+     "label": "Richard Stanley, Catalan Numbers",
+     "url": "https://math.mit.edu/~rstan/papers/catadd.pdf",
+     "locator": "Catalan interpretations and generating functions; identify exact proof by section in paper"
+    },
+    {
+     "label": "MIT 18.212, Algebraic Combinatorics",
+     "url": "https://math.mit.edu/~apost/courses/18.212_2019/",
+     "locator": "Lecture schedule, February 8 2019: Catalan formula and generating function"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "107-r3",
+   "entryId": 107,
+   "entryName": "Catalan number formula Cₙ=(1/(n+1)) binom(2n,n)",
+   "entryDescription": "Reflection principle/ballot paths; first-return recurrence and generating functions; triangulations of a polygon; parenthesizations/binary trees.",
+   "level": "Undergraduate",
+   "routeTitle": "triangulations of a polygon",
+   "currentSketch": "Let T_n count triangulations of an (n+2)-gon. Fix a root side; the triangle incident to it splits the polygon into two smaller polygons, so T_n=∑T_iT_{n−1−i}, T_0=1. This is the Catalan recurrence, yielding the formula.",
+   "existingReferences": [
+    {
+     "label": "Richard Stanley, Catalan Numbers",
+     "url": "https://math.mit.edu/~rstan/papers/catadd.pdf",
+     "locator": "Catalan interpretations and generating functions; identify exact proof by section in paper"
+    },
+    {
+     "label": "MIT 18.212, Algebraic Combinatorics",
+     "url": "https://math.mit.edu/~apost/courses/18.212_2019/",
+     "locator": "Lecture schedule, February 8 2019: triangulations of polygons"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "107-r4",
+   "entryId": 107,
+   "entryName": "Catalan number formula Cₙ=(1/(n+1)) binom(2n,n)",
+   "entryDescription": "Reflection principle/ballot paths; first-return recurrence and generating functions; triangulations of a polygon; parenthesizations/binary trees.",
+   "level": "Undergraduate",
+   "routeTitle": "parenthesizations/binary trees",
+   "currentSketch": "Parse a fully parenthesized product at its final multiplication: left and right factors have i and n−1−i operations. The same Catalan recurrence follows; solving its generating function gives the binomial formula. Binary trees are in bijection with these parenthesizations.",
+   "existingReferences": [
+    {
+     "label": "Richard Stanley, Catalan Numbers",
+     "url": "https://math.mit.edu/~rstan/papers/catadd.pdf",
+     "locator": "Catalan interpretations and generating functions; identify exact proof by section in paper"
+    },
+    {
+     "label": "MIT 18.212, Algebraic Combinatorics",
+     "url": "https://math.mit.edu/~apost/courses/18.212_2019/",
+     "locator": "Lecture schedule, February 8 2019: plane binary trees and parenthesizations"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "108-r1",
+   "entryId": 108,
+   "entryName": "Sperner's lemma",
+   "entryDescription": "Parity count of boundary-labeled simplices; graph-path counting; induction on dimension.",
+   "level": "Undergraduate",
+   "routeTitle": "Parity count of boundary-labeled simplices",
+   "currentSketch": "Label a triangulated d-simplex Sperner-style. Count incidences between small d-simplices and their facets labeled {0,…,d−1}; interior facets contribute twice and cancel mod 2, while boundary facets reduce to the (d−1)-dimensional boundary simplex. The remaining parity forces an odd, hence nonzero, number of fully labeled d-simplices.",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Sperner’s lemma",
+     "url": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+     "locator": "Lecture note PDF “sperner.pdf,” theorem and proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "108-r2",
+   "entryId": 108,
+   "entryName": "Sperner's lemma",
+   "entryDescription": "Parity count of boundary-labeled simplices; graph-path counting; induction on dimension.",
+   "level": "Undergraduate",
+   "routeTitle": "graph-path counting",
+   "currentSketch": "Build the adjacency graph whose vertices are top-dimensional simplices and whose edges cross facets carrying labels {0,…,d−1}; add an exterior vertex. The exterior degree is odd by induction on the boundary face, so an odd number of graph components have odd-degree endpoints, forcing a fully labeled simplex.",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Sperner’s lemma",
+     "url": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+     "locator": "Lecture note PDF “sperner.pdf,” theorem and proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "108-r3",
+   "entryId": 108,
+   "entryName": "Sperner's lemma",
+   "entryDescription": "Parity count of boundary-labeled simplices; graph-path counting; induction on dimension.",
+   "level": "Undergraduate",
+   "routeTitle": "induction on dimension",
+   "currentSketch": "Induct on dimension and count facets labeled with all but one of the d+1 labels. Interior facets occur twice; the boundary count is odd by the induction hypothesis. Therefore at least one d-simplex has every label.",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Sperner’s lemma",
+     "url": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+     "locator": "Lecture note PDF “sperner.pdf,” theorem and proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "109-r1",
+   "entryId": 109,
+   "entryName": "Finite Ramsey theorem (classical finite-set form)",
+   "entryDescription": "Induction on number of colors/vertices; greedy pigeonhole construction; product/compactness argument for infinite Ramsey followed by finite extraction (check exact formulation).",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Induction on number of colors/vertices",
+   "currentSketch": "Induct on uniformity r and target size: select a vertex v and a large subset on which all edges through v have the same color (induction on (r−1)-sets); recurse on that subset. After enough selections, pigeonhole gives enough vertices whose associated edge color agrees, completing a monochromatic r-set.",
+   "existingReferences": [
+    {
+     "label": "Gravner, Lecture 9: Ramsey theory",
+     "url": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+     "locator": "Finite Ramsey theorem, induction proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "109-r2",
+   "entryId": 109,
+   "entryName": "Finite Ramsey theorem (classical finite-set form)",
+   "entryDescription": "Induction on number of colors/vertices; greedy pigeonhole construction; product/compactness argument for infinite Ramsey followed by finite extraction (check exact formulation).",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "greedy pigeonhole construction",
+   "currentSketch": "Repeatedly choose a vertex and retain a largest color class among its incident edges. After enough steps, each chosen vertex has a fixed color to all later selected vertices; pigeonhole gives a large monochromatic subset among those vertices. The recursion R_k(r)≤kR_k(r−1)+… supplies a finite bound.",
+   "existingReferences": [
+    {
+     "label": "Gravner, Lecture 9: Ramsey theory",
+     "url": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+     "locator": "Finite Ramsey theorem, induction proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "109-r3",
+   "entryId": 109,
+   "entryName": "Finite Ramsey theorem (classical finite-set form)",
+   "entryDescription": "Induction on number of colors/vertices; greedy pigeonhole construction; product/compactness argument for infinite Ramsey followed by finite extraction (check exact formulation).",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "product/compactness argument for infinite Ramsey followed by finite extraction (check exact formulation)",
+   "currentSketch": "Infinite Ramsey says every finite coloring of [N]^r has an infinite monochromatic subset. If no finite N sufficed for a target size, compactness/Kőnig’s lemma on the finitely branching tree of compatible partial colorings would produce a coloring of [N]^r with no target monochromatic set, contradicting infinite Ramsey.",
+   "existingReferences": [
+    {
+     "label": "Gravner, Lecture 9: Ramsey theory",
+     "url": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+     "locator": "Finite Ramsey theorem, induction proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "110-r1",
+   "entryId": 110,
+   "entryName": "Erdős–Szekeres monotone subsequence theorem",
+   "entryDescription": "Pigeonhole using increasing/decreasing subsequence lengths; poset-chain/antichain formulation; permutation diagram/partition argument.",
+   "level": "School–undergraduate",
+   "routeTitle": "Pigeonhole using increasing/decreasing subsequence lengths",
+   "currentSketch": "For each sequence position k, let f(k) be the length of the longest increasing subsequence ending at a_k. If any f(k)=n+1, the theorem follows. Otherwise f takes at most n values among n²+1 positions, so n+1 positions k₁<⋯<kₙ₊₁ share one value. Their entries must be strictly decreasing: if i<j and a_{k_i}<a_{k_j}, an increasing subsequence ending at k_i extends to k_j, contradicting equal f-values.",
+   "existingReferences": [
+    {
+     "label": "Erdős–Szekeres theorem notes",
+     "url": "https://mathweb.ucsd.edu/~jverstra/erdos-szekeres.pdf",
+     "locator": "Proof of the Erdős–Szekeres theorem; compare with rank-pair proof"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered PDF page; mathematics rendered as LaTeX-style text. Source wording and order kept (the source's 'If f(k) = n+1 for any k' is as printed). Source: The Erdős–Szekeres Theorem (one-page note, J. Verstraete's UCSD course files; author not named on the page) — Page 1: theorem statement, Remark, and 'Proof of the Erdős–Szekeres Theorem' (define f(k) = length of l"
+  },
+  {
+   "routeId": "110-r2",
+   "entryId": 110,
+   "entryName": "Erdős–Szekeres monotone subsequence theorem",
+   "entryDescription": "Pigeonhole using increasing/decreasing subsequence lengths; poset-chain/antichain formulation; permutation diagram/partition argument.",
+   "level": "School–undergraduate",
+   "routeTitle": "poset-chain/antichain formulation",
+   "currentSketch": "Order pairs of rank data (longest increasing ending at i, longest decreasing ending at i). Distinct sequence entries make these pairs distinct: if i<j and a_i<a_j the increasing rank grows; if a_i>a_j the decreasing rank grows. With no monotone subsequence of length r or s, only (r−1)(s−1) rank pairs exist.",
+   "existingReferences": [
+    {
+     "label": "Erdős–Szekeres theorem notes",
+     "url": "https://mathweb.ucsd.edu/~jverstra/erdos-szekeres.pdf",
+     "locator": "Proof of the Erdős–Szekeres theorem; compare with rank-pair proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "110-r3",
+   "entryId": 110,
+   "entryName": "Erdős–Szekeres monotone subsequence theorem",
+   "entryDescription": "Pigeonhole using increasing/decreasing subsequence lengths; poset-chain/antichain formulation; permutation diagram/partition argument.",
+   "level": "School–undergraduate",
+   "routeTitle": "permutation diagram/partition argument",
+   "currentSketch": "Represent a permutation by points (i,π(i)). A long increasing subsequence is a chain in coordinatewise order, while a decreasing subsequence is an antichain. Dilworth/Mirsky or the associated insertion/Young-diagram decomposition yields the same product bound.",
+   "existingReferences": [
+    {
+     "label": "Erdős–Szekeres theorem notes",
+     "url": "https://mathweb.ucsd.edu/~jverstra/erdos-szekeres.pdf",
+     "locator": "Proof of the Erdős–Szekeres theorem; compare with rank-pair proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "111-r1",
+   "entryId": 111,
+   "entryName": "The sum of reciprocals of the primes diverges",
+   "entryDescription": "Euler product and divergence of the harmonic series; Erdős's elementary counting contradiction; compare prime-factor decompositions of integers with a hypothetical convergent reciprocal-prime sum.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Euler product and divergence of the harmonic series",
+   "currentSketch": "For each x, the finite Euler product P_x=∏_{p≤x}(1−1/p)^{-1} expands as a sum over integers whose prime factors are at most x, so P_x≥H_x and is unbounded. If Σ_p 1/p converged, then log P_x=Σ_{p≤x}log(1+1/(p−1)) would stay bounded, since log(1+u)≤u and 1/(p−1)≤2/p for p≥2. Thus P_x would be bounded, contradiction; hence Σ_p1/p diverges. This follows the source’s Euler-product/harmonic-series argument, using the corrected harmless constant bound for the logarithm.",
+   "existingReferences": [
+    {
+     "label": "HMC, Sum of Prime Reciprocals",
+     "url": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+     "locator": "Euler product argument; for Erdős proof see Mathlib documentation “SumPrimeReciprocals,” references"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures omitted. This passage is a short proof sketch via the logarithm of Euler's product formula, not a complete proof; it relies on Euler's Product Formula and the divergence of the harmonic series stated elsewhere, so the full route is only sketched. Superscript/format of 'Log(p/p-1)' is as printed. Source: Sum of Prime Recip"
+  },
+  {
+   "routeId": "111-r2",
+   "entryId": 111,
+   "entryName": "The sum of reciprocals of the primes diverges",
+   "entryDescription": "Euler product and divergence of the harmonic series; Erdős's elementary counting contradiction; compare prime-factor decompositions of integers with a hypothetical convergent reciprocal-prime sum.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Erdős's elementary counting contradiction",
+   "currentSketch": "Assume ∑_p1/p converges and choose y so the tail sum over p>y is <1/2. Integers ≤x with a prime factor >y are at most x∑_{p>y,p≤x}1/p<x/2; those with all prime factors among the finitely many primes ≤y are O((log x)^k)=o(x). These cannot account for all x integers, contradiction.",
+   "existingReferences": [
+    {
+     "label": "HMC, Sum of Prime Reciprocals",
+     "url": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+     "locator": "Euler product argument; for Erdős proof see Mathlib documentation “SumPrimeReciprocals,” references"
+    },
+    {
+     "label": "Mathlib documentation, SumPrimeReciprocals",
+     "url": "https://math.iisc.ac.in/~gadgil/PfsProgs25doc/Mathlib/NumberTheory/SumPrimeReciprocals.html",
+     "locator": "Mathlib module overview and theorem `Nat.Primes.not_summable_one_div`: explicitly attributes the proof to Erdős, following Proofs from THE BOOK."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "111-r3",
+   "entryId": 111,
+   "entryName": "The sum of reciprocals of the primes diverges",
+   "entryDescription": "Euler product and divergence of the harmonic series; Erdős's elementary counting contradiction; compare prime-factor decompositions of integers with a hypothetical convergent reciprocal-prime sum.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "compare prime-factor decompositions of integers with a hypothetical convergent reciprocal-prime sum",
+   "currentSketch": "For finite primes p≤x, Euler’s finite product ∏(1−1/p)^{-1} expands into reciprocals of integers all of whose prime factors are ≤x. It dominates the harmonic sum up to x. If ∑1/p converged, these products would stay bounded (log product=∑1/p+O(∑1/p²)), contradicting divergence of H_x.",
+   "existingReferences": [
+    {
+     "label": "HMC, Sum of Prime Reciprocals",
+     "url": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+     "locator": "Euler product argument; for Erdős proof see Mathlib documentation “SumPrimeReciprocals,” references"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "112-r1",
+   "entryId": 112,
+   "entryName": "Wallis product for π",
+   "entryDescription": "Integrate powers of sine/cosine and use recurrence; compare central binomial coefficients; beta/gamma integrals.",
+   "level": "Undergraduate",
+   "routeTitle": "Integrate powers of sine/cosine and use recurrence",
+   "currentSketch": "Set I_m=∫_0^{π/2}sin^m x dx. Integration by parts gives I_m=(m−1)I_{m−2}/m, with I_0=π/2, I_1=1. Since sin^{2n+1}≤sin^{2n}≤sin^{2n−1}, recurrence and a squeeze give (2·4···2n)/(1·3···(2n−1))∼√(πn), equivalent to Wallis’ product.",
+   "existingReferences": [
+    {
+     "label": "NIST Digital Library of Mathematical Functions",
+     "url": "https://dlmf.nist.gov/5.12",
+     "locator": "§5.12, beta function and Wallis integral/product identities"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "112-r2",
+   "entryId": 112,
+   "entryName": "Wallis product for π",
+   "entryDescription": "Integrate powers of sine/cosine and use recurrence; compare central binomial coefficients; beta/gamma integrals.",
+   "level": "Undergraduate",
+   "routeTitle": "compare central binomial coefficients",
+   "currentSketch": "Set I_m=∫_0^{π/2}sin^m x dx. Integration by parts gives I_m=(m−1)I_{m−2}/m, with I_0=π/2, I_1=1. Since sin^{2n+1}≤sin^{2n}≤sin^{2n−1}, recurrence and a squeeze give (2·4···2n)/(1·3···(2n−1))∼√(πn), equivalent to Wallis’ product.",
+   "existingReferences": [
+    {
+     "label": "NIST Digital Library of Mathematical Functions",
+     "url": "https://dlmf.nist.gov/5.12",
+     "locator": "§5.12, beta function and Wallis integral/product identities"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "112-r3",
+   "entryId": 112,
+   "entryName": "Wallis product for π",
+   "entryDescription": "Integrate powers of sine/cosine and use recurrence; compare central binomial coefficients; beta/gamma integrals.",
+   "level": "Undergraduate",
+   "routeTitle": "beta/gamma integrals",
+   "currentSketch": "Set I_m=∫_0^{π/2}sin^m x dx. Integration by parts gives I_m=(m−1)I_{m−2}/m, with I_0=π/2, I_1=1. Since sin^{2n+1}≤sin^{2n}≤sin^{2n−1}, recurrence and a squeeze give (2·4···2n)/(1·3···(2n−1))∼√(πn), equivalent to Wallis’ product.",
+   "existingReferences": [
+    {
+     "label": "NIST Digital Library of Mathematical Functions",
+     "url": "https://dlmf.nist.gov/5.12",
+     "locator": "§5.12, beta function and Wallis integral/product identities"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "113-r1",
+   "entryId": 113,
+   "entryName": "Weierstrass approximation theorem",
+   "entryDescription": "Bernstein polynomials and probabilistic binomial concentration; Stone–Weierstrass algebra/separation theorem; constructive positive-kernel approximation.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Bernstein polynomials and probabilistic binomial concentration",
+   "currentSketch": "For continuous f on [0,1], let B_n f be its Bernstein polynomial. Uniform continuity gives |f(x)−f(a)|≤ε when |x−a|≤δ; elsewhere bound it by 2M(x−a)²/δ², where M=||f||∞. Positivity and linearity of B_n then bound |B_nf(a)−f(a)| by ε plus (2M/δ²)B_n[(x−a)²](a). The Bernstein second-moment identity gives B_n[(x−a)²](a)=a(1−a)/n≤1/(4n), uniformly in a; hence B_nf→f uniformly.",
+   "existingReferences": [
+    {
+     "label": "UCLA, Weierstrass approximation theorem lecture materials",
+     "url": "https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf",
+     "locator": "Bernstein polynomial proof, section on Weierstrass approximation"
+    },
+    {
+     "label": "D. Levy, Numerical Analysis notes: constructive Weierstrass approximation",
+     "url": "https://math.umd.edu/~dlevy/classes/amsc460/na-notes.pdf",
+     "locator": "§4.1, Bernstein polynomials and proof of Weierstrass approximation (supports Bernstein approach; not Stone–Weierstrass or positive-kernel variants)"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered page images (notes pp. 58–62); wording and order follow the source, mathematics as LaTeX-style text; the example and plot (Example 4.2, Figure 4.1) are replaced by a bracketed placeholder (bracket text is the assistant's). The proof as printed has small slips kept as-is (e.g. 'a−a² ' where max (a − a²) = 1/4; (4.5) with '≤ ε'). Route caveat: the source's pr"
+  },
+  {
+   "routeId": "113-r2",
+   "entryId": 113,
+   "entryName": "Weierstrass approximation theorem",
+   "entryDescription": "Bernstein polynomials and probabilistic binomial concentration; Stone–Weierstrass algebra/separation theorem; constructive positive-kernel approximation.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Stone–Weierstrass algebra/separation theorem",
+   "currentSketch": "A subalgebra of C(K) containing constants and separating points is uniformly dense: its closure is closed under |f| via polynomial approximation to absolute value, hence under max/min; finite-cover patching then approximates any continuous target uniformly. This proves a general theorem, of which Weierstrass is a special case.",
+   "existingReferences": [
+    {
+     "label": "UCLA, Weierstrass approximation theorem lecture materials",
+     "url": "https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf",
+     "locator": "Bernstein polynomial proof, section on Weierstrass approximation"
+    },
+    {
+     "label": "D. Levy, Numerical Analysis notes: constructive Weierstrass approximation",
+     "url": "https://math.umd.edu/~dlevy/classes/amsc460/na-notes.pdf",
+     "locator": "§4.1, Bernstein polynomials and proof of Weierstrass approximation (supports Bernstein approach; not Stone–Weierstrass or positive-kernel variants)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "113-r3",
+   "entryId": 113,
+   "entryName": "Weierstrass approximation theorem",
+   "entryDescription": "Bernstein polynomials and probabilistic binomial concentration; Stone–Weierstrass algebra/separation theorem; constructive positive-kernel approximation.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "constructive positive-kernel approximation",
+   "currentSketch": "Choose positive kernels concentrating at 0 and form polynomial/finite linear combinations of translates or Bernstein averages of f. Uniform continuity makes the near part small and kernel tail mass tends to zero; hence the approximants converge uniformly.",
+   "existingReferences": [
+    {
+     "label": "UCLA, Weierstrass approximation theorem lecture materials",
+     "url": "https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf",
+     "locator": "Bernstein polynomial proof, section on Weierstrass approximation"
+    },
+    {
+     "label": "D. Levy, Numerical Analysis notes: constructive Weierstrass approximation",
+     "url": "https://math.umd.edu/~dlevy/classes/amsc460/na-notes.pdf",
+     "locator": "§4.1, Bernstein polynomials and proof of Weierstrass approximation (supports Bernstein approach; not Stone–Weierstrass or positive-kernel variants)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "114-r1",
+   "entryId": 114,
+   "entryName": "Riemann mapping theorem",
+   "entryDescription": "Extremal derivative/maximization method; normal-family/compactness method; Green-function or potential-theoretic approach in standard variants.",
+   "level": "Graduate",
+   "routeTitle": "Extremal derivative/maximization method",
+   "currentSketch": "Fix a simply connected region Ω≠ℂ and z₀∈Ω and maximize |f′(z₀)| over the univalent maps Ω→D. The family is nonempty (a square-root branch of z−a, with the two branches having disjoint images, composed with an inversion) and the derivative is bounded by the Cauchy estimate. Take a maximizing sequence; the family is bounded by 1, so Montel gives a locally uniformly convergent subsequence, and Hurwitz makes the limit univalent since its derivative at z₀ is nonzero. Composing with a disc automorphism shows the maximizer sends z₀ to 0, and rotating makes f′(z₀)>0. If f(Ω)≠D, a univalent map g on f(Ω) with g(0)=0 and |g′(0)|>1 (Lecture 17) gives g∘f with larger derivative, a contradiction, so f is onto. Uniqueness follows from the Schwarz lemma.",
+   "existingReferences": [
+    {
+     "label": "UC San Diego, Complex Analysis lecture notes",
+     "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+     "locator": "Lectures 18–19, extremal-function proof of Riemann mapping theorem"
+    },
+    {
+     "label": "Chennai Mathematical Institute, Graduate Complex Analysis 2017, Lecture 18",
+     "url": "https://www.cmi.ac.in/~pramath/GradComplex_2017/Lectures/Lecture18.pdf",
+     "locator": "Lecture 18, §1.1 (Lemma 1.1.1, §1.1.2 solution, Lemma 1.1.2) and §1.2 Theorem 1.2.1; uses Lemma 2.2.1 of Lecture 17 (not reproved here), Montel (Lecture 16), Hurwitz and the Schwarz lemma."
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Transcribed by the assistant from the rendered PDF pages (mathematics typeset as LaTeX; wording, numbering and order follow the source). Source typos retained: 'Exremal' (§1.1 heading), '= set' (in 1.1.2, for $\\emptyset$), 'contradicton', '$e^{\\theta}=1$' in the uniqueness proof (printed so), 'Then $f=\\lim k\\to\\infty f_{n_k}$' as printed. Lemma 2.2.1 of Lecture 17 is quoted by the source, not prov"
+  },
+  {
+   "routeId": "114-r2",
+   "entryId": 114,
+   "entryName": "Riemann mapping theorem",
+   "entryDescription": "Extremal derivative/maximization method; normal-family/compactness method; Green-function or potential-theoretic approach in standard variants.",
+   "level": "Graduate",
+   "routeTitle": "normal-family/compactness method",
+   "currentSketch": "Normalize injective maps f:Ω→D by f(z₀)=0 and f′(z₀)>0. The family is nonempty and normal; a locally uniform limit remains injective unless constant. Maximize f′(z₀); if the image omits a point, compose with a disk automorphism and a square-root map to build a competitor with larger derivative, contradiction.",
+   "existingReferences": [
+    {
+     "label": "UC San Diego, Complex Analysis lecture notes",
+     "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+     "locator": "Lectures 18–19, extremal-function proof of Riemann mapping theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "114-r3",
+   "entryId": 114,
+   "entryName": "Riemann mapping theorem",
+   "entryDescription": "Extremal derivative/maximization method; normal-family/compactness method; Green-function or potential-theoretic approach in standard variants.",
+   "level": "Graduate",
+   "routeTitle": "Green-function or potential-theoretic approach in standard variants",
+   "currentSketch": "Solve the Dirichlet problem for the Green function G(·,z₀) on the simply connected proper domain. A harmonic conjugate exists because Ω is simply connected; exponentiating −G−iG* gives a holomorphic map to the disk with a simple zero at z₀. The maximum principle and argument principle show it is a conformal bijection.",
+   "existingReferences": [
+    {
+     "label": "UC San Diego, Complex Analysis lecture notes",
+     "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+     "locator": "Lectures 18–19, extremal-function proof of Riemann mapping theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

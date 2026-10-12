@@ -1,0 +1,106 @@
+{
+ "24-r1": {
+  "routeId": "24-r1",
+  "sourceTitle": "The Geometry Junkyard: Euler's Formula (Proof 2: Induction on Faces)",
+  "sourceUrl": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+  "locator": "Page 'Euler's Formula', Proof 2: Induction on Faces",
+  "routeMatch": "verified",
+  "proofSketch": "Induct on the number of faces of a connected planar graph $G$. If $G$ has one face it is acyclic (Jordan curve theorem) and connected, hence a tree with $E=V-1$, so $V-E+F=2$. Otherwise pick an edge $e$ separating two different faces and delete it. Then $e$ appears only once on each adjacent face boundary, so any path through $e$ can be rerouted around one of the faces and the graph stays connected. The deletion lowers both $E$ and $F$ by one, leaving $V-E+F$ unchanged, so the formula follows by induction.",
+  "images": [
+   {
+    "file": "24-r1-1.png",
+    "caption": "Eppstein, Euler's Formula, Proof 2: Induction on Faces (heading, introductory sentence and argument paragraph; author's commentary omitted)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "attribution": "David Eppstein, The Geometry Junkyard (UC Irvine), 'Euler's Formula', Proof 2",
+  "transcriptionNotes": "Screenshot crop of the rendered page; the author's following commentary paragraph is excluded. No licence stated on the page.",
+  "license": null,
+  "licenseUrl": null,
+  "reasonNotReproduced": null
+ },
+ "24-r3": {
+  "routeId": "24-r3",
+  "sourceTitle": "Euler characteristic (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Euler_characteristic",
+  "locator": "Sections 'Polyhedra' and 'Properties > Homotopy invariance'",
+  "routeMatch": "verified",
+  "proofSketch": "The Euler characteristic of a polyhedron's surface is defined as $\\chi=V-E+F$. It is a homotopy invariant because it is computed from homology, which is homotopy invariant. A convex polyhedron is homeomorphic to the 3-ball, so its surface is homeomorphic to the 2-sphere, whose Euler characteristic is 2. Hence $V-E+F=2$ for every convex polyhedron.",
+  "images": [
+   {
+    "file": "24-r3-1.png",
+    "caption": "Wikipedia, Euler characteristic, 'Polyhedra': definition chi = V-E+F and statement that it equals 2 for convex polyhedra, corresponding to the sphere"
+   },
+   {
+    "file": "24-r3-2.png",
+    "caption": "Wikipedia, Euler characteristic, 'Homotopy invariance': convex polyhedron surface is homotopy equivalent to S^2, so chi = 2"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Euler characteristic', English Wikipedia, text under CC BY-SA 4.0",
+  "transcriptionNotes": "Screenshot crops of rendered page; the value chi(S^2)=2 itself is taken from homology (not re-derived on the page).",
+  "reasonNotReproduced": null
+ },
+ "25-r1": {
+  "routeId": "25-r1",
+  "sourceTitle": "Cantor's diagonal argument (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument",
+  "locator": "Section 'Uncountable set' (lemma and proof by contradiction); section 'Real numbers' for the passage to R",
+  "routeMatch": "verified",
+  "proofSketch": "Let $T$ be the set of infinite binary sequences and suppose $s_1,s_2,\\dots$ enumerates it. Build $s$ by taking its $n$-th digit to be the complement of the $n$-th digit of $s_n$. Then $s\\in T$ differs from every $s_n$ in the $n$-th place, so $s$ is not in the list, contradicting the assumption that the list is complete. Hence $T$ is uncountable. The uncountability of $\\mathbb R$ then follows by injecting $T$ into $\\mathbb R$ (reading a sequence as a decimal fraction $0.t$).",
+  "images": [
+   {
+    "file": "25-r1-1.png",
+    "caption": "Wikipedia, Cantor's diagonal argument, section 'Uncountable set': lemma, worked example, and proof that T is uncountable (side figures included in crop)"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Cantor's diagonal argument', English Wikipedia, CC BY-SA 4.0",
+  "transcriptionNotes": "Screenshot crop; the step from T to R is on the same page in the following section 'Real numbers' (see image 25-r3-1).",
+  "reasonNotReproduced": null
+ },
+ "25-r2": {
+  "routeId": "25-r2",
+  "sourceTitle": "Cantor's first set theory article (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cantor%27s_first_set_theory_article",
+  "locator": "Section 'The proofs' > 'Second theorem' (nested intervals), with the uncountability corollary in the section 'Proof of Cantor's uncountability theorem'",
+  "routeMatch": "verified",
+  "proofSketch": "Given any sequence $x_1,x_2,\\dots$ and an interval $[a,b]$, take the first two terms lying in $(a,b)$ as the endpoints $a_1<b_1$, then the first two terms in $(a_1,b_1)$ as $a_2<b_2$, and so on, producing nested open intervals with $a_n$ increasing and $b_n$ decreasing. If the process stops, the last interval contains at most one $x_n$, so another point of it is missing from the sequence. Otherwise let $a_\\infty=\\lim a_n$, $b_\\infty=\\lim b_n$. By induction $(a_n,b_n)$ excludes $x_1,\\dots,x_{2n}$, so $x_n\\notin(a_n,b_n)$. If $a_\\infty=b_\\infty$ this common point lies in every interval, so it is not on the list; if $a_\\infty<b_\\infty$ every point of $[a_\\infty,b_\\infty]$ is missing. Applying this to a supposed enumeration of $[a,b]$ gives the uncountability.",
+  "images": [
+   {
+    "file": "25-r2-1.png",
+    "caption": "Wikipedia, Cantor's first set theory article, 'Second theorem': nested-interval construction and the three cases (the two collapsible boxes, including the deduction of uncountability, are collapsed on the page and not shown)"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, \"Cantor's first set theory article\", English Wikipedia, CC BY-SA 4.0",
+  "transcriptionNotes": "Intervals are built from the first two terms in the current interval (Cantor's 1874 construction) rather than by choosing a subinterval avoiding x_n, but it is a nested-interval argument. The corollary that [a,b] is uncountable is a collapsed paragraph on the page, not in the image.",
+  "reasonNotReproduced": null
+ },
+ "25-r3": {
+  "routeId": "25-r3",
+  "sourceTitle": "Cantor's diagonal argument (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cantor%27s_diagonal_argument",
+  "locator": "Sections 'Uncountable set' and 'Real numbers'",
+  "routeMatch": "uncertain",
+  "proofSketch": "The set $T$ of infinite binary sequences is uncountable by the diagonal argument. To transfer this to the reals, define an injection $f:T\\to\\mathbb R$ by reading a binary string as a decimal fraction, $f(t)=0.t$, which sends different strings to different numbers. Since $T$ is uncountable, its image is an uncountable subset of $\\mathbb R$, so $\\mathbb R$ is uncountable. A bijection $T\\to\\mathbb R$ can then be built by Cantor's method of removing countable subsets.",
+  "images": [
+   {
+    "file": "25-r3-1.png",
+    "caption": "Wikipedia, Cantor's diagonal argument, section 'Real numbers': injection from binary strings into R and uncountability of R"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Cantor's diagonal argument', English Wikipedia, CC BY-SA 4.0",
+  "transcriptionNotes": "The diagonal part is shown in 25-r1-1.png.",
+  "reasonNotReproduced": "The source injects binary sequences into R by reading them as decimal fractions with digits 0/1 (and notes the sequences are mapped to base-b numbers), not via ternary expansions with digits 0 and 2 as in the route sketch; the structure (diagonalization then injective map into R) is the same but the particular ternary 0/2 injection is not on the page."
+ }
+}

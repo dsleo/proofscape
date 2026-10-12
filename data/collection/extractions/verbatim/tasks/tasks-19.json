@@ -1,0 +1,490 @@
+{
+ "agent": 19,
+ "tasks": [
+  {
+   "routeId": "137-r1",
+   "entryId": 137,
+   "entryName": "Euler characteristic of a finite chain complex equals alternating homology dimension",
+   "entryDescription": "Rank-nullity cancellations; split each chain group into boundaries, homology representatives, and complements; homological algebra exact-sequence argument.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Rank-nullity cancellations",
+   "currentSketch": "Write Z_k=ker∂_k and B_k=im∂_{k+1}. Rank-nullity gives dim C_k=dim B_{k−1}+dim H_k+dim B_k. Multiply by (−1)^k and sum over k; boundary dimensions cancel pairwise, leaving Σ(−1)^k dim C_k=Σ(−1)^k dim H_k.",
+   "existingReferences": [
+    {
+     "label": "Weibel, An Introduction to Homological Algebra",
+     "url": "https://doi.org/10.1017/CBO9781139644136",
+     "locator": "Chapter 1, chain complexes, Euler characteristic/rank identities"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "137-r2",
+   "entryId": 137,
+   "entryName": "Euler characteristic of a finite chain complex equals alternating homology dimension",
+   "entryDescription": "Rank-nullity cancellations; split each chain group into boundaries, homology representatives, and complements; homological algebra exact-sequence argument.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "split each chain group into boundaries, homology representatives, and complements",
+   "currentSketch": "Write Z_k=ker∂_k and B_k=im∂_{k+1}. Rank-nullity gives dim C_k=dim B_{k−1}+dim H_k+dim B_k. Multiply by (−1)^k and sum over k; boundary dimensions cancel pairwise, leaving Σ(−1)^k dim C_k=Σ(−1)^k dim H_k.",
+   "existingReferences": [
+    {
+     "label": "Weibel, An Introduction to Homological Algebra",
+     "url": "https://doi.org/10.1017/CBO9781139644136",
+     "locator": "Chapter 1, chain complexes, Euler characteristic/rank identities"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "137-r3",
+   "entryId": 137,
+   "entryName": "Euler characteristic of a finite chain complex equals alternating homology dimension",
+   "entryDescription": "Rank-nullity cancellations; split each chain group into boundaries, homology representatives, and complements; homological algebra exact-sequence argument.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "homological algebra exact-sequence argument",
+   "currentSketch": "Write Z_k=ker∂_k and B_k=im∂_{k+1}. Rank-nullity gives dim C_k=dim B_{k−1}+dim H_k+dim B_k. Multiply by (−1)^k and sum over k; boundary dimensions cancel pairwise, leaving Σ(−1)^k dim C_k=Σ(−1)^k dim H_k.",
+   "existingReferences": [
+    {
+     "label": "Weibel, An Introduction to Homological Algebra",
+     "url": "https://doi.org/10.1017/CBO9781139644136",
+     "locator": "Chapter 1, chain complexes, Euler characteristic/rank identities"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "138-r1",
+   "entryId": 138,
+   "entryName": "Cantor–Bernstein–Schröder theorem",
+   "entryDescription": "Iterative decomposition into alternating chains; maximal invariant subset construction; Boolean-algebra/fixed-point formulation.",
+   "level": "Undergraduate",
+   "routeTitle": "Iterative decomposition into alternating chains",
+   "currentSketch": "Given injections f:A→B and g:B→A, let A₀=A\\g(B), A_{n+1}=g(f(A_n)), and C=⋃A_n. Map a∈C by f(a), and a∉C by the unique inverse g^{-1}(a). The pieces are disjoint and cover, and this piecewise map is a bijection A→B.",
+   "existingReferences": [
+    {
+     "label": "Halmos, Naive Set Theory",
+     "url": "https://doi.org/10.1007/978-1-4684-9446-5",
+     "locator": "Chapter on equivalent sets, Cantor–Bernstein theorem proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "138-r2",
+   "entryId": 138,
+   "entryName": "Cantor–Bernstein–Schröder theorem",
+   "entryDescription": "Iterative decomposition into alternating chains; maximal invariant subset construction; Boolean-algebra/fixed-point formulation.",
+   "level": "Undergraduate",
+   "routeTitle": "maximal invariant subset construction",
+   "currentSketch": "Given injections f:A→B and g:B→A, let A₀=A\\g(B), A_{n+1}=g(f(A_n)), and C=⋃A_n. Map a∈C by f(a), and a∉C by the unique inverse g^{-1}(a). The pieces are disjoint and cover, and this piecewise map is a bijection A→B.",
+   "existingReferences": [
+    {
+     "label": "Halmos, Naive Set Theory",
+     "url": "https://doi.org/10.1007/978-1-4684-9446-5",
+     "locator": "Chapter on equivalent sets, Cantor–Bernstein theorem proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "138-r3",
+   "entryId": 138,
+   "entryName": "Cantor–Bernstein–Schröder theorem",
+   "entryDescription": "Iterative decomposition into alternating chains; maximal invariant subset construction; Boolean-algebra/fixed-point formulation.",
+   "level": "Undergraduate",
+   "routeTitle": "Boolean-algebra/fixed-point formulation",
+   "currentSketch": "Given injections f:A→B and g:B→A, let A₀=A\\g(B), A_{n+1}=g(f(A_n)), and C=⋃A_n. Map a∈C by f(a), and a∉C by the unique inverse g^{-1}(a). The pieces are disjoint and cover, and this piecewise map is a bijection A→B.",
+   "existingReferences": [
+    {
+     "label": "Halmos, Naive Set Theory",
+     "url": "https://doi.org/10.1007/978-1-4684-9446-5",
+     "locator": "Chapter on equivalent sets, Cantor–Bernstein theorem proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "139-r1",
+   "entryId": 139,
+   "entryName": "Completeness theorem for first-order logic",
+   "entryDescription": "Henkin term-model construction; semantic tableaux; sequent-calculus cut-elimination route.",
+   "level": "Graduate",
+   "routeTitle": "Henkin term-model construction",
+   "currentSketch": "For a consistent theory, extend the language with countably many fresh constants and Henkin witness axioms, preserving consistency, then complete it by deciding each sentence. The quotient of closed terms by provable equality is a model; induction on formulas verifies the truth lemma, so every consistent sentence has a model and semantic consequence implies provability.",
+   "existingReferences": [
+    {
+     "label": "Stony Brook, Completeness Theorem for First-Order Logic",
+     "url": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+     "locator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "139-r2",
+   "entryId": 139,
+   "entryName": "Completeness theorem for first-order logic",
+   "entryDescription": "Henkin term-model construction; semantic tableaux; sequent-calculus cut-elimination route.",
+   "level": "Graduate",
+   "routeTitle": "semantic tableaux",
+   "currentSketch": "For a consistent theory, extend the language with countably many fresh constants and Henkin witness axioms, preserving consistency, then complete it by deciding each sentence. The quotient of closed terms by provable equality is a model; induction on formulas verifies the truth lemma, so every consistent sentence has a model and semantic consequence implies provability.",
+   "existingReferences": [
+    {
+     "label": "Stony Brook, Completeness Theorem for First-Order Logic",
+     "url": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+     "locator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "139-r3",
+   "entryId": 139,
+   "entryName": "Completeness theorem for first-order logic",
+   "entryDescription": "Henkin term-model construction; semantic tableaux; sequent-calculus cut-elimination route.",
+   "level": "Graduate",
+   "routeTitle": "sequent-calculus cut-elimination route",
+   "currentSketch": "For a consistent theory, extend the language with countably many fresh constants and Henkin witness axioms, preserving consistency, then complete it by deciding each sentence. The quotient of closed terms by provable equality is a model; induction on formulas verifies the truth lemma, so every consistent sentence has a model and semantic consequence implies provability.",
+   "existingReferences": [
+    {
+     "label": "Stony Brook, Completeness Theorem for First-Order Logic",
+     "url": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+     "locator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "140-r1",
+   "entryId": 140,
+   "entryName": "Gödel's incompleteness theorem (first theorem, standard effective theories)",
+   "entryDescription": "Gödel sentence/diagonalization; Rosser sentence removing ω-consistency; computability/recursion-theoretic formulations. Treat the precise theory hypotheses as part of the theorem.",
+   "level": "Graduate",
+   "routeTitle": "Gödel sentence/diagonalization",
+   "currentSketch": "For a consistent theory, extend the language with countably many fresh constants and Henkin witness axioms, preserving consistency, then complete it by deciding each sentence. The quotient of closed terms by provable equality is a model; induction on formulas verifies the truth lemma, so every consistent sentence has a model and semantic consequence implies provability.",
+   "existingReferences": [
+    {
+     "label": "Boolos, Burgess & Jeffrey, Computability and Logic",
+     "url": "https://doi.org/10.1017/CBO9780511804079",
+     "locator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "140-r2",
+   "entryId": 140,
+   "entryName": "Gödel's incompleteness theorem (first theorem, standard effective theories)",
+   "entryDescription": "Gödel sentence/diagonalization; Rosser sentence removing ω-consistency; computability/recursion-theoretic formulations. Treat the precise theory hypotheses as part of the theorem.",
+   "level": "Graduate",
+   "routeTitle": "Rosser sentence removing ω-consistency",
+   "currentSketch": "For a consistent theory, extend the language with countably many fresh constants and Henkin witness axioms, preserving consistency, then complete it by deciding each sentence. The quotient of closed terms by provable equality is a model; induction on formulas verifies the truth lemma, so every consistent sentence has a model and semantic consequence implies provability.",
+   "existingReferences": [
+    {
+     "label": "Boolos, Burgess & Jeffrey, Computability and Logic",
+     "url": "https://doi.org/10.1017/CBO9780511804079",
+     "locator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "140-r3",
+   "entryId": 140,
+   "entryName": "Gödel's incompleteness theorem (first theorem, standard effective theories)",
+   "entryDescription": "Gödel sentence/diagonalization; Rosser sentence removing ω-consistency; computability/recursion-theoretic formulations. Treat the precise theory hypotheses as part of the theorem.",
+   "level": "Graduate",
+   "routeTitle": "computability/recursion-theoretic formulations. Treat the precise theory hypotheses as part of the theorem",
+   "currentSketch": "For a consistent theory, extend the language with countably many fresh constants and Henkin witness axioms, preserving consistency, then complete it by deciding each sentence. The quotient of closed terms by provable equality is a model; induction on formulas verifies the truth lemma, so every consistent sentence has a model and semantic consequence implies provability.",
+   "existingReferences": [
+    {
+     "label": "Boolos, Burgess & Jeffrey, Computability and Logic",
+     "url": "https://doi.org/10.1017/CBO9780511804079",
+     "locator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "141-r1",
+   "entryId": 141,
+   "entryName": "Fundamental theorem of arithmetic for algebraic number fields fails in general; ideal factorization restores uniqueness",
+   "entryDescription": "Dedekind ideal factorization; valuations/localization at prime ideals; geometry of numbers for class-group consequences. Include only as a theorem about ideals, not as a second proof of integer UFD.",
+   "level": "Graduate",
+   "routeTitle": "Dedekind ideal factorization",
+   "currentSketch": "In the ring of integers O_K of a number field, show O_K is a Dedekind domain: it is Noetherian, integrally closed, and every nonzero prime ideal is maximal. For a nonzero ideal I, localize at each nonzero prime P; the DVR O_{K,P} gives I_P=P^{v_P(I)}O_{K,P}. Only finitely many exponents are nonzero, and equality can be checked after localization, giving the unique factorization I=∏P^{v_P(I)}.",
+   "existingReferences": [
+    {
+     "label": "Milne, Algebraic Number Theory",
+     "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+     "locator": "Chapter 3, Dedekind domains and unique factorization of nonzero ideals"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "141-r2",
+   "entryId": 141,
+   "entryName": "Fundamental theorem of arithmetic for algebraic number fields fails in general; ideal factorization restores uniqueness",
+   "entryDescription": "Dedekind ideal factorization; valuations/localization at prime ideals; geometry of numbers for class-group consequences. Include only as a theorem about ideals, not as a second proof of integer UFD.",
+   "level": "Graduate",
+   "routeTitle": "valuations/localization at prime ideals",
+   "currentSketch": "Localize O_K at each nonzero prime ideal P. The local ring is a discrete valuation ring, so every nonzero ideal becomes P^{v_P(I)} locally. The exponents v_P(I) are uniquely determined and vanish for all but finitely many P; intersecting the local equalities recovers I=∏P^{v_P(I)}. This is the local-valuation form of the same ideal-factorization proof, not an independent theorem-level result.",
+   "existingReferences": [
+    {
+     "label": "Milne, Algebraic Number Theory",
+     "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+     "locator": "Chapter 3, Dedekind domains and unique factorization of nonzero ideals"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "141-r3",
+   "entryId": 141,
+   "entryName": "Fundamental theorem of arithmetic for algebraic number fields fails in general; ideal factorization restores uniqueness",
+   "entryDescription": "Dedekind ideal factorization; valuations/localization at prime ideals; geometry of numbers for class-group consequences. Include only as a theorem about ideals, not as a second proof of integer UFD.",
+   "level": "Graduate",
+   "routeTitle": "geometry of numbers for class-group consequences. Include only as a theorem about ideals, not as a second proof of integer UFD",
+   "currentSketch": "Minkowski’s convex body theorem bounds the norm of an ideal-class representative, proving the class group is finite and giving consequences such as criteria for non-UFD behavior. It does not prove unique factorization of ideals; classify this as a consequence/application, not as a second proof route for ideal factorization.",
+   "existingReferences": [
+    {
+     "label": "Milne, Algebraic Number Theory",
+     "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+     "locator": "Chapter 3, Dedekind domains and unique factorization of nonzero ideals"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "142-r1",
+   "entryId": 142,
+   "entryName": "Finite subgroups of a field's multiplicative group are cyclic",
+   "entryDescription": "Choose an element of maximum order and use polynomial root bounds; classify finite abelian groups and compare exponent with group size; roots of unity and the structure theorem.",
+   "level": "Undergraduate",
+   "routeTitle": "Choose an element of maximum order and use polynomial root bounds",
+   "currentSketch": "Let G be finite abelian of exponent m. By the structure theorem it contains an element of order m. Every element is a root of X^m−1, so |G|≤m; Lagrange gives m≤|G|. Equality forces that element’s cyclic subgroup to be all of G.",
+   "existingReferences": [
+    {
+     "label": "Keith Conrad, Finite multiplicative subgroups of a field are cyclic",
+     "url": "https://kconrad.math.uconn.edu/blurbs/grouptheory/finite_subgroups.pdf",
+     "locator": "Proofs using exponent/root bound and finite abelian group decomposition"
+    },
+    {
+     "label": "Keith Conrad, Cyclotomic Extensions",
+     "url": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+     "locator": "Theorem 1.1, pp. 1–2: maximal element order and polynomial-root bound proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "142-r2",
+   "entryId": 142,
+   "entryName": "Finite subgroups of a field's multiplicative group are cyclic",
+   "entryDescription": "Choose an element of maximum order and use polynomial root bounds; classify finite abelian groups and compare exponent with group size; roots of unity and the structure theorem.",
+   "level": "Undergraduate",
+   "routeTitle": "classify finite abelian groups and compare exponent with group size",
+   "currentSketch": "Let G be finite abelian of exponent m. By the structure theorem it contains an element of order m. Every element is a root of X^m−1, so |G|≤m; Lagrange gives m≤|G|. Equality forces that element’s cyclic subgroup to be all of G.",
+   "existingReferences": [
+    {
+     "label": "Keith Conrad, Finite multiplicative subgroups of a field are cyclic",
+     "url": "https://kconrad.math.uconn.edu/blurbs/grouptheory/finite_subgroups.pdf",
+     "locator": "Proofs using exponent/root bound and finite abelian group decomposition"
+    },
+    {
+     "label": "Keith Conrad, Cyclotomic Extensions",
+     "url": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+     "locator": "Theorem 1.1, pp. 1–2; also cites finite abelian group order structure"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "142-r3",
+   "entryId": 142,
+   "entryName": "Finite subgroups of a field's multiplicative group are cyclic",
+   "entryDescription": "Choose an element of maximum order and use polynomial root bounds; classify finite abelian groups and compare exponent with group size; roots of unity and the structure theorem.",
+   "level": "Undergraduate",
+   "routeTitle": "roots of unity and the structure theorem",
+   "currentSketch": "Let G be finite abelian of exponent m. By the structure theorem it contains an element of order m. Every element is a root of X^m−1, so |G|≤m; Lagrange gives m≤|G|. Equality forces that element’s cyclic subgroup to be all of G.",
+   "existingReferences": [
+    {
+     "label": "Keith Conrad, Finite multiplicative subgroups of a field are cyclic",
+     "url": "https://kconrad.math.uconn.edu/blurbs/grouptheory/finite_subgroups.pdf",
+     "locator": "Proofs using exponent/root bound and finite abelian group decomposition"
+    },
+    {
+     "label": "Keith Conrad, Cyclotomic Extensions",
+     "url": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+     "locator": "Theorem 1.1 and opening discussion of roots of unity, pp. 1–2"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "143-r1",
+   "entryId": 143,
+   "entryName": "Uniformization theorem for simply connected Riemann surfaces",
+   "entryDescription": "Classical potential-theoretic/Dirichlet methods; extremal and normal-family arguments; modern Ricci-flow uniformization. The theorem's precise sphere/plane/disk classification and hypotheses matter.",
+   "level": "Graduate",
+   "routeTitle": "Classical potential-theoretic/Dirichlet methods",
+   "currentSketch": "A simply connected Riemann surface is conformally equivalent to the sphere, plane, or disk. Potential-theoretic proofs classify the Green-function/Dirichlet problem as parabolic or hyperbolic; extremal normal-family methods construct a disk uniformizer; Ricci-flow proofs evolve a complete metric toward constant curvature. These are proofs of the classification theorem under different existence/completeness frameworks.",
+   "existingReferences": [
+    {
+     "label": "Forster, Lectures on Riemann Surfaces",
+     "url": "https://doi.org/10.1007/978-1-4684-9934-7",
+     "locator": "Uniformization theorem chapter; classification of simply connected surfaces"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "143-r2",
+   "entryId": 143,
+   "entryName": "Uniformization theorem for simply connected Riemann surfaces",
+   "entryDescription": "Classical potential-theoretic/Dirichlet methods; extremal and normal-family arguments; modern Ricci-flow uniformization. The theorem's precise sphere/plane/disk classification and hypotheses matter.",
+   "level": "Graduate",
+   "routeTitle": "extremal and normal-family arguments",
+   "currentSketch": "A simply connected Riemann surface is conformally equivalent to the sphere, plane, or disk. Potential-theoretic proofs classify the Green-function/Dirichlet problem as parabolic or hyperbolic; extremal normal-family methods construct a disk uniformizer; Ricci-flow proofs evolve a complete metric toward constant curvature. These are proofs of the classification theorem under different existence/completeness frameworks.",
+   "existingReferences": [
+    {
+     "label": "Forster, Lectures on Riemann Surfaces",
+     "url": "https://doi.org/10.1007/978-1-4684-9934-7",
+     "locator": "Uniformization theorem chapter; classification of simply connected surfaces"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "143-r3",
+   "entryId": 143,
+   "entryName": "Uniformization theorem for simply connected Riemann surfaces",
+   "entryDescription": "Classical potential-theoretic/Dirichlet methods; extremal and normal-family arguments; modern Ricci-flow uniformization. The theorem's precise sphere/plane/disk classification and hypotheses matter.",
+   "level": "Graduate",
+   "routeTitle": "modern Ricci-flow uniformization. The theorem's precise sphere/plane/disk classification and hypotheses matter",
+   "currentSketch": "A simply connected Riemann surface is conformally equivalent to the sphere, plane, or disk. Potential-theoretic proofs classify the Green-function/Dirichlet problem as parabolic or hyperbolic; extremal normal-family methods construct a disk uniformizer; Ricci-flow proofs evolve a complete metric toward constant curvature. These are proofs of the classification theorem under different existence/completeness frameworks.",
+   "existingReferences": [
+    {
+     "label": "Forster, Lectures on Riemann Surfaces",
+     "url": "https://doi.org/10.1007/978-1-4684-9934-7",
+     "locator": "Uniformization theorem chapter; classification of simply connected surfaces"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "144-r1",
+   "entryId": 144,
+   "entryName": "Atiyah–Singer index theorem",
+   "entryDescription": "K-theory and cobordism; heat-kernel/supertrace proof; elliptic PDE and symbol classes; mathematical-physics path-integral approaches.",
+   "level": "Graduate",
+   "routeTitle": "K-theory and cobordism",
+   "currentSketch": "The symbol of an elliptic operator defines a class in K⁰(T*M). Topological pushforward (built from Thom isomorphism and Bott periodicity) gives its topological index. Show the analytic index is invariant under symbol homotopy and bordism and agrees on generators; this identifies analytic and topological indices. Cobordism and K-theory are the conceptual proof framework; full details are substantial.",
+   "existingReferences": [
+    {
+     "label": "Atiyah & Singer, The index of elliptic operators on compact manifolds",
+     "url": "https://doi.org/10.1007/BF02592048",
+     "locator": "Original index theorem paper, Part I; proof program, not each later proof"
+    },
+    {
+     "label": "Atiyah & Singer, The Index of Elliptic Operators on Compact Manifolds",
+     "url": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/atiyahsing.pdf",
+     "locator": "Original paper; cite the specific proof section only after checking the PDF. This is an original-theorem source, not evidence for later heat-kernel/path-integral variants."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "144-r2",
+   "entryId": 144,
+   "entryName": "Atiyah–Singer index theorem",
+   "entryDescription": "K-theory and cobordism; heat-kernel/supertrace proof; elliptic PDE and symbol classes; mathematical-physics path-integral approaches.",
+   "level": "Graduate",
+   "routeTitle": "heat-kernel/supertrace proof",
+   "currentSketch": "For a Dirac-type operator D, McKean–Singer gives ind(D⁺)=Str(e^{−tD²}) for every t>0. As t→0, the heat-kernel diagonal has a local asymptotic expansion; all non-top-degree terms cancel in the supertrace and the remaining coefficient is the characteristic-form density. Integrating gives the index formula.",
+   "existingReferences": [
+    {
+     "label": "Atiyah & Singer, The index of elliptic operators on compact manifolds",
+     "url": "https://doi.org/10.1007/BF02592048",
+     "locator": "Original index theorem paper, Part I; proof program, not each later proof"
+    },
+    {
+     "label": "Atiyah & Singer, The Index of Elliptic Operators on Compact Manifolds",
+     "url": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/atiyahsing.pdf",
+     "locator": "Original paper; cite the specific proof section only after checking the PDF. This is an original-theorem source, not evidence for later heat-kernel/path-integral variants."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "144-r3",
+   "entryId": 144,
+   "entryName": "Atiyah–Singer index theorem",
+   "entryDescription": "K-theory and cobordism; heat-kernel/supertrace proof; elliptic PDE and symbol classes; mathematical-physics path-integral approaches.",
+   "level": "Graduate",
+   "routeTitle": "elliptic PDE and symbol classes",
+   "currentSketch": "An elliptic differential operator is Fredholm, and its index depends only on its stable homotopy class of principal symbol. Embed the cotangent bundle into a Euclidean bundle, use the Thom isomorphism to transfer the symbol class, and apply the topological pushforward; the analytic and topological indices agree by reduction to the Bott generator. This is the K-theoretic symbol proof, rather than a separate PDE-only proof.",
+   "existingReferences": [
+    {
+     "label": "Atiyah & Singer, The index of elliptic operators on compact manifolds",
+     "url": "https://doi.org/10.1007/BF02592048",
+     "locator": "Original index theorem paper, Part I; proof program, not each later proof"
+    },
+    {
+     "label": "Atiyah & Singer, The Index of Elliptic Operators on Compact Manifolds",
+     "url": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/atiyahsing.pdf",
+     "locator": "Original paper; cite the specific proof section only after checking the PDF. This is an original-theorem source, not evidence for later heat-kernel/path-integral variants."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "144-r4",
+   "entryId": 144,
+   "entryName": "Atiyah–Singer index theorem",
+   "entryDescription": "K-theory and cobordism; heat-kernel/supertrace proof; elliptic PDE and symbol classes; mathematical-physics path-integral approaches.",
+   "level": "Graduate",
+   "routeTitle": "mathematical-physics path-integral approaches",
+   "currentSketch": "Physics derivations represent the index as a supersymmetric path integral: bosonic and fermionic nonzero modes cancel, leaving a characteristic-class integral from zero modes. This is a heuristic unless a measure and regularization are rigorously constructed; do not present it as a fully rigorous proof route without a specified mathematical TQFT/regularization.",
+   "existingReferences": [
+    {
+     "label": "Atiyah & Singer, The index of elliptic operators on compact manifolds",
+     "url": "https://doi.org/10.1007/BF02592048",
+     "locator": "Original index theorem paper, Part I; proof program, not each later proof"
+    },
+    {
+     "label": "Atiyah & Singer, The Index of Elliptic Operators on Compact Manifolds",
+     "url": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/atiyahsing.pdf",
+     "locator": "Original paper; cite the specific proof section only after checking the PDF. This is an original-theorem source, not evidence for later heat-kernel/path-integral variants."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

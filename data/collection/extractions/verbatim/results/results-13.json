@@ -1,0 +1,193 @@
+{
+ "93-r1": {
+  "routeId": "93-r1",
+  "sourceTitle": "Čech cohomology and de Rham's theorem: class lecture for Math 758, Spring 2008",
+  "sourceUrl": "https://pi.math.cornell.edu/~bowman/cech.pdf",
+  "locator": "Joshua P. Bowman, Example 2.6 (Poincaré lemma gives an exact sequence of sheaves), Def. 4.1, Example 4.2, Lemma 4.3 (fine sheaves have no higher cohomology via partitions of unity), Cor. 5.2 and Theorem 5.3 (de Rham's theorem), pp. 3, 5-6, 8",
+  "routeMatch": "verified",
+  "proofSketch": "Consider the complex of sheaves $0\\to\\mathbb{R}_M\\to\\Omega^0_M\\xrightarrow{d}\\Omega^1_M\\to\\cdots$. The Poincaré lemma says closed forms are locally exact, so this sequence of sheaves is exact. Each $\\Omega^k_M$ is fine, because local sections can be glued by a partition of unity (multiply by the partition functions and sum), and a fine sheaf has vanishing higher Čech cohomology by an explicit homotopy built from the partition of unity. Hence the sequence is a fine resolution of the constant sheaf, and the cohomology of its global sections, namely de Rham cohomology, equals the Čech (sheaf) cohomology of $\\mathbb{R}_M$.",
+  "images": [
+   {
+    "file": "93-r1-1.png",
+    "caption": "p. 3, Example 2.6: the de Rham complex of sheaves is exact by the Poincaré lemma"
+   },
+   {
+    "file": "93-r1-2.png",
+    "caption": "pp. 5-6, Definition 4.1 (fine sheaf via partitions of unity), Example 4.2, Lemma 4.3 and proof"
+   },
+   {
+    "file": "93-r1-3.png",
+    "caption": "p. 8, Corollary 5.2 and Theorem 5.3 with the proof a la Weil"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Joshua P. Bowman, Cornell Math 758 class lecture notes (2008), https://pi.math.cornell.edu/~bowman/cech.pdf. No licence stated on the document; excerpt reproduced for personal research use under the owner's authorization.",
+  "transcriptionNotes": "Three crops of consecutive passages (cropped from rendered PDF pages); the Poincare lemma itself is not proved there (left as Exercise 2), so the local-exactness step is cited, not proved. Sheaf resolution route; identical in substance to route 93-r3.",
+  "reasonNotReproduced": null
+ },
+ "93-r3": {
+  "routeId": "93-r3",
+  "sourceTitle": "Čech cohomology and de Rham's theorem: class lecture for Math 758, Spring 2008",
+  "sourceUrl": "https://pi.math.cornell.edu/~bowman/cech.pdf",
+  "locator": "Joshua P. Bowman, Def. 4.4 (fine resolution), Theorem 4.5, Corollaries 5.1-5.2 and Theorem 5.3 (de Rham's theorem), pp. 6-8",
+  "routeMatch": "verified",
+  "proofSketch": "Define a fine resolution of a sheaf $\\mathcal F$ as an exact sequence $0\\to\\mathcal F\\to\\mathcal F^0\\to\\mathcal F^1\\to\\cdots$ with every $\\mathcal F^k$ fine. Theorem 4.5 compares the Čech cohomology of a good cover with the cohomology of the complex of global sections of the resolution by chasing a double complex: rows below the first are exact because the $\\mathcal F^k$ are fine, columns are exact by the hypothesis on the cover. Passing to the limit over covers (Leray) gives that the cohomology of $\\mathcal F$ equals that of the global sections complex of any fine resolution. Applied to $0\\to\\mathbb{R}_M\\to\\Omega^0_M\\to\\Omega^1_M\\to\\cdots$, a fine resolution by the Poincaré lemma and partitions of unity, this identifies sheaf cohomology of $\\mathbb{R}_M$ with de Rham cohomology.",
+  "images": [
+   {
+    "file": "93-r3-1.png",
+    "caption": "pp. 6-7, Definition 4.4 and Theorem 4.5 with the double-complex proof"
+   },
+   {
+    "file": "93-r3-2.png",
+    "caption": "p. 8, Corollaries 5.1-5.2 and Theorem 5.3 (de Rham's theorem), proof a la Weil"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Joshua P. Bowman, Cornell Math 758 class lecture notes (2008), https://pi.math.cornell.edu/~bowman/cech.pdf. No licence stated on the document; excerpt reproduced for personal research use under the owner's authorization.",
+  "transcriptionNotes": "Identification of Cech cohomology of R_M with singular cohomology is only sketched in the source (Section 3); the theorem proved is sheaf cohomology of R_M = de Rham cohomology. Same source as 93-r1.",
+  "reasonNotReproduced": null
+ },
+ "93-r2": {
+  "routeId": "93-r2",
+  "sourceTitle": "De Rham Cohomology (Math 215A final project)",
+  "sourceUrl": "https://www.ocf.berkeley.edu/~lilyl/wp-content/uploads/2021/06/De-Rham-Cohomology-Edited.pdf",
+  "locator": "Lily Li, Section 3, Definition 3.1 and Theorem 3.5 (De Rham Theorem) with proof, pp. 9-10",
+  "routeMatch": "verified",
+  "proofSketch": "Call a manifold de Rham if the integration map $H^p_{dR}(M)\\to H^p(M;\\mathbb R)$ is an isomorphism, and a cover a de Rham cover if its members and all their finite intersections are de Rham. Disjoint unions of de Rham manifolds are de Rham, and convex open sets in $\\mathbb R^n$ are de Rham by the Poincaré lemma and homotopy invariance. For a finite de Rham cover, induct on the number of sets: compare the Mayer-Vietoris sequences of de Rham and singular cohomology for $U=U_1\\cup\\dots\\cup U_k$ and $V=U_{k+1}$, and conclude with the five lemma. For a de Rham basis, an exhaustion function splits $M$ into two disjoint unions of finitely covered pieces, whose union and intersection are de Rham. Open subsets of $\\mathbb R^n$, hence every manifold, have such a basis of balls.",
+  "images": [
+   {
+    "file": "93-r2-1.png",
+    "caption": "p. 9: Definition 3.1, Theorem 3.5 and first steps of the proof (disjoint unions, convex sets)"
+   },
+   {
+    "file": "93-r2-2.png",
+    "caption": "p. 10: finite de Rham cover via Mayer-Vietoris and five lemma, de Rham basis, conclusion"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Lily Li, De Rham Cohomology (UC Berkeley Math 215A project, Fall 2020), https://www.ocf.berkeley.edu/~lilyl/wp-content/uploads/2021/06/De-Rham-Cohomology-Edited.pdf. No licence stated; excerpt reproduced for personal research use under the owner's authorization.",
+  "transcriptionNotes": "Proof relies on Prop. 3.4 (naturality, stated without proof) and on an exhaustion function whose existence is deferred in the source; those are not included in the crops.",
+  "reasonNotReproduced": null
+ },
+ "94-r1": {
+  "routeId": "94-r1",
+  "sourceTitle": "Poincaré lemma (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Poincar%C3%A9_lemma",
+  "locator": "Section 'Proofs', subsection 'Proof using Lie derivatives'",
+  "routeMatch": "verified",
+  "proofSketch": "Use Cartan's formula $L_\\xi=d\\,i(\\xi)+i(\\xi)d$. For a family of maps $f_t$ with velocity field $\\xi_t$, differentiate $f_t^*\\omega$ to get $\\frac{d}{dt}f_t^*\\omega=f_t^*L_{\\xi_t}\\omega$. Integrate over $t\\in[0,1]$ and apply Cartan's formula to obtain $f_1^*\\omega-f_0^*\\omega=dJ\\omega+Jd\\omega$ with $J\\omega=\\int_0^1 f_t^*i(\\xi_t)\\omega\\,dt$. On a ball centred at $x_0$ take the radial contraction $f_t(x)=t(x-x_0)+x_0$, so $f_1^*\\omega=\\omega$ and $f_0^*\\omega=0$ for forms of positive degree; hence $\\omega=dJ\\omega$ when $d\\omega=0$.",
+  "images": [
+   {
+    "file": "94-r1-1.png",
+    "caption": "Wikipedia 'Poincaré lemma', Proofs: 'Proof using Lie derivatives'"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Poincaré lemma', English Wikipedia, https://en.wikipedia.org/wiki/Poincar%C3%A9_lemma; text under CC BY-SA 4.0 (page footer).",
+  "transcriptionNotes": "Screenshot of the rendered section as of Oct 2026 (history not pinned). The page states the final formula for $\\omega=dJ\\omega+Jd\\omega$ without the factor t^(k-1) explicitly; the homotopy operator is the radial one.",
+  "reasonNotReproduced": null
+ },
+ "94-r2": {
+  "routeId": "94-r2",
+  "sourceTitle": "Poincaré lemma (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Poincar%C3%A9_lemma",
+  "locator": "Section 'Proofs', subsection 'Direct proof' (integration along fibers)",
+  "routeMatch": "uncertain",
+  "proofSketch": "For a star-shaped open $U\\subset\\mathbb R^n$ consider forms on $U\\times[0,1]$ and define fiber integration $\\pi_*$ by integrating the coefficient of $dt$ over $[0,1]$. Differentiation under the integral sign gives $\\pi_*(d\\alpha)=\\alpha_1-\\alpha_0-d(\\pi_*\\alpha)$. Pull back along the straight-line contraction $h(x,t)=tx$ and set $J=\\pi_*\\circ h^*$ to obtain the homotopy formula $h_1^*\\omega-h_0^*\\omega=Jd\\omega+dJ\\omega$. For closed $\\omega$ of positive degree, $h_1^*\\omega=\\omega$ and $h_0^*\\omega=0$, so $\\omega=dJ\\omega$.",
+  "images": [
+   {
+    "file": "94-r2-1.png",
+    "caption": "Wikipedia 'Poincaré lemma', Proofs: 'Direct proof' (integration along fibers of the straight-line contraction)"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Poincaré lemma', English Wikipedia, https://en.wikipedia.org/wiki/Poincar%C3%A9_lemma; text under CC BY-SA 4.0 (page footer).",
+  "transcriptionNotes": "Matches the route title (integrate along the straight-line contraction) but differs in wording from the stored sketch, which describes inserting one vector argument and differentiating a segment integral; the source does that via fiber integration on U x [0,1].",
+  "reasonNotReproduced": "Source gives integration along fibers of the straight-line homotopy, equivalent in content to the route but not literally the 'insert a vector argument' formulation of the stored sketch."
+ },
+ "94-r3": {
+  "routeId": "94-r3",
+  "sourceTitle": "Poincaré lemma (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Poincar%C3%A9_lemma",
+  "locator": "Lead section, paragraph on cohomology ('In the language of cohomology ...')",
+  "routeMatch": "mismatch",
+  "proofSketch": "The route proposes deducing local exactness from vanishing of reduced singular cohomology of a contractible set and the de Rham theorem. The cited article states that the vanishing of singular cohomology of a contractible space does not give the Poincare lemma, because the de Rham theorem (singular = de Rham cohomology) itself relies on the Poincare lemma. The route is therefore circular as a proof of the lemma; it is only valid as a consistency check once the de Rham theorem is known by independent means.",
+  "images": [],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Poincaré lemma', English Wikipedia, https://en.wikipedia.org/wiki/Poincar%C3%A9_lemma; text under CC BY-SA 4.0 (page footer).",
+  "transcriptionNotes": "No proof exists in the source for this route; the source only remarks on its circularity. Li's De Rham Cohomology (Thm 3.5) likewise uses the Poincare lemma to prove the de Rham theorem.",
+  "reasonNotReproduced": "No source proves the lemma by this route; Wikipedia explicitly notes the de Rham theorem relies on the Poincare lemma, making the route circular."
+ },
+ "95-r1": {
+  "routeId": "95-r1",
+  "sourceTitle": "Rouché's theorem (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Rouch%C3%A9%27s_theorem",
+  "locator": "Section 'Symmetric version' and 'Proof of the symmetric form of Rouché's theorem'",
+  "routeMatch": "verified",
+  "proofSketch": "The symmetric strict inequality $|f-g|<|f|+|g|$ on $\\partial K$ implies $f,g$ have no zeros there and $g$ is never a negative real multiple of $f$. By the argument principle $N_f(K)$ equals the winding number of $f\\circ C$ about $0$, and likewise for $g$. The segment homotopy $H_t=(1-t)f\\circ C+t\\,g\\circ C$ avoids the origin, and the winding number $I(t)=\\frac1{2\\pi i}\\oint_{H_t}dz/z$ is continuous and integer-valued, hence constant. So $N_f(K)=N_g(K)$. The usual form $|g|<|f|$ follows by applying this to $f+g$ and $f$.",
+  "images": [
+   {
+    "file": "95-r1-1.png",
+    "caption": "Wikipedia 'Rouché's theorem': Symmetric version and its proof via argument principle and homotopy invariance of the winding number"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Rouché's theorem', English Wikipedia, https://en.wikipedia.org/wiki/Rouch%C3%A9%27s_theorem; text under CC BY-SA 4.0 (page footer).",
+  "transcriptionNotes": "Screenshot of the rendered page section (page last edited 31 August 2026). Proof is for the symmetric (Estermann) form; the classical form is deduced as a corollary in the text shown.",
+  "reasonNotReproduced": null
+ },
+ "95-r2": {
+  "routeId": "95-r2",
+  "sourceTitle": "Rouché's theorem (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Rouch%C3%A9%27s_theorem",
+  "locator": "Section 'Proof of the symmetric form of Rouché's theorem' (argument principle step) with preceding 'Symmetric version'",
+  "routeMatch": "verified",
+  "proofSketch": "Apply the argument principle: since $f$ has no zeros on the boundary curve $C$, $N_f(K)=\\frac1{2\\pi i}\\oint_C f'/f\\,dz$, which equals the winding number of $f\\circ C$ about $0$; the same holds for $g$. Because the hypothesis keeps the segment between $f(C(x))$ and $g(C(x))$ away from $0$, the family $H_t$ of curves has constant (integer-valued, continuous) winding number in $t$. Hence the winding numbers of $f\\circ C$ and $g\\circ C$, and so the zero counts, coincide.",
+  "images": [
+   {
+    "file": "95-r2-1.png",
+    "caption": "Wikipedia 'Rouché's theorem': Symmetric version and proof (argument principle then constancy of winding number)"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Rouché's theorem', English Wikipedia, https://en.wikipedia.org/wiki/Rouch%C3%A9%27s_theorem; text under CC BY-SA 4.0 (page footer).",
+  "transcriptionNotes": "Same excerpt as 95-r1: the single proof uses the argument principle and homotopy invariance together. The stored sketch for this route phrases it with $f'/f$ and $(f+g)'/(f+g)$; the source uses $f$ and $g$ in the symmetric form.",
+  "reasonNotReproduced": null
+ },
+ "95-r3": {
+  "routeId": "95-r3",
+  "sourceTitle": "Rouché's theorem (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Rouch%C3%A9%27s_theorem",
+  "locator": "Lead, 'Usage' and 'Geometric explanation' sections",
+  "routeMatch": "uncertain",
+  "proofSketch": "The theorem is used by writing a function as a dominating part plus a perturbation: if $|g|<|f|$ on $\\partial K$ then $f$ and $f+g$ have the same number of zeros in $K$ (for instance $z^5+3z^3+7$ has five zeros in $|z|<2$ because $|3z^3+7|\\le31<32=|z^5|$ there). The informal explanation: with $h=f+g$ the condition says $f(z)$ is closer to $h(z)$ than to the origin all along $C$, so the two image curves wind around the origin the same number of times and the argument principle gives equal zero counts.",
+  "images": [
+   {
+    "file": "95-r3-1.png",
+    "caption": "Wikipedia 'Rouché's theorem': statement, Usage example and Geometric explanation of the perturbation condition"
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Rouché's theorem', English Wikipedia, https://en.wikipedia.org/wiki/Rouch%C3%A9%27s_theorem; text under CC BY-SA 4.0 (page footer).",
+  "transcriptionNotes": "The source gives an informal (geometric) explanation, not a rigorous proof; the rigorous proof is the winding-number argument of 95-r1/95-r2 (same page, 'Proof of the symmetric form').",
+  "reasonNotReproduced": "Route is an application/informal reformulation; the source's rigorous proof is the homotopy/argument-principle argument shown for 95-r1."
+ }
+}

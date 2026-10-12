@@ -1,0 +1,455 @@
+{
+ "agent": 17,
+ "tasks": [
+  {
+   "routeId": "122-r1",
+   "entryId": 122,
+   "entryName": "Prokhorov's theorem (tightness and relative compactness of probability measures on Polish spaces)",
+   "entryDescription": "Compactness via finite partitions and diagonal subsequences; metric/weak-convergence tightness argument; transport through distribution functions in R.",
+   "level": "Graduate",
+   "routeTitle": "Compactness via finite partitions and diagonal subsequences",
+   "currentSketch": "Given tight (μ_n), choose compact K_j with μ_n(K_j)>1−2^{−j}; on each K_j, finite covers and a diagonal argument select a subsequence whose integrals converge on a countable convergence-determining family of bounded continuous functions. Tightness prevents mass escape, and the limiting positive functional is a probability measure, giving weak convergence.",
+   "existingReferences": [
+    {
+     "label": "Billingsley, Convergence of Probability Measures",
+     "url": "https://doi.org/10.1002/9781118624228",
+     "locator": "Chapter 1, tightness and Prokhorov theorem; theorem proof locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "122-r2",
+   "entryId": 122,
+   "entryName": "Prokhorov's theorem (tightness and relative compactness of probability measures on Polish spaces)",
+   "entryDescription": "Compactness via finite partitions and diagonal subsequences; metric/weak-convergence tightness argument; transport through distribution functions in R.",
+   "level": "Graduate",
+   "routeTitle": "metric/weak-convergence tightness argument",
+   "currentSketch": "Given tight (μ_n), choose compact K_j with μ_n(K_j)>1−2^{−j}; on each K_j, finite covers and a diagonal argument select a subsequence whose integrals converge on a countable convergence-determining family of bounded continuous functions. Tightness prevents mass escape, and the limiting positive functional is a probability measure, giving weak convergence.",
+   "existingReferences": [
+    {
+     "label": "Billingsley, Convergence of Probability Measures",
+     "url": "https://doi.org/10.1002/9781118624228",
+     "locator": "Chapter 1, tightness and Prokhorov theorem; theorem proof locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "122-r3",
+   "entryId": 122,
+   "entryName": "Prokhorov's theorem (tightness and relative compactness of probability measures on Polish spaces)",
+   "entryDescription": "Compactness via finite partitions and diagonal subsequences; metric/weak-convergence tightness argument; transport through distribution functions in R.",
+   "level": "Graduate",
+   "routeTitle": "transport through distribution functions in R",
+   "currentSketch": "Given tight (μ_n), choose compact K_j with μ_n(K_j)>1−2^{−j}; on each K_j, finite covers and a diagonal argument select a subsequence whose integrals converge on a countable convergence-determining family of bounded continuous functions. Tightness prevents mass escape, and the limiting positive functional is a probability measure, giving weak convergence.",
+   "existingReferences": [
+    {
+     "label": "Billingsley, Convergence of Probability Measures",
+     "url": "https://doi.org/10.1002/9781118624228",
+     "locator": "Chapter 1, tightness and Prokhorov theorem; theorem proof locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "123-r1",
+   "entryId": 123,
+   "entryName": "Radon–Nikodym theorem",
+   "entryDescription": "Conditional-expectation/Hilbert-space proof for finite measures; supremum construction and Hahn decomposition; maximal-function approximation.",
+   "level": "Graduate",
+   "routeTitle": "Conditional-expectation/Hilbert-space proof for finite measures",
+   "currentSketch": "For finite μ≪ν, consider g∈L²(ν) representing the bounded functional h↦∫h dμ after first dominating by λ=μ+ν; Hilbert-space Riesz gives densities dμ/dλ and dν/dλ, and dν/dλ>0 μ-a.e. Absolute continuity permits their quotient dμ/dν. Sigma-finite versions follow by partition.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Measure and Integration",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Radon–Nikodym theorem unit/lecture; source location should be checked against downloaded notes"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "123-r2",
+   "entryId": 123,
+   "entryName": "Radon–Nikodym theorem",
+   "entryDescription": "Conditional-expectation/Hilbert-space proof for finite measures; supremum construction and Hahn decomposition; maximal-function approximation.",
+   "level": "Graduate",
+   "routeTitle": "supremum construction and Hahn decomposition",
+   "currentSketch": "For finite μ≪ν, consider g∈L²(ν) representing the bounded functional h↦∫h dμ after first dominating by λ=μ+ν; Hilbert-space Riesz gives densities dμ/dλ and dν/dλ, and dν/dλ>0 μ-a.e. Absolute continuity permits their quotient dμ/dν. Sigma-finite versions follow by partition.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Measure and Integration",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Radon–Nikodym theorem unit/lecture; source location should be checked against downloaded notes"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "123-r3",
+   "entryId": 123,
+   "entryName": "Radon–Nikodym theorem",
+   "entryDescription": "Conditional-expectation/Hilbert-space proof for finite measures; supremum construction and Hahn decomposition; maximal-function approximation.",
+   "level": "Graduate",
+   "routeTitle": "maximal-function approximation",
+   "currentSketch": "For finite μ≪ν, consider g∈L²(ν) representing the bounded functional h↦∫h dμ after first dominating by λ=μ+ν; Hilbert-space Riesz gives densities dμ/dλ and dν/dλ, and dν/dλ>0 μ-a.e. Absolute continuity permits their quotient dμ/dν. Sigma-finite versions follow by partition.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Measure and Integration",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Radon–Nikodym theorem unit/lecture; source location should be checked against downloaded notes"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "124-r1",
+   "entryId": 124,
+   "entryName": "Fubini–Tonelli theorem",
+   "entryDescription": "Approximate by indicator rectangles/simple functions and monotone convergence; product-measure construction; iterated-integration/measure regularity argument.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Approximate by indicator rectangles/simple functions and monotone convergence",
+   "currentSketch": "For nonnegative indicators of measurable rectangles the iterated integrals equal product measure. Extend to nonnegative simple functions by linearity, then arbitrary nonnegative measurable functions by monotone convergence (Tonelli); apply to positive/negative parts when ∫|f|<∞ to obtain Fubini.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Measure and Integration",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Product measures and Fubini–Tonelli theorem unit"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "124-r2",
+   "entryId": 124,
+   "entryName": "Fubini–Tonelli theorem",
+   "entryDescription": "Approximate by indicator rectangles/simple functions and monotone convergence; product-measure construction; iterated-integration/measure regularity argument.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "product-measure construction",
+   "currentSketch": "For nonnegative indicators of measurable rectangles the iterated integrals equal product measure. Extend to nonnegative simple functions by linearity, then arbitrary nonnegative measurable functions by monotone convergence (Tonelli); apply to positive/negative parts when ∫|f|<∞ to obtain Fubini.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Measure and Integration",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Product measures and Fubini–Tonelli theorem unit"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "124-r3",
+   "entryId": 124,
+   "entryName": "Fubini–Tonelli theorem",
+   "entryDescription": "Approximate by indicator rectangles/simple functions and monotone convergence; product-measure construction; iterated-integration/measure regularity argument.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "iterated-integration/measure regularity argument",
+   "currentSketch": "For nonnegative indicators of measurable rectangles the iterated integrals equal product measure. Extend to nonnegative simple functions by linearity, then arbitrary nonnegative measurable functions by monotone convergence (Tonelli); apply to positive/negative parts when ∫|f|<∞ to obtain Fubini.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Measure and Integration",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Product measures and Fubini–Tonelli theorem unit"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "125-r1",
+   "entryId": 125,
+   "entryName": "Fourier inversion theorem (standard integrable/smooth formulations)",
+   "entryDescription": "Gaussian/approximate-identity regularization; inversion via contour or Fourier integrals; Plancherel plus density. State the hypotheses for each form.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Gaussian/approximate-identity regularization",
+   "currentSketch": "First establish the identity for Schwartz functions by Fubini and Gaussian regularization (insert e^{−επ|ξ|²}, apply the Gaussian transform, then let ε↓0). Density of Schwartz functions in L² extends the isometry uniquely to a unitary Fourier transform; hypotheses differ for pointwise inversion versus L² Plancherel.",
+   "existingReferences": [
+    {
+     "label": "Stein & Shakarchi, Fourier Analysis",
+     "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+     "locator": "Chapter 1, Fourier inversion; edition locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "125-r2",
+   "entryId": 125,
+   "entryName": "Fourier inversion theorem (standard integrable/smooth formulations)",
+   "entryDescription": "Gaussian/approximate-identity regularization; inversion via contour or Fourier integrals; Plancherel plus density. State the hypotheses for each form.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "inversion via contour or Fourier integrals",
+   "currentSketch": "First establish the identity for Schwartz functions by Fubini and Gaussian regularization (insert e^{−επ|ξ|²}, apply the Gaussian transform, then let ε↓0). Density of Schwartz functions in L² extends the isometry uniquely to a unitary Fourier transform; hypotheses differ for pointwise inversion versus L² Plancherel.",
+   "existingReferences": [
+    {
+     "label": "Stein & Shakarchi, Fourier Analysis",
+     "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+     "locator": "Chapter 1, Fourier inversion; edition locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "125-r3",
+   "entryId": 125,
+   "entryName": "Fourier inversion theorem (standard integrable/smooth formulations)",
+   "entryDescription": "Gaussian/approximate-identity regularization; inversion via contour or Fourier integrals; Plancherel plus density. State the hypotheses for each form.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Plancherel plus density. State the hypotheses for each form",
+   "currentSketch": "On Schwartz functions the Fourier transform is an L² isometry by the double-integral/Parseval identity, first justified with Gaussian damping and Fubini. Schwartz functions are dense in L², so the isometry extends uniquely to a unitary operator on L²; this proves the Plancherel formulation, while pointwise inversion needs additional hypotheses.",
+   "existingReferences": [
+    {
+     "label": "Stein & Shakarchi, Fourier Analysis",
+     "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+     "locator": "Chapter 1, Fourier inversion; edition locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "126-r1",
+   "entryId": 126,
+   "entryName": "Plancherel theorem",
+   "entryDescription": "Parseval identity on a dense class plus completion; Gaussian regularization; unitary representation of translations/Fourier transform.",
+   "level": "Graduate",
+   "routeTitle": "Parseval identity on a dense class plus completion",
+   "currentSketch": "First establish the identity for Schwartz functions by Fubini and Gaussian regularization (insert e^{−επ|ξ|²}, apply the Gaussian transform, then let ε↓0). Density of Schwartz functions in L² extends the isometry uniquely to a unitary Fourier transform; hypotheses differ for pointwise inversion versus L² Plancherel.",
+   "existingReferences": [
+    {
+     "label": "Stein & Shakarchi, Fourier Analysis",
+     "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+     "locator": "Chapter 1, Parseval/Plancherel theorem; edition locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "126-r2",
+   "entryId": 126,
+   "entryName": "Plancherel theorem",
+   "entryDescription": "Parseval identity on a dense class plus completion; Gaussian regularization; unitary representation of translations/Fourier transform.",
+   "level": "Graduate",
+   "routeTitle": "Gaussian regularization",
+   "currentSketch": "First establish the identity for Schwartz functions by Fubini and Gaussian regularization (insert e^{−επ|ξ|²}, apply the Gaussian transform, then let ε↓0). Density of Schwartz functions in L² extends the isometry uniquely to a unitary Fourier transform; hypotheses differ for pointwise inversion versus L² Plancherel.",
+   "existingReferences": [
+    {
+     "label": "Stein & Shakarchi, Fourier Analysis",
+     "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+     "locator": "Chapter 1, Parseval/Plancherel theorem; edition locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "126-r3",
+   "entryId": 126,
+   "entryName": "Plancherel theorem",
+   "entryDescription": "Parseval identity on a dense class plus completion; Gaussian regularization; unitary representation of translations/Fourier transform.",
+   "level": "Graduate",
+   "routeTitle": "unitary representation of translations/Fourier transform",
+   "currentSketch": "First establish the identity for Schwartz functions by Fubini and Gaussian regularization (insert e^{−επ|ξ|²}, apply the Gaussian transform, then let ε↓0). Density of Schwartz functions in L² extends the isometry uniquely to a unitary Fourier transform; hypotheses differ for pointwise inversion versus L² Plancherel.",
+   "existingReferences": [
+    {
+     "label": "Stein & Shakarchi, Fourier Analysis",
+     "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+     "locator": "Chapter 1, Parseval/Plancherel theorem; edition locator"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "127-r1",
+   "entryId": 127,
+   "entryName": "Isoperimetric inequality in the plane",
+   "entryDescription": "Variational/calculus of variations; Fourier-series proof for closed curves; Brunn–Minkowski and convex-geometric argument; symmetrization.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Variational/calculus of variations",
+   "currentSketch": "Parametrize a smooth simple closed curve by arclength with length L and enclosed area A. A maximizing curve exists after compactness/regularization; first variation of A−λL shows its curvature is constant, hence the optimizer is a circle. Its area is L²/(4π), giving A≤L²/(4π). The existence and regularity step is essential and is not supplied by the Euler–Lagrange calculation alone.",
+   "existingReferences": [
+    {
+     "label": "Osserman, The isoperimetric inequality",
+     "url": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+     "locator": "Bulletin survey: classical proofs and generalizations; exact proof sections"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "127-r2",
+   "entryId": 127,
+   "entryName": "Isoperimetric inequality in the plane",
+   "entryDescription": "Variational/calculus of variations; Fourier-series proof for closed curves; Brunn–Minkowski and convex-geometric argument; symmetrization.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Fourier-series proof for closed curves",
+   "currentSketch": "First establish the identity for Schwartz functions by Fubini and Gaussian regularization (insert e^{−επ|ξ|²}, apply the Gaussian transform, then let ε↓0). Density of Schwartz functions in L² extends the isometry uniquely to a unitary Fourier transform; hypotheses differ for pointwise inversion versus L² Plancherel.",
+   "existingReferences": [
+    {
+     "label": "Osserman, The isoperimetric inequality",
+     "url": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+     "locator": "Bulletin survey: classical proofs and generalizations; exact proof sections"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "127-r3",
+   "entryId": 127,
+   "entryName": "Isoperimetric inequality in the plane",
+   "entryDescription": "Variational/calculus of variations; Fourier-series proof for closed curves; Brunn–Minkowski and convex-geometric argument; symmetrization.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Brunn–Minkowski and convex-geometric argument",
+   "currentSketch": "For a planar measurable set E, apply Brunn–Minkowski to E and a small disk εB: |E+εB|^{1/2}≥|E|^{1/2}+ε√π. For a sufficiently regular boundary, the outer parallel-area expansion is |E+εB|=|E|+ε·Per(E)+o(ε); compare first-order terms to obtain Per(E)≥2√(π|E|). Approximation extends the result to finite-perimeter sets.",
+   "existingReferences": [
+    {
+     "label": "Osserman, The isoperimetric inequality",
+     "url": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+     "locator": "Bulletin survey: classical proofs and generalizations; exact proof sections"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "127-r4",
+   "entryId": 127,
+   "entryName": "Isoperimetric inequality in the plane",
+   "entryDescription": "Variational/calculus of variations; Fourier-series proof for closed curves; Brunn–Minkowski and convex-geometric argument; symmetrization.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "symmetrization",
+   "currentSketch": "Repeatedly Steiner-symmetrize a bounded region: each symmetrization preserves area and does not increase perimeter. A compactness argument gives a limit invariant under every direction of symmetrization, hence a disk; lower semicontinuity of perimeter shows the disk has no larger perimeter than the original region. This proves Per(E)≥2√(π|E|), with equality only for disks up to null sets.",
+   "existingReferences": [
+    {
+     "label": "Osserman, The isoperimetric inequality",
+     "url": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+     "locator": "Bulletin survey: classical proofs and generalizations; exact proof sections"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "128-r1",
+   "entryId": 128,
+   "entryName": "Brunn–Minkowski inequality",
+   "entryDescription": "Induction and slicing; transport-map/Jacobian argument; Prékopa–Leindler functional inequality.",
+   "level": "Graduate",
+   "routeTitle": "Induction and slicing",
+   "currentSketch": "For 1<p<∞, write ∫|f+g|^p≤∫(|f|+|g|)|f+g|^{p−1}; apply Hölder to each term and divide by ||f+g||_p^{p−1}. This yields ||f+g||_p≤||f||_p+||g||_p; endpoint p=1 is direct, p=∞ follows from sup. Assume measurable functions and finite norms.",
+   "existingReferences": [
+    {
+     "label": "Gardner, The Brunn–Minkowski inequality",
+     "url": "https://doi.org/10.1090/S0273-0979-01-00930-2",
+     "locator": "Bulletin survey, proof approaches and history"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "128-r2",
+   "entryId": 128,
+   "entryName": "Brunn–Minkowski inequality",
+   "entryDescription": "Induction and slicing; transport-map/Jacobian argument; Prékopa–Leindler functional inequality.",
+   "level": "Graduate",
+   "routeTitle": "transport-map/Jacobian argument",
+   "currentSketch": "For 1<p<∞, write ∫|f+g|^p≤∫(|f|+|g|)|f+g|^{p−1}; apply Hölder to each term and divide by ||f+g||_p^{p−1}. This yields ||f+g||_p≤||f||_p+||g||_p; endpoint p=1 is direct, p=∞ follows from sup. Assume measurable functions and finite norms.",
+   "existingReferences": [
+    {
+     "label": "Gardner, The Brunn–Minkowski inequality",
+     "url": "https://doi.org/10.1090/S0273-0979-01-00930-2",
+     "locator": "Bulletin survey, proof approaches and history"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "128-r3",
+   "entryId": 128,
+   "entryName": "Brunn–Minkowski inequality",
+   "entryDescription": "Induction and slicing; transport-map/Jacobian argument; Prékopa–Leindler functional inequality.",
+   "level": "Graduate",
+   "routeTitle": "Prékopa–Leindler functional inequality",
+   "currentSketch": "For 1<p<∞, write ∫|f+g|^p≤∫(|f|+|g|)|f+g|^{p−1}; apply Hölder to each term and divide by ||f+g||_p^{p−1}. This yields ||f+g||_p≤||f||_p+||g||_p; endpoint p=1 is direct, p=∞ follows from sup. Assume measurable functions and finite norms.",
+   "existingReferences": [
+    {
+     "label": "Gardner, The Brunn–Minkowski inequality",
+     "url": "https://doi.org/10.1090/S0273-0979-01-00930-2",
+     "locator": "Bulletin survey, proof approaches and history"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "129-r1",
+   "entryId": 129,
+   "entryName": "Carathéodory's theorem for convex hulls in Rᵈ",
+   "entryDescription": "Affine-dependence coefficient elimination; linear-programming basic feasible solutions; induction on support size.",
+   "level": "Undergraduate",
+   "routeTitle": "Affine-dependence coefficient elimination",
+   "currentSketch": "If x=∑_{i=1}^mλ_i x_i is a convex combination with m>d+1, the augmented vectors (x_i,1) are linearly dependent: choose a nonzero relation ∑a_i x_i=0, ∑a_i=0. Vary λ_i→λ_i−t a_i until one coefficient hits zero while all remain nonnegative; repeat until at most d+1 remain.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Helly/Carathéodory/Radon theorems and proofs"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "129-r2",
+   "entryId": 129,
+   "entryName": "Carathéodory's theorem for convex hulls in Rᵈ",
+   "entryDescription": "Affine-dependence coefficient elimination; linear-programming basic feasible solutions; induction on support size.",
+   "level": "Undergraduate",
+   "routeTitle": "linear-programming basic feasible solutions",
+   "currentSketch": "If x=∑_{i=1}^mλ_i x_i is a convex combination with m>d+1, the augmented vectors (x_i,1) are linearly dependent: choose a nonzero relation ∑a_i x_i=0, ∑a_i=0. Vary λ_i→λ_i−t a_i until one coefficient hits zero while all remain nonnegative; repeat until at most d+1 remain.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Helly/Carathéodory/Radon theorems and proofs"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "129-r3",
+   "entryId": 129,
+   "entryName": "Carathéodory's theorem for convex hulls in Rᵈ",
+   "entryDescription": "Affine-dependence coefficient elimination; linear-programming basic feasible solutions; induction on support size.",
+   "level": "Undergraduate",
+   "routeTitle": "induction on support size",
+   "currentSketch": "If x=∑_{i=1}^mλ_i x_i is a convex combination with m>d+1, the augmented vectors (x_i,1) are linearly dependent: choose a nonzero relation ∑a_i x_i=0, ∑a_i=0. Vary λ_i→λ_i−t a_i until one coefficient hits zero while all remain nonnegative; repeat until at most d+1 remain.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Helly/Carathéodory/Radon theorems and proofs"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

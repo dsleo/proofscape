@@ -1,0 +1,194 @@
+{
+ "47-r1": {
+  "sourceTitle": "Ceva's theorem (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Ceva%27s_theorem",
+  "locator": "Section 'Proofs' > 'Using triangle areas'",
+  "routeMatch": "verified",
+  "proofSketch": "Signs are handled first: the product of the three signed ratios is positive whether the concurrency point O is inside the triangle or outside. For magnitudes, triangles of equal height have areas proportional to their bases, so |BD|/|DC| = |BOD|/|COD| = |BAD|/|CAD|, and subtracting numerators and denominators gives BD/DC = |ABO|/|CAO| (adding instead if A and O lie on opposite sides of BC). The same argument gives CE/EA = |BCO|/|ABO| and AF/FB = |CAO|/|BCO|. Multiplying the three equations, the area ratios cancel cyclically and the product of the three ratios has absolute value 1.",
+  "images": [
+   {
+    "file": "47-r1-1.png",
+    "caption": "Wikipedia 'Ceva's theorem', Proofs > Using triangle areas (area-ratio proof, followed by the Menelaus remark and converse)."
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Ceva's theorem'; text under CC BY-SA 4.0 (stated in page footer). Proof credited there to Russell, Pure Geometry (1905), Ch. 1 s.7.",
+  "transcriptionNotes": "Rendered section screenshot; includes the short Menelaus-based alternative and converse that follow the area proof. Area ratios are used with a final cancellation rather than the 'two sides and included angle' formulation in the current sketch.",
+  "reasonNotReproduced": null,
+  "routeId": "47-r1"
+ },
+ "47-r3": {
+  "sourceTitle": "Ceva's theorem (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Ceva%27s_theorem",
+  "locator": "Section 'Proofs' > 'Using barycentric coordinates'",
+  "routeMatch": "uncertain",
+  "proofSketch": "Let O have barycentric coordinates (λ_A, λ_B, λ_C) with sum 1 and, since O is on no side line, all nonzero. Taking X = F (the intersection of AB and OC), the relation XO = λ_A XA + λ_B XB + λ_C XC rearranges to FO − λ_C FC = λ_A FA + λ_B FB. The left side is parallel to CF and the right side to AB, which are not parallel, so both vanish and λ_A FA + λ_B FB = 0, giving AF/FB = λ_B/λ_A. The same reasoning gives BD/DC = λ_C/λ_B and CE/EA = λ_A/λ_C, and the product is 1.",
+  "images": [
+   {
+    "file": "47-r3-1.png",
+    "caption": "Wikipedia 'Ceva's theorem', Proofs > Using barycentric coordinates."
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Ceva's theorem'; text under CC BY-SA 4.0.",
+  "transcriptionNotes": "Barycentric/vector proof; it does not form a 3x3 determinant of line equations, which is what the route title mentions, so the match is only partial.",
+  "reasonNotReproduced": "Source proves the theorem with barycentric coordinates via a vector argument, not the determinant-of-line-coefficients condition in the route.",
+  "routeId": "47-r3"
+ },
+ "47-r2": {
+  "sourceTitle": "Trigonometric Form of Ceva's Theorem (Cut the Knot, A. Bogomolny)",
+  "sourceUrl": "https://www.cut-the-knot.org/triangle/TrigCeva.shtml",
+  "locator": "Page statement and linked 'Proof of Ceva's Trigonometric Identity' (collapsed popup in the page HTML)",
+  "routeMatch": "uncertain",
+  "proofSketch": "The page states the trigonometric form: sin∠ABE/sin∠CBE · sin∠BCF/sin∠ACF · sin∠CAD/sin∠BAD = 1 for concurrent cevians AD, BE, CF. In its proof, the side-ratio product AF/FB·BD/DC·CE/EA = 1 is rewritten as a product of area ratios of triangles sharing the concurrency point K (e.g. AFK/BFK), since each pair has a common altitude from K. Each area is then written as (1/2)·side·side·sine of the included angle (e.g. AFK = AF·AK·sin∠BAD/2), and the common factors cancel, leaving the product of sine ratios equal to the inverse side-ratio product, hence 1.",
+  "images": [
+   {
+    "file": "47-r2-1.png",
+    "caption": "Cut the Knot, 'Trigonometric Form of Ceva's Theorem': statement of the trigonometric form with figure (the proof itself is in a collapsed popup not visible in the render)."
+   }
+  ],
+  "reuseStatus": "copyrighted",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Alexander Bogomolny, Cut the Knot, copyright 1996-2018 (page notice).",
+  "transcriptionNotes": "Image shows only the statement and figure; the proof text, read from the page HTML, is paraphrased in the sketch. The proof uses the area formula with sines on subtriangles rather than the sine rule directly.",
+  "reasonNotReproduced": "Proof is hidden in a popup, so only the statement was cropped; proof is area-with-sines rather than literally the sine rule.",
+  "routeId": "47-r2"
+ },
+ "53-r1": {
+  "sourceTitle": "Inclusion-exclusion principle (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle",
+  "locator": "Section 'Proof of main statement' > 'Algebraic proof'",
+  "routeMatch": "verified",
+  "proofSketch": "Use indicator functions, noting 1_A·1_B = 1_{A∩B}. For the union A of A_1,...,A_n, one wants 1_A = Σ_{k≥1}(−1)^{k−1} Σ_{|I|=k} 1_{A_I}, where A_I is the intersection over I. The product (1_A − 1_{A_1})···(1_A − 1_{A_n}) vanishes identically: at a point outside A every factor is 0 − 0, and at a point of some A_m the m-th factor is 1 − 1. Expanding the product gives the identity. Summing over x (or taking expectations, or integrating) gives the cardinality, probability, or measure form by linearity.",
+  "images": [
+   {
+    "file": "53-r1-1.png",
+    "caption": "Wikipedia 'Inclusion-exclusion principle', Algebraic proof (indicator-function proof)."
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Inclusion-exclusion principle'; text under CC BY-SA 4.0 (page footer).",
+  "transcriptionNotes": "Rendered section screenshot. The source expands the vanishing product Π(1_A − 1_{A_i}) rather than writing 1_A = 1 − Π(1 − 1_{A_i}); the two are the same indicator-expansion idea.",
+  "reasonNotReproduced": null,
+  "routeId": "53-r1"
+ },
+ "53-r2": {
+  "sourceTitle": "Enumerative Combinatorics, Volume 1, 2nd ed. (version of 15 July 2011), Richard P. Stanley",
+  "sourceUrl": "https://math.mit.edu/~rstan/ec/ec1.pdf",
+  "locator": "Ch. 2 Sec. 2.1, Theorem 2.1.1 with proof and eqs. (2.3)-(2.5), printed pp. 223-224",
+  "routeMatch": "verified",
+  "proofSketch": "Theorem 2.1.1 shows that the operator φ f(T) = Σ_{Y⊇T} f(Y) on functions on subsets of S is invertible with φ^{-1} f(T) = Σ_{Y⊇T}(−1)^{#(Y−T)} f(Y); this is checked by composing and using Σ_{i}(−1)^i C(m,i) = δ_{0m}. In the combinatorial setting, f_=(T) counts objects having exactly the properties in T and f_≥(T) those having at least T, so f_≥(T) = Σ_{Y⊇T} f_=(Y) (2.3). Inverting gives f_=(T) = Σ_{Y⊇T}(−1)^{#(Y−T)} f_≥(Y) (2.4), and taking T = ∅ counts objects having none of the properties (2.5).",
+  "images": [
+   {
+    "file": "53-r2-1.png",
+    "caption": "Stanley, EC1, p. 223: Theorem 2.1.1 and start of proof."
+   },
+   {
+    "file": "53-r2-2.png",
+    "caption": "Stanley, EC1, p. 224: completion of proof; exact/at-least property counts (2.3)-(2.5)."
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Richard P. Stanley, Enumerative Combinatorics, Vol. 1 (2nd ed.), MIT; excerpt used for personal research under owner authorization.",
+  "transcriptionNotes": "Text is split over pp. 223-224; crop stops at the paragraph after (2.5). The route's 'exact membership' step is eqs. (2.3)-(2.4), applied via Theorem 2.1.1.",
+  "reasonNotReproduced": null,
+  "routeId": "53-r2"
+ },
+ "53-r3": {
+  "sourceTitle": "Enumerative Combinatorics, Volume 1, 2nd ed. (version of 15 July 2011), Richard P. Stanley",
+  "sourceUrl": "https://math.mit.edu/~rstan/ec/ec1.pdf",
+  "locator": "Ch. 3 Example 3.8.3 (printed p. 306); inversion argument from Theorem 2.1.1 proof (pp. 223-224)",
+  "routeMatch": "verified",
+  "proofSketch": "The Boolean algebra B_n is the product of n copies of the 2-chain, so by the product theorem for Möbius functions μ(T,S) = (−1)^{#(S−T)}. Möbius inversion on B_n then says g(S) = Σ_{T⊆S} f(T) for all S iff f(S) = Σ_{T⊆S}(−1)^{#(S−T)} g(T), which is equation (2.8), the inclusion-exclusion principle. The direct check of the inverse is in the proof of Theorem 2.1.1: in the composite φψ, the coefficient of f(Z) is Σ_{T⊆Y⊆Z}(−1)^{#(Y−T)} = δ, so ψ = φ^{-1}.",
+  "images": [
+   {
+    "file": "53-r3-1.png",
+    "caption": "Stanley, EC1, p. 306: Example 3.8.3, Möbius function of B_n and Möbius inversion equals inclusion-exclusion."
+   },
+   {
+    "file": "53-r3-2.png",
+    "caption": "Stanley, EC1, p. 223: Theorem 2.1.1 and start of proof."
+   },
+   {
+    "file": "53-r3-3.png",
+    "caption": "Stanley, EC1, p. 224: coefficient computation showing ψ = φ^{-1}."
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Richard P. Stanley, Enumerative Combinatorics, Vol. 1 (2nd ed.), MIT; excerpt used for personal research under owner authorization.",
+  "transcriptionNotes": "Example 3.8.3 is short and relies on the product theorem, (2.8) and Prop. 3.7.1, which are not included; images 2-3 supply the direct inversion argument.",
+  "reasonNotReproduced": null,
+  "routeId": "53-r3"
+ },
+ "48-r1": {
+  "sourceTitle": "Fermat's theorem on sums of two squares (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Fermat%27s_theorem_on_sums_of_two_squares",
+  "locator": "Section 'Proofs' > 'Dedekind's two proofs using Gaussian integers' (second proof)",
+  "routeMatch": "verified",
+  "proofSketch": "For p = 4n+1, a lemma of Lagrange (or Euler's criterion) supplies an integer m with p | m^2+1. Since Z[i] is Euclidean, hence a UFD, and p divides (m+i)(m−i) but neither factor (their imaginary parts are ±1), p is not prime in Z[i]. So p has a nontrivial factorization, which by multiplicativity of the norm (N(p) = p^2) has exactly two factors, p = (x+yi)(x−yi), and hence p = x^2 + y^2. The first Dedekind proof on the same page uses the Frobenius map on Z[i]/(p) and splitting of the ideal (p) instead.",
+  "images": [
+   {
+    "file": "48-r1-1.png",
+    "caption": "Wikipedia, Dedekind's two proofs using Gaussian integers (second proof is the factorization argument)."
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Fermat's theorem on sums of two squares'; CC BY-SA 4.0 (page footer).",
+  "transcriptionNotes": "Section screenshot includes both Dedekind proofs; the existence of m is quoted as a known result of Lagrange (not derived via Wilson).",
+  "reasonNotReproduced": null,
+  "routeId": "48-r1"
+ },
+ "48-r2": {
+  "sourceTitle": "Sum of Two Squares (Ben Lynn, Number Fields notes)",
+  "sourceUrl": "https://crypto.stanford.edu/pbc/notes/numberfield/sumsquares.html",
+  "locator": "Page 'Sum of Two Squares', Theorem and proof",
+  "routeMatch": "verified",
+  "proofSketch": "For p = 4m+1, Wilson's theorem gives that n = (2m)! is a square root of −1 modulo p (alternatively n = g^m for a primitive root g). Then p divides n^2+1 = (n+i)(n−i) in Z[i] but neither factor, so p is not irreducible there; to conclude it is not prime, the page shows Z[i] is Euclidean for the norm via a lattice argument, hence a UFD. So p = (a+bi)(c+di) with nonunits, and taking norms gives p^2 = (a^2+b^2)(c^2+d^2) with neither factor 1, so p = a^2+b^2.",
+  "images": [
+   {
+    "file": "48-r2-1.png",
+    "caption": "Ben Lynn's notes, 'Sum of Two Squares': Wilson's theorem square root of -1, Z[i] Euclidean, norm argument."
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Ben Lynn, Number Fields notes, Stanford (crypto.stanford.edu/pbc/notes); no licence stated on the page.",
+  "transcriptionNotes": "Wilson's theorem is cited, not proved, on the page; crop covers the existence proof only (the later description of Gaussian primes is omitted).",
+  "reasonNotReproduced": null,
+  "routeId": "48-r2"
+ },
+ "48-r3": {
+  "sourceTitle": "Fermat's theorem on sums of two squares (Wikipedia)",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Fermat%27s_theorem_on_sums_of_two_squares",
+  "locator": "Section 'Proofs' > 'Proof by Minkowski's Theorem'",
+  "routeMatch": "verified",
+  "proofSketch": "Since p ≡ 1 mod 4, −1 is a quadratic residue mod p, so p | m^2+1 for some m. Take the lattice S spanned by u = (1,m) and v = (0,p). Any w = au+bv = (a, am+bp) has ||w||^2 ≡ a^2(1+m^2) ≡ 0 mod p. The fundamental parallelogram has area p, while the open disc of radius √(2p) has area 2πp > 4p and is convex and symmetric, so Minkowski's theorem gives a nonzero lattice point in it. Then 0 < ||w||^2 < 2p and p | ||w||^2, so p = ||w||^2 is a sum of two squares.",
+  "images": [
+   {
+    "file": "48-r3-1.png",
+    "caption": "Wikipedia, 'Proof by Minkowski's Theorem' section."
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Fermat's theorem on sums of two squares'; CC BY-SA 4.0.",
+  "transcriptionNotes": "Full section shown. The route label mentions continued fractions as well; this is the Minkowski lattice proof only.",
+  "reasonNotReproduced": null,
+  "routeId": "48-r3"
+ }
+}

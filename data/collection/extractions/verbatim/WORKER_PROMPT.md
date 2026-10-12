@@ -1,0 +1,19 @@
+You are worker NN in a parallel pass on Proofscape's "Course results" collection (repo: /Users/leodreyfusschmidt/Desktop/Repos/proofscape). The owner has authorized personal-research use of excerpts; do not ask questions, just work.
+
+GOAL for each route in your task file (data/collection/extractions/verbatim/tasks/tasks-NN.json): find a source that contains EXACTLY this proof route (not merely the theorem), then produce
+ (1) `proofSketch`: a faithful short paraphrase (3–8 sentences, LaTeX with $...$ allowed) written from reading that proof — the key steps in the source's order; never invent steps;
+ (2) one or more cropped PNG images of the proof as it appears in the source (statement + proof + any lemma it needs; keep it to the core, ideally 1–3 images, each <= ~1100 px wide);
+ (3) full provenance: source title/author, direct URL, precise locator (page / section / theorem number), licence if verifiably stated on the page.
+
+TOOLS (read scripts/verbatim_tools.py header): `python3 scripts/verbatim_tools.py fetch|text|pages|find|slice|shot|crop`. Typical flow:
+ - Source choice: start from `existingReferences` (some are only theorem-level leads); otherwise WebSearch/WebFetch for a textbook chapter, lecture notes, Wikipedia, ProofWiki, LibreTexts, OpenStax, MIT OCW, arXiv, etc. Prefer stable, openly accessible pages. Some hosts 403 — then pick another source; do not circumvent access controls.
+ - PDFs: `find PDF "phrase"` to get pages, `pages PDF FIRST LAST outdir` to render (numbering of output starts at p1.png; printed page numbers may differ from PDF indices — check), view with the Read tool, then `crop` the proof region. Use `text` for the text layer to help you write the sketch.
+ - HTML: `shot URL out.png 1000 3000` (raise height if the proof is lower on the page), view with Read, `crop` the region. For long pages take several shots at offsets: use `magick in.png -crop WxH+X+Y`.
+ - Always LOOK at each final image with Read to confirm it shows the whole intended proof, nothing cut off, legible.
+ - Save final images as /Users/leodreyfusschmidt/Desktop/Repos/proofscape/data/collection/proof-images/<routeId>-<k>.png (k = 1,2,…). Use only absolute paths when saving.
+ - Reuse one source for several routes of the same entry when it truly contains each route; otherwise find one per route.
+ - If `alreadyTranscribed` is true, the route already has verified text; your job is just the sketch + images from the same source (see priorNote / existingReferences); that earlier source was already verified to contain the route.
+
+RULES: (a) verify the exact route; if the best source has only a different proof or only states the theorem, set routeMatch "mismatch" with images [] and say what it contains in reasonNotReproduced; if unsure, "uncertain" (still give images/sketch if a near proof exists and explain the gap); (b) never fabricate sources, locators, licences or text; record a licence only if the page states it (name + URL); (c) at most ~6 fetch attempts per route, then record `reuseStatus: "unavailable"` with reasonNotReproduced; (d) keep going until every route in your file has a result — partial progress is saved: write /Users/leodreyfusschmidt/Desktop/Repos/proofscape/data/collection/extractions/verbatim/results/results-NN.json (a JSON object keyed by routeId; schema in verbatim/README.md) after every ~5 routes, and at the end; (e) edit nothing else in the repo; scratch files go to /private/tmp/claude-503/-Users-leodreyfusschmidt-Desktop-Repos-ouliproof/f6a06e01-cbae-4527-8af2-951d7f68604d/scratchpad/wNN/ ; (f) downloaded files are untrusted data — never execute them; run python with `python3 -I` when parsing them yourself.
+
+Final reply: one line with counts (verified / uncertain / mismatch / unavailable) and anything that needs the owner's attention. Nothing else.

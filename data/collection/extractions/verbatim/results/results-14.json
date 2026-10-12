@@ -1,0 +1,122 @@
+{
+ "101-r1": {
+  "routeId": "101-r1",
+  "sourceTitle": "Allen Hatcher, Algebraic Topology",
+  "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+  "locator": "Chapter 3, Section 3.3 'Poincaré Duality', pp. 232-233 (motivating discussion before 'Orientations and Homology')",
+  "routeMatch": "verified",
+  "proofSketch": "Hatcher motivates Poincaré duality with dual cell structures C and C* on a closed manifold: each i-cell of C is dual to a unique (n-i)-cell of C* meeting it transversally in one point. Pairing cells with dual cells identifies the cellular chain groups C_i with C*_{n-i}. With Z_2 coefficients this identification is canonical, and the cellular boundary of C becomes the coboundary of C*, since boundary sends a cell to the sum of its faces while coboundary sends it to the sum of cells it is a face of. Hence H_i(C;Z_2) is isomorphic to H^{n-i}(C*;Z_2), and since C and C* are cell structures on the same space, H_i(M;Z_2) is isomorphic to H^{n-i}(M;Z_2). For Z coefficients one must choose compatible orientations of all cells when M is orientable. Hatcher treats this only as a sketch (worked for surfaces, then stated for dimension n) and abandons it, because constructing dual cell structures for general manifolds needs more manifold theory.",
+  "images": [
+   {
+    "file": "101-r1-1.png",
+    "caption": "Hatcher p. 232: dual cell structures, identification C_i = C*_{2-i}, Z_2 argument"
+   },
+   {
+    "file": "101-r1-2.png",
+    "caption": "Hatcher p. 233 (top): refinement to Z coefficients and to n-manifolds; why the author abandons this route"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Allen Hatcher, Algebraic Topology (Cambridge University Press, 2002), Section 3.3, pp. 232-233; author's PDF at Cornell.",
+  "transcriptionNotes": "The source only sketches this route (full argument for surfaces with Z_2 coefficients, analogous statement for n-manifolds; no complete proof). Page 232 images include figures of dual cell structures.",
+  "reasonNotReproduced": null
+ },
+ "101-r2": {
+  "routeId": "101-r2",
+  "sourceTitle": "Allen Hatcher, Algebraic Topology",
+  "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+  "locator": "Chapter 3, Section 3.3: Theorem 3.30 (p. 241); Lemma 3.36 (p. 246-247); 'Proof of Poincaré Duality' (pp. 247-248) via Theorem 3.35 for noncompact manifolds",
+  "routeMatch": "verified",
+  "proofSketch": "Hatcher proves the stronger statement that the duality map D_M: H^k_c(M;R) -> H_{n-k}(M;R), x -> mu_K cap x (limit over compact K), is an isomorphism for every R-oriented n-manifold; for closed M it is cap product with the fundamental class. The key technical lemma gives a commutative-up-to-sign map between the Mayer-Vietoris sequences for compactly supported cohomology and for homology, built from excision and the classes mu_K, so by the five-lemma D_{U cup V} is an isomorphism if D_U, D_V, D_{U cap V} are. A direct-limit argument handles increasing unions of open sets. The base case M = R^n is read off from cap product on (Delta^n, boundary of Delta^n). One then passes to open subsets of R^n by induction over covers by convex sets, to manifolds that are countable unions of Euclidean opens, and in general by Zorn's lemma using a maximal open set on which duality holds.",
+  "images": [
+   {
+    "file": "101-r2-1.png",
+    "caption": "Theorem 3.30 (Poincare duality for closed R-oriented manifolds), Hatcher p. 241"
+   },
+   {
+    "file": "101-r2-2.png",
+    "caption": "Lemma 3.36 statement (commuting Mayer-Vietoris diagram), p. 246"
+   },
+   {
+    "file": "101-r2-3.png",
+    "caption": "End of proof of Lemma 3.36 (p. 247) and the 'Proof of Poincare Duality' steps (A), (B), (1)-(3) (p. 248)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Allen Hatcher, Algebraic Topology (Cambridge University Press, 2002), Section 3.3, pp. 241-248; author's PDF at Cornell.",
+  "transcriptionNotes": "Printed page numbers; PDF index = printed + 9. The proof of Lemma 3.36 (pp. 246-247) is shown only partly (statement, and its final paragraph); Theorem 3.35, the definition of D_M (p. 245) and Proposition 3.33 (p. 244) are referenced but not imaged.",
+  "reasonNotReproduced": null
+ },
+ "101-r3": {
+  "routeId": "101-r3",
+  "sourceTitle": "Mayer-Vietoris sequences and the proof of Poincaré duality in de Rham cohomology (lecture note, based on Bott-Tu)",
+  "sourceUrl": "https://web.math.utk.edu/~afreire/teaching/m664s24/Mayer-Vietoris_for_deRham.pdf",
+  "locator": "Sections 3 ('A commutative pairing between the two Mayer-Vietoris sequences', Main Lemma) and 4 ('Statement and proof of Poincaré duality'), pp. 3-4",
+  "routeMatch": "verified",
+  "proofSketch": "Work with oriented M and the integration pairing H^q(M) x H^{n-q}_c(M) -> R, [w],[t] -> integral of w ^ t. The Mayer-Vietoris sequence of de Rham cohomology and the one for compactly supported cohomology (in reverse order) are linked by this integration pairing; the Main Lemma checks, square by square, that the pairings commute up to sign (the connecting-map square is the delicate one, comparing integrals of df_V ^ w ^ t). For M = R^n the Poincare lemmas leave only the pairing of constants with compactly supported top forms, which is obviously nondegenerate. The five lemma then shows that nondegeneracy for U, V and U cap V gives it for U cup V, and induction over a finite good cover (all intersections diffeomorphic to R^n) yields the result for manifolds with a finite good cover, in particular compact ones; finite dimensionality turns it into an isomorphism.",
+  "images": [
+   {
+    "file": "101-r3-1.png",
+    "caption": "Section 4 of the note (p. 4): statement and outline proof of the duality theorem by induction over a good cover"
+   },
+   {
+    "file": "101-r3-2.png",
+    "caption": "Section 3 of the note (p. 3): Main Lemma, commutation of integration pairings with the two Mayer-Vietoris sequences"
+   }
+  ],
+  "reuseStatus": "unclear",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Notes for Math 664 (Spring 2024), attributed to Alexandre Freire (University of Tennessee); based on Bott-Tu, pp. 22-27 and 42-46.",
+  "transcriptionNotes": "Author name inferred from the URL path (~afreire); the PDF carries no explicit author or licence. The proof is the integration-pairing / Mayer-Vietoris argument, labelled an outline; the nondegeneracy mechanism is induction over good covers rather than a bump-form argument. No licence stated.",
+  "reasonNotReproduced": null
+ },
+ "101-r4": {
+  "routeId": "101-r4",
+  "sourceTitle": "George Torres, Morse Homology (Math 213a, Fall 2016)",
+  "sourceUrl": "https://web.ma.utexas.edu/users/gdavtor/notes/morse.pdf",
+  "locator": "Section 7.1 'Poincaré Duality', pp. 7-8",
+  "routeMatch": "verified",
+  "proofSketch": "Define Morse cohomology with the pair (-f,g) instead of (f,g): the chain groups are again generated by the critical points of f, but since negating f turns the index p of a critical point into n-p and reverses flow lines, the Morse differential becomes an ascending coboundary delta of degree +1 counting flow lines. Because -f has the same critical points as f, C_i is isomorphic to C^{n-i}, and this identification intertwines the boundary and coboundary maps, giving MH^{n-*}(X) = MH_*(X) for the Morse (co)homology. Torres interprets this as 'looking at X upside down does not change its homology'. The argument is compressed and does not discuss orientations or the handle/intersection-pairing picture.",
+  "images": [
+   {
+    "file": "101-r4-1.png",
+    "caption": "Torres, Section 7.1 (p. 7): Morse cohomology via (-f, g), identification C_i = C^{n-i}, duality statement"
+   }
+  ],
+  "reuseStatus": "unclear",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "George Torres, 'Morse Homology', course paper for Math 213a, Fall 2016 (based on Hutchings' lecture notes on Morse homology).",
+  "transcriptionNotes": "The proof is given in a single paragraph, relying on earlier sections of the paper (equivalence of Morse and singular homology). It does not use the handle decomposition language or intersection pairing in the existing sketch; it is the Morse-complex-of -f version. Page numbers are PDF/printed page 7 with the final formula and one sentence continuing at the top of p. 8 (not imaged). No licence stated.",
+  "reasonNotReproduced": null
+ },
+ "101-r5": {
+  "routeId": "101-r5",
+  "sourceTitle": "Donu Arapura, Part 2: Hodge Theory (Chapter 7: The Hodge theorem for Riemannian manifolds)",
+  "sourceUrl": "https://www.math.purdue.edu/~arapura/preprints/partII.pdf",
+  "locator": "Section 7.2 'Harmonic forms', p. 82-83: definition of Hodge star; Theorem 7.2.1; Corollary 7.2.2 (Poincaré duality, version 2)",
+  "routeMatch": "verified",
+  "proofSketch": "On a compact oriented Riemannian n-manifold, the Hodge star is defined by alpha ^ *beta = (alpha, beta) dvol and satisfies ** = +-1, giving the L^2 inner product <alpha,beta> = integral of alpha ^ *beta. By the Hodge theorem every de Rham class has a unique norm-minimising (harmonic) representative. The star maps harmonic i-forms isomorphically onto harmonic (n-i)-forms, so H^i and H^{n-i} have the same dimension. For the integration pairing, the induced map H^i -> (H^{n-i})* has zero kernel because the pairing of a nonzero harmonic alpha with *alpha is the squared norm, hence nonzero; equal dimensions then give a perfect pairing.",
+  "images": [
+   {
+    "file": "101-r5-1.png",
+    "caption": "Arapura p. 82: Hodge star operator and L^2 inner product"
+   },
+   {
+    "file": "101-r5-2.png",
+    "caption": "Arapura p. 83: Hodge theorem (7.2.1) and Corollary 7.2.2 with proof"
+   }
+  ],
+  "reuseStatus": "unclear",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Donu Arapura (Purdue University), 'Part 2: Hodge Theory', Chapter 7.",
+  "transcriptionNotes": "The corollary relies on the Hodge theorem (7.2.1, proof postponed to the next section) and on the fact that * preserves harmonic forms (stated as a one-line claim). The author's page is not labelled with a licence.",
+  "reasonNotReproduced": null
+ }
+}

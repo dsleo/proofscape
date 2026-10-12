@@ -1,0 +1,424 @@
+{
+ "agent": 3,
+ "tasks": [
+  {
+   "routeId": "16-r1",
+   "entryId": 16,
+   "entryName": "Wilson's theorem",
+   "entryDescription": "Pair each unit with its inverse, leaving ±1; use the structure of the finite multiplicative group (with the p=2 case handled separately).",
+   "level": "Undergraduate",
+   "routeTitle": "Pair each unit with its inverse, leaving ±1",
+   "currentSketch": "Pair each unit x modulo n with its inverse. All pairs cancel in the product of units except self-inverse units; in a prime field the only roots of x²=1 are ±1, so (n−1)!≡−1 (mod prime n). This proof applies to prime n (and for composite n the Wilson congruence generally fails).",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "16-r2",
+   "entryId": 16,
+   "entryName": "Wilson's theorem",
+   "entryDescription": "Pair each unit with its inverse, leaving ±1; use the structure of the finite multiplicative group (with the p=2 case handled separately).",
+   "level": "Undergraduate",
+   "routeTitle": "use the structure of the finite multiplicative group (with the p=2 case handled separately)",
+   "currentSketch": "In the group (Z/pZ)×, self-inverse elements solve x²=1 and are exactly ±1 for odd prime p (only 1 when p=2). Pair the rest with inverses; their product is 1, leaving product of all units −1. Thus (p−1)!≡−1 mod p.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "17-r1",
+   "entryId": 17,
+   "entryName": "Euclidean algorithm terminates and computes gcd",
+   "entryDescription": "Strict descent of remainders; invariant ideals/generated subgroups; continued fractions.",
+   "level": "School–undergraduate",
+   "routeTitle": "Strict descent of remainders",
+   "currentSketch": "Repeated division gives a=bq+r with 0≤r<b. Each nonzero remainder is a strictly smaller positive integer, so the process terminates. Since gcd(a,b)=gcd(b,r), the last nonzero remainder is gcd(a,b).",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "17-r2",
+   "entryId": 17,
+   "entryName": "Euclidean algorithm terminates and computes gcd",
+   "entryDescription": "Strict descent of remainders; invariant ideals/generated subgroups; continued fractions.",
+   "level": "School–undergraduate",
+   "routeTitle": "invariant ideals/generated subgroups",
+   "currentSketch": "In Z, ideals satisfy (a,b)=(b,a−qb) whenever a=bq+r, reducing the pair to the Euclidean remainder sequence. The last nonzero generator is the gcd; termination follows from strict descent of positive remainders.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "17-r3",
+   "entryId": 17,
+   "entryName": "Euclidean algorithm terminates and computes gcd",
+   "entryDescription": "Strict descent of remainders; invariant ideals/generated subgroups; continued fractions.",
+   "level": "School–undergraduate",
+   "routeTitle": "continued fractions",
+   "currentSketch": "Continued-fraction convergents use the same recurrence rᵢ₋₁=qᵢrᵢ+rᵢ₊₁. Denominators/remainders strictly decrease, so the algorithm ends; invariance of common divisors identifies the last nonzero remainder as gcd.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "18-r1",
+   "entryId": 18,
+   "entryName": "Bézout identity",
+   "entryDescription": "Back-substitute Euclidean divisions; least positive element of the ideal (a,b); lattice-point/linear-combination argument.",
+   "level": "School–undergraduate",
+   "routeTitle": "Back-substitute Euclidean divisions",
+   "currentSketch": "Write the Euclidean divisions backward: the last nonzero remainder is gcd(a,b), and each remainder equals the previous dividend minus quotient times divisor. Back-substitution expresses gcd(a,b)=ax+by.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "18-r2",
+   "entryId": 18,
+   "entryName": "Bézout identity",
+   "entryDescription": "Back-substitute Euclidean divisions; least positive element of the ideal (a,b); lattice-point/linear-combination argument.",
+   "level": "School–undergraduate",
+   "routeTitle": "least positive element of the ideal (a,b)",
+   "currentSketch": "Among positive elements of I={ax+by:x,y∈Z}, take least d. Division with remainder shows d divides both a and b (otherwise a remainder in I is smaller); every common divisor divides d. So d=gcd(a,b) and lies in (a,b).",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "18-r3",
+   "entryId": 18,
+   "entryName": "Bézout identity",
+   "entryDescription": "Back-substitute Euclidean divisions; least positive element of the ideal (a,b); lattice-point/linear-combination argument.",
+   "level": "School–undergraduate",
+   "routeTitle": "lattice-point/linear-combination argument",
+   "currentSketch": "The integer lattice points generated by vectors (a,b) in Z² project their first coordinates to the subgroup aZ+bZ. Every subgroup of Z is dZ; its least positive element d is an integer combination and is exactly gcd(a,b).",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "19-r1",
+   "entryId": 19,
+   "entryName": "Chinese remainder theorem (coprime moduli)",
+   "entryDescription": "Construct coefficients with Bezout identities; ring isomorphism via kernels/ideals; Lagrange interpolation/idempotents.",
+   "level": "Undergraduate",
+   "routeTitle": "Construct coefficients with Bezout identities",
+   "currentSketch": "For coprime m,n choose u,v with um+vn=1. Given residues a mod m,b mod n, x=a·vn+b·um has x≡a mod m and x≡b mod n. Any two solutions differ by a multiple of both, hence mn.",
+   "existingReferences": [
+    {
+     "label": "Poritz, Yet Another Introductory Number Theory Textbook, §2.3 Chinese Remainder Theorem",
+     "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+     "locator": "§2.3, constructive idempotent proof and uniqueness"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "19-r2",
+   "entryId": 19,
+   "entryName": "Chinese remainder theorem (coprime moduli)",
+   "entryDescription": "Construct coefficients with Bezout identities; ring isomorphism via kernels/ideals; Lagrange interpolation/idempotents.",
+   "level": "Undergraduate",
+   "routeTitle": "ring isomorphism via kernels/ideals",
+   "currentSketch": "The map φ:Z/(mn)→Z/m×Z/n sending a residue to its pair of residues is a ring homomorphism. Its kernel is multiples of mn, hence trivial; finite sets have equal size mn, so it is an isomorphism.",
+   "existingReferences": [
+    {
+     "label": "Poritz, Yet Another Introductory Number Theory Textbook, §2.3 Chinese Remainder Theorem",
+     "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+     "locator": "§2.3, constructive idempotent proof and uniqueness"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "19-r3",
+   "entryId": 19,
+   "entryName": "Chinese remainder theorem (coprime moduli)",
+   "entryDescription": "Construct coefficients with Bezout identities; ring isomorphism via kernels/ideals; Lagrange interpolation/idempotents.",
+   "level": "Undergraduate",
+   "routeTitle": "Lagrange interpolation/idempotents",
+   "currentSketch": "For pairwise coprime moduli n₁,…,nₖ, put N=∏nᵢ and Nⱼ=N/nⱼ. Choose yⱼ with Nⱼyⱼ≡1 (mod nⱼ), and set x=Σⱼ bⱼNⱼyⱼ. Modulo nᵢ, every summand except the i-th vanishes and the i-th is bᵢ, giving all required congruences. If x and x′ are two solutions, every nⱼ divides x−x′; pairwise coprimality implies N divides x−x′, proving uniqueness modulo N.",
+   "existingReferences": [
+    {
+     "label": "Poritz, Yet Another Introductory Number Theory Textbook, §2.3 Chinese Remainder Theorem",
+     "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+     "locator": "§2.3, constructive idempotent proof and uniqueness"
+    },
+    {
+     "label": "Yet Another Introductory Number Theory Textbook – Cryptology Emphasis, §2.3 The Chinese Remainder Theorem (Jonathan A. Poritz), LibreTexts",
+     "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_(Poritz)/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+     "locator": "§2.3, Theorem 2.3.1 (The Chinese Remainder Theorem) with its proof (existence via N_j y_j, then uniqueness mod N)"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures omitted. LaTeX delimiters kept as on the page. Route caveat: this is the explicit sum_j b_j N_j y_j construction; the source never uses the word 'idempotent', so the match to the 'idempotent/Lagrange interpolation' route label is uncertain (the elements N_j y_j are the idempotents). Source: Yet Another Introductory Number"
+  },
+  {
+   "routeId": "20-r1",
+   "entryId": 20,
+   "entryName": "Infinitude of rational numbers in every real interval (density of Q)",
+   "entryDescription": "Archimedean property and integer scaling; floor/ceiling construction; decimal/rational approximation.",
+   "level": "School–undergraduate",
+   "routeTitle": "Archimedean property and integer scaling",
+   "currentSketch": "Given a<b, choose n with n(b−a)>1 by Archimedean property. Let k=⌊na⌋+1; then na<k≤na+1<nb, so a<k/n<b.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "20-r2",
+   "entryId": 20,
+   "entryName": "Infinitude of rational numbers in every real interval (density of Q)",
+   "entryDescription": "Archimedean property and integer scaling; floor/ceiling construction; decimal/rational approximation.",
+   "level": "School–undergraduate",
+   "routeTitle": "floor/ceiling construction",
+   "currentSketch": "Choose n so 1/n<b−a, and let m=⌊na⌋+1. Then a<m/n≤a+1/n<b; hence the interval contains a rational.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "20-r3",
+   "entryId": 20,
+   "entryName": "Infinitude of rational numbers in every real interval (density of Q)",
+   "entryDescription": "Archimedean property and integer scaling; floor/ceiling construction; decimal/rational approximation.",
+   "level": "School–undergraduate",
+   "routeTitle": "decimal/rational approximation",
+   "currentSketch": "Decimal truncations of a and b at sufficiently many places differ by more than one unit in the last place; a finite decimal strictly between them (or a rational with common denominator 10ⁿ) lies in the interval. This uses Archimedean scaling; endpoint decimal ambiguity is avoided by strict inequality.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "21-r1",
+   "entryId": 21,
+   "entryName": "Irrationality of √p for prime p",
+   "entryDescription": "Prime-exponent parity in unique factorization; lowest-terms divisibility; rational-root theorem.",
+   "level": "School–undergraduate",
+   "routeTitle": "Prime-exponent parity in unique factorization",
+   "currentSketch": "If √p=m/n in lowest terms, then m²=pn². Prime p divides m², so Euclid's lemma gives p|m; write m=pk. Substitution gives n²=pk², so p|n, contradiction.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "21-r2",
+   "entryId": 21,
+   "entryName": "Irrationality of √p for prime p",
+   "entryDescription": "Prime-exponent parity in unique factorization; lowest-terms divisibility; rational-root theorem.",
+   "level": "School–undergraduate",
+   "routeTitle": "lowest-terms divisibility",
+   "currentSketch": "Compare prime exponents in m²=pn². At prime p the left exponent is even, while the right is 1 plus an even number, impossible by unique factorization.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "21-r3",
+   "entryId": 21,
+   "entryName": "Irrationality of √p for prime p",
+   "entryDescription": "Prime-exponent parity in unique factorization; lowest-terms divisibility; rational-root theorem.",
+   "level": "School–undergraduate",
+   "routeTitle": "rational-root theorem",
+   "currentSketch": "The rational-root theorem for X²−p says a reduced rational root m/n has m|p and n|1. Check m=±1 or ±p: neither squared equals p for prime p. For p= square this would differ; assumption p prime matters.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "22-r1",
+   "entryId": 22,
+   "entryName": "There are infinitely many Pythagorean triples",
+   "entryDescription": "Euclid's parametrization; generate triples from rational points on the unit circle; primitive triples from coprime opposite-parity parameters.",
+   "level": "School–undergraduate",
+   "routeTitle": "Euclid's parametrization",
+   "currentSketch": "For each integer t≥2, Euclid's parametrization gives (t²−1,2t,t²+1); direct expansion verifies (t²−1)²+(2t)²=(t²+1)². Distinct t give infinitely many triples.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "22-r2",
+   "entryId": 22,
+   "entryName": "There are infinitely many Pythagorean triples",
+   "entryDescription": "Euclid's parametrization; generate triples from rational points on the unit circle; primitive triples from coprime opposite-parity parameters.",
+   "level": "School–undergraduate",
+   "routeTitle": "generate triples from rational points on the unit circle",
+   "currentSketch": "Parametrize rational points on unit circle x²+y²=1 by intersecting a line of rational slope t through (−1,0): x=(1−t²)/(1+t²), y=2t/(1+t²). Clear denominators to get an integer Pythagorean triple for every integer t.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "22-r3",
+   "entryId": 22,
+   "entryName": "There are infinitely many Pythagorean triples",
+   "entryDescription": "Euclid's parametrization; generate triples from rational points on the unit circle; primitive triples from coprime opposite-parity parameters.",
+   "level": "School–undergraduate",
+   "routeTitle": "primitive triples from coprime opposite-parity parameters",
+   "currentSketch": "If m,n are coprime and of opposite parity, then (m²−n²,2mn,m²+n²) is a primitive triple: expansion verifies the equation; gcd and parity conditions show no common prime divides all three. Vary m to obtain infinitely many.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "23-r1",
+   "entryId": 23,
+   "entryName": "Pick's theorem (lattice polygon area)",
+   "entryDescription": "Triangulation and induction; boundary/interior lattice-point counting plus Euler characteristic; reduce to unimodular triangles.",
+   "level": "Undergraduate",
+   "routeTitle": "Triangulation and induction",
+   "currentSketch": "Triangulate a lattice polygon into lattice triangles and prove the formula inductively by adding triangles along edges; boundary lattice points and interior lattice points update exactly as the area does. A primitive lattice triangle (no lattice points except vertices) has area 1/2 by the determinant/unimodular lemma. The resulting invariant is A=I+B/2−1.",
+   "existingReferences": [
+    {
+     "label": "Eppstein, Euler’s Formula: multiple proofs and related results",
+     "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+     "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "23-r2",
+   "entryId": 23,
+   "entryName": "Pick's theorem (lattice polygon area)",
+   "entryDescription": "Triangulation and induction; boundary/interior lattice-point counting plus Euler characteristic; reduce to unimodular triangles.",
+   "level": "Undergraduate",
+   "routeTitle": "boundary/interior lattice-point counting plus Euler characteristic",
+   "currentSketch": "For a lattice triangulation, each triangle has area equal to its number of interior lattice points plus half its boundary count minus 1 (Pick's formula for a triangle, via determinant/lattice-index argument). Sum over triangles; interior edges are counted twice and vertices satisfy Euler's planar formula, leaving A=I+B/2−1.",
+   "existingReferences": [
+    {
+     "label": "Eppstein, Euler’s Formula: multiple proofs and related results",
+     "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+     "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "23-r3",
+   "entryId": 23,
+   "entryName": "Pick's theorem (lattice polygon area)",
+   "entryDescription": "Triangulation and induction; boundary/interior lattice-point counting plus Euler characteristic; reduce to unimodular triangles.",
+   "level": "Undergraduate",
+   "routeTitle": "reduce to unimodular triangles",
+   "currentSketch": "Repeatedly subdivide a lattice polygon using an interior or boundary lattice point until all pieces are primitive lattice triangles. Each primitive triangle has area 1/2; counting how pieces meet and using Euler characteristic gives A=I+B/2−1. The primitive-triangle claim is essential and follows from lattice index / determinant.",
+   "existingReferences": [
+    {
+     "label": "Eppstein, Euler’s Formula: multiple proofs and related results",
+     "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+     "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

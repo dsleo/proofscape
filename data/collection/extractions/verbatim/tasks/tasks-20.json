@@ -1,0 +1,365 @@
+{
+ "agent": 20,
+ "tasks": [
+  {
+   "routeId": "145-r1",
+   "entryId": 145,
+   "entryName": "Riemann hypothesis for curves over finite fields (Weil theorem)",
+   "entryDescription": "Jacobian/endomorphism eigenvalues; intersection theory on C×C; Stepanov–Bombieri polynomial method; Deligne's general Weil-conjectures route.",
+   "level": "Graduate",
+   "routeTitle": "Jacobian/endomorphism eigenvalues",
+   "currentSketch": "For a smooth projective curve over F_q, Frobenius acts on H¹ of its Jacobian/étale cohomology; the zeta numerator is its characteristic polynomial. Weil’s positivity/intersection pairing implies every eigenvalue has absolute value √q. Intersection-theoretic proof encodes Frobenius and diagonal as divisors on C×C and applies a positivity inequality. Deligne generalizes cohomologically to higher dimension; Stepanov gives an elementary polynomial auxiliary-function bound.",
+   "existingReferences": [
+    {
+     "label": "Weil, Numbers of solutions of equations in finite fields",
+     "url": "https://doi.org/10.1007/BF02564449",
+     "locator": "Weil’s original proof of RH for curves; separate modern methods require their own sources"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "145-r2",
+   "entryId": 145,
+   "entryName": "Riemann hypothesis for curves over finite fields (Weil theorem)",
+   "entryDescription": "Jacobian/endomorphism eigenvalues; intersection theory on C×C; Stepanov–Bombieri polynomial method; Deligne's general Weil-conjectures route.",
+   "level": "Graduate",
+   "routeTitle": "intersection theory on C×C",
+   "currentSketch": "For a smooth projective curve over F_q, Frobenius acts on H¹ of its Jacobian/étale cohomology; the zeta numerator is its characteristic polynomial. Weil’s positivity/intersection pairing implies every eigenvalue has absolute value √q. Intersection-theoretic proof encodes Frobenius and diagonal as divisors on C×C and applies a positivity inequality. Deligne generalizes cohomologically to higher dimension; Stepanov gives an elementary polynomial auxiliary-function bound.",
+   "existingReferences": [
+    {
+     "label": "Weil, Numbers of solutions of equations in finite fields",
+     "url": "https://doi.org/10.1007/BF02564449",
+     "locator": "Weil’s original proof of RH for curves; separate modern methods require their own sources"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "145-r3",
+   "entryId": 145,
+   "entryName": "Riemann hypothesis for curves over finite fields (Weil theorem)",
+   "entryDescription": "Jacobian/endomorphism eigenvalues; intersection theory on C×C; Stepanov–Bombieri polynomial method; Deligne's general Weil-conjectures route.",
+   "level": "Graduate",
+   "routeTitle": "Stepanov–Bombieri polynomial method",
+   "currentSketch": "For a smooth projective curve over F_q, Frobenius acts on H¹ of its Jacobian/étale cohomology; the zeta numerator is its characteristic polynomial. Weil’s positivity/intersection pairing implies every eigenvalue has absolute value √q. Intersection-theoretic proof encodes Frobenius and diagonal as divisors on C×C and applies a positivity inequality. Deligne generalizes cohomologically to higher dimension; Stepanov gives an elementary polynomial auxiliary-function bound.",
+   "existingReferences": [
+    {
+     "label": "Weil, Numbers of solutions of equations in finite fields",
+     "url": "https://doi.org/10.1007/BF02564449",
+     "locator": "Weil’s original proof of RH for curves; separate modern methods require their own sources"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "145-r4",
+   "entryId": 145,
+   "entryName": "Riemann hypothesis for curves over finite fields (Weil theorem)",
+   "entryDescription": "Jacobian/endomorphism eigenvalues; intersection theory on C×C; Stepanov–Bombieri polynomial method; Deligne's general Weil-conjectures route.",
+   "level": "Graduate",
+   "routeTitle": "Deligne's general Weil-conjectures route",
+   "currentSketch": "For a smooth projective curve over F_q, Frobenius acts on H¹ of its Jacobian/étale cohomology; the zeta numerator is its characteristic polynomial. Weil’s positivity/intersection pairing implies every eigenvalue has absolute value √q. Intersection-theoretic proof encodes Frobenius and diagonal as divisors on C×C and applies a positivity inequality. Deligne generalizes cohomologically to higher dimension; Stepanov gives an elementary polynomial auxiliary-function bound.",
+   "existingReferences": [
+    {
+     "label": "Weil, Numbers of solutions of equations in finite fields",
+     "url": "https://doi.org/10.1007/BF02564449",
+     "locator": "Weil’s original proof of RH for curves; separate modern methods require their own sources"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "146-r1",
+   "entryId": 146,
+   "entryName": "Jones polynomial is an invariant of links",
+   "entryDescription": "Reidemeister-move skein relation; Temperley–Lieb algebras; quantum-group representations; Chern–Simons/topological quantum field theory. State the exact normalization and link equivalence.",
+   "level": "Graduate",
+   "routeTitle": "Reidemeister-move skein relation",
+   "currentSketch": "Define the bracket recursively by ⟨L⟩=A⟨L₀⟩+A⁻¹⟨L∞⟩ and ⟨L⊔○⟩=−(A²+A⁻²)⟨L⟩. Check the three Reidemeister moves: II and III preserve the bracket, while I multiplies by a writhe-dependent factor. Normalize by (−A³)^{−w(L)} to obtain an ambient-isotopy invariant (then change variables for Jones V).",
+   "existingReferences": [
+    {
+     "label": "Kauffman, State models and the Jones polynomial",
+     "url": "https://doi.org/10.1007/BF01213674",
+     "locator": "State-sum construction/invariance under Reidemeister moves"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "146-r2",
+   "entryId": 146,
+   "entryName": "Jones polynomial is an invariant of links",
+   "entryDescription": "Reidemeister-move skein relation; Temperley–Lieb algebras; quantum-group representations; Chern–Simons/topological quantum field theory. State the exact normalization and link equivalence.",
+   "level": "Graduate",
+   "routeTitle": "Temperley–Lieb algebras",
+   "currentSketch": "Represent braid generators by Temperley–Lieb operators e_i with e_i²=δe_i and e_ie_{i±1}e_i=e_i. The Markov trace is invariant under braid conjugation and stabilization after a writhe normalization; Alexander’s theorem plus Markov’s theorem then makes the resulting closure polynomial a link invariant.",
+   "existingReferences": [
+    {
+     "label": "Kauffman, State models and the Jones polynomial",
+     "url": "https://doi.org/10.1007/BF01213674",
+     "locator": "State-sum construction/invariance under Reidemeister moves"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "146-r3",
+   "entryId": 146,
+   "entryName": "Jones polynomial is an invariant of links",
+   "entryDescription": "Reidemeister-move skein relation; Temperley–Lieb algebras; quantum-group representations; Chern–Simons/topological quantum field theory. State the exact normalization and link equivalence.",
+   "level": "Graduate",
+   "routeTitle": "quantum-group representations",
+   "currentSketch": "A ribbon/quasitriangular quantum-group representation assigns operators to crossings via the R-matrix and evaluation/coevaluation to cups and caps. Yang–Baxter ensures Reidemeister III, invertibility handles II, and twist correction handles I; choosing the fundamental U_q(sl₂) representation yields the Jones polynomial up to normalization.",
+   "existingReferences": [
+    {
+     "label": "Kauffman, State models and the Jones polynomial",
+     "url": "https://doi.org/10.1007/BF01213674",
+     "locator": "State-sum construction/invariance under Reidemeister moves"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "146-r4",
+   "entryId": 146,
+   "entryName": "Jones polynomial is an invariant of links",
+   "entryDescription": "Reidemeister-move skein relation; Temperley–Lieb algebras; quantum-group representations; Chern–Simons/topological quantum field theory. State the exact normalization and link equivalence.",
+   "level": "Graduate",
+   "routeTitle": "Chern–Simons/topological quantum field theory. State the exact normalization and link equivalence",
+   "currentSketch": "A ribbon/quasitriangular quantum-group representation assigns operators to crossings via the R-matrix and evaluation/coevaluation to cups and caps. Yang–Baxter ensures Reidemeister III, invertibility handles II, and twist correction handles I; choosing the fundamental U_q(sl₂) representation yields the Jones polynomial up to normalization.",
+   "existingReferences": [
+    {
+     "label": "Kauffman, State models and the Jones polynomial",
+     "url": "https://doi.org/10.1007/BF01213674",
+     "locator": "State-sum construction/invariance under Reidemeister moves"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "147-r1",
+   "entryId": 147,
+   "entryName": "Constant-curvature manifolds are locally modeled on spherical, Euclidean, or hyperbolic space",
+   "entryDescription": "Jacobi-field comparison and exponential coordinates; Frobenius/integrability of parallel frames; Cartan connection/structure equations.",
+   "level": "Graduate",
+   "routeTitle": "Jacobi-field comparison and exponential coordinates",
+   "currentSketch": "In a sufficiently small normal neighborhood, Jacobi fields along radial geodesics satisfy J″+R(J,γ′)γ′=0. Constant sectional curvature makes this scalar equation identical to that in the model sphere/Euclidean/hyperbolic space; matching initial data makes exponential-coordinate metrics locally isometric. Parallel-frame/Cartan proofs integrate the same structure equations.",
+   "existingReferences": [
+    {
+     "label": "Lee, Riemannian Manifolds: An Introduction to Curvature",
+     "url": "https://doi.org/10.1007/978-1-4614-9821-7",
+     "locator": "Chapter on constant sectional curvature and local space-form theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "147-r2",
+   "entryId": 147,
+   "entryName": "Constant-curvature manifolds are locally modeled on spherical, Euclidean, or hyperbolic space",
+   "entryDescription": "Jacobi-field comparison and exponential coordinates; Frobenius/integrability of parallel frames; Cartan connection/structure equations.",
+   "level": "Graduate",
+   "routeTitle": "Frobenius/integrability of parallel frames",
+   "currentSketch": "In a sufficiently small normal neighborhood, Jacobi fields along radial geodesics satisfy J″+R(J,γ′)γ′=0. Constant sectional curvature makes this scalar equation identical to that in the model sphere/Euclidean/hyperbolic space; matching initial data makes exponential-coordinate metrics locally isometric. Parallel-frame/Cartan proofs integrate the same structure equations.",
+   "existingReferences": [
+    {
+     "label": "Lee, Riemannian Manifolds: An Introduction to Curvature",
+     "url": "https://doi.org/10.1007/978-1-4614-9821-7",
+     "locator": "Chapter on constant sectional curvature and local space-form theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "147-r3",
+   "entryId": 147,
+   "entryName": "Constant-curvature manifolds are locally modeled on spherical, Euclidean, or hyperbolic space",
+   "entryDescription": "Jacobi-field comparison and exponential coordinates; Frobenius/integrability of parallel frames; Cartan connection/structure equations.",
+   "level": "Graduate",
+   "routeTitle": "Cartan connection/structure equations",
+   "currentSketch": "In a sufficiently small normal neighborhood, Jacobi fields along radial geodesics satisfy J″+R(J,γ′)γ′=0. Constant sectional curvature makes this scalar equation identical to that in the model sphere/Euclidean/hyperbolic space; matching initial data makes exponential-coordinate metrics locally isometric. Parallel-frame/Cartan proofs integrate the same structure equations.",
+   "existingReferences": [
+    {
+     "label": "Lee, Riemannian Manifolds: An Introduction to Curvature",
+     "url": "https://doi.org/10.1007/978-1-4614-9821-7",
+     "locator": "Chapter on constant sectional curvature and local space-form theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "148-r1",
+   "entryId": 148,
+   "entryName": "Hodge theorem (de Rham cohomology represented by harmonic forms)",
+   "entryDescription": "Elliptic PDE and Green operators; Hilbert-space orthogonal decomposition; heat-flow convergence to harmonic representatives.",
+   "level": "Graduate",
+   "routeTitle": "Elliptic PDE and Green operators",
+   "currentSketch": "On a compact Riemannian manifold, ellipticity gives Green operator G on the orthogonal complement of harmonic forms and ΔG=GΔ=I−H. For closed α, α=Hα+dδGα, so its class has harmonic representative; if harmonic α is exact, ⟨α,α⟩=⟨α,dβ⟩=⟨δα,β⟩=0, proving uniqueness.",
+   "existingReferences": [
+    {
+     "label": "Jost, Riemannian Geometry and Geometric Analysis",
+     "url": "https://doi.org/10.1007/978-3-319-61860-9",
+     "locator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "148-r2",
+   "entryId": 148,
+   "entryName": "Hodge theorem (de Rham cohomology represented by harmonic forms)",
+   "entryDescription": "Elliptic PDE and Green operators; Hilbert-space orthogonal decomposition; heat-flow convergence to harmonic representatives.",
+   "level": "Graduate",
+   "routeTitle": "Hilbert-space orthogonal decomposition",
+   "currentSketch": "On a compact Riemannian manifold, ellipticity gives Green operator G on the orthogonal complement of harmonic forms and ΔG=GΔ=I−H. For closed α, α=Hα+dδGα, so its class has harmonic representative; if harmonic α is exact, ⟨α,α⟩=⟨α,dβ⟩=⟨δα,β⟩=0, proving uniqueness.",
+   "existingReferences": [
+    {
+     "label": "Jost, Riemannian Geometry and Geometric Analysis",
+     "url": "https://doi.org/10.1007/978-3-319-61860-9",
+     "locator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "148-r3",
+   "entryId": 148,
+   "entryName": "Hodge theorem (de Rham cohomology represented by harmonic forms)",
+   "entryDescription": "Elliptic PDE and Green operators; Hilbert-space orthogonal decomposition; heat-flow convergence to harmonic representatives.",
+   "level": "Graduate",
+   "routeTitle": "heat-flow convergence to harmonic representatives",
+   "currentSketch": "On a compact Riemannian manifold, ellipticity gives Green operator G on the orthogonal complement of harmonic forms and ΔG=GΔ=I−H. For closed α, α=Hα+dδGα, so its class has harmonic representative; if harmonic α is exact, ⟨α,α⟩=⟨α,dβ⟩=⟨δα,β⟩=0, proving uniqueness.",
+   "existingReferences": [
+    {
+     "label": "Jost, Riemannian Geometry and Geometric Analysis",
+     "url": "https://doi.org/10.1007/978-3-319-61860-9",
+     "locator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "149-r1",
+   "entryId": 149,
+   "entryName": "Borsuk–Ulam theorem",
+   "entryDescription": "Degree/mod-2 homology; Tucker's lemma and combinatorial antipodal labeling; equivariant topology.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Degree/mod-2 homology",
+   "currentSketch": "If f:S^n→R^n had f(x)≠f(−x) everywhere, then g(x)=(f(x)−f(−x))/||…|| would be an odd map S^n→S^{n−1}. Its restriction/quotient contradicts the mod-2 cohomology or degree computation for antipodal maps. Tucker’s lemma gives a combinatorial obstruction to such an odd labeling; equivariant-index proofs package the same obstruction.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Using the Borsuk–Ulam Theorem",
+     "url": "https://doi.org/10.1007/978-3-540-76649-0",
+     "locator": "Chapter 1, degree/mod-2 and combinatorial Tucker proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "149-r2",
+   "entryId": 149,
+   "entryName": "Borsuk–Ulam theorem",
+   "entryDescription": "Degree/mod-2 homology; Tucker's lemma and combinatorial antipodal labeling; equivariant topology.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Tucker's lemma and combinatorial antipodal labeling",
+   "currentSketch": "If f:S^n→R^n had f(x)≠f(−x) everywhere, then g(x)=(f(x)−f(−x))/||…|| would be an odd map S^n→S^{n−1}. Its restriction/quotient contradicts the mod-2 cohomology or degree computation for antipodal maps. Tucker’s lemma gives a combinatorial obstruction to such an odd labeling; equivariant-index proofs package the same obstruction.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Using the Borsuk–Ulam Theorem",
+     "url": "https://doi.org/10.1007/978-3-540-76649-0",
+     "locator": "Chapter 1, degree/mod-2 and combinatorial Tucker proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "149-r3",
+   "entryId": 149,
+   "entryName": "Borsuk–Ulam theorem",
+   "entryDescription": "Degree/mod-2 homology; Tucker's lemma and combinatorial antipodal labeling; equivariant topology.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "equivariant topology",
+   "currentSketch": "If f:S^n→R^n had f(x)≠f(−x) everywhere, then g(x)=(f(x)−f(−x))/||…|| would be an odd map S^n→S^{n−1}. Its restriction/quotient contradicts the mod-2 cohomology or degree computation for antipodal maps. Tucker’s lemma gives a combinatorial obstruction to such an odd labeling; equivariant-index proofs package the same obstruction.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Using the Borsuk–Ulam Theorem",
+     "url": "https://doi.org/10.1007/978-3-540-76649-0",
+     "locator": "Chapter 1, degree/mod-2 and combinatorial Tucker proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "150-r1",
+   "entryId": 150,
+   "entryName": "Noether's theorem (continuous symmetry yields a conserved quantity)",
+   "entryDescription": "Euler–Lagrange variational identity; Hamiltonian/symplectic moment-map formulation; current conservation via differential forms. Specify the finite-dimensional or field-theoretic version.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Euler–Lagrange variational identity",
+   "currentSketch": "For a one-parameter variational symmetry with infinitesimal generator η and Lagrangian L, differentiate the invariance identity at the identity and use Euler–Lagrange equations: d/dt(∂L/∂q̇·η−B)=0. Hamiltonian moment-map and differential-form currents are corresponding formulations. Field-theoretic versions require boundary terms and regularity assumptions.",
+   "existingReferences": [
+    {
+     "label": "Olver, Applications of Lie Groups to Differential Equations",
+     "url": "https://doi.org/10.1007/978-1-4612-0979-9",
+     "locator": "Chapter 4, Noether theorem for variational problems; exact finite-dimensional hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "150-r2",
+   "entryId": 150,
+   "entryName": "Noether's theorem (continuous symmetry yields a conserved quantity)",
+   "entryDescription": "Euler–Lagrange variational identity; Hamiltonian/symplectic moment-map formulation; current conservation via differential forms. Specify the finite-dimensional or field-theoretic version.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Hamiltonian/symplectic moment-map formulation",
+   "currentSketch": "For a one-parameter variational symmetry with infinitesimal generator η and Lagrangian L, differentiate the invariance identity at the identity and use Euler–Lagrange equations: d/dt(∂L/∂q̇·η−B)=0. Hamiltonian moment-map and differential-form currents are corresponding formulations. Field-theoretic versions require boundary terms and regularity assumptions.",
+   "existingReferences": [
+    {
+     "label": "Olver, Applications of Lie Groups to Differential Equations",
+     "url": "https://doi.org/10.1007/978-1-4612-0979-9",
+     "locator": "Chapter 4, Noether theorem for variational problems; exact finite-dimensional hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "150-r3",
+   "entryId": 150,
+   "entryName": "Noether's theorem (continuous symmetry yields a conserved quantity)",
+   "entryDescription": "Euler–Lagrange variational identity; Hamiltonian/symplectic moment-map formulation; current conservation via differential forms. Specify the finite-dimensional or field-theoretic version.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "current conservation via differential forms. Specify the finite-dimensional or field-theoretic version",
+   "currentSketch": "For a one-parameter variational symmetry with infinitesimal generator η and Lagrangian L, differentiate the invariance identity at the identity and use Euler–Lagrange equations: d/dt(∂L/∂q̇·η−B)=0. Hamiltonian moment-map and differential-form currents are corresponding formulations. Field-theoretic versions require boundary terms and regularity assumptions.",
+   "existingReferences": [
+    {
+     "label": "Olver, Applications of Lie Groups to Differential Equations",
+     "url": "https://doi.org/10.1007/978-1-4612-0979-9",
+     "locator": "Chapter 4, Noether theorem for variational problems; exact finite-dimensional hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

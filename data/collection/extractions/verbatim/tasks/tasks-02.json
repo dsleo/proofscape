@@ -1,0 +1,457 @@
+{
+ "agent": 2,
+ "tasks": [
+  {
+   "routeId": "8-r1",
+   "entryId": 8,
+   "entryName": "Arithmetic mean ≥ geometric mean (finite positive case)",
+   "entryDescription": "Pairwise smoothing/induction; concavity of log or Jensen; weighted AM–GM from tangent-line convexity.",
+   "level": "School–undergraduate",
+   "routeTitle": "Pairwise smoothing/induction",
+   "currentSketch": "For positive xᵢ with fixed sum, replacing any unequal pair a,b by their average preserves the sum and increases their product since ((a+b)/2)²−ab=(a−b)²/4≥0. Iterated smoothing (or compactness and the maximizing-pair argument) gives the maximum product when all entries are equal, hence geometric mean≤arithmetic mean.",
+   "existingReferences": [
+    {
+     "label": "*Proofs from THE BOOK* contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "MIT functional-analysis notes, Cauchy–Schwarz in inner-product spaces",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "8-r2",
+   "entryId": 8,
+   "entryName": "Arithmetic mean ≥ geometric mean (finite positive case)",
+   "entryDescription": "Pairwise smoothing/induction; concavity of log or Jensen; weighted AM–GM from tangent-line convexity.",
+   "level": "School–undergraduate",
+   "routeTitle": "concavity of log or Jensen",
+   "currentSketch": "Concavity of log gives log((Σxᵢ)/n)≥(1/n)Σlog xᵢ. Exponentiating yields (Σxᵢ)/n≥(Πxᵢ)^(1/n). Equality iff all xᵢ coincide.",
+   "existingReferences": [
+    {
+     "label": "*Proofs from THE BOOK* contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "MIT functional-analysis notes, Cauchy–Schwarz in inner-product spaces",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "8-r3",
+   "entryId": 8,
+   "entryName": "Arithmetic mean ≥ geometric mean (finite positive case)",
+   "entryDescription": "Pairwise smoothing/induction; concavity of log or Jensen; weighted AM–GM from tangent-line convexity.",
+   "level": "School–undergraduate",
+   "routeTitle": "weighted AM–GM from tangent-line convexity",
+   "currentSketch": "For weights wᵢ>0 with Σwᵢ=1, let g=Πxᵢ^{wᵢ} and tᵢ=xᵢ/g. The inequality log t≤t−1 gives 0=Σwᵢlog tᵢ≤Σwᵢ(tᵢ−1), hence g≤Σwᵢxᵢ. This proves weighted AM–GM; equal weights give the finite unweighted case.",
+   "existingReferences": [
+    {
+     "label": "*Proofs from THE BOOK* contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "MIT functional-analysis notes, Cauchy–Schwarz in inner-product spaces",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "9-r1",
+   "entryId": 9,
+   "entryName": "Cauchy–Schwarz inequality",
+   "entryDescription": "Minimize the nonnegative quadratic ‖x−ty‖²; area/dot-product geometry; determinant/Gram matrix positivity; Hölder as a more general route.",
+   "level": "School–undergraduate",
+   "routeTitle": "Minimize the nonnegative quadratic ‖x−ty‖²",
+   "currentSketch": "For real inner-product vectors, 0≤‖x−ty‖² for every real t; minimize the quadratic at t=⟨x,y⟩/‖y‖² to obtain ⟨x,y⟩²≤‖x‖²‖y‖². In the complex case choose the phase of t to align ⟨x,y⟩.",
+   "existingReferences": [
+    {
+     "label": "MIT functional analysis lecture notes",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "MIT 18.102 notes, Proposition 5.3, pp. 47–48"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered PDF page image(s); wording, numbering and order follow the source; mathematics rendered in LaTeX-style plain text. Symbols were not corrected or modernized. The source's ledger locator said pp. 47–48; the proposition is on p. 49 of the PDF. Source: Introduction to functional analysis, lecture notes for 18.102, Spring 2025, Christoph Kehle (MIT), May 2025 — "
+  },
+  {
+   "routeId": "9-r2",
+   "entryId": 9,
+   "entryName": "Cauchy–Schwarz inequality",
+   "entryDescription": "Minimize the nonnegative quadratic ‖x−ty‖²; area/dot-product geometry; determinant/Gram matrix positivity; Hölder as a more general route.",
+   "level": "School–undergraduate",
+   "routeTitle": "area/dot-product geometry",
+   "currentSketch": "The area of the parallelogram spanned by x,y is nonnegative and equals ‖x‖‖y‖|sinθ|; by the Euclidean angle definition ⟨x,y⟩=‖x‖‖y‖cosθ. Since |cosθ|≤1, |⟨x,y⟩|≤‖x‖‖y‖.",
+   "existingReferences": [
+    {
+     "label": "MIT functional analysis lecture notes",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "9-r3",
+   "entryId": 9,
+   "entryName": "Cauchy–Schwarz inequality",
+   "entryDescription": "Minimize the nonnegative quadratic ‖x−ty‖²; area/dot-product geometry; determinant/Gram matrix positivity; Hölder as a more general route.",
+   "level": "School–undergraduate",
+   "routeTitle": "determinant/Gram matrix positivity",
+   "currentSketch": "The Gram matrix [[⟨x,x⟩,⟨x,y⟩],[⟨y,x⟩,⟨y,y⟩]] is positive semidefinite; its determinant is nonnegative, giving ‖x‖²‖y‖²−|⟨x,y⟩|²≥0.",
+   "existingReferences": [
+    {
+     "label": "MIT functional analysis lecture notes",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "9-r4",
+   "entryId": 9,
+   "entryName": "Cauchy–Schwarz inequality",
+   "entryDescription": "Minimize the nonnegative quadratic ‖x−ty‖²; area/dot-product geometry; determinant/Gram matrix positivity; Hölder as a more general route.",
+   "level": "School–undergraduate",
+   "routeTitle": "Hölder as a more general route",
+   "currentSketch": "Hölder with p=q=2 gives Σ|xᵢyᵢ|≤(Σ|xᵢ|²)^(1/2)(Σ|yᵢ|²)^(1/2); then |Σxᵢyᵢ|≤Σ|xᵢyᵢ|. This route proves the finite-dimensional scalar-product case, while Hilbert-space extension needs the direct quadratic argument.",
+   "existingReferences": [
+    {
+     "label": "MIT functional analysis lecture notes",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "10-r1",
+   "entryId": 10,
+   "entryName": "Triangle inequality (Euclidean norm)",
+   "entryDescription": "Geometric shortest-path/angle argument; expand squared norms and use Cauchy–Schwarz; convexity of the norm.",
+   "level": "School–undergraduate",
+   "routeTitle": "Geometric shortest-path/angle argument",
+   "currentSketch": "The straight segment from 0 to x+y is no longer than the broken path 0→x→x+y; Euclidean distance is the shortest path length, so ‖x+y‖≤‖x‖+‖y‖.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "10-r2",
+   "entryId": 10,
+   "entryName": "Triangle inequality (Euclidean norm)",
+   "entryDescription": "Geometric shortest-path/angle argument; expand squared norms and use Cauchy–Schwarz; convexity of the norm.",
+   "level": "School–undergraduate",
+   "routeTitle": "expand squared norms and use Cauchy–Schwarz",
+   "currentSketch": "Expand ‖x+y‖²=‖x‖²+2⟨x,y⟩+‖y‖²≤‖x‖²+2‖x‖‖y‖+‖y‖²=(‖x‖+‖y‖)² by Cauchy–Schwarz; take nonnegative square roots.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "10-r3",
+   "entryId": 10,
+   "entryName": "Triangle inequality (Euclidean norm)",
+   "entryDescription": "Geometric shortest-path/angle argument; expand squared norms and use Cauchy–Schwarz; convexity of the norm.",
+   "level": "School–undergraduate",
+   "routeTitle": "convexity of the norm",
+   "currentSketch": "If the Euclidean unit ball is already known to be convex, write (x+y)/(‖x‖+‖y‖) as the convex combination [‖x‖/(‖x‖+‖y‖)]·x/‖x‖+[‖y‖/(‖x‖+‖y‖)]·y/‖y‖. It lies in the unit ball, proving the triangle inequality. This assumes ball convexity, which itself is equivalent to / usually proved using Cauchy–Schwarz, so it is not an independent proof unless convexity has separate foundations.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "11-r1",
+   "entryId": 11,
+   "entryName": "Law of cosines",
+   "entryDescription": "Drop a perpendicular and use Pythagoras; dot-product expansion; complex-plane/vector calculation.",
+   "level": "School",
+   "routeTitle": "Drop a perpendicular and use Pythagoras",
+   "currentSketch": "Take side a as the horizontal base and let side b make angle C with it. Its projection is x=b cos C and altitude h=b sin C. The opposite side has components a−x and h, so c²=(a−b cos C)²+(b sin C)²=a²+b²−2ab cos C.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "11-r2",
+   "entryId": 11,
+   "entryName": "Law of cosines",
+   "entryDescription": "Drop a perpendicular and use Pythagoras; dot-product expansion; complex-plane/vector calculation.",
+   "level": "School",
+   "routeTitle": "dot-product expansion",
+   "currentSketch": "Place vectors u,v along the two sides enclosing angle C. The opposite side is u−v, so c²=‖u−v‖²=a²+b²−2u·v=a²+b²−2ab cos C.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "11-r3",
+   "entryId": 11,
+   "entryName": "Law of cosines",
+   "entryDescription": "Drop a perpendicular and use Pythagoras; dot-product expansion; complex-plane/vector calculation.",
+   "level": "School",
+   "routeTitle": "complex-plane/vector calculation",
+   "currentSketch": "Embed the two sides in the complex plane as vectors of lengths a,b with angle C; |a−be^{iC}|²=(a−be^{iC})(a−be^{−iC})=a²+b²−2ab cos C.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "12-r1",
+   "entryId": 12,
+   "entryName": "Heron's formula for triangle area",
+   "entryDescription": "Geometric altitude plus algebraic elimination; trigonometric area formula and cosine law; factor a Gram/Cayley–Menger determinant.",
+   "level": "School–undergraduate",
+   "routeTitle": "Geometric altitude plus algebraic elimination",
+   "currentSketch": "Set the base to a and let the other side have length b and horizontal projection x=(a²+b²−c²)/(2a), by cosine law. Its altitude h satisfies h²=b²−x². Thus 16K²=4a²h²=4a²b²−(a²+b²−c²)²=((a+b)²−c²)(c²−(a−b)²)=16s(s−a)(s−b)(s−c), yielding Heron's formula.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "12-r2",
+   "entryId": 12,
+   "entryName": "Heron's formula for triangle area",
+   "entryDescription": "Geometric altitude plus algebraic elimination; trigonometric area formula and cosine law; factor a Gram/Cayley–Menger determinant.",
+   "level": "School–undergraduate",
+   "routeTitle": "trigonometric area formula and cosine law",
+   "currentSketch": "Let K be the area and C the included angle between sides a,b. Then K=ab sin C/2 and c²=a²+b²−2ab cos C. Thus 16K²=4a²b²(1−cos²C)=4a²b²−(a²+b²−c²)²=((a+b)²−c²)(c²−(a−b)²)=16s(s−a)(s−b)(s−c), so K²=s(s−a)(s−b)(s−c).",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    },
+    {
+     "label": "University of Virginia, Proof of Heron’s Formula",
+     "url": "https://galileo.phys.virginia.edu/classes/109/more_stuff/Heron.html",
+     "locator": "Closing trigonometric proof: area K=ab sin C/2 combined with the cosine law and sin²C+cos²C=1."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "12-r3",
+   "entryId": 12,
+   "entryName": "Heron's formula for triangle area",
+   "entryDescription": "Geometric altitude plus algebraic elimination; trigonometric area formula and cosine law; factor a Gram/Cayley–Menger determinant.",
+   "level": "School–undergraduate",
+   "routeTitle": "factor a Gram/Cayley–Menger determinant",
+   "currentSketch": "The squared area is one quarter of the Gram determinant of side vectors u,v: K²=(‖u‖²‖v‖²−(u·v)²)/4. Replace ‖u‖,‖v‖,u·v=(a²+c²−b²)/2 and factor; this yields K²=s(s−a)(s−b)(s−c).",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "13-r1",
+   "entryId": 13,
+   "entryName": "Euclid's lemma: prime p dividing ab divides a or b",
+   "entryDescription": "Bezout identity; Euclid's gcd lemma; prime elements in a UFD/irreducible-is-prime in a PID.",
+   "level": "School–undergraduate",
+   "routeTitle": "Bezout identity",
+   "currentSketch": "If prime p divides ab but not a, then gcd(p,a)=1. Bézout gives rp+sa=1; multiply by b: rpb+sab=b. Both terms on the right representation are divisible by p, so p|b.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "13-r2",
+   "entryId": 13,
+   "entryName": "Euclid's lemma: prime p dividing ab divides a or b",
+   "entryDescription": "Bezout identity; Euclid's gcd lemma; prime elements in a UFD/irreducible-is-prime in a PID.",
+   "level": "School–undergraduate",
+   "routeTitle": "Euclid's gcd lemma",
+   "currentSketch": "Euclid's lemma follows from gcd(p,a)=1 whenever p∤a: the gcd lemma says a prime dividing a product must divide a factor; equivalently use the Euclidean algorithm to obtain Bézout coefficients and multiply by b.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "13-r3",
+   "entryId": 13,
+   "entryName": "Euclid's lemma: prime p dividing ab divides a or b",
+   "entryDescription": "Bezout identity; Euclid's gcd lemma; prime elements in a UFD/irreducible-is-prime in a PID.",
+   "level": "School–undergraduate",
+   "routeTitle": "prime elements in a UFD/irreducible-is-prime in a PID",
+   "currentSketch": "In a PID every irreducible is prime: if irreducible p divides ab, then (p) is maximal among proper principal ideals and hence prime; ab∈(p) implies a∈(p) or b∈(p). Integers form a PID, and primes are irreducible there.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "14-r1",
+   "entryId": 14,
+   "entryName": "Fundamental theorem of arithmetic",
+   "entryDescription": "Existence by strong induction and uniqueness via Euclid's lemma; valuation/exponent functions and prime divisibility.",
+   "level": "School–undergraduate",
+   "routeTitle": "Existence by strong induction and uniqueness via Euclid's lemma",
+   "currentSketch": "Existence: factor a composite n into proper factors and apply strong induction until all factors are prime. Uniqueness: if p₁⋯pᵣ=q₁⋯qₛ, Euclid's lemma makes p₁ divide some qⱼ, hence equal to it; cancel and induct.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "14-r2",
+   "entryId": 14,
+   "entryName": "Fundamental theorem of arithmetic",
+   "entryDescription": "Existence by strong induction and uniqueness via Euclid's lemma; valuation/exponent functions and prime divisibility.",
+   "level": "School–undergraduate",
+   "routeTitle": "valuation/exponent functions and prime divisibility",
+   "currentSketch": "For each prime p define v_p(n), its exponent in n. Existence follows by repeatedly dividing out prime factors; uniqueness follows because Euclid's lemma makes the p-adic exponent of a product additive. Thus every positive integer has a unique finite prime-exponent vector.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "15-r1",
+   "entryId": 15,
+   "entryName": "Fermat's little theorem",
+   "entryDescription": "Permute nonzero residues under multiplication by a; Lagrange's theorem in the multiplicative group; binomial coefficients/induction for the congruence.",
+   "level": "School–undergraduate",
+   "routeTitle": "Permute nonzero residues under multiplication by a",
+   "currentSketch": "Multiplication by a permutes nonzero residue classes mod prime p. Multiply all residues: a^(p−1)(p−1)!≡(p−1)! (mod p); cancel the invertible factorial to get a^(p−1)≡1, hence a^p≡a.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "15-r2",
+   "entryId": 15,
+   "entryName": "Fermat's little theorem",
+   "entryDescription": "Permute nonzero residues under multiplication by a; Lagrange's theorem in the multiplicative group; binomial coefficients/induction for the congruence.",
+   "level": "School–undergraduate",
+   "routeTitle": "Lagrange's theorem in the multiplicative group",
+   "currentSketch": "The nonzero classes form a group F_p× of order p−1. Lagrange implies a^(p−1)=1 for a≠0; zero is immediate, so a^p≡a for all residues.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "15-r3",
+   "entryId": 15,
+   "entryName": "Fermat's little theorem",
+   "entryDescription": "Permute nonzero residues under multiplication by a; Lagrange's theorem in the multiplicative group; binomial coefficients/induction for the congruence.",
+   "level": "School–undergraduate",
+   "routeTitle": "binomial coefficients/induction for the congruence",
+   "currentSketch": "Induct on a using (a+1)^p≡a^p+1 mod p because every intermediate binomial coefficient C(p,k) is divisible by p; base a=0. This proves Fermat's congruence for integer representatives, with negative integers following by residues.",
+   "existingReferences": [
+    {
+     "label": "Hammack, Book of Proof",
+     "url": "https://richardhammack.github.io/BookOfProof/index.html",
+     "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

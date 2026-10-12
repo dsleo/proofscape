@@ -1,0 +1,398 @@
+{
+ "agent": 5,
+ "tasks": [
+  {
+   "routeId": "32-r1",
+   "entryId": 32,
+   "entryName": "Mean value theorem",
+   "entryDescription": "Rolle's theorem via extrema; subtract the secant line and apply Rolle; Cauchy mean value theorem as a paired-derivative generalization.",
+   "level": "School–undergraduate",
+   "routeTitle": "Rolle's theorem via extrema",
+   "currentSketch": "If f(a)=f(b)=k and f is constant, its derivative is zero throughout (a,b). Otherwise f takes a value above or below k. In the above case, continuity on [a,b] gives an absolute maximum; it cannot occur at an endpoint, so it occurs at an interior point and Fermat’s theorem gives f′(c)=0. The below case uses an interior minimum.",
+   "existingReferences": [
+    {
+     "label": "OpenStax, Calculus Volume 1, §4.4 Mean Value Theorem",
+     "url": "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem",
+     "locator": "§4.4, Rolle and Mean Value Theorem proofs"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures omitted. MathML flattened to plain text by the transcriber: fractions are written '(numerator)/(denominator)' and square roots as √(…), which changes notation from the typeset page; '□' is the end-of-proof mark. Source: Calculus Volume 1, §4.4 The Mean Value Theorem (OpenStax) — §4.4, Rolle's Theorem: statement and proof "
+  },
+  {
+   "routeId": "32-r2",
+   "entryId": 32,
+   "entryName": "Mean value theorem",
+   "entryDescription": "Rolle's theorem via extrema; subtract the secant line and apply Rolle; Cauchy mean value theorem as a paired-derivative generalization.",
+   "level": "School–undergraduate",
+   "routeTitle": "subtract the secant line and apply Rolle",
+   "currentSketch": "Let ℓ be the line through (a,f(a)) and (b,f(b)), with slope m=(f(b)−f(a))/(b−a), and set g=f−ℓ. Then g(a)=g(b)=0 and g inherits continuity on [a,b] and differentiability on (a,b). Rolle’s theorem gives g′(c)=0, hence f′(c)=m.",
+   "existingReferences": [
+    {
+     "label": "OpenStax, Calculus Volume 1, §4.4 Mean Value Theorem",
+     "url": "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem",
+     "locator": "§4.4, Rolle and Mean Value Theorem proofs"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures omitted. MathML flattened to plain text by the transcriber: fractions are written '(numerator)/(denominator)' and square roots as √(…), which changes notation from the typeset page; '□' is the end-of-proof mark. Source: Calculus Volume 1, §4.4 The Mean Value Theorem (OpenStax) — §4.4, Mean Value Theorem: statement and pro"
+  },
+  {
+   "routeId": "32-r3",
+   "entryId": 32,
+   "entryName": "Mean value theorem",
+   "entryDescription": "Rolle's theorem via extrema; subtract the secant line and apply Rolle; Cauchy mean value theorem as a paired-derivative generalization.",
+   "level": "School–undergraduate",
+   "routeTitle": "Cauchy mean value theorem as a paired-derivative generalization",
+   "currentSketch": "For differentiable f,g with hypotheses ensuring a zero of g′, consider H(x)=(f(b)−f(a))(g(x)−g(a))−(g(b)−g(a))(f(x)−f(a)). Since H(a)=H(b)=0, Rolle yields the Cauchy mean value relation H′(c)=0. Taking g(x)=x gives MVT.",
+   "existingReferences": [
+    {
+     "label": "OpenStax, Calculus Volume 1, §4.4 Mean Value Theorem",
+     "url": "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem",
+     "locator": "§4.4, Rolle and Mean Value Theorem proofs"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "33-r1",
+   "entryId": 33,
+   "entryName": "Taylor's theorem with remainder",
+   "entryDescription": "Repeated Rolle argument; integral remainder from repeated FTC; complex-analytic Cauchy integral formula.",
+   "level": "Undergraduate",
+   "routeTitle": "Repeated Rolle argument",
+   "currentSketch": "Repeatedly apply Rolle to f minus its degree-(n−1) Taylor polynomial with a correction chosen to vanish at x; after n+1 zeros, repeated Rolle gives a ξ between a and x where f⁽ⁿ⁾(ξ) equals the remainder coefficient times n!, yielding Lagrange remainder.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "33-r2",
+   "entryId": 33,
+   "entryName": "Taylor's theorem with remainder",
+   "entryDescription": "Repeated Rolle argument; integral remainder from repeated FTC; complex-analytic Cauchy integral formula.",
+   "level": "Undergraduate",
+   "routeTitle": "integral remainder from repeated FTC",
+   "currentSketch": "Repeated FTC integration gives f(x)=Σ_{k=0}^{n−1}f⁽ᵏ⁾(a)(x−a)^k/k! + ∫ₐˣ f⁽ⁿ⁾(t)(x−t)ⁿ⁻¹/(n−1)! dt. This is the integral remainder; bounding f⁽ⁿ⁾ yields the usual error estimate.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "33-r3",
+   "entryId": 33,
+   "entryName": "Taylor's theorem with remainder",
+   "entryDescription": "Repeated Rolle argument; integral remainder from repeated FTC; complex-analytic Cauchy integral formula.",
+   "level": "Undergraduate",
+   "routeTitle": "complex-analytic Cauchy integral formula",
+   "currentSketch": "For analytic f, Cauchy's integral formula gives the Taylor coefficients and remainder integral on a contour: f(z)=Σ_{k<n} f⁽ᵏ⁾(a)(z−a)^k/k! +(1/2πi)∮ f(ζ)(z−a)ⁿ/((ζ−a)ⁿ(ζ−z))dζ. This is an analytic-function version, not the general real C^n theorem.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "34-r1",
+   "entryId": 34,
+   "entryName": "L'Hôpital's rule",
+   "entryDescription": "Cauchy mean value theorem; inverse-function/local linearization; logarithmic differentiation for 0/0 or ∞/∞ forms.",
+   "level": "Undergraduate",
+   "routeTitle": "Cauchy mean value theorem",
+   "currentSketch": "Cauchy MVT applied to f and g gives (f(x)−f(a))/(g(x)−g(a))=f′(c)/g′(c) for an intermediate c. As x→a, c→a under standard monotonicity/nonzero-derivative hypotheses, yielding the 0/0 or ∞/∞ limit rule.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "34-r2",
+   "entryId": 34,
+   "entryName": "L'Hôpital's rule",
+   "entryDescription": "Cauchy mean value theorem; inverse-function/local linearization; logarithmic differentiation for 0/0 or ∞/∞ forms.",
+   "level": "Undergraduate",
+   "routeTitle": "inverse-function/local linearization",
+   "currentSketch": "If g′(a)≠0, the inverse function theorem gives x−a≈(g(x)−g(a))/g′(a); similarly f(x)−f(a)≈f′(a)(x−a), so the quotient tends to f′(a)/g′(a). More general endpoint limits follow with differentiability and hypotheses controlled by MVT.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "34-r3",
+   "entryId": 34,
+   "entryName": "L'Hôpital's rule",
+   "entryDescription": "Cauchy mean value theorem; inverse-function/local linearization; logarithmic differentiation for 0/0 or ∞/∞ forms.",
+   "level": "Undergraduate",
+   "routeTitle": "logarithmic differentiation for 0/0 or ∞/∞ forms",
+   "currentSketch": "For f,g positive near endpoint, apply the Cauchy-MVT route to log f and log g or differentiate log(f)/log(g); this can handle 1^∞ forms after rewriting powers. It is an extension/reduction, not an independent proof of L'Hôpital without Cauchy MVT.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "35-r1",
+   "entryId": 35,
+   "entryName": "Divergence of the harmonic series",
+   "entryDescription": "Group terms in dyadic blocks; compare partial sums with log/integral; assume convergence and use condensation.",
+   "level": "School–undergraduate",
+   "routeTitle": "Group terms in dyadic blocks",
+   "currentSketch": "Group terms 1/n into dyadic blocks: terms n=2ᵏ+1,…,2ᵏ⁺¹ contribute at least 2ᵏ·(1/2ᵏ⁺¹)=1/2. Infinitely many blocks each contribute at least 1/2, so partial sums are unbounded.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "35-r2",
+   "entryId": 35,
+   "entryName": "Divergence of the harmonic series",
+   "entryDescription": "Group terms in dyadic blocks; compare partial sums with log/integral; assume convergence and use condensation.",
+   "level": "School–undergraduate",
+   "routeTitle": "compare partial sums with log/integral",
+   "currentSketch": "Since 1/x is decreasing, ∑_{n=1}^N1/n≥∫₁^{N+1}dx/x=log(N+1)→∞.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "35-r3",
+   "entryId": 35,
+   "entryName": "Divergence of the harmonic series",
+   "entryDescription": "Group terms in dyadic blocks; compare partial sums with log/integral; assume convergence and use condensation.",
+   "level": "School–undergraduate",
+   "routeTitle": "assume convergence and use condensation",
+   "currentSketch": "Cauchy's condensation test says for positive decreasing aₙ, Σaₙ diverges iff Σ2ᵏa₂ᵏ diverges. For aₙ=1/n, every condensed term equals 1, so the original harmonic series diverges.",
+   "existingReferences": [
+    {
+     "label": "OpenStax Calculus Volume 1",
+     "url": "https://openstax.org/books/calculus-volume-1",
+     "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "36-r1",
+   "entryId": 36,
+   "entryName": "Basel sum Σ1/n²=π²/6",
+   "entryDescription": "Euler's sine-product coefficients; Fourier series/Parseval; telescoping trigonometric series. Four routes are collected in *Proofs from THE BOOK*.",
+   "level": "Undergraduate",
+   "routeTitle": "Euler's sine-product coefficients",
+   "currentSketch": "The infinite product sin x/x=∏ₙ≥1(1−x²/(n²π²)) has x² coefficient −Σ1/(n²π²). Comparing with Taylor expansion 1−x²/6+… gives Σ1/n²=π²/6. Product identity follows from sine's zeros/factorization.",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "accessible scan",
+     "url": "https://www.kurims.kyoto-u.ac.jp/EMIS/classics/Erdos/textpdf/aigzieg/aigzieg.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "36-r2",
+   "entryId": 36,
+   "entryName": "Basel sum Σ1/n²=π²/6",
+   "entryDescription": "Euler's sine-product coefficients; Fourier series/Parseval; telescoping trigonometric series. Four routes are collected in *Proofs from THE BOOK*.",
+   "level": "Undergraduate",
+   "routeTitle": "Fourier series/Parseval",
+   "currentSketch": "Fourier series of f(x)=x on (−π,π) has coefficients 2(−1)ⁿ⁺¹/n. Parseval gives (1/π)∫₋π^πx²dx=Σ(4/n²), so 2π²/3=4Σ1/n² and the sum is π²/6.",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "accessible scan",
+     "url": "https://www.kurims.kyoto-u.ac.jp/EMIS/classics/Erdos/textpdf/aigzieg/aigzieg.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "36-r3",
+   "entryId": 36,
+   "entryName": "Basel sum Σ1/n²=π²/6",
+   "entryDescription": "Euler's sine-product coefficients; Fourier series/Parseval; telescoping trigonometric series. Four routes are collected in *Proofs from THE BOOK*.",
+   "level": "Undergraduate",
+   "routeTitle": "telescoping trigonometric series. Four routes are collected in *Proofs from THE BOOK*",
+   "currentSketch": "Use the telescoping identity 1/n²=Σ_{k=n}∞(1/k−1/(k+1))? This identity is false (the RHS equals 1/n). So that is not a valid proof route. A valid trigonometric telescoping route uses cotangent partial fractions: cot x=1/x−2xΣₙ≥1(1/(n²π²−x²)); compare x-coefficients near 0 with cot x=1/x−x/3+… to obtain Σ1/n²=π²/6.",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "accessible scan",
+     "url": "https://www.kurims.kyoto-u.ac.jp/EMIS/classics/Erdos/textpdf/aigzieg/aigzieg.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "37-r1",
+   "entryId": 37,
+   "entryName": "Euler identity e^(iπ)+1=0 / Euler formula",
+   "entryDescription": "Power series; solve the differential equations for sine/cosine and exponential; geometric/complex-rotation characterization.",
+   "level": "School–undergraduate",
+   "routeTitle": "Power series",
+   "currentSketch": "Define exp z by its power series. Its addition law gives exp(iθ)=cosθ+i sinθ by separating even and odd powers; at θ=π, exp(iπ)=−1, hence exp(iπ)+1=0.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "37-r2",
+   "entryId": 37,
+   "entryName": "Euler identity e^(iπ)+1=0 / Euler formula",
+   "entryDescription": "Power series; solve the differential equations for sine/cosine and exponential; geometric/complex-rotation characterization.",
+   "level": "School–undergraduate",
+   "routeTitle": "solve the differential equations for sine/cosine and exponential",
+   "currentSketch": "Let cosine and sine be the unique solutions of y″=−y with initial data (1,0) and (0,1). The complex exponential solves the same ODE and initial value as cos t+i sin t, so uniqueness gives Euler's formula.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "37-r3",
+   "entryId": 37,
+   "entryName": "Euler identity e^(iπ)+1=0 / Euler formula",
+   "entryDescription": "Power series; solve the differential equations for sine/cosine and exponential; geometric/complex-rotation characterization.",
+   "level": "School–undergraduate",
+   "routeTitle": "geometric/complex-rotation characterization",
+   "currentSketch": "A rotation through θ in the plane is multiplication by cosθ+i sinθ; at θ=π the half-turn is multiplication by −1, so e^{iπ}=−1 once the exponential/rotation parametrization is established. This geometric characterization depends on that prior identification.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "38-r1",
+   "entryId": 38,
+   "entryName": "De Moivre's formula",
+   "entryDescription": "Induction with angle-addition formulas; exponentiation in the complex multiplicative group; roots-of-unity geometry.",
+   "level": "School–undergraduate",
+   "routeTitle": "Induction with angle-addition formulas",
+   "currentSketch": "Induct on n using angle-addition identities: (cosθ+i sinθ)ⁿ has real and imaginary parts cos(nθ), sin(nθ); multiplying the nth identity by cosθ+i sinθ proves n+1.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "38-r2",
+   "entryId": 38,
+   "entryName": "De Moivre's formula",
+   "entryDescription": "Induction with angle-addition formulas; exponentiation in the complex multiplicative group; roots-of-unity geometry.",
+   "level": "School–undergraduate",
+   "routeTitle": "exponentiation in the complex multiplicative group",
+   "currentSketch": "In the multiplicative group C×, repeated multiplication of e^{iθ} gives e^{inθ}; Euler's formula then identifies the result as cos(nθ)+i sin(nθ). This is the exponential-law route.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "38-r3",
+   "entryId": 38,
+   "entryName": "De Moivre's formula",
+   "entryDescription": "Induction with angle-addition formulas; exponentiation in the complex multiplicative group; roots-of-unity geometry.",
+   "level": "School–undergraduate",
+   "routeTitle": "roots-of-unity geometry",
+   "currentSketch": "A unit complex number represents a rotation by θ. Composing n rotations gives rotation by nθ; its coordinates are cos(nθ),sin(nθ), while multiplication of complex coordinates gives (cosθ+i sinθ)ⁿ.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

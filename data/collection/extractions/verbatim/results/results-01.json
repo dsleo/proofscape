@@ -1,0 +1,141 @@
+{
+ "1-r1": {
+  "routeId": "1-r1",
+  "sourceTitle": "Euclid's Elements, Book I, Proposition 47 (D. E. Joyce edition)",
+  "sourceUrl": "https://www.euclids-elements.org/elements/books/bookI/propositions/propI47/",
+  "locator": "Book I, Proposition 47, statement and proof through Q.E.D.",
+  "routeMatch": "verified",
+  "proofSketch": "On the sides of right triangle $ABC$ (right angle at $A$) construct squares $BDEC$, $GB$ and $HC$, and draw $AL$ through $A$ parallel to $BD$. Triangles $ABD$ and $FBC$ are congruent (two sides and the included angle are equal, since both equal a right angle plus $\\angle ABC$). The parallelogram $BL$ is double triangle $ABD$ (same base $BD$, same parallels), and the square $GB$ is double triangle $FBC$ (same base $FB$, same parallels), so $BL = GB$. Joining $AE$ and $BK$ gives in the same way $CL = HC$. Hence the square $BDEC$ on the hypotenuse equals $GB + HC$, the sum of the squares on the legs.",
+  "images": [
+   {
+    "file": "1-r1-1.png",
+    "caption": "Euclid I.47 as presented on euclids-elements.org: enunciation, construction, proof, and the diagram, without the guide section."
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "David E. Joyce, Euclid's Elements, Clark University (c) 1996-2025, euclids-elements.org. Used as an excerpt for personal research with the owner's authorization.",
+  "transcriptionNotes": "Whole proof box cropped from a page screenshot; justification links shown at right as on the page.",
+  "reasonNotReproduced": null
+ },
+ "1-r2": {
+  "routeId": "1-r2",
+  "sourceTitle": "Proofs of Pythagoras' Theorem using similarity (M308 course page, UBC Mathematics)",
+  "sourceUrl": "https://personal.math.ubc.ca/~cass/courses/m308-7b/similarity.html",
+  "locator": "Opening of the page: the paragraph beginning 'There is a very simple proof' and the four displayed lines",
+  "routeMatch": "verified",
+  "proofSketch": "Drop the perpendicular from the right-angle vertex to the hypotenuse $c$, cutting it into segments $x$ and $c-x$. The two small triangles and the original triangle have the same angles, so all three are similar. Equal ratios of corresponding sides give $x/a=a/c$ and $(c-x)/b=b/c$, that is $x=a^2/c$ and $c-x=b^2/c$. Adding, $a^2/c+b^2/c=x+(c-x)=c$, and multiplying by $c$ yields $a^2+b^2=c^2$.",
+  "images": [
+   {
+    "file": "1-r2-1.png",
+    "caption": "Top of the UBC M308 similarity page: the similarity argument and the four displayed equations (figure not rendered in the capture)."
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Course page at personal.math.ubc.ca/~cass (UBC Mathematics, M308). Used as an excerpt for personal research with the owner's authorization.",
+  "transcriptionNotes": "Cropped from a page screenshot; the page's figure did not render, text and equations are complete.",
+  "reasonNotReproduced": null
+ },
+ "1-r3": {
+  "routeId": "1-r3",
+  "sourceTitle": "Wikipedia, 'Pythagorean theorem', section 'Proofs using constructed squares' > 'Rearrangement proofs'",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Pythagorean_theorem#Rearrangement_proofs",
+  "locator": "Section 'Rearrangement proofs' (first two paragraphs and the animated rearrangement figure)",
+  "routeMatch": "verified",
+  "proofSketch": "Take two squares of side $a+b$, each containing four copies of the right triangle with legs $a,b$ and hypotenuse $c$. In one square the triangles are placed so that their hypotenuses enclose a central square of side $c$; its area is $(a+b)^2 = 2ab + c^2$. In the other square the triangles are moved into two $a\\times b$ rectangles, leaving two squares of areas $a^2$ and $b^2$, so $(a+b)^2 = 2ab + a^2 + b^2$. Equating and cancelling the area $2ab$ of the four triangles gives $a^2+b^2=c^2$.",
+  "images": [
+   {
+    "file": "1-r3-1.png",
+    "caption": "Wikipedia, Pythagorean theorem: 'Rearrangement proofs' text and the rearrangement figure (the Zhoubi caption at top right is a neighbouring figure)."
+   }
+  ],
+  "reuseStatus": "license-permits-redistribution",
+  "license": "Creative Commons Attribution-ShareAlike 4.0 (page text)",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Wikipedia contributors, 'Pythagorean theorem', en.wikipedia.org; text under CC BY-SA 4.0 (figures carry their own licences on Wikimedia Commons).",
+  "transcriptionNotes": "Replaces the earlier Euclid-page lead, which only treated the 3-4-5 case. Page was captured from the printable view.",
+  "reasonNotReproduced": null
+ },
+ "1-r4": {
+  "routeId": "1-r4",
+  "sourceTitle": "Wikipedia, 'Pythagorean theorem' (and ProofWiki 'Pythagoras's Theorem') - no vector proof of the triangle theorem found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Pythagorean_theorem",
+  "locator": "Section 'Inner product spaces' states the vector identity only as a generalization",
+  "routeMatch": "mismatch",
+  "proofSketch": null,
+  "images": [],
+  "reuseStatus": "unavailable",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": null,
+  "transcriptionNotes": null,
+  "reasonNotReproduced": "Searched Wikipedia, ProofWiki, cut-the-knot's collection, the Euclid page and the UBC page. They contain the (a+b)^2 rearrangement algebra, similarity and Euclid proofs, but no proof that places the legs as perpendicular vectors and expands the squared norm of the hypotenuse. Wikipedia's 'Inner product spaces' section only states the generalization ||v+w||^2=||v||^2+||w||^2 for orthogonal v,w."
+ },
+ "2-r1": {
+  "routeId": "2-r1",
+  "sourceTitle": "The Irrationality of the Square Root of Two (J. D. Norton, Pitt HPS), section 'Algebraic Proof of the Irrationality of root 2'",
+  "sourceUrl": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+  "locator": "Section 'Algebraic Proof of the Irrationality of root 2'",
+  "routeMatch": "verified",
+  "proofSketch": "Assume $\\sqrt2=p/q$ with whole numbers $p,q$ having no common factor. Squaring gives $p^2=2q^2$, so $p^2$ is even and hence $p$ is even, say $p=2a$. Then $4a^2=2q^2$, so $q^2=2a^2$ and $q$ is even as well by the same reasoning. Thus $p$ and $q$ share the factor 2, contradicting the choice of lowest terms, so no such $p,q$ exist.",
+  "images": [
+   {
+    "file": "2-r1-1.png",
+    "caption": "Norton, 'Algebraic Proof' section, complete reductio."
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "John D. Norton, University of Pittsburgh (c) 2021; page 'Impossible: incommensurability'. Used as an excerpt for personal research with the owner's authorization.",
+  "transcriptionNotes": "Cropped from a page screenshot; yellow/pink highlight spans are part of the page's styling.",
+  "reasonNotReproduced": null
+ },
+ "2-r2": {
+  "routeId": "2-r2",
+  "sourceTitle": "Irrationality by Infinite Descent (Mudd Math Fun Facts, Harvey Mudd College)",
+  "sourceUrl": "https://math.hmc.edu/funfacts/irrationality-by-infinite-descent/",
+  "locator": "Fun Fact body: the paragraph 'Proof. Suppose Sqrt[2] were rational ...' through QED",
+  "routeMatch": "verified",
+  "proofSketch": "Suppose $\\sqrt2=x/y$ with positive integers; the plan is to produce another fraction $x_1/y_1$ for $\\sqrt2$ with $0<y_1<y$, which would give an infinite decreasing sequence of positive denominators. Put $x_1=2y-x$ and $y_1=x-y$. From $x^2=2y^2$ one checks by cross-multiplication that $x/y=(2y-x)/(x-y)$. Also $0<y_1<y$ is equivalent to $y<x<2y$, i.e. $1<(x/y)^2<4$, which holds because $(x/y)^2=2$. So a fraction with smaller denominator exists, contradicting minimality (or well-ordering), and $\\sqrt2$ is irrational.",
+  "images": [
+   {
+    "file": "2-r2-1.png",
+    "caption": "HMC Fun Fact: descent proof from 'Proof. Suppose Sqrt[2] were rational' to QED."
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Mudd Math Fun Facts, Harvey Mudd College (credit on page to the Landau reference). Used as an excerpt for personal research with the owner's authorization.",
+  "transcriptionNotes": "Intro paragraphs and presentation suggestions omitted.",
+  "reasonNotReproduced": null
+ },
+ "2-r3": {
+  "routeId": "2-r3",
+  "sourceTitle": "The Irrationality of the Square Root of Two (J. D. Norton, Pitt HPS), section 'Geometric Proof'",
+  "sourceUrl": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+  "locator": "Section 'Geometric Proof of the Irrationality of root 2' (before 'The Shrinking Construction')",
+  "routeMatch": "verified",
+  "proofSketch": "Start from an isosceles right triangle with legs $q$ and hypotenuse $p$, both whole numbers, with $p$ taken as small as possible; then $p=\\sqrt2 q>q$. By the algebraic proof $p$ is even, so the hypotenuse can be bisected into two lengths $p/2$ and its midpoint joined to the right-angle vertex. This yields two smaller isosceles right triangles each with hypotenuse $q$ and legs $p/2$. The ratio hypotenuse/leg is then $q/(p/2)$ with $q<p$, contradicting minimality of $p$.",
+  "images": [
+   {
+    "file": "2-r3-1.png",
+    "caption": "Norton, 'Geometric Proof' section: setup and first triangle."
+   },
+   {
+    "file": "2-r3-2.png",
+    "caption": "Norton, 'Geometric Proof': bisecting the hypotenuse and the contradiction."
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "John D. Norton, University of Pittsburgh (c) 2021. Used as an excerpt for personal research with the owner's authorization.",
+  "transcriptionNotes": "The following 'Shrinking Construction' extension is not included. Note the proof uses the evenness of $p$ established in the algebraic section.",
+  "reasonNotReproduced": null
+ }
+}

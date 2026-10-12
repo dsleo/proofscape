@@ -1,0 +1,70 @@
+{
+ "78-r1": {
+  "routeId": "78-r1",
+  "sourceTitle": "Complex Analysis (Howell & Mathews), Section 6.3 The Cauchy-Goursat Theorem",
+  "sourceUrl": "https://complexanalysis.org/web/sec_cauchy-goursat.html",
+  "locator": "Section 6.3, Theorem 6.3.6, second proof (Goursat's proof), Eqs. (6.3.7)-(6.3.11)",
+  "routeMatch": "verified",
+  "proofSketch": "Prove the theorem first for a triangle C. Joining midpoints of the sides splits C into four positively oriented triangles whose interior edges cancel, so the integral over C is the sum of the four integrals, and one of them, C_1, has modulus at least a quarter of the total. Iterating gives nested triangles C_n with $|\\int_C f| \\le 4^n |\\int_{C_n} f|$, shrinking to a point $z_0$ where f is differentiable. Writing $f(z)=f(z_0)+f'(z_0)(z-z_0)+\\eta(z)(z-z_0)$ with $\\eta\\to 0$, the linear part integrates to zero over the closed triangle, so $\\int_{C_n} f=\\int_{C_n}\\eta(z)(z-z_0)\\,dz$. Since $L_n=2^{-n}L$ and $|z-z_0|<L_n/2$, the estimate gives $|\\int_C f|\\le\\varepsilon$ for every $\\varepsilon$, hence zero. Polygons follow by triangulating, and general simple closed contours by polygonal approximation (details omitted in the source).",
+  "images": [
+   {
+    "file": "78-r1-1.png",
+    "caption": "Goursat's proof, first half: triangle subdivision, nested triangles, expansion f(z)=f(z0)+f'(z0)(z-z0)+eta(z)(z-z0) (Sec. 6.3)"
+   },
+   {
+    "file": "78-r1-2.png",
+    "caption": "Goursat's proof, second half: epsilon estimate, polygonal and general contours (Sec. 6.3)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Russell W. Howell and John H. Mathews, Complex Analysis for Mathematics and Engineering, Section 6.3, https://complexanalysis.org/web/sec_cauchy-goursat.html",
+  "transcriptionNotes": "Screenshot of the page with the collapsed proof expanded; figures 6.3.7 and 6.3.8 did not load in the capture (shown as broken-image icons). Figure-free text is complete; the final omitted step (approximation of a general contour) is omitted in the source itself.",
+  "reasonNotReproduced": null
+ },
+ "78-r2": {
+  "routeId": "78-r2",
+  "sourceTitle": "Complex Analysis (Howell & Mathews), Section 6.3 The Cauchy-Goursat Theorem",
+  "sourceUrl": "https://complexanalysis.org/web/sec_cauchy-goursat.html",
+  "locator": "Section 6.3, Theorem 6.3.6, first proof (Cauchy's proof), Eqs. (6.3.4)-(6.3.6)",
+  "routeMatch": "verified",
+  "proofSketch": "Assume additionally that $f'$ is continuous. Writing $f=u+iv$, the contour integral splits as $\\int_C u\\,dx - v\\,dy + i\\int_C v\\,dx+u\\,dy$. Green's theorem turns the real part into $\\iint_R(-v_x-u_y)\\,dx\\,dy$ and the imaginary part into $\\iint_R(u_x-v_y)\\,dx\\,dy$, where R is the interior of C. The Cauchy-Riemann equations $u_x=v_y$, $u_y=-v_x$ make both integrands zero, so $\\int_C f\\,dz=0$.",
+  "images": [
+   {
+    "file": "78-r2-1.png",
+    "caption": "Theorem 6.3.6 and Cauchy's Green's-theorem/Cauchy-Riemann proof (Sec. 6.3)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Russell W. Howell and John H. Mathews, Complex Analysis for Mathematics and Engineering, Section 6.3, https://complexanalysis.org/web/sec_cauchy-goursat.html",
+  "transcriptionNotes": "Proof of Green's theorem (collapsed on the page) is not included; the source requires f' continuous for this proof.",
+  "reasonNotReproduced": null
+ },
+ "78-r3": {
+  "routeId": "78-r3",
+  "sourceTitle": "Complex Analysis (Howell & Mathews), Section 6.4 The Fundamental Theorems of Integration",
+  "sourceUrl": "https://complexanalysis.org/web/sec_integration-theorems.html",
+  "locator": "Section 6.4, Theorem 6.4.1 (existence of antiderivative on a simply connected domain), proof",
+  "routeMatch": "uncertain",
+  "proofSketch": "For f analytic on a simply connected domain D, fix $z_0$ and set $F(z)=\\int_{z_0}^z f(\\xi)\\,d\\xi$. Path independence: two contours $C_1,C_2$ from $z_0$ to $z$ give a closed contour $C_1-C_2$ whose integral vanishes by the Cauchy-Goursat theorem, so F is well defined. For the derivative, $F(z+\\Delta z)-F(z)=\\int_\\Gamma f$ over the segment from z to $z+\\Delta z$, and since $\\int_\\Gamma f(z)\\,d\\xi=f(z)\\Delta z$, continuity of f gives $|(F(z+\\Delta z)-F(z))/\\Delta z - f(z)|<\\varepsilon$. Hence $F'=f$.",
+  "images": [
+   {
+    "file": "78-r3-1.png",
+    "caption": "Theorem 6.4.1 and first half of proof: path independence from Cauchy-Goursat (Sec. 6.4)"
+   },
+   {
+    "file": "78-r3-2.png",
+    "caption": "Second half: F'(z)=f(z) estimate (Sec. 6.4)"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Russell W. Howell and John H. Mathews, Complex Analysis for Mathematics and Engineering, Section 6.4, https://complexanalysis.org/web/sec_integration-theorems.html",
+  "transcriptionNotes": "Source gives the primitive argument (path independence via Cauchy-Goursat, then F'=f) but does not use homotopy invariance; simply connected is defined by 'no holes'. Figures 6.4.2 and 6.4.3 not captured.",
+  "reasonNotReproduced": "Source covers the primitive half of the route only; no homotopy-invariance argument."
+ }
+}

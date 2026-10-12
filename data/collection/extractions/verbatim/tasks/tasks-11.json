@@ -1,0 +1,365 @@
+{
+ "agent": 11,
+ "tasks": [
+  {
+   "routeId": "78-r1",
+   "entryId": 78,
+   "entryName": "Cauchy's integral theorem",
+   "entryDescription": "Goursat triangle subdivision; Green's theorem and Cauchy–Riemann equations; homotopy/primitive arguments on simply connected domains.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Goursat triangle subdivision",
+   "currentSketch": "Subdivide a triangle repeatedly into four similar triangles. If integral over original triangle were nonzero, some nested subtriangle has integral at least 4^{-n} times original; shrinking diameter and complex differentiability make its integral o(area), contradiction. Thus triangle integrals vanish; triangulation gives path independence locally.",
+   "existingReferences": [
+    {
+     "label": "Cauchy–Goursat Theorem",
+     "url": "https://complexanalysis.org/web/sec_cauchy-goursat.html",
+     "locator": "§6.3.6, Goursat’s repeated triangle subdivision proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "78-r2",
+   "entryId": 78,
+   "entryName": "Cauchy's integral theorem",
+   "entryDescription": "Goursat triangle subdivision; Green's theorem and Cauchy–Riemann equations; homotopy/primitive arguments on simply connected domains.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Green's theorem and Cauchy–Riemann equations",
+   "currentSketch": "For holomorphic f=u+iv, Cauchy–Riemann makes the relevant curl zero. Green's theorem then gives ∮f dz=0 for a region bounded by a suitable curve; excision/triangulation extends the result under regularity assumptions.",
+   "existingReferences": [
+    {
+     "label": "Cauchy–Goursat Theorem",
+     "url": "https://complexanalysis.org/web/sec_cauchy-goursat.html",
+     "locator": "§6.3.6, Cauchy proof via Green’s theorem and Cauchy–Riemann equations"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "78-r3",
+   "entryId": 78,
+   "entryName": "Cauchy's integral theorem",
+   "entryDescription": "Goursat triangle subdivision; Green's theorem and Cauchy–Riemann equations; homotopy/primitive arguments on simply connected domains.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "homotopy/primitive arguments on simply connected domains",
+   "currentSketch": "On a simply connected domain, integrals around null-homotopic loops vanish by homotopy invariance (which itself follows from local Cauchy theorem). Then define F(z)=∫_{z0}^z f(w)dw; path independence makes F well-defined and F'=f. This route assumes local theorem, so is not independent globally.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "79-r1",
+   "entryId": 79,
+   "entryName": "Liouville's theorem",
+   "entryDescription": "Cauchy estimates with radius→∞; mean-value property for harmonic functions; maximum principle on expanding disks.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Cauchy estimates with radius→∞",
+   "currentSketch": "Cauchy's estimate gives |f'(z0)|≤M/R for entire f bounded by M on every circle centered at z0. Let R→∞; derivative vanishes everywhere, so f is constant.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.04 Complex Variables lecture notes",
+     "url": "https://math.mit.edu/~dunkel/Teach/18.04_2019S/notes/1804_Main.pdf",
+     "locator": "Liouville theorem proof using Cauchy estimates; source indexed in catalog source S6"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "79-r2",
+   "entryId": 79,
+   "entryName": "Liouville's theorem",
+   "entryDescription": "Cauchy estimates with radius→∞; mean-value property for harmonic functions; maximum principle on expanding disks.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "mean-value property for harmonic functions",
+   "currentSketch": "The real and imaginary parts of a bounded entire function are bounded harmonic functions. Mean-value property and letting circle radius grow show each value equals its average with vanishing oscillation; hence both are constant.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "79-r3",
+   "entryId": 79,
+   "entryName": "Liouville's theorem",
+   "entryDescription": "Cauchy estimates with radius→∞; mean-value property for harmonic functions; maximum principle on expanding disks.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "maximum principle on expanding disks",
+   "currentSketch": "A nonconstant holomorphic function is open, so on a large disk its maximum modulus cannot be attained in the interior. If globally bounded, maxima on expanding boundaries and maximum principle force no interior variation; equivalently apply the principle to disks and Cauchy estimates. Needs the maximum-modulus theorem.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "80-r1",
+   "entryId": 80,
+   "entryName": "Cauchy's integral formula",
+   "entryDescription": "Derive from Goursat's theorem and a small-circle deformation; prove with Green's theorem and the Cauchy–Riemann equations; obtain from the power-series coefficient formula.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Derive from Goursat's theorem and a small-circle deformation",
+   "currentSketch": "For a≠z deform the contour integral of f(ζ)/(ζ−z) from a small circle around z to the outer contour; Cauchy's theorem on the annulus equates them. As radius→0, continuity yields 2πi f(z), giving the formula.",
+   "existingReferences": [
+    {
+     "label": "Harvard Math 113, Cauchy Integral Formula",
+     "url": "https://people.math.harvard.edu/~siu/math113/5_cauchy_integral_formula_power_and_laurent_series_expansion.pdf",
+     "locator": "Cauchy–Goursat deformation proof of Cauchy integral formula"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "80-r2",
+   "entryId": 80,
+   "entryName": "Cauchy's integral formula",
+   "entryDescription": "Derive from Goursat's theorem and a small-circle deformation; prove with Green's theorem and the Cauchy–Riemann equations; obtain from the power-series coefficient formula.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "prove with Green's theorem and the Cauchy–Riemann equations",
+   "currentSketch": "Apply Green's theorem to f(ζ)/(ζ−z) on the region with a small disk removed; Cauchy–Riemann makes area term zero, leaving outer boundary equal to inner-circle integral. The latter tends to 2πif(z).",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "80-r3",
+   "entryId": 80,
+   "entryName": "Cauchy's integral formula",
+   "entryDescription": "Derive from Goursat's theorem and a small-circle deformation; prove with Green's theorem and the Cauchy–Riemann equations; obtain from the power-series coefficient formula.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "obtain from the power-series coefficient formula",
+   "currentSketch": "Expand f(z+w)=∑a_nw^n on a disk; integrate termwise on a circle. Orthogonality of exponentials isolates a_0=f(z), yielding the integral formula on circles, then contour deformation extends it.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "81-r1",
+   "entryId": 81,
+   "entryName": "Brouwer fixed-point theorem (disk/ball)",
+   "entryDescription": "Sperner's lemma/combinatorial labeling; degree theory; no-retraction theorem and homology.",
+   "level": "Graduate",
+   "routeTitle": "Sperner's lemma/combinatorial labeling",
+   "currentSketch": "Triangulate a simplex finely and label each vertex i by a coordinate where x_i exceeds the corresponding image coordinate under a hypothetical fixed-point-free map. Sperner's lemma gives a fully labeled small simplex; mesh→0 and compactness yield a point with x_i≥f_i(x) all i, hence equality because coordinates sum to one. Balls are homeomorphic to simplex.",
+   "existingReferences": [
+    {
+     "label": "Sperner’s Lemma and Brouwer’s Fixed-Point Theorem",
+     "url": "https://joelshapiro.org/Pubvit/Downloads/SpernerBrouwer/Sperner_Brouwer.html",
+     "locator": "Lecture notes, Brouwer proof via Sperner lemma"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "81-r2",
+   "entryId": 81,
+   "entryName": "Brouwer fixed-point theorem (disk/ball)",
+   "entryDescription": "Sperner's lemma/combinatorial labeling; degree theory; no-retraction theorem and homology.",
+   "level": "Graduate",
+   "routeTitle": "degree theory",
+   "currentSketch": "Define degree of id−f on a ball: if f has no fixed point, id−f avoids zero, so boundary degree is zero; homotopy to identity gives degree one, contradiction. Requires degree theory and boundary condition.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "81-r3",
+   "entryId": 81,
+   "entryName": "Brouwer fixed-point theorem (disk/ball)",
+   "entryDescription": "Sperner's lemma/combinatorial labeling; degree theory; no-retraction theorem and homology.",
+   "level": "Graduate",
+   "routeTitle": "no-retraction theorem and homology",
+   "currentSketch": "A fixed-point-free self-map of a ball would yield a retraction from the ball to its boundary by extending the ray from f(x) through x. But no-retraction follows from homology: inclusion S^{n−1}→B^n induces impossible map on top reduced homology. Thus fixed point exists.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "82-r1",
+   "entryId": 82,
+   "entryName": "Gauss–Bonnet theorem",
+   "entryDescription": "Local differential-geometric curvature integration; triangulation plus angle defect; index theorem/characteristic classes in generalized forms.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Local differential-geometric curvature integration",
+   "currentSketch": "In an oriented orthonormal frame, moving around a small geodesic triangle changes tangent direction by ∫K dA; boundary turning plus corner exterior angles totals 2π. Subdivide a triangulated surface into such triangles; edge terms cancel and sum angle defects to 2πχ.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "82-r2",
+   "entryId": 82,
+   "entryName": "Gauss–Bonnet theorem",
+   "entryDescription": "Local differential-geometric curvature integration; triangulation plus angle defect; index theorem/characteristic classes in generalized forms.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "triangulation plus angle defect",
+   "currentSketch": "For each triangulated face, angle sum defect is 2π minus its angles; sum over faces and use each interior edge's two angles and vertex angle totals to simplify to 2π(V−E+F). Curvature integral equals summed angular excess in the refinement limit.",
+   "existingReferences": [
+    {
+     "label": "O. Forster, The Theorem of Gauß–Bonnet in Complex Analysis",
+     "url": "https://www.math.lmu.de/~forster/eprints/gaussbonnet.pdf",
+     "locator": "Geodesic triangulation proof / angle defect summation"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "82-r3",
+   "entryId": 82,
+   "entryName": "Gauss–Bonnet theorem",
+   "entryDescription": "Local differential-geometric curvature integration; triangulation plus angle defect; index theorem/characteristic classes in generalized forms.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "index theorem/characteristic classes in generalized forms",
+   "currentSketch": "Chern–Weil theory represents Euler class by curvature form; integrating the Euler class over a closed oriented surface gives Euler characteristic. This is a generalized proof via characteristic classes, relying on Chern–Weil and Gauss–Bonnet identification.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "83-r1",
+   "entryId": 83,
+   "entryName": "Jordan curve theorem (plane)",
+   "entryDescription": "Polygonal approximation and winding number; separation via homology; combinatorial planar graph arguments for polygonal curves. State the curve regularity/version.",
+   "level": "Graduate",
+   "routeTitle": "Polygonal approximation and winding number",
+   "currentSketch": "Approximate a Jordan curve by a sufficiently close simple polygon. The polygon has inside/outside; winding number is locally constant off the curve. The annular closeness gives the same index for points away from the curve, and polygonal separation passes to the curve. Careful approximation/compactness is required.",
+   "existingReferences": [
+    {
+     "label": "Differential Geometry of Curves and Surfaces, Lecture 8",
+     "url": "https://math.colorado.edu/~casa/teaching/26fall/4230/lecture_notes/index.html",
+     "locator": "Lecture 8, winding number and tubular neighborhood approach to Jordan theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "83-r2",
+   "entryId": 83,
+   "entryName": "Jordan curve theorem (plane)",
+   "entryDescription": "Polygonal approximation and winding number; separation via homology; combinatorial planar graph arguments for polygonal curves. State the curve regularity/version.",
+   "level": "Graduate",
+   "routeTitle": "separation via homology",
+   "currentSketch": "For an embedded circle γ, Alexander duality gives reduced H_0(R²\\γ)≅ reduced H^1(S¹)≅Z. Thus complement has two components; local charts show γ is boundary of both. This homological proof depends on duality and embeddedness.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "83-r3",
+   "entryId": 83,
+   "entryName": "Jordan curve theorem (plane)",
+   "entryDescription": "Polygonal approximation and winding number; separation via homology; combinatorial planar graph arguments for polygonal curves. State the curve regularity/version.",
+   "level": "Graduate",
+   "routeTitle": "combinatorial planar graph arguments for polygonal curves. State the curve regularity/version",
+   "currentSketch": "For polygonal simple closed curves, planar graph Euler formula and face traversal show exactly two complementary faces, one bounded and one unbounded, with the curve as their common boundary. Extension from polygons to arbitrary Jordan curves requires a separate approximation theorem.",
+   "existingReferences": [
+    {
+     "label": "One-Dimensional Computational Topology",
+     "url": "https://jeffe.cs.illinois.edu/teaching/comptop/2020/schedule.html",
+     "locator": "Simple polygons / Jordan polygon theorem (lecture notes linked from course schedule)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "84-r1",
+   "entryId": 84,
+   "entryName": "Fundamental theorem of Galois theory",
+   "entryDescription": "Fixed-field correspondence; subgroup/action orbit arguments; equivalence of finite etale algebras and finite G-sets in a more advanced framing.",
+   "level": "Graduate",
+   "routeTitle": "Fixed-field correspondence",
+   "currentSketch": "For finite Galois L/K, map H≤G to fixed field L^H and intermediate E to Gal(L/E). Linear independence of automorphisms gives [L:L^H]=|H|; degree formula and Galois correspondence show the maps are inverse and reverse inclusion.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra II Student Notes",
+     "url": "https://ocw.mit.edu/courses/res-18-012-algebra-ii-student-notes-spring-2022/mit18_702s22_full_lec.pdf",
+     "locator": "Lecture 30–31, Galois correspondence and applications"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "84-r2",
+   "entryId": 84,
+   "entryName": "Fundamental theorem of Galois theory",
+   "entryDescription": "Fixed-field correspondence; subgroup/action orbit arguments; equivalence of finite etale algebras and finite G-sets in a more advanced framing.",
+   "level": "Graduate",
+   "routeTitle": "subgroup/action orbit arguments",
+   "currentSketch": "G acts on embeddings/roots: for intermediate field E, H=Gal(L/E) fixes E, and orbit-stabilizer gives the degree relation. Conversely subgroup-fixed elements have stabilizer H; separability/normality ensures exactly |H| automorphisms and the inverse correspondence.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra II Student Notes",
+     "url": "https://ocw.mit.edu/courses/res-18-012-algebra-ii-student-notes-spring-2022/mit18_702s22_full_lec.pdf",
+     "locator": "Lecture 30–31, Galois correspondence and group-action degree arguments"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "84-r3",
+   "entryId": 84,
+   "entryName": "Fundamental theorem of Galois theory",
+   "entryDescription": "Fixed-field correspondence; subgroup/action orbit arguments; equivalence of finite etale algebras and finite G-sets in a more advanced framing.",
+   "level": "Graduate",
+   "routeTitle": "equivalence of finite etale algebras and finite G-sets in a more advanced framing",
+   "currentSketch": "Finite étale K-algebras correspond contravariantly to finite continuous G_K-sets via embeddings into separable closure. For Galois extension, subextensions correspond to transitive quotient actions/stabilizers, recovering the theorem. This is an advanced reformulation, not an independent proof; requires separability.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "85-r1",
+   "entryId": 85,
+   "entryName": "Hilbert's basis theorem",
+   "entryDescription": "Leading-coefficient ideals and induction; module-theoretic finite generation; Gröbner-basis/monomial ideal argument.",
+   "level": "Graduate",
+   "routeTitle": "Leading-coefficient ideals and induction",
+   "currentSketch": "Let R be Noetherian and I⊂R[x]. Leading coefficients of elements of I form a finitely generated ideal; choose polynomials realizing generators. Above their maximum degree, subtract suitable multiples to reduce degree. The bounded-degree remainder lies in a finite R-module, so its submodule is finite; these elements generate I.",
+   "existingReferences": [
+    {
+     "label": "A Brief Introduction to Algebraic Geometry",
+     "url": "https://citeseerx.ist.psu.edu/document?doi=db3d3dcf1e5ea4d34bfd7253f92bba195e0a2317&repid=rep1&type=pdf",
+     "locator": "Theorem 11.6, Hilbert basis theorem via leading-coefficient ideals"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "85-r2",
+   "entryId": 85,
+   "entryName": "Hilbert's basis theorem",
+   "entryDescription": "Leading-coefficient ideals and induction; module-theoretic finite generation; Gröbner-basis/monomial ideal argument.",
+   "level": "Graduate",
+   "routeTitle": "module-theoretic finite generation",
+   "currentSketch": "Regard R[x] as an R-module filtered by degree. The leading-term coefficient ideal stabilizes finitely; quotient I by the finitely generated leading-term generators has bounded degree and is a submodule of finite free R-module R^{d+1}, hence finitely generated.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "85-r3",
+   "entryId": 85,
+   "entryName": "Hilbert's basis theorem",
+   "entryDescription": "Leading-coefficient ideals and induction; module-theoretic finite generation; Gröbner-basis/monomial ideal argument.",
+   "level": "Graduate",
+   "routeTitle": "Gröbner-basis/monomial ideal argument",
+   "currentSketch": "Choose a monomial order; the ideal of leading monomials is finitely generated by Dickson's lemma. Pick polynomials whose leading monomials generate it; division reduces any f∈I to zero remainder, so these generate I. This proves polynomial-ring Noetherianity when R is Noetherian; coefficients over R need standard Gröbner termination.",
+   "existingReferences": [
+    {
+     "label": "MIT 15.083 Integer Programming and Combinatorial Optimization",
+     "url": "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/d792e60582882807d4b80057bcc61697_MIT15_083JF09_lec14.pdf",
+     "locator": "Lecture 14, Hilbert basis theorem via leading terms"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

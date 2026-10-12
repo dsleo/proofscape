@@ -1,0 +1,319 @@
+{
+ "agent": 10,
+ "tasks": [
+  {
+   "routeId": "71-r1",
+   "entryId": 71,
+   "entryName": "Riesz representation theorem for Hilbert spaces",
+   "entryDescription": "Orthogonal projection onto kernel; minimization of distance; polarization and representing vector.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Orthogonal projection onto kernel",
+   "currentSketch": "For a nonzero bounded functional f on a Hilbert space, ker(f) is a closed subspace and its orthogonal complement is one-dimensional. Choose nonzero x₀ in ker(f)⊥ and set z_f=f(x₀)x₀/||x₀||² (adjusting conjugation for the inner-product convention). On ker(f), both f and ⟨z_f,·⟩ vanish; on ker(f)⊥, which is spanned by x₀, they agree by construction. Hence f(x)=⟨z_f,x⟩ for all x.",
+   "existingReferences": [
+    {
+     "label": "MIT Introduction to Functional Analysis",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Theorem 5.17, Riesz representation using ker(f)⊥"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered PDF page image(s); wording, numbering and order follow the source; mathematics rendered in LaTeX-style plain text. Symbols were not corrected or modernized. Source wording kept as printed, including 'where used that ker(f) is closed' and 'for all x ∈ X' (the source writes X although the space is H) and 'as the z ∈ H, the map…'. The ledger's 'Theorem 5.17' l"
+  },
+  {
+   "routeId": "71-r2",
+   "entryId": 71,
+   "entryName": "Riesz representation theorem for Hilbert spaces",
+   "entryDescription": "Orthogonal projection onto kernel; minimization of distance; polarization and representing vector.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "minimization of distance",
+   "currentSketch": "Minimize distance from a point x with ℓ(x)=1 to the closed subspace kerℓ. Projection theorem gives u=x−proj(x) perpendicular to kerℓ; for any y, y−(ℓ(y))x∈kerℓ, so ℓ(y)=⟨y,u⟩/⟨x,u⟩, with convention-adjusted conjugation.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.102 Functional Analysis lecture notes",
+     "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/3d4cc88026d44a01f936cd6a0aa995cb_MIT18_102s20_lec_FA.pdf",
+     "locator": "Lecture 17, minimizers, orthogonal complements, Riesz representation"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "71-r3",
+   "entryId": 71,
+   "entryName": "Riesz representation theorem for Hilbert spaces",
+   "entryDescription": "Orthogonal projection onto kernel; minimization of distance; polarization and representing vector.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "polarization and representing vector",
+   "currentSketch": "Let M=kerℓ and choose unit u spanning M⊥. Decompose x=m+αu; linearity forces ℓ(x)=αℓ(u), so choose v with ⟨x,v⟩=ℓ(x). Polarization can recover inner products from norm data, but by itself does not construct v; this route needs Riesz/projection machinery.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "72-r1",
+   "entryId": 72,
+   "entryName": "Open mapping theorem for Banach spaces",
+   "entryDescription": "Baire category and nested balls; quotient-space argument; closed graph theorem followed by inverse mapping.",
+   "level": "Graduate",
+   "routeTitle": "Baire category and nested balls",
+   "currentSketch": "It suffices to show T(B_X(0,1)) contains a neighborhood of 0. Surjectivity gives Y=⋃_n T(B_X(0,n)); Baire implies the closure of one such image has interior. By linearity and subtraction this yields a ball around 0 contained in the closure of T(B_X(0,1)). Repeatedly approximate a target y by T(x₁), then its residual by T(x₂), with ||x_k|| geometrically decreasing. The sum converges in X and maps to y, so a neighborhood of 0 lies in T(B_X(0,1)); scaling and translation show T is open.",
+   "existingReferences": [
+    {
+     "label": "MIT Introduction to Functional Analysis",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Theorem 2.32, Open mapping theorem"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered PDF page image(s); wording, numbering and order follow the source; mathematics rendered in LaTeX-style plain text. Symbols were not corrected or modernized. Passages from p. 14 and p. 22 joined in dependency order; the bracketed labels are the assistant's. The source's Step 3 uses the symbol '≐' as printed in the display for V_n. Source: Introduction to fun"
+  },
+  {
+   "routeId": "72-r2",
+   "entryId": 72,
+   "entryName": "Open mapping theorem for Banach spaces",
+   "entryDescription": "Baire category and nested balls; quotient-space argument; closed graph theorem followed by inverse mapping.",
+   "level": "Graduate",
+   "routeTitle": "quotient-space argument",
+   "currentSketch": "Factor T through ker T: the induced map X/kerT→Y is bounded bijective between Banach spaces. Prove its inverse bounded via Baire/open mapping; hence T maps open sets to open sets. This route relies on the quotient Banach property and open mapping core.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "72-r3",
+   "entryId": 72,
+   "entryName": "Open mapping theorem for Banach spaces",
+   "entryDescription": "Baire category and nested balls; quotient-space argument; closed graph theorem followed by inverse mapping.",
+   "level": "Graduate",
+   "routeTitle": "closed graph theorem followed by inverse mapping",
+   "currentSketch": "Apply closed graph theorem to the inverse of a bounded bijection T; its graph is closed, so inverse is bounded. For a surjective T, pass to quotient by kerT first. This is an equivalent theorem network, not a proof independent of closed graph/open mapping.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "73-r1",
+   "entryId": 73,
+   "entryName": "Closed graph theorem",
+   "entryDescription": "Open mapping theorem on the graph; Baire category directly; uniform boundedness plus duality.",
+   "level": "Graduate",
+   "routeTitle": "Open mapping theorem on the graph",
+   "currentSketch": "The graph G(T) is a closed subspace of Banach X×Y, hence Banach. Projection P:G→X is a bounded bijection; open mapping makes P^{-1} bounded. Then T=Q∘P^{-1} is bounded.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "73-r2",
+   "entryId": 73,
+   "entryName": "Closed graph theorem",
+   "entryDescription": "Open mapping theorem on the graph; Baire category directly; uniform boundedness plus duality.",
+   "level": "Graduate",
+   "routeTitle": "Baire category directly",
+   "currentSketch": "If T's graph is closed but T were unbounded, choose x_n with ||x_n||≤2^{-n} and ||Tx_n||≥n. Baire-category/open-set arguments construct a convergent series x with images violating closedness/continuity. Standard direct proofs often recast this argument through Baire; full details require bounded-domain construction.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "73-r3",
+   "entryId": 73,
+   "entryName": "Closed graph theorem",
+   "entryDescription": "Open mapping theorem on the graph; Baire category directly; uniform boundedness plus duality.",
+   "level": "Graduate",
+   "routeTitle": "uniform boundedness plus duality",
+   "currentSketch": "For every y*∈Y*, T*y* is bounded when graph closed by applying the uniform boundedness principle to suitable functionals only under additional hypotheses; this implication is not automatic as stated. Duality-based route needs reflexivity or a separately established dual characterization; flag as incomplete without such conditions.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "74-r1",
+   "entryId": 74,
+   "entryName": "Inverse function theorem",
+   "entryDescription": "Contraction mapping/fixed point; Newton iteration with estimates; differential/topological degree.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Contraction mapping/fixed point",
+   "currentSketch": "Normalize F(x)=0, DF(0)=I. On a small ball, G_y(x)=x−F(x)+y is a contraction because DF is close to I. For small y it maps the ball to itself; the fixed point solves F(x)=y, giving local inverse; derivative estimates yield C¹ inverse.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "74-r2",
+   "entryId": 74,
+   "entryName": "Inverse function theorem",
+   "entryDescription": "Contraction mapping/fixed point; Newton iteration with estimates; differential/topological degree.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Newton iteration with estimates",
+   "currentSketch": "Newton iteration x_{n+1}=x_n−DF(x_n)^{-1}(F(x_n)−y) is a contraction under a uniform inverse bound and Lipschitz derivative. The convergence estimates give a unique root near the base point and smooth dependence. This is quantitative contraction proof; hypotheses require C¹ plus local derivative control.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "74-r3",
+   "entryId": 74,
+   "entryName": "Inverse function theorem",
+   "entryDescription": "Contraction mapping/fixed point; Newton iteration with estimates; differential/topological degree.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "differential/topological degree",
+   "currentSketch": "Degree theory proves local solvability: on a small boundary F stays away from nearby target values, and local degree equals sign det DF(a)≠0; homotopy invariance forces each nearby target to have a preimage. This proves local onto, while injectivity follows derivative closeness; degree alone needs those local controls.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "75-r1",
+   "entryId": 75,
+   "entryName": "Implicit function theorem",
+   "entryDescription": "Inverse function theorem; contraction mapping in solved variables; local coordinate/submersion theorem.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Inverse function theorem",
+   "currentSketch": "For F(x,y)=0 with D_yF invertible, apply the inverse function theorem to (x,y)↦(x,F(x,y)); local inverse yields y=g(x) and differentiating gives Dg=−(D_yF)^{-1}D_xF.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "75-r2",
+   "entryId": 75,
+   "entryName": "Implicit function theorem",
+   "entryDescription": "Inverse function theorem; contraction mapping in solved variables; local coordinate/submersion theorem.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "contraction mapping in solved variables",
+   "currentSketch": "Rewrite y=y−A F(x,y), where A=(D_yF(a,b))^{-1}. On a small y-ball this is a contraction uniformly for x near a and maps the ball into itself. Its unique fixed point gives g(x); parameter dependence gives differentiability.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "75-r3",
+   "entryId": 75,
+   "entryName": "Implicit function theorem",
+   "entryDescription": "Inverse function theorem; contraction mapping in solved variables; local coordinate/submersion theorem.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "local coordinate/submersion theorem",
+   "currentSketch": "View F^{-1}(0) near a regular point as a level submanifold by the submersion theorem; projection to x-coordinates has invertible tangent map, so is a local coordinate chart and the zero set is a graph. This route invokes the submersion theorem, usually proved from IFT.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "76-r1",
+   "entryId": 76,
+   "entryName": "Stokes' theorem (manifolds with boundary)",
+   "entryDescription": "Differential forms and local charts/partition of unity; reduce to the fundamental theorem of calculus on boxes; singular homology/cohomology pairing.",
+   "level": "Graduate",
+   "routeTitle": "Differential forms and local charts/partition of unity",
+   "currentSketch": "In Euclidean space, prove Stokes on a coordinate box by integrating each coefficient of dω in its coordinate direction and applying the one-variable fundamental theorem; interior faces cancel and only the oriented boundary terms remain. A partition of unity reduces a compactly supported form on a manifold to these local box calculations, which add to ∫ₘdω=∫∂ₘω.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.952 Theory of Differential Forms",
+     "url": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+     "locator": "Course description: integration on manifolds and Stokes theorem; linked Guillemin notes"
+    },
+    {
+     "label": "MIT 18.022 calculus notes",
+     "url": "https://math.mit.edu/~djk/18_022/chapter10/section02.html",
+     "locator": "§10.2, Stokes’ theorem (surface/vector-calculus form)"
+    },
+    {
+     "label": "Gideon Dresdner, Stokes’ Theorem on Manifolds",
+     "url": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+     "locator": "§6, Theorem 6.0.3: verify on cube by the Fundamental Theorem of Calculus, then reduce general manifold case using a partition of unity"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "76-r2",
+   "entryId": 76,
+   "entryName": "Stokes' theorem (manifolds with boundary)",
+   "entryDescription": "Differential forms and local charts/partition of unity; reduce to the fundamental theorem of calculus on boxes; singular homology/cohomology pairing.",
+   "level": "Graduate",
+   "routeTitle": "reduce to the fundamental theorem of calculus on boxes",
+   "currentSketch": "Write a compactly supported (n−1)-form on a rectangle as a sum of terms omitting one coordinate differential. Its exterior derivative contributes the corresponding partial derivative. Integrating each partial derivative over the box and using the one-variable fundamental theorem gives the integral over the two opposite faces; summing over coordinates produces the oriented boundary integral.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.952 Theory of Differential Forms",
+     "url": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+     "locator": "Course description: integration on manifolds and Stokes theorem; linked Guillemin notes"
+    },
+    {
+     "label": "MIT 18.022 calculus notes",
+     "url": "https://math.mit.edu/~djk/18_022/chapter10/section02.html",
+     "locator": "§10.2, Stokes’ theorem (surface/vector-calculus form)"
+    },
+    {
+     "label": "Gideon Dresdner, Stokes’ Theorem on Manifolds",
+     "url": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+     "locator": "§6, Theorem 6.0.3: verify on cube by the Fundamental Theorem of Calculus, then reduce general manifold case using a partition of unity"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "76-r3",
+   "entryId": 76,
+   "entryName": "Stokes' theorem (manifolds with boundary)",
+   "entryDescription": "Differential forms and local charts/partition of unity; reduce to the fundamental theorem of calculus on boxes; singular homology/cohomology pairing.",
+   "level": "Graduate",
+   "routeTitle": "singular homology/cohomology pairing",
+   "currentSketch": "Triangulate an oriented manifold into compatible simplices and integrate a differential form simplex by simplex. On each simplex, the simplex Stokes formula identifies the integral of dω with the integral over its oriented faces. Every interior face occurs twice with opposite orientations and cancels, leaving exactly the boundary simplices, hence ∫ₘdω=∫∂ₘω.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "77-r1",
+   "entryId": 77,
+   "entryName": "Green's theorem / divergence theorem",
+   "entryDescription": "Rectangle/box subdivision and cancellation of interior faces; differential forms/Stokes; potential/flux arguments in special cases.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Rectangle/box subdivision and cancellation of interior faces",
+   "currentSketch": "Partition a region into small rectangles. Apply the one-variable FTC to each cell's partial derivatives; adjacent internal edge/face integrals cancel with opposite orientations, leaving only the outer boundary/flux.",
+   "existingReferences": [
+    {
+     "label": "Gideon Dresdner, Stokes’ Theorem on Manifolds",
+     "url": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+     "locator": "§6, Theorem 6.0.3: verify on cube by the Fundamental Theorem of Calculus, then reduce general manifold case using a partition of unity"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "77-r2",
+   "entryId": 77,
+   "entryName": "Green's theorem / divergence theorem",
+   "entryDescription": "Rectangle/box subdivision and cancellation of interior faces; differential forms/Stokes; potential/flux arguments in special cases.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "differential forms/Stokes",
+   "currentSketch": "In the plane identify a vector field with a 1-form; in space use contraction with volume form. Green/divergence are special cases of differential-form Stokes, with boundary orientation encoding signs.",
+   "existingReferences": [
+    {
+     "label": "Gideon Dresdner, Stokes’ Theorem on Manifolds",
+     "url": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+     "locator": "§6, Theorem 6.0.3: verify on cube by the Fundamental Theorem of Calculus, then reduce general manifold case using a partition of unity"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "77-r3",
+   "entryId": 77,
+   "entryName": "Green's theorem / divergence theorem",
+   "entryDescription": "Rectangle/box subdivision and cancellation of interior faces; differential forms/Stokes; potential/flux arguments in special cases.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "potential/flux arguments in special cases",
+   "currentSketch": "For a conservative field F=∇φ, flux/circulation integrals reduce by chain rule to endpoint or boundary values; this proves special potential-field cases only, not Green/divergence generally.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

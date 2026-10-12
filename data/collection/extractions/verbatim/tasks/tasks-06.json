@@ -1,0 +1,459 @@
+{
+ "agent": 6,
+ "tasks": [
+  {
+   "routeId": "39-r1",
+   "entryId": 39,
+   "entryName": "Fundamental theorem of symmetric polynomials",
+   "entryDescription": "Leading-monomial reduction/induction; orbit-sum or lexicographic elimination; invariant theory of the symmetric group.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Leading-monomial reduction/induction",
+   "currentSketch": "Induct on the leading monomial of a symmetric polynomial f. Its lexicographically largest term has exponents λ₁≥…≥λₙ; subtract a suitable multiple of e₁^(λ₁−λ₂)e₂^(λ₂−λ₃)…eₙ^λₙ to cancel it. The leading monomial decreases; iteration expresses f in elementary symmetric polynomials.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "39-r2",
+   "entryId": 39,
+   "entryName": "Fundamental theorem of symmetric polynomials",
+   "entryDescription": "Leading-monomial reduction/induction; orbit-sum or lexicographic elimination; invariant theory of the symmetric group.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "orbit-sum or lexicographic elimination",
+   "currentSketch": "For symmetric f, group terms into orbits under variable permutations. Subtract orbit sums represented by products of elementary symmetric polynomials in decreasing monomial order; finite lexicographic descent terminates with zero.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "39-r3",
+   "entryId": 39,
+   "entryName": "Fundamental theorem of symmetric polynomials",
+   "entryDescription": "Leading-monomial reduction/induction; orbit-sum or lexicographic elimination; invariant theory of the symmetric group.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "invariant theory of the symmetric group",
+   "currentSketch": "The invariant ring under Sₙ acting by permuting variables is k[x₁,…,xₙ]^{Sₙ}=k[e₁,…,eₙ]. The fundamental theorem follows by proving these generators are algebraically independent and that every invariant reduces to a polynomial in them via leading-term elimination. This is the invariant-theoretic restatement of route 1, not a wholly distinct proof.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "40-r1",
+   "entryId": 40,
+   "entryName": "Cayley–Hamilton theorem",
+   "entryDescription": "Adjugate identity and coefficient comparison; cyclic vector/rational canonical form; polynomial interpolation on eigenvalues (with hypotheses carefully controlled).",
+   "level": "Undergraduate",
+   "routeTitle": "Adjugate identity and coefficient comparison",
+   "currentSketch": "Use (tI−A)adj(tI−A)=det(tI−A)I as a polynomial matrix identity. Write adjugate as ΣBᵢtⁱ and compare coefficients; a telescoping recurrence among Bᵢ, multiplied by powers of A and summed, cancels all terms and leaves χ_A(A)=0. Do not naively substitute A=t into a matrix identity with noncommuting coefficients.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    },
+    {
+     "label": "POSTECH MATH203, Lecture 14: Cayley–Hamilton Theorem",
+     "url": "https://math-postech.github.io/courses/MATH203/2026-spring/notes/cayley-hamilton.md",
+     "locator": "§8, “Proof of the Cayley–Hamilton Theorem,” adjugate identity for λI−A and matrix-polynomial coefficient comparison."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "40-r2",
+   "entryId": 40,
+   "entryName": "Cayley–Hamilton theorem",
+   "entryDescription": "Adjugate identity and coefficient comparison; cyclic vector/rational canonical form; polynomial interpolation on eigenvalues (with hypotheses carefully controlled).",
+   "level": "Undergraduate",
+   "routeTitle": "cyclic vector/rational canonical form",
+   "currentSketch": "For each cyclic vector v, its cyclic subspace has basis v,Av,…,Aᵏ⁻¹v. The restriction matrix is companion to the minimal polynomial on that subspace, which divides χ_A; thus χ_A(A)v=0. A cyclic decomposition (or rational canonical form) spans the space and proves the result.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "40-r3",
+   "entryId": 40,
+   "entryName": "Cayley–Hamilton theorem",
+   "entryDescription": "Adjugate identity and coefficient comparison; cyclic vector/rational canonical form; polynomial interpolation on eigenvalues (with hypotheses carefully controlled).",
+   "level": "Undergraduate",
+   "routeTitle": "polynomial interpolation on eigenvalues (with hypotheses carefully controlled)",
+   "currentSketch": "Triangularize A over an algebraic closure. Every diagonal entry λ is an eigenvalue, so χ_A(t)=∏(t−λᵢ); the triangular matrix χ_A(A) has zero diagonal and is nilpotent, not automatically zero. Therefore this argument alone is insufficient; strengthen with generalized eigenspaces, where (A−λI)^{m_λ}=0 and χ_A contains that factor, to obtain zero on each primary component.",
+   "existingReferences": [
+    {
+     "label": "MIT Linear Algebra lecture notes",
+     "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+     "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "41-r1",
+   "entryId": 41,
+   "entryName": "Rank–nullity theorem",
+   "entryDescription": "Extend a basis of the kernel; count pivot/free variables by Gaussian elimination; split exact sequence in finite-dimensional vector spaces.",
+   "level": "Undergraduate",
+   "routeTitle": "Extend a basis of the kernel",
+   "currentSketch": "Choose a basis u₁,…,uₖ of ker T and extend it to a basis u₁,…,uₖ,v₁,…,vᵣ of V. Then Tv₁,…,Tvᵣ form a basis of im T: they span by expansion and are independent since a relation puts a combination of vᵢ in ker T. Thus dim V=k+r=dim kerT+dim imT.",
+   "existingReferences": [
+    {
+     "label": "LibreTexts, Linear Algebra: A First Course, §4.7 Row, Column, and Null Spaces",
+     "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+     "locator": "Theorem 3, rank and nullity; pivot/free-variable argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "41-r3",
+   "entryId": 41,
+   "entryName": "Rank–nullity theorem",
+   "entryDescription": "Extend a basis of the kernel; count pivot/free variables by Gaussian elimination; split exact sequence in finite-dimensional vector spaces.",
+   "level": "Undergraduate",
+   "routeTitle": "split exact sequence in finite-dimensional vector spaces",
+   "currentSketch": "The exact sequence 0→kerT→V→imT→0 splits for finite-dimensional vector spaces by choosing a complement W to kerT. Restriction T|W:W→imT is an isomorphism; hence dimV=dim kerT+dimW=dim kerT+dim imT.",
+   "existingReferences": [
+    {
+     "label": "LibreTexts, Linear Algebra: A First Course, §4.7 Row, Column, and Null Spaces",
+     "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+     "locator": "Theorem 3, rank and nullity; pivot/free-variable argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "42-r1",
+   "entryId": 42,
+   "entryName": "Dimension formula dim(U+W)+dim(U∩W)=dim U+dim W",
+   "entryDescription": "Adapted basis; kernel/image of the addition map U⊕W→U+W; Grassmannian/linear-map rank count.",
+   "level": "Undergraduate",
+   "routeTitle": "Adapted basis",
+   "currentSketch": "Take a basis of U∩W, extend it separately to bases of U and W. The combined list spans U+W and is independent; count its vectors to obtain dim(U+W)=dimU+dimW−dim(U∩W).",
+   "existingReferences": [
+    {
+     "label": "LibreTexts, Linear Algebra: rank and nullity exposition",
+     "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+     "locator": "Theorem 3 and the associated kernel/image dimension argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "42-r2",
+   "entryId": 42,
+   "entryName": "Dimension formula dim(U+W)+dim(U∩W)=dim U+dim W",
+   "entryDescription": "Adapted basis; kernel/image of the addition map U⊕W→U+W; Grassmannian/linear-map rank count.",
+   "level": "Undergraduate",
+   "routeTitle": "kernel/image of the addition map U⊕W→U+W",
+   "currentSketch": "Map φ:U⊕W→U+W by (u,w)↦u+w. It is onto and its kernel is {(z,−z):z∈U∩W}, isomorphic to U∩W. Rank–nullity gives the formula.",
+   "existingReferences": [
+    {
+     "label": "LibreTexts, Linear Algebra: rank and nullity exposition",
+     "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+     "locator": "Theorem 3 and the associated kernel/image dimension argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "42-r3",
+   "entryId": 42,
+   "entryName": "Dimension formula dim(U+W)+dim(U∩W)=dim U+dim W",
+   "entryDescription": "Adapted basis; kernel/image of the addition map U⊕W→U+W; Grassmannian/linear-map rank count.",
+   "level": "Undergraduate",
+   "routeTitle": "Grassmannian/linear-map rank count",
+   "currentSketch": "The Grassmannian dimension count is the same linear-map argument: addition from U⊕W has rank dim(U+W), kernel dimension dim(U∩W), and domain dimension dimU+dimW. This is not a distinct proof from route 2, just the map-rank interpretation.",
+   "existingReferences": [
+    {
+     "label": "LibreTexts, Linear Algebra: rank and nullity exposition",
+     "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+     "locator": "Theorem 3 and the associated kernel/image dimension argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "43-r1",
+   "entryId": 43,
+   "entryName": "Spectral theorem for real symmetric matrices",
+   "entryDescription": "Maximize Rayleigh quotient and induct on orthogonal complement; characteristic polynomial/eigenvector induction; orthogonal diagonalization through self-adjoint operators.",
+   "level": "Undergraduate",
+   "routeTitle": "Maximize Rayleigh quotient and induct on orthogonal complement",
+   "currentSketch": "Maximize ⟨Av,v⟩ on the real unit sphere. At a maximizing unit vector v, Lagrange multipliers give Av=λv. For symmetric A, v⊥ is invariant; induction on dimension yields an orthonormal eigenbasis. Eigenvalues are real since λ=⟨Av,v⟩.",
+   "existingReferences": [
+    {
+     "label": "MIT OCW proof notes for the finite-dimensional theorem",
+     "url": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+     "locator": "MIT 18.700 notes, “Proof of Spectral Theorem,” Lemmas 1.6–1.7 and induction, pp. 1–3"
+    },
+    {
+     "label": "Proof of the spectral theorem (notes, November 5, 2013), MIT 18.700 Linear Algebra, Fall 2013, OpenCourseWare (instructor David Vogan)",
+     "url": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/9b678c683ce68b30eff4ef6cd89eb25e_MIT18_700F13_spctrl_thrm.pdf",
+     "locator": "Whole 4-page note: Definition 1.1, Theorem 1.2, Lemmas 1.6–1.7, Proof of Spectral Theorem (induction on dim V, maximize s(v)=(Sv,v) on the unit sphere), Proof of Lemma 1.7 (pp. 1–4)"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered PDF pages (pp. 1–4); wording and order follow the source, mathematics rendered as LaTeX-style text. The source's own typo 'takes real values on on V' is kept. The final page of the PDF (OCW credit/terms line) is not included. Source: Proof of the spectral theorem (notes, November 5, 2013), MIT 18.700 Linear Algebra, Fall 2013, OpenCourseWare (instructor Dav"
+  },
+  {
+   "routeId": "43-r2",
+   "entryId": 43,
+   "entryName": "Spectral theorem for real symmetric matrices",
+   "entryDescription": "Maximize Rayleigh quotient and induct on orthogonal complement; characteristic polynomial/eigenvector induction; orthogonal diagonalization through self-adjoint operators.",
+   "level": "Undergraduate",
+   "routeTitle": "characteristic polynomial/eigenvector induction",
+   "currentSketch": "Over C, the characteristic polynomial has an eigenvalue λ and eigenvector v. For real symmetric A, λ=⟨Av,v⟩/⟨v,v⟩ is real; choose real eigenvector, note v⊥ invariant, and induct. This route still invokes the fundamental theorem of algebra to obtain an eigenvalue.",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Proof of the Spectral Theorem",
+     "url": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+     "locator": "Supplementary note “Proof of the Spectral Theorem,” induction proof"
+    },
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "43-r3",
+   "entryId": 43,
+   "entryName": "Spectral theorem for real symmetric matrices",
+   "entryDescription": "Maximize Rayleigh quotient and induct on orthogonal complement; characteristic polynomial/eigenvector induction; orthogonal diagonalization through self-adjoint operators.",
+   "level": "Undergraduate",
+   "routeTitle": "orthogonal diagonalization through self-adjoint operators",
+   "currentSketch": "A self-adjoint operator has an eigenvector (finite-dimensional complex spectral theorem / maximum Rayleigh quotient); its orthogonal complement is invariant. Inductively diagonalize each restriction, producing orthogonal eigenspaces. This is a reformulation of the standard proof, with the existence-of-eigenvalue lemma as its key premise.",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Proof of the Spectral Theorem",
+     "url": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+     "locator": "Supplementary note “Proof of the Spectral Theorem,” induction proof"
+    },
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "44-r1",
+   "entryId": 44,
+   "entryName": "Fundamental theorem of finite abelian groups",
+   "entryDescription": "Induct using elements of maximal prime-power order; Smith normal form over Z; module classification over a PID.",
+   "level": "Undergraduate",
+   "routeTitle": "Induct using elements of maximal prime-power order",
+   "currentSketch": "Choose an element of maximal order in a finite abelian p-group; cyclic subgroup splitting / induction shows the group is a direct product of cyclic p-power groups. Decompose a general finite abelian group into its p-primary components, then combine cyclic factors of coprime orders. (The splitting step requires the standard extension lemma; maximal order alone is not a complete proof.)",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "44-r2",
+   "entryId": 44,
+   "entryName": "Fundamental theorem of finite abelian groups",
+   "entryDescription": "Induct using elements of maximal prime-power order; Smith normal form over Z; module classification over a PID.",
+   "level": "Undergraduate",
+   "routeTitle": "Smith normal form over Z",
+   "currentSketch": "Represent a finite abelian group as Z^r/L. Smith normal form diagonalizes an integer presentation matrix using unimodular row/column operations; the quotient becomes a direct sum of cyclic groups Z/dᵢ.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "44-r3",
+   "entryId": 44,
+   "entryName": "Fundamental theorem of finite abelian groups",
+   "entryDescription": "Induct using elements of maximal prime-power order; Smith normal form over Z; module classification over a PID.",
+   "level": "Undergraduate",
+   "routeTitle": "module classification over a PID",
+   "currentSketch": "A finite abelian group is a finitely generated torsion module over PID Z. The structure theorem for finitely generated modules over a PID gives a direct sum of cyclic torsion modules, which is precisely the finite abelian group classification. This imports rather than reproves module classification.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "45-r1",
+   "entryId": 45,
+   "entryName": "Sylow theorems",
+   "entryDescription": "Group action on cosets/subsets; induction using the class equation; polynomial/permutation representation constructions. MIT notes exhibit standard and nonstandard existence proofs.",
+   "level": "Undergraduate",
+   "routeTitle": "Group action on cosets/subsets",
+   "currentSketch": "For existence, let G act on k-element subsets of itself where |G|=pᵐs and p∤s. The binomial coefficient C(pᵐs,pᵐ) is not divisible by p, so some orbit has size prime to p; its stabilizer has p-part pᵐ and contains a Sylow p-subgroup. For conjugacy, act on cosets G/H; an orbit-count modulo p yields a fixed coset when H is p-subgroup, giving conjugate containment. Conjugation on Sylow subgroups then gives n_p≡1 mod p and n_p||G|.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes, Lecture 23: proofs and applications of the Sylow theorems",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "MIT Algebra I student notes, Lecture 23, §§23.3 and proofs of Sylow I–III, pp. 114–117"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered PDF page images (notes pp. 115–118; the PDF page index differs from the printed page numbers, which were used); wording and order follow the source including its slips ('what do what them', '|S| ≠ 0', 'Stab(Y)' where Stab(H) is meant, 'Sylow p–subgroup'). Student lecture notes. The preceding statement of the theorems (Lecture 22, Theorems 22.4, 22.9, 22.11)"
+  },
+  {
+   "routeId": "45-r2",
+   "entryId": 45,
+   "entryName": "Sylow theorems",
+   "entryDescription": "Group action on cosets/subsets; induction using the class equation; polynomial/permutation representation constructions. MIT notes exhibit standard and nonstandard existence proofs.",
+   "level": "Undergraduate",
+   "routeTitle": "induction using the class equation",
+   "currentSketch": "Induct on |G| using the class equation. If a proper centralizer has full p-part, apply induction there and extend/conjugate; otherwise the center has enough p-power order and Cauchy's theorem supplies a central subgroup of order p, then quotient and lift. Complete induction details yield existence; actions prove conjugacy/count statements.",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Algebra I Student Notes, Lecture 23",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Lecture 23, Sylow theorems and proofs"
+    },
+    {
+     "label": "Graduate algebra notes, group-action proof and alternate embedding proof",
+     "url": "https://math.mit.edu/~setia/6310fa18.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "MIT lecture notes on Sylow theorems",
+     "url": "https://math.mit.edu/~mckernan/Teaching/12-13/Spring/18.703/l_13.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "45-r3",
+   "entryId": 45,
+   "entryName": "Sylow theorems",
+   "entryDescription": "Group action on cosets/subsets; induction using the class equation; polynomial/permutation representation constructions. MIT notes exhibit standard and nonstandard existence proofs.",
+   "level": "Undergraduate",
+   "routeTitle": "polynomial/permutation representation constructions. MIT notes exhibit standard and nonstandard existence proofs",
+   "currentSketch": "Embed a candidate p-subgroup into symmetric group action on cosets/subsets; orbit-stabilizer forces maximal p-power stabilizer. Conjugating the action identifies Sylow subgroups and congruence. This is still the group-action method; it is not genuinely separate from route 1 unless a different construction is specified.",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Algebra I Student Notes, Lecture 23",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Lecture 23, Sylow theorems and proofs"
+    },
+    {
+     "label": "Graduate algebra notes, group-action proof and alternate embedding proof",
+     "url": "https://math.mit.edu/~setia/6310fa18.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "MIT lecture notes on Sylow theorems",
+     "url": "https://math.mit.edu/~mckernan/Teaching/12-13/Spring/18.703/l_13.pdf",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "46-r1",
+   "entryId": 46,
+   "entryName": "Cauchy's theorem for finite groups",
+   "entryDescription": "Cyclic rotation acts on p-tuples with product 1; class-equation induction; count conjugation orbits on p-subgroups in suitable formulations.",
+   "level": "Undergraduate",
+   "routeTitle": "Cyclic rotation acts on p-tuples with product 1",
+   "currentSketch": "Let C_p cyclically rotate p-tuples (g₁,…,g_p) with product 1. There are |G|^(p−1), divisible by p when p||G|. Nonfixed orbits have size p; fixed tuples are (g,…,g) with g^p=1. The fixed-point count is divisible by p and includes identity, so there is a nonidentity element with g^p=1, hence order p.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "46-r2",
+   "entryId": 46,
+   "entryName": "Cauchy's theorem for finite groups",
+   "entryDescription": "Cyclic rotation acts on p-tuples with product 1; class-equation induction; count conjugation orbits on p-subgroups in suitable formulations.",
+   "level": "Undergraduate",
+   "routeTitle": "class-equation induction",
+   "currentSketch": "Induct using the class equation. If p divides the center order, Cauchy's theorem in the smaller abelian center gives an element of order p; otherwise noncentral conjugacy classes divisible by p can be removed and induction applies to a suitable centralizer/subgroup. Careful class-equation proof handles the p-divisibility cases.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "46-r3",
+   "entryId": 46,
+   "entryName": "Cauchy's theorem for finite groups",
+   "entryDescription": "Cyclic rotation acts on p-tuples with product 1; class-equation induction; count conjugation orbits on p-subgroups in suitable formulations.",
+   "level": "Undergraduate",
+   "routeTitle": "count conjugation orbits on p-subgroups in suitable formulations",
+   "currentSketch": "Let G act by conjugation on its p-subgroups; orbit sizes and normalizers constrain subgroup counts. If p divides |G|, a Sylow subgroup exists by Sylow I, so it contains an element of order p by Cauchy's theorem for p-groups (induct via center). This route depends on Sylow existence and is not independent if Sylow is proved using Cauchy.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

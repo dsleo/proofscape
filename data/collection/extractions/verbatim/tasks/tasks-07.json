@@ -1,0 +1,398 @@
+{
+ "agent": 7,
+ "tasks": [
+  {
+   "routeId": "47-r1",
+   "entryId": 47,
+   "entryName": "Ceva's theorem (triangle concurrency criterion)",
+   "entryDescription": "Ratios of subtriangle areas and cancellation around the triangle; sine rule/trigonometric ratios; barycentric coordinates and a determinant condition.",
+   "level": "School–undergraduate",
+   "routeTitle": "Ratios of subtriangle areas and cancellation around the triangle",
+   "currentSketch": "Suppose AD, BE, CF concur at P. Since triangles PBD and PCD share the altitude from P to BC, [PBD]/[PCD]=BD/DC; analogously [PCE]/[PAE]=CE/EA and [PAF]/[PBF]=AF/FB. The product of these three area ratios is 1: express each area using two sides through P and their included angle; each factor cancels cyclically. Conversely, if the product is 1, two cevians meet at P and the same area-ratio identity forces the third through P. This is the area form of Ceva.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "47-r2",
+   "entryId": 47,
+   "entryName": "Ceva's theorem (triangle concurrency criterion)",
+   "entryDescription": "Ratios of subtriangle areas and cancellation around the triangle; sine rule/trigonometric ratios; barycentric coordinates and a determinant condition.",
+   "level": "School–undergraduate",
+   "routeTitle": "sine rule/trigonometric ratios",
+   "currentSketch": "Apply the sine rule in triangles around the three vertices: BD/DC=(AB sin∠ABD)/(AC sin∠ACD), etc. Multiplying, side-length factors cancel and angle factors pair to 1 because the angles around the triangle sum appropriately; obtain product of side ratios 1, equivalent to Ceva.",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "47-r3",
+   "entryId": 47,
+   "entryName": "Ceva's theorem (triangle concurrency criterion)",
+   "entryDescription": "Ratios of subtriangle areas and cancellation around the triangle; sine rule/trigonometric ratios; barycentric coordinates and a determinant condition.",
+   "level": "School–undergraduate",
+   "routeTitle": "barycentric coordinates and a determinant condition",
+   "currentSketch": "Use homogeneous barycentric coordinates A=(1,0,0), B=(0,1,0), C=(0,0,1), with D=(0:d₁:d₂) on BC, E=(e₁:0:e₂) on CA, F=(f₁:f₂:0) on AB. The line equations AD, BE, CF have coefficient rows (0,−d₂,d₁), (e₂,0,−e₁), (−f₂,f₁,0). Their determinant vanishes exactly when d₂e₁f₂=d₁e₂f₁, i.e. BD/DC·CE/EA·AF/FB=1. A zero determinant is exactly concurrency (with boundary/parallel degeneracies interpreted projectively).",
+   "existingReferences": [
+    {
+     "label": "MIT Algebra I student notes",
+     "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+     "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "48-r1",
+   "entryId": 48,
+   "entryName": "Fermat's two-square theorem (prime p≡1 mod 4)",
+   "entryDescription": "Gaussian integer factorization; Wilson's theorem and factorial congruences; lattice-point/continued-fraction arguments.",
+   "level": "Undergraduate",
+   "routeTitle": "Gaussian integer factorization",
+   "currentSketch": "For prime p≡1 mod4, Wilson gives (p−1)!≡−1. Pair k with p−k for 1≤k≤(p−1)/2 to rewrite (p−1)!≡(−1)^((p−1)/2)(((p−1)/2)!)²; since (p−1)/2 is even, this produces a square root of −1 modulo p. In Gaussian integers, p divides (x+i)(x−i); gcd factors and unique factorization yield p=a²+b². The Wilson congruence alone gives modular square root, not yet integer sum-of-squares.",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "48-r2",
+   "entryId": 48,
+   "entryName": "Fermat's two-square theorem (prime p≡1 mod 4)",
+   "entryDescription": "Gaussian integer factorization; Wilson's theorem and factorial congruences; lattice-point/continued-fraction arguments.",
+   "level": "Undergraduate",
+   "routeTitle": "Wilson's theorem and factorial congruences",
+   "currentSketch": "For p≡1 mod4, −1 is a square modulo p (Wilson pairing or cyclicity of F_p×). Choose x²≡−1 mod p; then p divides (x+i)(x−i) in Z[i]. Since p is not prime as a Gaussian integer (it splits), factor p=(a+bi)(a−bi), so p=a²+b². A complete proof uses Euclideanity/UFD of Z[i] and the splitting criterion.",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "48-r3",
+   "entryId": 48,
+   "entryName": "Fermat's two-square theorem (prime p≡1 mod 4)",
+   "entryDescription": "Gaussian integer factorization; Wilson's theorem and factorial congruences; lattice-point/continued-fraction arguments.",
+   "level": "Undergraduate",
+   "routeTitle": "lattice-point/continued-fraction arguments",
+   "currentSketch": "Since −1 is a square mod p, choose t with t²≡−1 (mod p). The lattice Λ={(a,b)∈Z²:a≡tb (mod p)} has determinant p. Minkowski’s convex body theorem applied to a disk of radius just below √(2p) gives a nonzero lattice point with 0<a²+b²<2p. The congruence implies p|(a²+b²), hence a²+b²=p. For p>2 the vector cannot have both coordinates divisible by p because its norm²<p². This is a geometry-of-numbers proof and depends on Minkowski’s theorem.",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "49-r1",
+   "entryId": 49,
+   "entryName": "Quadratic reciprocity",
+   "entryDescription": "Gauss's lemma and lattice-point parity; Eisenstein's lattice-point proof; Jacobi sums/Gaussian sums. *Proofs from THE BOOK* includes distinct proofs.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Gauss's lemma and lattice-point parity",
+   "currentSketch": "For distinct odd primes p,q, Gauss's lemma says (q/p)=(-1)^N where N counts least positive residues of q,2q,…,((p−1)/2)q that exceed p/2. Counting lattice points in the rectangle 1≤i≤(p−1)/2, 1≤j≤(q−1)/2 below/above the line qi=pj gives N_p+N_q=((p−1)/2)((q−1)/2), yielding (p/q)(q/p)=(-1)^(((p−1)/2)((q−1)/2)).",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "Gauss's *Disquisitiones Arithmeticae* scans/translations",
+     "url": "https://archive.org/search?query=Disquisitiones+Arithmeticae+Gauss",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "49-r2",
+   "entryId": 49,
+   "entryName": "Quadratic reciprocity",
+   "entryDescription": "Gauss's lemma and lattice-point parity; Eisenstein's lattice-point proof; Jacobi sums/Gaussian sums. *Proofs from THE BOOK* includes distinct proofs.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Eisenstein's lattice-point proof",
+   "currentSketch": "Count lattice points in the rectangle 1≤x≤(p−1)/2, 1≤y≤(q−1)/2 using the line y=(q/p)x; no lattice point lies on it. The two complementary regions are counted by Gauss-lemma exponents for (q/p) and (p/q). Their total count is ((p−1)/2)((q−1)/2), giving quadratic reciprocity's sign.",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "Gauss's *Disquisitiones Arithmeticae* scans/translations",
+     "url": "https://archive.org/search?query=Disquisitiones+Arithmeticae+Gauss",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "49-r3",
+   "entryId": 49,
+   "entryName": "Quadratic reciprocity",
+   "entryDescription": "Gauss's lemma and lattice-point parity; Eisenstein's lattice-point proof; Jacobi sums/Gaussian sums. *Proofs from THE BOOK* includes distinct proofs.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Jacobi sums/Gaussian sums. *Proofs from THE BOOK* includes distinct proofs",
+   "currentSketch": "Use the Jacobi/Gauss sum G(χ)=Σₓ mod p e^(2πix²/p) and evaluate G(χ)²=χ(−1)p, comparing the evaluations for p and q in the cyclotomic field to get the reciprocity sign. This route requires nontrivial Gauss-sum evaluation; it is not interchangeable with the elementary lattice count.",
+   "existingReferences": [
+    {
+     "label": "publisher contents",
+     "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    },
+    {
+     "label": "Gauss's *Disquisitiones Arithmeticae* scans/translations",
+     "url": "https://archive.org/search?query=Disquisitiones+Arithmeticae+Gauss",
+     "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "50-r1",
+   "entryId": 50,
+   "entryName": "Fundamental theorem of arithmetic for polynomials over a field",
+   "entryDescription": "Euclidean algorithm/induction on degree; factorization in the PID F[x]; algebraic closure and root splitting.",
+   "level": "Undergraduate",
+   "routeTitle": "Euclidean algorithm/induction on degree",
+   "currentSketch": "For nonzero f,g∈F[x], divide f=qg+r with deg r<deg g. Repeated division terminates by strict degree descent and yields gcd as a linear combination; irreducibles are prime by Bézout, and induction on degree gives factorization and uniqueness up to nonzero constants/order.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "50-r2",
+   "entryId": 50,
+   "entryName": "Fundamental theorem of arithmetic for polynomials over a field",
+   "entryDescription": "Euclidean algorithm/induction on degree; factorization in the PID F[x]; algebraic closure and root splitting.",
+   "level": "Undergraduate",
+   "routeTitle": "factorization in the PID F[x]",
+   "currentSketch": "F[x] is a PID by polynomial division. In any UFD, every nonzero nonunit factors into irreducibles by induction on a well-founded size (degree); irreducibles are prime in a PID, so Euclid's lemma gives uniqueness up to units and ordering.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "50-r3",
+   "entryId": 50,
+   "entryName": "Fundamental theorem of arithmetic for polynomials over a field",
+   "entryDescription": "Euclidean algorithm/induction on degree; factorization in the PID F[x]; algebraic closure and root splitting.",
+   "level": "Undergraduate",
+   "routeTitle": "algebraic closure and root splitting",
+   "currentSketch": "In an algebraic closure, repeatedly split any reducible polynomial into lower-degree factors until every factor is irreducible; degree strictly decreases, guaranteeing termination. Uniqueness follows because F[x] is a PID and irreducibles there are prime. Algebraic closure is unnecessary for the existence factorization and this route is therefore not as independent as it first appears.",
+   "existingReferences": [
+    {
+     "label": "Dawson, Why Prove It Again? Alternative Proofs in Mathematical Practice",
+     "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+     "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "51-r1",
+   "entryId": 51,
+   "entryName": "Bézout theorem for polynomial gcds",
+   "entryDescription": "Polynomial Euclidean algorithm; principal ideal generator; linear-algebra nullspace of a Sylvester matrix/resultant.",
+   "level": "Undergraduate",
+   "routeTitle": "Polynomial Euclidean algorithm",
+   "currentSketch": "For f,g in F[x], repeatedly divide with remainder; degrees strictly fall, so the last nonzero remainder d is a gcd. Back-substituting the divisions writes d=af+bg.",
+   "existingReferences": [
+    {
+     "label": "Lecture 2: Elimination Methods",
+     "url": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+     "locator": "Euclidean algorithm / polynomial gcd and Bézout identity"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "51-r2",
+   "entryId": 51,
+   "entryName": "Bézout theorem for polynomial gcds",
+   "entryDescription": "Polynomial Euclidean algorithm; principal ideal generator; linear-algebra nullspace of a Sylvester matrix/resultant.",
+   "level": "Undergraduate",
+   "routeTitle": "principal ideal generator",
+   "currentSketch": "The ideal (f,g) in the Euclidean domain F[x] is principal, say (f,g)=(d). Since d is in the ideal it is a combination af+bg; and because f,g lie in (d), d divides both. Thus d is a gcd and a Bézout combination.",
+   "existingReferences": [
+    {
+     "label": "Lecture 2: Elimination Methods",
+     "url": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+     "locator": "Euclidean algorithm / polynomial gcd and Bézout identity"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "52-r1",
+   "entryId": 52,
+   "entryName": "Newton identities",
+   "entryDescription": "Expand logarithmic derivative of the generating polynomial; compare coefficients; symmetric-function/combinatorial cycle-counting interpretation.",
+   "level": "Undergraduate",
+   "routeTitle": "Expand logarithmic derivative of the generating polynomial",
+   "currentSketch": "Write P(t)=∏(1+x_i t)=∑e_k t^k. Then tP'(t)/P(t)=∑_{m≥1}(-1)^{m-1}p_m t^m, where p_m=∑x_i^m. Multiply by P and compare t^k coefficients to obtain Newton's recurrence.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "52-r2",
+   "entryId": 52,
+   "entryName": "Newton identities",
+   "entryDescription": "Expand logarithmic derivative of the generating polynomial; compare coefficients; symmetric-function/combinatorial cycle-counting interpretation.",
+   "level": "Undergraduate",
+   "routeTitle": "compare coefficients",
+   "currentSketch": "Expand P'(t)=∑k e_k t^{k-1} and also P(t)∑_i x_i/(1+x_it); expand each geometric series and equate coefficients. This yields k e_k=∑_{j=1}^k(-1)^{j-1}e_{k-j}p_j.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "52-r3",
+   "entryId": 52,
+   "entryName": "Newton identities",
+   "entryDescription": "Expand logarithmic derivative of the generating polynomial; compare coefficients; symmetric-function/combinatorial cycle-counting interpretation.",
+   "level": "Undergraduate",
+   "routeTitle": "symmetric-function/combinatorial cycle-counting interpretation",
+   "currentSketch": "For a permutation, power sums encode choices of a distinguished cycle while elementary symmetric functions encode sets of distinct labels; splitting permutations by the cycle containing a chosen label gives the same recurrence, with sign from cycle length. This is a combinatorial interpretation, not a third independent algebraic identity.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "53-r1",
+   "entryId": 53,
+   "entryName": "Inclusion–exclusion principle",
+   "entryDescription": "Indicator functions; classify elements by exact membership set; Möbius inversion on the Boolean lattice.",
+   "level": "Undergraduate",
+   "routeTitle": "Indicator functions",
+   "currentSketch": "For each x, let 1_A(x) be the indicator. The indicator of belonging to at least one A_i is 1-∏(1-1_Ai); expand the product and sum over x to get inclusion–exclusion.",
+   "existingReferences": [
+    {
+     "label": "Enumerative Combinatorics, Vol. 1",
+     "url": "https://math.mit.edu/~rstan/ec/ec1.pdf",
+     "locator": "Chapter 2, §1 Inclusion–exclusion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "53-r2",
+   "entryId": 53,
+   "entryName": "Inclusion–exclusion principle",
+   "entryDescription": "Indicator functions; classify elements by exact membership set; Möbius inversion on the Boolean lattice.",
+   "level": "Undergraduate",
+   "routeTitle": "classify elements by exact membership set",
+   "currentSketch": "Let f=(T) count objects having exactly the property set T, and f≥(T) count objects having at least the properties T. Then f≥(T)=Σ_{Y⊇T}f=(Y). Möbius inversion on the subset lattice yields f=(T)=Σ_{Y⊇T}(−1)^{|Y−T|}f≥(Y); taking T=∅ gives inclusion–exclusion.",
+   "existingReferences": [
+    {
+     "label": "Enumerative Combinatorics, Vol. 1",
+     "url": "https://math.mit.edu/~rstan/ec/ec1.pdf",
+     "locator": "Chapter 2, §1 Inclusion–exclusion"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered page images (pp. 223–224); wording follows the source, mathematics as LaTeX-style text; source slips kept (e.g. '(2.5)' sums over 'Y ⊇ T' with 'where Y ranges over all subsets S'; 'several example'). Route caveat: this proves inclusion–exclusion by inverting the zeta-type matrix and then applies it to exact-membership counts f_=; it does not give a separate"
+  },
+  {
+   "routeId": "53-r3",
+   "entryId": 53,
+   "entryName": "Inclusion–exclusion principle",
+   "entryDescription": "Indicator functions; classify elements by exact membership set; Möbius inversion on the Boolean lattice.",
+   "level": "Undergraduate",
+   "routeTitle": "Möbius inversion on the Boolean lattice",
+   "currentSketch": "On the subset lattice define (φf)(T)=Σ_{Y⊇T}f(Y). Define ψ by (ψf)(T)=Σ_{Y⊇T}(−1)^{|Y−T|}f(Y). In φψ, the coefficient of f(Z) is Σ_{T⊆Y⊆Z}(−1)^{|Y−T|}=(1−1)^{|Z−T|}, equal to 1 for Z=T and 0 otherwise. Thus ψ=φ⁻¹, giving Boolean-lattice Möbius inversion and inclusion–exclusion.",
+   "existingReferences": [
+    {
+     "label": "Enumerative Combinatorics, Vol. 1",
+     "url": "https://math.mit.edu/~rstan/ec/ec1.pdf",
+     "locator": "§3.8.3 Boolean-lattice Möbius inversion and inclusion–exclusion"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered page image (p. 306). The example is short and relies on the product theorem for Möbius functions, equation (2.8) and Proposition 3.7.1, none of which are included here. Source: Enumerative Combinatorics, Volume 1, second edition (version of 15 July 2011), Richard P. Stanley — Chapter 3 §3.8 'Möbius functions of …', Example 3.8.3 (the boolean algebra B_n; Mö"
+  },
+  {
+   "routeId": "54-r1",
+   "entryId": 54,
+   "entryName": "Binomial inversion",
+   "entryDescription": "Triangular matrix inversion; Möbius inversion on subsets; alternating binomial expansion.",
+   "level": "Undergraduate",
+   "routeTitle": "Triangular matrix inversion",
+   "currentSketch": "The relation g_n=∑_{k≤n}binom(n,k)f_k is a lower-triangular linear system with diagonal 1. Inverting its matrix gives f_n=∑_{k≤n}(-1)^{n-k}binom(n,k)g_k.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "54-r2",
+   "entryId": 54,
+   "entryName": "Binomial inversion",
+   "entryDescription": "Triangular matrix inversion; Möbius inversion on subsets; alternating binomial expansion.",
+   "level": "Undergraduate",
+   "routeTitle": "Möbius inversion on subsets",
+   "currentSketch": "On subsets, the zeta transform sums values over sub-subsets. Boolean-lattice Möbius inversion uses μ(T,S)=(-1)^{|S\\T|}; grouping subsets by size yields binomial inversion.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "54-r3",
+   "entryId": 54,
+   "entryName": "Binomial inversion",
+   "entryDescription": "Triangular matrix inversion; Möbius inversion on subsets; alternating binomial expansion.",
+   "level": "Undergraduate",
+   "routeTitle": "alternating binomial expansion",
+   "currentSketch": "Substitute g_k=∑_{j≤k}binom(k,j)f_j into the proposed inverse. The coefficient of f_j is binom(n,j)∑_{r=0}^{n-j}(-1)^{n-j-r}binom(n-j,r), zero unless j=n, when it is one.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

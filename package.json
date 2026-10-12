@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "predev": "npm run build:collection",
-    "build:collection": "python3 scripts/build_static_collection.py",
+    "build:collection": "python3 scripts/build_static_collection.py && python3 scripts/build_historical_catalog.py",
+    "build:historical-catalog": "python3 scripts/build_historical_catalog.py",
+    "merge:proof-extractions": "python3 scripts/merge_proof_extractions.py",
     "prebuild": "npm run build:collection",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1"

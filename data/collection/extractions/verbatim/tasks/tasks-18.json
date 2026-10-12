@@ -1,0 +1,398 @@
+{
+ "agent": 18,
+ "tasks": [
+  {
+   "routeId": "130-r1",
+   "entryId": 130,
+   "entryName": "Helly's theorem for convex sets",
+   "entryDescription": "Radon's theorem plus induction; minimal subfamily and affine dependence; nerve/topological methods for generalizations.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Radon's theorem plus induction",
+   "currentSketch": "Assume every d+1 of a finite family of convex sets intersect. Induct on family size; apply Radon’s theorem to points x_i chosen from intersections omitting C_i. A Radon partition yields a point lying in every C_i, contradiction otherwise. The finite-family theorem follows; topological nerve versions require additional hypotheses such as contractibility.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Helly theorem proofs"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "130-r2",
+   "entryId": 130,
+   "entryName": "Helly's theorem for convex sets",
+   "entryDescription": "Radon's theorem plus induction; minimal subfamily and affine dependence; nerve/topological methods for generalizations.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "minimal subfamily and affine dependence",
+   "currentSketch": "Assume every d+1 of a finite family of convex sets intersect. Induct on family size; apply Radon’s theorem to points x_i chosen from intersections omitting C_i. A Radon partition yields a point lying in every C_i, contradiction otherwise. The finite-family theorem follows; topological nerve versions require additional hypotheses such as contractibility.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Helly theorem proofs"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "130-r3",
+   "entryId": 130,
+   "entryName": "Helly's theorem for convex sets",
+   "entryDescription": "Radon's theorem plus induction; minimal subfamily and affine dependence; nerve/topological methods for generalizations.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "nerve/topological methods for generalizations",
+   "currentSketch": "Assume every d+1 of a finite family of convex sets intersect. Induct on family size; apply Radon’s theorem to points x_i chosen from intersections omitting C_i. A Radon partition yields a point lying in every C_i, contradiction otherwise. The finite-family theorem follows; topological nerve versions require additional hypotheses such as contractibility.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Helly theorem proofs"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "131-r1",
+   "entryId": 131,
+   "entryName": "Radon's theorem for finite point sets",
+   "entryDescription": "Affine dependence and sign partition; convex-hull separation; linear-algebra nullspace argument.",
+   "level": "Undergraduate",
+   "routeTitle": "Affine dependence and sign partition",
+   "currentSketch": "For d+2 points x_i∈R^d, find a nonzero affine dependence Σa_ix_i=0 and Σa_i=0. Positive and negative coefficients both occur; normalize their absolute sums to 1. The two convex combinations then agree, so the convex hulls of the positive- and negative-coefficient point sets intersect.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Radon theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "131-r2",
+   "entryId": 131,
+   "entryName": "Radon's theorem for finite point sets",
+   "entryDescription": "Affine dependence and sign partition; convex-hull separation; linear-algebra nullspace argument.",
+   "level": "Undergraduate",
+   "routeTitle": "convex-hull separation",
+   "currentSketch": "Suppose, for contradiction, every partition of d+2 points into two parts has disjoint convex hulls. Strict separation then supplies a hyperplane separating each pair of hulls. The sign patterns of these separating affine functionals cannot realize all required dichotomies of d+2 points in R^d (affine halfspaces have VC dimension d+1); therefore some partition has intersecting hulls. This is a separation-theorem proof of Radon, but it is less elementary and its separation/dimension argument must be stated fully.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Radon theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "131-r3",
+   "entryId": 131,
+   "entryName": "Radon's theorem for finite point sets",
+   "entryDescription": "Affine dependence and sign partition; convex-hull separation; linear-algebra nullspace argument.",
+   "level": "Undergraduate",
+   "routeTitle": "linear-algebra nullspace argument",
+   "currentSketch": "Form the (d+1)×(d+2) matrix whose columns are (x_i,1). Its nullspace contains a nonzero vector a. The last row gives Σa_i=0 and the first d rows Σa_ix_i=0; splitting the signs of a and normalizing yields equal convex combinations from disjoint point subsets.",
+   "existingReferences": [
+    {
+     "label": "Matoušek, Lectures on Discrete Geometry",
+     "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+     "locator": "Chapter 1, Radon theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "132-r1",
+   "entryId": 132,
+   "entryName": "Max-flow min-cut theorem",
+   "entryDescription": "Augmenting paths/residual graph; linear-programming duality; circulation/polyhedral integrality.",
+   "level": "Undergraduate",
+   "routeTitle": "Augmenting paths/residual graph",
+   "currentSketch": "Run augmenting paths until none remains. Let S be vertices reachable from source in residual graph. Every edge S→Sᶜ is saturated and every edge Sᶜ→S carries zero flow, so flow value equals cut capacity. Weak duality bounds any flow by every cut, proving optimality; integer capacities give an integral max flow.",
+   "existingReferences": [
+    {
+     "label": "Ahuja, Magnanti & Orlin, Network Flows",
+     "url": "https://doi.org/10.1017/CBO9780511845279",
+     "locator": "Chapter 3, max-flow min-cut theorem and augmenting paths; later LP duality discussion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "132-r2",
+   "entryId": 132,
+   "entryName": "Max-flow min-cut theorem",
+   "entryDescription": "Augmenting paths/residual graph; linear-programming duality; circulation/polyhedral integrality.",
+   "level": "Undergraduate",
+   "routeTitle": "linear-programming duality",
+   "currentSketch": "Run augmenting paths until none remains. Let S be vertices reachable from source in residual graph. Every edge S→Sᶜ is saturated and every edge Sᶜ→S carries zero flow, so flow value equals cut capacity. Weak duality bounds any flow by every cut, proving optimality; integer capacities give an integral max flow.",
+   "existingReferences": [
+    {
+     "label": "Ahuja, Magnanti & Orlin, Network Flows",
+     "url": "https://doi.org/10.1017/CBO9780511845279",
+     "locator": "Chapter 3, max-flow min-cut theorem and augmenting paths; later LP duality discussion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "132-r3",
+   "entryId": 132,
+   "entryName": "Max-flow min-cut theorem",
+   "entryDescription": "Augmenting paths/residual graph; linear-programming duality; circulation/polyhedral integrality.",
+   "level": "Undergraduate",
+   "routeTitle": "circulation/polyhedral integrality",
+   "currentSketch": "Run augmenting paths until none remains. Let S be vertices reachable from source in residual graph. Every edge S→Sᶜ is saturated and every edge Sᶜ→S carries zero flow, so flow value equals cut capacity. Weak duality bounds any flow by every cut, proving optimality; integer capacities give an integral max flow.",
+   "existingReferences": [
+    {
+     "label": "Ahuja, Magnanti & Orlin, Network Flows",
+     "url": "https://doi.org/10.1017/CBO9780511845279",
+     "locator": "Chapter 3, max-flow min-cut theorem and augmenting paths; later LP duality discussion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "133-r1",
+   "entryId": 133,
+   "entryName": "Matrix-tree theorem",
+   "entryDescription": "Laplacian cofactor and determinant expansion; electrical-network spanning-tree identity; all-minors/forest counting.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Laplacian cofactor and determinant expansion",
+   "currentSketch": "Delete one row and column of the graph Laplacian L. By Cauchy–Binet, det(L̂) sums squared determinants of incidence submatrices indexed by edge sets of size n−1. Such determinant is ±1 exactly for a spanning tree and 0 otherwise, so the cofactor counts spanning trees.",
+   "existingReferences": [
+    {
+     "label": "Bollobás, Modern Graph Theory",
+     "url": "https://doi.org/10.1007/978-1- phải",
+     "locator": "Matrix-tree theorem, spanning trees chapter"
+    },
+    {
+     "label": "MIT OCW, Lecture 28: Proof of Matrix Tree Theorem using Cauchy–Binet",
+     "url": "https://ocw.mit.edu/courses/18-212-algebraic-combinatorics-spring-2019/resources/mit18_212s19_lec28/",
+     "locator": "Lecture 28, Cauchy–Binet proof of the Matrix–Tree Theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "133-r2",
+   "entryId": 133,
+   "entryName": "Matrix-tree theorem",
+   "entryDescription": "Laplacian cofactor and determinant expansion; electrical-network spanning-tree identity; all-minors/forest counting.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "electrical-network spanning-tree identity",
+   "currentSketch": "Delete one row and column of the graph Laplacian L. By Cauchy–Binet, det(L̂) sums squared determinants of incidence submatrices indexed by edge sets of size n−1. Such determinant is ±1 exactly for a spanning tree and 0 otherwise, so the cofactor counts spanning trees.",
+   "existingReferences": [
+    {
+     "label": "Bollobás, Modern Graph Theory",
+     "url": "https://doi.org/10.1007/978-1- phải",
+     "locator": "Matrix-tree theorem, spanning trees chapter"
+    },
+    {
+     "label": "MIT OCW, Algebraic Combinatorics lecture notes",
+     "url": "https://ocw.iti.hr/courses/mathematics/18-212-algebraic-combinatorics-spring-2019/lecture-notes/MIT18_212S19_lec30.pdf",
+     "locator": "Lecture 30, weighted Matrix–Tree Theorem and Laplacian cofactor proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "133-r3",
+   "entryId": 133,
+   "entryName": "Matrix-tree theorem",
+   "entryDescription": "Laplacian cofactor and determinant expansion; electrical-network spanning-tree identity; all-minors/forest counting.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "all-minors/forest counting",
+   "currentSketch": "Delete one row and column of the graph Laplacian L. By Cauchy–Binet, det(L̂) sums squared determinants of incidence submatrices indexed by edge sets of size n−1. Such determinant is ±1 exactly for a spanning tree and 0 otherwise, so the cofactor counts spanning trees.",
+   "existingReferences": [
+    {
+     "label": "Bollobás, Modern Graph Theory",
+     "url": "https://doi.org/10.1007/978-1- phải",
+     "locator": "Matrix-tree theorem, spanning trees chapter"
+    },
+    {
+     "label": "MIT OCW, Lecture 28: Proof of Matrix Tree Theorem using Cauchy–Binet",
+     "url": "https://ocw.mit.edu/courses/18-212-algebraic-combinatorics-spring-2019/resources/mit18_212s19_lec28/",
+     "locator": "Lecture 28, all-minors/forest counting extension (verify the exact sub-result in the PDF)"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "134-r1",
+   "entryId": 134,
+   "entryName": "Hall's marriage theorem, infinite-set version",
+   "entryDescription": "Finite-subset compactness/König lemma for countable locally finite cases; maximal matching and augmenting paths; choice/Zorn argument under stated cardinal assumptions.",
+   "level": "Graduate",
+   "routeTitle": "Finite-subset compactness/König lemma for countable locally finite cases",
+   "currentSketch": "Finite Hall: choose a maximum matching. If an unmatched left vertex exists, follow alternating paths; Hall’s condition prevents the reached left set from having fewer neighboring right vertices, so an augmenting path must exist, contradiction. Infinite variants need conditions: compactness/König handles countable locally finite graphs; arbitrary sets generally require stronger cardinal Hall conditions and choice.",
+   "existingReferences": [
+    {
+     "label": "Diestel, Graph Theory",
+     "url": "https://diestel-graph-theory.com/",
+     "locator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "134-r2",
+   "entryId": 134,
+   "entryName": "Hall's marriage theorem, infinite-set version",
+   "entryDescription": "Finite-subset compactness/König lemma for countable locally finite cases; maximal matching and augmenting paths; choice/Zorn argument under stated cardinal assumptions.",
+   "level": "Graduate",
+   "routeTitle": "maximal matching and augmenting paths",
+   "currentSketch": "Finite Hall: choose a maximum matching. If an unmatched left vertex exists, follow alternating paths; Hall’s condition prevents the reached left set from having fewer neighboring right vertices, so an augmenting path must exist, contradiction. Infinite variants need conditions: compactness/König handles countable locally finite graphs; arbitrary sets generally require stronger cardinal Hall conditions and choice.",
+   "existingReferences": [
+    {
+     "label": "Diestel, Graph Theory",
+     "url": "https://diestel-graph-theory.com/",
+     "locator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "134-r3",
+   "entryId": 134,
+   "entryName": "Hall's marriage theorem, infinite-set version",
+   "entryDescription": "Finite-subset compactness/König lemma for countable locally finite cases; maximal matching and augmenting paths; choice/Zorn argument under stated cardinal assumptions.",
+   "level": "Graduate",
+   "routeTitle": "choice/Zorn argument under stated cardinal assumptions",
+   "currentSketch": "Finite Hall: choose a maximum matching. If an unmatched left vertex exists, follow alternating paths; Hall’s condition prevents the reached left set from having fewer neighboring right vertices, so an augmenting path must exist, contradiction. Infinite variants need conditions: compactness/König handles countable locally finite graphs; arbitrary sets generally require stronger cardinal Hall conditions and choice.",
+   "existingReferences": [
+    {
+     "label": "Diestel, Graph Theory",
+     "url": "https://diestel-graph-theory.com/",
+     "locator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "135-r1",
+   "entryId": 135,
+   "entryName": "Kruskal's theorem (finite graphs have finite obstruction sets under the minor relation)",
+   "entryDescription": "Minimal-bad-sequence proof; tree embedding/wqo argument; algebraic proof via graph-minor structure (advanced).",
+   "level": "Graduate",
+   "routeTitle": "Minimal-bad-sequence proof",
+   "currentSketch": "Assume a bad sequence of finite trees, and choose lexicographically a minimal bad sequence (each term has minimal size among choices that can extend the prefix). Replace infinitely many terms by their proper rooted subtrees; the subsequence of roots’ child forests is well-quasi-ordered by induction/product closure, yielding an earlier tree embedding into a later one, contradiction. Graph-minor theorem is much deeper; tree wqo alone is not its proof.",
+   "existingReferences": [
+    {
+     "label": "Robertson & Seymour, Graph Minors XX: Wagner’s conjecture",
+     "url": "https://doi.org/10.1002/cpa.20308",
+     "locator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "135-r2",
+   "entryId": 135,
+   "entryName": "Kruskal's theorem (finite graphs have finite obstruction sets under the minor relation)",
+   "entryDescription": "Minimal-bad-sequence proof; tree embedding/wqo argument; algebraic proof via graph-minor structure (advanced).",
+   "level": "Graduate",
+   "routeTitle": "tree embedding/wqo argument",
+   "currentSketch": "Assume a bad sequence of finite trees, and choose lexicographically a minimal bad sequence (each term has minimal size among choices that can extend the prefix). Replace infinitely many terms by their proper rooted subtrees; the subsequence of roots’ child forests is well-quasi-ordered by induction/product closure, yielding an earlier tree embedding into a later one, contradiction. Graph-minor theorem is much deeper; tree wqo alone is not its proof.",
+   "existingReferences": [
+    {
+     "label": "Robertson & Seymour, Graph Minors XX: Wagner’s conjecture",
+     "url": "https://doi.org/10.1002/cpa.20308",
+     "locator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "135-r3",
+   "entryId": 135,
+   "entryName": "Kruskal's theorem (finite graphs have finite obstruction sets under the minor relation)",
+   "entryDescription": "Minimal-bad-sequence proof; tree embedding/wqo argument; algebraic proof via graph-minor structure (advanced).",
+   "level": "Graduate",
+   "routeTitle": "algebraic proof via graph-minor structure (advanced)",
+   "currentSketch": "Assume a bad sequence of finite trees, and choose lexicographically a minimal bad sequence (each term has minimal size among choices that can extend the prefix). Replace infinitely many terms by their proper rooted subtrees; the subsequence of roots’ child forests is well-quasi-ordered by induction/product closure, yielding an earlier tree embedding into a later one, contradiction. Graph-minor theorem is much deeper; tree wqo alone is not its proof.",
+   "existingReferences": [
+    {
+     "label": "Robertson & Seymour, Graph Minors XX: Wagner’s conjecture",
+     "url": "https://doi.org/10.1002/cpa.20308",
+     "locator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "136-r1",
+   "entryId": 136,
+   "entryName": "Brouwer invariance of domain",
+   "entryDescription": "Homology/degree; local homology and orientation; contradiction using compactness and boundary/sphere separation.",
+   "level": "Graduate",
+   "routeTitle": "Homology/degree",
+   "currentSketch": "Assume a continuous injection f:U⊂R^n→R^n has image not open at f(x). Local homology at x is H_n(U,U\\{x})≅Z, while at a boundary point of f(U) the corresponding local homology in the target complement vanishes; the homeomorphism U≅f(U) induced by injectivity contradicts this. This uses local compactness/degree or homology machinery.",
+   "existingReferences": [
+    {
+     "label": "Hatcher, Algebraic Topology",
+     "url": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+     "locator": "Chapter 2, homology and degree methods for invariance of domain"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "136-r2",
+   "entryId": 136,
+   "entryName": "Brouwer invariance of domain",
+   "entryDescription": "Homology/degree; local homology and orientation; contradiction using compactness and boundary/sphere separation.",
+   "level": "Graduate",
+   "routeTitle": "local homology and orientation",
+   "currentSketch": "Assume a continuous injection f:U⊂R^n→R^n has image not open at f(x). Local homology at x is H_n(U,U\\{x})≅Z, while at a boundary point of f(U) the corresponding local homology in the target complement vanishes; the homeomorphism U≅f(U) induced by injectivity contradicts this. This uses local compactness/degree or homology machinery.",
+   "existingReferences": [
+    {
+     "label": "Hatcher, Algebraic Topology",
+     "url": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+     "locator": "Chapter 2, homology and degree methods for invariance of domain"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "136-r3",
+   "entryId": 136,
+   "entryName": "Brouwer invariance of domain",
+   "entryDescription": "Homology/degree; local homology and orientation; contradiction using compactness and boundary/sphere separation.",
+   "level": "Graduate",
+   "routeTitle": "contradiction using compactness and boundary/sphere separation",
+   "currentSketch": "Assume a continuous injection f:U⊂R^n→R^n has image not open at f(x). Local homology at x is H_n(U,U\\{x})≅Z, while at a boundary point of f(U) the corresponding local homology in the target complement vanishes; the homeomorphism U≅f(U) induced by injectivity contradicts this. This uses local compactness/degree or homology machinery.",
+   "existingReferences": [
+    {
+     "label": "Hatcher, Algebraic Topology",
+     "url": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+     "locator": "Chapter 2, homology and degree methods for invariance of domain"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

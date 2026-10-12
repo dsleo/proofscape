@@ -1,0 +1,394 @@
+{
+ "agent": 8,
+ "tasks": [
+  {
+   "routeId": "55-r1",
+   "entryId": 55,
+   "entryName": "Cayley's formula: n^(n−2) labeled trees",
+   "entryDescription": "Prüfer codes; Matrix-tree theorem/determinant; weighted generating functions.",
+   "level": "Undergraduate",
+   "routeTitle": "Prüfer codes",
+   "currentSketch": "Encode a labelled tree by repeatedly deleting its least-labelled leaf and recording its neighbor; after n−2 deletions the recorded labels form a word of length n−2. To invert, scan the word from left to right, joining its first entry to the least label not appearing in the remaining word, deleting that label and the first entry at each step; finally join the two remaining labels. The procedures are inverse, so labelled trees correspond bijectively to the n^(n−2) words.",
+   "existingReferences": [
+    {
+     "label": "MAS341 Graph Theory, Lecture 8",
+     "url": "https://ptwiddle.github.io/MAS341-Graph-Theory-2017/lecturenotes/lecture8.html",
+     "locator": "Lecture 8: Prüfer code and Cayley formula"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Text sliced programmatically from the downloaded page (not retyped); figures omitted. Math is carried over as page-embedded LaTeX ($…$). The worked example's tree figure and column table are flattened to a list of numbers by the page conversion, and the image-based tree is omitted. The page's statement of the count n^(n-2) is in the paragraph before 'This algorith proceeds…' (typo 'algorith' kept)"
+  },
+  {
+   "routeId": "55-r2",
+   "entryId": 55,
+   "entryName": "Cayley's formula: n^(n−2) labeled trees",
+   "entryDescription": "Prüfer codes; Matrix-tree theorem/determinant; weighted generating functions.",
+   "level": "Undergraduate",
+   "routeTitle": "Matrix-tree theorem/determinant",
+   "currentSketch": "For the complete graph K_n, every Laplacian cofactor counts spanning trees by the matrix-tree theorem. Its Laplacian cofactor has diagonal n−1 and off-diagonal −1; its eigenvalues are n (multiplicity n−2) and 1, so the determinant is n^(n−2).",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Matrix-tree theorem notes",
+     "url": "https://ocw.mit.edu/courses/18-314-combinatorial-analysis-fall-2014/2724112ea36679f82dc04f0b2f4f355e_MIT18_314F14_mt.pdf",
+     "locator": "§1, Matrix-tree theorem and complete-graph example"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "55-r3",
+   "entryId": 55,
+   "entryName": "Cayley's formula: n^(n−2) labeled trees",
+   "entryDescription": "Prüfer codes; Matrix-tree theorem/determinant; weighted generating functions.",
+   "level": "Undergraduate",
+   "routeTitle": "weighted generating functions",
+   "currentSketch": "Let T(x) count rooted labeled trees as an exponential generating function. Decomposing a rooted tree into its root and an unordered set of rooted branches gives T=x exp(T). Lagrange inversion yields [x^n]T=n^(n−1)/n!, so there are n^(n−1) rooted labeled trees; forgetting the choice of root divides by n and gives n^(n−2).",
+   "existingReferences": [
+    {
+     "label": "MIT OCW, Lecture 28",
+     "url": "https://ocw.mit.edu/courses/18-212-algebraic-combinatorics-spring-2019/resources/mit18_212s19_lec28/",
+     "locator": "Lecture 28: Matrix-tree theorem proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "56-r1",
+   "entryId": 56,
+   "entryName": "Hall's marriage theorem",
+   "entryDescription": "Alternating paths in maximum matchings; max-flow/min-cut; induction on tight subsets.",
+   "level": "Undergraduate",
+   "routeTitle": "Alternating paths in maximum matchings",
+   "currentSketch": "Take a maximum matching M. If some left vertex is unmatched, follow alternating paths (unmatched edges left-to-right, matched edges right-to-left). No reached right vertex can be unmatched, or there is an augmenting path. The reached left set has fewer neighbors than vertices, contradicting Hall.",
+   "existingReferences": [
+    {
+     "label": "An elementary proof of Hall’s marriage theorem",
+     "url": "https://www.cs.utexas.edu/~misra/Hall-2021.pdf",
+     "locator": "Alternating-path proof of Hall’s theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "56-r2",
+   "entryId": 56,
+   "entryName": "Hall's marriage theorem",
+   "entryDescription": "Alternating paths in maximum matchings; max-flow/min-cut; induction on tight subsets.",
+   "level": "Undergraduate",
+   "routeTitle": "max-flow/min-cut",
+   "currentSketch": "Build a unit-capacity network: source to each left vertex, each bipartite edge left-to-right, and right vertices to sink. A flow of value |L| is a matching; max-flow/min-cut says this exists iff every cut has capacity ≥|L|, equivalent to |N(S)|≥|S| for each S⊆L.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "56-r3",
+   "entryId": 56,
+   "entryName": "Hall's marriage theorem",
+   "entryDescription": "Alternating paths in maximum matchings; max-flow/min-cut; induction on tight subsets.",
+   "level": "Undergraduate",
+   "routeTitle": "induction on tight subsets",
+   "currentSketch": "Induct on |L|. If a proper nonempty S is tight, match S to N(S) by induction and match the remaining vertices in the reduced graph, whose Hall inequalities follow by applying Hall to S∪T. If no proper tight S exists, match any x to a neighbor y and remove both; strict inequalities ensure Hall remains.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "57-r1",
+   "entryId": 57,
+   "entryName": "König's theorem (bipartite vertex cover = maximum matching)",
+   "entryDescription": "Alternating-path construction; linear-programming duality/integrality; network-flow min-cut.",
+   "level": "Undergraduate",
+   "routeTitle": "Alternating-path construction",
+   "currentSketch": "In a maximum matching, start from unmatched left vertices and trace alternating paths. Let Z_L,Z_R be reached vertices. Then C=(L\\Z_L)∪Z_R meets every edge; each matched edge has exactly one endpoint in C, so |C|=|M|, proving vertex-cover minimum equals matching maximum.",
+   "existingReferences": [
+    {
+     "label": "Matchings in Bipartite Graphs",
+     "url": "https://extremalcombinatorics.com/optimization/notes/sec_matchingBip.html",
+     "locator": "§3.2, Theorem 3.2.1 and proof, alternating-path construction of a minimum vertex cover from a maximum matching."
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "57-r2",
+   "entryId": 57,
+   "entryName": "König's theorem (bipartite vertex cover = maximum matching)",
+   "entryDescription": "Alternating-path construction; linear-programming duality/integrality; network-flow min-cut.",
+   "level": "Undergraduate",
+   "routeTitle": "linear-programming duality/integrality",
+   "currentSketch": "Formulate bipartite matching as the LP maximizing Σ_e x_e subject to incident-edge sums at each vertex ≤1 and x≥0; the dual minimizes Σ_v y_v subject to y_u+y_v≥1 on each edge and y≥0. The bipartite incidence matrix is totally unimodular, so optimal basic solutions of both programs are integral. The integral primal solution is a matching and the integral dual solution is a vertex cover. Strong LP duality makes their cardinalities equal, proving König’s theorem.",
+   "existingReferences": [
+    {
+     "label": "Proof of König’s Theorem",
+     "url": "https://www.math.uwaterloo.ca/~harvey/F09/Lecture20.pdf",
+     "locator": "LP duality proof of König’s theorem"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered slide images; slide titles in [brackets] are the assistant's labels, the rest follows the slides. The IP/LP formulas, which are images in the PDF, are transcribed as inline LaTeX-style text. The slides state 'Every BFS of (LP) is actually an (IP) solution' and the TUM lemma without proof, and rely on strong LP duality; those are not proved in the cited slid"
+  },
+  {
+   "routeId": "57-r3",
+   "entryId": 57,
+   "entryName": "König's theorem (bipartite vertex cover = maximum matching)",
+   "entryDescription": "Alternating-path construction; linear-programming duality/integrality; network-flow min-cut.",
+   "level": "Undergraduate",
+   "routeTitle": "network-flow min-cut",
+   "currentSketch": "Use the same source-left-right-sink unit-capacity network. Minimum cuts correspond to vertex covers of equal capacity and maximum integral flows correspond to matchings; max-flow/min-cut gives equality.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "58-r1",
+   "entryId": 58,
+   "entryName": "Euler characteristic of a closed orientable surface",
+   "entryDescription": "Triangulation and edge-face count; homology ranks; Gauss–Bonnet and curvature. The genus-g form χ=2−2g extends the planar/polyhedral formula in #24.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Triangulation and edge-face count",
+   "currentSketch": "For a triangulation of a closed genus-g surface, 3F=2E. Euler’s relation V−E+F=2−2g then gives χ=V−E+F; subdivision does not change this alternating count, so it defines the surface invariant.",
+   "existingReferences": [
+    {
+     "label": "Lecture 35: Differential Geometry",
+     "url": "https://ocw.iti.hr/courses/mathematics/18-950-differential-geometry-fall-2008/lecture-notes/ch3_revised.pdf",
+     "locator": "Lecture 35, combinatorial Euler characteristic and triangulations"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "58-r2",
+   "entryId": 58,
+   "entryName": "Euler characteristic of a closed orientable surface",
+   "entryDescription": "Triangulation and edge-face count; homology ranks; Gauss–Bonnet and curvature. The genus-g form χ=2−2g extends the planar/polyhedral formula in #24.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "homology ranks",
+   "currentSketch": "Define χ=∑(-1)^k dim H_k. For a finite triangulation, chain dimensions satisfy dim C_k=rank∂_k+dim H_k+rank∂_{k+1}; alternating sums telescope to ∑(-1)^k dim C_k=∑(-1)^k dim H_k. The left side is V−E+F.",
+   "existingReferences": [
+    {
+     "label": "O. Forster, The Theorem of Gauß–Bonnet in Complex Analysis",
+     "url": "https://www.math.lmu.de/~forster/eprints/gaussbonnet.pdf",
+     "locator": "Opening section, χ(X)=b₀−b₁+b₂ and Euler characteristic"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "58-r3",
+   "entryId": 58,
+   "entryName": "Euler characteristic of a closed orientable surface",
+   "entryDescription": "Triangulation and edge-face count; homology ranks; Gauss–Bonnet and curvature. The genus-g form χ=2−2g extends the planar/polyhedral formula in #24.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Gauss–Bonnet and curvature. The genus-g form χ=2−2g extends the planar/polyhedral formula in #24",
+   "currentSketch": "For a smooth closed oriented surface, Gauss–Bonnet gives ∫K dA=2πχ. For genus g, Gauss–Bonnet plus the classification/genus computation yields χ=2−2g. This is a curvature characterization, not by itself a proof of the classification formula.",
+   "existingReferences": [
+    {
+     "label": "O. Forster, The Theorem of Gauß–Bonnet in Complex Analysis",
+     "url": "https://www.math.lmu.de/~forster/eprints/gaussbonnet.pdf",
+     "locator": "Gauss–Bonnet theorem and triangulation proof; χ=2−2g discussion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "59-r1",
+   "entryId": 59,
+   "entryName": "Five-color theorem for planar graphs",
+   "entryDescription": "Minimal-counterexample vertex of degree ≤5 plus recoloring; Kempe-chain argument; induction after contracting a configuration. *Proofs from THE BOOK* treats this.",
+   "level": "Undergraduate",
+   "routeTitle": "Minimal-counterexample vertex of degree ≤5 plus recoloring",
+   "currentSketch": "Choose a vertex v of degree at most five (Euler’s formula guarantees one), color G−v with five colors. If its five neighbors use all colors, relabel cyclically and consider the 1/3 Kempe chain from the first to third neighbor. If they connect, the 2/4 chain cannot connect without crossing; swap one chain and free a color. If they do not connect, swap the 1/3 component. Color v.",
+   "existingReferences": [
+    {
+     "label": "LTCC Graph Theory notes",
+     "url": "https://personal.lse.ac.uk/allenpd/LTCC/notes1.pdf",
+     "locator": "Theorem 3, Heawood five-colour theorem"
+    },
+    {
+     "label": "MIT 18.310 planarity and coloring notes",
+     "url": "https://math.mit.edu/~djk/18.310/Lecture-Notes/planarity_coloring_2007.html",
+     "locator": "§15, five-colour proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "59-r2",
+   "entryId": 59,
+   "entryName": "Five-color theorem for planar graphs",
+   "entryDescription": "Minimal-counterexample vertex of degree ≤5 plus recoloring; Kempe-chain argument; induction after contracting a configuration. *Proofs from THE BOOK* treats this.",
+   "level": "Undergraduate",
+   "routeTitle": "Kempe-chain argument",
+   "currentSketch": "Use Kempe chains: among five differently colored neighbors around a degree-five vertex, if the 1-3 chain connecting the relevant opposite neighbors is absent, interchange colors in one component; if present, planarity prevents the 2-4 chain from joining the other pair, so interchange that component. One color becomes available. Details of cyclic neighbor order are essential.",
+   "existingReferences": [
+    {
+     "label": "LTCC Course: Graph Theory",
+     "url": "https://personal.lse.ac.uk/allenpd/LTCC/notes1.pdf",
+     "locator": "Theorem 3, Heawood five-colour proof using Kempe chains"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "59-r3",
+   "entryId": 59,
+   "entryName": "Five-color theorem for planar graphs",
+   "entryDescription": "Minimal-counterexample vertex of degree ≤5 plus recoloring; Kempe-chain argument; induction after contracting a configuration. *Proofs from THE BOOK* treats this.",
+   "level": "Undergraduate",
+   "routeTitle": "induction after contracting a configuration. *Proofs from THE BOOK* treats this",
+   "currentSketch": "Reduce a minimal counterexample by identifying/contracting a reducible configuration and then extend a coloring back. The standard five-color proof's critical reduction is degree ≤5 plus Kempe recoloring; this route is not independent of that argument unless a specific reducible-configuration proof is supplied.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "60-r1",
+   "entryId": 60,
+   "entryName": "Law of large numbers (weak)",
+   "entryDescription": "Chebyshev inequality and variance; characteristic functions; truncation plus Borel–Cantelli for stronger variants.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Chebyshev inequality and variance",
+   "currentSketch": "For iid variables with mean μ and finite variance σ², Var(average)=σ²/n. Chebyshev gives P(|average−μ|≥ε)≤σ²/(nε²)→0, which is weak convergence in probability.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.310 probability notes",
+     "url": "https://math.mit.edu/~djk/18.310/Lecture-Notes/some_probability_theory_2007.html",
+     "locator": "Weak law of large numbers / Chebyshev inequality discussion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "60-r2",
+   "entryId": 60,
+   "entryName": "Law of large numbers (weak)",
+   "entryDescription": "Chebyshev inequality and variance; characteristic functions; truncation plus Borel–Cantelli for stronger variants.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "characteristic functions",
+   "currentSketch": "If φ is the characteristic function, finite variance implies φ(t)=1+iμt−σ²t²/2+o(t²). Thus [φ(t/√n)e^(−iμt/√n)]^n→e^(−σ²t²/2), a point mass at zero for the centered normalized average; continuity theorem yields convergence in probability (alternatively use φ near zero to bound tails). This is overkill versus Chebyshev; characteristic functions alone do not prove WLLN without a convergence theorem.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "60-r3",
+   "entryId": 60,
+   "entryName": "Law of large numbers (weak)",
+   "entryDescription": "Chebyshev inequality and variance; characteristic functions; truncation plus Borel–Cantelli for stronger variants.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "truncation plus Borel–Cantelli for stronger variants",
+   "currentSketch": "For strong-law variants, truncate X_n, prove summable tail probabilities, apply Borel–Cantelli to control large terms, and apply a variance/series argument to truncated centered sums. The exact truncation conditions matter; this is not a proof of the weak law as stated.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "61-r1",
+   "entryId": 61,
+   "entryName": "Central limit theorem (classical iid finite variance)",
+   "entryDescription": "Characteristic-function convergence; moments plus tightness; Fourier inversion/smoothing.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Characteristic-function convergence",
+   "currentSketch": "For centered variance-σ² X, φ_X(t)=1−σ²t²/2+o(t²). Independence gives characteristic function of n^−1/2∑X_i tending to exp(−σ²t²/2); Lévy's continuity theorem gives N(0,σ²).",
+   "existingReferences": [
+    {
+     "label": "MIT 18.175 course schedule and materials",
+     "url": "https://math.mit.edu/~sheffield/spring2014math175.html",
+     "locator": "Lecture 15, characteristic functions and central limit theorem"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "61-r2",
+   "entryId": 61,
+   "entryName": "Central limit theorem (classical iid finite variance)",
+   "entryDescription": "Characteristic-function convergence; moments plus tightness; Fourier inversion/smoothing.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "moments plus tightness",
+   "currentSketch": "Use moments of normalized sums: expand each fixed moment; terms with singleton indices vanish and pairings dominate, yielding Gaussian moments. Tightness follows from bounded second moments; every subsequential limit has Gaussian moments, which determine the normal law.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "61-r3",
+   "entryId": 61,
+   "entryName": "Central limit theorem (classical iid finite variance)",
+   "entryDescription": "Characteristic-function convergence; moments plus tightness; Fourier inversion/smoothing.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Fourier inversion/smoothing",
+   "currentSketch": "Prove characteristic-function convergence, then approximate indicators of intervals by smooth functions with compactly supported Fourier transform. Fourier inversion controls the smoothed distribution functions; smoothing inequalities remove the approximation error and imply convergence at continuity points of the Gaussian CDF.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "62-r1",
+   "entryId": 62,
+   "entryName": "Borel–Cantelli lemmas",
+   "entryDescription": "Union bound and tail events; measure continuity; independence/product estimate for the converse.",
+   "level": "Undergraduate",
+   "routeTitle": "Union bound and tail events",
+   "currentSketch": "If ∑P(A_n)<∞, then P(∪_{n≥N}A_n)≤∑_{n≥N}P(A_n)→0. Continuity from above gives P(limsup A_n)=0.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.175 Lecture 6",
+     "url": "https://math.mit.edu/~sheffield/2016175/Lecture6.pdf",
+     "locator": "Borel–Cantelli and strong law"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "62-r2",
+   "entryId": 62,
+   "entryName": "Borel–Cantelli lemmas",
+   "entryDescription": "Union bound and tail events; measure continuity; independence/product estimate for the converse.",
+   "level": "Undergraduate",
+   "routeTitle": "measure continuity",
+   "currentSketch": "The events B_N=∪_{n≥N}A_n decrease to limsup A_n. Their probabilities are bounded by tail sums; continuity of probability from above yields the first Borel–Cantelli lemma. This emphasizes measure continuity rather than eventwise estimates.",
+   "existingReferences": [
+    {
+     "label": "Lecture Notes in Measure Theory",
+     "url": "https://www.math.chalmers.se/Math/Grundutb/GU/MMA110/A09/MeasureTheory.pdf",
+     "locator": "§3.6.2, first Borel–Cantelli via indicators and Beppo Levi"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "62-r3",
+   "entryId": 62,
+   "entryName": "Borel–Cantelli lemmas",
+   "entryDescription": "Union bound and tail events; measure continuity; independence/product estimate for the converse.",
+   "level": "Undergraduate",
+   "routeTitle": "independence/product estimate for the converse",
+   "currentSketch": "If A_n independent and ∑P(A_n)=∞, then P(no A_n for N≤n≤m)=∏(1−P(A_n))≤exp(−∑P(A_n))→0. Hence probability of no events after N is zero for every N, so infinitely many occur almost surely.",
+   "existingReferences": [
+    {
+     "label": "Lecture Notes in Measure Theory",
+     "url": "https://www.math.chalmers.se/Math/Grundutb/GU/MMA110/A09/MeasureTheory.pdf",
+     "locator": "§3.6.2, second Borel–Cantelli via independence and product estimate"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

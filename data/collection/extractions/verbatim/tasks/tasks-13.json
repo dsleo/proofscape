@@ -1,0 +1,345 @@
+{
+ "agent": 13,
+ "tasks": [
+  {
+   "routeId": "93-r1",
+   "entryId": 93,
+   "entryName": "de Rham theorem",
+   "entryDescription": "Differential forms and local Poincaré lemma with partitions of unity; Mayer–Vietoris induction; sheaf/cohomological resolution.",
+   "level": "Graduate",
+   "routeTitle": "Differential forms and local Poincaré lemma with partitions of unity",
+   "currentSketch": "Resolve the sheaf of locally constant functions by the de Rham complex, exact on stalks by the local Poincaré lemma. Fine sheaves are acyclic via partitions of unity, so global de Rham cohomology computes constant-sheaf cohomology, identified with singular cohomology on manifolds.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "93-r2",
+   "entryId": 93,
+   "entryName": "de Rham theorem",
+   "entryDescription": "Differential forms and local Poincaré lemma with partitions of unity; Mayer–Vietoris induction; sheaf/cohomological resolution.",
+   "level": "Graduate",
+   "routeTitle": "Mayer–Vietoris induction",
+   "currentSketch": "Cover M by good coordinate balls. Local Poincaré lemma gives cohomology only in degree zero on each finite intersection; compare Mayer–Vietoris sequences for de Rham and singular cohomology and induct over a good cover to obtain an isomorphism.",
+   "existingReferences": [
+    {
+     "label": "Lily Li, De Rham Cohomology",
+     "url": "https://www.ocf.berkeley.edu/~lilyl/wp-content/uploads/2021/06/De-Rham-Cohomology-Edited.pdf",
+     "locator": "§3, Theorem 3.5 proof, induction using Mayer–Vietoris sequences over de Rham covers"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "93-r3",
+   "entryId": 93,
+   "entryName": "de Rham theorem",
+   "entryDescription": "Differential forms and local Poincaré lemma with partitions of unity; Mayer–Vietoris induction; sheaf/cohomological resolution.",
+   "level": "Graduate",
+   "routeTitle": "sheaf/cohomological resolution",
+   "currentSketch": "The de Rham complex is a fine resolution of the constant sheaf ℝ: local exactness is Poincaré lemma, and partitions of unity imply acyclicity. The resulting resolution theorem identifies its global-section cohomology with sheaf cohomology, hence singular cohomology. This is same method in sheaf language.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "94-r1",
+   "entryId": 94,
+   "entryName": "Poincaré lemma",
+   "entryDescription": "Radial homotopy operator; integrate along straight-line contraction; local cohomology/contractibility.",
+   "level": "Graduate",
+   "routeTitle": "Radial homotopy operator",
+   "currentSketch": "On a star-shaped domain with center a, define the homotopy operator on a k-form (k>0) by integrating contraction with the radial vector along H_t(x)=a+t(x−a), with the usual t^(k−1) factor. Differentiating H_t^*ω in t and integrating from 0 to 1 gives dKω+K(dω)=H_1^*ω−H_0^*ω. For closed k-forms with k>0, the right side is ω, so ω=d(Kω).",
+   "existingReferences": [
+    {
+     "label": "MIT 18.952 Theory of Differential Forms",
+     "url": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+     "locator": "Course description: Poincaré lemma and de Rham theory; linked Guillemin notes"
+    },
+    {
+     "label": "Lily Li, De Rham Cohomology",
+     "url": "https://www.ocf.berkeley.edu/~lilyl/wp-content/uploads/2021/06/De-Rham-Cohomology-Edited.pdf",
+     "locator": "§1.1, Theorem 1.3, Poincaré lemma on convex domains; contraction/homotopy proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "94-r2",
+   "entryId": 94,
+   "entryName": "Poincaré lemma",
+   "entryDescription": "Radial homotopy operator; integrate along straight-line contraction; local cohomology/contractibility.",
+   "level": "Graduate",
+   "routeTitle": "integrate along straight-line contraction",
+   "currentSketch": "If dω=0 on a star-shaped domain centered at a, integrate ω along the straight segment from a to x after inserting one vector argument; differentiating this segment integral in the remaining coordinates and using dω=0 shows its derivative is ω. Thus ω=dη for the segment-integral primitive η.",
+   "existingReferences": [
+    {
+     "label": "MIT 18.952 Theory of Differential Forms",
+     "url": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+     "locator": "Course description: Poincaré lemma and de Rham theory; linked Guillemin notes"
+    },
+    {
+     "label": "Lily Li, De Rham Cohomology",
+     "url": "https://www.ocf.berkeley.edu/~lilyl/wp-content/uploads/2021/06/De-Rham-Cohomology-Edited.pdf",
+     "locator": "§1.1, Theorem 1.3, Poincaré lemma on convex domains; contraction/homotopy proof"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "94-r3",
+   "entryId": 94,
+   "entryName": "Poincaré lemma",
+   "entryDescription": "Radial homotopy operator; integrate along straight-line contraction; local cohomology/contractibility.",
+   "level": "Graduate",
+   "routeTitle": "local cohomology/contractibility",
+   "currentSketch": "Contractibility implies reduced singular cohomology vanishes; via the de Rham theorem, closed positive-degree forms are exact. This is a consequence route that presupposes the de Rham theorem, and applies globally only when the domain is contractible.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "95-r1",
+   "entryId": 95,
+   "entryName": "Rouché's theorem",
+   "entryDescription": "Homotopy invariance of winding number; argument principle; perturbation estimate plus zero counting.",
+   "level": "Graduate",
+   "routeTitle": "Homotopy invariance of winding number",
+   "currentSketch": "On boundary Γ, |g|<|f| implies f+t g never vanishes for t∈[0,1]. The winding number of f+tg around zero is homotopy-invariant, and argument principle equates winding number to number of zeros inside; f and f+g have equal counts.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "95-r2",
+   "entryId": 95,
+   "entryName": "Rouché's theorem",
+   "entryDescription": "Homotopy invariance of winding number; argument principle; perturbation estimate plus zero counting.",
+   "level": "Graduate",
+   "routeTitle": "argument principle",
+   "currentSketch": "Apply the argument principle to f'/f and (f+g)'/(f+g); homotopy f+tg avoids zero on Γ, so the integer contour integral (1/2πi)∮(f+tg)'/(f+tg) is constant in t. Therefore zero counts agree.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "95-r3",
+   "entryId": 95,
+   "entryName": "Rouché's theorem",
+   "entryDescription": "Homotopy invariance of winding number; argument principle; perturbation estimate plus zero counting.",
+   "level": "Graduate",
+   "routeTitle": "perturbation estimate plus zero counting",
+   "currentSketch": "The strict boundary inequality ensures every f+tg stays nonzero on Γ. By Rouché's theorem's zero-count interpretation, a perturbation smaller than |f| cannot change the number of interior zeros. This is an application/reformulation, not proof; need winding-number argument.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "96-r1",
+   "entryId": 96,
+   "entryName": "Prime number theorem",
+   "entryDescription": "Analytic continuation/nonvanishing of ζ on Re(s)=1; Tauberian theorem; elementary Selberg–Erdős proof. This is an example of distinct proof programs with different prerequisites, not a school-level entry.",
+   "level": "Graduate",
+   "routeTitle": "Analytic continuation/nonvanishing of ζ on Re(s)=1",
+   "currentSketch": "Set ψ(x)=∑_{n≤x}Λ(n). The explicit formula links ψ(x) to x plus sums over ζ zeros. Nonvanishing of ζ on Re(s)=1, plus zero-free-region bounds and a Tauberian passage, yields ψ(x)~x and hence π(x)~x/log x. Analytic continuation alone is insufficient.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "96-r2",
+   "entryId": 96,
+   "entryName": "Prime number theorem",
+   "entryDescription": "Analytic continuation/nonvanishing of ζ on Re(s)=1; Tauberian theorem; elementary Selberg–Erdős proof. This is an example of distinct proof programs with different prerequisites, not a school-level entry.",
+   "level": "Graduate",
+   "routeTitle": "Tauberian theorem",
+   "currentSketch": "Use the Wiener–Ikehara Tauberian theorem on F(s)=−ζ'(s)/ζ(s)=∑Λ(n)n^{-s}; a simple pole of F(s) at s=1 with residue 1 and no other singularity on Re(s)=1 implies ∑_{n≤x}Λ(n)~x, then partial summation yields PNT.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "96-r3",
+   "entryId": 96,
+   "entryName": "Prime number theorem",
+   "entryDescription": "Analytic continuation/nonvanishing of ζ on Re(s)=1; Tauberian theorem; elementary Selberg–Erdős proof. This is an example of distinct proof programs with different prerequisites, not a school-level entry.",
+   "level": "Graduate",
+   "routeTitle": "elementary Selberg–Erdős proof. This is an example of distinct proof programs with different prerequisites, not a school-level entry",
+   "currentSketch": "Selberg's symmetry formula gives an elementary relation involving ψ(x) and ψ(x/n); positivity bounds the error and a contradiction argument proves ψ(x)~x without complex analysis. The full Selberg–Erdős proof is lengthy; this is only its proof spine, not a complete proof.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "97-r1",
+   "entryId": 97,
+   "entryName": "Dirichlet's theorem on primes in arithmetic progressions",
+   "entryDescription": "Dirichlet L-functions and Euler products; algebraic number fields/ideal classes in selected generalizations. State the full coprimality hypothesis and do not conflate proofs of special progressions with the theorem.",
+   "level": "Graduate",
+   "routeTitle": "Dirichlet L-functions and Euler products",
+   "currentSketch": "For (a,q)=1, expand L(s,χ)=∑χ(n)n^{-s}=∏_p(1−χ(p)p^{-s})^{-1}. A nonnegative product over characters and nonvanishing at s=1 show the character sum over primes in residue class a is asymptotic to 1/φ(q) of all primes; orthogonality isolates the class. Requires analytic nonvanishing of nonprincipal L(1,χ).",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "97-r2",
+   "entryId": 97,
+   "entryName": "Dirichlet's theorem on primes in arithmetic progressions",
+   "entryDescription": "Dirichlet L-functions and Euler products; algebraic number fields/ideal classes in selected generalizations. State the full coprimality hypothesis and do not conflate proofs of special progressions with the theorem.",
+   "level": "Graduate",
+   "routeTitle": "algebraic number fields/ideal classes in selected generalizations. State the full coprimality hypothesis and do not conflate proofs of special progressions with the theorem",
+   "currentSketch": "In K=Q(ζ_q), primes p≡a mod q have prescribed Frobenius element in Gal(K/Q). Chebotarev gives positive density conjugacy classes; in this abelian extension each element is a class, yielding infinitely many primes in each reduced residue class. This general theorem route is much deeper and assumes Chebotarev. A selected generalization uses class field theory/Chebotarev; it must retain (a,q)=1 for the classical theorem.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "98-r1",
+   "entryId": 98,
+   "entryName": "Jordan canonical form (over an algebraically closed field)",
+   "entryDescription": "Minimal-polynomial/generalized-eigenspace decomposition; modules over the PID F[x]; construct Jordan chains by kernels of powers. MathOverflow points to several distinct expositions, including a complex-analysis approach.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Minimal-polynomial/generalized-eigenspace decomposition",
+   "currentSketch": "Factor the minimal polynomial as ∏(x−λ_i)^{m_i}; coprime primary factors give V=⊕ker(A−λ_iI)^{m_i}. On each summand N=A−λI is nilpotent; successively choose bases for chains of kernels to obtain Jordan blocks.",
+   "existingReferences": [
+    {
+     "label": "Jordan canonical form and generalized eigenspaces",
+     "url": "https://mathweb.ucsd.edu/~drogalsk/200b-w15/200b.html",
+     "locator": "Lecture 7, Jordan canonical form over algebraically closed field and generalized eigenspaces"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "98-r2",
+   "entryId": 98,
+   "entryName": "Jordan canonical form (over an algebraically closed field)",
+   "entryDescription": "Minimal-polynomial/generalized-eigenspace decomposition; modules over the PID F[x]; construct Jordan chains by kernels of powers. MathOverflow points to several distinct expositions, including a complex-analysis approach.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "modules over the PID F[x]",
+   "currentSketch": "Make V an F[x]-module with x·v=Av. Structure theorem for finitely generated torsion modules over PID F[x] decomposes it into ⊕F[x]/((x−λ)^k); each summand in basis 1,(x−λ),… gives a Jordan block. Algebraically closed field ensures linear factors.",
+   "existingReferences": [
+    {
+     "label": "Jordan canonical form and generalized eigenspaces",
+     "url": "https://mathweb.ucsd.edu/~drogalsk/200b-w15/200b.html",
+     "locator": "Lectures 4–7, PID module structure then Jordan form"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "98-r3",
+   "entryId": 98,
+   "entryName": "Jordan canonical form (over an algebraically closed field)",
+   "entryDescription": "Minimal-polynomial/generalized-eigenspace decomposition; modules over the PID F[x]; construct Jordan chains by kernels of powers. MathOverflow points to several distinct expositions, including a complex-analysis approach.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "construct Jordan chains by kernels of powers. MathOverflow points to several distinct expositions, including a complex-analysis approach",
+   "currentSketch": "For N=A−λI, compare dimensions ker N^j. The increments count blocks of size at least j; choose vectors whose chains extend through successive kernels, then prove their chains are independent and span. Repeat across generalized eigenspaces. Needs eigenvalue splitting.",
+   "existingReferences": [
+    {
+     "label": "Linear Algebra textbook notes",
+     "url": "https://www.math.hkust.edu.hk/~mameng/Teaching/LinearAlgebra/book.pdf",
+     "locator": "§6.2, generalized eigenspace decomposition and Jordan form"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "99-r1",
+   "entryId": 99,
+   "entryName": "Stirling's formula n! ~ √(2πn)(n/e)^n",
+   "entryDescription": "Laplace's method on the gamma integral; Wallis product plus factorial recurrences; Euler–Maclaurin summation; probabilistic/local central-limit arguments.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Laplace's method on the gamma integral",
+   "currentSketch": "Use n!=∫_0^∞x^n e^{−x}dx. The exponent n log x−x has maximum at x=n; set x=n+√n u and Taylor-expand around the maximum. The rescaled integrand tends to e^{−u²/2}; tail bounds justify dominated convergence, giving √(2πn)n^n e^{−n}.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "99-r2",
+   "entryId": 99,
+   "entryName": "Stirling's formula n! ~ √(2πn)(n/e)^n",
+   "entryDescription": "Laplace's method on the gamma integral; Wallis product plus factorial recurrences; Euler–Maclaurin summation; probabilistic/local central-limit arguments.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Wallis product plus factorial recurrences",
+   "currentSketch": "Wallis' product gives central binomial asymptotic binom(2n,n)~4^n/√(πn). Since binom(2n,n)=(2n)!/(n!)², factorial recurrences and a normalization limit yield Stirling's constant √(2π). Details require establishing the Wallis limit and recurrence ratio.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "99-r3",
+   "entryId": 99,
+   "entryName": "Stirling's formula n! ~ √(2πn)(n/e)^n",
+   "entryDescription": "Laplace's method on the gamma integral; Wallis product plus factorial recurrences; Euler–Maclaurin summation; probabilistic/local central-limit arguments.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Euler–Maclaurin summation",
+   "currentSketch": "Euler–Maclaurin applied to log(n!)=∑_{k=1}^n log k gives (n+1/2)log n−n+C+o(1); evaluate C via Wallis product/integral as ½log(2π), yielding formula.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "99-r4",
+   "entryId": 99,
+   "entryName": "Stirling's formula n! ~ √(2πn)(n/e)^n",
+   "entryDescription": "Laplace's method on the gamma integral; Wallis product plus factorial recurrences; Euler–Maclaurin summation; probabilistic/local central-limit arguments.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "probabilistic/local central-limit arguments",
+   "currentSketch": "A local central limit theorem for Poisson(n), whose mass at n is e^{-n}n^n/n!, gives e^{-n}n^n/n!~1/√(2πn); rearrange. This route requires proving the appropriate local CLT and risks circularity if its proof itself uses Stirling.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "100-r1",
+   "entryId": 100,
+   "entryName": "Uniform boundedness principle (Banach–Steinhaus)",
+   "entryDescription": "Baire-category proof; gliding-hump construction on Banach spaces; weak compactness/duality route in suitable formulations.",
+   "level": "Graduate",
+   "routeTitle": "Baire-category proof",
+   "currentSketch": "For p∈N set S_p={x: ||x||≤1 and ||T_nx||≤p for every n}. These are closed and cover the closed unit ball by pointwise boundedness. Baire gives some S_p containing a relative ball. Taking differences of points in that ball bounds ||T_nw|| uniformly for w in a neighborhood of 0; rescaling yields ||T_n||≤2p/δ for every n, hence sup_n||T_n||<∞.",
+   "existingReferences": [
+    {
+     "label": "MIT Introduction to Functional Analysis",
+     "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+     "locator": "Baire theorem / uniform boundedness principle proof"
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Typed by the assistant from the rendered PDF page image(s); wording, numbering and order follow the source; mathematics rendered in LaTeX-style plain text. Symbols were not corrected or modernized. Two separate source passages (p. 14 and p. 21) are joined here in dependency order and labelled in brackets; the bracketed labels are the assistant's. The source itself says 'Baire's theorem (Corollary "
+  },
+  {
+   "routeId": "100-r2",
+   "entryId": 100,
+   "entryName": "Uniform boundedness principle (Banach–Steinhaus)",
+   "entryDescription": "Baire-category proof; gliding-hump construction on Banach spaces; weak compactness/duality route in suitable formulations.",
+   "level": "Graduate",
+   "routeTitle": "gliding-hump construction on Banach spaces",
+   "currentSketch": "Assume norms ||T_n|| unbounded; inductively choose unit vectors x_k with T_{n_k}x_k large while controlling earlier operators, and coefficients decreasing fast. A convergent series x=∑a_kx_k is constructed so ||T_{n_k}x||→∞, contradicting pointwise boundedness. The gliding-hump details require Banach completeness and careful subsequence selection.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "100-r3",
+   "entryId": 100,
+   "entryName": "Uniform boundedness principle (Banach–Steinhaus)",
+   "entryDescription": "Baire-category proof; gliding-hump construction on Banach spaces; weak compactness/duality route in suitable formulations.",
+   "level": "Graduate",
+   "routeTitle": "weak compactness/duality route in suitable formulations",
+   "currentSketch": "If X is reflexive, weak compactness of its unit ball and pointwise boundedness can be converted through duality/uniform boundedness into bounded operator norms; however reflexivity is not needed for the theorem, and this route usually invokes Banach–Steinhaus indirectly. Flag as dependent, not independent.",
+   "existingReferences": [],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}

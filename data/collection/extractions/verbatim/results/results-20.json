@@ -1,0 +1,110 @@
+{
+ "145-r1": {
+  "routeId": "145-r1",
+  "sourceTitle": "Abelian Varieties (v2.00), J. S. Milne, Ch. II §1 and Ch. III §11",
+  "sourceUrl": "https://www.jmilne.org/math/CourseNotes/AV.pdf",
+  "locator": "Chapter II, §1, Theorem 1.1 and proof (pp. 75-76); Chapter III, §11, Theorem 11.1 and Proposition 11.2 (pp. 117-118)",
+  "routeMatch": "verified",
+  "proofSketch": "For an abelian variety $A$ over $\\mathbb F_q$, the Frobenius endomorphism $\\pi$ satisfies $|A(\\mathbb F_{q^m})|=\\prod(1-a_i^m)$, where $a_i$ are the eigenvalues of $\\pi$ on $T_\\ell A$: $\\pi-1$ is étale, so its kernel $A(\\mathbb F_q)$ has size $\\deg(\\pi-1)=P_\\pi(1)$. The Rosati involution attached to a polarization satisfies $\\pi^\\dagger\\pi=q$ (Lemma 1.2), and a positivity argument in the semisimple algebra $\\mathbb Q[\\pi]$ (Lemma 1.3) then gives $|a_i|=q^{1/2}$. For a curve $C$ with Jacobian $J$, the Lefschetz-type formula $(\\Gamma_\\alpha\\cdot\\Delta)=1-\\mathrm{Tr}(\\alpha')+\\deg\\alpha$ (Prop. 11.2) applied to the Frobenius of $C$ shows $N=1-\\sum a_i+q$ for the eigenvalues $a_i$ of $\\pi_J$. Since $|a_i|=q^{1/2}$ there are $2g$ of them, so $|N-q-1|\\le 2g\\,q^{1/2}$.",
+  "images": [
+   {
+    "file": "145-r1-1.png",
+    "caption": "Milne, Abelian Varieties, Ch. II §1 (p. 75): Frobenius of a variety, Theorem 1.1 (point count and Riemann hypothesis for abelian varieties), start of the proof"
+   },
+   {
+    "file": "145-r1-2.png",
+    "caption": "Ch. II §1 (p. 76): proof of (a) via étaleness of π-1, and Lemma 1.2 (π†π = q) from which (b) follows with Lemma 1.3"
+   },
+   {
+    "file": "145-r1-3.png",
+    "caption": "Ch. III §11 (p. 118): Theorem 11.1, Proposition 11.2 and the deduction of the curve bound from the Jacobian's Riemann hypothesis"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "J. S. Milne, Abelian Varieties, v2.00 (2008), jmilne.org/math/. Copyright J.S. Milne; the notes permit single paper copies for noncommercial personal use.",
+  "transcriptionNotes": "Excerpt shows the statement and main steps; Lemma 1.3 (p. 77-78, positivity argument for the Rosati involution) and the proof of Proposition 11.2 (pp. 118-119) are not reproduced.",
+  "reasonNotReproduced": null
+ },
+ "145-r2": {
+  "routeId": "145-r2",
+  "sourceTitle": "The Riemann Hypothesis over Finite Fields: From Weil to the Present Day, J. S. Milne, §1 (Weil's work in the 1940s and 1950s)",
+  "sourceUrl": "https://arxiv.org/pdf/1509.00797",
+  "locator": "arXiv:1509.00797v1, Section 1, subsection 'The inequality of Castelnuovo-Severi' through 'Proof of the Riemann hypothesis for curves', Thm 1.5, Cor 1.6, Example 1.7 (pp. 9-10)",
+  "routeMatch": "verified",
+  "proofSketch": "On $V=C_1\\times C_2$ one has $C_1^2=C_2^2=0$, $C_1\\cdot C_2=1$. For a divisor $D$ with $d_1=D\\cdot C_1$, $d_2=D\\cdot C_2$, the class $D-d_2C_1-d_1C_2$ is orthogonal to the ample-type class $C_1+C_2$ (self-intersection $2>0$), so the Hodge index theorem gives $(D-d_2C_1-d_1C_2)^2\\le0$, i.e. $D^2\\le 2d_1d_2$. Defining the defect $\\mathrm{def}(D)=2d_1d_2-D^2\\ge0$, positivity of $\\mathrm{def}(mD+nD')$ in $m,n$ yields $|D\\cdot D'-d_1d_2'-d_2d_1'|\\le(\\mathrm{def}D\\,\\mathrm{def}D')^{1/2}$. For a morphism $f$ the adjunction formula gives $\\mathrm{def}(\\Gamma_f)=2g_2\\deg f$. Applying this to the diagonal ($\\mathrm{def}=2g$) and the Frobenius graph ($\\mathrm{def}=2gq$) on $C\\times C$ gives $|(\\Delta\\cdot\\Gamma_\\pi)-q-1|\\le 2gq^{1/2}$, and $(\\Delta\\cdot\\Gamma_\\pi)$ is the number of rational points.",
+  "images": [
+   {
+    "file": "145-r2-1.png",
+    "caption": "Milne, Riemann Hypothesis over Finite Fields, p. 9: setup on C1 x C2, Theorem 1.5 (Castelnuovo-Severi inequality) via Hodge index theorem, equivalence defect, Corollary 1.6"
+   },
+   {
+    "file": "145-r2-2.png",
+    "caption": "p. 10: proof of Cor. 1.6, Example 1.7 (def of a graph by adjunction), and the proof of the Riemann hypothesis for curves"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "James S. Milne, The Riemann Hypothesis over Finite Fields: From Weil to the Present Day, arXiv:1509.00797 (2015).",
+  "transcriptionNotes": "Takes the Hodge index theorem (Thm 1.2) as input, stated on the preceding page and not reproduced. This is Weil's 1941 proof as simplified via Hodge index / Mattuck-Tate / Grothendieck; Weil's original (without Riemann-Roch on the surface) is only sketched later in the same section.",
+  "reasonNotReproduced": null
+ },
+ "145-r3": {
+  "routeId": "145-r3",
+  "sourceTitle": "The Bombieri-Stepanov proof of the Hasse-Weil bound, Terence Tao (What's new blog, 2 May 2014)",
+  "sourceUrl": "https://terrytao.wordpress.com/2014/05/02/the-bombieri-stepanov-proof-of-the-hasse-weil-bound/",
+  "locator": "Blog post body: Theorem 2 (weak Hasse-Weil bound), eqs. (2)-(12), Lemma 3, Proposition 4; Theorem 1 deduced in the remaining sections",
+  "routeMatch": "verified",
+  "proofSketch": "Assuming $q$ is a perfect square, $|C(\\mathbb F_q)|$ is the number of intersection points of $C_1=\\{(z,\\mathrm{Frob}_{\\sqrt q}z)\\}$ and its transpose $C_2$ on $C\\times C$. Choose a rational point $P_\\infty$ and let $R_n$ be the functions on $C$ with a pole of order at most $n$ only at $P_\\infty$; Riemann's inequality gives $\\dim R_n\\ge n+1-g$. Take $V=R_\\ell\\otimes R_m\\subset k(C\\times C)$, of dimension at least $(\\ell+1-g)(m+1-g)$. Its restriction to $C_1$ has dimension at most $\\ell+m\\sqrt q+1$ and to $C_2$ at most $\\ell\\sqrt q+m+1$; for $m$ slightly larger than $\\ell$ the second restriction map is not injective. If $\\ell<\\sqrt q$ the first restriction is injective (distinct pole orders at $P_\\infty$), so a nonzero $f\\in V$ vanishes on $C_2$ but not on $C_1$. Its restriction to $C_1$ vanishes on $C_1\\cap C_2$, which has $|C(\\mathbb F_q)|$ points, and has at most $\\ell+m\\sqrt q$ poles. Hence $|C(\\mathbb F_q)|\\le\\ell+m\\sqrt q$; the choice $m=\\sqrt q+2g$, $\\ell\\approx\\frac{g}{g+1}\\sqrt q+g+1$ gives the weak bound.",
+  "images": [
+   {
+    "file": "145-r3-1.png",
+    "caption": "Tao's post: reinterpretation of |C(F_q)| as an intersection on C x C and the plan of the auxiliary-function argument"
+   },
+   {
+    "file": "145-r3-2.png",
+    "caption": "Tao's post: spaces R_n, Riemann's inequality, the space V and the dimension counts (3)-(10)"
+   },
+   {
+    "file": "145-r3-3.png",
+    "caption": "Tao's post: choice of parameters, Lemma 3 (injectivity), Proposition 4 and the explicit choice giving Theorem 2"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "Terence Tao, 'The Bombieri-Stepanov proof of the Hasse-Weil bound', What's new, 2 May 2014.",
+  "transcriptionNotes": "The page shows the weak bound (q a square, q >= (g+1)^4); the passage to the full Hasse-Weil bound (lower bound via Galois covers, tensor power trick) in the later sections of the post is not reproduced. Screenshots of the post body cropped from the right column.",
+  "reasonNotReproduced": null
+ },
+ "145-r4": {
+  "routeId": "145-r4",
+  "sourceTitle": "The Weil Conjecture. I, Pierre Deligne (English translation of 'La conjecture de Weil. I', hosted by J. S. Milne), §1 and §3",
+  "sourceUrl": "https://www.jmilne.org/math/Documents/DeligneWeilI.pdf",
+  "locator": "Theorem (1.6), Lemma (1.7) and proof of (1.7)=>(1.6); §3 'The main lemma', Theorem (3.2) and its proof (pp. 4-12 of the PDF)",
+  "routeMatch": "verified",
+  "proofSketch": "Grothendieck's trace formula expresses $Z(X_0,t)$ through $\\det(1-F^*t,H^i_c)$. Theorem 1.6 (weights are $q^{i/2}$) is reduced to Lemma 1.7 (eigenvalues have complex conjugates of absolute value $q^{i/2}$): rationality and a Hankel-determinant/Fatou argument show the polynomials $P_i$ are rational with integer coefficients and independent of $\\ell$. The key estimate (Theorem 3.2, inspired by Rankin) takes a sheaf with a symplectic form whose monodromy is open in $\\mathrm{Sp}$ and shows it is pure: for the $2k$-th tensor power, the local factors have positive coefficients, and its $L$-function has only the pole $1/q^{k\\beta+1}$ by invariant theory, so Rankin's positivity lemma bounds $|\\alpha|\\le q_x^{\\beta/2+1/(2k)}$; letting $k\\to\\infty$ and using the symplectic duality gives $|\\alpha|=q_x^{\\beta/2}$. Lefschetz pencils later supply the needed monodromy hypothesis.",
+  "images": [
+   {
+    "file": "145-r4-1.png",
+    "caption": "Deligne, Weil I (translation), §1: Theorem 1.6, Lemma 1.7 and the proof that 1.7 implies 1.6"
+   },
+   {
+    "file": "145-r4-2.png",
+    "caption": "§3 (p. 11): Theorem 3.2 (main lemma) and positivity Lemmas 3.3-3.6, start of the proof"
+   },
+   {
+    "file": "145-r4-3.png",
+    "caption": "§3 (p. 12): pole analysis of the Z-function of the tensor power and the conclusion |alpha| = q^{beta/2}"
+   }
+  ],
+  "reuseStatus": "user-authorized",
+  "license": null,
+  "licenseUrl": null,
+  "attribution": "P. Deligne, La conjecture de Weil. I, Publ. Math. IHES 43 (1974); English translation hosted at jmilne.org (revised 2021).",
+  "transcriptionNotes": "Shows the reduction and the main estimate only. The Lefschetz-pencil input (sections 4-7: local/global Lefschetz theory, rationality, completion of the proof of (1.7)) is not reproduced.",
+  "reasonNotReproduced": null
+ }
+}

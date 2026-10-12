@@ -1,0 +1,388 @@
+{
+ "agent": 16,
+ "tasks": [
+  {
+   "routeId": "115-r1",
+   "entryId": 115,
+   "entryName": "Montel's theorem (locally bounded holomorphic families are normal)",
+   "entryDescription": "Arzelà–Ascoli plus Cauchy estimates; diagonal compactness on compact subsets; equicontinuity and holomorphic limit arguments.",
+   "level": "Graduate",
+   "routeTitle": "Arzelà–Ascoli plus Cauchy estimates",
+   "currentSketch": "Local boundedness gives uniform equicontinuity on compact sets (Cauchy estimates, proved in the previous lecture). On each compact K, Arzelà–Ascoli then gives a subsequence converging uniformly on K. Taking an exhaustion K₁⊂K₂⊂… by compact sets, successively extract subsequences converging uniformly on K₁, K₂, … and take the diagonal sequence, which converges uniformly on every compact set. The limit is holomorphic as a locally uniform limit of holomorphic functions.",
+   "existingReferences": [
+    {
+     "label": "UC San Diego, Complex Analysis lecture notes",
+     "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+     "locator": "Lecture 13, Montel theorem from Arzelà–Ascoli and Cauchy estimates"
+    },
+    {
+     "label": "Chennai Mathematical Institute, Graduate Complex Analysis 2017, Lecture 16",
+     "url": "https://www.cmi.ac.in/~pramath/GradComplex_2017/Lectures/Lecture16.pdf",
+     "locator": "Lecture 16, §1.1, Theorem 1.1.3 (Montel's Theorem), proof of (b)⇒(c) via Arzelà–Ascoli and diagonal extraction over the exhaustion K_n; the step (a)⇒(b) via Cauchy estimates is cited as proved in the previous lecture and was not read."
+    }
+   ],
+   "alreadyTranscribed": true,
+   "priorNote": "Transcribed by the assistant from the rendered PDF pages (mathematics typeset as LaTeX; wording, numbering and order follow the source). Source typos retained: 'infty' (for $\\infty$) in the proof of Lemma 1.1.2, and the garbled sum '$\\sum n=n_0+1^\\infty 2^{-n}$' reproduced as printed. The proof of (a)⇒(b) via Cauchy estimates is cited as done in Lecture 15 and is not in this passage; Definition 1."
+  },
+  {
+   "routeId": "115-r2",
+   "entryId": 115,
+   "entryName": "Montel's theorem (locally bounded holomorphic families are normal)",
+   "entryDescription": "Arzelà–Ascoli plus Cauchy estimates; diagonal compactness on compact subsets; equicontinuity and holomorphic limit arguments.",
+   "level": "Graduate",
+   "routeTitle": "diagonal compactness on compact subsets",
+   "currentSketch": "On each compact K⊂Ω, local boundedness on a slightly larger compact and Cauchy’s integral formula uniformly bound derivatives, hence give equicontinuity. Arzelà–Ascoli gives a uniformly convergent subsequence on K; diagonalize over an exhaustion K₁⊂K₂⊂… to get local uniform convergence, and the limit is holomorphic by the theorem on locally uniform limits.",
+   "existingReferences": [
+    {
+     "label": "UC San Diego, Complex Analysis lecture notes",
+     "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+     "locator": "Lecture 13, Montel theorem from Arzelà–Ascoli and Cauchy estimates"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "115-r3",
+   "entryId": 115,
+   "entryName": "Montel's theorem (locally bounded holomorphic families are normal)",
+   "entryDescription": "Arzelà–Ascoli plus Cauchy estimates; diagonal compactness on compact subsets; equicontinuity and holomorphic limit arguments.",
+   "level": "Graduate",
+   "routeTitle": "equicontinuity and holomorphic limit arguments",
+   "currentSketch": "On each compact K⊂Ω, local boundedness on a slightly larger compact and Cauchy’s integral formula uniformly bound derivatives, hence give equicontinuity. Arzelà–Ascoli gives a uniformly convergent subsequence on K; diagonalize over an exhaustion K₁⊂K₂⊂… to get local uniform convergence, and the limit is holomorphic by the theorem on locally uniform limits.",
+   "existingReferences": [
+    {
+     "label": "UC San Diego, Complex Analysis lecture notes",
+     "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+     "locator": "Lecture 13, Montel theorem from Arzelà–Ascoli and Cauchy estimates"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "116-r1",
+   "entryId": 116,
+   "entryName": "Picard's little theorem",
+   "entryDescription": "Original value-distribution/complex-analysis proof; Nevanlinna theory and logarithmic derivative estimates; differential-geometric/Ahlfors–Schwarz approach.",
+   "level": "Graduate",
+   "routeTitle": "Original value-distribution/complex-analysis proof",
+   "currentSketch": "Assume an entire nonconstant f omits 0 and 1. Then f′/f is entire and has an entire primitive; this gives an entire logarithm g with f=e^g. The omission of 1 forces e^g−1 to have no zeros; standard growth/value-distribution estimates (Picard’s theorem machinery) imply g constant. This sketch suppresses the key estimate.",
+   "existingReferences": [
+    {
+     "label": "Ahlfors, The Ahlfors–Schwarz lemma and Picard’s theorems",
+     "url": "https://arxiv.org/abs/1506.07019",
+     "locator": "Article: Ahlfors lemma and Picard theorems; verify the specific variant before attribution"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "116-r2",
+   "entryId": 116,
+   "entryName": "Picard's little theorem",
+   "entryDescription": "Original value-distribution/complex-analysis proof; Nevanlinna theory and logarithmic derivative estimates; differential-geometric/Ahlfors–Schwarz approach.",
+   "level": "Graduate",
+   "routeTitle": "Nevanlinna theory and logarithmic derivative estimates",
+   "currentSketch": "If an entire function omits two values, normalize them to 0 and 1. Nevanlinna’s second main theorem plus the logarithmic derivative estimate bounds the characteristic T(r,f) by an error term, forcing T to remain bounded; Liouville then makes f constant.",
+   "existingReferences": [
+    {
+     "label": "Ahlfors, The Ahlfors–Schwarz lemma and Picard’s theorems",
+     "url": "https://arxiv.org/abs/1506.07019",
+     "locator": "Article: Ahlfors lemma and Picard theorems; verify the specific variant before attribution"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "116-r3",
+   "entryId": 116,
+   "entryName": "Picard's little theorem",
+   "entryDescription": "Original value-distribution/complex-analysis proof; Nevanlinna theory and logarithmic derivative estimates; differential-geometric/Ahlfors–Schwarz approach.",
+   "level": "Graduate",
+   "routeTitle": "differential-geometric/Ahlfors–Schwarz approach",
+   "currentSketch": "Give the twice-punctured plane its complete hyperbolic metric. A nonconstant entire map omitting 0 and 1 lifts to the universal cover and is distance-decreasing by Schwarz–Pick/Ahlfors–Schwarz; on arbitrarily large Euclidean disks this contradicts the metric comparison, so one value cannot be omitted.",
+   "existingReferences": [
+    {
+     "label": "Ahlfors, The Ahlfors–Schwarz lemma and Picard’s theorems",
+     "url": "https://arxiv.org/abs/1506.07019",
+     "locator": "Article: Ahlfors lemma and Picard theorems; verify the specific variant before attribution"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "117-r1",
+   "entryId": 117,
+   "entryName": "Radon transform injectivity (compactly supported smooth functions)",
+   "entryDescription": "Fourier-slice theorem and Fourier inversion; filtered back-projection; moments/polynomial-density arguments. A MathOverflow answer links a lecture-note survey of proofs.",
+   "level": "Graduate",
+   "routeTitle": "Fourier-slice theorem and Fourier inversion",
+   "currentSketch": "Take the one-dimensional Fourier transform in the offset variable: the Fourier-slice theorem gives ℱ_t(Rf)(θ,σ)=f̂(σθ). Vanishing Radon data implies f̂ vanishes on every ray, hence everywhere; Fourier inversion gives f=0.",
+   "existingReferences": [
+    {
+     "label": "University of Münster, Inverse formulas for Radon and X-ray transform",
+     "url": "https://www.uni-muenster.de/AMM/Veranstaltungen/WS23/InverseProblems/lectureNotes.pdf",
+     "locator": "Chapter “Inverse formulas for Radon and X-ray transform”; Fourier slice theorem and inversion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "117-r2",
+   "entryId": 117,
+   "entryName": "Radon transform injectivity (compactly supported smooth functions)",
+   "entryDescription": "Fourier-slice theorem and Fourier inversion; filtered back-projection; moments/polynomial-density arguments. A MathOverflow answer links a lecture-note survey of proofs.",
+   "level": "Graduate",
+   "routeTitle": "filtered back-projection",
+   "currentSketch": "Back-project the line data Rf and apply the ramp filter |ξ| in Fourier space. The Fourier-slice theorem says each projection supplies the restriction of f̂ to a radial line; the ramp-corrected back-projection has Fourier transform a nonzero constant times f̂, so inversion recovers f and injectivity follows.",
+   "existingReferences": [
+    {
+     "label": "University of Münster, Inverse formulas for Radon and X-ray transform",
+     "url": "https://www.uni-muenster.de/AMM/Veranstaltungen/WS23/InverseProblems/lectureNotes.pdf",
+     "locator": "Chapter “Inverse formulas for Radon and X-ray transform”; Fourier slice theorem and inversion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "117-r3",
+   "entryId": 117,
+   "entryName": "Radon transform injectivity (compactly supported smooth functions)",
+   "entryDescription": "Fourier-slice theorem and Fourier inversion; filtered back-projection; moments/polynomial-density arguments. A MathOverflow answer links a lecture-note survey of proofs.",
+   "level": "Graduate",
+   "routeTitle": "moments/polynomial-density arguments. A MathOverflow answer links a lecture-note survey of proofs",
+   "currentSketch": "If Rf=0, every directional moment ∫t^m Rf(θ,t)dt equals ∫(x·θ)^m f(x)dx=0. As θ varies, these are all homogeneous moments, so every polynomial pairs to zero with f. Polynomials are dense on a compact set containing supp f; continuity then forces f=0.",
+   "existingReferences": [
+    {
+     "label": "University of Münster, Inverse formulas for Radon and X-ray transform",
+     "url": "https://www.uni-muenster.de/AMM/Veranstaltungen/WS23/InverseProblems/lectureNotes.pdf",
+     "locator": "Chapter “Inverse formulas for Radon and X-ray transform”; Fourier slice theorem and inversion"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "118-r1",
+   "entryId": 118,
+   "entryName": "Fundamental theorem of calculus for line integrals (path independence iff conservative on suitable domains)",
+   "entryDescription": "Construct a potential by path integration; differential forms/closed-versus-exact 1-forms on simply connected sets; vector calculus using Green/Stokes.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Construct a potential by path integration",
+   "currentSketch": "Fix x₀ and set φ(x)=∫_{x₀}^x F·dr along any path. Path independence makes φ well-defined; comparing φ(x+h e_i) and φ(x) along a short segment gives ∂ᵢφ=Fᵢ. The reverse implication is the fundamental theorem for line integrals.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Vector Calculus",
+     "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+     "locator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "118-r2",
+   "entryId": 118,
+   "entryName": "Fundamental theorem of calculus for line integrals (path independence iff conservative on suitable domains)",
+   "entryDescription": "Construct a potential by path integration; differential forms/closed-versus-exact 1-forms on simply connected sets; vector calculus using Green/Stokes.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "differential forms/closed-versus-exact 1-forms on simply connected sets",
+   "currentSketch": "The 1-form ω is path-independent on a simply connected domain iff all closed-loop integrals vanish. By Stokes, dω=0 makes integrals invariant under homotopy; simple connectedness contracts loops, so define φ(x)=∫_{x₀}^xω and differentiate to obtain dφ=ω. Conversely exact forms integrate to endpoint differences.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Vector Calculus",
+     "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+     "locator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "118-r3",
+   "entryId": 118,
+   "entryName": "Fundamental theorem of calculus for line integrals (path independence iff conservative on suitable domains)",
+   "entryDescription": "Construct a potential by path integration; differential forms/closed-versus-exact 1-forms on simply connected sets; vector calculus using Green/Stokes.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "vector calculus using Green/Stokes",
+   "currentSketch": "For any two paths from a to b, concatenate one with the reverse of the other to form a loop. Green/Stokes converts its line integral to ∬(curl F)·n; if curl F=0 on a simply connected planar domain, this is zero, proving path independence. Define the potential by integrating along paths.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Vector Calculus",
+     "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+     "locator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "119-r1",
+   "entryId": 119,
+   "entryName": "Existence and uniqueness theorem for ODEs (Picard–Lindelöf)",
+   "entryDescription": "Successive approximations/contraction mapping; Peano polygonal approximations plus equicontinuity for existence; differential inequalities/Gronwall for uniqueness.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Successive approximations/contraction mapping",
+   "currentSketch": "Assume an entire nonconstant f omits 0 and 1. Then f′/f is entire and has an entire primitive; this gives an entire logarithm g with f=e^g. The omission of 1 forces e^g−1 to have no zeros; standard growth/value-distribution estimates (Picard’s theorem machinery) imply g constant. This sketch suppresses the key estimate.",
+   "existingReferences": [
+    {
+     "label": "Schroers, Picard–Lindelöf theorem",
+     "url": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+     "locator": "§5.5, two proofs; contraction-mapping sketch"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "119-r2",
+   "entryId": 119,
+   "entryName": "Existence and uniqueness theorem for ODEs (Picard–Lindelöf)",
+   "entryDescription": "Successive approximations/contraction mapping; Peano polygonal approximations plus equicontinuity for existence; differential inequalities/Gronwall for uniqueness.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Peano polygonal approximations plus equicontinuity for existence",
+   "currentSketch": "Assume an entire nonconstant f omits 0 and 1. Then f′/f is entire and has an entire primitive; this gives an entire logarithm g with f=e^g. The omission of 1 forces e^g−1 to have no zeros; standard growth/value-distribution estimates (Picard’s theorem machinery) imply g constant. This sketch suppresses the key estimate.",
+   "existingReferences": [
+    {
+     "label": "Schroers, Picard–Lindelöf theorem",
+     "url": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+     "locator": "§5.5, two proofs; contraction-mapping sketch"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "119-r3",
+   "entryId": 119,
+   "entryName": "Existence and uniqueness theorem for ODEs (Picard–Lindelöf)",
+   "entryDescription": "Successive approximations/contraction mapping; Peano polygonal approximations plus equicontinuity for existence; differential inequalities/Gronwall for uniqueness.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "differential inequalities/Gronwall for uniqueness",
+   "currentSketch": "Give the twice-punctured plane its complete hyperbolic metric. A nonconstant entire map omitting 0 and 1 lifts to the universal cover and is distance-decreasing by Schwarz–Pick/Ahlfors–Schwarz; on arbitrarily large Euclidean disks this contradicts the metric comparison, so one value cannot be omitted.",
+   "existingReferences": [
+    {
+     "label": "Schroers, Picard–Lindelöf theorem",
+     "url": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+     "locator": "§5.5, two proofs; contraction-mapping sketch"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "120-r1",
+   "entryId": 120,
+   "entryName": "Minkowski inequality for Lᵖ norms",
+   "entryDescription": "Hölder duality and integration; convexity/Young's inequality; interpolate from the triangle inequality for simple functions and pass by approximation. State the measure-space and p-range assumptions.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "Hölder duality and integration",
+   "currentSketch": "For 1<p<∞, write ∫|f+g|^p≤∫(|f|+|g|)|f+g|^{p−1}; apply Hölder to each term and divide by ||f+g||_p^{p−1}. This yields ||f+g||_p≤||f||_p+||g||_p; endpoint p=1 is direct, p=∞ follows from sup. Assume measurable functions and finite norms.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Real Analysis",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "120-r2",
+   "entryId": 120,
+   "entryName": "Minkowski inequality for Lᵖ norms",
+   "entryDescription": "Hölder duality and integration; convexity/Young's inequality; interpolate from the triangle inequality for simple functions and pass by approximation. State the measure-space and p-range assumptions.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "convexity/Young's inequality",
+   "currentSketch": "For 1<p<∞, write ∫|f+g|^p≤∫(|f|+|g|)|f+g|^{p−1}; apply Hölder to each term and divide by ||f+g||_p^{p−1}. This yields ||f+g||_p≤||f||_p+||g||_p; endpoint p=1 is direct, p=∞ follows from sup. Assume measurable functions and finite norms.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Real Analysis",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "120-r3",
+   "entryId": 120,
+   "entryName": "Minkowski inequality for Lᵖ norms",
+   "entryDescription": "Hölder duality and integration; convexity/Young's inequality; interpolate from the triangle inequality for simple functions and pass by approximation. State the measure-space and p-range assumptions.",
+   "level": "Undergraduate–graduate",
+   "routeTitle": "interpolate from the triangle inequality for simple functions and pass by approximation. State the measure-space and p-range assumptions",
+   "currentSketch": "For 1<p<∞, write ∫|f+g|^p≤∫(|f|+|g|)|f+g|^{p−1}; apply Hölder to each term and divide by ||f+g||_p^{p−1}. This yields ||f+g||_p≤||f||_p+||g||_p; endpoint p=1 is direct, p=∞ follows from sup. Assume measurable functions and finite norms.",
+   "existingReferences": [
+    {
+     "label": "MIT OpenCourseWare, Real Analysis",
+     "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+     "locator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "121-r1",
+   "entryId": 121,
+   "entryName": "Riesz–Markov–Kakutani representation theorem (compact Hausdorff version)",
+   "entryDescription": "Positive-functional construction by outer measure; Daniell integral approach; duality/measure representation from continuous functions. State the exact real/complex and locally compact variants.",
+   "level": "Graduate",
+   "routeTitle": "Positive-functional construction by outer measure",
+   "currentSketch": "For positive L:C(K)→R define μ(U)=sup{L(f):0≤f≤1, supp f⊂U}; use partitions of unity to prove finite additivity on disjoint opens and outer regular extension to a Borel measure. Approximation of continuous f by level-set simple functions gives L(f)=∫f dμ; positivity ensures uniqueness.",
+   "existingReferences": [
+    {
+     "label": "Folland, Real Analysis, 2nd ed.",
+     "url": "https://doi.org/10.1002/9780470317064",
+     "locator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "121-r2",
+   "entryId": 121,
+   "entryName": "Riesz–Markov–Kakutani representation theorem (compact Hausdorff version)",
+   "entryDescription": "Positive-functional construction by outer measure; Daniell integral approach; duality/measure representation from continuous functions. State the exact real/complex and locally compact variants.",
+   "level": "Graduate",
+   "routeTitle": "Daniell integral approach",
+   "currentSketch": "For positive L:C(K)→R define μ(U)=sup{L(f):0≤f≤1, supp f⊂U}; use partitions of unity to prove finite additivity on disjoint opens and outer regular extension to a Borel measure. Approximation of continuous f by level-set simple functions gives L(f)=∫f dμ; positivity ensures uniqueness.",
+   "existingReferences": [
+    {
+     "label": "Folland, Real Analysis, 2nd ed.",
+     "url": "https://doi.org/10.1002/9780470317064",
+     "locator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  },
+  {
+   "routeId": "121-r3",
+   "entryId": 121,
+   "entryName": "Riesz–Markov–Kakutani representation theorem (compact Hausdorff version)",
+   "entryDescription": "Positive-functional construction by outer measure; Daniell integral approach; duality/measure representation from continuous functions. State the exact real/complex and locally compact variants.",
+   "level": "Graduate",
+   "routeTitle": "duality/measure representation from continuous functions. State the exact real/complex and locally compact variants",
+   "currentSketch": "For positive L:C(K)→R define μ(U)=sup{L(f):0≤f≤1, supp f⊂U}; use partitions of unity to prove finite additivity on disjoint opens and outer regular extension to a Borel measure. Approximation of continuous f by level-set simple functions gives L(f)=∫f dμ; positivity ensures uniqueness.",
+   "existingReferences": [
+    {
+     "label": "Folland, Real Analysis, 2nd ed.",
+     "url": "https://doi.org/10.1002/9780470317064",
+     "locator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text"
+    }
+   ],
+   "alreadyTranscribed": false,
+   "priorNote": ""
+  }
+ ]
+}
