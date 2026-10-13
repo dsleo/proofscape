@@ -174,6 +174,9 @@ def main() -> None:
     for technique in vocabulary["techniques"]:
         if technique["family"] not in families:
             raise ValueError(f"technique {technique['id']} has unknown family {technique['family']}")
+    missing = [t["id"] for t in vocabulary["techniques"] if not t.get("short")]
+    if missing:
+        raise ValueError(f"techniques without a short label: {missing}")
     known, fields = set(ids), set(vocabulary["fields"])
 
     catalog_routes = {route["id"] for entry in catalog["entries"] for route in entry["routes"]}

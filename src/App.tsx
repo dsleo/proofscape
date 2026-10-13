@@ -109,9 +109,13 @@ function StatementProofs({ record, openProof, setOpenProof, selectedProofs, onTo
 
 function writeUrl(tab: Tab, kind: Kind, page: number, query: string, id?: string | null, compare: string[] = [], proof?: string | null) {
   const url = new URL(window.location.href)
+  const keep = ['view', 'sel'].map((name) => [name, url.searchParams.get(name)] as const)
   url.search = ''
   url.searchParams.set('kind', kind)
-  if (tab === 'historical') url.searchParams.set('tab', 'historical')
+  if (tab === 'historical') {
+    url.searchParams.set('tab', 'historical')
+    keep.forEach(([name, value]) => { if (value) url.searchParams.set(name, value) })
+  }
   url.searchParams.set('page', String(page))
   if (query.trim()) url.searchParams.set('q', query.trim())
   if (id) url.searchParams.set('id', id)
