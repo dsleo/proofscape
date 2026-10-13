@@ -1,7 +1,7 @@
 .ring-view { position: relative; background: #f2efe7; padding-bottom: 8px; }
 .ring-loading { padding: 40px 0; color: #756b5e; font-size: 12px; }
 .ring-bar { position: sticky; top: 0; z-index: 4; background: #f2efe7; border-bottom: 1px solid #d3c9bc; padding: 10px 0 9px; }
-.ring-panel { min-height: 40px; padding: 12px 0 14px; scroll-margin-top: 64px; }
+.ring-panel { min-height: 40px; border-top: 1px solid #d3c9bc; padding: 14px 0 14px; scroll-margin-top: 64px; }
 .ring-count { color: #645b51; font-size: 12px; }
 .ring-jump { border: 0; background: transparent; color: #7a4911; font: 700 11px 'CMU Sans', sans-serif; cursor: pointer; }
 .ring-lead { margin: 0; color: #332d26; font: 400 19px/1.35 'CMU Serif', serif; }
@@ -24,28 +24,29 @@
 .ring-statement-open { max-height: none; }
 .ring-statement button { position: absolute; right: 8px; bottom: 5px; border: 0; background: #f5eee2; padding: 0 0 0 8px; color: #7a4911; font: 700 9px 'CMU Sans', sans-serif; cursor: pointer; }
 .ring-approaches-label { margin: 0 0 7px 48px; color: #89602e; font: 700 9px 'CMU Sans', sans-serif; letter-spacing: .13em; text-transform: uppercase; }
-.ring-approaches { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-left: 48px; }
+.ring-approaches { display: grid; gap: 6px; margin-left: 48px; }
 
-.ring-approach { border: 1px solid #e0d6c8; border-left: 4px solid #b9ae9f; background: #fffdf8; padding: 10px 12px 9px; }
-.ring-approach-tags { display: flex; flex-wrap: wrap; gap: 4px 10px; margin: 0 0 6px; font: 700 10px 'CMU Sans', sans-serif; }
+.ring-approach { border: 1px solid #e0d6c8; border-left: 4px solid #b9ae9f; background: #fffdf8; }
+.ring-approach > summary { display: grid; gap: 3px; padding: 8px 12px 8px 30px; position: relative; list-style: none; cursor: pointer; }
+.ring-approach > summary::-webkit-details-marker { display: none; }
+.ring-approach > summary::before { content: '▸'; position: absolute; left: 11px; top: 9px; color: #9b8b75; font-size: 11px; }
+.ring-approach[open] > summary::before { content: '▾'; }
+.ring-approach > summary:hover { background: #fbf6ea; }
+.ring-approach-tags { display: flex; flex-wrap: wrap; gap: 3px 10px; font: 700 10px 'CMU Sans', sans-serif; }
 .ring-tag { opacity: .62; }
 .ring-tag-on { opacity: 1; }
 .ring-tag-quiet { color: #8b8073; font-weight: 400; opacity: 1; }
 .ring-approach-title { color: #332d26; font: 500 15px/1.4 'CMU Serif', serif; }
 .ring-warning { color: #9a5a12; font-size: 12px; }
-.ring-sketch { margin: 7px 0 0; max-height: 5.2em; overflow: hidden; color: #554d44; font-size: 11px; line-height: 1.6; }
-.ring-sketch-open { max-height: none; }
-.ring-approach-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 10px; margin-top: 8px; font-size: 10px; }
-.ring-evidence { color: #8b8073; }
+.ring-approach-body { border-top: 1px solid #efe7d9; padding: 9px 12px 10px 30px; }
+.ring-sketch { color: #554d44; font-size: 12px; line-height: 1.65; }
+.ring-evidence { margin-top: 8px; color: #8b8073; font-size: 10px; }
 .ring-evidence-source { color: #5f6f3f; }
-.ring-approach-foot button { border: 0; background: transparent; color: #7a4911; font: 700 10px 'CMU Sans', sans-serif; text-decoration: underline; cursor: pointer; }
 .ring-others { margin: 12px 0 0 48px; border-top: 1px solid #e7ded2; }
 .ring-others > summary { min-height: 32px; padding-top: 7px; color: #79521f; font: 700 10px 'CMU Sans', sans-serif; cursor: pointer; }
-.ring-others .ring-approach { margin-top: 8px; }
+.ring-others .ring-approach { margin-top: 6px; }
 
-.ring-controls { display: flex; flex-wrap: wrap; gap: 6px 20px; border-top: 1px solid #d3c9bc; padding: 12px 0 4px; color: #645b51; font-size: 11px; }
-.ring-controls label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
-.ring-svg { display: block; width: 100%; max-width: 820px; margin: 0 auto; }
+.ring-svg { display: block; width: 100%; max-width: 740px; margin: 6px auto 0; }
 .ring-svg *:focus { outline: none; }
 .ring-svg .ring-hit:focus-visible { stroke: #ae6b1f; stroke-opacity: .35; }
 .ring-svg .ring-node:focus-visible .ring-dot { stroke: #282522; stroke-width: 2; }

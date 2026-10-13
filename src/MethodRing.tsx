@@ -40,24 +40,24 @@ function writeSelection(selection: string[]) {
 }
 
 function Approach({ route, source, methods, names }: { route: RingRoute; source?: Route; methods: Set<string>; names: Map<string, Technique> }) {
-  const [open, setOpen] = useState(false)
   const reference = source ? primaryReference(source) : undefined
   const fromSource = source?.sketchStatus === 'source-extracted'
   const lead = route.techniques.find((id) => methods.has(id)) ?? route.techniques[0]
   const color = lead ? familyColor[names.get(lead)?.family ?? ''] : undefined
-  return <div className="ring-approach" style={{ borderLeftColor: color }}>
-    <div className="ring-approach-tags">
-      {route.techniques.map((id) => <span key={id} className={methods.has(id) ? 'ring-tag ring-tag-on' : 'ring-tag'} style={{ color: familyColor[names.get(id)?.family ?? ''] }}>{names.get(id)?.short ?? id}</span>)}
-      {route.derivesFromTheorem && <span className="ring-tag ring-tag-quiet">applies a known theorem</span>}
+  return <details className="ring-approach" style={{ borderLeftColor: color }}>
+    <summary>
+      <span className="ring-approach-tags">
+        {route.techniques.map((id) => <span key={id} className={methods.has(id) ? 'ring-tag ring-tag-on' : 'ring-tag'} style={{ color: familyColor[names.get(id)?.family ?? ''] }}>{names.get(id)?.short ?? id}</span>)}
+        {route.derivesFromTheorem && <span className="ring-tag ring-tag-quiet">applies a known theorem</span>}
+      </span>
+      <span className="ring-approach-title">{source ? <ProofMathText text={displayRouteTitle(source)} /> : capitalize(route.title)}{route.titleSketchDisagree && <span className="ring-warning" title="The title and the proof sketch describe different routes"> ⚠</span>}</span>
+    </summary>
+    <div className="ring-approach-body">
+      {source?.proofSketch && <div className="ring-sketch"><ProofMathText text={source.proofSketch} /></div>}
+      <div className={fromSource ? 'ring-evidence ring-evidence-source' : 'ring-evidence'}>{fromSource ? 'Sketch read from the cited source' : 'Sketch reconstructed, not taken from a source'}</div>
+      {reference && <SourceCitation reference={reference} />}
     </div>
-    <div className="ring-approach-title">{source ? <ProofMathText text={displayRouteTitle(source)} /> : capitalize(route.title)}{route.titleSketchDisagree && <span className="ring-warning" title="The title and the proof sketch describe different routes"> ⚠</span>}</div>
-    {source?.proofSketch && <div className={open ? 'ring-sketch ring-sketch-open' : 'ring-sketch'}><ProofMathText text={source.proofSketch} /></div>}
-    <div className="ring-approach-foot">
-      <span className={fromSource ? 'ring-evidence ring-evidence-source' : 'ring-evidence'}>{fromSource ? 'Sketch read from the cited source' : 'Sketch reconstructed, not taken from a source'}</span>
-      {source?.proofSketch && <button type="button" onClick={() => setOpen((value) => !value)}>{open ? 'Show less' : 'Read sketch'}</button>}
-    </div>
-    {open && reference && <SourceCitation reference={reference} />}
-  </div>
+  </details>
 }
 
 function TheoremCard({ theorem, entry, source, methods, names, onOpen }: { theorem: RingTheorem; entry: Entry | undefined; source: Map<string, Route>; methods: Set<string>; names: Map<string, Technique>; onOpen: (id: number) => void }) {
@@ -91,8 +91,6 @@ export default function MethodRing({ catalog, onOpenEntry }: { catalog: Catalog;
   const [data, setData] = useState<RingData | null>(null)
   const [error, setError] = useState('')
   const [selection, setSelection] = useState<string[]>(readSelection)
-  const [showOne, setShowOne] = useState(false)
-  const [showTriangles, setShowTriangles] = useState(true)
   const [count, setCount] = useState(PAGE)
   const results = useRef<HTMLDivElement>(null)
 
@@ -167,7 +165,6 @@ export default function MethodRing({ catalog, onOpenEntry }: { catalog: Catalog;
   const label = (item: string) => parts(item).members.map((id) => model.names.get(id)?.short ?? id).join(' + ')
 
   const chordKeys = Object.keys(data.pairs)
-  const visibleChords = chordKeys.filter((key) => chosen.has(`e:${key}`) || model.pairs.get(key)!.size >= 2 || showOne || (selection.length > 0 && liveEdges.has(key)))
   const shown = matched.slice(0, count)
 
   return <section className="ring-view" aria-label="Methods and the theorems they prove">
@@ -178,28 +175,11 @@ export default function MethodRing({ catalog, onOpenEntry }: { catalog: Catalog;
         <div className="ring-selection">
           {selection.map((item) => <button type="button" className="ring-chip" key={item} onClick={() => toggle(item)}>{label(item)} <span aria-hidden="true">×</span><span className="sr-only"> remove</span></button>)}
           <span className="ring-count">{matched.length} theorem{matched.length === 1 ? '' : 's'}</span>
-          <button type="button" className="ring-jump" onClick={() => results.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })}>Results ↑</button>
+          <button type="button" className="ring-jump" onClick={() => results.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })}>Results ↓</button>
           <button type="button" className="ring-clear" onClick={() => { setSelection([]); setCount(PAGE) }}>Clear</button>
         </div>
       </>}
     </div>
-    <div className="ring-panel" ref={results}>
-      {selection.length === 0 ? <p className="ring-hint">You get the theorems whose proofs use it. Keep clicking: only theorems that use everything you picked stay, and the rest of the ring fades. A chord joins two methods that distinguish two different routes of the same theorem.</p> : <>
-        <p className="ring-summary">Theorems whose proofs use all of: {[...methods].map((id, index) => <span key={id}>{index > 0 && ', '}<strong style={{ color: familyColor[model.names.get(id)?.family ?? ''] }}>{model.names.get(id)?.short}</strong></span>)}</p>
-        {matched.length === 0 && <p className="ring-hint">No theorem fits all of these. Remove one of them.</p>}
-        <div className="ring-results">
-          {shown.map((theorem) => <TheoremCard key={theorem.id} theorem={theorem} entry={entries.get(theorem.id)} source={routes} methods={methods} names={model.names} onOpen={onOpenEntry} />)}
-        </div>
-        {matched.length > count && <button type="button" className="ring-more" onClick={() => setCount(matched.length)}>Show all {matched.length}</button>}
-      </>}
-    </div>
-
-    <div className="ring-controls">
-      <label><input type="checkbox" checked={showOne} onChange={(event) => setShowOne(event.target.checked)} /> Show pairs found in only one theorem</label>
-      <label><input type="checkbox" checked={showTriangles} onChange={(event) => setShowTriangles(event.target.checked)} /> Show triangles (three rival routes)</label>
-      <span>{visibleChords.length} of {chordKeys.length} chords shown</span>
-    </div>
-
     <svg className="ring-svg" viewBox="0 0 680 600" role="group" aria-label="Proof methods arranged on a ring, grouped by domain">
       {model.arcs.map((arc) => {
         const [x0, y0] = at(arc.start, RADIUS + 7), [x1, y1] = at(arc.end, RADIUS + 7), mid = (arc.start + arc.end) / 2, [lx, ly] = [CX + Math.cos(mid) * 292, CY + Math.sin(mid) * (RADIUS + 112)], cos = Math.cos(mid)
@@ -210,13 +190,12 @@ export default function MethodRing({ catalog, onOpenEntry }: { catalog: Catalog;
       })}
       {Object.keys(data.triples).map((key) => {
         const item = `t:${key}`, ids = key.split('|'), on = chosen.has(item), live = liveTriples.has(key), strong = model.triples.get(key)!.size >= 2
-        if (!showTriangles && !on && !(selection.length && live)) return null
         const path = ids.map((id) => at(model.angle.get(id)!, RADIUS)).map(([x, y]) => `${fixed(x)},${fixed(y)}`).join('L')
         return <path key={item} className="ring-triangle" d={`M${path}Z`} fill="#ae6b1f" stroke="#ae6b1f"
-          fillOpacity={on ? 0.42 : live ? (selection.length ? 0.24 : strong ? 0.2 : 0.09) : 0.02} strokeOpacity={on ? 1 : live ? (selection.length ? 0.7 : 0.35) : 0.05} strokeWidth={on ? 2 : 1}
+          fillOpacity={on ? 0.42 : live ? (selection.length ? 0.24 : strong ? 0.2 : 0.07) : 0.02} strokeOpacity={on ? 1 : live ? (selection.length ? 0.7 : strong ? 0.35 : 0.18) : 0.05} strokeWidth={on ? 2 : 1}
           aria-label={`${label(item)}, three routes`} {...press(item)}><title>{label(item)}</title></path>
       })}
-      {visibleChords.map((key) => {
+      {chordKeys.map((key) => {
         const item = `e:${key}`, [a, b] = key.split('|'), on = chosen.has(item), live = liveEdges.has(key), n = model.pairs.get(key)!.size
         const [x0, y0] = at(model.angle.get(a)!, RADIUS), [x1, y1] = at(model.angle.get(b)!, RADIUS)
         const cx = CX + ((x0 + x1) / 2 - CX) * 0.2, cy = CY + ((y0 + y1) / 2 - CY) * 0.2
@@ -224,7 +203,7 @@ export default function MethodRing({ catalog, onOpenEntry }: { catalog: Catalog;
         const d = `M${fixed(x0)},${fixed(y0)}Q${fixed(cx)},${fixed(cy)} ${fixed(x1)},${fixed(y1)}`
         return <g key={item}>
           <path d={d} fill="none" strokeLinecap="round" stroke={on ? '#ae6b1f' : same ? familyColor[model.names.get(a)!.family] : '#6e665d'}
-            strokeWidth={(1.1 + Math.min(n, 6) * 0.9) + (on ? 2.4 : 0)} strokeOpacity={on ? 1 : live ? (selection.length ? 0.85 : 0.6) : 0.06} />
+            strokeWidth={(1.1 + Math.min(n, 6) * 0.9) + (on ? 2.4 : 0)} strokeOpacity={on ? 1 : live ? (selection.length ? 0.85 : n >= 2 ? 0.6 : 0.3) : 0.06} />
           <path d={d} fill="none" stroke="transparent" strokeWidth="10" className="ring-hit" aria-label={`${label(item)}, ${n} theorem${n === 1 ? '' : 's'}`} {...press(item)}>
             <title>{label(item)}: {n} theorem{n === 1 ? '' : 's'}</title>
           </path>
@@ -242,6 +221,16 @@ export default function MethodRing({ catalog, onOpenEntry }: { catalog: Catalog;
         </g>
       })}
     </svg>
+    <div className="ring-panel" ref={results}>
+      {selection.length === 0 ? <p className="ring-hint">You get the theorems whose proofs use it. Keep clicking: only theorems that use everything you picked stay, and the rest of the ring fades. A chord joins two methods that distinguish two different routes of the same theorem. Thicker, darker chords are shared by more theorems.</p> : <>
+        <p className="ring-summary">Theorems whose proofs use all of: {[...methods].map((id, index) => <span key={id}>{index > 0 && ', '}<strong style={{ color: familyColor[model.names.get(id)?.family ?? ''] }}>{model.names.get(id)?.short}</strong></span>)}</p>
+        {matched.length === 0 && <p className="ring-hint">No theorem fits all of these. Remove one of them.</p>}
+        <div className="ring-results">
+          {shown.map((theorem) => <TheoremCard key={theorem.id} theorem={theorem} entry={entries.get(theorem.id)} source={routes} methods={methods} names={model.names} onOpen={onOpenEntry} />)}
+        </div>
+        {matched.length > count && <button type="button" className="ring-more" onClick={() => setCount(matched.length)}>Show all {matched.length}</button>}
+      </>}
+    </div>
     <details className="ring-methodlist" open={window.matchMedia('(max-width: 640px)').matches || undefined}>
       <summary>All {data.vocabulary.techniques.length} methods as a list</summary>
       {data.ring.families.map((family) => <div key={family} className="ring-methodgroup">
