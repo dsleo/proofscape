@@ -1,0 +1,4574 @@
+{
+  "schemaVersion": 1,
+  "status": "all-150-tagged",
+  "note": "15 pilot theorems tagged by two independent taggers; flags mark routes that must not raise a diversity score.",
+  "flags": {
+    "not-a-route": "caveat, not a proof route",
+    "dependent": "depends on another listed route",
+    "near-duplicate": "same idea as another route",
+    "not-the-stated-theorem": "proves a variant, not the stated theorem",
+    "sketch-mismatch": "catalog sketch belongs to another route or theorem; tagged from title",
+    "title-sketch-mismatch": "title and sketch name different routes; tagged from sketch",
+    "sketch-self-corrects": "sketch retracts a claim; tagged the corrected route",
+    "incomplete": "argument as sketched is insufficient",
+    "derivesFromTheorem-note": "derivesFromTheorem is a modifier, not a flag: the route is kept and shown."
+  },
+  "routes": {
+    "1-r1": {
+      "techniques": [
+        "dissection-area"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "1-r2": {
+      "techniques": [
+        "similarity-trig"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "1-r3": {
+      "techniques": [
+        "dissection-area"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "1-r4": {
+      "techniques": [
+        "coordinates-vectors"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "2-r1": {
+      "techniques": [
+        "modular-arithmetic"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "2-r2": {
+      "techniques": [
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "2-r3": {
+      "techniques": [
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "2-r4": {
+      "techniques": [
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "14-r1": {
+      "techniques": [
+        "induction",
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "14-r2": {
+      "techniques": [
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "15-r1": {
+      "techniques": [
+        "modular-arithmetic",
+        "bijection"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "15-r2": {
+      "techniques": [
+        "group-action"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "15-r3": {
+      "techniques": [
+        "induction",
+        "modular-arithmetic"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "25-r1": {
+      "techniques": [
+        "diagonalisation"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "25-r2": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "25-r3": {
+      "techniques": [
+        "diagonalisation",
+        "bijection"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "26-r1": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "26-r2": {
+      "techniques": [
+        "winding-degree"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "26-r3": {
+      "techniques": [
+        "variational-extremum",
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "title-sketch-mismatch"
+    },
+    "36-r1": {
+      "techniques": [
+        "polynomial-methods",
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "36-r2": {
+      "techniques": [
+        "fourier-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "36-r3": {
+      "techniques": [
+        "series-asymptotics",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "sketch-self-corrects"
+    },
+    "46-r1": {
+      "techniques": [
+        "group-action",
+        "counting"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "46-r2": {
+      "techniques": [
+        "group-action",
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "46-r3": {
+      "techniques": [
+        "group-action"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent",
+      "derivesFromTheorem": true
+    },
+    "59-r1": {
+      "techniques": [
+        "extremal-descent",
+        "path-exchange"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "59-r2": {
+      "techniques": [
+        "path-exchange"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "59-r3": {
+      "techniques": [
+        "induction",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent"
+    },
+    "60-r1": {
+      "techniques": [
+        "probabilistic-argument"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "60-r2": {
+      "techniques": [
+        "fourier-analysis",
+        "probabilistic-argument"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "60-r3": {
+      "techniques": [
+        "probabilistic-argument",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "not-the-stated-theorem"
+    },
+    "70-r1": {
+      "techniques": [
+        "choice-maximality",
+        "compactness"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "70-r2": {
+      "techniques": [
+        "compactness",
+        "choice-maximality"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "70-r3": {
+      "techniques": [
+        "choice-maximality",
+        "compactness"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "81-r1": {
+      "techniques": [
+        "counting",
+        "triangulation-euler",
+        "compactness"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "81-r2": {
+      "techniques": [
+        "winding-degree"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "81-r3": {
+      "techniques": [
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "100-r1": {
+      "techniques": [
+        "baire-category"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "100-r2": {
+      "techniques": [
+        "induction",
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "100-r3": {
+      "techniques": [
+        "duality-separation",
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent"
+    },
+    "107-r1": {
+      "techniques": [
+        "bijection",
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "107-r2": {
+      "techniques": [
+        "generating-functions",
+        "induction"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "107-r3": {
+      "techniques": [
+        "induction",
+        "bijection"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "107-r4": {
+      "techniques": [
+        "generating-functions",
+        "induction"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "4-r3": {
+      "techniques": [],
+      "borrowsFrom": null,
+      "status": "inferred",
+      "taggers": 1,
+      "agreement": "n/a",
+      "flag": "not-a-route"
+    },
+    "11-r1": {
+      "techniques": [
+        "similarity-trig"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "derivesFromTheorem": true
+    },
+    "11-r2": {
+      "techniques": [
+        "coordinates-vectors"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "11-r3": {
+      "techniques": [
+        "coordinates-vectors"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "16-r1": {
+      "techniques": [
+        "modular-arithmetic",
+        "bijection"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "16-r2": {
+      "techniques": [
+        "group-action",
+        "modular-arithmetic"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "27-r1": {
+      "techniques": [
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "27-r2": {
+      "techniques": [
+        "rolle-mean-value",
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "27-r3": {
+      "techniques": [
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "28-r1": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "28-r2": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "28-r3": {
+      "techniques": [
+        "topological-structure"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "31-r1": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "31-r2": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "derivesFromTheorem": true
+    },
+    "31-r3": {
+      "techniques": [
+        "completeness",
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "33-r1": {
+      "techniques": [
+        "rolle-mean-value"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "33-r2": {
+      "techniques": [
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "33-r3": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "40-r1": {
+      "techniques": [
+        "polynomial-methods",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "40-r2": {
+      "techniques": [
+        "linear-algebra",
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "40-r3": {
+      "techniques": [
+        "linear-algebra",
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "45-r1": {
+      "techniques": [
+        "group-action",
+        "counting"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "45-r2": {
+      "techniques": [
+        "induction",
+        "group-action"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "45-r3": {
+      "techniques": [
+        "group-action"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "47-r1": {
+      "techniques": [
+        "dissection-area"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "47-r2": {
+      "techniques": [
+        "similarity-trig"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "47-r3": {
+      "techniques": [
+        "coordinates-vectors",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "48-r1": {
+      "techniques": [
+        "ideal-module-structure",
+        "modular-arithmetic"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "48-r2": {
+      "techniques": [
+        "modular-arithmetic",
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "48-r3": {
+      "techniques": [
+        "lattice-geometry",
+        "modular-arithmetic"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "49-r1": {
+      "techniques": [
+        "modular-arithmetic",
+        "lattice-geometry"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "49-r2": {
+      "techniques": [
+        "lattice-geometry",
+        "counting"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "49-r3": {
+      "techniques": [
+        "character-sums"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "55-r1": {
+      "techniques": [
+        "bijection"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "55-r2": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "derivesFromTheorem": true
+    },
+    "55-r3": {
+      "techniques": [
+        "generating-functions"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "56-r1": {
+      "techniques": [
+        "path-exchange"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "56-r2": {
+      "techniques": [
+        "path-exchange"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "56-r3": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "61-r1": {
+      "techniques": [
+        "fourier-analysis",
+        "probabilistic-argument"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "61-r2": {
+      "techniques": [
+        "probabilistic-argument",
+        "compactness"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "61-r3": {
+      "techniques": [
+        "fourier-analysis",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "66-r1": {
+      "techniques": [
+        "fixed-point-iteration",
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "66-r2": {
+      "techniques": [
+        "fixed-point-iteration",
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "66-r3": {
+      "techniques": [
+        "fixed-point-iteration"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem"
+    },
+    "69-r1": {
+      "techniques": [
+        "choice-maximality"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "69-r2": {
+      "techniques": [
+        "choice-maximality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "near-duplicate"
+    },
+    "69-r3": {
+      "techniques": [
+        "duality-separation",
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem"
+    },
+    "75-r1": {
+      "techniques": [],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "75-r2": {
+      "techniques": [
+        "fixed-point-iteration"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "75-r3": {
+      "techniques": [],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent",
+      "derivesFromTheorem": true
+    },
+    "76-r1": {
+      "techniques": [
+        "differential-forms",
+        "integral-calculus",
+        "local-to-global-patching"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "76-r2": {
+      "techniques": [
+        "integral-calculus",
+        "differential-forms"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "76-r3": {
+      "techniques": [
+        "triangulation-euler",
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "79-r1": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "79-r2": {
+      "techniques": [
+        "pde-potential"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "79-r3": {
+      "techniques": [
+        "maximum-principle"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "83-r1": {
+      "techniques": [
+        "winding-degree",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "83-r2": {
+      "techniques": [
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "83-r3": {
+      "techniques": [
+        "triangulation-euler"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "84-r1": {
+      "techniques": [
+        "galois-field-theory",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "84-r2": {
+      "techniques": [
+        "group-action",
+        "galois-field-theory"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "84-r3": {
+      "techniques": [
+        "categorical-equivalence"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "87-r1": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "87-r2": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "87-r3": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "dependent"
+    },
+    "96-r1": {
+      "techniques": [
+        "euler-product-zeta",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "96-r2": {
+      "techniques": [
+        "euler-product-zeta"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "96-r3": {
+      "techniques": [
+        "arithmetic-identities"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "98-r1": {
+      "techniques": [
+        "linear-algebra",
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "98-r2": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "98-r3": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "101-r1": {
+      "techniques": [
+        "homology-cohomology",
+        "triangulation-euler"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "101-r2": {
+      "techniques": [
+        "homology-cohomology",
+        "local-to-global-patching"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "101-r3": {
+      "techniques": [
+        "differential-forms",
+        "local-to-global-patching",
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "101-r4": {
+      "techniques": [
+        "morse-theory"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "101-r5": {
+      "techniques": [
+        "differential-forms",
+        "pde-potential"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "104-r1": {
+      "techniques": [
+        "model-construction"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "104-r2": {
+      "techniques": [
+        "model-construction",
+        "choice-maximality"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "104-r3": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "109-r1": {
+      "techniques": [
+        "induction",
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "109-r2": {
+      "techniques": [
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "near-duplicate"
+    },
+    "109-r3": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "3-r1": {
+      "techniques": [
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "3-r2": {
+      "techniques": [
+        "euler-product-zeta"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "3-r3": {
+      "techniques": [
+        "topological-structure"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "3-r4": {
+      "techniques": [
+        "euler-product-zeta"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "5-r1": {
+      "techniques": [
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "5-r2": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "5-r3": {
+      "techniques": [
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "5-r4": {
+      "techniques": [
+        "dissection-area"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "6-r1": {
+      "techniques": [
+        "dissection-area"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "6-r2": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "6-r3": {
+      "techniques": [
+        "telescoping"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "7-r1": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Combinatorics"
+    },
+    "7-r2": {
+      "techniques": [
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "7-r3": {
+      "techniques": [
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "8-r1": {
+      "techniques": [
+        "extremal-descent",
+        "induction"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "8-r2": {
+      "techniques": [
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "8-r3": {
+      "techniques": [
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "9-r1": {
+      "techniques": [
+        "variational-extremum"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "9-r2": {
+      "techniques": [
+        "coordinates-vectors"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flagSuspect": "not-the-stated-theorem"
+    },
+    "9-r3": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "9-r4": {
+      "techniques": [
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete",
+      "derivesFromTheorem": true
+    },
+    "10-r1": {
+      "techniques": [
+        "variational-extremum"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "10-r2": {
+      "techniques": [],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true
+    },
+    "10-r3": {
+      "techniques": [
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent"
+    },
+    "12-r1": {
+      "techniques": [
+        "coordinates-vectors",
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "12-r2": {
+      "techniques": [
+        "similarity-trig"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "12-r3": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "13-r1": {
+      "techniques": [
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "13-r2": {
+      "techniques": [
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "13-r3": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "17-r1": {
+      "techniques": [
+        "extremal-descent",
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "17-r2": {
+      "techniques": [
+        "ideal-module-structure",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "17-r3": {
+      "techniques": [
+        "euclidean-gcd",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "18-r1": {
+      "techniques": [
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "18-r2": {
+      "techniques": [
+        "ideal-module-structure",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "18-r3": {
+      "techniques": [
+        "ideal-module-structure",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "19-r1": {
+      "techniques": [
+        "euclidean-gcd",
+        "modular-arithmetic"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "19-r2": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "19-r3": {
+      "techniques": [
+        "modular-arithmetic",
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "20-r1": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "20-r2": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "20-r3": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "21-r1": {
+      "techniques": [
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "sketch-mismatch"
+    },
+    "21-r2": {
+      "techniques": [
+        "euclidean-gcd",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "sketch-mismatch"
+    },
+    "21-r3": {
+      "techniques": [
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "22-r1": {
+      "techniques": [
+        "explicit-construction"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "22-r2": {
+      "techniques": [
+        "explicit-construction",
+        "coordinates-vectors"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "22-r3": {
+      "techniques": [
+        "explicit-construction"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "23-r1": {
+      "techniques": [
+        "triangulation-euler",
+        "induction"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "23-r2": {
+      "techniques": [
+        "triangulation-euler",
+        "counting"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "23-r3": {
+      "techniques": [
+        "triangulation-euler",
+        "lattice-geometry"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "24-r1": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "24-r2": {
+      "techniques": [
+        "triangulation-euler",
+        "induction"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "24-r3": {
+      "techniques": [
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "29-r1": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "29-r2": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Analysis"
+    },
+    "29-r3": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "30-r1": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "30-r2": {
+      "techniques": [
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flagSuspect": "near-duplicate"
+    },
+    "30-r3": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Analysis",
+      "derivesFromTheorem": true
+    },
+    "32-r1": {
+      "techniques": [
+        "variational-extremum"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flagSuspect": "not-the-stated-theorem"
+    },
+    "32-r2": {
+      "techniques": [
+        "rolle-mean-value"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent"
+    },
+    "32-r3": {
+      "techniques": [
+        "rolle-mean-value"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "34-r1": {
+      "techniques": [
+        "rolle-mean-value"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "34-r2": {
+      "techniques": [
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "34-r3": {
+      "techniques": [
+        "rolle-mean-value"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "dependent"
+    },
+    "35-r1": {
+      "techniques": [
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "35-r2": {
+      "techniques": [
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "35-r3": {
+      "techniques": [
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate",
+      "derivesFromTheorem": true
+    },
+    "37-r1": {
+      "techniques": [
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "37-r2": {
+      "techniques": [
+        "ode-uniqueness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "37-r3": {
+      "techniques": [
+        "coordinates-vectors"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent"
+    },
+    "38-r1": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "38-r2": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "38-r3": {
+      "techniques": [
+        "coordinates-vectors"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "39-r1": {
+      "techniques": [
+        "leading-term-reduction",
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "39-r2": {
+      "techniques": [
+        "leading-term-reduction",
+        "group-action"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "near-duplicate"
+    },
+    "39-r3": {
+      "techniques": [
+        "group-action",
+        "leading-term-reduction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "41-r1": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "41-r2": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "41-r3": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "42-r1": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "42-r2": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "42-r3": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate",
+      "derivesFromTheorem": true
+    },
+    "43-r1": {
+      "techniques": [
+        "variational-extremum",
+        "induction"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "43-r2": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "43-r3": {
+      "techniques": [
+        "induction",
+        "orthogonal-decomposition"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "44-r1": {
+      "techniques": [
+        "extremal-descent",
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "44-r2": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "44-r3": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "50-r1": {
+      "techniques": [
+        "euclidean-gcd",
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "50-r2": {
+      "techniques": [
+        "ideal-module-structure",
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "near-duplicate"
+    },
+    "50-r3": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "51-r1": {
+      "techniques": [
+        "euclidean-gcd"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "51-r2": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "51-r3": {
+      "techniques": [
+        "linear-algebra",
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem"
+    },
+    "52-r1": {
+      "techniques": [
+        "generating-functions",
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "52-r2": {
+      "techniques": [
+        "polynomial-methods",
+        "generating-functions"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "52-r3": {
+      "techniques": [
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "53-r1": {
+      "techniques": [
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "53-r2": {
+      "techniques": [
+        "counting",
+        "arithmetic-identities"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "53-r3": {
+      "techniques": [
+        "arithmetic-identities"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "54-r1": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "54-r2": {
+      "techniques": [
+        "arithmetic-identities"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "54-r3": {
+      "techniques": [
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "57-r1": {
+      "techniques": [
+        "path-exchange"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "57-r2": {
+      "techniques": [
+        "duality-separation",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "57-r3": {
+      "techniques": [
+        "path-exchange"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "58-r1": {
+      "techniques": [
+        "triangulation-euler",
+        "counting"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "58-r2": {
+      "techniques": [
+        "homology-cohomology",
+        "triangulation-euler"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "58-r3": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete",
+      "derivesFromTheorem": true
+    },
+    "62-r1": {
+      "techniques": [
+        "probabilistic-argument",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "62-r2": {
+      "techniques": [
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "borrowsFromAlt": "Analysis",
+      "flag": "near-duplicate"
+    },
+    "62-r3": {
+      "techniques": [
+        "probabilistic-argument",
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "63-r1": {
+      "techniques": [
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "63-r2": {
+      "techniques": [
+        "induction",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "63-r3": {
+      "techniques": [
+        "convexity-inequality",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "64-r1": {
+      "techniques": [
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "64-r2": {
+      "techniques": [
+        "duality-separation",
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "64-r3": {
+      "techniques": [
+        "duality-separation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "65-r1": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "65-r2": {
+      "techniques": [
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "65-r3": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "not-the-stated-theorem"
+    },
+    "67-r1": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "67-r2": {
+      "techniques": [
+        "compactness",
+        "completeness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "67-r3": {
+      "techniques": [],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-a-route"
+    },
+    "68-r1": {
+      "techniques": [
+        "compactness",
+        "local-to-global-patching"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "68-r2": {
+      "techniques": [
+        "probabilistic-argument"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "not-the-stated-theorem"
+    },
+    "68-r3": {
+      "techniques": [
+        "compactness",
+        "local-to-global-patching"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "71-r1": {
+      "techniques": [
+        "linear-algebra",
+        "orthogonal-decomposition"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "71-r2": {
+      "techniques": [
+        "variational-extremum",
+        "orthogonal-decomposition"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flagSuspect": "near-duplicate"
+    },
+    "71-r3": {
+      "techniques": [
+        "orthogonal-decomposition",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "near-duplicate"
+    },
+    "72-r1": {
+      "techniques": [
+        "baire-category",
+        "fixed-point-iteration"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "72-r2": {
+      "techniques": [
+        "baire-category"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "72-r3": {
+      "techniques": [],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent",
+      "derivesFromTheorem": true
+    },
+    "73-r1": {
+      "techniques": [],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "73-r2": {
+      "techniques": [
+        "baire-category"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "incomplete"
+    },
+    "73-r3": {
+      "techniques": [
+        "duality-separation",
+        "baire-category"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "74-r1": {
+      "techniques": [
+        "fixed-point-iteration"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "74-r2": {
+      "techniques": [
+        "fixed-point-iteration"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "74-r3": {
+      "techniques": [
+        "winding-degree"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "77-r1": {
+      "techniques": [
+        "integral-calculus",
+        "dissection-area"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "77-r2": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "77-r3": {
+      "techniques": [
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem"
+    },
+    "78-r1": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "78-r2": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem",
+      "derivesFromTheorem": true
+    },
+    "78-r3": {
+      "techniques": [
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent",
+      "derivesFromTheorem": true
+    },
+    "80-r1": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "80-r2": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "near-duplicate",
+      "derivesFromTheorem": true
+    },
+    "80-r3": {
+      "techniques": [
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "82-r1": {
+      "techniques": [
+        "differential-forms",
+        "triangulation-euler"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "82-r2": {
+      "techniques": [
+        "triangulation-euler"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "82-r3": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "85-r1": {
+      "techniques": [
+        "ideal-module-structure",
+        "induction"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "85-r2": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "85-r3": {
+      "techniques": [
+        "ideal-module-structure",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "86-r1": {
+      "techniques": [
+        "induction",
+        "generic-parameter-choice"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "86-r2": {
+      "techniques": [
+        "galois-field-theory"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "incomplete"
+    },
+    "86-r3": {
+      "techniques": [
+        "induction",
+        "generic-parameter-choice"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "88-r1": {
+      "techniques": [
+        "galois-field-theory",
+        "generic-parameter-choice"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "88-r2": {
+      "techniques": [
+        "galois-field-theory",
+        "generic-parameter-choice"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "88-r3": {
+      "techniques": [
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "incomplete"
+    },
+    "89-r1": {
+      "techniques": [
+        "variational-extremum",
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "89-r2": {
+      "techniques": [
+        "compactness",
+        "variational-extremum"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "89-r3": {
+      "techniques": [
+        "variational-extremum",
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "90-r1": {
+      "techniques": [
+        "choice-maximality",
+        "compactness"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "90-r2": {
+      "techniques": [
+        "compactness",
+        "choice-maximality"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "90-r3": {
+      "techniques": [
+        "choice-maximality",
+        "compactness"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "91-r1": {
+      "techniques": [
+        "group-action"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "91-r2": {
+      "techniques": [
+        "topological-structure"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "91-r3": {
+      "techniques": [
+        "topological-structure"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "92-r1": {
+      "techniques": [
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Combinatorics"
+    },
+    "92-r2": {
+      "techniques": [
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "92-r3": {
+      "techniques": [
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "93-r1": {
+      "techniques": [
+        "local-to-global-patching",
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "93-r2": {
+      "techniques": [
+        "homology-cohomology",
+        "induction"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "93-r3": {
+      "techniques": [
+        "homology-cohomology",
+        "local-to-global-patching"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "94-r1": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "94-r2": {
+      "techniques": [
+        "differential-forms",
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "94-r3": {
+      "techniques": [
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "95-r1": {
+      "techniques": [
+        "winding-degree",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Topology"
+    },
+    "95-r2": {
+      "techniques": [
+        "winding-degree",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "95-r3": {
+      "techniques": [
+        "winding-degree",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem"
+    },
+    "97-r1": {
+      "techniques": [
+        "euler-product-zeta",
+        "character-sums"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "97-r2": {
+      "techniques": [
+        "galois-field-theory"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Number theory",
+      "derivesFromTheorem": true
+    },
+    "99-r1": {
+      "techniques": [
+        "series-asymptotics",
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "99-r2": {
+      "techniques": [
+        "series-asymptotics",
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "99-r3": {
+      "techniques": [
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent"
+    },
+    "99-r4": {
+      "techniques": [
+        "probabilistic-argument"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "102-r1": {
+      "techniques": [
+        "density-increment"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "102-r2": {
+      "techniques": [
+        "ergodic-correspondence"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true
+    },
+    "102-r3": {
+      "techniques": [
+        "fourier-analysis",
+        "density-increment"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "102-r4": {
+      "techniques": [
+        "density-increment"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "not-the-stated-theorem",
+      "derivesFromTheorem": true
+    },
+    "103-r1": {
+      "techniques": [
+        "probabilistic-argument",
+        "induction"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "103-r2": {
+      "techniques": [
+        "linear-algebra",
+        "path-exchange"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Combinatorics"
+    },
+    "103-r3": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "103-r4": {
+      "techniques": [
+        "induction",
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "105-r1": {
+      "techniques": [
+        "dimension-lift"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "105-r2": {
+      "techniques": [
+        "coordinates-vectors",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Geometry",
+      "flag": "incomplete"
+    },
+    "105-r3": {
+      "techniques": [
+        "coordinates-vectors",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "106-r1": {
+      "techniques": [
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "incomplete"
+    },
+    "106-r2": {
+      "techniques": [
+        "galois-field-theory",
+        "modular-arithmetic"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "106-r3": {
+      "techniques": [
+        "modular-arithmetic",
+        "galois-field-theory"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "108-r1": {
+      "techniques": [
+        "counting",
+        "induction"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "108-r2": {
+      "techniques": [
+        "path-exchange",
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "108-r3": {
+      "techniques": [
+        "induction",
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "110-r1": {
+      "techniques": [
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "110-r2": {
+      "techniques": [
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "110-r3": {
+      "techniques": [
+        "pigeonhole"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "111-r1": {
+      "techniques": [
+        "euler-product-zeta"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "111-r2": {
+      "techniques": [
+        "counting"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Number theory"
+    },
+    "111-r3": {
+      "techniques": [
+        "euler-product-zeta"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "112-r1": {
+      "techniques": [
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "112-r2": {
+      "techniques": [
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "112-r3": {
+      "techniques": [
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "113-r1": {
+      "techniques": [
+        "probabilistic-argument"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "113-r2": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true
+    },
+    "113-r3": {
+      "techniques": [
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "near-duplicate"
+    },
+    "114-r1": {
+      "techniques": [
+        "variational-extremum",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "114-r2": {
+      "techniques": [
+        "variational-extremum",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "114-r3": {
+      "techniques": [
+        "pde-potential",
+        "maximum-principle"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "115-r1": {
+      "techniques": [
+        "compactness",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "115-r2": {
+      "techniques": [
+        "compactness",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "near-duplicate"
+    },
+    "115-r3": {
+      "techniques": [
+        "compactness",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "near-duplicate"
+    },
+    "116-r1": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "116-r2": {
+      "techniques": [
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "116-r3": {
+      "techniques": [
+        "differential-forms",
+        "topological-structure"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "117-r1": {
+      "techniques": [
+        "fourier-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "117-r2": {
+      "techniques": [
+        "fourier-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "117-r3": {
+      "techniques": [
+        "measure-approximation",
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "118-r1": {
+      "techniques": [
+        "integral-calculus"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "118-r2": {
+      "techniques": [
+        "differential-forms",
+        "winding-degree"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "118-r3": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "near-duplicate"
+    },
+    "119-r1": {
+      "techniques": [
+        "fixed-point-iteration"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "119-r2": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "119-r3": {
+      "techniques": [
+        "integral-calculus",
+        "topological-structure"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent"
+    },
+    "120-r1": {
+      "techniques": [
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "120-r2": {
+      "techniques": [
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "120-r3": {
+      "techniques": [
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "dependent"
+    },
+    "121-r1": {
+      "techniques": [
+        "measure-approximation",
+        "local-to-global-patching"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "121-r2": {
+      "techniques": [
+        "measure-approximation",
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "121-r3": {
+      "techniques": [
+        "measure-approximation",
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "122-r1": {
+      "techniques": [
+        "compactness",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Analysis"
+    },
+    "122-r2": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "borrowsFromAlt": "Analysis",
+      "flag": "incomplete"
+    },
+    "122-r3": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Probability",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Analysis",
+      "flag": "not-the-stated-theorem"
+    },
+    "123-r1": {
+      "techniques": [
+        "duality-separation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true
+    },
+    "123-r2": {
+      "techniques": [
+        "variational-extremum",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "123-r3": {
+      "techniques": [
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "sketch-mismatch"
+    },
+    "124-r1": {
+      "techniques": [
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "124-r2": {
+      "techniques": [
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "124-r3": {
+      "techniques": [
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem"
+    },
+    "125-r1": {
+      "techniques": [
+        "fourier-analysis",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "125-r2": {
+      "techniques": [
+        "fourier-analysis",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "near-duplicate"
+    },
+    "125-r3": {
+      "techniques": [
+        "fourier-analysis",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem"
+    },
+    "126-r1": {
+      "techniques": [
+        "fourier-analysis",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "126-r2": {
+      "techniques": [
+        "fourier-analysis",
+        "measure-approximation"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "126-r3": {
+      "techniques": [
+        "fourier-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "incomplete"
+    },
+    "127-r1": {
+      "techniques": [
+        "variational-extremum",
+        "compactness"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "127-r2": {
+      "techniques": [
+        "fourier-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "sketch-mismatch"
+    },
+    "127-r3": {
+      "techniques": [
+        "dissection-area"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "127-r4": {
+      "techniques": [
+        "symmetrization",
+        "compactness"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "128-r1": {
+      "techniques": [
+        "induction",
+        "dissection-area"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "128-r2": {
+      "techniques": [
+        "measure-transport",
+        "convexity-inequality"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "128-r3": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true
+    },
+    "129-r1": {
+      "techniques": [
+        "linear-algebra",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "129-r2": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "129-r3": {
+      "techniques": [
+        "induction",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "130-r1": {
+      "techniques": [
+        "induction"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true
+    },
+    "130-r2": {
+      "techniques": [
+        "extremal-descent",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "near-duplicate"
+    },
+    "130-r3": {
+      "techniques": [
+        "homology-cohomology",
+        "topological-structure"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "131-r1": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "131-r2": {
+      "techniques": [
+        "duality-separation"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "131-r3": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "132-r1": {
+      "techniques": [
+        "path-exchange"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "132-r2": {
+      "techniques": [
+        "duality-separation",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "132-r3": {
+      "techniques": [
+        "duality-separation",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "near-duplicate"
+    },
+    "133-r1": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "133-r2": {
+      "techniques": [
+        "induction",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "133-r3": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "134-r1": {
+      "techniques": [
+        "compactness"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "134-r2": {
+      "techniques": [
+        "path-exchange"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "134-r3": {
+      "techniques": [
+        "choice-maximality",
+        "counting"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "135-r1": {
+      "techniques": [
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "not-the-stated-theorem"
+    },
+    "135-r2": {
+      "techniques": [
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true,
+      "flagSuspect": "not-the-stated-theorem"
+    },
+    "135-r3": {
+      "techniques": [
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "incomplete"
+    },
+    "136-r1": {
+      "techniques": [
+        "homology-cohomology",
+        "winding-degree"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "near-duplicate"
+    },
+    "136-r2": {
+      "techniques": [
+        "winding-degree",
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "near-duplicate"
+    },
+    "136-r3": {
+      "techniques": [
+        "topological-structure"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "137-r1": {
+      "techniques": [
+        "linear-algebra",
+        "telescoping"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "137-r2": {
+      "techniques": [
+        "linear-algebra",
+        "telescoping"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "137-r3": {
+      "techniques": [
+        "homology-cohomology",
+        "telescoping"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "138-r1": {
+      "techniques": [
+        "fixed-point-iteration"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "138-r2": {
+      "techniques": [
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "138-r3": {
+      "techniques": [
+        "fixed-point-iteration"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true,
+      "flag": "near-duplicate"
+    },
+    "139-r1": {
+      "techniques": [
+        "model-construction",
+        "choice-maximality"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "139-r2": {
+      "techniques": [
+        "model-construction"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "139-r3": {
+      "techniques": [
+        "model-construction"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "near-duplicate"
+    },
+    "140-r1": {
+      "techniques": [
+        "diagonalisation"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "not-the-stated-theorem"
+    },
+    "140-r2": {
+      "techniques": [
+        "diagonalisation"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "140-r3": {
+      "techniques": [
+        "diagonalisation"
+      ],
+      "borrowsFrom": "Logic & foundations",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "141-r1": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "141-r2": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "flag": "near-duplicate"
+    },
+    "141-r3": {
+      "techniques": [
+        "lattice-geometry"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "borrowsFromAlt": "Geometry",
+      "derivesFromTheorem": true,
+      "flag": "not-the-stated-theorem"
+    },
+    "142-r1": {
+      "techniques": [
+        "polynomial-methods",
+        "extremal-descent"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "142-r2": {
+      "techniques": [
+        "ideal-module-structure",
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "142-r3": {
+      "techniques": [
+        "ideal-module-structure",
+        "polynomial-methods"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "near-duplicate"
+    },
+    "143-r1": {
+      "techniques": [
+        "pde-potential"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "143-r2": {
+      "techniques": [
+        "variational-extremum",
+        "complex-analysis"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "143-r3": {
+      "techniques": [
+        "pde-potential"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "incomplete"
+    },
+    "144-r1": {
+      "techniques": [
+        "k-theory-pushforward"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "144-r2": {
+      "techniques": [
+        "pde-potential",
+        "series-asymptotics"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flagSuspect": "not-the-stated-theorem"
+    },
+    "144-r3": {
+      "techniques": [
+        "k-theory-pushforward"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "144-r4": {
+      "techniques": [],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "incomplete"
+    },
+    "145-r1": {
+      "techniques": [
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "145-r2": {
+      "techniques": [],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "derivesFromTheorem": true
+    },
+    "145-r3": {
+      "techniques": [
+        "polynomial-methods",
+        "linear-algebra"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "incomplete"
+    },
+    "145-r4": {
+      "techniques": [
+        "euler-product-zeta"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection",
+      "derivesFromTheorem": true
+    },
+    "146-r1": {
+      "techniques": [
+        "move-invariance"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "146-r2": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "derivesFromTheorem": true
+    },
+    "146-r3": {
+      "techniques": [
+        "ideal-module-structure"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "146-r4": {
+      "techniques": [],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flag": "incomplete"
+    },
+    "147-r1": {
+      "techniques": [
+        "ode-uniqueness"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "147-r2": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "147-r3": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true,
+      "flag": "near-duplicate"
+    },
+    "148-r1": {
+      "techniques": [
+        "pde-potential"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "148-r2": {
+      "techniques": [
+        "orthogonal-decomposition"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "148-r3": {
+      "techniques": [
+        "pde-potential"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "intersection"
+    },
+    "149-r1": {
+      "techniques": [
+        "winding-degree",
+        "homology-cohomology"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "149-r2": {
+      "techniques": [
+        "triangulation-euler",
+        "compactness"
+      ],
+      "borrowsFrom": "Combinatorics",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "derivesFromTheorem": true
+    },
+    "149-r3": {
+      "techniques": [
+        "homology-cohomology",
+        "topological-structure"
+      ],
+      "borrowsFrom": "Topology",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full",
+      "flag": "near-duplicate"
+    },
+    "150-r1": {
+      "techniques": [
+        "variational-extremum"
+      ],
+      "borrowsFrom": "Analysis",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review"
+    },
+    "150-r2": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "resolved-by-review",
+      "flagSuspect": "near-duplicate"
+    },
+    "150-r3": {
+      "techniques": [
+        "differential-forms"
+      ],
+      "borrowsFrom": "Geometry",
+      "status": "inferred",
+      "taggers": 2,
+      "agreement": "full"
+    },
+    "4-r1": {
+      "techniques": [
+        "modular-arithmetic",
+        "explicit-construction"
+      ],
+      "borrowsFrom": "Number theory",
+      "status": "inferred",
+      "taggers": 1,
+      "agreement": "single"
+    },
+    "4-r2": {
+      "techniques": [
+        "polynomial-methods",
+        "modular-arithmetic"
+      ],
+      "borrowsFrom": "Algebra",
+      "status": "inferred",
+      "taggers": 1,
+      "agreement": "single"
+    }
+  }
+}
