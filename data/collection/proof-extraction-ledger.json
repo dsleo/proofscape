@@ -162,7 +162,7 @@
       "routeId": "1-r4",
       "entryId": 1,
       "entryName": "Pythagorean theorem",
-      "routeTitle": "algebraic coordinates or vectors. Euclid also gives a broader similar-figures version in VI.31",
+      "routeTitle": "algebraic coordinates or vectors",
       "status": "assistant-reconstruction",
       "proofSketch": "Place the right-angle vertex at 0 and legs as perpendicular vectors u,v. The hypotenuse vector is u−v, so ‖u−v‖²=‖u‖²+‖v‖²−2u·v=‖u‖²+‖v‖² because u·v=0.",
       "references": [
@@ -457,7 +457,7 @@
       "routeId": "2-r4",
       "entryId": 2,
       "entryName": "Irrationality of √2",
-      "routeTitle": "rational-root theorem. The geometric/descent sources explicitly compare routes",
+      "routeTitle": "rational-root theorem",
       "status": "assistant-reconstruction",
       "proofSketch": "Use the rational-root theorem: if √2 is a rational root of X²−2, in lowest terms its numerator divides 2 and denominator divides 1; the only candidates ±1,±2 fail when squared. More generally, the rational-root theorem's divisibility conclusion gives the contradiction directly.",
       "references": [
@@ -672,7 +672,7 @@
       "routeId": "3-r4",
       "entryId": 3,
       "entryName": "Infinitely many primes",
-      "routeTitle": "analytic counting arguments. A historical survey catalogs about 200 variants",
+      "routeTitle": "analytic counting arguments",
       "status": "assistant-reconstruction",
       "proofSketch": "For s>1, unique factorization gives ζ(s)=∏ₚ(1−p^(−s))⁻¹. If there were finitely many primes, the right side would remain bounded as s↓1, whereas ζ(s)=Σn⁻ˢ diverges by comparison with ∫₁∞x⁻ˢdx. Contradiction. This is an analytic Euler-product proof and overlaps route 3-r2; it is not a distinct strategy unless the ζ-function argument is developed separately.",
       "references": [
@@ -756,7 +756,7 @@
       "routeId": "4-r2",
       "entryId": 4,
       "entryName": "Infinitely many primes in an arithmetic progression (selected cases)",
-      "routeTitle": "algebraic norms/cyclotomic factors for suitable progressions. State the progression and hypotheses precisely",
+      "routeTitle": "algebraic norms/cyclotomic factors for suitable progressions",
       "status": "assistant-reconstruction",
       "proofSketch": "For a suitable cyclotomic value Φ_n(A), any prime divisor not dividing nA has multiplicative order n modulo q, hence n|(q−1), so q≡1 (mod n). Taking A arbitrarily large yields new such prime divisors; exclude finitely many exceptional divisors by choosing A. This establishes infinitely many primes ≡1 mod n, not arbitrary reduced residue classes.",
       "references": [
@@ -3741,7 +3741,7 @@
       "routeId": "26-r3",
       "entryId": 26,
       "entryName": "Fundamental theorem of algebra",
-      "routeTitle": "algebraic proof via symmetric polynomials/Galois theory. MIT topology notes explicitly contrast the analytic and topological routes",
+      "routeTitle": "algebraic proof via symmetric polynomials/Galois theory",
       "status": "assistant-reconstruction",
       "proofSketch": "A nonconstant complex polynomial has |P(z)|→∞ as |z|→∞, so |P| attains a global minimum. If the minimum at z₀ were nonzero, write P(z₀+w)=a₀+aₖwᵏ+… with first nonzero k≥1. Choose w so aₖwᵏ/a₀ is small negative real; higher terms are lower order, making |P(z₀+w)|<|a₀|, contradiction.",
       "references": [
@@ -5043,7 +5043,7 @@
       "routeId": "36-r3",
       "entryId": 36,
       "entryName": "Basel sum Σ1/n²=π²/6",
-      "routeTitle": "telescoping trigonometric series. Four routes are collected in *Proofs from THE BOOK*",
+      "routeTitle": "telescoping trigonometric series",
       "status": "assistant-reconstruction",
       "proofSketch": "Use the telescoping identity 1/n²=Σ_{k=n}∞(1/k−1/(k+1))? This identity is false (the RHS equals 1/n). So that is not a valid proof route. A valid trigonometric telescoping route uses cotangent partial fractions: cot x=1/x−2xΣₙ≥1(1/(n²π²−x²)); compare x-coefficients near 0 with cot x=1/x−x/3+… to obtain Σ1/n²=π²/6.",
       "references": [
@@ -6313,7 +6313,7 @@
       "routeId": "45-r3",
       "entryId": 45,
       "entryName": "Sylow theorems",
-      "routeTitle": "polynomial/permutation representation constructions. MIT notes exhibit standard and nonstandard existence proofs",
+      "routeTitle": "polynomial/permutation representation constructions",
       "status": "assistant-reconstruction",
       "proofSketch": "Embed a candidate p-subgroup into symmetric group action on cosets/subsets; orbit-stabilizer forces maximal p-power stabilizer. Conjugating the action identifies Sylow subgroups and congruence. This is still the group-action method; it is not genuinely separate from route 1 unless a different construction is specified.",
       "references": [
@@ -7042,7 +7042,7 @@
       "routeId": "49-r3",
       "entryId": 49,
       "entryName": "Quadratic reciprocity",
-      "routeTitle": "Jacobi sums/Gaussian sums. *Proofs from THE BOOK* includes distinct proofs",
+      "routeTitle": "Jacobi sums/Gaussian sums",
       "status": "assistant-reconstruction",
       "proofSketch": "Use the Jacobi/Gauss sum G(χ)=Σₓ mod p e^(2πix²/p) and evaluate G(χ)²=χ(−1)p, comparing the evaluations for p and q in the cyclotomic field to get the reciprocity sign. This route requires nontrivial Gauss-sum evaluation; it is not interchangeable with the elementary lattice count.",
       "references": [
@@ -7891,7 +7891,7 @@
       "routeId": "58-r3",
       "entryId": 58,
       "entryName": "Euler characteristic of a closed orientable surface",
-      "routeTitle": "Gauss–Bonnet and curvature. The genus-g form χ=2−2g extends the planar/polyhedral formula in #24",
+      "routeTitle": "Gauss–Bonnet and curvature",
       "status": "assistant-reconstruction",
       "proofSketch": "For a smooth closed oriented surface, Gauss–Bonnet gives ∫K dA=2πχ. For genus g, Gauss–Bonnet plus the classification/genus computation yields χ=2−2g. This is a curvature characterization, not by itself a proof of the classification formula.",
       "references": [
@@ -7998,7 +7998,7 @@
       "routeId": "59-r3",
       "entryId": 59,
       "entryName": "Five-color theorem for planar graphs",
-      "routeTitle": "induction after contracting a configuration. *Proofs from THE BOOK* treats this",
+      "routeTitle": "induction after contracting a configuration",
       "status": "assistant-reconstruction",
       "proofSketch": "Reduce a minimal counterexample by identifying/contracting a reducible configuration and then extend a coloring back. The standard five-color proof's critical reduction is degree ≤5 plus Kempe recoloring; this route is not independent of that argument unless a specific reducible-configuration proof is supplied.",
       "references": [],
@@ -8800,7 +8800,7 @@
       "routeId": "69-r3",
       "entryId": 69,
       "entryName": "Hahn–Banach theorem",
-      "routeTitle": "separation of convex sets. Distinguish real/complex and normed/locally convex forms",
+      "routeTitle": "separation of convex sets",
       "status": "assistant-reconstruction",
       "proofSketch": "Separate a point from an open convex set by applying Hahn–Banach to the Minkowski gauge of its translate (locally convex version uses continuous seminorms). This yields a continuous linear functional separating them. This proves a separation corollary of Hahn–Banach, not an independent derivation of the extension theorem.",
       "references": [],
@@ -9798,7 +9798,7 @@
       "routeId": "83-r3",
       "entryId": 83,
       "entryName": "Jordan curve theorem (plane)",
-      "routeTitle": "combinatorial planar graph arguments for polygonal curves. State the curve regularity/version",
+      "routeTitle": "combinatorial planar graph arguments for polygonal curves",
       "status": "assistant-reconstruction",
       "proofSketch": "For polygonal simple closed curves, planar graph Euler formula and face traversal show exactly two complementary faces, one bounded and one unbounded, with the curve as their common boundary. Extension from polygons to arbitrary Jordan curves requires a separate approximation theorem.",
       "references": [
@@ -10761,7 +10761,7 @@
       "routeId": "96-r3",
       "entryId": 96,
       "entryName": "Prime number theorem",
-      "routeTitle": "elementary Selberg–Erdős proof. This is an example of distinct proof programs with different prerequisites, not a school-level entry",
+      "routeTitle": "elementary Selberg–Erdős proof",
       "status": "assistant-reconstruction",
       "proofSketch": "Selberg's symmetry formula gives an elementary relation involving ψ(x) and ψ(x/n); positivity bounds the error and a contradiction argument proves ψ(x)~x without complex analysis. The full Selberg–Erdős proof is lengthy; this is only its proof spine, not a complete proof.",
       "references": [],
@@ -10791,7 +10791,7 @@
       "routeId": "97-r2",
       "entryId": 97,
       "entryName": "Dirichlet's theorem on primes in arithmetic progressions",
-      "routeTitle": "algebraic number fields/ideal classes in selected generalizations. State the full coprimality hypothesis and do not conflate proofs of special progressions with the theorem",
+      "routeTitle": "algebraic number fields/ideal classes in selected generalizations",
       "status": "assistant-reconstruction",
       "proofSketch": "In K=Q(ζ_q), primes p≡a mod q have prescribed Frobenius element in Gal(K/Q). Chebotarev gives positive density conjugacy classes; in this abelian extension each element is a class, yielding infinitely many primes in each reduced residue class. This general theorem route is much deeper and assumes Chebotarev. A selected generalization uses class field theory/Chebotarev; it must retain (a,q)=1 for the classical theorem.",
       "references": [],
@@ -10868,7 +10868,7 @@
       "routeId": "98-r3",
       "entryId": 98,
       "entryName": "Jordan canonical form (over an algebraically closed field)",
-      "routeTitle": "construct Jordan chains by kernels of powers. MathOverflow points to several distinct expositions, including a complex-analysis approach",
+      "routeTitle": "construct Jordan chains by kernels of powers",
       "status": "assistant-reconstruction",
       "proofSketch": "For N=A−λI, compare dimensions ker N^j. The increments count blocks of size at least j; choose vectors whose chains extend through successive kernels, then prove their chains are independent and span. Repeat across generalized eigenspaces. Needs eigenvalue splitting.",
       "references": [
@@ -11442,7 +11442,7 @@
       "routeId": "102-r4",
       "entryId": 102,
       "entryName": "Szemerédi's theorem (positive-density subsets of integers contain arbitrarily long arithmetic progressions)",
-      "routeTitle": "hypergraph regularity/density Hales–Jewett. State that the routes prove the same theorem or a stated equivalent formulation",
+      "routeTitle": "hypergraph regularity/density Hales–Jewett",
       "status": "assistant-reconstruction",
       "proofSketch": "Encode k-term progressions as edges in a multipartite hypergraph. Hypergraph regularity plus a counting lemma forces a configuration in any positive-density set; equivalently, density Hales–Jewett yields combinatorial lines, which map to progressions. The original theorem and density-HJ are related formulations, not literally identical statements.",
       "references": [
@@ -11994,7 +11994,7 @@
       "routeId": "105-r3",
       "entryId": 105,
       "entryName": "Desargues' theorem (projective geometry)",
-      "routeTitle": "derive from Pappus in a Desarguesian plane. State the projective-plane assumptions",
+      "routeTitle": "derive from Pappus in a Desarguesian plane",
       "status": "assistant-reconstruction",
       "proofSketch": "In a Desarguesian projective plane, coordinatize points by a division ring and express the incidences as linear equations; the concurrency condition implies the determinant condition for collinearity. Pappus is a separate stronger incidence law in general and does not by itself imply Desargues in arbitrary projective planes; this route needs a stated Desarguesian/coordinatizable assumption.",
       "references": [
@@ -12669,7 +12669,7 @@
       "routeId": "109-r3",
       "entryId": 109,
       "entryName": "Finite Ramsey theorem (classical finite-set form)",
-      "routeTitle": "product/compactness argument for infinite Ramsey followed by finite extraction (check exact formulation)",
+      "routeTitle": "product/compactness argument for infinite Ramsey followed by finite extraction",
       "status": "assistant-reconstruction",
       "proofSketch": "Infinite Ramsey says every finite coloring of [N]^r has an infinite monochromatic subset. If no finite N sufficed for a target size, compactness/Kőnig’s lemma on the finitely branching tree of compatible partial colorings would produce a coloring of [N]^r with no target monochromatic set, contradicting infinite Ramsey.",
       "references": [
@@ -13737,7 +13737,7 @@
       "routeId": "117-r3",
       "entryId": 117,
       "entryName": "Radon transform injectivity (compactly supported smooth functions)",
-      "routeTitle": "moments/polynomial-density arguments. A MathOverflow answer links a lecture-note survey of proofs",
+      "routeTitle": "moments/polynomial-density arguments",
       "status": "assistant-reconstruction",
       "proofSketch": "If Rf=0, every directional moment ∫t^m Rf(θ,t)dt equals ∫(x·θ)^m f(x)dx=0. As θ varies, these are all homogeneous moments, so every polynomial pairs to zero with f. Polynomials are dense on a compact set containing supp f; continuity then forces f=0.",
       "references": [
@@ -14024,7 +14024,7 @@
       "routeId": "120-r3",
       "entryId": 120,
       "entryName": "Minkowski inequality for Lᵖ norms",
-      "routeTitle": "interpolate from the triangle inequality for simple functions and pass by approximation. State the measure-space and p-range assumptions",
+      "routeTitle": "interpolate from the triangle inequality for simple functions and pass by approximation",
       "status": "assistant-reconstruction",
       "proofSketch": "First take simple functions s,t on a common finite measurable partition E_1,…,E_N: then ‖s+t‖_p=(Σμ(E_j)|s_j+t_j|^p)^{1/p} is a weighted ℓ^p norm on ℝ^N, where Minkowski is the finite-sum inequality. For general f,g choose simple 0≤s_n↑|f| and 0≤t_n↑|g|; then ‖s_n+t_n‖_p≤‖s_n‖_p+‖t_n‖_p≤‖f‖_p+‖g‖_p, and monotone convergence gives ‖|f|+|g|‖_p≤‖f‖_p+‖g‖_p, which dominates ‖f+g‖_p. The finite-dimensional inequality still needs its own proof (convexity or Hölder), so this route reduces the problem rather than replacing the argument.",
       "references": [
@@ -14117,7 +14117,7 @@
       "routeId": "121-r3",
       "entryId": 121,
       "entryName": "Riesz–Markov–Kakutani representation theorem (compact Hausdorff version)",
-      "routeTitle": "duality/measure representation from continuous functions. State the exact real/complex and locally compact variants",
+      "routeTitle": "duality/measure representation from continuous functions",
       "status": "assistant-reconstruction",
       "proofSketch": "Extend L to lower semicontinuous h≥0 by L(h)=sup{L(f): f∈C(K), 0≤f≤h}; Dini's theorem gives additivity and continuity along increasing nets. Set μ*(A)=inf{L(1_U): U open, U⊇A}, an outer measure, and show via Carathéodory's criterion that Borel sets are measurable and that μ is regular. Approximating f∈C(K) uniformly by finite sums of scaled indicators of open level sets gives L(f)=∫f dμ. This is the Bourbaki-style route through semicontinuous functions; ‖L‖=L(1) for positive L, so the measure is finite.",
       "references": [
@@ -14601,7 +14601,7 @@
       "routeId": "125-r3",
       "entryId": 125,
       "entryName": "Fourier inversion theorem (standard integrable/smooth formulations)",
-      "routeTitle": "Plancherel plus density. State the hypotheses for each form",
+      "routeTitle": "Plancherel plus density",
       "status": "assistant-reconstruction",
       "proofSketch": "On Schwartz functions the Fourier transform is an L² isometry by the double-integral/Parseval identity, first justified with Gaussian damping and Fubini. Schwartz functions are dense in L², so the isometry extends uniquely to a unitary operator on L²; this proves the Plancherel formulation, while pointwise inversion needs additional hypotheses.",
       "references": [
@@ -16135,7 +16135,7 @@
       "routeId": "140-r3",
       "entryId": 140,
       "entryName": "Gödel's incompleteness theorem (first theorem, standard effective theories)",
-      "routeTitle": "computability/recursion-theoretic formulations. Treat the precise theory hypotheses as part of the theorem",
+      "routeTitle": "computability/recursion-theoretic formulations",
       "status": "assistant-reconstruction",
       "proofSketch": "Recursion-theoretic form: suppose T is consistent, effectively axiomatized and represents all recursive functions, so true Σ₁ sentences are provable. Take the recursively inseparable r.e. sets A={e: φ_e(e)=0} and B={e: φ_e(e)=1}. If T decided every sentence 'φ_e(e)=0', the set {e: T⊢'φ_e(e)=0'} would be recursive (search for a proof of the sentence or its negation), would contain A by Σ₁-completeness, and would be disjoint from B by consistency, separating A from B, which is impossible. So some sentence of this form is undecided by T. This gives incompleteness but not the explicit Gödel sentence or the second incompleteness theorem.",
       "references": [
@@ -16228,7 +16228,7 @@
       "routeId": "141-r3",
       "entryId": 141,
       "entryName": "Fundamental theorem of arithmetic for algebraic number fields fails in general; ideal factorization restores uniqueness",
-      "routeTitle": "geometry of numbers for class-group consequences. Include only as a theorem about ideals, not as a second proof of integer UFD",
+      "routeTitle": "geometry of numbers for class-group consequences",
       "status": "assistant-reconstruction",
       "proofSketch": "Minkowski’s convex body theorem bounds the norm of an ideal-class representative, proving the class group is finite and giving consequences such as criteria for non-UFD behavior. It does not prove unique factorization of ideals; classify this as a consequence/application, not as a second proof route for ideal factorization.",
       "references": [
@@ -16508,7 +16508,7 @@
       "routeId": "143-r3",
       "entryId": 143,
       "entryName": "Uniformization theorem for simply connected Riemann surfaces",
-      "routeTitle": "modern Ricci-flow uniformization. The theorem's precise sphere/plane/disk classification and hypotheses matter",
+      "routeTitle": "modern Ricci-flow uniformization",
       "status": "assistant-reconstruction",
       "proofSketch": "Ricci-flow route (Hamilton, Chow) for the compact case. On a compact surface evolve the metric by the normalized Ricci flow ∂_tg=(r̄−R)g. Hamilton proved long-time existence and convergence to a constant-curvature metric when the Euler characteristic is ≤0, and Chow completed the case χ>0 (the sphere). The limit metric is conformal to the original, and the universal cover of a constant-curvature surface is the sphere, the plane or the disk with its model metric. Non-compact simply connected surfaces such as ℂ and 𝔻 are not covered by this sketch.",
       "references": [
@@ -17024,7 +17024,7 @@
       "routeId": "146-r4",
       "entryId": 146,
       "entryName": "Jones polynomial is an invariant of links",
-      "routeTitle": "Chern–Simons/topological quantum field theory. State the exact normalization and link equivalence",
+      "routeTitle": "Chern–Simons/topological quantum field theory",
       "status": "assistant-reconstruction",
       "proofSketch": "Witten's heuristic: take SU(2) Chern–Simons theory at level k and define the invariant of a link as the path-integral expectation of Wilson loops in the fundamental representation, with q=e^{2πi/(k+2)}. Isotopy invariance is expected because the action is metric-independent and gauge invariant, so the expectation value depends on the link only up to a framing correction (the writhe normalization). The skein relation comes from the two-dimensional space of conformal blocks of the four-punctured sphere, which yields the Jones polynomial V(t) with t=q^{±1}. The path integral itself is not mathematically defined; the rigorous version is the Reshetikhin–Turaev construction, essentially the quantum-group route.",
       "references": [
@@ -17396,7 +17396,7 @@
       "routeId": "150-r3",
       "entryId": 150,
       "entryName": "Noether's theorem (continuous symmetry yields a conserved quantity)",
-      "routeTitle": "current conservation via differential forms. Specify the finite-dimensional or field-theoretic version",
+      "routeTitle": "current conservation via differential forms",
       "status": "assistant-reconstruction",
       "proofSketch": "Field-theoretic route with differential forms. Invariance of the action up to a boundary term means 𝓛_{pr v}(L dⁿx)=dη for an (n−1)-form η. The first variation formula gives 𝓛_{pr v}(L dⁿx)=E(L)·Q dⁿx+dθ, where E(L) are the Euler–Lagrange expressions, Q the characteristic of v, and θ the boundary form. On solutions E(L)=0, so d(θ−η)=0: J=θ−η is a closed (n−1)-form, the Noether current. Stokes' theorem gives conservation of its flux through time slices; for n=1 it reduces to dQ/dt=0.",
       "references": [

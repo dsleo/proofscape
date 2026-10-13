@@ -9,7 +9,7 @@ type Entry = { id: number; name: string; statement: string; description: string;
 type Catalog = { entryCount: number; approachRecordCount: number; entries: Entry[]; sources: Record<string, SourceRecord> }
 
 const catalogUrl = `${import.meta.env.BASE_URL}data/collection/historical-proof-catalog.json`
-const fieldOptions = ['Algebra', 'Analysis', 'Combinatorics', 'Geometry', 'Logic & foundations', 'Number theory', 'Probability', 'Topology', 'General']
+const fieldOptions = ['Algebra', 'Analysis', 'Combinatorics', 'Geometry', 'Logic & foundations', 'Number theory', 'Probability', 'Topology']
 const levelOptions = ['School', 'Undergraduate', 'Graduate']
 const displayTitles: Record<number, string> = {
   2: String.raw`Irrationality of \(\sqrt{2}\)`,

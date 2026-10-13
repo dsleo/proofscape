@@ -98,7 +98,7 @@
         },
         {
           "id": "1-r4",
-          "title": "algebraic coordinates or vectors. Euclid also gives a broader similar-figures version in VI.31",
+          "title": "algebraic coordinates or vectors",
           "proofSketch": "Place the right-angle vertex at 0 and legs as perpendicular vectors u,v. The hypotenuse vector is u−v, so ‖u−v‖²=‖u‖²+‖v‖²−2u·v=‖u‖²+‖v‖² because u·v=0.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -154,13 +154,13 @@
           ],
           "extractionNotes": "Proof text is an independently composed reconstruction, not copied/extracted from the cited source. References marked contextual support the theorem/topic but were not verified to contain this exact route. Citation audit: attached source(s) are contextual only; I did not verify that any contains this exact proof approach. Exact-route citation work remains unresolved. Do not present this route as source-derived. Review: The title combines a vector proof with Euclid VI.31, which is the similar-figures theorem, not a vector proof. Split into separate routes before treating the two as one approach. Excerpt pass: routeMatch=mismatch; reuseStatus=unavailable.",
           "verbatimStatus": "route-not-found",
-          "verbatimNote": "Searched Wikipedia, ProofWiki, cut-the-knot's collection, the Euclid page and the UBC page. They contain the (a+b)^2 rearrangement algebra, similarity and Euclid proofs, but no proof that places the legs as perpendicular vectors and expands the squared norm of the hypotenuse. Wikipedia's 'Inner product spaces' section only states the generalization ||v+w||^2=||v||^2+||w||^2 for orthogonal v,w. Source checked: Wikipedia, 'Pythagorean theorem' (and ProofWiki 'Pythagoras's Theorem') - no vector proof of the triangle theorem found, Section 'Inner product spaces' states the vector identity only as a generalization."
+          "verbatimNote": "Searched Wikipedia, ProofWiki, cut-the-knot's collection, the Euclid page and the UBC page. They contain the (a+b)^2 rearrangement algebra, similarity and Euclid proofs, but no proof that places the legs as perpendicular vectors and expands the squared norm of the hypotenuse. Wikipedia's 'Inner product spaces' section only states the generalization ||v+w||^2=||v||^2+||w||^2 for orthogonal v,w. Source checked: Wikipedia, 'Pythagorean theorem' (and ProofWiki 'Pythagoras's Theorem') - no vector proof of the triangle theorem found, Section 'Inner product spaces' states the vector identity only as a generalization.",
+          "routeNote": "Euclid also gives a broader similar-figures version in VI.31"
         }
       ],
       "level": "School",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Algebra",
         "Geometry"
       ],
       "priority": "A",
@@ -275,7 +275,7 @@
         },
         {
           "id": "2-r4",
-          "title": "rational-root theorem. The geometric/descent sources explicitly compare routes",
+          "title": "rational-root theorem",
           "proofSketch": "Use the rational-root theorem: if √2 is a rational root of X²−2, in lowest terms its numerator divides 2 and denominator divides 1; the only candidates ±1,±2 fail when squared. More generally, the rational-root theorem's divisibility conclusion gives the contradiction directly.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -296,14 +296,15 @@
           ],
           "extractionNotes": "Proof text is an independently composed reconstruction, not copied/extracted from the cited source. References marked contextual support the theorem/topic but were not verified to contain this exact route. Citation audit: attached source(s) are contextual only; I did not verify that any contains this exact proof approach. Exact-route citation work remains unresolved. Do not present this route as source-derived. Review: The rational-root theorem argument is a short algebraic divisibility proof closely related to parity/lowest-terms; it is not a wholly independent strategy.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "The geometric/descent sources explicitly compare routes"
         }
       ],
       "level": "School",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Geometry",
-        "Number theory"
+        "Number theory",
+        "Geometry"
       ],
       "priority": "A",
       "sourceIds": [
@@ -404,7 +405,7 @@
         },
         {
           "id": "3-r4",
-          "title": "analytic counting arguments. A historical survey catalogs about 200 variants",
+          "title": "analytic counting arguments",
           "proofSketch": "For s>1, unique factorization gives ζ(s)=∏ₚ(1−p^(−s))⁻¹. If there were finitely many primes, the right side would remain bounded as s↓1, whereas ζ(s)=Σn⁻ˢ diverges by comparison with ∫₁∞x⁻ˢdx. Contradiction. This is an analytic Euler-product proof and overlaps route 3-r2; it is not a distinct strategy unless the ζ-function argument is developed separately.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -418,15 +419,14 @@
           ],
           "extractionNotes": "Proof text is an independently composed reconstruction, not copied/extracted from the cited source. References marked contextual support the theorem/topic but were not verified to contain this exact route. This approach is closely related to another listed route or imports its key theorem; do not count it as a fully independent strategy without further source-level justification. The zeta Euler-product proof is valid but overlaps 3-r2; count it as a refinement/variant rather than an independent proof family unless a distinct analytic source supports it. The zeta Euler-product version in this sketch is valid but is a variant of the reciprocal-prime/Euler-product strategy in 3-r2, not an independent proof family. Citation audit: attached source(s) are contextual only; I did not verify that any contains this exact proof approach. Exact-route citation work remains unresolved. Do not present this route as source-derived. Review: This analytic Euler-product proof overlaps 3-r2; count it as a refinement/variant unless a distinct analytic route is sourced.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "A historical survey catalogs about 200 variants"
         }
       ],
       "level": "School–graduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Analysis",
-        "Number theory",
-        "Topology"
+        "Number theory"
       ],
       "priority": "A",
       "sourceIds": [
@@ -468,7 +468,7 @@
         },
         {
           "id": "4-r2",
-          "title": "algebraic norms/cyclotomic factors for suitable progressions. State the progression and hypotheses precisely",
+          "title": "algebraic norms/cyclotomic factors for suitable progressions",
           "proofSketch": "For a suitable cyclotomic value Φ_n(A), any prime divisor not dividing nA has multiplicative order n modulo q, hence n|(q−1), so q≡1 (mod n). Taking A arbitrarily large yields new such prime divisors; exclude finitely many exceptional divisors by choosing A. This establishes infinitely many primes ≡1 mod n, not arbitrary reduced residue classes.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -482,7 +482,8 @@
           ],
           "extractionNotes": "Proof text is an independently composed reconstruction, not copied/extracted from the cited source. References marked contextual support the theorem/topic but were not verified to contain this exact route. Statement is only selected special progressions. This route does not prove Dirichlet’s theorem for every reduced residue class; route 3 is explicitly a scope boundary, not a proof. Citation audit: attached source(s) are contextual only; I did not verify that any contains this exact proof approach. Exact-route citation work remains unresolved. Do not present this route as source-derived. Review: The cyclotomic norm sketch is an outline; the order of a modulo a prime divisor and exceptional divisors must be justified for each stated progression.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State the progression and hypotheses precisely"
         },
         {
           "id": "4-r3",
@@ -513,8 +514,6 @@
       "level": "Undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Algebra",
-        "Analysis",
         "Number theory"
       ],
       "priority": "B",
@@ -613,7 +612,7 @@
       "level": "School",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Number theory"
+        "Combinatorics"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -691,7 +690,7 @@
       "level": "School",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Number theory"
+        "Combinatorics"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -869,9 +868,7 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Analysis",
-        "Geometry",
-        "Number theory"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [
@@ -1050,8 +1047,8 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Analysis",
-        "Geometry"
+        "Geometry",
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -1214,7 +1211,6 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Algebra",
         "Geometry"
       ],
       "priority": "B",
@@ -1431,9 +1427,8 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Algebra",
-        "Combinatorics",
-        "Number theory"
+        "Number theory",
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -1493,7 +1488,6 @@
       "level": "Undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Algebra",
         "Number theory"
       ],
       "priority": "B",
@@ -1572,7 +1566,6 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Algebra",
         "Number theory"
       ],
       "priority": "B",
@@ -1651,6 +1644,7 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
+        "Number theory",
         "Algebra"
       ],
       "priority": "B",
@@ -1739,8 +1733,8 @@
       "level": "Undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Algebra",
-        "Number theory"
+        "Number theory",
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -1818,8 +1812,7 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Analysis",
-        "Number theory"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -1975,7 +1968,6 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Geometry",
         "Number theory"
       ],
       "priority": "B",
@@ -2054,9 +2046,8 @@
       "level": "Undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Combinatorics",
         "Geometry",
-        "Topology"
+        "Combinatorics"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -2159,9 +2150,8 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Combinatorics",
-        "Geometry",
-        "Topology"
+        "Topology",
+        "Combinatorics"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -2284,7 +2274,8 @@
       "level": "School–undergraduate",
       "section": "Secondary school and early proof courses",
       "areas": [
-        "Logic & foundations"
+        "Logic & foundations",
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -2357,7 +2348,7 @@
         },
         {
           "id": "26-r3",
-          "title": "algebraic proof via symmetric polynomials/Galois theory. MIT topology notes explicitly contrast the analytic and topological routes",
+          "title": "algebraic proof via symmetric polynomials/Galois theory",
           "proofSketch": "A nonconstant complex polynomial has |P(z)|→∞ as |z|→∞, so |P| attains a global minimum. If the minimum at z₀ were nonzero, write P(z₀+w)=a₀+aₖwᵏ+… with first nonzero k≥1. Choose w so aₖwᵏ/a₀ is small negative real; higher terms are lower order, making |P(z₀+w)|<|a₀|, contradiction.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -2378,7 +2369,8 @@
           ],
           "extractionNotes": "Proof text is an independently composed reconstruction, not copied/extracted from the cited source. References marked contextual support the theorem/topic but were not verified to contain this exact route. Citation audit: attached source(s) are contextual only; I did not verify that any contains this exact proof approach. Exact-route citation work remains unresolved. Do not present this route as source-derived.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "MIT topology notes explicitly contrast the analytic and topological routes"
         }
       ],
       "level": "Undergraduate–graduate",
@@ -2555,7 +2547,7 @@
       "level": "School–undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "General"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -2633,9 +2625,7 @@
       "level": "School–undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Analysis",
-        "Combinatorics",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -2713,9 +2703,7 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Analysis",
-        "Combinatorics",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -3112,7 +3100,6 @@
       "level": "School–undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
         "Analysis"
       ],
       "priority": "B",
@@ -3185,7 +3172,7 @@
         },
         {
           "id": "36-r3",
-          "title": "telescoping trigonometric series. Four routes are collected in *Proofs from THE BOOK*",
+          "title": "telescoping trigonometric series",
           "proofSketch": "Use the telescoping identity 1/n²=Σ_{k=n}∞(1/k−1/(k+1))? This identity is false (the RHS equals 1/n). So that is not a valid proof route. A valid trigonometric telescoping route uses cotangent partial fractions: cot x=1/x−2xΣₙ≥1(1/(n²π²−x²)); compare x-coefficients near 0 with cot x=1/x−x/3+… to obtain Σ1/n²=π²/6.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -3206,7 +3193,8 @@
           ],
           "extractionNotes": "Proof text is an independently composed reconstruction, not copied/extracted from the cited source. References marked contextual support the theorem/topic but were not verified to contain this exact route. Citation audit: attached source(s) are contextual only; I did not verify that any contains this exact proof approach. Exact-route citation work remains unresolved. Do not present this route as source-derived. Review: Cotangent partial fractions and the sine product are closely related analytic product expansions; flag as related to 36-r1.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "Four routes are collected in *Proofs from THE BOOK*"
         }
       ],
       "level": "Undergraduate",
@@ -3292,7 +3280,7 @@
       "level": "School–undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "General"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -3448,8 +3436,7 @@
       "level": "Undergraduate–graduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
-        "Combinatorics"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -3690,7 +3677,7 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "General"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -3872,9 +3859,7 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Number theory"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -3949,7 +3934,7 @@
         },
         {
           "id": "45-r3",
-          "title": "polynomial/permutation representation constructions. MIT notes exhibit standard and nonstandard existence proofs",
+          "title": "polynomial/permutation representation constructions",
           "proofSketch": "Embed a candidate p-subgroup into symmetric group action on cosets/subsets; orbit-stabilizer forces maximal p-power stabilizer. Conjugating the action identifies Sylow subgroups and congruence. This is still the group-action method; it is not genuinely separate from route 1 unless a different construction is specified.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -3977,7 +3962,8 @@
           ],
           "extractionNotes": "Proof text is an independently composed reconstruction, not copied/extracted from the cited source. References marked contextual support the theorem/topic but were not verified to contain this exact route. This approach is closely related to another listed route or imports its key theorem; do not count it as a fully independent strategy without further source-level justification. Citation audit: attached source(s) are contextual only; I did not verify that any contains this exact proof approach. Exact-route citation work remains unresolved. Do not present this route as source-derived. Review: The route name combines polynomial and permutation constructions; identify one precise construction before treating it as a single proof.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "MIT notes exhibit standard and nonstandard existence proofs"
         }
       ],
       "level": "Undergraduate",
@@ -4063,8 +4049,7 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
-        "Analysis"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -4380,7 +4365,7 @@
         },
         {
           "id": "49-r3",
-          "title": "Jacobi sums/Gaussian sums. *Proofs from THE BOOK* includes distinct proofs",
+          "title": "Jacobi sums/Gaussian sums",
           "proofSketch": "Use the Jacobi/Gauss sum G(χ)=Σₓ mod p e^(2πix²/p) and evaluate G(χ)²=χ(−1)p, comparing the evaluations for p and q in the cyclotomic field to get the reciprocity sign. This route requires nontrivial Gauss-sum evaluation; it is not interchangeable with the elementary lattice count.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -4401,7 +4386,8 @@
           ],
           "extractionNotes": "Proof text is an independently composed reconstruction, not copied/extracted from the cited source. References marked contextual support the theorem/topic but were not verified to contain this exact route. Gauss/Jacobi sum route is a sketch of a substantial argument; full evaluation of the sums is not supplied here. Citation audit: attached source(s) are contextual only; I did not verify that any contains this exact proof approach. Exact-route citation work remains unresolved. Do not present this route as source-derived. Review: The Gauss/Jacobi sum evaluation is only outlined; the nontrivial sum evaluation remains to be supplied.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "*Proofs from THE BOOK* includes distinct proofs"
         }
       ],
       "level": "Undergraduate–graduate",
@@ -4487,8 +4473,7 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
-        "Number theory"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -4566,8 +4551,7 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
-        "Number theory"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -4621,9 +4605,7 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Combinatorics"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -4873,7 +4855,6 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
         "Combinatorics"
       ],
       "priority": "A",
@@ -5009,7 +4990,6 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Analysis",
         "Combinatorics"
       ],
       "priority": "B",
@@ -5068,7 +5048,7 @@
         },
         {
           "id": "58-r3",
-          "title": "Gauss–Bonnet and curvature. The genus-g form χ=2−2g extends the planar/polyhedral formula in #24",
+          "title": "Gauss–Bonnet and curvature",
           "proofSketch": "For a smooth closed oriented surface, Gauss–Bonnet gives ∫K dA=2πχ. For genus g, Gauss–Bonnet plus the classification/genus computation yields χ=2−2g. This is a curvature characterization, not by itself a proof of the classification formula.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -5082,13 +5062,13 @@
           ],
           "extractionNotes": "Authored as a mathematical reconstruction from standard theorem hypotheses; no route-specific primary/textbook proof was verified during this batch. Search attempted against catalog source register and targeted official university/course-note searches; source extraction remains outstanding. Preserve this as a follow-up, not as a source citation. Citation audit: this route remains an assistant reconstruction. The reference is retained, but I did not verify the exact argument in its text during this audit; a theorem/method citation alone is not enough to mark the proof source-extracted.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "The genus-g form χ=2−2g extends the planar/polyhedral formula in #24"
         }
       ],
       "level": "Undergraduate–graduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Geometry",
         "Topology"
       ],
       "priority": "B",
@@ -5154,19 +5134,19 @@
         },
         {
           "id": "59-r3",
-          "title": "induction after contracting a configuration. *Proofs from THE BOOK* treats this",
+          "title": "induction after contracting a configuration",
           "proofSketch": "Reduce a minimal counterexample by identifying/contracting a reducible configuration and then extend a coloring back. The standard five-color proof's critical reduction is degree ≤5 plus Kempe recoloring; this route is not independent of that argument unless a specific reducible-configuration proof is supplied.",
           "sketchStatus": "assistant-reconstruction",
           "references": [],
           "extractionNotes": "Authored as a mathematical reconstruction from standard theorem hypotheses; no route-specific primary/textbook proof was verified during this batch. Search attempted against catalog source register and targeted official university/course-note searches; source extraction remains outstanding. Preserve this as a follow-up, not as a source citation. Search audit: LTCC and MIT five-colour notes were checked; Kempe-chain proof is established and duplicates route 59-r1. No authoritative source for the separately advertised contraction/configuration route was found.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "*Proofs from THE BOOK* treats this"
         }
       ],
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Algebra",
         "Combinatorics"
       ],
       "priority": "A",
@@ -5231,7 +5211,6 @@
       "level": "Undergraduate–graduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Analysis",
         "Probability"
       ],
       "priority": "B",
@@ -5294,7 +5273,6 @@
       "level": "Undergraduate–graduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Analysis",
         "Probability"
       ],
       "priority": "B",
@@ -5373,7 +5351,6 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Analysis",
         "Probability"
       ],
       "priority": "B",
@@ -5445,8 +5422,7 @@
       "level": "Undergraduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Analysis",
-        "Geometry"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -5508,8 +5484,7 @@
       "level": "Undergraduate–graduate",
       "section": "Undergraduate core: algebra, analysis, geometry, and probability",
       "areas": [
-        "Analysis",
-        "Geometry"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -5729,9 +5704,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Combinatorics",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -5809,9 +5782,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -5869,20 +5840,20 @@
         },
         {
           "id": "69-r3",
-          "title": "separation of convex sets. Distinguish real/complex and normed/locally convex forms",
+          "title": "separation of convex sets",
           "proofSketch": "Separate a point from an open convex set by applying Hahn–Banach to the Minkowski gauge of its translate (locally convex version uses continuous seminorms). This yields a continuous linear functional separating them. This proves a separation corollary of Hahn–Banach, not an independent derivation of the extension theorem.",
           "sketchStatus": "assistant-reconstruction",
           "references": [],
           "extractionNotes": "Authored as a mathematical reconstruction from standard theorem hypotheses; no route-specific primary/textbook proof was verified during this batch. Search attempted against catalog source register and targeted official university/course-note searches; source extraction remains outstanding. Preserve this as a follow-up, not as a source citation. Prior candidate was removed from references because its locator did not verify this exact proof strategy.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "Distinguish real/complex and normed/locally convex forms"
         }
       ],
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Geometry"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -5952,7 +5923,6 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
         "Topology"
       ],
       "priority": "B",
@@ -6024,7 +5994,6 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
         "Analysis"
       ],
       "priority": "B",
@@ -6088,8 +6057,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Combinatorics"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -6143,7 +6111,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Combinatorics"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -6197,7 +6165,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -6251,7 +6219,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "General"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -6349,9 +6317,8 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Topology"
+        "Geometry",
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -6421,7 +6388,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -6525,8 +6492,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Geometry"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -6712,7 +6678,6 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Combinatorics",
         "Topology"
       ],
       "priority": "B",
@@ -6775,7 +6740,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "General"
+        "Geometry"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -6825,7 +6790,7 @@
         },
         {
           "id": "83-r3",
-          "title": "combinatorial planar graph arguments for polygonal curves. State the curve regularity/version",
+          "title": "combinatorial planar graph arguments for polygonal curves",
           "proofSketch": "For polygonal simple closed curves, planar graph Euler formula and face traversal show exactly two complementary faces, one bounded and one unbounded, with the curve as their common boundary. Extension from polygons to arbitrary Jordan curves requires a separate approximation theorem.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -6839,14 +6804,13 @@
           ],
           "extractionNotes": "Authored as a mathematical reconstruction from standard theorem hypotheses; no route-specific primary/textbook proof was verified during this batch. Search attempted against catalog source register and targeted official university/course-note searches; source extraction remains outstanding. Preserve this as a follow-up, not as a source citation. Citation audit: this route remains an assistant reconstruction. The reference is retained, but I did not verify the exact argument in its text during this audit; a theorem/method citation alone is not enough to mark the proof source-extracted.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State the curve regularity/version"
         }
       ],
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Combinatorics",
         "Topology"
       ],
       "priority": "B",
@@ -7049,8 +7013,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -7236,9 +7199,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -7293,7 +7254,7 @@
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
         "Algebra",
-        "Number theory"
+        "Topology"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -7348,7 +7309,6 @@
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
         "Algebra",
-        "Combinatorics",
         "Topology"
       ],
       "priority": "B",
@@ -7403,8 +7363,7 @@
       "level": "Undergraduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis"
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -7516,7 +7475,8 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Topology"
+        "Topology",
+        "Geometry"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -7740,7 +7700,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "General"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -7782,19 +7742,21 @@
         },
         {
           "id": "96-r3",
-          "title": "elementary Selberg–Erdős proof. This is an example of distinct proof programs with different prerequisites, not a school-level entry",
+          "title": "elementary Selberg–Erdős proof",
           "proofSketch": "Selberg's symmetry formula gives an elementary relation involving ψ(x) and ψ(x/n); positivity bounds the error and a contradiction argument proves ψ(x)~x without complex analysis. The full Selberg–Erdős proof is lengthy; this is only its proof spine, not a complete proof.",
           "sketchStatus": "assistant-reconstruction",
           "references": [],
           "extractionNotes": "Authored as a mathematical reconstruction from standard theorem hypotheses; no route-specific primary/textbook proof was verified during this batch. Search attempted against catalog source register and targeted official university/course-note searches; source extraction remains outstanding. Preserve this as a follow-up, not as a source citation. Search audit: PNT analytic/Tauberian sources checked only for route 96-r2. Analytic nonvanishing details and full Selberg–Erdős proof remain unverified.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "This is an example of distinct proof programs with different prerequisites, not a school-level entry"
         }
       ],
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Number theory"
+        "Number theory",
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -7826,19 +7788,19 @@
         },
         {
           "id": "97-r2",
-          "title": "algebraic number fields/ideal classes in selected generalizations. State the full coprimality hypothesis and do not conflate proofs of special progressions with the theorem",
+          "title": "algebraic number fields/ideal classes in selected generalizations",
           "proofSketch": "In K=Q(ζ_q), primes p≡a mod q have prescribed Frobenius element in Gal(K/Q). Chebotarev gives positive density conjugacy classes; in this abelian extension each element is a class, yielding infinitely many primes in each reduced residue class. This general theorem route is much deeper and assumes Chebotarev. A selected generalization uses class field theory/Chebotarev; it must retain (a,q)=1 for the classical theorem.",
           "sketchStatus": "assistant-reconstruction",
           "references": [],
           "extractionNotes": "Authored as a mathematical reconstruction from standard theorem hypotheses; no route-specific primary/textbook proof was verified during this batch. Search attempted against catalog source register and targeted official university/course-note searches; source extraction remains outstanding. Preserve this as a follow-up, not as a source citation. Search audit: No direct source for Dirichlet L-function / Chebotarev proof located during this batch; sketch remains reconstruction and must be checked against standard analytic number theory text.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State the full coprimality hypothesis and do not conflate proofs of special progressions with the theorem"
         }
       ],
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
         "Number theory"
       ],
       "priority": "B",
@@ -7897,7 +7859,7 @@
         },
         {
           "id": "98-r3",
-          "title": "construct Jordan chains by kernels of powers. MathOverflow points to several distinct expositions, including a complex-analysis approach",
+          "title": "construct Jordan chains by kernels of powers",
           "proofSketch": "For N=A−λI, compare dimensions ker N^j. The increments count blocks of size at least j; choose vectors whose chains extend through successive kernels, then prove their chains are independent and span. Repeat across generalized eigenspaces. Needs eigenvalue splitting.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -7911,7 +7873,8 @@
           ],
           "extractionNotes": "Authored as a mathematical reconstruction from standard theorem hypotheses; no route-specific primary/textbook proof was verified during this batch. Search attempted against catalog source register and targeted official university/course-note searches; source extraction remains outstanding. Preserve this as a follow-up, not as a source citation. Citation audit: this route remains an assistant reconstruction. The reference is retained, but I did not verify the exact argument in its text during this audit; a theorem/method citation alone is not enough to mark the proof source-extracted.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "MathOverflow points to several distinct expositions, including a complex-analysis approach"
         }
       ],
       "level": "Undergraduate–graduate",
@@ -7983,9 +7946,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Number theory",
-        "Probability"
+        "Analysis"
       ],
       "priority": "A",
       "sourceIds": [
@@ -8050,8 +8011,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Topology"
+        "Analysis"
       ],
       "priority": "A",
       "sourceIds": [
@@ -8330,7 +8290,7 @@
         },
         {
           "id": "102-r4",
-          "title": "hypergraph regularity/density Hales–Jewett. State that the routes prove the same theorem or a stated equivalent formulation",
+          "title": "hypergraph regularity/density Hales–Jewett",
           "proofSketch": "Encode k-term progressions as edges in a multipartite hypergraph. Hypergraph regularity plus a counting lemma forces a configuration in any positive-density set; equivalently, density Hales–Jewett yields combinatorial lines, which map to progressions. The original theorem and density-HJ are related formulations, not literally identical statements.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -8344,13 +8304,13 @@
           ],
           "extractionNotes": "Citation audit: THEOREM/CONTEXT-ONLY LEAD. The citation is relevant to the theorem or surrounding topic, but does not document the exact proof route as named; exact route source still needs verification. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Original combinatorial regularity argument; ergodic-theory correspondence; Fourier/higher-uniformity methods; hypergraph regularity/density Hales–Jewett. State that the routes prove the same theorem or a stated equivalent formulation. Tao arXiv abstract was checked and enumerates these four families; only the ergodic route has a proof in that particular article, so other methods remain reference leads.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State that the routes prove the same theorem or a stated equivalent formulation"
         }
       ],
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
         "Combinatorics",
         "Number theory"
       ],
@@ -8485,8 +8445,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Combinatorics",
-        "Probability"
+        "Combinatorics"
       ],
       "priority": "A",
       "sourceIds": [
@@ -8582,9 +8541,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Logic & foundations",
-        "Topology"
+        "Logic & foundations"
       ],
       "priority": "A",
       "sourceIds": [
@@ -8654,7 +8611,7 @@
         },
         {
           "id": "105-r3",
-          "title": "derive from Pappus in a Desarguesian plane. State the projective-plane assumptions",
+          "title": "derive from Pappus in a Desarguesian plane",
           "proofSketch": "In a Desarguesian projective plane, coordinatize points by a division ring and express the incidences as linear equations; the concurrency condition implies the determinant condition for collinearity. Pappus is a separate stronger incidence law in general and does not by itself imply Desargues in arbitrary projective planes; this route needs a stated Desarguesian/coordinatizable assumption.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -8668,13 +8625,13 @@
           ],
           "extractionNotes": "Citation audit: EXACT-ROUTE SOURCE UNRESOLVED. The current reference is only a general lead or a mismatch and must not be treated as supporting this proof route; the sketch is an independent reconstruction. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Synthetic projective incidence proof; coordinate/algebraic proof; derive from Pappus in a Desarguesian plane. State the projective-plane assumptions.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State the projective-plane assumptions"
         }
       ],
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
         "Geometry"
       ],
       "priority": "A",
@@ -9088,7 +9045,7 @@
         },
         {
           "id": "109-r3",
-          "title": "product/compactness argument for infinite Ramsey followed by finite extraction (check exact formulation)",
+          "title": "product/compactness argument for infinite Ramsey followed by finite extraction",
           "proofSketch": "Infinite Ramsey says every finite coloring of [N]^r has an infinite monochromatic subset. If no finite N sufficed for a target size, compactness/Kőnig’s lemma on the finitely branching tree of compatible partial colorings would produce a coloring of [N]^r with no target monochromatic set, contradicting infinite Ramsey.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -9102,15 +9059,14 @@
           ],
           "extractionNotes": "Citation audit: THEOREM/CONTEXT-ONLY LEAD. The citation is relevant to the theorem or surrounding topic, but does not document the exact proof route as named; exact route source still needs verification. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Induction on number of colors/vertices; greedy pigeonhole construction; product/compactness argument for infinite Ramsey followed by finite extraction (check exact formulation).",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "check exact formulation"
         }
       ],
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Combinatorics",
-        "Topology"
+        "Combinatorics"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -9275,8 +9231,8 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Number theory"
+        "Number theory",
+        "Analysis"
       ],
       "priority": "A",
       "sourceIds": [
@@ -9356,8 +9312,7 @@
       "level": "Undergraduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Combinatorics"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -9457,10 +9412,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Combinatorics",
-        "Probability"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -9546,8 +9498,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -9633,8 +9584,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -9772,7 +9722,7 @@
         },
         {
           "id": "117-r3",
-          "title": "moments/polynomial-density arguments. A MathOverflow answer links a lecture-note survey of proofs",
+          "title": "moments/polynomial-density arguments",
           "proofSketch": "If Rf=0, every directional moment ∫t^m Rf(θ,t)dt equals ∫(x·θ)^m f(x)dx=0. As θ varies, these are all homogeneous moments, so every polynomial pairs to zero with f. Polynomials are dense on a compact set containing supp f; continuity then forces f=0.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -9786,15 +9736,14 @@
           ],
           "extractionNotes": "Citation audit: EXACT-ROUTE SOURCE UNRESOLVED. The current reference is only a general lead or a mismatch and must not be treated as supporting this proof route; the sketch is an independent reconstruction. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Fourier-slice theorem and Fourier inversion; filtered back-projection; moments/polynomial-density arguments. A MathOverflow answer links a lecture-note survey of proofs.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "A MathOverflow answer links a lecture-note survey of proofs"
         }
       ],
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Geometry"
+        "Analysis"
       ],
       "priority": "A",
       "sourceIds": [
@@ -9874,8 +9823,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -10011,7 +9959,7 @@
         },
         {
           "id": "120-r3",
-          "title": "interpolate from the triangle inequality for simple functions and pass by approximation. State the measure-space and p-range assumptions",
+          "title": "interpolate from the triangle inequality for simple functions and pass by approximation",
           "proofSketch": "First take simple functions s,t on a common finite measurable partition E_1,…,E_N: then ‖s+t‖_p=(Σμ(E_j)|s_j+t_j|^p)^{1/p} is a weighted ℓ^p norm on ℝ^N, where Minkowski is the finite-sum inequality. For general f,g choose simple 0≤s_n↑|f| and 0≤t_n↑|g|; then ‖s_n+t_n‖_p≤‖s_n‖_p+‖t_n‖_p≤‖f‖_p+‖g‖_p, and monotone convergence gives ‖|f|+|g|‖_p≤‖f‖_p+‖g‖_p, which dominates ‖f+g‖_p. The finite-dimensional inequality still needs its own proof (convexity or Hölder), so this route reduces the problem rather than replacing the argument.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -10025,14 +9973,14 @@
           ],
           "extractionNotes": "Citation audit: THEOREM/CONTEXT-ONLY LEAD. The citation is relevant to the theorem or surrounding topic, but does not document the exact proof route as named; exact route source still needs verification. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Hölder duality and integration; convexity/Young's inequality; interpolate from the triangle inequality for simple functions and pass by approximation. State the measure-space and p-range assumptions. Route audit: Approximation from simple functions is an extension/limit step for an inequality, not a fully independent proof unless the simple-function Minkowski inequality is established by a different argument. Sketch correction (2026-10-13): the earlier text was identical to another route's sketch in this entry or belonged to a different theorem; this is a new independent reconstruction for this route's title. No cited source was consulted for this wording, so the citation remains a lead, not route evidence.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State the measure-space and p-range assumptions"
         }
       ],
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Geometry"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -10090,7 +10038,7 @@
         },
         {
           "id": "121-r3",
-          "title": "duality/measure representation from continuous functions. State the exact real/complex and locally compact variants",
+          "title": "duality/measure representation from continuous functions",
           "proofSketch": "Extend L to lower semicontinuous h≥0 by L(h)=sup{L(f): f∈C(K), 0≤f≤h}; Dini's theorem gives additivity and continuity along increasing nets. Set μ*(A)=inf{L(1_U): U open, U⊇A}, an outer measure, and show via Carathéodory's criterion that Borel sets are measurable and that μ is regular. Approximating f∈C(K) uniformly by finite sums of scaled indicators of open level sets gives L(f)=∫f dμ. This is the Bourbaki-style route through semicontinuous functions; ‖L‖=L(1) for positive L, so the measure is finite.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -10104,7 +10052,8 @@
           ],
           "extractionNotes": "Citation audit: THEOREM/CONTEXT-ONLY LEAD. The citation is relevant to the theorem or surrounding topic, but does not document the exact proof route as named; exact route source still needs verification. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Positive-functional construction by outer measure; Daniell integral approach; duality/measure representation from continuous functions. State the exact real/complex and locally compact variants. Route audit: Positive-functional/duality wording overlaps the outer-measure construction; avoid counting as a distinct route absent a source showing a genuinely different construction. Sketch correction (2026-10-13): the earlier text was identical to another route's sketch in this entry or belonged to a different theorem; this is a new independent reconstruction for this route's title. No cited source was consulted for this wording, so the citation remains a lead, not route evidence.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State the exact real/complex and locally compact variants"
         }
       ],
       "level": "Graduate",
@@ -10231,10 +10180,8 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Combinatorics",
         "Probability",
-        "Topology"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -10352,9 +10299,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Geometry"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -10490,7 +10435,7 @@
         },
         {
           "id": "125-r3",
-          "title": "Plancherel plus density. State the hypotheses for each form",
+          "title": "Plancherel plus density",
           "proofSketch": "On Schwartz functions the Fourier transform is an L² isometry by the double-integral/Parseval identity, first justified with Gaussian damping and Fubini. Schwartz functions are dense in L², so the isometry extends uniquely to a unitary operator on L²; this proves the Plancherel formulation, while pointwise inversion needs additional hypotheses.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -10504,7 +10449,8 @@
           ],
           "extractionNotes": "Citation audit: THEOREM/CONTEXT-ONLY LEAD. The citation is relevant to the theorem or surrounding topic, but does not document the exact proof route as named; exact route source still needs verification. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Gaussian/approximate-identity regularization; inversion via contour or Fourier integrals; Plancherel plus density. State the hypotheses for each form.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State the hypotheses for each form"
         }
       ],
       "level": "Undergraduate–graduate",
@@ -10684,8 +10630,8 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Geometry"
+        "Geometry",
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -10763,8 +10709,8 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Geometry"
+        "Geometry",
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -10920,8 +10866,7 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Geometry",
-        "Topology"
+        "Geometry"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -10999,7 +10944,6 @@
       "level": "Undergraduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
         "Geometry"
       ],
       "priority": "B",
@@ -11078,9 +11022,7 @@
       "level": "Undergraduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
-        "Combinatorics",
-        "Geometry"
+        "Combinatorics"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -11179,8 +11121,8 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Combinatorics"
+        "Combinatorics",
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -11258,10 +11200,8 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
         "Combinatorics",
-        "Logic & foundations",
-        "Topology"
+        "Logic & foundations"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -11339,7 +11279,6 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
         "Combinatorics"
       ],
       "priority": "B",
@@ -11418,7 +11357,6 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
         "Topology"
       ],
       "priority": "B",
@@ -11536,9 +11474,8 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Geometry",
-        "Topology"
+        "Topology",
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -11616,7 +11553,6 @@
       "level": "Undergraduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
         "Logic & foundations"
       ],
       "priority": "B",
@@ -11695,7 +11631,6 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Analysis",
         "Logic & foundations"
       ],
       "priority": "B",
@@ -11754,7 +11689,7 @@
         },
         {
           "id": "140-r3",
-          "title": "computability/recursion-theoretic formulations. Treat the precise theory hypotheses as part of the theorem",
+          "title": "computability/recursion-theoretic formulations",
           "proofSketch": "Recursion-theoretic form: suppose T is consistent, effectively axiomatized and represents all recursive functions, so true Σ₁ sentences are provable. Take the recursively inseparable r.e. sets A={e: φ_e(e)=0} and B={e: φ_e(e)=1}. If T decided every sentence 'φ_e(e)=0', the set {e: T⊢'φ_e(e)=0'} would be recursive (search for a proof of the sentence or its negation), would contain A by Σ₁-completeness, and would be disjoint from B by consistency, separating A from B, which is impossible. So some sentence of this form is undecided by T. This gives incompleteness but not the explicit Gödel sentence or the second incompleteness theorem.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -11768,7 +11703,8 @@
           ],
           "extractionNotes": "Citation audit: THEOREM/CONTEXT-ONLY LEAD. The citation is relevant to the theorem or surrounding topic, but does not document the exact proof route as named; exact route source still needs verification. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Gödel sentence/diagonalization; Rosser sentence removing ω-consistency; computability/recursion-theoretic formulations. Treat the precise theory hypotheses as part of the theorem. Route audit: Computability-theoretic formulations are equivalent restatements/corollaries; not necessarily a distinct proof. Sketch correction (2026-10-13): the earlier text was identical to another route's sketch in this entry or belonged to a different theorem; this is a new independent reconstruction for this route's title. No cited source was consulted for this wording, so the citation remains a lead, not route evidence.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "Treat the precise theory hypotheses as part of the theorem"
         }
       ],
       "level": "Graduate",
@@ -11832,7 +11768,7 @@
         },
         {
           "id": "141-r3",
-          "title": "geometry of numbers for class-group consequences. Include only as a theorem about ideals, not as a second proof of integer UFD",
+          "title": "geometry of numbers for class-group consequences",
           "proofSketch": "Minkowski’s convex body theorem bounds the norm of an ideal-class representative, proving the class group is finite and giving consequences such as criteria for non-UFD behavior. It does not prove unique factorization of ideals; classify this as a consequence/application, not as a second proof route for ideal factorization.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -11846,14 +11782,15 @@
           ],
           "extractionNotes": "Citation audit: EXACT-ROUTE SOURCE UNRESOLVED. The current reference is only a general lead or a mismatch and must not be treated as supporting this proof route; the sketch is an independent reconstruction. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Dedekind ideal factorization; valuations/localization at prime ideals; geometry of numbers for class-group consequences. Include only as a theorem about ideals, not as a second proof of integer UFD. Route audit: Incorrect as a proof of ideal unique factorization: geometry of numbers establishes class-group finiteness and related consequences, not Dedekind ideal factorization itself.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "Include only as a theorem about ideals, not as a second proof of integer UFD"
         }
       ],
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Number theory"
+        "Number theory",
+        "Algebra"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -12042,7 +11979,7 @@
         },
         {
           "id": "143-r3",
-          "title": "modern Ricci-flow uniformization. The theorem's precise sphere/plane/disk classification and hypotheses matter",
+          "title": "modern Ricci-flow uniformization",
           "proofSketch": "Ricci-flow route (Hamilton, Chow) for the compact case. On a compact surface evolve the metric by the normalized Ricci flow ∂_tg=(r̄−R)g. Hamilton proved long-time existence and convergence to a constant-curvature metric when the Euler characteristic is ≤0, and Chow completed the case χ>0 (the sphere). The limit metric is conformal to the original, and the universal cover of a constant-curvature surface is the sphere, the plane or the disk with its model metric. Non-compact simply connected surfaces such as ℂ and 𝔻 are not covered by this sketch.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -12056,7 +11993,8 @@
           ],
           "extractionNotes": "Citation audit: THEOREM/CONTEXT-ONLY LEAD. The citation is relevant to the theorem or surrounding topic, but does not document the exact proof route as named; exact route source still needs verification. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Classical potential-theoretic/Dirichlet methods; extremal and normal-family arguments; modern Ricci-flow uniformization. The theorem's precise sphere/plane/disk classification and hypotheses matter. Route audit: Ricci-flow uniformization requires a specified existence/convergence theorem and is not a short route for arbitrary simply connected Riemann surfaces. Sketch correction (2026-10-13): the earlier text was identical to another route's sketch in this entry or belonged to a different theorem; this is a new independent reconstruction for this route's title. No cited source was consulted for this wording, so the citation remains a lead, not route evidence.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "The theorem's precise sphere/plane/disk classification and hypotheses matter"
         }
       ],
       "level": "Graduate",
@@ -12189,6 +12127,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
+        "Geometry",
         "Analysis"
       ],
       "priority": "A",
@@ -12367,7 +12306,8 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra"
+        "Algebra",
+        "Number theory"
       ],
       "priority": "A",
       "sourceIds": [
@@ -12445,7 +12385,7 @@
         },
         {
           "id": "146-r4",
-          "title": "Chern–Simons/topological quantum field theory. State the exact normalization and link equivalence",
+          "title": "Chern–Simons/topological quantum field theory",
           "proofSketch": "Witten's heuristic: take SU(2) Chern–Simons theory at level k and define the invariant of a link as the path-integral expectation of Wilson loops in the fundamental representation, with q=e^{2πi/(k+2)}. Isotopy invariance is expected because the action is metric-independent and gauge invariant, so the expectation value depends on the link only up to a framing correction (the writhe normalization). The skein relation comes from the two-dimensional space of conformal blocks of the four-punctured sphere, which yields the Jones polynomial V(t) with t=q^{±1}. The path integral itself is not mathematically defined; the rigorous version is the Reshetikhin–Turaev construction, essentially the quantum-group route.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -12459,15 +12399,15 @@
           ],
           "extractionNotes": "Citation audit: EXACT-ROUTE SOURCE UNRESOLVED. The current reference is only a general lead or a mismatch and must not be treated as supporting this proof route; the sketch is an independent reconstruction. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Reidemeister-move skein relation; Temperley–Lieb algebras; quantum-group representations; Chern–Simons/topological quantum field theory. State the exact normalization and link equivalence. Route audit: Chern–Simons path-integral derivation is heuristic unless backed by a rigorous TQFT construction and normalization. Sketch correction (2026-10-13): the earlier text was identical to another route's sketch in this entry or belonged to a different theorem; this is a new independent reconstruction for this route's title. No cited source was consulted for this wording, so the citation remains a lead, not route evidence.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "State the exact normalization and link equivalence"
         }
       ],
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Topology"
+        "Topology",
+        "Algebra"
       ],
       "priority": "A",
       "sourceIds": [
@@ -12547,7 +12487,7 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "General"
+        "Geometry"
       ],
       "priority": "B",
       "sourceIds": [
@@ -12627,9 +12567,8 @@
       "level": "Graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra",
-        "Analysis",
-        "Topology"
+        "Geometry",
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
@@ -12707,7 +12646,6 @@
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Combinatorics",
         "Topology"
       ],
       "priority": "B",
@@ -12766,7 +12704,7 @@
         },
         {
           "id": "150-r3",
-          "title": "current conservation via differential forms. Specify the finite-dimensional or field-theoretic version",
+          "title": "current conservation via differential forms",
           "proofSketch": "Field-theoretic route with differential forms. Invariance of the action up to a boundary term means 𝓛_{pr v}(L dⁿx)=dη for an (n−1)-form η. The first variation formula gives 𝓛_{pr v}(L dⁿx)=E(L)·Q dⁿx+dθ, where E(L) are the Euler–Lagrange expressions, Q the characteristic of v, and θ the boundary form. On solutions E(L)=0, so d(θ−η)=0: J=θ−η is a closed (n−1)-form, the Noether current. Stokes' theorem gives conservation of its flux through time slices; for n=1 it reduces to dQ/dt=0.",
           "sketchStatus": "assistant-reconstruction",
           "references": [
@@ -12780,13 +12718,14 @@
           ],
           "extractionNotes": "Citation audit: EXACT-ROUTE SOURCE UNRESOLVED. The current reference is only a general lead or a mismatch and must not be treated as supporting this proof route; the sketch is an independent reconstruction. Sketch independently reconstructed from standard arguments; not transcribed from the cited source. Source URL/locator is a relevant theorem-level verification lead, not evidence that it contains this exact distinct proof route. Confirm edition, hypotheses, and exact route match before promoting provenance to source-extracted. Source-check status: the cited locator is a bibliographic lead at theorem/chapter level; unless explicitly noted as directly verified, the exact route text and locator have not yet been checked against the full source. Search-engine/forum leads were not used as proof evidence. Potential route-equivalence/assumption caveat: Euler–Lagrange variational identity; Hamiltonian/symplectic moment-map formulation; current conservation via differential forms. Specify the finite-dimensional or field-theoretic version. Route audit: Differential-form currents concern field theory and require boundary conditions/conservation law hypotheses; they are not automatically the same finite-dimensional theorem. Sketch correction (2026-10-13): the earlier text was identical to another route's sketch in this entry or belonged to a different theorem; this is a new independent reconstruction for this route's title. No cited source was consulted for this wording, so the citation remains a lead, not route evidence.",
           "verbatimStatus": "not-yet-reviewed",
-          "verbatimNote": ""
+          "verbatimNote": "",
+          "routeNote": "Specify the finite-dimensional or field-theoretic version"
         }
       ],
       "level": "Undergraduate–graduate",
       "section": "Graduate and cross-disciplinary landmarks",
       "areas": [
-        "Algebra"
+        "Analysis"
       ],
       "priority": "B",
       "sourceIds": [],
