@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "collection"
 ORDER_FILE = DATA / "ring-order.json"
 WORLD_FILE = DATA / "world-layout.json"
-WORLD_W, WORLD_H, WORLD_TOP = 1200, 860, 100
+WORLD_W, WORLD_H, WORLD_TOP = 1300, 920, 110
 OUTPUT = ROOT / "public" / "data" / "collection" / "constellation.json"
 EXCLUDED = {"not-a-route", "dependent", "near-duplicate", "not-the-stated-theorem", "sketch-mismatch", "incomplete"}
 FLAGS = EXCLUDED | {"title-sketch-mismatch", "sketch-self-corrects"}
@@ -177,7 +177,7 @@ def world_layout(techniques: list[dict], families: list[str], order: list[str], 
             pull[a][fb] += w
             pull[b][fa] += w
     radius = {f: 58 + 24.0 * math.sqrt(max(1, len(members[f]))) for f in families}
-    reach = {f: 0.8 * radius[f] + 50 for f in families}  # what the sites and the coast actually need
+    reach = {f: 0.8 * radius[f] + 74 for f in families}  # what the sites and the coast actually need
     centre = {f: [WORLD_W / 2 + 300 * math.cos(2 * math.pi * i / len(families)), (WORLD_H + WORLD_TOP) / 2 + 200 * math.sin(2 * math.pi * i / len(families))] for i, f in enumerate(families)}
     for _ in range(900):
         force = {f: [0.0, 0.0] for f in families}
