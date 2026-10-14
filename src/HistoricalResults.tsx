@@ -80,7 +80,7 @@ export default function HistoricalResults() {
       <button type="button" aria-pressed={view === 'ring'} onClick={() => setView('ring')}>Ring</button>
     </div>
 
-    {view !== 'list' ? (catalog ? (view === 'world' ? <WorldMap catalog={catalog} onOpenEntry={openEntry} /> : <MethodRing catalog={catalog} onOpenEntry={openEntry} />) : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
+    {view !== 'list' ? (catalog ? (view === 'world' ? <WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={() => setView('list')} /> : <MethodRing catalog={catalog} onOpenEntry={openEntry} />) : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
     <div className="historical-controls" aria-label="Search and filter historical results">
       <label className="historical-search"><Search size={16} aria-hidden="true" /><span className="sr-only">Search theorem, field, approach, or source</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search a result, approach, or source…" /></label>
       <label><span>Field</span><select value={field} onChange={(event) => setField(event.target.value)}><option value="">All fields</option>{fieldOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
