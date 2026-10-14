@@ -281,11 +281,12 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const { s: scale, tx, ty } = geometry(view.k, view.x, view.y)
   const k = view.k
 
-  function zoomTo(nextK: number, px: number, py: number, glide: boolean) {
+  // zoom by a factor about a screen point: used by the wheel, trackpad pinch and the buttons
+  function zoomTo(nextK: number | ((current: number) => number), px: number, py: number, glide: boolean) {
     setHint(false)
     setView((v) => {
       const cur = geometry(v.k, v.x, v.y)
-      const kk = Math.min(MAX_ZOOM, Math.max(1, nextK))
+      const kk = Math.min(MAX_ZOOM, Math.max(1, typeof nextK === 'function' ? nextK(v.k) : nextK))
       const s = fit * kk, wx = (px - cur.tx) / cur.s, wy = (py - cur.ty) / cur.s
       const c = centred(s)
       return { k: kk, x: px - wx * s - c.cx, y: py - wy * s - c.cy, glide }
@@ -301,17 +302,37 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   }
   const drawerInset = box.w > 760 ? Math.min(DRAWER, box.w * 0.5) : 0
 
+  // wheel and trackpad: a two-finger scroll or a pinch zooms about the pointer (the map fills the window, so there is no page to scroll)
   useEffect(() => {
     const node = svg.current
     if (!node) return
+    const at = (event: MouseEvent) => { const rect = node.getBoundingClientRect(); return [event.clientX - rect.left, event.clientY - rect.top] as const }
     const onWheel = (event: WheelEvent) => {
-      if (!event.ctrlKey && !event.metaKey) return
       event.preventDefault()
-      const rect = node.getBoundingClientRect()
-      zoomTo(view.k * (event.deltaY < 0 ? 1.18 : 1 / 1.18), event.clientX - rect.left, event.clientY - rect.top, false)
+      const lines = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? 400 : 1
+      const [x, y] = at(event)
+      const factor = Math.exp(-Math.max(-120, Math.min(120, event.deltaY * lines)) * (event.ctrlKey ? 0.012 : 0.004))
+      zoomTo((current) => current * factor, x, y, false)
+    }
+    // Safari reports a pinch as gesture events instead of ctrl+wheel
+    let last = 1
+    const onGestureStart = (event: Event) => { event.preventDefault(); last = 1 }
+    const onGesture = (event: Event) => {
+      event.preventDefault()
+      const g = event as unknown as MouseEvent & { scale: number }
+      const [x, y] = at(g)
+      const ratio = g.scale / last
+      last = g.scale
+      zoomTo((current) => current * ratio, x, y, false)
     }
     node.addEventListener('wheel', onWheel, { passive: false })
-    return () => node.removeEventListener('wheel', onWheel)
+    node.addEventListener('gesturestart', onGestureStart)
+    node.addEventListener('gesturechange', onGesture)
+    return () => {
+      node.removeEventListener('wheel', onWheel)
+      node.removeEventListener('gesturestart', onGestureStart)
+      node.removeEventListener('gesturechange', onGesture)
+    }
   })
 
   // selecting a whole island or bridge carries the view there
@@ -607,7 +628,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         </ol>
         <button type="button" className="world-info-open" onClick={() => onOpenEntry(focusTheorem.id)}>Open the theorem</button>
       </div>}
-      {hint && <div className="world-hint">Click for a quick note, double-click to list theorems · Ctrl/⌘ + scroll to zoom</div>}
+      {hint && <div className="world-hint">Click for a quick note, double-click to list theorems · scroll or pinch to zoom, drag to move</div>}
       <div className="world-controls">
         <div className="world-switch" role="group" aria-label="Map style">
           {themes.map((t) => <button type="button" key={t.id} aria-pressed={t.id === theme.id} onClick={() => { setThemeId(t.id); try { window.localStorage.setItem(THEME_KEY, t.id) } catch { /* private mode */ } }}>{t.name}</button>)}
