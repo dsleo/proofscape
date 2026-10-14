@@ -6,7 +6,7 @@ export type Terrain = {
   rivers: { bank: string; water: string }[]
   mountains: string
   hatch: string
-  trees: string
+  trees: { y: number; d: string; hatch: string }[]
   ink: string
   fields: string
   squares: string
@@ -52,13 +52,39 @@ function peak(x: number, y: number, s: number, rnd: () => number) {
   return { outline: `${outline}`, hatch, base: `M${f(x - w * 1.05)},${f(y)}H${f(x + w * 1.05)}` }
 }
 
-function conifer(x: number, y: number, s: number) {
-  return `M${f(x)},${f(y)}V${f(y - 3 * s)}M${f(x - 3.4 * s)},${f(y - 2.4 * s)}L${f(x)},${f(y - 8 * s)}L${f(x + 3.4 * s)},${f(y - 2.4 * s)}M${f(x - 2.8 * s)},${f(y - 5.2 * s)}L${f(x)},${f(y - 10.5 * s)}L${f(x + 2.8 * s)},${f(y - 5.2 * s)}`
-}
-function leafy(x: number, y: number, s: number) {
-  return `M${f(x)},${f(y)}V${f(y - 3 * s)}M${f(x - 3.4 * s)},${f(y - 5 * s)}a${3.4 * s},${3.2 * s} 0 1,1 ${6.8 * s},0a${2.4 * s},${2.4 * s} 0 0,1 ${-2 * s},${3 * s}H${f(x - 1.4 * s)}a${2.4 * s},${2.4 * s} 0 0,1 ${-2 * s},${-3 * s}`
+type Tree = { d: string; hatch: string }
+const TAU = Math.PI * 2
+const pathOf = (pts: P[]) => `M${pts.map((p) => `${f(p[0])},${f(p[1])}`).join('L')}Z`
+
+/** A fir: a stepped silhouette on a short trunk, shaded on its right. */
+function conifer(x: number, y: number, s: number): Tree {
+  const shape: P[] = [[-1, 0], [-1, -2], [-5.5, -2], [-2.6, -6.5], [-4.6, -6.5], [-2.2, -11], [-3.8, -11], [0, -17.5], [3.8, -11], [2.2, -11], [4.6, -6.5], [2.6, -6.5], [5.5, -2], [1, -2], [1, 0]]
+  let hatch = ''
+  for (const [yb, w] of [[-2, 4.4], [-6.5, 3.6], [-11, 2.6]]) hatch += `M${f(x + 1.3 * s)},${f(y + (yb - 3.4) * s)}L${f(x + w * s)},${f(y + yb * s)}M${f(x + 1.3 * s)},${f(y + (yb - 1.6) * s)}L${f(x + (w - 0.9) * s)},${f(y + yb * s)}`
+  return { d: pathOf(shape.map(([a, b]) => [x + a * s, y + b * s] as P)), hatch }
 }
 
+/** A broadleaf tree: a scalloped crown on a trunk, with a crescent of shade. */
+function broadleaf(x: number, y: number, s: number, rnd: () => number): Tree {
+  const cx = x, cy = y - 9.5 * s, r = 6.4 * s, n = 7 + Math.floor(rnd() * 3), phase = rnd() * TAU
+  const vertex = (i: number): P => [cx + Math.cos(phase + (i / n) * TAU) * r, cy + Math.sin(phase + (i / n) * TAU) * r * 0.9]
+  const bulge = (i: number): P => [cx + Math.cos(phase + ((i + 0.5) / n) * TAU) * r * 1.38, cy + Math.sin(phase + ((i + 0.5) / n) * TAU) * r * 1.24]
+  let d = `M${f(x)},${f(y)}V${f(y - 4.2 * s)}M${f(vertex(0)[0])},${f(vertex(0)[1])}`
+  for (let i = 0; i < n; i++) { const c = bulge(i), v = vertex((i + 1) % n); d += `Q${f(c[0])},${f(c[1])} ${f(v[0])},${f(v[1])}` }
+  return { d: `${d}Z`, hatch: `M${f(cx + 1.2 * s)},${f(cy + 5.6 * s)}Q${f(cx + 5.8 * s)},${f(cy + 4.4 * s)} ${f(cx + 7.4 * s)},${f(cy - 0.6 * s)}M${f(cx - 2.5 * s)},${f(cy - 1 * s)}q${f(1.2 * s)},${f(-2.6 * s)} ${f(3 * s)},${f(-3 * s)}` }
+}
+
+/** A palm: a leaning trunk under a rosette of leaf blades. */
+function palm(x: number, y: number, s: number, rnd: () => number): Tree {
+  const lean = (rnd() - 0.5) * 7 * s, tx = x + lean, ty = y - 15 * s
+  let d = `M${f(x)},${f(y)}Q${f(x + lean * 1.6)},${f(y - 8 * s)} ${f(tx)},${f(ty)}`
+  for (const a of [-2.9, -2.3, -1.75, -1.15, -0.55, -0.1]) {
+    const ex = tx + Math.cos(a) * 9.5 * s, ey = ty + Math.sin(a) * 6 * s + 3.4 * s
+    const mx = (tx + ex) / 2, my = (ty + ey) / 2 - 4.2 * s
+    d += `M${f(tx)},${f(ty)}Q${f(mx - 1.6 * s)},${f(my - 1 * s)} ${f(ex)},${f(ey)}Q${f(mx + 1.6 * s)},${f(my + 2 * s)} ${f(tx)},${f(ty)}Z`
+  }
+  return { d, hatch: `M${f(x + lean * 0.5 + 0.9 * s)},${f(y - 4 * s)}l${f(0.6 * s)},${f(-4 * s)}` }
+}
 
 // ---- one landmark family per domain, drawn in the same thin ink ------------------------------------------------------
 const mill = (x: number, y: number, s: number) => `M${f(x - 5 * s)},${f(y)}L${f(x - 3.4 * s)},${f(y - 11 * s)}H${f(x + 3.4 * s)}L${f(x + 5 * s)},${f(y)}ZM${f(x)},${f(y - 11 * s)}L${f(x - 11 * s)},${f(y - 19 * s)}M${f(x)},${f(y - 11 * s)}L${f(x + 11 * s)},${f(y - 19 * s)}M${f(x)},${f(y - 11 * s)}L${f(x - 9 * s)},${f(y - 2 * s)}M${f(x)},${f(y - 11 * s)}L${f(x + 9 * s)},${f(y - 3 * s)}`
@@ -220,15 +246,17 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
     }
   }
   // forests: how many and what kind is the island's character
-  let trees = ''
-  pick(Math.round((polygonArea(ring) / 2300) * bio.trees), 1200, (_p, k) => dist[k] > 16 && hv[k] > 0.1 && hv[k] < 0.66, 30, (p) => {
+  const trees: { y: number; d: string; hatch: string }[] = []
+  pick(Math.round((polygonArea(ring) / 2300) * bio.trees), 1200, (_p, k) => dist[k] > 18 && hv[k] > 0.1 && hv[k] < 0.66, 34, (p) => {
     const n = 4 + Math.floor(rnd() * 5)
     for (let t = 0; t < n; t++) {
-      const x = p[0] + (rnd() - 0.5) * 36, y = p[1] + (rnd() - 0.5) * 26, sc = 0.85 + rnd() * 0.5
-      if (!fits(x, y, 4 * sc, 10 * sc)) continue
-      trees += (rnd() < bio.leafy ? leafy : conifer)(x, y, sc)
+      const x = p[0] + (rnd() - 0.5) * 42, y = p[1] + (rnd() - 0.5) * 28, sc = 0.95 + rnd() * 0.5
+      if (!fits(x, y, 7 * sc, 17 * sc)) continue
+      const kind = rnd() < bio.leafy ? (family === 'analytic' && rnd() < 0.3 ? palm(x, y, sc, rnd) : broadleaf(x, y, sc, rnd)) : conifer(x, y, sc)
+      trees.push({ y, ...kind })
     }
   })
+  trees.sort((a, b) => a.y - b.y)
   // landmarks
   let ink = ''
   const [glyphs, want] = landmark[family] ?? landmark.analytic

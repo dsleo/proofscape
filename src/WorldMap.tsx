@@ -3,6 +3,7 @@ import type { PointerEvent as ReactPointerEvent } from 'react'
 import type { Catalog } from './historicalShared'
 import { familyName, fixed, MethodList, ResultsPanel, SelectionBar, useMethodData, useMethodSelection, useResultsRef } from './methodShared'
 import type { MethodData, MethodModel } from './methodShared'
+import { MathText } from './MathText'
 import { terrain } from './worldTerrain'
 import './world.css'
 
@@ -13,6 +14,7 @@ type Hue = { land: string; halo: string; light: string; dark: string; peak: stri
 type Theme = {
   id: string; name: string; sea: string; paper: string; ink: string; accent: string; trail: string; water: string; wisp: string
   hue: (family: string) => Hue
+  tree: (h: Hue) => string; hatchInk: (h: Hue) => string
   clouds: boolean; ripples: boolean; shade: number; treeFill: number; coast: number; label: { fill: string; halo: (h: Hue) => string }; grain: number
 }
 // Ink: the pencil-and-wash cream of the app's landscape illustration, one colour for every island.
@@ -28,10 +30,10 @@ const colours: Record<string, Hue> = {
   logic: { land: '#9168cc', halo: '#ded2f2', light: '#bc9bea', dark: '#5a3597', peak: '#bc9bea' },
 }
 const themes: Theme[] = [
-  { id: 'ink', name: 'Ink', sea: '#f2efe7', paper: '#fbf8f0', ink: '#3b4438', accent: '#ae6b1f', trail: '#8a5a2b', water: '#bdd0d4', wisp: '#dcd6c6', hue: (f) => ({ ...ink, land: inkWash[f] ?? ink.land }), clouds: false, ripples: true, shade: 0.1, treeFill: 0, coast: 1.5, label: { fill: '#2d352b', halo: () => '#f2efe7' }, grain: 0.07 },
-  { id: 'colour', name: 'Colour', sea: '#ebe6ee', paper: '#fffdf5', ink: '#2b2a3a', accent: '#ffd23f', trail: '#ffffff', water: '#e4f3f7', wisp: '#ffffff', hue: (f) => colours[f], clouds: true, ripples: false, shade: 0.35, treeFill: 0.6, coast: 0, label: { fill: '#ffffff', halo: (h) => h.dark }, grain: 0.16 },
+  { id: 'ink', name: 'Ink', sea: '#f2efe7', paper: '#fbf8f0', ink: '#3b4438', accent: '#ae6b1f', trail: '#8a5a2b', water: '#bdd0d4', wisp: '#dcd6c6', hue: (f) => ({ ...ink, land: inkWash[f] ?? ink.land }), tree: () => '#f9f6ec', hatchInk: (h) => h.dark, clouds: false, ripples: true, shade: 0.1, treeFill: 0, coast: 1.5, label: { fill: '#2d352b', halo: () => '#f2efe7' }, grain: 0.07 },
+  { id: 'colour', name: 'Colour', sea: '#ebe6ee', paper: '#fffdf5', ink: '#2b2a3a', accent: '#ffd23f', trail: '#ffffff', water: '#e4f3f7', wisp: '#ffffff', hue: (f) => colours[f], tree: (h) => h.dark, hatchInk: () => '#ffffff', clouds: true, ripples: false, shade: 0.35, treeFill: 0.6, coast: 0, label: { fill: '#ffffff', halo: (h) => h.dark }, grain: 0.16 },
 ]
-const KEY = 'proofscape.world.explored', THEME_KEY = 'proofscape.world.theme'
+const THEME_KEY = 'proofscape.world.theme'
 const MAX_ZOOM = 8, MARGIN = 90
 
 const fade = (k: number, a: number, b: number) => Math.max(0, Math.min(1, (k - a) / (b - a)))
@@ -96,10 +98,6 @@ function Ribbon({ text, size, paper, ink, tail, color }: { text: string; size: n
   </g>
 }
 
-function readExplored() {
-  try { return new Set<string>(JSON.parse(window.localStorage.getItem(KEY) ?? '[]')) } catch { return new Set<string>() }
-}
-
 function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: MethodData; model: MethodModel; catalog: Catalog; onOpenEntry: (id: number) => void; onClose?: () => void }) {
   const sel = useMethodSelection(data, model)
   const results = useResultsRef()
@@ -108,7 +106,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const svg = useRef<SVGSVGElement>(null)
   const [box, setBox] = useState({ w: 1200, h: 760 })
   const [view, setView] = useState({ k: 1, x: 0, y: 0, glide: false })
-  const [explored, setExplored] = useState(readExplored)
+  const [info, setInfo] = useState<{ item: string; x: number; y: number } | null>(null)
   const [hint, setHint] = useState(true)
   const [measured, setMeasured] = useState(false)
   const [drawer, setDrawer] = useState(false)
@@ -119,7 +117,23 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const { paper: PAPER, ink: INK, accent: GOLD, sea: SEA } = theme
   const drag = useRef<{ x: number; y: number } | null>(null)
   const seen = useRef(0)
-  const { selection, live, chosen, label, press } = sel
+  const { selection, live, chosen, label } = sel
+  // one click shows a short note over the item; a double click (or the note's button) selects it and lists its theorems
+  const choose = (item: string) => ({
+    tabIndex: 0, role: 'button' as const,
+    onClick: (event: React.MouseEvent) => {
+      const rect = stage.current?.getBoundingClientRect()
+      setInfo({ item, x: event.clientX - (rect?.left ?? 0), y: event.clientY - (rect?.top ?? 0) })
+    },
+    onDoubleClick: () => { setInfo(null); sel.toggle(item) },
+    onKeyDown: (event: React.KeyboardEvent) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setInfo(null); sel.toggle(item) } },
+  })
+  const clearAll = () => { setInfo(null); setDrawer(false); if (selection.length) sel.clear() }
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') setInfo(null) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
 
   useEffect(() => {
     const before = document.body.style.overflow
@@ -138,14 +152,6 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     watcher.observe(node)
     return () => watcher.disconnect()
   }, [])
-
-  useEffect(() => {
-    const picked = selection.filter((item) => 'vet'.includes(item[0])).flatMap((item) => item.slice(2).split('|'))
-    if (!picked.some((id) => !explored.has(id))) return
-    const next = new Set([...explored, ...picked])
-    setExplored(next)
-    try { window.localStorage.setItem(KEY, JSON.stringify([...next])) } catch { /* private mode: keep it in memory */ }
-  }, [selection, explored])
 
   const world = useMemo(() => {
     const sites = data.ring.techniques.map((id) => {
@@ -340,28 +346,32 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const lettering = tone(k)
   const dim = selection.length > 0
 
-  return <section className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
-    <div className="world-stage" ref={stage}>
-      <svg ref={svg} className="world-svg" width={box.w} height={box.h} role="group" aria-label="A map of islands of proof methods joined by bridges"
-        onClick={(event) => { if (travel.current < 4 && selection.length > 0 && !(event.target as Element).closest('[data-world-item]')) sel.clear() }}
-        onPointerDown={down} onPointerMove={move} onPointerUp={() => { drag.current = null }} onPointerCancel={() => { drag.current = null }}
-        onDoubleClick={(event) => {
-          if ((event.target as Element).closest('[data-world-item]')) return
-          const rect = event.currentTarget.getBoundingClientRect()
-          zoomTo(view.k * 2, event.clientX - rect.left, event.clientY - rect.top, true)
-        }}
-        style={{ '--k': k } as React.CSSProperties}>
-        <defs>
-          <pattern id="w-tuft" width="38" height="30" patternUnits="userSpaceOnUse">
-            <path d="M5,9l2.5,-5l2.5,5M23,24l2.5,-5l2.5,5M30,8l2,-4l2,4M14,19l2,-4l2,4" fill="none" stroke={INK} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
-          </pattern>
-          <pattern id="w-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
-            <path d="M0,0V5" stroke={INK} strokeWidth="1" />
-          </pattern>
-        </defs>
-        <rect width={box.w} height={box.h} fill={SEA} />
-        <g className="world-camera" style={{ transform: `translate(${fixed(tx)}px, ${fixed(ty)}px) scale(${scale.toFixed(4)})`, transition: view.glide ? 'transform .6s cubic-bezier(.2,.7,.2,1)' : 'none' }}>
-          <g pointerEvents="none">
+  const card = useMemo(() => {
+    if (!info) return null
+    const kind = info.item[0], key = info.item.slice(2)
+    const holds = (id: number) => kind === 'v' ? model.used.get(id)?.has(key) : kind === 'i' ? model.islandsOf.get(id)?.has(key) : kind === 'b' ? model.bridgesOf.get(id)?.has(key) : (kind === 'e' ? model.pairs : model.triples).get(key)?.has(id)
+    const theorems = data.theorems.filter((t) => holds(t.id))
+    const nameOf = (id: string) => model.names.get(id)
+    const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
+    if (kind === 'v') {
+      const t = nameOf(key)
+      return { title: t?.label ?? key, sub: `${familyName[t?.family ?? '']} island · used in ${plural(theorems.length, 'theorem')}`, body: t?.gloss ?? '', theorems }
+    }
+    if (kind === 'i') {
+      const mine = (model.byFamily.get(key) ?? []).slice().sort((a, b) => (model.uses.get(b) ?? 0) - (model.uses.get(a) ?? 0))
+      return { title: `${familyName[key]} island`, sub: `${plural(mine.length, 'method')} · ${plural(theorems.length, 'theorem')}`, body: `Most used: ${mine.slice(0, 4).map((id) => nameOf(id)?.short).join(', ')}.`, theorems }
+    }
+    if (kind === 'b') {
+      const pairs = (model.bridges.get(key) ?? []).slice().sort((a, b) => (model.pairs.get(b)?.size ?? 0) - (model.pairs.get(a)?.size ?? 0))
+      const named = pairs.slice(0, 3).map((p) => p.split('|').map((id) => nameOf(id)?.short).join(' + ')).join('; ')
+      return { title: `${key.split('|').map((f) => familyName[f]).join(' ⇄ ')} bridge`, sub: `${plural(pairs.length, 'method pair')} · ${plural(theorems.length, 'theorem')}`, body: `Strongest: ${named}.`, theorems }
+    }
+    const names = key.split('|').map((id) => nameOf(id)?.label ?? id)
+    return { title: names.join(' + '), sub: `${kind === 'e' ? 'Two' : 'Three'} rival routes in ${plural(theorems.length, 'theorem')}`, body: '', theorems }
+  }, [info, data, model])
+
+  const landLayer = useMemo(() => (
+        <g pointerEvents="none">
             <path d={world.wisps} fill={theme.wisp} fillOpacity="0.8" />
                         {world.islands.map((i) => {
               const c = theme.hue(i.family)
@@ -384,7 +394,10 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
                 <path d={i.land.squares} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="0.9" strokeLinejoin="round" />
                 <path d={i.land.dunes} fill="none" stroke={c.dark} strokeOpacity="0.6" strokeWidth="0.9" strokeLinecap="round" />
                 <path d={i.land.spirals} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="1" strokeLinecap="round" />
-                <path d={i.land.trees} fill={c.dark} fillOpacity={theme.treeFill} stroke={c.dark} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
+                {i.land.trees.map((t, n) => <g key={n}>
+                  <path d={t.d} fill={theme.tree(c)} stroke={c.dark} strokeWidth="1" strokeLinejoin="round" strokeLinecap="round" />
+                  <path d={t.hatch} fill="none" stroke={theme.hatchInk(c)} strokeOpacity="0.7" strokeWidth="0.8" strokeLinecap="round" />
+                </g>)}
                 <path d={i.land.mountains} fill={c.peak} stroke={c.dark} strokeWidth="1.3" strokeLinejoin="round" />
                 <path d={i.land.hatch} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="0.9" strokeLinecap="round" />
                 <path d={i.land.ink} fill={theme.paper} fillOpacity="0.92" stroke={c.dark} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -392,6 +405,30 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
               </g>
             })}
           </g>
+  ), [world, theme])
+
+  return <section className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
+    <div className="world-stage" ref={stage}>
+      <svg ref={svg} className="world-svg" width={box.w} height={box.h} role="group" aria-label="A map of islands of proof methods joined by bridges"
+        onClick={(event) => { if (travel.current < 4 && !(event.target as Element).closest('[data-world-item]')) clearAll() }}
+        onPointerDown={down} onPointerMove={move} onPointerUp={() => { drag.current = null }} onPointerCancel={() => { drag.current = null }}
+        onDoubleClick={(event) => {
+          if ((event.target as Element).closest('[data-world-item]')) return
+          const rect = event.currentTarget.getBoundingClientRect()
+          zoomTo(view.k * 2, event.clientX - rect.left, event.clientY - rect.top, true)
+        }}
+        style={{ '--k': k } as React.CSSProperties}>
+        <defs>
+          <pattern id="w-tuft" width="38" height="30" patternUnits="userSpaceOnUse">
+            <path d="M5,9l2.5,-5l2.5,5M23,24l2.5,-5l2.5,5M30,8l2,-4l2,4M14,19l2,-4l2,4" fill="none" stroke={INK} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
+          </pattern>
+          <pattern id="w-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+            <path d="M0,0V5" stroke={INK} strokeWidth="1" />
+          </pattern>
+        </defs>
+        <rect width={box.w} height={box.h} fill={SEA} />
+        <g className="world-camera" style={{ transform: `translate(${fixed(tx)}px, ${fixed(ty)}px) scale(${scale.toFixed(4)})`, transition: view.glide ? 'transform .6s cubic-bezier(.2,.7,.2,1)' : 'none' }}>
+          {landLayer}
           {world.bridges.map((b) => {
             const shown = chosen.has(`b:${b.key}`) || (dim ? live.bridges.has(b.key) : hover !== null && (b.fa === hover || b.fb === hover)) ? 1 : fade(k, 1.3, 1.9)
             return <g key={`pier-${b.key}`} pointerEvents="none">
@@ -405,7 +442,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             const near = fade(k, 1.3, 1.9)
             const shown = on ? 1 : dim ? (live.bridges.has(b.key) ? 1 : near * 0.22) : Math.max(near, involved ? 1 : 0)
             const ink = on ? GOLD : INK
-            return <g key={b.key} data-world-item className="world-bridge" opacity={shown} pointerEvents={shown > 0.15 ? undefined : 'none'} aria-label={`${label(item)}, ${b.count} method pair${b.count === 1 ? '' : 's'}`} {...press(item)}>
+            return <g key={b.key} data-world-item className="world-bridge" opacity={shown} pointerEvents={shown > 0.15 ? undefined : 'none'} aria-label={`${label(item)}, ${b.count} method pair${b.count === 1 ? '' : 's'}`} {...choose(item)}>
               <title>{label(item)}: {b.count} method pairs</title>
               {theme.clouds && <path d={b.clouds} fill="#fff" fillOpacity="0.95" />}
               <path d={b.deck} fill={PAPER} stroke={PAPER} strokeWidth="7" strokeLinejoin="round" />
@@ -424,16 +461,16 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             const base = dim ? (isLive ? 0.55 * fade(k, 1.6, 2.6) : 0) : fade(k, 2.6, 3.6) * (strong ? 0.6 : 0.3)
             return <path key={item} data-world-item className="ring-triangle" d={`M${path}Z`} fill={GOLD} stroke={on ? INK : theme.trail} strokeDasharray="4 6" strokeLinecap="round"
               fillOpacity={on ? 0.3 : 0} strokeOpacity={on ? 1 : base} strokeWidth={on ? 2.6 : 1.4} pointerEvents={on || base > 0.1 ? undefined : 'none'}
-              aria-label={`${label(item)}, three routes`} {...press(item)}><title>{label(item)}</title></path>
+              aria-label={`${label(item)}, three routes`} {...choose(item)}><title>{label(item)}</title></path>
           })}
           {world.chords.map((c) => {
             const item = `e:${c.key}`, on = chosen.has(item), isLive = live.edges.has(c.key)
             const reveal = dim ? (isLive ? (c.n >= 2 || on ? 0.95 : fade(k, 2, 3) * 0.8) : 0) : c.n >= 3 ? fade(k, 1.5, 2.3) * 0.8 : c.n >= 2 ? fade(k, 2.3, 3.1) * 0.75 : fade(k, 3.2, 4) * 0.6
             const op = on ? 1 : reveal
             return <g key={item} opacity={op > 0 || on ? 1 : 0} pointerEvents={op > 0.08 || on ? undefined : 'none'}>
-              {on && <path d={c.d} fill="none" stroke={theme.id === 'ink' ? PAPER : INK} strokeWidth="6.4" strokeLinecap="round" strokeLinejoin="round" />}
-              <path d={c.d} fill="none" strokeLinecap="round" stroke={on ? GOLD : theme.trail} strokeDasharray={on ? undefined : '8 6'} strokeWidth={on ? 3.6 : 1.4 + Math.min(c.n, 4) * 0.45} strokeOpacity={on ? 1 : op} />
-              <path d={c.d} data-world-item fill="none" stroke="transparent" strokeWidth="14" className="ring-hit" aria-label={`${label(item)}, ${c.n} theorem${c.n === 1 ? '' : 's'}`} {...press(item)}>
+              {on && <path d={c.d} fill="none" stroke={theme.id === 'ink' ? PAPER : INK} strokeWidth="6" vectorEffect="non-scaling-stroke" strokeLinecap="round" strokeLinejoin="round" />}
+              <path d={c.d} fill="none" strokeLinecap="round" stroke={on ? GOLD : theme.trail} strokeDasharray={on ? undefined : '7 5'} strokeWidth={on ? 3.2 : 1.2 + Math.min(c.n, 4) * 0.4} vectorEffect="non-scaling-stroke" strokeOpacity={on ? 1 : op} />
+              <path d={c.d} data-world-item fill="none" stroke="transparent" strokeWidth="14" className="ring-hit" aria-label={`${label(item)}, ${c.n} theorem${c.n === 1 ? '' : 's'}`} {...choose(item)}>
                 <title>{label(item)}: {c.n} theorem{c.n === 1 ? '' : 's'}</title>
               </path>
             </g>
@@ -441,12 +478,12 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           {world.sites.map((s) => {
             const item = `v:${s.id}`, on = chosen.has(item), isLive = live.methods.has(s.id)
             const shown = on || (dim ? isLive : s.use >= siteFloor), showLabel = on || (dim ? isLive && s.use >= labelFloor : s.use >= labelFloor)
-            const l = world.labels.get(s.id), been = explored.has(s.id), r = world.radius(s.use), c = theme.hue(s.family)
+            const l = world.labels.get(s.id), r = world.radius(s.use), c = theme.hue(s.family)
             return <g key={item} data-world-item className="world-site" onPointerEnter={() => setHover(s.family)} onPointerLeave={() => setHover(null)} opacity={shown ? (dim && !isLive && !on ? 0.3 : 1) : 0} pointerEvents={shown ? undefined : 'none'}
-              aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...press(item)}>
+              aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...choose(item)}>
               <title>{model.names.get(s.id)?.label}</title>
-              {on && <circle cx={s.x} cy={s.y} r={r + 8} fill="none" stroke={GOLD} strokeWidth="3" strokeDasharray="5 4" />}
-              <circle cx={s.x} cy={s.y} r={r} fill={been || on ? GOLD : c.dark} fillOpacity={been || on ? 1 : 0.82} stroke={PAPER} strokeWidth="2" />
+              {(on || info?.item === item) && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={INK} strokeWidth="2" strokeDasharray="4 4" />}
+              <circle cx={s.x} cy={s.y} r={r} fill={c.dark} stroke={PAPER} strokeWidth="2" />
               {l && showLabel && <text className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor} style={{ fill: theme.label.fill, stroke: theme.label.halo(c), fontSize: `${(20 * lettering).toFixed(1)}px` }}>{s.short}</text>}
             </g>
           })}
@@ -459,14 +496,26 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
               return sum + Math.sign(other.cy - i.cy)
             }, 0)
             const below = away > 0 ? false : away < 0 ? true : i.cy > H / 2, c = theme.hue(i.family)
-            return <g key={item} data-world-item className="world-island-name" onPointerEnter={() => setHover(i.family)} onPointerLeave={() => setHover(null)} opacity={faded ? 0.4 : 1} aria-label={`${familyName[i.family]} island`} {...press(item)}
+            return <g key={item} data-world-item className="world-island-name" onPointerEnter={() => setHover(i.family)} onPointerLeave={() => setHover(null)} opacity={faded ? 0.4 : 1} aria-label={`${familyName[i.family]} island`} {...choose(item)}
               transform={`translate(${fixed(i.cx)} ${fixed(below ? i.bottom + 34 : i.top - 26)}) scale(${(tone(k) ** 1.1).toFixed(3)})`}>
               <Ribbon text={familyName[i.family].toUpperCase()} size={21} paper={PAPER} color={on ? GOLD : c.dark} ink={c.dark} tail={c.halo} />
             </g>
           })}
         </g>
       </svg>
-      {hint && <div className="world-hint">Ctrl/⌘ + scroll, or double-click, to zoom in and discover more</div>}
+      {info && card && <div className="world-info" role="dialog" aria-label={card.title} style={{ left: Math.min(Math.max(8, info.x + 14), box.w - 336), top: Math.min(Math.max(72, info.y + 14), box.h - 260) }}>
+        <button type="button" className="world-info-close" onClick={() => setInfo(null)} aria-label="Close">×</button>
+        <strong>{card.title}</strong>
+        <span className="world-info-sub">{card.sub}</span>
+        {card.body && <p>{card.body}</p>}
+        {card.theorems.length > 0 && <ul>
+          {card.theorems.slice(0, 3).map((t) => <li key={t.id}><MathText text={t.name} /></li>)}
+          {card.theorems.length > 3 && <li className="world-info-more">and {card.theorems.length - 3} more</li>}
+        </ul>}
+        <button type="button" className="world-info-open" onClick={() => { const item = info.item; setInfo(null); sel.toggle(item) }}>{chosen.has(info.item) ? 'Remove from selection' : `List the theorem${card.theorems.length === 1 ? '' : 's'}`}</button>
+        <span className="world-info-tip">or double-click it</span>
+      </div>}
+      {hint && <div className="world-hint">Click for a quick note, double-click to list theorems · Ctrl/⌘ + scroll to zoom</div>}
       <div className="world-controls">
         <div className="world-switch" role="group" aria-label="Map style">
           {themes.map((t) => <button type="button" key={t.id} aria-pressed={t.id === theme.id} onClick={() => { setThemeId(t.id); try { window.localStorage.setItem(THEME_KEY, t.id) } catch { /* private mode */ } }}>{t.name}</button>)}
@@ -480,12 +529,12 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     </div>
     <div className="world-hud">
       {onClose && <button type="button" className="world-back" onClick={onClose}>← Course results</button>}
-      <SelectionBar sel={sel} results={results} lead="Zoom in to discover more. Click a method, a trail, a bridge or an island name." />
+      <SelectionBar sel={sel} results={results} lead="Zoom in to discover more. Click a method, trail, bridge or island for a note; double-click to list its theorems." />
       <button type="button" className="world-toggle" aria-expanded={drawer} onClick={() => setDrawer((v) => !v)}>{drawer ? 'Hide theorems' : 'Theorems & methods'}</button>
     </div>
     <aside className="world-drawer" hidden={!drawer} aria-label="Theorems and methods">
       <ResultsPanel sel={sel} model={model} catalog={catalog} results={results} onOpenEntry={onOpenEntry}
-        hint="Each island is a domain of method, and methods that appear in the same theorems sit closer together. Zoom in to reveal more methods, their names, and the trails between them. A trail inside an island, or a lane on a bridge between islands, is a chord: two methods that distinguish two routes of one theorem. Click a bridge or an island name to select it as a whole." />
+        hint="Each island is a domain of method, and methods that appear in the same theorems sit closer together. Zoom in to reveal more methods, their names, and the trails between them. A trail inside an island, or a lane on a bridge between islands, is a chord: two methods that distinguish two routes of one theorem. Click anything for a short note; double-click it to list its theorems. Click an empty spot to start over." />
       <MethodList data={data} model={model} sel={sel} />
       <p className="ring-note">Bridge numbers count the method pairs that cross; dot size is the number of theorems using the method. Methods are tagged by two independent reviewers from the proof sketches, so they are inferred, not source-verified. Routes judged duplicate, dependent or incomplete are left out.</p>
     </aside>

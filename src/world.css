@@ -46,3 +46,15 @@
   .world-hint { display: none; }
   .world-label { display: none; }
 }
+
+.world-info { position: absolute; z-index: 3; width: 320px; padding: 12px 14px 12px; border: 1px solid #3b4438; background: #fbf8f0; box-shadow: 3px 4px 0 rgba(59, 68, 56, .18); font-size: 14px; line-height: 1.4; }
+.world-info strong { display: block; padding-right: 22px; font-size: 17px; line-height: 1.25; }
+.world-info-sub { display: block; margin-top: 2px; color: #6b705f; font-style: italic; }
+.world-info p { margin: 7px 0 0; }
+.world-info ul { margin: 8px 0 0; padding: 0 0 0 16px; }
+.world-info li { margin: 2px 0; }
+.world-info-more { list-style: none; margin-left: -16px; color: #6b705f; font-style: italic; }
+.world-info-close { position: absolute; top: 4px; right: 6px; border: 0; background: none; font-size: 22px; line-height: 1; cursor: pointer; color: #3b4438; }
+.world-info-open { margin-top: 10px; min-height: 32px; padding: 0 12px; border: 1px solid #3b4438; background: #3b4438; color: #fbf8f0; font-size: 14px; cursor: pointer; }
+.world-info-tip { margin-left: 10px; color: #6b705f; font-size: 12px; font-style: italic; }
+@media (max-width: 760px) { .world-info { width: calc(100vw - 20px); left: 10px !important; } }
