@@ -3,14 +3,15 @@ import type { PointerEvent as ReactPointerEvent } from 'react'
 import type { Catalog } from './historicalShared'
 import { familyName, fixed, MethodList, ResultsPanel, SelectionBar, useMethodData, useMethodSelection, useResultsRef } from './methodShared'
 import type { MethodData, MethodModel } from './methodShared'
-import { islandArt, moon } from './worldArt'
+import { terrain } from './worldTerrain'
 import './world.css'
 
 type P = [number, number]
-const CHALK = '#f3efe6', NIGHT = '#080a10', ORANGE = '#f5a04a'
-const land: Record<string, { top: string; light: string }> = {
-  analytic: { top: '#23509c', light: '#8db4ff' }, algebraic: { top: '#9c2a43', light: '#ff8aa3' }, geometric: { top: '#1b7a72', light: '#6fe0d2' },
-  discrete: { top: '#3b7a31', light: '#9be385' }, recursion: { top: '#a8672a', light: '#ffbf7a' }, logic: { top: '#65489a', light: '#c0a6ff' },
+const PAPER = '#f6f0e1', LAND = '#fbf8ee', INK = '#3f4a3c', SAGE = '#7f957c', SAGE_L = '#a9b8a3', WATER = '#7f9fab', WATER_L = '#cfdfe3'
+const TRAIL = '#d98a52', TRAIL_D = '#c4631a', GREY = '#8a9a86', BRIDGE = '#5a4a32'
+const wash: Record<string, { fill: string; name: string }> = {
+  analytic: { fill: '#b9cde8', name: '#2c4f86' }, algebraic: { fill: '#ecc2c8', name: '#8b2f43' }, geometric: { fill: '#bfe2da', name: '#1f6b64' },
+  discrete: { fill: '#cfe5bd', name: '#3f6a2f' }, recursion: { fill: '#efd3ac', name: '#8a5a24' }, logic: { fill: '#d9cdee', name: '#58407f' },
 }
 const KEY = 'proofscape.world.explored'
 
@@ -30,12 +31,27 @@ function hull(points: P[]) {
   return lower.concat(upper)
 }
 
-function smooth(points: P[], dy = 0) {
-  const mid = (a: P, b: P): P => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2 + dy]
+function smooth(points: P[]) {
+  const mid = (a: P, b: P): P => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]
   const start = mid(points[points.length - 1], points[0])
   let d = `M${fixed(start[0])},${fixed(start[1])}`
-  points.forEach((p, i) => { const e = mid(p, points[(i + 1) % points.length]); d += `Q${fixed(p[0])},${fixed(p[1] + dy)} ${fixed(e[0])},${fixed(e[1])}` })
+  points.forEach((p, i) => { const e = mid(p, points[(i + 1) % points.length]); d += `Q${fixed(p[0])},${fixed(p[1])} ${fixed(e[0])},${fixed(e[1])}` })
   return `${d}Z`
+}
+
+const quad = (a: P, c: P, b: P, n = 14): P[] => Array.from({ length: n + 1 }, (_, i) => {
+  const t = i / n
+  return [(1 - t) * (1 - t) * a[0] + 2 * (1 - t) * t * c[0] + t * t * b[0], (1 - t) * (1 - t) * a[1] + 2 * (1 - t) * t * c[1] + t * t * b[1]] as P
+})
+const polyline = (pts: P[]) => pts.map((p, i) => `${i ? 'L' : 'M'}${fixed(p[0])},${fixed(p[1])}`).join('')
+function waypoints(pts: P[], every = 72): P[] {
+  const out: P[] = []
+  let run = every / 2
+  for (let i = 1; i < pts.length; i++) {
+    run += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1])
+    if (run >= every) { out.push(pts[i]); run = 0 }
+  }
+  return out
 }
 
 function readExplored() {
@@ -81,16 +97,12 @@ function WorldBody({ data, model, catalog, onOpenEntry }: { data: MethodData; mo
           ring.push([x + (dx / d) * e, y + (dy / d) * e])
         }
       })
-      const art = islandArt(family, ring, [cx, cy], pts, seeded(`${family}-art`))
-      const ys = ring.map((p) => p[1]), bottom = Math.max(...ys)
-      const bottoms = ring.filter((p) => p[1] > bottom - 40).sort((a, b) => a[0] - b[0])
-      const spikes = bottoms.filter((_, i) => i % Math.max(1, Math.floor(bottoms.length / 4)) === 0).slice(0, 5)
-        .map((p) => `M${fixed(p[0] - 11)},${fixed(p[1] + 12)}L${fixed(p[0] + 11)},${fixed(p[1] + 12)}L${fixed(p[0] + 2)},${fixed(p[1] + 12 + 26 + (Math.round(p[0]) % 7) * 3)}Z`).join('')
-      return { family, cx: box.x, cy: box.y, r: box.r, top: Math.min(...ys), path: smooth(ring), under: smooth(ring, 16), spikes, art }
+      const land = terrain(family, ring, [cx, cy], pts, seeded(`${family}-terrain`))
+      return { family, cx: box.x, cy: box.y, r: box.r, top: Math.min(...ring.map((p) => p[1])), bottom: Math.max(...ring.map((p) => p[1])), path: smooth(ring), ripples: land.ripples.map((r) => smooth(r)), land }
     })
     const byFamily = new Map(islands.map((i) => [i.family, i]))
     const siteOf = new Map(sites.map((s) => [s.id, s]))
-    const lanes = new Map<string, string>()
+    const lanes = new Map<string, P[]>()
     const bridges = [...model.bridges.entries()].map(([key, chordKeys]) => {
       const [fa, fb] = key.split('|'), A = byFamily.get(fa)!, B = byFamily.get(fb)!
       const dx = B.cx - A.cx, dy = B.cy - A.cy, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, px = -uy, py = ux
@@ -101,8 +113,8 @@ function WorldBody({ data, model, catalog, onOpenEntry }: { data: MethodData; mo
         const off = (idx - (m - 1) / 2) * pitch
         let [a, b] = k.split('|').map((id) => siteOf.get(id)!)
         if (a.family !== fa) [a, b] = [b, a]
-        const hax = bx + px * off, hay = by + py * off, hbx = ex + px * off, hby = ey + py * off
-        lanes.set(k, `M${a.x},${a.y}Q${fixed(hax - ux * 38)},${fixed(hay - uy * 38)} ${fixed(hax)},${fixed(hay)}L${fixed(hbx)},${fixed(hby)}Q${fixed(hbx + ux * 38)},${fixed(hby + uy * 38)} ${b.x},${b.y}`)
+        const ha: P = [bx + px * off, by + py * off], hb: P = [ex + px * off, ey + py * off]
+        lanes.set(k, [...quad([a.x, a.y], [ha[0] - ux * 38, ha[1] - uy * 38], ha, 10), ...quad(hb, [hb[0] + ux * 38, hb[1] + uy * 38], [b.x, b.y], 10)])
       })
       const hw = dw / 2
       const deck = `M${fixed(bx + px * hw)},${fixed(by + py * hw)}L${fixed(ex + px * hw)},${fixed(ey + py * hw)}L${fixed(ex - px * hw)},${fixed(ey - py * hw)}L${fixed(bx - px * hw)},${fixed(by - py * hw)}Z`
@@ -118,16 +130,16 @@ function WorldBody({ data, model, catalog, onOpenEntry }: { data: MethodData; mo
         hangers += `M${fixed(x)},${fixed(cy)}V${fixed(at(t1 + (t2 - t1) * u)[1])}`
       }
       const towers = [[T1, top1], [T2, top2]].map(([base, top]) => `M${fixed(base[0])},${fixed(base[1])}L${fixed(top[0])},${fixed(top[1])}`).join('')
-      return { key, deck, cable, hangers, towers, lanterns: [top1, top2], count: m }
+      return { key, deck, cable, hangers, towers, count: m }
     })
     const chords = Object.keys(data.pairs).map((key) => {
       const [a, b] = key.split('|').map((id) => siteOf.get(id)!)
-      let d = lanes.get(key)
-      if (!d) {
+      let pts = lanes.get(key)
+      if (!pts) {
         const home = byFamily.get(a.family)!, mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, vx = mx - home.cx, vy = my - home.cy, vl = Math.hypot(vx, vy) || 1
-        d = `M${a.x},${a.y}Q${fixed(mx + (vx / vl) * 16)},${fixed(my + (vy / vl) * 16)} ${b.x},${b.y}`
+        pts = quad([a.x, a.y], [mx + (vx / vl) * 18, my + (vy / vl) * 18], [b.x, b.y], 16)
       }
-      return { key, d, cross: lanes.has(key), family: a.family, n: model.pairs.get(key)!.size }
+      return { key, d: polyline(pts), dots: waypoints(pts), cross: lanes.has(key), family: a.family, n: model.pairs.get(key)!.size }
     })
     const placed: number[][] = sites.map((s) => { const r = radius(s.use); return [s.x - r, s.y - r, s.x + r, s.y + r] })
     const labels = new Map<string, { x: number; y: number; anchor: 'start' | 'end' | 'middle' }>()
@@ -147,16 +159,7 @@ function WorldBody({ data, model, catalog, onOpenEntry }: { data: MethodData; mo
         }
       }
     }
-    const sky = seeded('sky')
-    const stars = Array.from({ length: 150 }, () => ({ x: sky() * W, y: sky() * HV, r: 0.6 + sky() * 1.1, o: 0.25 + sky() * 0.6 }))
-    const moonPath = moon(W - 130, 150, 40, 200, seeded('moon'))
-    const clouds: { x: number; y: number; s: number }[] = []
-    for (let tries = 0; tries < 200 && clouds.length < 12; tries++) {
-      const c = { x: sky() * W, y: 90 + sky() * (HV - 120), s: 0.7 + sky() * 0.8 }
-      if (islands.some((i) => Math.hypot(i.cx - c.x, i.cy - c.y) < i.r + 70) || clouds.some((o) => Math.hypot(o.x - c.x, o.y - c.y) < 160)) continue
-      clouds.push(c)
-    }
-    return { sites, islands, bridges, chords, labels, stars, moonPath, clouds, radius }
+    return { sites, islands, bridges, chords, labels, radius }
   }, [data, model, W, H, HV])
 
   useEffect(() => {
@@ -191,49 +194,50 @@ function WorldBody({ data, model, catalog, onOpenEntry }: { data: MethodData; mo
     drag.current = { x: event.clientX, y: event.clientY }
     setView((v) => clamp(v.k, v.x + dx, v.y + dy))
   }
-  const toneProps = (tone: 'line' | 'faint' | 'accent' | 'tint' | 'dots') => tone === 'accent' ? { stroke: ORANGE, strokeOpacity: 0.9, strokeWidth: 1.8 } : tone === 'faint' ? { stroke: CHALK, strokeOpacity: 0.4, strokeWidth: 1.2 } : tone === 'dots' ? { stroke: CHALK, strokeOpacity: 0.42, strokeWidth: 2, fill: 'none' } : tone === 'tint' ? { stroke: CHALK, strokeOpacity: 0.3, strokeWidth: 1.1, fill: CHALK, fillOpacity: 0.07 } : { stroke: CHALK, strokeOpacity: 0.9, strokeWidth: 1.6 }
-
   return <section className="ring-view world-view" aria-label="A world of proof methods and the theorems they prove">
-    <SelectionBar sel={sel} results={results} lead={`${data.theorems.filter((theorem) => theorem.usableRoutes >= 1).length} theorems, ${data.vocabulary.techniques.length} methods, ${data.ring.families.length} islands. Click a method, a road or bridge lane, a bridge, or an island name.`} />
+    <SelectionBar sel={sel} results={results} lead={`${data.theorems.filter((theorem) => theorem.usableRoutes >= 1).length} theorems, ${data.vocabulary.techniques.length} methods, ${data.ring.families.length} islands. Click a method, a trail or bridge lane, a bridge, or an island name.`} />
     <div className="world-frame">
-      <svg ref={svg} className="world-svg" viewBox={`0 0 ${W} ${HV}`} role="group" aria-label="Floating islands of proof methods joined by bridges" onPointerDown={down} onPointerMove={move} onPointerUp={() => { drag.current = null }} onPointerCancel={() => { drag.current = null }}>
-        <rect width={W} height={HV} fill={NIGHT} />
+      <svg ref={svg} className="world-svg" viewBox={`0 0 ${W} ${HV}`} role="group" aria-label="A hand-drawn chart of islands of proof methods joined by bridges" onPointerDown={down} onPointerMove={move} onPointerUp={() => { drag.current = null }} onPointerCancel={() => { drag.current = null }}>
+        <rect width={W} height={HV} fill={PAPER} />
         <g transform={`translate(${fixed(view.x)} ${fixed(view.y)}) scale(${view.k.toFixed(3)})`}>
-          <g pointerEvents="none">
-            {world.stars.map((s, i) => <circle key={i} cx={fixed(s.x)} cy={fixed(s.y)} r={s.r.toFixed(1)} fill={CHALK} opacity={s.o} />)}
-            <path d={world.moonPath} stroke={CHALK} strokeWidth="2.2" strokeLinecap="round" opacity="0.85" />
-            {world.clouds.map((c, i) => <path key={i} transform={`translate(${fixed(c.x)} ${fixed(c.y)}) scale(${c.s.toFixed(2)})`} d="M0,0H70a13,13 0 0 0 -3,-25a18,18 0 0 0 -34,-7a15,15 0 0 0 -28,15a11,11 0 0 0 -5,17Z" fill="none" stroke={CHALK} strokeOpacity="0.16" strokeWidth="1.4" />)}
-          </g>
           {world.islands.map((i) => <g key={i.family} pointerEvents="none">
-            <path d={i.under} fill="#0c1017" stroke={CHALK} strokeOpacity="0.35" strokeWidth="1.2" />
-            <path d={i.spikes} fill="#0c1017" stroke={CHALK} strokeOpacity="0.3" strokeWidth="1" />
-            <path d={i.path} fill={land[i.family].top} stroke={CHALK} strokeOpacity="0.9" strokeWidth="1.7" strokeLinejoin="round" />
-            {i.art.map((a, n) => <path key={n} d={a.d} fill="none" strokeLinecap="round" strokeLinejoin="round" {...toneProps(a.tone)} />)}
+            {i.ripples.map((d, n) => <path key={n} d={d} fill="none" stroke={WATER} strokeOpacity={n ? 0.35 : 0.55} strokeWidth="1.1" strokeDasharray="1.5 6" strokeLinecap="round" />)}
+            <path d={i.path} fill={LAND} />
+            <path d={i.path} fill={wash[i.family].fill} fillOpacity="0.42" />
+            <path d={i.land.minor} fill="none" stroke={SAGE_L} strokeWidth="0.8" strokeOpacity="0.85" strokeLinecap="round" />
+            <path d={i.land.major} fill="none" stroke={SAGE} strokeWidth="1.1" strokeOpacity="0.8" strokeLinecap="round" />
+            {i.land.rivers.map((r, n) => <g key={n}><path d={r.water} fill="none" stroke={WATER_L} strokeWidth="3.4" strokeLinecap="round" /><path d={r.bank} fill="none" stroke={WATER} strokeWidth="0.9" strokeLinecap="round" /></g>)}
+            <path d={i.land.trees} fill="none" stroke="#5f7a5c" strokeWidth="0.95" strokeLinecap="round" strokeLinejoin="round" />
+            <path d={i.land.mountains} fill={LAND} stroke={INK} strokeWidth="1.15" strokeLinejoin="round" />
+            <path d={i.land.hatch} fill="none" stroke="#6d7a68" strokeWidth="0.75" strokeLinecap="round" />
+            <path d={i.land.ink} fill="none" stroke={INK} strokeWidth="0.95" strokeLinecap="round" strokeLinejoin="round" />
+            <path d={i.path} fill="none" stroke={INK} strokeWidth="1.4" strokeLinejoin="round" />
           </g>)}
           {world.bridges.map((b) => {
             const item = `b:${b.key}`, on = chosen.has(item), faded = selection.length > 0 && !live.bridges.has(b.key) && !on
-            const ink = on ? ORANGE : CHALK
-            return <g key={b.key} data-world-item className="world-bridge" opacity={faded ? 0.18 : 1} aria-label={`${label(item)}, ${b.count} method pair${b.count === 1 ? '' : 's'}`} {...press(item)}>
+            const ink = on ? TRAIL_D : BRIDGE
+            return <g key={b.key} data-world-item className="world-bridge" opacity={faded ? 0.2 : 1} aria-label={`${label(item)}, ${b.count} method pair${b.count === 1 ? '' : 's'}`} {...press(item)}>
               <title>{label(item)}: {b.count} method pairs</title>
-              <path d={b.deck} fill="#0b0e14" stroke={ink} strokeWidth="1.6" strokeLinejoin="round" />
-              <path d={b.towers} fill="none" stroke={ink} strokeWidth="3" strokeLinecap="round" />
-              <path d={b.cable} fill="none" stroke={ink} strokeWidth="1.5" />
-              <path d={b.hangers} fill="none" stroke={ink} strokeWidth="1" strokeOpacity="0.7" />
-              {b.lanterns.map((p, n) => <circle key={n} cx={fixed(p[0])} cy={fixed(p[1])} r="4.5" fill={ORANGE} />)}
+              <path d={b.deck} fill={LAND} stroke={ink} strokeWidth="1.3" strokeLinejoin="round" />
+              <path d={b.towers} fill="none" stroke={ink} strokeWidth="2.6" strokeLinecap="round" />
+              <path d={b.cable} fill="none" stroke={ink} strokeWidth="1.2" />
+              <path d={b.hangers} fill="none" stroke={ink} strokeWidth="0.8" strokeOpacity="0.8" />
             </g>
           })}
           {Object.keys(data.triples).map((key) => {
             const item = `t:${key}`, on = chosen.has(item), isLive = live.triples.has(key), strong = model.triples.get(key)!.size >= 2
             const path = key.split('|').map((id) => { const s = world.sites.find((site) => site.id === id)!; return `${s.x},${s.y}` }).join('L')
-            return <path key={item} data-world-item className="ring-triangle" d={`M${path}Z`} fill={ORANGE} stroke={ORANGE}
-              fillOpacity={on ? 0.3 : isLive ? (selection.length ? 0.14 : 0) : 0} strokeOpacity={on ? 1 : isLive ? (selection.length ? 0.6 : strong ? 0.3 : 0.12) : 0.04} strokeWidth={on ? 2.5 : 1}
+            return <path key={item} data-world-item className="ring-triangle" d={`M${path}Z`} fill={TRAIL} stroke={TRAIL_D} strokeDasharray="3 6"
+              fillOpacity={on ? 0.22 : isLive ? (selection.length ? 0.1 : 0) : 0} strokeOpacity={on ? 1 : isLive ? (selection.length ? 0.6 : strong ? 0.3 : 0.12) : 0.04} strokeWidth={on ? 2.2 : 1}
               aria-label={`${label(item)}, three routes`} {...press(item)}><title>{label(item)}</title></path>
           })}
           {world.chords.map((c) => {
             const item = `e:${c.key}`, on = chosen.has(item), isLive = live.edges.has(c.key)
+            const color = on ? TRAIL_D : c.n >= 2 ? TRAIL : GREY
+            const op = on ? 1 : isLive ? (selection.length ? 0.95 : c.n >= 2 ? 0.8 : 0.5) : 0.1
             return <g key={item}>
-              <path d={c.d} fill="none" strokeLinecap="round" stroke={on ? ORANGE : c.cross ? CHALK : land[c.family].light} strokeDasharray={c.cross || on ? undefined : '6 5'}
-                strokeWidth={1.2 + Math.min(c.n, 5) * 0.8 + (on ? 2.4 : 0)} strokeOpacity={on ? 1 : isLive ? (selection.length ? 0.92 : c.n >= 2 ? 0.55 : 0.22) : 0.08} />
+              <path d={c.d} fill="none" strokeLinecap="round" stroke={color} strokeDasharray={on ? undefined : '7 5'} strokeWidth={on ? 3.2 : 1.1 + Math.min(c.n, 4) * 0.35} strokeOpacity={op} />
+              {(on || (c.n >= 2 && isLive)) && c.dots.map((p, n) => <circle key={n} cx={fixed(p[0])} cy={fixed(p[1])} r="3.2" fill={PAPER} stroke={color} strokeWidth="1.3" strokeOpacity={op} />)}
               <path d={c.d} data-world-item fill="none" stroke="transparent" strokeWidth="12" className="ring-hit" aria-label={`${label(item)}, ${c.n} theorem${c.n === 1 ? '' : 's'}`} {...press(item)}>
                 <title>{label(item)}: {c.n} theorem{c.n === 1 ? '' : 's'}</title>
               </path>
@@ -241,22 +245,33 @@ function WorldBody({ data, model, catalog, onOpenEntry }: { data: MethodData; mo
           })}
           {world.sites.map((s) => {
             const item = `v:${s.id}`, on = chosen.has(item), faded = selection.length > 0 && !live.methods.has(s.id) && !on, l = world.labels.get(s.id), seen = explored.has(s.id), r = world.radius(s.use)
-            return <g key={item} data-world-item className="world-site" opacity={faded ? 0.28 : 1} aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...press(item)}>
+            return <g key={item} data-world-item className="world-site" opacity={faded ? 0.3 : 1} aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...press(item)}>
               <title>{model.names.get(s.id)?.label}</title>
-              {on && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={ORANGE} strokeWidth="2" strokeOpacity="0.8" />}
-              <circle cx={s.x} cy={s.y} r={r} fill="#0b0e14" stroke={on ? ORANGE : land[s.family].light} strokeWidth={on ? 4 : 2.4} />
-              {seen && <circle cx={s.x} cy={s.y} r={Math.max(2.4, r * 0.4)} fill={ORANGE} />}
+              {on && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={TRAIL_D} strokeWidth="1.8" strokeDasharray="3 3" />}
+              <circle cx={s.x} cy={s.y} r={r} fill={PAPER} stroke={on ? TRAIL_D : INK} strokeWidth={on ? 2.8 : 1.4} />
+              <circle cx={s.x} cy={s.y} r={Math.max(1.8, r * 0.38)} fill={seen ? TRAIL_D : wash[s.family].name} fillOpacity={seen ? 1 : 0.75} />
               {l && <text className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor}>{s.short}</text>}
             </g>
           })}
           {world.islands.map((i) => {
             const item = `i:${i.family}`, on = chosen.has(item), faded = selection.length > 0 && !live.islands.has(i.family) && !on
-            return <g key={item} data-world-item className="world-island-name" opacity={faded ? 0.3 : 1} aria-label={`${familyName[i.family]} island`} {...press(item)}>
-              <text x={fixed(i.cx)} y={fixed(i.top - 14)} textAnchor="middle" style={{ fill: on ? ORANGE : land[i.family].light }}>{familyName[i.family].toUpperCase()}</text>
+            return <g key={item} data-world-item className="world-island-name" opacity={faded ? 0.35 : 1} aria-label={`${familyName[i.family]} island`} {...press(item)}>
+              <text x={fixed(i.cx)} y={fixed(i.cy > H / 2 ? i.bottom + 30 : i.top - 14)} textAnchor="middle" style={{ fill: on ? TRAIL_D : wash[i.family].name }}>{familyName[i.family].toUpperCase()}</text>
             </g>
           })}
         </g>
-        <text className="world-title" x={W / 2} y="64" textAnchor="middle">The World of Proof</text>
+        <rect x="14" y="14" width={W - 28} height={HV - 28} fill="none" stroke={INK} strokeWidth="1.2" pointerEvents="none" />
+        <rect x="21" y="21" width={W - 42} height={HV - 42} fill="none" stroke={INK} strokeWidth="0.6" pointerEvents="none" />
+        <g pointerEvents="none">
+          <path d={`M${W / 2 - 300},34H${W / 2 + 300}L${W / 2 + 276},62L${W / 2 + 300},90H${W / 2 - 300}L${W / 2 - 276},62Z`} fill={PAPER} stroke={INK} strokeWidth="1.3" />
+          <text className="world-title" x={W / 2} y="73" textAnchor="middle">The World of Proof</text>
+        </g>
+        <g transform={`translate(96 ${HV - 130})`} pointerEvents="none">
+          <circle r="34" fill="none" stroke={INK} strokeWidth="0.9" /><circle r="29" fill="none" stroke={INK} strokeWidth="0.5" />
+          <path d="M0,-44L7,0L0,44L-7,0Z" fill={INK} /><path d="M-44,0L0,-6L44,0L0,6Z" fill="none" stroke={INK} strokeWidth="1" />
+          <path d="M-18,-18L18,18M18,-18L-18,18" stroke={INK} strokeWidth="0.7" />
+          <text y="-50" textAnchor="middle" className="world-compass">N</text>
+        </g>
       </svg>
       <div className="world-pill" aria-live="polite">{explored.size} / {world.sites.length} explored</div>
       <div className="world-zoom" role="group" aria-label="Map zoom">
@@ -266,7 +281,7 @@ function WorldBody({ data, model, catalog, onOpenEntry }: { data: MethodData; mo
       </div>
     </div>
     <ResultsPanel sel={sel} model={model} catalog={catalog} results={results} onOpenEntry={onOpenEntry}
-      hint="Each island is a domain of method, and methods that appear in the same theorems sit closer together. A dashed road inside an island, or a lane on a bridge between islands, is a chord: two methods that distinguish two routes of one theorem. Orange constellations are three rival routes. Click a bridge or an island name to select it as a whole; the counter tracks the methods you have picked. Hold Ctrl or Cmd and scroll to zoom." />
+      hint="Each island is a domain of method, and methods that appear in the same theorems sit closer together. A dashed trail inside an island, or a lane on a bridge between islands, is a chord: two methods that distinguish two routes of one theorem. Dotted orange triangles are three rival routes. Click a bridge or an island name to select it as a whole; the counter tracks the methods you have picked. Hold Ctrl or Cmd and scroll to zoom." />
     <MethodList data={data} model={model} sel={sel} />
     <p className="ring-note">Bridge width shows how many theorems cross it; dot size is the number of theorems using the method. Methods are tagged by two independent reviewers from the proof sketches, so they are inferred, not source-verified. Routes judged duplicate, dependent or incomplete are left out.</p>
   </section>

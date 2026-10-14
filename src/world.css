@@ -1,16 +1,17 @@
 .world-frame { position: relative; margin: 6px auto 0; max-width: 1100px; }
-.world-svg { display: block; width: 100%; height: auto; border-radius: 14px; background: #080a10; touch-action: pan-y pinch-zoom; }
+.world-svg { display: block; width: 100%; height: auto; border: 1px solid #cbc2b4; background: #f6f0e1; touch-action: pan-y pinch-zoom; }
 .world-svg *:focus { outline: none; }
-.world-svg .world-site:focus-visible circle:nth-of-type(1) { stroke: #f5a04a; stroke-width: 4; }
-.world-svg .world-bridge:focus-visible path:first-of-type { stroke: #f5a04a; }
-.world-svg .world-island-name:focus-visible text { fill: #f5a04a; }
+.world-svg .world-site:focus-visible circle:nth-of-type(1) { stroke: #c4631a; stroke-width: 3; }
+.world-svg .world-bridge:focus-visible path:first-of-type { stroke: #c4631a; }
+.world-svg .world-island-name:focus-visible text { fill: #c4631a; }
 .world-site, .world-bridge, .world-island-name { cursor: pointer; }
-.world-label { font: 20px 'CMU Sans', sans-serif; fill: #f3efe6; stroke: #080a10; stroke-opacity: .85; stroke-width: 4px; paint-order: stroke; }
-.world-island-name text { font: 500 27px 'CMU Serif', Georgia, serif; letter-spacing: 7px; stroke: #080a10; stroke-width: 5px; paint-order: stroke; }
-.world-title { font: 400 50px 'CMU Serif', Georgia, serif; fill: #f3efe6; }
-.world-pill { position: absolute; left: 14px; bottom: 14px; border: 1px solid rgba(243, 239, 230, .4); border-radius: 999px; background: rgba(8, 10, 16, .85); padding: 8px 15px; color: #f3efe6; font: 12px 'CMU Sans', sans-serif; }
-.world-zoom { position: absolute; right: 14px; bottom: 14px; display: flex; border: 1px solid rgba(243, 239, 230, .4); border-radius: 999px; overflow: hidden; background: rgba(8, 10, 16, .85); }
-.world-zoom button { width: 36px; height: 34px; border: 0; background: transparent; color: #f3efe6; font: 15px 'CMU Sans', sans-serif; cursor: pointer; }
-.world-zoom button + button { border-left: 1px solid rgba(243, 239, 230, .25); }
-.world-zoom button:disabled { color: rgba(243, 239, 230, .3); cursor: default; }
-@media (max-width: 640px) { .world-label { display: none; } .world-island-name text { font-size: 34px; } .world-title { font-size: 56px; } }
+.world-label { font: italic 400 19px 'CMU Serif', Georgia, serif; fill: #2f3a2d; stroke: #f6f0e1; stroke-opacity: .9; stroke-width: 4.5px; paint-order: stroke; }
+.world-island-name text { font: 500 27px 'CMU Serif', Georgia, serif; letter-spacing: 8px; stroke: #f6f0e1; stroke-width: 6px; paint-order: stroke; }
+.world-title { font: italic 400 34px 'CMU Serif', Georgia, serif; fill: #2f3a2d; }
+.world-compass { font: italic 17px 'CMU Serif', Georgia, serif; fill: #2f3a2d; }
+.world-pill { position: absolute; left: 22px; bottom: 22px; border: 1px solid #3f4a3c; background: #f6f0e1; padding: 6px 13px; color: #2f3a2d; font: italic 13px 'CMU Serif', Georgia, serif; }
+.world-zoom { position: absolute; right: 22px; bottom: 22px; display: flex; border: 1px solid #3f4a3c; background: #f6f0e1; }
+.world-zoom button { width: 34px; height: 32px; border: 0; background: transparent; color: #2f3a2d; font: 15px 'CMU Sans', sans-serif; cursor: pointer; }
+.world-zoom button + button { border-left: 1px solid #cbc2b4; }
+.world-zoom button:disabled { color: #b9ae9f; cursor: default; }
+@media (max-width: 640px) { .world-label { display: none; } .world-island-name text { font-size: 36px; } .world-title { font-size: 44px; } .world-pill, .world-zoom { left: auto; } .world-pill { left: 10px; bottom: 10px; } .world-zoom { right: 10px; bottom: 10px; } }
