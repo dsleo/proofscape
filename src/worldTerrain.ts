@@ -137,7 +137,14 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
   const bio = biome[family] ?? biome.analytic
   const crest = Math.max(1, Math.round((polygonArea(ring) / 26000) * bio.peaks))
   // a drawn thing of half-width w and height h at (x, y) must lie wholly on land
-  const fits = (x: number, y: number, w: number, h: number) => [[x - w, y], [x + w, y], [x, y - h], [x - w, y - h * 0.5], [x + w, y - h * 0.5], [x, y + 3]].every(([a, b]) => inside([a, b] as P, ring) && ring.every((q) => Math.hypot(q[0] - a, q[1] - b) > 5))
+  // a point is on land, clear of the coast, if its grid cell is inside and far enough from the ring
+  const onLand = (a: number, b: number) => {
+    const i = Math.round((a - x0) / g), j = Math.round((b - y0) / g)
+    if (i < 0 || j < 0 || i >= nx || j >= ny) return false
+    const k = j * nx + i
+    return ins[k] === 1 && dist[k] > 9
+  }
+  const fits = (x: number, y: number, w: number, h: number) => [[x - w, y], [x + w, y], [x, y - h], [x - w, y - h * 0.5], [x + w, y - h * 0.5], [x, y + 3]].every(([a, b]) => onLand(a, b))
   const peaks: { p: P; a: number; s: number }[] = []
   const cands: P[] = []
   for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) if (ins[j * nx + i] && dist[j * nx + i] > maxD * 0.42) cands.push(node(i, j))

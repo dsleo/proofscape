@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { startTransition, useEffect, useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
 import type { Catalog } from './historicalShared'
 import { familyName, fixed, MethodList, ResultsPanel, SelectionBar, useMethodData, useMethodSelection, useResultsRef } from './methodShared'
@@ -107,7 +107,12 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const stage = useRef<HTMLDivElement>(null)
   const svg = useRef<SVGSVGElement>(null)
   const [box, setBox] = useState({ w: 1200, h: 760 })
-  const [view, setView] = useState({ k: 1, x: 0, y: 0, glide: false })
+  // the camera lives in a ref and is applied straight to the DOM, so panning and zooming never wait for React;
+  // only the zoom level, rounded to a twelfth, is state: it decides which details are drawn
+  const viewRef = useRef({ k: 1, x: 0, y: 0, glide: false })
+  const camera = useRef<SVGGElement>(null)
+  const settle = useRef(0)
+  const [lod, setLod] = useState(1)
   const [info, setInfo] = useState<{ item: string; x: number; y: number } | null>(null)
   const [hint, setHint] = useState(true)
   const [measured, setMeasured] = useState(false)
@@ -180,8 +185,19 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         }
       })
       const land = terrain(family, ring, [cx, cy], pts, seeded(`${family}-terrain`))
-      return { family, cx: boxed.x, cy: boxed.y, r: boxed.r, top: Math.min(...ring.map((p) => p[1])), bottom: Math.max(...ring.map((p) => p[1])), path: smooth(ring), halo: smooth(land.ripples[1]), near: smooth(land.ripples[0]), ring, ox: cx, oy: cy, land }
+      return { family, cx: boxed.x, cy: boxed.y, r: boxed.r, top: Math.min(...ring.map((p) => p[1])), bottom: Math.max(...ring.map((p) => p[1])), path: smooth(ring), halo: smooth(land.ripples[1]), near: smooth(land.ripples[0]), ring, ox: cx, oy: cy, land, below: false, treeD: land.trees.map((t) => t.d).join(''), treeH: land.trees.map((t) => t.hatch).join('') }
     })
+    // an island's name goes on the side away from most of its bridges
+    for (const island of islands) {
+      let away = 0
+      for (const key of model.bridges.keys()) {
+        const [fa, fb] = key.split('|')
+        if (fa !== island.family && fb !== island.family) continue
+        const other = islands.find((o) => o.family === (fa === island.family ? fb : fa))
+        if (other) away += Math.sign(other.cy - island.cy)
+      }
+      island.below = away > 0 ? false : away < 0 ? true : island.cy > H / 2
+    }
     const byFamily = new Map(islands.map((i) => [i.family, i]))
     const siteOf = new Map(sites.map((s) => [s.id, s]))
     const lanes = new Map<string, P[]>()
@@ -278,19 +294,40 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     const axis = (extent: number, size: number, pan: number, home: number) => size <= extent ? home : Math.min(MARGIN, Math.max(extent - size - MARGIN, home + pan))
     return { s, tx: axis(box.w, bw * s, x, c.cx), ty: axis(box.h, bh * s, y, c.cy), cx: c.cx, cy: c.cy }
   }
-  const { s: scale, tx, ty } = geometry(view.k, view.x, view.y)
-  const k = view.k
+  const k = lod
+  const scale = fit * lod
+  const rested = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y)
+  function paint(next: { k: number; x: number; y: number; glide: boolean }) {
+    viewRef.current = next
+    const g = geometry(next.k, next.x, next.y)
+    const node = camera.current
+    if (node) {
+      node.style.transition = next.glide ? 'transform .6s cubic-bezier(.2,.7,.2,1)' : 'none'
+      node.style.transform = `translate(${g.tx.toFixed(1)}px, ${g.ty.toFixed(1)}px) scale(${g.s.toFixed(4)})`
+    }
+    const root = svg.current
+    if (root) {
+      root.style.setProperty('--k', next.k.toFixed(3))
+      // while the picture is moving, drop the decorative texture: it is what costs a frame, and nobody reads it in motion
+      root.classList.add('moving')
+      window.clearTimeout(settle.current)
+      settle.current = window.setTimeout(() => root.classList.remove('moving'), next.glide ? 700 : 140)
+    }
+    startTransition(() => setLod(Math.round(next.k * 12) / 12))
+  }
+  // keep the picture where it was when the window changes size
+  useEffect(() => { paint({ ...viewRef.current, glide: false }) }, [box.w, box.h, bw, bh]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // zoom by a factor about a screen point: used by the wheel, trackpad pinch and the buttons
   function zoomTo(nextK: number | ((current: number) => number), px: number, py: number, glide: boolean) {
     setHint(false)
-    setView((v) => {
-      const cur = geometry(v.k, v.x, v.y)
-      const kk = Math.min(MAX_ZOOM, Math.max(1, typeof nextK === 'function' ? nextK(v.k) : nextK))
-      const s = fit * kk, wx = (px - cur.tx) / cur.s, wy = (py - cur.ty) / cur.s
-      const c = centred(s)
-      return { k: kk, x: px - wx * s - c.cx, y: py - wy * s - c.cy, glide }
-    })
+    const v = viewRef.current
+    const cur = geometry(v.k, v.x, v.y)
+    const kk = Math.min(MAX_ZOOM, Math.max(1, typeof nextK === 'function' ? nextK(v.k) : nextK))
+    if (kk === v.k) return
+    const s = fit * kk, wx = (px - cur.tx) / cur.s, wy = (py - cur.ty) / cur.s
+    const c = centred(s)
+    paint({ k: kk, x: px - wx * s - c.cx, y: py - wy * s - c.cy, glide })
   }
   // carry the view to a world point so that a span of `span` fills the part of the window the drawer leaves free
   function flyTo(wx: number, wy: number, span: number, inset = 0, left = 0) {
@@ -298,7 +335,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     const kk = Math.min(MAX_ZOOM, Math.max(1, Math.min(free, box.h) / (span * fit)))
     const s = fit * kk
     const c = centred(s)
-    setView({ k: kk, x: left + free / 2 - wx * s - c.cx, y: box.h / 2 - wy * s - c.cy, glide: true })
+    paint({ k: kk, x: left + free / 2 - wx * s - c.cx, y: box.h / 2 - wy * s - c.cy, glide: true })
   }
   const drawerInset = box.w > 760 ? Math.min(DRAWER, box.w * 0.5) : 0
 
@@ -354,7 +391,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
 
   function down(event: ReactPointerEvent<SVGSVGElement>) {
     travel.current = 0
-    if ((event.target as Element).closest('[data-world-item]') || view.k === 1) return
+    if ((event.target as Element).closest('[data-world-item]') || viewRef.current.k === 1) return
     drag.current = { x: event.clientX, y: event.clientY }
     event.currentTarget.setPointerCapture(event.pointerId)
   }
@@ -363,10 +400,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     const dx = event.clientX - drag.current.x, dy = event.clientY - drag.current.y
     travel.current += Math.abs(dx) + Math.abs(dy)
     drag.current = { x: event.clientX, y: event.clientY }
-    setView((v) => {
-      const cur = geometry(v.k, v.x, v.y)
-      return { ...v, x: cur.tx + dx - cur.cx, y: cur.ty + dy - cur.cy, glide: false }
-    })
+    const v = viewRef.current
+    const cur = geometry(v.k, v.x, v.y)
+    paint({ ...v, x: cur.tx + dx - cur.cx, y: cur.ty + dy - cur.cy, glide: false })
   }
 
   // progressive detail: what is shown depends on how far in the view is
@@ -459,22 +495,24 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     return { title: names.join(' + '), sub: `${kind === 'e' ? 'Two' : 'Three'} rival routes in ${plural(theorems.length, 'theorem')}`, body: '', theorems }
   }, [info, data, model])
 
+  // trees overlap properly only when they are big enough to see: one merged path before that
+  const close = lod >= 1.85
   const landLayer = useMemo(() => (
         <g pointerEvents="none">
-            <path d={world.wisps} fill={theme.wisp} fillOpacity="0.8" />
+            <path className="world-texture" d={world.wisps} fill={theme.wisp} fillOpacity="0.8" />
                         {world.islands.map((i) => {
               const c = theme.hue(i.family)
               return <g key={i.family}>
                 {theme.ripples ? <>
-                  <path d={i.halo} fill="none" stroke={c.dark} strokeOpacity="0.35" strokeWidth="1.1" strokeDasharray="9 9" />
+                  <path className="world-texture" d={i.halo} fill="none" stroke={c.dark} strokeOpacity="0.35" strokeWidth="1.1" strokeDasharray="9 9" />
                   <path d={i.near} fill="none" stroke={c.dark} strokeOpacity="0.5" strokeWidth="1.2" strokeDasharray="14 6" />
-                  <path d={i.path} fill="url(#w-hatch)" opacity="0.5" transform="translate(5 6)" />
+                  <path className="world-texture" d={i.path} fill="url(#w-hatch)" opacity="0.5" transform="translate(5 6)" />
                 </> : <>
                   <path d={i.halo} fill={c.halo} fillOpacity="0.75" />
                   <path d={i.path} fill={c.dark} fillOpacity={theme.shade} transform="translate(0 7)" />
                 </>}
                 <path d={i.path} fill={c.land} />
-                <path d={i.path} fill="url(#w-tuft)" opacity={theme.ripples ? 0.55 : 0.14} />
+                <path className="world-texture" d={i.path} fill="url(#w-tuft)" opacity={theme.ripples ? 0.55 : 0.14} />
                 <path className="world-minor" d={i.land.minor} fill="none" stroke={c.light} strokeWidth="0.9" strokeLinecap="round" />
                 <path className="world-major" d={i.land.major} fill="none" stroke={c.dark} strokeOpacity="0.45" strokeWidth="1.1" strokeLinecap="round" />
                 <path d={i.land.lakes} fill={theme.water} stroke={c.dark} strokeOpacity="0.7" strokeWidth="1" />
@@ -483,10 +521,10 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
                 <path d={i.land.squares} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="0.9" strokeLinejoin="round" />
                 <path d={i.land.dunes} fill="none" stroke={c.dark} strokeOpacity="0.6" strokeWidth="0.9" strokeLinecap="round" />
                 <path d={i.land.spirals} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="1" strokeLinecap="round" />
-                {i.land.trees.map((t, n) => <g key={n}>
-                  <path d={t.d} fill={theme.tree(c)} stroke={c.dark} strokeWidth="1" strokeLinejoin="round" strokeLinecap="round" />
-                  <path d={t.hatch} fill="none" stroke={theme.hatchInk(c)} strokeOpacity="0.7" strokeWidth="0.8" strokeLinecap="round" />
-                </g>)}
+                {close
+                  ? i.land.trees.map((t, n) => <path key={n} d={t.d} fill={theme.tree(c)} stroke={c.dark} strokeWidth="1" strokeLinejoin="round" strokeLinecap="round" />)
+                  : <path d={i.treeD} fill={theme.tree(c)} stroke={c.dark} strokeWidth="1" strokeLinejoin="round" strokeLinecap="round" />}
+                <path className="world-texture" d={i.treeH} fill="none" stroke={theme.hatchInk(c)} strokeOpacity="0.7" strokeWidth="0.8" strokeLinecap="round" />
                 <path d={i.land.mountains} fill={c.peak} stroke={c.dark} strokeWidth="1.3" strokeLinejoin="round" />
                 <path d={i.land.hatch} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="0.9" strokeLinecap="round" />
                 <path d={i.land.ink} fill={theme.paper} fillOpacity="0.92" stroke={c.dark} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -494,7 +532,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
               </g>
             })}
           </g>
-  ), [world, theme])
+  ), [world, theme, close])
 
   return <section className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
     <div className="world-stage" ref={stage}>
@@ -504,9 +542,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         onDoubleClick={(event) => {
           if ((event.target as Element).closest('[data-world-item]')) return
           const rect = event.currentTarget.getBoundingClientRect()
-          zoomTo(view.k * 2, event.clientX - rect.left, event.clientY - rect.top, true)
+          zoomTo((current) => current * 2, event.clientX - rect.left, event.clientY - rect.top, true)
         }}
-        style={{ '--k': k } as React.CSSProperties}>
+        >
         <defs>
           <pattern id="w-tuft" width="38" height="30" patternUnits="userSpaceOnUse">
             <path d="M5,9l2.5,-5l2.5,5M23,24l2.5,-5l2.5,5M30,8l2,-4l2,4M14,19l2,-4l2,4" fill="none" stroke={INK} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
@@ -516,7 +554,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           </pattern>
         </defs>
         <rect width={box.w} height={box.h} fill={SEA} />
-        <g className="world-camera" style={{ transform: `translate(${fixed(tx)}px, ${fixed(ty)}px) scale(${scale.toFixed(4)})`, transition: view.glide ? 'transform .6s cubic-bezier(.2,.7,.2,1)' : 'none' }}>
+        <g className="world-camera" ref={camera} style={{ transform: `translate(${rested.tx.toFixed(1)}px, ${rested.ty.toFixed(1)}px) scale(${rested.s.toFixed(4)})` }}>
           {landLayer}
           {world.bridges.map((b) => {
             const shown = chosen.has(`b:${b.key}`) || (dim ? live.bridges.has(b.key) : hover !== null && (b.fa === hover || b.fb === hover)) ? 1 : fade(k, 1.3, 1.9)
@@ -546,8 +584,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           })}
           {Object.keys(data.triples).map((key) => {
             const item = `t:${key}`, on = chosen.has(item), isLive = live.triples.has(key), strong = model.triples.get(key)!.size >= 2
-            const path = key.split('|').map((id) => { const s = world.sites.find((site) => site.id === id)!; return `${s.x},${s.y}` }).join('L')
             const base = focus !== null ? 0 : dim ? (isLive ? 0.55 * fade(k, 1.6, 2.6) : 0) : fade(k, 2.6, 3.6) * (strong ? 0.6 : 0.3)
+            if (!on && base < 0.02) return null
+            const path = key.split('|').map((id) => { const s = siteById.get(id)!; return `${s.x},${s.y}` }).join('L')
             return <path key={item} data-world-item className="ring-triangle" d={`M${path}Z`} fill={GOLD} stroke={on ? INK : theme.trail} strokeDasharray="4 6" strokeLinecap="round"
               fillOpacity={on ? 0.3 : 0} strokeOpacity={on ? 1 : base} strokeWidth={on ? 2.6 : 1.4} pointerEvents={on || base > 0.1 ? undefined : 'none'}
               aria-label={`${label(item)}, three routes`} {...choose(item)}><title>{label(item)}</title></path>
@@ -557,6 +596,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             const strong = c.n >= 3 ? 0.9 : c.n >= 2 ? (broad ? fade(k, 2.2, 3) * 0.8 : 0.9) : broad ? fade(k, 3.2, 4) * 0.7 : fade(k, 2, 3) * 0.8
             const reveal = focus !== null ? 0 : partners ? (partners.keys.has(c.key) ? 0.95 : 0) : dim ? (isLive ? strong : 0) : c.n >= 3 ? fade(k, 1.5, 2.3) * 0.8 : c.n >= 2 ? fade(k, 2.3, 3.1) * 0.75 : fade(k, 3.2, 4) * 0.6
             const op = on ? 1 : reveal
+            if (!on && op < 0.03) return null
             return <g key={item} opacity={op > 0 || on ? 1 : 0} pointerEvents={op > 0.08 || on ? undefined : 'none'}>
               {on && <path d={c.d} fill="none" stroke={theme.id === 'ink' ? PAPER : INK} strokeWidth="6" vectorEffect="non-scaling-stroke" strokeLinecap="round" strokeLinejoin="round" />}
               <path d={c.d} fill="none" strokeLinecap="round" stroke={on ? GOLD : theme.trail} strokeDasharray={on ? undefined : '7 5'} strokeWidth={on ? 3.2 : 1.2 + Math.min(c.n, 4) * 0.4} vectorEffect="non-scaling-stroke" strokeOpacity={on ? 1 : op} />
@@ -576,7 +616,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             const showLabel = focus !== null ? inFocus : on || noted || (partners ? near : dim ? isLive && s.use >= labelFloor : s.use >= labelFloor)
             const faint = focus !== null ? !inFocus : partners ? !near : dim && !isLive && !on
             const l = world.labels.get(s.id), r = world.radius(s.use), c = theme.hue(s.family)
-            return <g key={item} data-world-item className="world-site" onPointerEnter={() => setHoverSite(s.id)} onPointerLeave={() => setHoverSite(null)} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
+            return <g key={item} data-world-item className="world-site" onPointerEnter={() => startTransition(() => setHoverSite(s.id))} onPointerLeave={() => startTransition(() => setHoverSite(null))} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
               aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...choose(item)}>
               <title>{model.names.get(s.id)?.label}</title>
               {(on || info?.item === item) && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={INK} strokeWidth="2" strokeDasharray="4 4" />}
@@ -590,14 +630,8 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           </g>)}
           {world.islands.map((i) => {
             const item = `i:${i.family}`, on = chosen.has(item), faded = dim && !live.islands.has(i.family) && !on
-            const away = world.bridges.reduce((sum, b) => {
-              const [fa, fb] = b.key.split('|')
-              if (fa !== i.family && fb !== i.family) return sum
-              const other = world.islands.find((o) => o.family === (fa === i.family ? fb : fa))!
-              return sum + Math.sign(other.cy - i.cy)
-            }, 0)
-            const below = away > 0 ? false : away < 0 ? true : i.cy > H / 2, c = theme.hue(i.family)
-            return <g key={item} data-world-item className="world-island-name" onPointerEnter={() => setHover(i.family)} onPointerLeave={() => setHover(null)} opacity={faded ? 0.4 : 1} aria-label={`${familyName[i.family]} island`} {...choose(item)}
+            const below = i.below, c = theme.hue(i.family)
+            return <g key={item} data-world-item className="world-island-name" onPointerEnter={() => startTransition(() => setHover(i.family))} onPointerLeave={() => startTransition(() => setHover(null))} opacity={faded ? 0.4 : 1} aria-label={`${familyName[i.family]} island`} {...choose(item)}
               transform={`translate(${fixed(i.cx)} ${fixed(below ? i.bottom + 34 : i.top - 26)}) scale(${(tone(k) ** 1.1).toFixed(3)})`}>
               <Ribbon text={familyName[i.family].toUpperCase()} size={21} paper={PAPER} color={on ? GOLD : c.dark} ink={c.dark} tail={c.halo} />
             </g>
@@ -636,7 +670,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         <div className="world-zoom" role="group" aria-label="Map zoom">
           <button type="button" onClick={() => zoomTo(k * 1.6, box.w / 2, box.h / 2, true)} aria-label="Zoom in" disabled={k >= MAX_ZOOM}>+</button>
           <button type="button" onClick={() => zoomTo(k / 1.6, box.w / 2, box.h / 2, true)} aria-label="Zoom out" disabled={k <= 1}>−</button>
-          <button type="button" onClick={() => setView({ k: 1, x: 0, y: 0, glide: true })} aria-label="Reset view" disabled={k === 1}>⌂</button>
+          <button type="button" onClick={() => paint({ k: 1, x: 0, y: 0, glide: true })} aria-label="Reset view" disabled={k === 1}>⌂</button>
         </div>
       </div>
     </div>
