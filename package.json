@@ -10,6 +10,7 @@
     "build:historical-catalog": "python3 scripts/build_historical_catalog.py",
     "build:constellation": "python3 scripts/build_constellation.py",
     "build:ring-order": "python3 scripts/build_constellation.py --refresh-order",
+    "build:world": "python3 scripts/build_constellation.py --refresh-world",
     "merge:proof-extractions": "python3 scripts/merge_proof_extractions.py",
     "prebuild": "npm run build:collection",
     "build": "tsc -b && vite build",

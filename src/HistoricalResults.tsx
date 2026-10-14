@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { ExternalLink, Search } from 'lucide-react'
 import { MathText } from './MathText'
 import MethodRing from './MethodRing'
+import WorldMap from './WorldMap'
 import { displayRouteTitle, displayTitle, primaryReference, ProofExcerpt, ProofMathText, RelatedSourceLinks, SourceCitation } from './historicalShared'
 import type { Catalog, Entry } from './historicalShared'
 
@@ -23,7 +24,7 @@ export default function HistoricalResults() {
   const [field, setField] = useState('')
   const [level, setLevel] = useState('')
   const [page, setPage] = useState(1)
-  const [view, setView] = useState<'list' | 'ring'>(() => new URLSearchParams(window.location.search).get('view') === 'ring' ? 'ring' : 'list')
+  const [view, setView] = useState<'list' | 'world' | 'ring'>(() => { const value = new URLSearchParams(window.location.search).get('view'); return value === 'ring' || value === 'world' ? value : 'list' })
   const pendingPage = useRef<number | null>(null)
 
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function HistoricalResults() {
 
   useEffect(() => {
     const url = new URL(window.location.href)
-    if (view === 'ring') url.searchParams.set('view', 'ring')
+    if (view !== 'list') url.searchParams.set('view', view)
     else { url.searchParams.delete('view'); url.searchParams.delete('sel') }
     window.history.replaceState(null, '', url)
   }, [view])
@@ -75,10 +76,11 @@ export default function HistoricalResults() {
 
     <div className="historical-viewswitch" role="group" aria-label="Course results view">
       <button type="button" aria-pressed={view === 'list'} onClick={() => setView('list')}>List</button>
-      <button type="button" aria-pressed={view === 'ring'} onClick={() => setView('ring')}>Methods ring</button>
+      <button type="button" aria-pressed={view === 'world'} onClick={() => setView('world')}>World</button>
+      <button type="button" aria-pressed={view === 'ring'} onClick={() => setView('ring')}>Ring</button>
     </div>
 
-    {view === 'ring' ? (catalog ? <MethodRing catalog={catalog} onOpenEntry={openEntry} /> : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
+    {view !== 'list' ? (catalog ? (view === 'world' ? <WorldMap catalog={catalog} onOpenEntry={openEntry} /> : <MethodRing catalog={catalog} onOpenEntry={openEntry} />) : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
     <div className="historical-controls" aria-label="Search and filter historical results">
       <label className="historical-search"><Search size={16} aria-hidden="true" /><span className="sr-only">Search theorem, field, approach, or source</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search a result, approach, or source…" /></label>
       <label><span>Field</span><select value={field} onChange={(event) => setField(event.target.value)}><option value="">All fields</option>{fieldOptions.map((option) => <option key={option}>{option}</option>)}</select></label>

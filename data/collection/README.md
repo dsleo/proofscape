@@ -39,3 +39,5 @@ The build (`npm run build:constellation`, also part of `build:collection`) valid
 
 The ring order in [`ring-order.json`](ring-order.json) is generated from rival-pair co-occurrence (never worse than the hand-made domain order it starts from) and checked in so the figure stays stable. Regenerate it deliberately with `npm run build:ring-order`.
 
+The World view's island and method positions live in [`world-layout.json`](world-layout.json). They are generated from the data (islands pulled together by the rival pairs that cross between them; within an island, methods that appear in the same theorems sit closer and bridging methods face the coast of the island they link to) and checked in so the map stays stable. Regenerate deliberately with `npm run build:world`.
+

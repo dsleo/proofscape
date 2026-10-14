@@ -11,6 +11,7 @@
 .ring-chip:hover { background: #f5e6c8; }
 .ring-clear { margin-left: auto; border: 0; background: transparent; color: #704719; font: 11px 'CMU Sans', sans-serif; text-decoration: underline; }
 .ring-summary { margin: 0 0 4px; color: #645b51; font-size: 12px; }
+.ring-summary strong { color: #4b3f2c; font-weight: 700; }
 .ring-results { display: grid; gap: 14px; }
 .ring-more { margin-top: 12px; min-height: 36px; border: 1px solid #b99b70; background: #f7efdf; padding: 0 14px; color: #674c29; font: 11px 'CMU Sans', sans-serif; }
 

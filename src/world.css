@@ -1,0 +1,16 @@
+.world-frame { position: relative; margin: 6px auto 0; max-width: 1000px; }
+.world-svg { display: block; width: 100%; height: auto; border: 1px solid #d3c9bc; background: #e7e5de; touch-action: pan-y pinch-zoom; }
+.world-svg *:focus { outline: none; }
+.world-svg .world-site:focus-visible circle { stroke: #282522; stroke-width: 4; }
+.world-svg .world-bridge:focus-visible path:first-of-type { stroke: #ae6b1f; }
+.world-svg .world-island-name:focus-visible text { fill: #ae6b1f; }
+.world-site, .world-bridge, .world-island-name { cursor: pointer; }
+.world-bridge path { fill: none; }
+.world-label { font: 19px 'CMU Sans', sans-serif; fill: #3a3022; stroke: #fffdf8; stroke-opacity: .75; stroke-width: 3.5px; paint-order: stroke; }
+.world-island-name text { font: 500 24px 'CMU Serif', Georgia, serif; letter-spacing: 5px; stroke: #e7e5de; stroke-width: 4px; paint-order: stroke; }
+.world-title { font: 500 27px 'CMU Serif', Georgia, serif; letter-spacing: 7px; fill: #3a3022; }
+.world-zoom { position: absolute; right: 10px; bottom: 10px; display: flex; flex-direction: column; border: 1px solid #b9ae9f; background: #fffdf8; }
+.world-zoom button { width: 32px; height: 32px; border: 0; background: transparent; color: #4b3f2c; font: 15px 'CMU Sans', sans-serif; cursor: pointer; }
+.world-zoom button + button { border-top: 1px solid #d3c9bc; }
+.world-zoom button:disabled { color: #b9ae9f; cursor: default; }
+@media (max-width: 640px) { .world-label { display: none; } .world-island-name text { font-size: 36px; } }

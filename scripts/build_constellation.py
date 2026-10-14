@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import collections
 import itertools
 import json
 import math
@@ -12,6 +13,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "collection"
 ORDER_FILE = DATA / "ring-order.json"
+WORLD_FILE = DATA / "world-layout.json"
+WORLD_W, WORLD_H, WORLD_TOP = 1200, 860, 100
 OUTPUT = ROOT / "public" / "data" / "collection" / "constellation.json"
 EXCLUDED = {"not-a-route", "dependent", "near-duplicate", "not-the-stated-theorem", "sketch-mismatch", "incomplete"}
 FLAGS = EXCLUDED | {"title-sketch-mismatch", "sketch-self-corrects"}
@@ -151,6 +154,106 @@ def frozen_ring(techniques: list[dict], pair_index: dict, refresh: bool) -> tupl
     }
 
 
+def world_layout(techniques: list[dict], families: list[str], order: list[str], pair_index: dict, theorem_sets: list[set]) -> dict:
+    """Place one island per method domain and the methods on it.
+
+    Islands are pulled together by the rival pairs that cross between them; within an island,
+    methods that appear in the same theorems are pulled together, and a method that bridges to
+    another island is pulled toward the coast facing it. Deterministic: no randomness.
+    """
+    family_of = {t["id"]: t["family"] for t in techniques}
+    members = {f: [m for m in order if family_of[m] == f] for f in families}
+    cooc: collections.Counter = collections.Counter()
+    for group in theorem_sets:
+        for a, b in itertools.combinations(sorted(group), 2):
+            cooc[(a, b)] += 1
+    pairs = {tuple(k.split("|")): len(v) for k, v in pair_index.items()}
+    bridge: collections.Counter = collections.Counter()
+    pull: dict[str, collections.Counter] = {m: collections.Counter() for m in family_of}
+    for (a, b), w in pairs.items():
+        fa, fb = family_of[a], family_of[b]
+        if fa != fb:
+            bridge[tuple(sorted((fa, fb)))] += w
+            pull[a][fb] += w
+            pull[b][fa] += w
+    radius = {f: 58 + 24.0 * math.sqrt(max(1, len(members[f]))) for f in families}
+    reach = {f: 0.8 * radius[f] + 50 for f in families}  # what the sites and the coast actually need
+    centre = {f: [WORLD_W / 2 + 300 * math.cos(2 * math.pi * i / len(families)), (WORLD_H + WORLD_TOP) / 2 + 200 * math.sin(2 * math.pi * i / len(families))] for i, f in enumerate(families)}
+    for _ in range(900):
+        force = {f: [0.0, 0.0] for f in families}
+        for a, b in itertools.combinations(families, 2):
+            dx, dy = centre[b][0] - centre[a][0], centre[b][1] - centre[a][1]
+            d = math.hypot(dx, dy) or 1.0
+            w = bridge.get(tuple(sorted((a, b))), 0)
+            near = reach[a] + reach[b] + 60
+            # linked islands settle at a distance that shrinks with their bridge weight; others only keep apart
+            f = (0.02 + 0.004 * w) * (d - (near + max(0, 100 - w * 4))) if w else min(0.0, 0.02 * (d - near))
+            force[a][0] += f * dx / d; force[a][1] += f * dy / d
+            force[b][0] -= f * dx / d; force[b][1] -= f * dy / d
+        for f in families:
+            centre[f][0] += force[f][0] * 0.5
+            centre[f][1] += force[f][1] * 0.5
+        for _ in range(4):  # hard constraint: coasts never overlap, and islands stay on the map
+            for a, b in itertools.combinations(families, 2):
+                dx, dy = centre[b][0] - centre[a][0], centre[b][1] - centre[a][1]
+                d = math.hypot(dx, dy) or 1.0
+                gap = reach[a] + reach[b] + 40 - d
+                if gap > 0:
+                    centre[a][0] -= dx / d * gap / 2; centre[a][1] -= dy / d * gap / 2
+                    centre[b][0] += dx / d * gap / 2; centre[b][1] += dy / d * gap / 2
+            for f in families:
+                centre[f][0] = min(WORLD_W - reach[f] - 10, max(reach[f] + 10, centre[f][0]))
+                centre[f][1] = min(WORLD_H - reach[f] - 10, max(reach[f] + WORLD_TOP, centre[f][1]))
+    sites: dict[str, list[int]] = {}
+    for f in families:
+        ms, (cx, cy), r = members[f], centre[f], radius[f]
+        p = {m: [cx + 0.55 * r * math.cos(2 * math.pi * i / len(ms) + 0.3), cy + 0.55 * r * math.sin(2 * math.pi * i / len(ms) + 0.3)] for i, m in enumerate(ms)}
+        for _ in range(600):
+            move = {m: [0.0, 0.0] for m in ms}
+            for a, b in itertools.combinations(ms, 2):
+                dx, dy = p[b][0] - p[a][0], p[b][1] - p[a][1]
+                d = math.hypot(dx, dy) or 0.1
+                w = cooc.get(tuple(sorted((a, b))), 0)
+                f1 = (0.05 * (d - max(38, 96 - 11 * w)) if w else 0.0) - (0.35 * (38 - d) if d < 38 else 0.0)
+                move[a][0] += f1 * dx / d; move[a][1] += f1 * dy / d
+                move[b][0] -= f1 * dx / d; move[b][1] -= f1 * dy / d
+            for m in ms:
+                for other, w in pull[m].items():
+                    ux, uy = centre[other][0] - cx, centre[other][1] - cy
+                    n = math.hypot(ux, uy) or 1.0
+                    s = 0.012 * min(w, 8)
+                    move[m][0] += s * (cx + ux / n * r * 0.78 - p[m][0])
+                    move[m][1] += s * (cy + uy / n * r * 0.78 - p[m][1])
+                dx, dy = p[m][0] - cx, p[m][1] - cy
+                d = math.hypot(dx, dy)
+                if d > r * 0.8:
+                    move[m][0] -= 0.3 * (d - r * 0.8) * dx / d
+                    move[m][1] -= 0.3 * (d - r * 0.8) * dy / d
+            for m in ms:
+                p[m][0] += move[m][0] * 0.6
+                p[m][1] += move[m][1] * 0.6
+        sites.update({m: [round(p[m][0]), round(p[m][1])] for m in ms})
+    return {"size": [WORLD_W, WORLD_H], "islands": {f: {"x": round(centre[f][0]), "y": round(centre[f][1]), "r": round(reach[f])} for f in families}, "sites": sites}
+
+
+def frozen_world(techniques: list[dict], families: list[str], order: list[str], pair_index: dict, theorem_sets: list[set], refresh: bool) -> dict:
+    """Keep the world layout stable between builds; recompute only on request."""
+    ids = {t["id"]: t["family"] for t in techniques}
+    if refresh or not WORLD_FILE.exists():
+        world = world_layout(techniques, families, order, pair_index, theorem_sets)
+        WORLD_FILE.write_text(json.dumps(world, indent=1) + "\n", encoding="utf-8")
+        print(f"Wrote {WORLD_FILE.name}")
+        return world
+    world = json.loads(WORLD_FILE.read_text(encoding="utf-8"))
+    sites = {m: xy for m, xy in world["sites"].items() if m in ids}
+    for m in ids:
+        if m not in sites:  # new technique: park it at its island's centre until the next refresh
+            home = world["islands"][ids[m]]
+            sites[m] = [home["x"], home["y"]]
+            print(f"warning: no world position for {m}; run with --refresh-world")
+    return {"size": world.get("size", [WORLD_W, WORLD_H]), "islands": world["islands"], "sites": sites}
+
+
 def selfcheck() -> None:
     fermat = [{"bijection", "modular"}, {"group"}, {"induction", "modular"}]
     pairs, triples = pairs_and_triples(fermat)
@@ -195,7 +298,7 @@ def main() -> None:
         if not tag["techniques"] and not tag.get("flag") and not tag.get("derivesFromTheorem"):
             raise ValueError(f"route {route_id} has no technique, flag, or derivesFromTheorem")
 
-    theorems, pair_index, triple_index, usable_total = [], {}, {}, 0
+    theorems, pair_index, triple_index, usable_total, theorem_sets = [], {}, {}, 0, []
     for entry in catalog["entries"]:
         routes, usable = [], []
         for route in entry["routes"]:
@@ -213,6 +316,8 @@ def main() -> None:
             if not excluded and tag["techniques"]:
                 usable.append(set(tag["techniques"]))
         usable_total += len(usable)
+        if usable:
+            theorem_sets.append(set().union(*usable))
         theorems.append({"id": entry["id"], "name": entry["name"], "areas": entry["areas"], "usableRoutes": len(usable), "routes": routes})
         if len(usable) >= 2:
             pairs, triples = pairs_and_triples(usable)
@@ -222,10 +327,12 @@ def main() -> None:
                 triple_index.setdefault("|".join(triple), []).append(entry["id"])
 
     family_order, technique_order, ring_stats = frozen_ring(vocabulary["techniques"], pair_index, refresh="--refresh-order" in sys.argv)
+    world = frozen_world(vocabulary["techniques"], family_order, technique_order, pair_index, theorem_sets, refresh="--refresh-world" in sys.argv)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps({
         "vocabulary": {"families": vocabulary["families"], "techniques": vocabulary["techniques"]},
         "ring": {"families": family_order, "techniques": technique_order, **ring_stats},
+        "world": world,
         "theorems": theorems,
         "pairs": pair_index,
         "triples": triple_index,
