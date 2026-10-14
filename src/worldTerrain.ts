@@ -8,7 +8,11 @@ export type Terrain = {
   hatch: string
   trees: string
   ink: string
-  sage: string
+  fields: string
+  squares: string
+  dunes: string
+  spirals: string
+  lakes: string
   ripples: P[][]
 }
 
@@ -60,16 +64,24 @@ function leafy(x: number, y: number, s: number) {
 const mill = (x: number, y: number, s: number) => `M${f(x - 5 * s)},${f(y)}L${f(x - 3.4 * s)},${f(y - 11 * s)}H${f(x + 3.4 * s)}L${f(x + 5 * s)},${f(y)}ZM${f(x)},${f(y - 11 * s)}L${f(x - 11 * s)},${f(y - 19 * s)}M${f(x)},${f(y - 11 * s)}L${f(x + 11 * s)},${f(y - 19 * s)}M${f(x)},${f(y - 11 * s)}L${f(x - 9 * s)},${f(y - 2 * s)}M${f(x)},${f(y - 11 * s)}L${f(x + 9 * s)},${f(y - 3 * s)}`
 const crystals = (x: number, y: number, s: number) => [[0, 0, 1], [-9, 4, 0.7], [8, 3, 0.8]].map(([dx, dy, k]) => `M${f(x + dx * s)},${f(y + dy * s)}l${f(-4 * k * s)},${f(-6 * k * s)}l${f(4 * k * s)},${f(-12 * k * s)}l${f(4 * k * s)},${f(12 * k * s)}l${f(-4 * k * s)},${f(6 * k * s)}ZM${f(x + dx * s)},${f(y + dy * s)}V${f(y + (dy - 18) * s * k)}`).join('')
 const obelisk = (x: number, y: number, s: number) => `M${f(x - 3 * s)},${f(y)}L${f(x - 2 * s)},${f(y - 20 * s)}L${f(x)},${f(y - 25 * s)}L${f(x + 2 * s)},${f(y - 20 * s)}L${f(x + 3 * s)},${f(y)}ZM${f(x - 6 * s)},${f(y)}H${f(x + 6 * s)}M${f(x)},${f(y - 25 * s)}V${f(y)}`
-const fields = (x: number, y: number, s: number) => [[-13, 0], [0, -3], [13, 0]].map(([dx, dy]) => {
-  const ax = x + dx * s, ay = y + dy * s
-  let d = `M${f(ax - 6 * s)},${f(ay)}l${f(12 * s)},${f(-3 * s)}l${f(2 * s)},${f(9 * s)}l${f(-12 * s)},${f(3 * s)}Z`
-  for (let i = 1; i < 4; i++) d += `M${f(ax - 6 * s + i * 3 * s)},${f(ay - i * 0.7 * s)}l${f(0.5 * s)},${f(11 * s)}`
-  return d
-}).join('')
 const terraces = (x: number, y: number, s: number) => [0, 1, 2, 3].map((i) => `M${f(x - (24 - i * 5) * s)},${f(y - i * 5 * s)}Q${f(x)},${f(y - (14 + i * 5) * s)} ${f(x + (24 - i * 5) * s)},${f(y - i * 5 * s)}`).join('')
 const lighthouse = (x: number, y: number, s: number) => `M${f(x - 6 * s)},${f(y)}L${f(x - 3.5 * s)},${f(y - 24 * s)}H${f(x + 3.5 * s)}L${f(x + 6 * s)},${f(y)}ZM${f(x - 5 * s)},${f(y - 24 * s)}H${f(x + 5 * s)}M${f(x - 3 * s)},${f(y - 24 * s)}L${f(x)},${f(y - 31 * s)}L${f(x + 3 * s)},${f(y - 24 * s)}M${f(x + 5 * s)},${f(y - 26 * s)}L${f(x + 22 * s)},${f(y - 32 * s)}M${f(x + 5 * s)},${f(y - 26 * s)}L${f(x + 22 * s)},${f(y - 20 * s)}`
-const landmark: Record<string, [(x: number, y: number, s: number) => string, number]> = {
-  analytic: [mill, 3], algebraic: [crystals, 4], geometric: [obelisk, 4], discrete: [fields, 4], recursion: [terraces, 3], logic: [lighthouse, 2],
+const ziggurat = (x: number, y: number, s: number) => [0, 1, 2].map((i) => `M${f(x - (18 - i * 5) * s)},${f(y - i * 7 * s)}H${f(x + (18 - i * 5) * s)}V${f(y - (i + 1) * 7 * s)}H${f(x - (18 - i * 5) * s)}Z`).join('')
+const pillars = (x: number, y: number, s: number) => `M${f(x - 14 * s)},${f(y)}V${f(y - 20 * s)}M${f(x)},${f(y)}V${f(y - 24 * s)}M${f(x + 14 * s)},${f(y)}V${f(y - 18 * s)}M${f(x - 18 * s)},${f(y - 20 * s)}H${f(x + 4 * s)}M${f(x - 4 * s)},${f(y - 24 * s)}H${f(x + 18 * s)}`
+const archway = (x: number, y: number, s: number) => `M${f(x - 10 * s)},${f(y)}V${f(y - 14 * s)}a${10 * s},${10 * s} 0 0,1 ${20 * s},0V${f(y)}M${f(x - 15 * s)},${f(y)}H${f(x + 15 * s)}`
+type Glyph = (x: number, y: number, s: number) => string
+// what stands on each island besides the terrain itself; [glyphs, how many]
+const landmark: Record<string, [Glyph[], number]> = {
+  analytic: [[mill], 2], algebraic: [[crystals], 6], geometric: [[obelisk, ziggurat], 4], discrete: [[mill, archway], 3], recursion: [[terraces, archway], 3], logic: [[lighthouse, pillars], 3],
+}
+// the character of each island: jungle, crystal badlands, formal terraces, farmland, spiral hills, dunes
+const biome: Record<string, { peaks: number; trees: number; leafy: number; rivers: number; lake: boolean; fields: number; squares: number; dunes: number; spirals: number }> = {
+  analytic: { peaks: 0.8, trees: 3.4, leafy: 0.95, rivers: 3, lake: true, fields: 0, squares: 0, dunes: 0, spirals: 0 },
+  algebraic: { peaks: 1.8, trees: 0.3, leafy: 0.1, rivers: 1, lake: false, fields: 0, squares: 0, dunes: 0, spirals: 0 },
+  geometric: { peaks: 0.9, trees: 0.7, leafy: 0.4, rivers: 1, lake: false, fields: 0, squares: 4, dunes: 0, spirals: 0 },
+  discrete: { peaks: 0.4, trees: 1.1, leafy: 0.9, rivers: 1, lake: true, fields: 7, squares: 0, dunes: 0, spirals: 0 },
+  recursion: { peaks: 1.1, trees: 0.6, leafy: 0.15, rivers: 1, lake: false, fields: 0, squares: 0, dunes: 0, spirals: 4 },
+  logic: { peaks: 0.5, trees: 0.12, leafy: 0, rivers: 0, lake: false, fields: 0, squares: 0, dunes: 16, spirals: 0 },
 }
 
 /** A heightfield-driven pen-and-ink landscape for one island. */
@@ -96,7 +108,10 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
     const at = (a: number, b: number) => table[(((b % 36) + 36) % 36) * 36 + (((a % 36) + 36) % 36)]
     return (at(gx, gy) * (1 - tx) + at(gx + 1, gy) * tx) * (1 - ty) + (at(gx, gy + 1) * (1 - tx) + at(gx + 1, gy + 1) * tx) * ty
   }
-  const crest = Math.max(1, Math.round(polygonArea(ring) / 26000)) + (family === 'analytic' || family === 'geometric' ? 1 : 0)
+  const bio = biome[family] ?? biome.analytic
+  const crest = Math.max(1, Math.round((polygonArea(ring) / 26000) * bio.peaks))
+  // a drawn thing of half-width w and height h at (x, y) must lie wholly on land
+  const fits = (x: number, y: number, w: number, h: number) => [[x - w, y], [x + w, y], [x, y - h], [x - w, y - h * 0.5], [x + w, y - h * 0.5], [x, y + 3]].every(([a, b]) => inside([a, b] as P, ring) && ring.every((q) => Math.hypot(q[0] - a, q[1] - b) > 5))
   const peaks: { p: P; a: number; s: number }[] = []
   const cands: P[] = []
   for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) if (ins[j * nx + i] && dist[j * nx + i] > maxD * 0.42) cands.push(node(i, j))
@@ -147,9 +162,11 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
   })
   // rivers: steepest descent from the highest crests
   const rivers: { bank: string; water: string }[] = []
-  const sources = [...peaks].sort((a, b) => b.a - a.a).slice(0, family === 'analytic' ? 2 : 1)
+  const ranked = [...peaks].sort((a, b) => b.a - a.a)
+  const sources = Array.from({ length: bio.rivers }, (_, n) => ({ p: [ranked[n % ranked.length].p[0] + (n >= ranked.length ? (rnd() - 0.5) * 70 : 0), ranked[n % ranked.length].p[1] + (n >= ranked.length ? (rnd() - 0.5) * 50 : 0)] as P }))
   for (const src of sources) {
     let i = Math.round((src.p[0] - x0) / g), j = Math.round((src.p[1] - y0) / g)
+    if (i < 0 || j < 0 || i >= nx || j >= ny || !ins[j * nx + i]) continue
     const pts: P[] = [node(i, j)]
     for (let step = 0; step < 220; step++) {
       let best = hv[j * nx + i], bi = i, bj = j
@@ -157,13 +174,13 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
         if (!di && !dj) continue
         const ni = i + di, nj = j + dj
         if (ni < 0 || nj < 0 || ni >= nx || nj >= ny) continue
+        if (!ins[nj * nx + ni]) continue
         const v = hv[nj * nx + ni] + (rnd() - 0.5) * 0.012
         if (v < best) { best = v; bi = ni; bj = nj }
       }
       if (bi === i && bj === j) break
       i = bi; j = bj
       pts.push(node(i, j))
-      if (!ins[j * nx + i]) break
     }
     if (pts.length < 6) continue
     const line = (off: number) => pts.map((p, n) => {
@@ -178,45 +195,104 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
     }
     rivers.push({ bank: `${path(line(1.7))}${path(line(-1.7))}`, water: path(line(0)) })
   }
-  // mountains
+  // mountains: only where the whole glyph stands on land
   let outline = '', hatch = ''
   for (const q of peaks) {
     const group: [number, number, number][] = [[q.p[0], q.p[1] + 12, 26 + q.a * 20], [q.p[0] - 34, q.p[1] + 22, 16 + q.a * 9], [q.p[0] + 36, q.p[1] + 24, 14 + q.a * 8]]
-    for (const [x, y, s] of group) {
-      const m = peak(x, y, s, rnd)
+    for (const [x, y, sz] of group) {
+      if (!fits(x, y, sz * 1.2, sz)) continue
+      const m = peak(x, y, sz, rnd)
       outline += m.outline + m.base
       hatch += m.hatch
     }
   }
-  // forests in the foothills, away from sites and crests
-  let trees = '', ink = ''
   const taken: P[] = [...sites, ...peaks.map((q) => q.p)]
-  const clusters = Math.round(polygonArea(ring) / 2300)
-  for (let c = 0, tries = 0; c < clusters && tries < 700; tries++) {
-    const p = node(Math.floor(rnd() * nx), Math.floor(rnd() * ny))
-    const k = Math.round((p[1] - y0) / g) * nx + Math.round((p[0] - x0) / g)
-    if (!ins[k] || dist[k] < 18 || hv[k] < 0.12 || hv[k] > 0.62) continue
-    if (taken.some((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) < 40)) continue
-    taken.push(p)
-    c++
-    const n = 3 + Math.floor(rnd() * 4)
-    for (let t = 0; t < n; t++) {
-      const x = p[0] + (rnd() - 0.5) * 30, y = p[1] + (rnd() - 0.5) * 22
-      if (!inside([x, y], ring)) continue
-      trees += (rnd() < 0.78 ? conifer : leafy)(x, y, 0.85 + rnd() * 0.45)
+  const free = (p: P, gap: number) => taken.every((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) >= gap)
+  const cell = (p: P) => Math.round((p[1] - y0) / g) * nx + Math.round((p[0] - x0) / g)
+  const pick = (n: number, tries: number, ok: (_p: P, k: number) => boolean, gap: number, use: (p: P) => void) => {
+    for (let c = 0, t = 0; c < n && t < tries; t++) {
+      const p = node(Math.floor(rnd() * nx), Math.floor(rnd() * ny))
+      const k = cell(p)
+      if (!ins[k] || !ok(p, k) || !free(p, gap)) continue
+      taken.push(p)
+      c++
+      use(p)
     }
   }
-  const [glyph, want] = landmark[family] ?? landmark.analytic
-  for (let m = 0, tries = 0; m < want && tries < 600; tries++) {
-    const p = node(Math.floor(rnd() * nx), Math.floor(rnd() * ny))
-    const k = Math.round((p[1] - y0) / g) * nx + Math.round((p[0] - x0) / g)
-    if (!ins[k] || dist[k] < 30 || hv[k] > 0.7) continue
-    if (taken.some((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) < 62)) continue
-    taken.push(p)
-    ink += glyph(p[0], p[1], 1.45 + rnd() * 0.4)
-    m++
+  // forests: how many and what kind is the island's character
+  let trees = ''
+  pick(Math.round((polygonArea(ring) / 2300) * bio.trees), 1200, (_p, k) => dist[k] > 16 && hv[k] > 0.1 && hv[k] < 0.66, 30, (p) => {
+    const n = 4 + Math.floor(rnd() * 5)
+    for (let t = 0; t < n; t++) {
+      const x = p[0] + (rnd() - 0.5) * 36, y = p[1] + (rnd() - 0.5) * 26, sc = 0.85 + rnd() * 0.5
+      if (!fits(x, y, 4 * sc, 10 * sc)) continue
+      trees += (rnd() < bio.leafy ? leafy : conifer)(x, y, sc)
+    }
+  })
+  // landmarks
+  let ink = ''
+  const [glyphs, want] = landmark[family] ?? landmark.analytic
+  pick(want, 800, (_p, k) => dist[k] > 26 && hv[k] < 0.72, 54, (p) => {
+    const sc = 1.3 + rnd() * 0.35
+    if (!fits(p[0], p[1], 20 * sc, 30 * sc)) { taken.pop(); return }
+    ink += glyphs[Math.floor(rnd() * glyphs.length)](p[0], p[1], sc)
+  })
+  // farmland: furrowed plots
+  let fieldsPath = ''
+  pick(bio.fields, 900, (_p, k) => dist[k] > 22 && hv[k] < 0.5, 46, (p) => {
+    const w = 15 + rnd() * 9, h = 10 + rnd() * 6, a = (rnd() - 0.5) * 0.5, ca = Math.cos(a), sa = Math.sin(a)
+    const at = (u: number, v: number): P => [p[0] + u * ca - v * sa, p[1] + u * sa + v * ca]
+    const corners = [at(-w, -h), at(w, -h), at(w, h), at(-w, h)]
+    if (!corners.every((c) => inside(c, ring) && dist[cell(c)] > 8)) return
+    fieldsPath += `M${corners.map((c) => `${f(c[0])},${f(c[1])}`).join('L')}Z`
+    for (let u = -w + 4.5; u < w - 1; u += 4.5) { const [x1, y1] = at(u, -h), [x2, y2] = at(u, h); fieldsPath += `M${f(x1)},${f(y1)}L${f(x2)},${f(y2)}` }
+  })
+  // formal plots: nested squares
+  let squares = ''
+  pick(bio.squares, 900, (_p, k) => dist[k] > 30 && hv[k] < 0.6, 56, (p) => {
+    if (!fits(p[0], p[1] + 24, 28, 48)) return
+    const a = rnd() * 0.3
+    for (const r of [26, 18, 10]) {
+      const c = Array.from({ length: 4 }, (_, n) => [p[0] + r * Math.cos(a + Math.PI / 4 + (n * Math.PI) / 2) * 1.2, p[1] + r * Math.sin(a + Math.PI / 4 + (n * Math.PI) / 2) * 0.9] as P)
+      squares += `M${c.map((q) => `${f(q[0])},${f(q[1])}`).join('L')}Z`
+    }
+    squares += `M${f(p[0] - 30)},${f(p[1])}H${f(p[0] + 30)}M${f(p[0])},${f(p[1] - 22)}V${f(p[1] + 22)}`
+  })
+  // dunes
+  let dunes = ''
+  pick(bio.dunes, 1200, (_p, k) => dist[k] > 12, 26, (p) => {
+    const w = 11 + rnd() * 7
+    if (!fits(p[0], p[1] + 6, w * 2, 8)) return
+    dunes += `M${f(p[0] - w)},${f(p[1])}q${f(w / 2)},${f(-7)} ${f(w)},0q${f(w / 2)},7 ${f(w)},0M${f(p[0] - w * 0.6)},${f(p[1] + 7)}q${f(w * 0.4)},${f(-5)} ${f(w * 0.8)},0`
+  })
+  // spiral hills
+  let spirals = ''
+  pick(bio.spirals, 900, (_p, k) => dist[k] > 30 && hv[k] < 0.7, 70, (p) => {
+    const R = 24
+    if (!fits(p[0], p[1] + R * 0.5, R * 1.1, R * 1.4)) return
+    let d = ''
+    for (let t = 0; t <= 3.4 * Math.PI * 2; t += 0.3) {
+      const r = 1.5 + (R * t) / (3.4 * Math.PI * 2)
+      d += `${d ? 'L' : 'M'}${f(p[0] + r * Math.cos(t))},${f(p[1] + r * Math.sin(t) * 0.7)}`
+    }
+    spirals += d
+  })
+  // lakes
+  let lakes = ''
+  if (bio.lake) {
+    const low = cands.filter((c) => { const k = cell(c); return dist[k] > maxD * 0.5 && free(c, 60) })
+    const p = low[Math.floor(rnd() * low.length)]
+    if (p) {
+      const rx = 15 + rnd() * 9, ry = rx * 0.6
+      const pts = Array.from({ length: 9 }, (_, n) => [p[0] + Math.cos((n / 9) * Math.PI * 2) * rx * (0.8 + rnd() * 0.4), p[1] + Math.sin((n / 9) * Math.PI * 2) * ry * (0.8 + rnd() * 0.4)] as P)
+      if (pts.every((q) => inside(q, ring))) {
+        const mid = (a: P, b: P): P => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]
+        const st = mid(pts[8], pts[0])
+        lakes = `M${f(st[0])},${f(st[1])}` + pts.map((q, n) => { const e = mid(q, pts[(n + 1) % 9]); return `Q${f(q[0])},${f(q[1])} ${f(e[0])},${f(e[1])}` }).join('') + 'Z'
+      }
+    }
   }
   const r0 = Math.sqrt(polygonArea(ring) / Math.PI)
   const ripples = [1 + 9 / r0, 1 + 20 / r0].map((k) => ring.map(([x, y]): P => [centre[0] + (x - centre[0]) * k, centre[1] + (y - centre[1]) * k]))
-  return { minor: minor.join(''), major: major.join(''), rivers, mountains: outline, hatch, trees, ink, sage: '', ripples }
+  return { minor: minor.join(''), major: major.join(''), rivers, mountains: outline, hatch, trees, ink, fields: fieldsPath, squares, dunes, spirals, lakes, ripples }
 }

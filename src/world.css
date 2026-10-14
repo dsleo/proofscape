@@ -17,12 +17,13 @@
 .world-river, .world-trees { opacity: clamp(0, calc((var(--k) - 1.25) / 0.9), 1); }
 .world-label { font-style: italic; font-weight: 600; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke; }
 .world-ribbon { font-weight: 700; letter-spacing: .14em; }
-.world-count text { font-weight: 700; font-size: 15px; fill: #2d352b; }
+.world-count { font-style: italic; font-weight: 700; fill: #2d352b; stroke-width: 4px; stroke-linejoin: round; paint-order: stroke; pointer-events: none; }
 
 .world-hud { position: absolute; top: 14px; left: 14px; right: 14px; display: flex; align-items: flex-start; gap: 10px; pointer-events: none; }
 .world-hud > * { pointer-events: auto; }
 .world-open .world-hud { right: calc(min(460px, 100vw) + 14px); }
-.world-hud .ring-bar { position: static; flex: 1; max-width: 620px; border: 1px solid #cbc2b4; background: rgba(250, 247, 240, .94); padding: 7px 12px; }
+.world-hud { flex-wrap: wrap; }
+.world-hud .ring-bar { position: static; flex: 1 1 260px; min-width: 240px; max-width: 620px; border: 1px solid #cbc2b4; background: rgba(250, 247, 240, .94); padding: 7px 12px; }
 .world-hud .ring-lead { font-size: 15px; }
 .world-back, .world-toggle, .world-switch button, .world-zoom button { border: 1px solid #3b4438; background: #fbf8f0; color: #2d352b; cursor: pointer; font-size: 14px; }
 .world-back, .world-toggle { min-height: 36px; padding: 0 13px; white-space: nowrap; }
