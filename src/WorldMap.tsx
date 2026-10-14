@@ -636,7 +636,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           {found.theorems.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickTheorem(t.id)}><MathText text={t.name} /></button>)}
         </div>}
       </div>
-      <SelectionBar sel={sel} results={results} lead="Zoom to discover more. Click for a note, double-click to list theorems." />
+      <SelectionBar sel={sel} results={results} lead="" />
       <button type="button" className="world-toggle" aria-expanded={drawer} onClick={() => setDrawer((v) => !v)}>{drawer ? 'Hide theorems' : 'Theorems & methods'}</button>
     </div>
     <aside className="world-drawer" hidden={!drawer} aria-label="Theorems and methods">

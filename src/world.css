@@ -77,3 +77,5 @@
 .world-theorem li { margin: 0 0 8px; padding-left: 9px; border-left: 3px solid; }
 .world-theorem li em { display: block; color: #6b705f; font-size: 13px; }
 @media (max-width: 760px) { .world-theorem { top: auto; bottom: 62px; width: calc(100vw - 28px); max-height: 40%; } }
+
+.world-hud .ring-bar:empty { display: none; }

@@ -190,7 +190,7 @@ function TheoremCard({ theorem, entry, source, methods, names, heading, onOpen }
 
 export function SelectionBar({ sel, lead, results }: { sel: MethodSelection; lead: string; results: RefObject<HTMLDivElement | null> }) {
   return <div className="ring-bar" aria-live="polite">
-    {sel.selection.length === 0 ? <p className="ring-lead">{lead}</p> : <div className="ring-selection">
+    {sel.selection.length === 0 ? (lead ? <p className="ring-lead">{lead}</p> : null) : <div className="ring-selection">
       {sel.selection.map((item) => <button type="button" className="ring-chip" key={item} onClick={() => sel.toggle(item)}>{sel.label(item)} <span aria-hidden="true">×</span><span className="sr-only"> remove</span></button>)}
       <span className="ring-count">{sel.matched.length} theorem{sel.matched.length === 1 ? '' : 's'}</span>
       <button type="button" className="ring-jump" onClick={() => results.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })}>Results ↓</button>
