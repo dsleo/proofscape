@@ -7,6 +7,7 @@ import collections
 import itertools
 import json
 import math
+import random
 import sys
 from pathlib import Path
 
@@ -14,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "collection"
 ORDER_FILE = DATA / "ring-order.json"
 WORLD_FILE = DATA / "world-layout.json"
-WORLD_W, WORLD_H, WORLD_TOP = 1300, 920, 110
+WORLD_W, WORLD_H, WORLD_TOP = 1700, 1150, 130
 OUTPUT = ROOT / "public" / "data" / "collection" / "constellation.json"
 EXCLUDED = {"not-a-route", "dependent", "near-duplicate", "not-the-stated-theorem", "sketch-mismatch", "incomplete"}
 FLAGS = EXCLUDED | {"title-sketch-mismatch", "sketch-self-corrects"}
@@ -154,6 +155,104 @@ def frozen_ring(techniques: list[dict], pair_index: dict, refresh: bool) -> tupl
     }
 
 
+def _segments_cross(a: list[float], b: list[float], c: list[float], d: list[float]) -> bool:
+    def turn(p, q, r):
+        return (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0])
+    return turn(a, b, c) * turn(a, b, d) < 0 and turn(c, d, a) * turn(c, d, b) < 0
+
+
+def _segment_distance(p: list[float], a: list[float], b: list[float]) -> float:
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    t = max(0.0, min(1.0, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / (dx * dx + dy * dy or 1.0)))
+    return math.hypot(p[0] - a[0] - t * dx, p[1] - a[1] - t * dy)
+
+
+CLEAR = 0.7
+SEED = 11
+T0 = 600.0
+STEPS = 12000
+
+
+def untangle(centre: dict[str, list[float]], reach: dict[str, float], bridge: collections.Counter) -> None:
+    """Move islands so bridges cross as little as the graph allows and never run over a third island.
+
+    Annealed with a fixed seed, so the layout is reproducible. The method graph of this catalogue
+    contains K5, so one crossing is unavoidable; the viewer draws that one as bridge over bridge.
+    """
+    links = [tuple(k) for k in bridge]
+    names = list(centre)
+    rng = random.Random(SEED)
+
+    spacing = [False]
+
+    def cost() -> float:
+        total = 0.0
+        for a, b in itertools.combinations(names, 2):
+            gap = reach[a] + reach[b] + 70 - math.dist(centre[a], centre[b])
+            if gap > 0:
+                total += 40 * gap
+        for (a, b), (c, d) in itertools.combinations(links, 2):
+            if len({a, b, c, d}) == 4 and _segments_cross(centre[a], centre[b], centre[c], centre[d]):
+                total += 4000
+        for (a, b), (c, d) in itertools.combinations(links, 2) if spacing[0] else ():  # keep unrelated bridges apart, and fan out those that share an island
+            if len({a, b, c, d}) == 4:
+                close = min(_segment_distance(centre[a], centre[c], centre[d]), _segment_distance(centre[b], centre[c], centre[d]),
+                            _segment_distance(centre[c], centre[a], centre[b]), _segment_distance(centre[d], centre[a], centre[b]))
+                if close < 120:
+                    total += 25 * (120 - close)
+            else:
+                shared = ({a, b} & {c, d}).pop()
+                u = [centre[x][i] - centre[shared][i] for x in ({a, b} - {shared}) for i in (0, 1)]
+                v = [centre[x][i] - centre[shared][i] for x in ({c, d} - {shared}) for i in (0, 1)]
+                angle = math.acos(max(-1.0, min(1.0, (u[0] * v[0] + u[1] * v[1]) / ((math.hypot(*u) * math.hypot(*v)) or 1.0))))
+                if angle < 0.5:
+                    total += 1500 * (0.5 - angle)
+        for a, b in links:
+            total += 0.6 * math.dist(centre[a], centre[b])
+            for c in names:
+                if c not in (a, b):
+                    clear = _segment_distance(centre[c], centre[a], centre[b]) - reach[c] * CLEAR
+                    if clear < 0:
+                        total += 3000 - 20 * clear
+        return total
+
+    keep, keep_cost = {f: list(p) for f, p in centre.items()}, float("inf")
+    for _ in range(60):  # restarts from random scatterings; annealing alone settles on 2-3 crossings
+        for f in names:
+            centre[f] = [rng.uniform(reach[f] + 10, WORLD_W - reach[f] - 10), rng.uniform(reach[f] + WORLD_TOP, WORLD_H - reach[f] - 10)]
+        best, temperature = cost(), T0
+        for _ in range(STEPS):
+            f = rng.choice(names)
+            old = list(centre[f])
+            centre[f][0] = min(WORLD_W - reach[f] - 10, max(reach[f] + 10, old[0] + rng.gauss(0, 70)))
+            centre[f][1] = min(WORLD_H - reach[f] - 10, max(reach[f] + WORLD_TOP, old[1] + rng.gauss(0, 70)))
+            now = cost()
+            if now <= best or rng.random() < math.exp((best - now) / temperature):
+                best = now
+            else:
+                centre[f] = old
+            temperature = max(2.0, temperature * 0.9993)
+        if best < keep_cost:
+            keep, keep_cost = {f: list(p) for f, p in centre.items()}, best
+        if keep_cost < 4000 + 0.6 * 11 * 700:  # one crossing and nothing run over: good enough
+            break
+    for f in names:
+        centre[f] = keep[f]
+    spacing[0] = True  # polish: spread the bridges out without letting a second crossing appear
+    best, temperature = cost(), 60.0
+    for _ in range(20000):
+        f = rng.choice(names)
+        old = list(centre[f])
+        centre[f][0] = min(WORLD_W - reach[f] - 10, max(reach[f] + 10, old[0] + rng.gauss(0, 30)))
+        centre[f][1] = min(WORLD_H - reach[f] - 10, max(reach[f] + WORLD_TOP, old[1] + rng.gauss(0, 30)))
+        now = cost()
+        if now <= best or rng.random() < math.exp((best - now) / temperature):
+            best = now
+        else:
+            centre[f] = old
+        temperature = max(1.0, temperature * 0.9997)
+
+
 def world_layout(techniques: list[dict], families: list[str], order: list[str], pair_index: dict, theorem_sets: list[set]) -> dict:
     """Place one island per method domain and the methods on it.
 
@@ -204,6 +303,7 @@ def world_layout(techniques: list[dict], families: list[str], order: list[str], 
             for f in families:
                 centre[f][0] = min(WORLD_W - reach[f] - 10, max(reach[f] + 10, centre[f][0]))
                 centre[f][1] = min(WORLD_H - reach[f] - 10, max(reach[f] + WORLD_TOP, centre[f][1]))
+    untangle(centre, reach, bridge)
     sites: dict[str, list[int]] = {}
     for f in families:
         ms, (cx, cy), r = members[f], centre[f], radius[f]

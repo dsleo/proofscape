@@ -181,7 +181,7 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
   // mountains
   let outline = '', hatch = ''
   for (const q of peaks) {
-    const group: [number, number, number][] = [[q.p[0], q.p[1] + 10, 18 + q.a * 16], [q.p[0] - 24, q.p[1] + 17, 11 + q.a * 7], [q.p[0] + 26, q.p[1] + 18, 10 + q.a * 6]]
+    const group: [number, number, number][] = [[q.p[0], q.p[1] + 12, 26 + q.a * 20], [q.p[0] - 34, q.p[1] + 22, 16 + q.a * 9], [q.p[0] + 36, q.p[1] + 24, 14 + q.a * 8]]
     for (const [x, y, s] of group) {
       const m = peak(x, y, s, rnd)
       outline += m.outline + m.base
@@ -210,10 +210,10 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
   for (let m = 0, tries = 0; m < want && tries < 600; tries++) {
     const p = node(Math.floor(rnd() * nx), Math.floor(rnd() * ny))
     const k = Math.round((p[1] - y0) / g) * nx + Math.round((p[0] - x0) / g)
-    if (!ins[k] || dist[k] < 24 || hv[k] > 0.7) continue
-    if (taken.some((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) < 46)) continue
+    if (!ins[k] || dist[k] < 30 || hv[k] > 0.7) continue
+    if (taken.some((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) < 62)) continue
     taken.push(p)
-    ink += glyph(p[0], p[1], 0.95 + rnd() * 0.35)
+    ink += glyph(p[0], p[1], 1.45 + rnd() * 0.4)
     m++
   }
   const r0 = Math.sqrt(polygonArea(ring) / Math.PI)
