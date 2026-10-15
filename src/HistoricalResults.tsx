@@ -7,9 +7,7 @@ const loadWorld = () => {
   if (!warmed) { warmed = true; void fetch(`${import.meta.env.BASE_URL}data/collection/constellation.json`).catch(() => undefined) } // warm the cache for the map's data
   return import('./WorldMap')
 }
-const loadRing = () => import('./MethodRing')
 const WorldMap = lazy(loadWorld)
-const MethodRing = lazy(loadRing)
 import { displayRouteTitle, displayTitle, primaryReference, ProofExcerpt, ProofMathText, RelatedSourceLinks, SourceCitation } from './historicalShared'
 import type { Catalog, Entry } from './historicalShared'
 
@@ -31,7 +29,7 @@ export default function HistoricalResults() {
   const [field, setField] = useState('')
   const [level, setLevel] = useState('')
   const [page, setPage] = useState(1)
-  const [view, setView] = useState<'list' | 'world' | 'ring'>(() => { const value = new URLSearchParams(window.location.search).get('view'); return value === 'ring' || value === 'world' ? value : 'list' })
+  const [view, setView] = useState<'list' | 'world'>(() => new URLSearchParams(window.location.search).get('view') === 'world' ? 'world' : 'list')
   const pendingPage = useRef<number | null>(null)
 
   useEffect(() => {
@@ -84,10 +82,9 @@ export default function HistoricalResults() {
     <div className="historical-viewswitch" role="group" aria-label="Course results view">
       <button type="button" aria-pressed={view === 'list'} onClick={() => setView('list')}>List</button>
       <button type="button" aria-pressed={view === 'world'} onClick={() => setView('world')} onPointerEnter={() => void loadWorld()} onFocus={() => void loadWorld()}>World</button>
-      <button type="button" aria-pressed={view === 'ring'} onClick={() => setView('ring')} onPointerEnter={() => void loadRing()} onFocus={() => void loadRing()}>Ring</button>
     </div>
 
-    {view !== 'list' ? (catalog ? <Suspense fallback={<div className="ring-loading" aria-live="polite">Loading the map…</div>}>{view === 'world' ? <WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={() => setView('list')} /> : <MethodRing catalog={catalog} onOpenEntry={openEntry} />}</Suspense> : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
+    {view !== 'list' ? (catalog ? <Suspense fallback={<div className="ring-loading" aria-live="polite">Loading the map…</div>}><WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={() => setView('list')} /></Suspense> : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
     <div className="historical-controls" aria-label="Search and filter historical results">
       <label className="historical-search"><Search size={16} aria-hidden="true" /><span className="sr-only">Search theorem, field, approach, or source</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search a result, approach, or source…" /></label>
       <label><span>Field</span><select value={field} onChange={(event) => setField(event.target.value)}><option value="">All fields</option>{fieldOptions.map((option) => <option key={option}>{option}</option>)}</select></label>

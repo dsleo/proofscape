@@ -37,7 +37,7 @@ To validate and publish the static catalog, run `npm run build:historical-catalo
 
 The build (`npm run build:constellation`, also part of `build:collection`) validates the tags against the vocabulary and the catalog, then publishes `constellation.json`. Method pairs are **strict**: a pair joins two methods only when each one distinguishes its route from another route of the same theorem, so methods shared by two routes, or used together inside one route, never form a pair (triples follow the same rule across three routes). The build asserts this rule on every run.
 
-The ring order in [`ring-order.json`](ring-order.json) is generated from rival-pair co-occurrence (never worse than the hand-made domain order it starts from) and checked in so the figure stays stable. Regenerate it deliberately with `npm run build:ring-order`.
+The technique order in [`ring-order.json`](ring-order.json) (from the retired Ring view; it still orders the method list) is generated from rival-pair co-occurrence and checked in so it stays stable. Regenerate it deliberately with `npm run build:ring-order`.
 
 The World view's island and method positions live in [`world-layout.json`](world-layout.json). They are generated from the data (islands pulled together by the rival pairs that cross between them; within an island, methods that appear in the same theorems sit closer and bridging methods face the coast of the island they link to) and then nudged by a fixed-seed search so the bridges cross as little as the graph allows (the method graph contains K5, so one crossing is unavoidable) and never run over a third island. The result is checked in so the map stays stable. Regenerate deliberately with `npm run build:world`.
 

@@ -26,10 +26,14 @@
 .world-hud { flex-wrap: wrap; }
 .world-hud .ring-bar { position: static; flex: 1 1 260px; min-width: 240px; max-width: 620px; border: 1px solid #cbc2b4; background: rgba(250, 247, 240, .94); padding: 7px 12px; }
 .world-hud .ring-lead { font-size: 15px; }
-.world-back, .world-toggle, .world-back, .world-toggle { min-height: 36px; padding: 0 13px; white-space: nowrap; }
+.world-back, .world-toggle, .world-zoom button { border: 1px solid #3b4438; background: #fbf8f0; color: #2d352b; cursor: pointer; font-size: 14px; }
+.world-back, .world-toggle { min-height: 36px; padding: 0 13px; white-space: nowrap; }
 .world-toggle { margin-left: auto; }
 .world-controls { position: absolute; right: 16px; bottom: 16px; display: flex; gap: 10px; align-items: flex-end; }
 .world-open .world-controls { right: calc(min(460px, 100vw) + 16px); }
+.world-zoom { display: flex; }
+.world-zoom button { height: 36px; min-width: 38px; padding: 0 12px; }
+.world-zoom button + button { border-left: 0; }
 .world-zoom button:disabled { color: #b0aa9c; cursor: default; }
 .world-hint { position: absolute; left: 16px; bottom: 16px; max-width: calc(100% - 330px); padding: 7px 14px; border: 1px solid #3b4438; background: #fbf8f0; font-size: 14px; }
 
@@ -80,7 +84,6 @@
 .world-tip { position: absolute; z-index: 3; max-width: 240px; padding: 5px 10px 6px; border: 1px solid; pointer-events: none; font-size: 15px; line-height: 1.3; box-shadow: 2px 3px 0 rgba(59, 68, 56, .16); white-space: normal; }
 .world-tip strong { display: block; font-weight: 700; }
 .world-tip span { display: block; font-size: 12.5px; font-style: italic; opacity: .75; }
-.world-page[data-theme='colour'] .world-tip { border-width: 2px; border-radius: 3px; }
 .world-group { font-style: italic; font-weight: 600; letter-spacing: .06em; stroke-width: 4px; stroke-linejoin: round; paint-order: stroke; }
 
 .world-glyph { font-style: normal; font-weight: 600; stroke-linejoin: round; paint-order: stroke; }
