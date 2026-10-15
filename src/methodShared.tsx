@@ -6,7 +6,7 @@ import { displayRouteTitle, displayTitle, primaryReference, ProofMathText, Sourc
 import type { Catalog, Entry, Route } from './historicalShared'
 import './ring.css'
 
-export type Technique = { id: string; family: string; group?: string; label: string; short: string; gloss: string; provisional?: boolean }
+export type Technique = { id: string; family: string; group?: string; glyph?: string; label: string; short: string; gloss: string; provisional?: boolean }
 export type Group = { id: string; family: string; label: string }
 export type RingRoute = { id: string; title: string; techniques: string[]; derivesFromTheorem: boolean; excluded: string | null; titleSketchDisagree: boolean }
 export type RingTheorem = { id: number; name: string; areas: string[]; usableRoutes: number; routes: RingRoute[] }
@@ -228,7 +228,7 @@ export function MethodList({ data, model, sel }: { data: MethodData; model: Meth
           {(model.byFamily.get(family) ?? []).filter((id) => model.names.get(id)?.group === group.id).map((id) => {
             const item = `v:${id}`, n = model.uses.get(id) ?? 0, on = sel.chosen.has(item), faded = sel.selection.length > 0 && !sel.live.methods.has(id) && !on
             return <button type="button" key={id} className={on ? 'ring-method ring-method-on' : faded ? 'ring-method ring-method-faded' : 'ring-method'} aria-pressed={on} title={model.names.get(id)?.gloss} onClick={() => sel.toggle(item)}>
-              {model.names.get(id)?.short} <span>{n}</span>
+              <i className="ring-glyph" aria-hidden="true">{model.names.get(id)?.glyph}</i>{model.names.get(id)?.short} <span>{n}</span>
             </button>
           })}
         </div>

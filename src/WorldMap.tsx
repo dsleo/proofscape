@@ -169,7 +169,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       const [x, y] = data.world.sites[id]
       return { id, x, y, family: model.names.get(id)!.family, short: model.names.get(id)!.short, use: model.uses.get(id) ?? 0 }
     })
-    const radius = (use: number) => 6 + Math.min(use, 14) * 0.55
+    const radius = (use: number) => 12 + Math.min(use, 14) * 0.7
+    // the symbol that stands for a method is as large as its mark allows, and always fits inside it
+    const markFont = (s: { use: number; id: string }) => Math.min(1.7 * radius(s.use), (2.1 * radius(s.use)) / (Math.max(1, [...(model.names.get(s.id)?.glyph ?? '•')].length) * 0.6))
     const islands = Object.entries(data.world.islands).map(([family, boxed]) => {
       const mine = sites.filter((s) => s.family === family)
       const pts = mine.map((s): P => [s.x, s.y])
@@ -269,7 +271,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     }
     const x0 = Math.min(...islands.map((i) => i.cx - i.r)) - 40, x1 = Math.max(...islands.map((i) => i.cx + i.r)) + 40
     const y0 = Math.min(...islands.map((i) => i.top)) - 90, y1 = Math.max(...islands.map((i) => i.bottom)) + 70
-    return { sites, islands, groups, bridges, chords, radius, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
+    return { sites, islands, groups, bridges, chords, radius, markFont, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
   }, [data, model, W, H])
 
   const { x0: bx, y0: by, w: bw, h: bh } = world.bounds
@@ -410,7 +412,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     const tk = TIERS[tier], font = Math.min(25, 16.5 / (fit * tk))
     const floor = tier === 0 ? Math.max(overviewFloor, 2) : tier === 1 ? 5 : tier === 2 ? 3 : 1
     const h = font * 1.3, charW = font * 0.56
-    const boxes: number[][] = world.sites.map((s) => { const r = world.radius(s.use) + 3; return [s.x - r, s.y - r, s.x + r, s.y + r] })
+    // up close the marks stop growing with the map (they keep to ~46 px on screen) so that names can sit beside them
+    const shrink = (use: number) => Math.min(1, 46 / (2 * world.radius(use) * fit * tk))
+    const boxes: number[][] = world.sites.map((s) => { const r = world.radius(s.use) * shrink(s.use) + 3; return [s.x - r, s.y - r, s.x + r, s.y + r] })
     const gfont = Math.min(17, 12.5 / (fit * tk)), rs = (1 / Math.pow(Math.max(1, tk), 0.55)) ** 1.1
     for (const g of world.groups) { const hw = g.label.length * gfont * 0.29; boxes.push([g.x - hw, g.y - gfont, g.x + hw, g.y + gfont * 0.4]) }
     for (const i of world.islands) { const hw = ((familyName[i.family].length * 21 * 0.72 + 38) / 2 + 32) * rs, y = i.below ? i.bottom + 34 : i.top - 26; boxes.push([i.cx - hw, y - 24 * rs, i.cx + hw, y + 30 * rs]) }
@@ -418,7 +422,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     const out = new Map<string, { x: number; y: number; anchor: Anchor }>()
     const ordered = [...world.sites].sort((a, b) => Number(b.use >= floor) - Number(a.use >= floor) || b.use - a.use)
     ordered.forEach((s) => {
-      const r = world.radius(s.use), w = s.short.length * charW + 10, g = 4
+      const r = world.radius(s.use) * shrink(s.use), w = s.short.length * charW + 10, g = 4
       const own = [s.x - r - 3, s.y - r - 3, s.x + r + 3, s.y + r + 3]
       const spots: { x: number; y: number; anchor: Anchor; box: number[] }[] = [
         { x: s.x + r + g, y: s.y + font * 0.32, anchor: 'start', box: [s.x + r + g, s.y - h / 2, s.x + r + g + w, s.y + h / 2] },
@@ -429,6 +433,13 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         { x: s.x - r * 0.7 - g, y: s.y - r * 0.7 - g, anchor: 'end', box: [s.x - r * 0.7 - g - w, s.y - r * 0.7 - g - h, s.x - r * 0.7 - g, s.y - r * 0.7 - g] },
         { x: s.x + r * 0.7 + g, y: s.y + r * 0.7 + g + font * 0.9, anchor: 'start', box: [s.x + r * 0.7 + g, s.y + r * 0.7 + g, s.x + r * 0.7 + g + w, s.y + r * 0.7 + g + h] },
         { x: s.x - r * 0.7 - g, y: s.y + r * 0.7 + g + font * 0.9, anchor: 'end', box: [s.x - r * 0.7 - g - w, s.y + r * 0.7 + g, s.x - r * 0.7 - g, s.y + r * 0.7 + g + h] },
+        // second ring, when the first is taken
+        { x: s.x, y: s.y - r - g - h * 1.1, anchor: 'middle', box: [s.x - w / 2, s.y - r - g - h * 2.1, s.x + w / 2, s.y - r - g - h * 1.1] },
+        { x: s.x, y: s.y + r + g + h * 1.1 + font * 0.9, anchor: 'middle', box: [s.x - w / 2, s.y + r + g + h * 1.1, s.x + w / 2, s.y + r + g + h * 2.1] },
+        { x: s.x + r + g, y: s.y + h * 1.0 + font * 0.32, anchor: 'start', box: [s.x + r + g, s.y + h * 0.5, s.x + r + g + w, s.y + h * 1.5] },
+        { x: s.x - r - g, y: s.y + h * 1.0 + font * 0.32, anchor: 'end', box: [s.x - r - g - w, s.y + h * 0.5, s.x - r - g, s.y + h * 1.5] },
+        { x: s.x + r + g, y: s.y - h * 1.0 + font * 0.32, anchor: 'start', box: [s.x + r + g, s.y - h * 1.5, s.x + r + g + w, s.y - h * 0.5] },
+        { x: s.x - r - g, y: s.y - h * 1.0 + font * 0.32, anchor: 'end', box: [s.x - r - g - w, s.y - h * 1.5, s.x - r - g, s.y - h * 0.5] },
       ]
       for (const spot of spots) {
         if (spot.box[0] > 10 && spot.box[2] < W - 10 && !boxes.some((b) => b.join() !== own.join() && hit(spot.box, b))) {
@@ -506,7 +517,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
     if (kind === 'v') {
       const t = nameOf(key)
-      return { title: t?.label ?? key, sub: `${familyName[t?.family ?? '']} › ${groupName.get(t?.group ?? '') ?? ''} · used in ${plural(theorems.length, 'theorem')}`, body: t?.gloss ?? '', theorems }
+      return { title: `${t?.glyph ?? ''} ${t?.label ?? key}`.trim(), sub: `${familyName[t?.family ?? '']} › ${groupName.get(t?.group ?? '') ?? ''} · used in ${plural(theorems.length, 'theorem')}`, body: t?.gloss ?? '', theorems }
     }
     if (kind === 'i') {
       const mine = (model.byFamily.get(key) ?? []).slice().sort((a, b) => (model.uses.get(b) ?? 0) - (model.uses.get(a) ?? 0))
@@ -651,11 +662,13 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             <path d={r.chain} fill="none" stroke={r.color} strokeWidth="2.4" strokeDasharray="7 6" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
           </g>)}
           {world.sites.map((s) => {
-            const { item, on, noted, shown, faint } = siteState(s), r = world.radius(s.use), c = theme.hue(s.family)
+            const { item, on, noted, shown, faint } = siteState(s), shrunk = Math.min(1, 46 / (2 * world.radius(s.use) * scale)), r = world.radius(s.use) * shrunk, c = theme.hue(s.family)
             return <g key={item} data-world-item className="world-site" onPointerEnter={() => { const g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y); setTip({ id: s.id, x: g.tx + s.x * g.s, y: g.ty + (s.y - r) * g.s }); startTransition(() => setHoverSite(s.id)) }} onPointerLeave={() => { setTip(null); startTransition(() => setHoverSite(null)) }} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
               aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...choose(item)}>
               {(on || noted) && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={INK} strokeWidth="2" strokeDasharray="4 4" />}
-              <circle cx={s.x} cy={s.y} r={r} fill={c.dark} stroke={focusColour.get(s.id) ?? PAPER} strokeWidth={focusColour.has(s.id) ? 4 : 2} />
+              <circle cx={s.x} cy={s.y} r={r} fill="transparent" />
+              <text className="world-glyph" x={s.x} y={s.y} dy="0.34em" textAnchor="middle"
+                style={{ fontSize: `${(world.markFont(s) * shrunk).toFixed(1)}px`, fill: theme.id === 'ink' ? c.dark : theme.label.fill, stroke: focusColour.get(s.id) ?? theme.label.halo(c), strokeWidth: focusColour.has(s.id) ? 7 : 5 }}>{model.names.get(s.id)?.glyph ?? '•'}</text>
             </g>
           })}
           {routes.map((r) => <g key={`badge-${r.id}`} pointerEvents="none" transform={`translate(${fixed(r.at[0])} ${fixed(r.at[1] - 34)}) scale(${lettering.toFixed(3)})`}>
@@ -680,7 +693,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       {tip && (() => {
         const t = model.names.get(tip.id), c = theme.hue(t?.family ?? 'analytic'), below = tip.y < 84
         return <div className="world-tip" style={{ left: Math.min(Math.max(tip.x, 110), box.w - 110), top: below ? tip.y + 34 : tip.y - 8, transform: below ? 'translate(-50%, 0)' : 'translate(-50%, -100%)', borderColor: c.dark, background: PAPER, color: INK }}>
-          <strong>{t?.label}</strong>
+          <strong><span className="world-tip-glyph">{t?.glyph}</span> {t?.label}</strong>
           <span>{familyName[t?.family ?? '']} › {groupName.get(t?.group ?? '')} · {model.uses.get(tip.id) ?? 0} theorem{(model.uses.get(tip.id) ?? 0) === 1 ? '' : 's'}</span>
         </div>
       })()}
@@ -732,7 +745,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         {searchOpen && found && <div className="world-found" role="listbox">
           {found.methods.length === 0 && found.theorems.length === 0 && <p>No match.</p>}
           {found.methods.length > 0 && <span className="world-found-head">Methods</span>}
-          {found.methods.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickMethod(t.id)}>{t.label}<em>{familyName[t.family]} › {groupName.get(t.group ?? '')}</em></button>)}
+          {found.methods.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickMethod(t.id)}><span><b className="world-found-glyph">{t.glyph}</b> {t.label}</span><em>{familyName[t.family]} › {groupName.get(t.group ?? '')}</em></button>)}
           {found.theorems.length > 0 && <span className="world-found-head">Theorems</span>}
           {found.theorems.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickTheorem(t.id)}><MathText text={t.name} /></button>)}
         </div>}

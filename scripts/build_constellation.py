@@ -167,10 +167,14 @@ def _segment_distance(p: list[float], a: list[float], b: list[float]) -> float:
     return math.hypot(p[0] - a[0] - t * dx, p[1] - a[1] - t * dy)
 
 
-CLEAR = 0.7
+CLEAR = 0.5
 SEED = 11
 T0 = 600.0
 STEPS = 12000
+GAP = 30  # empty water between two coasts, at least
+CLOSE = 40  # polish: unrelated bridges stay at least this far apart
+ANGLE = 0.2  # polish: bridges leaving one island fan out by at least this many radians
+COMPACT = 6.0  # polish: pull the islands together (weight on the bounding box)
 
 
 def untangle(centre: dict[str, list[float]], reach: dict[str, float], bridge: collections.Counter) -> None:
@@ -188,7 +192,7 @@ def untangle(centre: dict[str, list[float]], reach: dict[str, float], bridge: co
     def cost() -> float:
         total = 0.0
         for a, b in itertools.combinations(names, 2):
-            gap = reach[a] + reach[b] + 70 - math.dist(centre[a], centre[b])
+            gap = reach[a] + reach[b] + GAP - math.dist(centre[a], centre[b])
             if gap > 0:
                 total += 40 * gap
         for (a, b), (c, d) in itertools.combinations(links, 2):
@@ -198,15 +202,19 @@ def untangle(centre: dict[str, list[float]], reach: dict[str, float], bridge: co
             if len({a, b, c, d}) == 4:
                 close = min(_segment_distance(centre[a], centre[c], centre[d]), _segment_distance(centre[b], centre[c], centre[d]),
                             _segment_distance(centre[c], centre[a], centre[b]), _segment_distance(centre[d], centre[a], centre[b]))
-                if close < 120:
-                    total += 25 * (120 - close)
+                if close < CLOSE:
+                    total += 25 * (CLOSE - close)
             else:
                 shared = ({a, b} & {c, d}).pop()
                 u = [centre[x][i] - centre[shared][i] for x in ({a, b} - {shared}) for i in (0, 1)]
                 v = [centre[x][i] - centre[shared][i] for x in ({c, d} - {shared}) for i in (0, 1)]
                 angle = math.acos(max(-1.0, min(1.0, (u[0] * v[0] + u[1] * v[1]) / ((math.hypot(*u) * math.hypot(*v)) or 1.0))))
-                if angle < 0.5:
-                    total += 1500 * (0.5 - angle)
+                if angle < ANGLE:
+                    total += 1500 * (ANGLE - angle)
+        if spacing[0] and COMPACT:
+            xs = [centre[f][0] - reach[f] for f in names] + [centre[f][0] + reach[f] for f in names]
+            ys = [centre[f][1] - reach[f] for f in names] + [centre[f][1] + reach[f] for f in names]
+            total += COMPACT * (max(xs) - min(xs) + max(ys) - min(ys))
         for a, b in links:
             total += 0.6 * math.dist(centre[a], centre[b])
             for c in names:

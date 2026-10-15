@@ -1,5 +1,5 @@
 /* The World view owns the whole window: map underneath, a small HUD on top, a drawer for theorems. */
-.world-page, .world-page *:not(.katex *):not(.katex) { font-family: 'CMU Serif', 'Latin Modern Roman', 'Computer Modern', Georgia, serif; }
+.world-page, .world-page *:not(.katex *):not(.katex) { font-family: 'CMU Serif', 'Latin Modern Roman', 'Computer Modern', 'STIX Two Math', 'Cambria Math', 'Apple Symbols', Georgia, serif; }
 .world-page { position: fixed; inset: 0; z-index: 60; overflow: hidden; color: #2d352b; }
 .world-stage { position: absolute; inset: 0; overflow: hidden; contain: layout paint; }
 .world-stage::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: var(--grain, .1); background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .25  0 0 0 0 .2  0 0 0 0 .3  0 0 0 .9 0'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>"); }
@@ -87,3 +87,6 @@
 .world-tip span { display: block; font-size: 12.5px; font-style: italic; opacity: .75; }
 .world-page[data-theme='colour'] .world-tip { border-width: 2px; border-radius: 3px; }
 .world-group { font-style: italic; font-weight: 600; letter-spacing: .06em; stroke-width: 4px; stroke-linejoin: round; paint-order: stroke; }
+
+.world-glyph { font-style: normal; font-weight: 600; stroke-linejoin: round; paint-order: stroke; }
+.world-tip-glyph, .world-found-glyph { display: inline-block; min-width: 1.5em; font-weight: 600; text-align: center; }

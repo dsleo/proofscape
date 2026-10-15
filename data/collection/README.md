@@ -45,3 +45,5 @@ The World view's island and method positions live in [`world-layout.json`](world
 ## Technique hierarchy
 
 `technique-vocabulary.json` places every technique in a **family** (one island on the World map) and, inside it, a **group** (a sub-domain such as *Homological and categorical algebra*). A technique belongs where its mathematics lives, not where it is usually applied: chain complexes and exact sequences sit with algebra, not geometry. After changing a family or group, regenerate the frozen layouts with `npm run build:ring-order && npm run build:world`.
+
+Each technique also carries a `glyph`, the mathematical symbol that marks it on the World map (Σ for telescoping sums, χ for the Euler characteristic, ∫ for integral calculus, and so on). It is purely visual; keep it to one to three characters.

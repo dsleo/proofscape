@@ -81,3 +81,4 @@
 
 .ring-methodsub { margin: 4px 0 8px; }
 .ring-methodsubname { margin: 0 0 4px; color: #80766b; font: italic 12px 'CMU Serif', serif; }
+.ring-glyph { display: inline-block; min-width: 1.6em; margin-right: 4px; color: #79521f; font: normal 400 13px 'CMU Serif', 'STIX Two Math', 'Cambria Math', serif; text-align: center; }
