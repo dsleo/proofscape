@@ -21,7 +21,7 @@ export type MethodData = {
 
 const dataUrl = `${import.meta.env.BASE_URL}data/collection/constellation.json`
 export const familyColor: Record<string, string> = { logic: '#6a4f7a', discrete: '#4f6b5a', algebraic: '#8a4a5a', analytic: '#3f5a7a', geometric: '#7a6a2a' }
-export const familyName: Record<string, string> = { logic: 'Foundations', discrete: 'Combinatorics', algebraic: 'Algebra', analytic: 'Analysis', geometric: 'Geometry' }
+export const familyName: Record<string, string> = { logic: 'Logic', discrete: 'Combinatorics', algebraic: 'Algebra', analytic: 'Analysis', geometric: 'Geometry' }
 export const PAGE = 4
 
 export const fixed = (value: number) => value.toFixed(1)
