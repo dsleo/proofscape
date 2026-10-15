@@ -40,7 +40,7 @@ export default function App() {
         <h1>{tab === 'explore' ? 'How do different proofs reach the same theorem?' : 'Proof Diversity Explorer'}</h1>
         <p className="collection-intro-copy">{tab === 'explore'
           ? 'A curated set of 150 results from the mathematics curriculum, each with its distinct proof approaches, mapped by the methods they use.'
-          : 'Nearly ten thousand statements with their proofs, from three public datasets. What interests us is how many different paths lead to the same result: the same statement, reached by different approaches.'}</p>
+          : 'One statement, many routes. Nearly ten thousand statements from three public datasets, each with the proofs written for it: read them side by side and watch different approaches arrive at the same result.'}</p>
       </header>
 
       <nav className="proof-track-tabs" role="tablist" aria-label="Section">
