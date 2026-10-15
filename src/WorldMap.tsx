@@ -20,19 +20,9 @@ type Theme = {
 // Ink: the pencil-and-wash cream of the app's landscape illustration, one colour for every island.
 const inkWash: Record<string, string> = { analytic: '#f0f4e6', algebraic: '#f7ece4', geometric: '#f2f1e2', discrete: '#f7f2d9', logic: '#f6eedb' }
 const ink: Hue = { land: '#faf7ee', halo: '#ebe6d8', light: '#c4ccbb', dark: '#4a5446', peak: '#f4f1e5' }
-// Colour: flat, saturated continents on a pale sea, after the Langlands illustrations, one hue per domain.
-const colours: Record<string, Hue> = {
-  analytic: { land: '#4a78dc', halo: '#cfd9f3', light: '#8fb0ee', dark: '#233f94', peak: '#8fb0ee' },
-  algebraic: { land: '#e8664f', halo: '#f5cdc5', light: '#f4a090', dark: '#a8321f', peak: '#f4a090' },
-  geometric: { land: '#2fb39b', halo: '#c5eae1', light: '#85d9c6', dark: '#157564', peak: '#85d9c6' },
-  discrete: { land: '#62ad4e', halo: '#d5ebd0', light: '#a3d894', dark: '#2f7326', peak: '#a3d894' },
-  logic: { land: '#9168cc', halo: '#ded2f2', light: '#bc9bea', dark: '#5a3597', peak: '#bc9bea' },
-}
 const themes: Theme[] = [
   { id: 'ink', name: 'Ink', sea: '#f2efe7', paper: '#fbf8f0', ink: '#3b4438', accent: '#ae6b1f', trail: '#8a5a2b', water: '#bdd0d4', wisp: '#dcd6c6', hue: (f) => ({ ...ink, land: inkWash[f] ?? ink.land }), tree: () => '#f9f6ec', hatchInk: (h) => h.dark, clouds: false, ripples: true, shade: 0.1, treeFill: 0, coast: 1.5, label: { fill: '#2d352b', halo: () => '#f2efe7' }, grain: 0.07 },
-  { id: 'colour', name: 'Colour', sea: '#ebe6ee', paper: '#fffdf5', ink: '#2b2a3a', accent: '#ffd23f', trail: '#ffffff', water: '#e4f3f7', wisp: '#ffffff', hue: (f) => colours[f], tree: (h) => h.dark, hatchInk: () => '#ffffff', clouds: true, ripples: false, shade: 0.35, treeFill: 0.6, coast: 0, label: { fill: '#ffffff', halo: (h) => h.dark }, grain: 0.16 },
 ]
-const THEME_KEY = 'proofscape.world.theme'
 const MAX_ZOOM = 8, MARGIN = 90
 const ROUTE_COLOURS = ['#ae6b1f', '#2f6f73', '#7a4a73', '#5f7a2f', '#8a3b3b']
 const DRAWER = 460
@@ -128,8 +118,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const sea = useRef({ raf: 0, phase: 'idle' as 'idle' | 'rise' | 'hold' | 'ebb', level: 0, from: 0, t0: 0 })
   const [searchOpen, setSearchOpen] = useState(false)
   const travel = useRef(0)
-  const [themeId, setThemeId] = useState(() => { try { return window.localStorage.getItem(THEME_KEY) ?? 'ink' } catch { return 'ink' } })
-  const theme = themes.find((t) => t.id === themeId) ?? themes[0]
+  const theme = themes[0]
   const { paper: PAPER, ink: INK, accent: GOLD, sea: SEA } = theme
   const drag = useRef<{ x: number; y: number } | null>(null)
   const seen = useRef(0)
@@ -804,9 +793,6 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       </div>}
       {hint && <div className="world-hint">Click for a quick note, double-click to list theorems · scroll or pinch to zoom, drag to move</div>}
       <div className="world-controls">
-        <div className="world-switch" role="group" aria-label="Map style">
-          {themes.map((t) => <button type="button" key={t.id} aria-pressed={t.id === theme.id} onClick={() => { setThemeId(t.id); try { window.localStorage.setItem(THEME_KEY, t.id) } catch { /* private mode */ } }}>{t.name}</button>)}
-        </div>
         <div className="world-zoom" role="group" aria-label="Map zoom">
           <button type="button" onClick={() => zoomTo(k * 1.6, box.w / 2, box.h / 2, true)} aria-label="Zoom in" disabled={k >= MAX_ZOOM}>+</button>
           <button type="button" onClick={() => zoomTo(k / 1.6, box.w / 2, box.h / 2, true)} aria-label="Zoom out" disabled={k <= 1}>−</button>
