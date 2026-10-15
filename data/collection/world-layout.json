@@ -1,279 +1,279 @@
 {
  "size": [
-  1700,
-  1150
+  2500,
+  1700
  ],
  "islands": {
   "logic": {
-   "x": 612,
-   "y": 711,
-   "r": 163
+   "x": 2220,
+   "y": 1458,
+   "r": 232
   },
   "discrete": {
-   "x": 850,
-   "y": 311,
-   "r": 181
+   "x": 962,
+   "y": 1029,
+   "r": 259
   },
   "algebraic": {
-   "x": 1439,
-   "y": 948,
-   "r": 192
+   "x": 1566,
+   "y": 1031,
+   "r": 276
   },
   "geometric": {
-   "x": 1047,
-   "y": 717,
-   "r": 187
+   "x": 1294,
+   "y": 448,
+   "r": 268
   },
   "analytic": {
-   "x": 216,
-   "y": 931,
-   "r": 206
+   "x": 333,
+   "y": 1393,
+   "r": 297
   }
  },
  "sites": {
   "choice-maximality": [
-   545,
-   717
+   2148,
+   1435
   ],
   "model-construction": [
-   559,
-   784
+   2105,
+   1524
   ],
   "diagonalisation": [
-   534,
-   756
+   2087,
+   1471
   ],
   "extremal-descent": [
-   662,
-   748
+   2136,
+   1373
   ],
   "induction": [
-   640,
-   702
+   2096,
+   1415
   ],
   "pigeonhole": [
-   775,
-   380
+   940,
+   1111
   ],
   "probabilistic-argument": [
-   802,
-   356
+   909,
+   1069
   ],
   "path-exchange": [
-   831,
-   417
+   1043,
+   1090
   ],
   "density-increment": [
-   795,
-   408
+   835,
+   1104
   ],
   "telescoping": [
-   851,
-   369
+   990,
+   1083
   ],
   "bijection": [
-   820,
-   383
+   1013,
+   1042
   ],
   "generating-functions": [
-   880,
-   329
+   1024,
+   969
   ],
   "counting": [
-   865,
-   403
+   1076,
+   1045
   ],
   "arithmetic-identities": [
-   889,
-   365
+   956,
+   1036
   ],
   "move-invariance": [
-   901,
-   401
+   1114,
+   1007
   ],
   "polynomial-methods": [
-   1378,
-   921
+   1454,
+   1070
   ],
   "linear-algebra": [
-   1335,
-   875
+   1427,
+   1026
   ],
   "ideal-module-structure": [
-   1359,
-   896
+   1525,
+   1036
   ],
   "euclidean-gcd": [
-   1347,
-   934
+   1588,
+   1009
   ],
   "modular-arithmetic": [
-   1409,
-   952
+   1570,
+   1092
   ],
   "group-action": [
-   1314,
-   937
+   1502,
+   1079
   ],
   "explicit-construction": [
-   1411,
-   856
+   1446,
+   979
   ],
   "categorical-equivalence": [
-   1342,
-   973
+   1390,
+   982
   ],
   "galois-field-theory": [
-   1376,
-   868
+   1464,
+   932
   ],
   "character-sums": [
-   1404,
-   894
+   1535,
+   993
   ],
   "leading-term-reduction": [
-   1439,
-   881
+   1518,
+   929
   ],
   "generic-parameter-choice": [
-   1432,
-   918
+   1565,
+   958
   ],
   "k-theory-pushforward": [
-   1373,
-   957
+   1475,
+   1027
   ],
   "homology-cohomology": [
-   1327,
-   910
+   1495,
+   977
   ],
   "topological-structure": [
-   1052,
-   733
+   1341,
+   579
   ],
   "lattice-geometry": [
-   1111,
-   755
+   1364,
+   534
   ],
   "dimension-lift": [
-   1075,
-   760
+   1233,
+   573
   ],
   "local-to-global-patching": [
-   1018,
-   797
+   1320,
+   623
   ],
   "morse-theory": [
-   1072,
-   796
+   1181,
+   586
   ],
   "triangulation-euler": [
-   1022,
-   743
+   1257,
+   620
   ],
   "differential-forms": [
-   991,
-   774
+   1211,
+   524
   ],
   "symmetrization": [
-   1073,
-   695
+   1263,
+   484
   ],
   "similarity-trig": [
-   1089,
-   726
+   1324,
+   481
   ],
   "coordinates-vectors": [
-   1041,
-   768
+   1310,
+   536
   ],
   "dissection-area": [
-   1013,
-   709
+   1287,
+   586
   ],
   "winding-degree": [
-   980,
-   726
+   1261,
+   540
   ],
   "variational-extremum": [
-   355,
-   924
+   462,
+   1371
   ],
   "pde-potential": [
-   346,
-   959
+   426,
+   1414
   ],
   "ode-uniqueness": [
-   316,
-   978
+   372,
+   1396
   ],
   "integral-calculus": [
-   320,
-   935
+   530,
+   1302
   ],
   "series-asymptotics": [
-   283,
-   923
+   461,
+   1332
   ],
   "complex-analysis": [
-   309,
-   901
+   410,
+   1314
   ],
   "maximum-principle": [
-   278,
-   960
+   326,
+   1365
   ],
   "rolle-mean-value": [
-   253,
-   904
+   481,
+   1415
   ],
   "orthogonal-decomposition": [
-   251,
-   933
+   353,
+   1315
   ],
   "measure-transport": [
-   223,
-   887
+   381,
+   1271
   ],
   "ergodic-correspondence": [
-   227,
-   834
+   371,
+   1216
   ],
   "fourier-analysis": [
-   253,
-   871
+   466,
+   1232
   ],
   "measure-approximation": [
-   280,
-   850
+   428,
+   1269
   ],
   "compactness": [
-   336,
-   875
+   506,
+   1329
   ],
   "convexity-inequality": [
-   310,
-   871
+   504,
+   1370
   ],
   "baire-category": [
-   280,
-   886
+   416,
+   1365
   ],
   "completeness": [
-   308,
-   838
+   470,
+   1288
   ],
   "fixed-point-iteration": [
-   334,
-   907
+   534,
+   1404
   ],
   "duality-separation": [
-   339,
-   849
+   508,
+   1267
   ],
   "euler-product-zeta": [
-   360,
-   892
+   545,
+   1350
   ]
  }
 }

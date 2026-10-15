@@ -169,14 +169,14 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       const [x, y] = data.world.sites[id]
       return { id, x, y, family: model.names.get(id)!.family, short: model.names.get(id)!.short, use: model.uses.get(id) ?? 0 }
     })
-    const radius = (use: number) => 4.5 + Math.min(use, 14) * 0.45
+    const radius = (use: number) => 6 + Math.min(use, 14) * 0.55
     const islands = Object.entries(data.world.islands).map(([family, boxed]) => {
       const mine = sites.filter((s) => s.family === family)
       const pts = mine.map((s): P => [s.x, s.y])
       const cx = pts.reduce((a, p) => a + p[0], 0) / pts.length, cy = pts.reduce((a, p) => a + p[1], 0) / pts.length
       let h = hull(pts)
       if (h.length < 3) h = [[cx - 30, cy], [cx + 30, cy], [cx, cy - 30], [cx, cy + 30]]
-      const pad = pts.length < 6 ? 78 : 62, rnd = seeded(family), ring: P[] = []
+      const pad = pts.length < 6 ? 100 : 86, rnd = seeded(family), ring: P[] = []
       h.forEach((p, i) => {
         const q = h[(i + 1) % h.length], steps = Math.max(1, Math.ceil(Math.hypot(q[0] - p[0], q[1] - p[1]) / 16))
         for (let t = 0; t < steps; t++) {
@@ -253,24 +253,11 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       }
       return { key, d: polyline(pts), dots: waypoints(pts), cross: lanes.has(key), n: model.pairs.get(key)!.size }
     })
-    const placed: number[][] = sites.map((s) => { const r = radius(s.use); return [s.x - r, s.y - r, s.x + r, s.y + r] })
-    const labels = new Map<string, { x: number; y: number; anchor: Anchor }>()
-    const overlap = (a: number[], b: number[]) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1]
-    for (const s of [...sites].sort((a, b) => b.use - a.use)) {
-      const r = radius(s.use), w = s.short.length * 10.6 + 12, h = 26
-      const options: { x: number; y: number; anchor: Anchor; box: number[] }[] = [
-        { x: s.x + r + 6, y: s.y + 7, anchor: 'start', box: [s.x + r + 6, s.y - 15, s.x + r + 6 + w, s.y + 9] },
-        { x: s.x - r - 6, y: s.y + 7, anchor: 'end', box: [s.x - r - 6 - w, s.y - 15, s.x - r - 6, s.y + 9] },
-        { x: s.x, y: s.y - r - 8, anchor: 'middle', box: [s.x - w / 2, s.y - r - 8 - h + 5, s.x + w / 2, s.y - r - 8 + 5] },
-        { x: s.x, y: s.y + r + 22, anchor: 'middle', box: [s.x - w / 2, s.y + r + 4, s.x + w / 2, s.y + r + 4 + h] },
-      ]
-      for (const option of options) {
-        const own = [s.x - r, s.y - r, s.x + r, s.y + r]
-        if (option.box[0] > 20 && option.box[2] < W - 20 && !placed.some((b) => b.join() !== own.join() && overlap(option.box, b))) {
-          placed.push(option.box); labels.set(s.id, option); break
-        }
-      }
-    }
+    const groups = data.vocabulary.groups.map((g) => {
+      const mine = sites.filter((site) => model.names.get(site.id)?.group === g.id)
+      const top = mine.reduce((m, p) => (p.y < m.y ? p : m), mine[0])
+      return { ...g, n: mine.length, x: mine.reduce((a, p) => a + p.x, 0) / mine.length, y: Math.min(...mine.map((p) => p.y)) - 26 - (top ? 0 : 0) }
+    }).filter((g) => g.n > 0)
     const sea = seeded('sea')
     let wisps = ''
     for (let tries = 0, n = 0; tries < 600 && n < 70; tries++) {
@@ -280,14 +267,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       const w = 14 + sea() * 26
       wisps += `M${fixed(x)},${fixed(y)}q${fixed(w / 2)},-5 ${fixed(w)},0q${fixed(-w / 2)},4 ${fixed(-w)},0Z`
     }
-    const groups = data.vocabulary.groups.map((g) => {
-      const mine = sites.filter((site) => model.names.get(site.id)?.group === g.id)
-      const top = mine.reduce((m, p) => (p.y < m.y ? p : m), mine[0])
-      return { ...g, n: mine.length, x: mine.reduce((a, p) => a + p.x, 0) / mine.length, y: Math.min(...mine.map((p) => p.y)) - 26 - (top ? 0 : 0) }
-    }).filter((g) => g.n > 0)
     const x0 = Math.min(...islands.map((i) => i.cx - i.r)) - 40, x1 = Math.max(...islands.map((i) => i.cx + i.r)) + 40
     const y0 = Math.min(...islands.map((i) => i.top)) - 90, y1 = Math.max(...islands.map((i) => i.bottom)) + 70
-    return { sites, islands, groups, bridges, chords, labels, radius, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
+    return { sites, islands, groups, bridges, chords, radius, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
   }, [data, model, W, H])
 
   const { x0: bx, y0: by, w: bw, h: bh } = world.bounds
@@ -421,6 +403,43 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const groupName = useMemo(() => new Map(data.vocabulary.groups.map((g) => [g.id, g.label])), [data])
   const siteById = useMemo(() => new Map(world.sites.map((site) => [site.id, site])), [world])
   const overviewFloor = useMemo(() => [...world.sites].sort((a, b) => b.use - a.use)[Math.min(11, world.sites.length - 1)].use, [world])
+  // method names are placed once per zoom tier, with the type size that tier will really show, so none lands on a dot, a name or a ribbon
+  const TIERS = [1, 1.5, 2.2, 3.3, 4.5, 6]
+  const tier = TIERS.filter((t) => lod >= t - 0.001).length - 1
+  const labelAt = useMemo(() => {
+    const tk = TIERS[tier], font = Math.min(25, 16.5 / (fit * tk))
+    const floor = tier === 0 ? Math.max(overviewFloor, 2) : tier === 1 ? 5 : tier === 2 ? 3 : 1
+    const h = font * 1.3, charW = font * 0.56
+    const boxes: number[][] = world.sites.map((s) => { const r = world.radius(s.use) + 3; return [s.x - r, s.y - r, s.x + r, s.y + r] })
+    const gfont = Math.min(17, 12.5 / (fit * tk)), rs = (1 / Math.pow(Math.max(1, tk), 0.55)) ** 1.1
+    for (const g of world.groups) { const hw = g.label.length * gfont * 0.29; boxes.push([g.x - hw, g.y - gfont, g.x + hw, g.y + gfont * 0.4]) }
+    for (const i of world.islands) { const hw = ((familyName[i.family].length * 21 * 0.72 + 38) / 2 + 32) * rs, y = i.below ? i.bottom + 34 : i.top - 26; boxes.push([i.cx - hw, y - 24 * rs, i.cx + hw, y + 30 * rs]) }
+    const hit = (a: number[], b: number[]) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1]
+    const out = new Map<string, { x: number; y: number; anchor: Anchor }>()
+    const ordered = [...world.sites].sort((a, b) => Number(b.use >= floor) - Number(a.use >= floor) || b.use - a.use)
+    ordered.forEach((s) => {
+      const r = world.radius(s.use), w = s.short.length * charW + 10, g = 4
+      const own = [s.x - r - 3, s.y - r - 3, s.x + r + 3, s.y + r + 3]
+      const spots: { x: number; y: number; anchor: Anchor; box: number[] }[] = [
+        { x: s.x + r + g, y: s.y + font * 0.32, anchor: 'start', box: [s.x + r + g, s.y - h / 2, s.x + r + g + w, s.y + h / 2] },
+        { x: s.x - r - g, y: s.y + font * 0.32, anchor: 'end', box: [s.x - r - g - w, s.y - h / 2, s.x - r - g, s.y + h / 2] },
+        { x: s.x, y: s.y - r - g - 2, anchor: 'middle', box: [s.x - w / 2, s.y - r - g - h, s.x + w / 2, s.y - r - g] },
+        { x: s.x, y: s.y + r + g + font * 0.9, anchor: 'middle', box: [s.x - w / 2, s.y + r + g, s.x + w / 2, s.y + r + g + h] },
+        { x: s.x + r * 0.7 + g, y: s.y - r * 0.7 - g, anchor: 'start', box: [s.x + r * 0.7 + g, s.y - r * 0.7 - g - h, s.x + r * 0.7 + g + w, s.y - r * 0.7 - g] },
+        { x: s.x - r * 0.7 - g, y: s.y - r * 0.7 - g, anchor: 'end', box: [s.x - r * 0.7 - g - w, s.y - r * 0.7 - g - h, s.x - r * 0.7 - g, s.y - r * 0.7 - g] },
+        { x: s.x + r * 0.7 + g, y: s.y + r * 0.7 + g + font * 0.9, anchor: 'start', box: [s.x + r * 0.7 + g, s.y + r * 0.7 + g, s.x + r * 0.7 + g + w, s.y + r * 0.7 + g + h] },
+        { x: s.x - r * 0.7 - g, y: s.y + r * 0.7 + g + font * 0.9, anchor: 'end', box: [s.x - r * 0.7 - g - w, s.y + r * 0.7 + g, s.x - r * 0.7 - g, s.y + r * 0.7 + g + h] },
+      ]
+      for (const spot of spots) {
+        if (spot.box[0] > 10 && spot.box[2] < W - 10 && !boxes.some((b) => b.join() !== own.join() && hit(spot.box, b))) {
+          boxes.push(spot.box)
+          out.set(s.id, spot)
+          break
+        }
+      }
+    })
+    return out
+  }, [world, fit, tier, overviewFloor, W]) // eslint-disable-line react-hooks/exhaustive-deps
   const labelFloor = k < 1.35 ? Math.max(overviewFloor, 2) : k < 2 ? 5 : k < 3 ? 3 : 1
   // hovering a method previews the methods it is paired with
   const partners = useMemo(() => {
@@ -541,6 +560,16 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           </g>
   ), [world, theme, close])
 
+  // what a method dot and its lettering look like right now: one place, so dots and names always agree
+  const siteState = (s: (typeof world.sites)[number]) => {
+    const item = `v:${s.id}`, on = chosen.has(item), isLive = live.methods.has(s.id)
+    const inFocus = focusColour.has(s.id), near = partners?.sites.has(s.id) ?? false, noted = info?.item === item
+    const shown = focus !== null || on || noted || (partners ? near : dim ? isLive : s.use >= siteFloor)
+    const showLabel = focus !== null ? inFocus : on || noted || (partners ? near : dim ? isLive && s.use >= labelFloor : s.use >= labelFloor)
+    const faint = focus !== null ? !inFocus : partners ? !near : dim && !isLive && !on
+    return { item, on, noted, shown, showLabel, faint, inFocus }
+  }
+
   return <section data-theme={theme.id} className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
     <div className="world-stage" ref={stage}>
       <svg ref={svg} className="world-svg" width={box.w} height={box.h} role="group" aria-label="A map of islands of proof methods joined by bridges"
@@ -622,23 +651,22 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             <path d={r.chain} fill="none" stroke={r.color} strokeWidth="2.4" strokeDasharray="7 6" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
           </g>)}
           {world.sites.map((s) => {
-            const item = `v:${s.id}`, on = chosen.has(item), isLive = live.methods.has(s.id)
-            const inFocus = focusColour.has(s.id), near = partners?.sites.has(s.id) ?? false, noted = info?.item === item
-            const shown = focus !== null || on || noted || (partners ? near : dim ? isLive : s.use >= siteFloor)
-            const showLabel = focus !== null ? inFocus : on || noted || (partners ? near : dim ? isLive && s.use >= labelFloor : s.use >= labelFloor)
-            const faint = focus !== null ? !inFocus : partners ? !near : dim && !isLive && !on
-            const l = world.labels.get(s.id), r = world.radius(s.use), c = theme.hue(s.family)
+            const { item, on, noted, shown, faint } = siteState(s), r = world.radius(s.use), c = theme.hue(s.family)
             return <g key={item} data-world-item className="world-site" onPointerEnter={() => { const g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y); setTip({ id: s.id, x: g.tx + s.x * g.s, y: g.ty + (s.y - r) * g.s }); startTransition(() => setHoverSite(s.id)) }} onPointerLeave={() => { setTip(null); startTransition(() => setHoverSite(null)) }} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
               aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...choose(item)}>
-              {(on || info?.item === item) && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={INK} strokeWidth="2" strokeDasharray="4 4" />}
+              {(on || noted) && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={INK} strokeWidth="2" strokeDasharray="4 4" />}
               <circle cx={s.x} cy={s.y} r={r} fill={c.dark} stroke={focusColour.get(s.id) ?? PAPER} strokeWidth={focusColour.has(s.id) ? 4 : 2} />
-              {l && showLabel && <text className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor} style={{ fill: theme.label.fill, stroke: theme.label.halo(c), fontSize: `${Math.min(23, 15 / scale).toFixed(1)}px` }}>{s.short}</text>}
             </g>
           })}
           {routes.map((r) => <g key={`badge-${r.id}`} pointerEvents="none" transform={`translate(${fixed(r.at[0])} ${fixed(r.at[1] - 34)}) scale(${lettering.toFixed(3)})`}>
             <rect x="-13" y="-13" width="26" height="26" rx="4" fill={PAPER} stroke={r.color} strokeWidth="2" />
             <text y="6" textAnchor="middle" className="world-badge" style={{ fill: r.color }}>{r.letter}</text>
           </g>)}
+          {world.sites.map((s) => {
+            const { shown, showLabel, faint } = siteState(s), l = labelAt.get(s.id), c = theme.hue(s.family)
+            return l && shown && showLabel ? <text key={`name-${s.id}`} data-world-item className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor} opacity={faint ? (focus !== null ? 0.1 : 0.3) : 1} {...choose(`v:${s.id}`)}
+              style={{ fill: theme.label.fill, stroke: theme.label.halo(c), fontSize: `${Math.min(25, 16.5 / scale).toFixed(1)}px` }}>{s.short}</text> : null
+          })}
           {world.islands.map((i) => {
             const item = `i:${i.family}`, on = chosen.has(item), faded = dim && !live.islands.has(i.family) && !on
             const below = i.below, c = theme.hue(i.family)

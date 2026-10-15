@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "collection"
 ORDER_FILE = DATA / "ring-order.json"
 WORLD_FILE = DATA / "world-layout.json"
-WORLD_W, WORLD_H, WORLD_TOP = 1700, 1150, 130
+WORLD_W, WORLD_H, WORLD_TOP = 2500, 1700, 180
 OUTPUT = ROOT / "public" / "data" / "collection" / "constellation.json"
 EXCLUDED = {"not-a-route", "dependent", "near-duplicate", "not-the-stated-theorem", "sketch-mismatch", "incomplete"}
 FLAGS = EXCLUDED | {"title-sketch-mismatch", "sketch-self-corrects"}
@@ -276,8 +276,8 @@ def world_layout(techniques: list[dict], families: list[str], order: list[str], 
             bridge[tuple(sorted((fa, fb)))] += w
             pull[a][fb] += w
             pull[b][fa] += w
-    radius = {f: 58 + 24.0 * math.sqrt(max(1, len(members[f]))) for f in families}
-    reach = {f: 0.8 * radius[f] + 74 for f in families}  # what the sites and the coast actually need
+    radius = {f: 85 + 36.0 * math.sqrt(max(1, len(members[f]))) for f in families}
+    reach = {f: 0.8 * radius[f] + 100 for f in families}  # what the sites and the coast actually need
     centre = {f: [WORLD_W / 2 + 300 * math.cos(2 * math.pi * i / len(families)), (WORLD_H + WORLD_TOP) / 2 + 200 * math.sin(2 * math.pi * i / len(families))] for i, f in enumerate(families)}
     for _ in range(900):
         force = {f: [0.0, 0.0] for f in families}
@@ -315,9 +315,9 @@ def world_layout(techniques: list[dict], families: list[str], order: list[str], 
                 dx, dy = p[b][0] - p[a][0], p[b][1] - p[a][1]
                 d = math.hypot(dx, dy) or 0.1
                 w = cooc.get(tuple(sorted((a, b))), 0)
-                f1 = (0.05 * (d - max(38, 96 - 11 * w)) if w else 0.0) - (0.35 * (38 - d) if d < 38 else 0.0)
+                f1 = (0.05 * (d - max(58, 144 - 16 * w)) if w else 0.0) - (0.35 * (58 - d) if d < 58 else 0.0)
                 if group_of[a] == group_of[b]:  # methods of one sub-domain sit together
-                    f1 += 0.04 * (d - 54)
+                    f1 += 0.04 * (d - 80)
                 move[a][0] += f1 * dx / d; move[a][1] += f1 * dy / d
                 move[b][0] -= f1 * dx / d; move[b][1] -= f1 * dy / d
             for m in ms:

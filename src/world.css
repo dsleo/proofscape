@@ -11,12 +11,12 @@
 .world-svg *:focus { outline: none; }
 .world-svg .world-site:focus-visible circle:nth-of-type(1) { stroke: #ae6b1f; stroke-width: 3; }
 .world-svg .world-island-name:focus-visible text { fill: #ae6b1f; }
-.world-site, .world-bridge, .world-island-name, .ring-hit, .ring-triangle { cursor: pointer; }
+.world-label, .world-site, .world-bridge, .world-island-name, .ring-hit, .ring-triangle { cursor: pointer; }
 .world-site { transition: opacity .35s; }
 .world-minor { opacity: clamp(0, calc((var(--k) - 1.7) / 1.2), 1); }
 .world-major { opacity: clamp(.6, calc((var(--k) - 1) / 0.9), 1); }
 .world-river, .world-trees { opacity: clamp(0, calc((var(--k) - 1.25) / 0.9), 1); }
-.world-label { font-style: italic; font-weight: 600; stroke-width: 5px; stroke-linejoin: round; paint-order: stroke; }
+.world-label { font-style: italic; font-weight: 600; stroke-width: 7px; stroke-linejoin: round; paint-order: stroke; }
 .world-ribbon { font-weight: 700; letter-spacing: .14em; }
 .world-count { font-style: italic; font-weight: 700; fill: #2d352b; stroke-width: 4px; stroke-linejoin: round; paint-order: stroke; pointer-events: none; }
 
