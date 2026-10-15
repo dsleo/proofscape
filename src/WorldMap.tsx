@@ -18,7 +18,7 @@ type Theme = {
   clouds: boolean; ripples: boolean; shade: number; treeFill: number; coast: number; label: { fill: string; halo: (h: Hue) => string }; grain: number
 }
 // Ink: the pencil-and-wash cream of the app's landscape illustration, one colour for every island.
-const inkWash: Record<string, string> = { analytic: '#f0f4e6', algebraic: '#f7ece4', geometric: '#f2f1e2', discrete: '#f7f2d9', recursion: '#eeede6', logic: '#f6eedb' }
+const inkWash: Record<string, string> = { analytic: '#f0f4e6', algebraic: '#f7ece4', geometric: '#f2f1e2', discrete: '#f7f2d9', logic: '#f6eedb' }
 const ink: Hue = { land: '#faf7ee', halo: '#ebe6d8', light: '#c4ccbb', dark: '#4a5446', peak: '#f4f1e5' }
 // Colour: flat, saturated continents on a pale sea, after the Langlands illustrations, one hue per domain.
 const colours: Record<string, Hue> = {
@@ -26,7 +26,6 @@ const colours: Record<string, Hue> = {
   algebraic: { land: '#e8664f', halo: '#f5cdc5', light: '#f4a090', dark: '#a8321f', peak: '#f4a090' },
   geometric: { land: '#2fb39b', halo: '#c5eae1', light: '#85d9c6', dark: '#157564', peak: '#85d9c6' },
   discrete: { land: '#62ad4e', halo: '#d5ebd0', light: '#a3d894', dark: '#2f7326', peak: '#a3d894' },
-  recursion: { land: '#eba73e', halo: '#f7e3b9', light: '#f6c97c', dark: '#a8681a', peak: '#f6c97c' },
   logic: { land: '#9168cc', halo: '#ded2f2', light: '#bc9bea', dark: '#5a3597', peak: '#bc9bea' },
 }
 const themes: Theme[] = [

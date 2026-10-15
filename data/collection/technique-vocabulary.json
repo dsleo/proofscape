@@ -4,12 +4,8 @@
   "purpose": "Controlled vocabulary for route-level technique tags. A technique is the central idea a route relies on, not the topic of the theorem. Assign 1-3 per route, most central first.",
   "families": [
     {
-      "id": "recursion",
-      "label": "Reduction and recursion"
-    },
-    {
       "id": "discrete",
-      "label": "Counting and discrete structure"
+      "label": "Combinatorics"
     },
     {
       "id": "algebraic",
@@ -25,13 +21,13 @@
     },
     {
       "id": "logic",
-      "label": "Logic and foundations"
+      "label": "Foundations"
     }
   ],
   "techniques": [
     {
       "id": "induction",
-      "family": "recursion",
+      "family": "logic",
       "label": "Induction",
       "gloss": "Induction on a size, degree, or dimension, including strong and structural induction.",
       "short": "Induction",
@@ -39,19 +35,11 @@
     },
     {
       "id": "extremal-descent",
-      "family": "recursion",
+      "family": "logic",
       "label": "Extremal principle and descent",
       "gloss": "Minimal counterexample, infinite descent, well-ordering, or a maximal or minimal object.",
       "short": "Descent",
       "group": "induction-descent"
-    },
-    {
-      "id": "fixed-point-iteration",
-      "family": "recursion",
-      "label": "Iteration and fixed points",
-      "gloss": "Successive approximation, contraction mappings, or Newton-style iteration.",
-      "short": "Iteration",
-      "group": "iteration"
     },
     {
       "id": "counting",
@@ -251,6 +239,14 @@
       "provisional": true,
       "short": "K-theory",
       "group": "homological"
+    },
+    {
+      "id": "fixed-point-iteration",
+      "family": "analytic",
+      "label": "Iteration and fixed points",
+      "gloss": "Successive approximation, contraction mappings, or Newton-style iteration.",
+      "short": "Iteration",
+      "group": "real-analysis"
     },
     {
       "id": "completeness",
@@ -547,13 +543,8 @@
   "groups": [
     {
       "id": "induction-descent",
-      "family": "recursion",
-      "label": "Induction and descent"
-    },
-    {
-      "id": "iteration",
-      "family": "recursion",
-      "label": "Iteration"
+      "family": "logic",
+      "label": "Induction and well-ordering"
     },
     {
       "id": "counting-bijection",

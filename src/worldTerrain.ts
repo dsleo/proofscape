@@ -98,7 +98,7 @@ const archway = (x: number, y: number, s: number) => `M${f(x - 10 * s)},${f(y)}V
 type Glyph = (x: number, y: number, s: number) => string
 // what stands on each island besides the terrain itself; [glyphs, how many]
 const landmark: Record<string, [Glyph[], number]> = {
-  analytic: [[mill], 2], algebraic: [[crystals], 6], geometric: [[obelisk, ziggurat], 4], discrete: [[mill, archway], 3], recursion: [[terraces, archway], 3], logic: [[lighthouse, pillars], 3],
+  analytic: [[mill], 2], algebraic: [[crystals], 6], geometric: [[obelisk, ziggurat], 4], discrete: [[mill, archway], 3], logic: [[lighthouse, pillars, terraces], 4],
 }
 // the character of each island: jungle, crystal badlands, formal terraces, farmland, spiral hills, dunes
 const biome: Record<string, { peaks: number; trees: number; leafy: number; rivers: number; lake: boolean; fields: number; squares: number; dunes: number; spirals: number }> = {
@@ -106,8 +106,7 @@ const biome: Record<string, { peaks: number; trees: number; leafy: number; river
   algebraic: { peaks: 1.8, trees: 0.3, leafy: 0.1, rivers: 1, lake: false, fields: 0, squares: 0, dunes: 0, spirals: 0 },
   geometric: { peaks: 0.9, trees: 0.7, leafy: 0.4, rivers: 1, lake: false, fields: 0, squares: 4, dunes: 0, spirals: 0 },
   discrete: { peaks: 0.4, trees: 1.1, leafy: 0.9, rivers: 1, lake: true, fields: 7, squares: 0, dunes: 0, spirals: 0 },
-  recursion: { peaks: 1.1, trees: 0.6, leafy: 0.15, rivers: 1, lake: false, fields: 0, squares: 0, dunes: 0, spirals: 4 },
-  logic: { peaks: 0.5, trees: 0.12, leafy: 0, rivers: 0, lake: false, fields: 0, squares: 0, dunes: 16, spirals: 0 },
+  logic: { peaks: 0.7, trees: 0.2, leafy: 0, rivers: 0, lake: false, fields: 0, squares: 0, dunes: 9, spirals: 4 },
 }
 
 /** A heightfield-driven pen-and-ink landscape for one island. */

@@ -21,7 +21,7 @@ EXCLUDED = {"not-a-route", "dependent", "near-duplicate", "not-the-stated-theore
 FLAGS = EXCLUDED | {"title-sketch-mismatch", "sketch-self-corrects"}
 GAP_DEG = 8  # empty arc between two families on the ring
 # Hand-made seed: neighbouring domains share methods. The heuristic never ends worse than this.
-SEED_FAMILIES = ["logic", "recursion", "discrete", "algebraic", "analytic", "geometric"]
+SEED_FAMILIES = ["logic", "discrete", "algebraic", "analytic", "geometric"]
 SEED_ORDER = """
 choice-maximality model-construction diagonalisation
 extremal-descent fixed-point-iteration induction
