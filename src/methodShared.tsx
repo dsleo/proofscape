@@ -6,11 +6,12 @@ import { displayRouteTitle, displayTitle, primaryReference, ProofMathText, Sourc
 import type { Catalog, Entry, Route } from './historicalShared'
 import './ring.css'
 
-export type Technique = { id: string; family: string; label: string; short: string; gloss: string; provisional?: boolean }
+export type Technique = { id: string; family: string; group?: string; label: string; short: string; gloss: string; provisional?: boolean }
+export type Group = { id: string; family: string; label: string }
 export type RingRoute = { id: string; title: string; techniques: string[]; derivesFromTheorem: boolean; excluded: string | null; titleSketchDisagree: boolean }
 export type RingTheorem = { id: number; name: string; areas: string[]; usableRoutes: number; routes: RingRoute[] }
 export type MethodData = {
-  vocabulary: { families: { id: string; label: string }[]; techniques: Technique[] }
+  vocabulary: { families: { id: string; label: string }[]; groups: Group[]; techniques: Technique[] }
   ring: { families: string[]; techniques: string[] }
   world: { size?: [number, number]; islands: Record<string, { x: number; y: number; r: number }>; sites: Record<string, [number, number]> }
   theorems: RingTheorem[]
@@ -221,14 +222,17 @@ export function MethodList({ data, model, sel }: { data: MethodData; model: Meth
     <summary>All {data.vocabulary.techniques.length} methods as a list</summary>
     {data.ring.families.map((family) => <div key={family} className="ring-methodgroup">
       <div className="ring-methodfamily" style={{ color: familyColor[family] }}>{familyName[family]}</div>
-      <div className="ring-methods">
-        {(model.byFamily.get(family) ?? []).map((id) => {
-          const item = `v:${id}`, n = model.uses.get(id) ?? 0, on = sel.chosen.has(item), faded = sel.selection.length > 0 && !sel.live.methods.has(id) && !on
-          return <button type="button" key={id} className={on ? 'ring-method ring-method-on' : faded ? 'ring-method ring-method-faded' : 'ring-method'} aria-pressed={on} title={model.names.get(id)?.gloss} onClick={() => sel.toggle(item)}>
-            {model.names.get(id)?.short} <span>{n}</span>
-          </button>
-        })}
-      </div>
+      {data.vocabulary.groups.filter((group) => group.family === family).map((group) => <div key={group.id} className="ring-methodsub">
+        <div className="ring-methodsubname">{group.label}</div>
+        <div className="ring-methods">
+          {(model.byFamily.get(family) ?? []).filter((id) => model.names.get(id)?.group === group.id).map((id) => {
+            const item = `v:${id}`, n = model.uses.get(id) ?? 0, on = sel.chosen.has(item), faded = sel.selection.length > 0 && !sel.live.methods.has(id) && !on
+            return <button type="button" key={id} className={on ? 'ring-method ring-method-on' : faded ? 'ring-method ring-method-faded' : 'ring-method'} aria-pressed={on} title={model.names.get(id)?.gloss} onClick={() => sel.toggle(item)}>
+              {model.names.get(id)?.short} <span>{n}</span>
+            </button>
+          })}
+        </div>
+      </div>)}
     </div>)}
   </details>
 }

@@ -13,7 +13,7 @@
     },
     {
       "id": "algebraic",
-      "label": "Algebraic structure"
+      "label": "Algebra and number theory"
     },
     {
       "id": "analytic",
@@ -34,126 +34,64 @@
       "family": "recursion",
       "label": "Induction",
       "gloss": "Induction on a size, degree, or dimension, including strong and structural induction.",
-      "short": "Induction"
+      "short": "Induction",
+      "group": "induction-descent"
     },
     {
       "id": "extremal-descent",
       "family": "recursion",
       "label": "Extremal principle and descent",
       "gloss": "Minimal counterexample, infinite descent, well-ordering, or a maximal or minimal object.",
-      "short": "Descent"
+      "short": "Descent",
+      "group": "induction-descent"
     },
     {
       "id": "fixed-point-iteration",
       "family": "recursion",
       "label": "Iteration and fixed points",
       "gloss": "Successive approximation, contraction mappings, or Newton-style iteration.",
-      "short": "Iteration"
+      "short": "Iteration",
+      "group": "iteration"
     },
     {
       "id": "counting",
       "family": "discrete",
       "label": "Counting and parity",
       "gloss": "Double counting, classification of elements, inclusion-exclusion, indicator functions, parity.",
-      "short": "Counting"
+      "short": "Counting",
+      "group": "counting-bijection"
     },
     {
       "id": "bijection",
       "family": "discrete",
       "label": "Bijection",
       "gloss": "An explicit correspondence, code, or reflection between two sets.",
-      "short": "Bijection"
+      "short": "Bijection",
+      "group": "counting-bijection"
     },
     {
       "id": "pigeonhole",
       "family": "discrete",
       "label": "Pigeonhole",
       "gloss": "Forcing a repeat by comparing a count with the number of boxes.",
-      "short": "Pigeonhole"
+      "short": "Pigeonhole",
+      "group": "counting-bijection"
     },
     {
       "id": "generating-functions",
       "family": "discrete",
       "label": "Generating functions",
       "gloss": "Encode a sequence as a series or polynomial and manipulate it.",
-      "short": "Gen. functions"
-    },
-    {
-      "id": "path-exchange",
-      "family": "discrete",
-      "label": "Paths, chains, and flows",
-      "gloss": "Alternating or augmenting paths, Kempe chains, network flows.",
-      "short": "Paths and flows"
-    },
-    {
-      "id": "probabilistic-argument",
-      "family": "discrete",
-      "label": "Probabilistic argument",
-      "gloss": "Random variables, expectation, variance, or concentration used inside a proof.",
-      "short": "Probabilistic"
-    },
-    {
-      "id": "group-action",
-      "family": "algebraic",
-      "label": "Group actions",
-      "gloss": "Orbits, cosets, the class equation, Lagrange's theorem.",
-      "short": "Group action"
-    },
-    {
-      "id": "ideal-module-structure",
-      "family": "algebraic",
-      "label": "Ideals and modules",
-      "gloss": "Ideals, PIDs and UFDs, module classification, representations and their dimensions.",
-      "short": "Ideals, modules"
-    },
-    {
-      "id": "polynomial-methods",
-      "family": "algebraic",
-      "label": "Polynomial methods",
-      "gloss": "Root counting, interpolation, factorization, symmetric polynomials, coefficient comparison.",
-      "short": "Polynomials"
-    },
-    {
-      "id": "linear-algebra",
-      "family": "algebraic",
-      "label": "Linear algebra",
-      "gloss": "Bases, rank, determinants, Gram matrices, kernels and images.",
-      "short": "Linear algebra"
-    },
-    {
-      "id": "galois-field-theory",
-      "family": "algebraic",
-      "label": "Fields and Galois theory",
-      "gloss": "Field extensions, splitting fields, Galois correspondence.",
-      "short": "Galois"
-    },
-    {
-      "id": "euclidean-gcd",
-      "family": "algebraic",
-      "label": "Euclidean algorithm and gcd",
-      "gloss": "Division with remainder, Bezout, divisibility, and unique-factorization or valuation arguments.",
-      "short": "Euclid, gcd"
-    },
-    {
-      "id": "modular-arithmetic",
-      "family": "algebraic",
-      "label": "Modular arithmetic",
-      "gloss": "Residues, congruences, units and inverses modulo n.",
-      "short": "Modular"
-    },
-    {
-      "id": "character-sums",
-      "family": "algebraic",
-      "label": "Character and Gauss sums",
-      "gloss": "Gauss and Jacobi sums, characters of finite fields.",
-      "short": "Character sums"
+      "short": "Gen. functions",
+      "group": "sums-identities"
     },
     {
       "id": "arithmetic-identities",
       "family": "discrete",
       "label": "Moebius inversion and arithmetic identities",
       "gloss": "Moebius and binomial inversion, Selberg-type identities among arithmetic functions.",
-      "short": "Möbius, identities"
+      "short": "Möbius, identities",
+      "group": "sums-identities"
     },
     {
       "id": "telescoping",
@@ -161,7 +99,33 @@
       "label": "Telescoping sums",
       "gloss": "Write each term as a difference of consecutive values so a sum collapses to its endpoints.",
       "provisional": false,
-      "short": "Telescoping"
+      "short": "Telescoping",
+      "group": "sums-identities"
+    },
+    {
+      "id": "path-exchange",
+      "family": "discrete",
+      "label": "Paths, chains, and flows",
+      "gloss": "Alternating or augmenting paths, Kempe chains, network flows.",
+      "short": "Paths and flows",
+      "group": "graphs-invariants"
+    },
+    {
+      "id": "move-invariance",
+      "family": "discrete",
+      "label": "Invariance under local moves",
+      "gloss": "Define an invariant by a local rule and verify it is unchanged under a generating set of moves.",
+      "provisional": true,
+      "short": "Local moves",
+      "group": "graphs-invariants"
+    },
+    {
+      "id": "probabilistic-argument",
+      "family": "discrete",
+      "label": "Probabilistic argument",
+      "gloss": "Random variables, expectation, variance, or concentration used inside a proof.",
+      "short": "Probabilistic",
+      "group": "probabilistic-additive"
     },
     {
       "id": "density-increment",
@@ -169,22 +133,40 @@
       "label": "Density increment and regularity",
       "gloss": "Find a sub-structure of higher density, or split into structured and pseudorandom parts.",
       "provisional": false,
-      "short": "Density increment"
+      "short": "Density increment",
+      "group": "probabilistic-additive"
     },
     {
-      "id": "categorical-equivalence",
+      "id": "group-action",
       "family": "algebraic",
-      "label": "Categorical equivalence",
-      "gloss": "Equivalence or duality of categories used to transport a statement.",
-      "short": "Categorical"
+      "label": "Group actions",
+      "gloss": "Orbits, cosets, the class equation, Lagrange's theorem.",
+      "short": "Group action",
+      "group": "groups-symmetry"
     },
     {
-      "id": "explicit-construction",
+      "id": "linear-algebra",
       "family": "algebraic",
-      "label": "Explicit construction",
-      "gloss": "Exhibit an explicit family of objects, or a parametrization, and verify the property directly.",
-      "provisional": false,
-      "short": "Explicit construction"
+      "label": "Linear algebra",
+      "gloss": "Bases, rank, determinants, Gram matrices, kernels and images.",
+      "short": "Linear algebra",
+      "group": "rings-modules"
+    },
+    {
+      "id": "ideal-module-structure",
+      "family": "algebraic",
+      "label": "Ideals and modules",
+      "gloss": "Ideals, PIDs and UFDs, module classification, representations and their dimensions.",
+      "short": "Ideals, modules",
+      "group": "rings-modules"
+    },
+    {
+      "id": "polynomial-methods",
+      "family": "algebraic",
+      "label": "Polynomial methods",
+      "gloss": "Root counting, interpolation, factorization, symmetric polynomials, coefficient comparison.",
+      "short": "Polynomials",
+      "group": "polynomials-fields"
     },
     {
       "id": "leading-term-reduction",
@@ -192,7 +174,8 @@
       "label": "Leading-term reduction",
       "gloss": "Cancel leading terms in a monomial or triangular order until the remainder vanishes.",
       "provisional": false,
-      "short": "Leading term"
+      "short": "Leading term",
+      "group": "polynomials-fields"
     },
     {
       "id": "generic-parameter-choice",
@@ -200,136 +183,130 @@
       "label": "Generic parameter choice",
       "gloss": "Choose coefficients or a linear change of variables outside a finite bad set.",
       "provisional": false,
-      "short": "Generic choice"
+      "short": "Generic choice",
+      "group": "polynomials-fields"
+    },
+    {
+      "id": "galois-field-theory",
+      "family": "algebraic",
+      "label": "Fields and Galois theory",
+      "gloss": "Field extensions, splitting fields, Galois correspondence.",
+      "short": "Galois",
+      "group": "polynomials-fields"
+    },
+    {
+      "id": "explicit-construction",
+      "family": "algebraic",
+      "label": "Explicit construction",
+      "gloss": "Exhibit an explicit family of objects, or a parametrization, and verify the property directly.",
+      "provisional": false,
+      "short": "Explicit construction",
+      "group": "polynomials-fields"
+    },
+    {
+      "id": "euclidean-gcd",
+      "family": "algebraic",
+      "label": "Euclidean algorithm and gcd",
+      "gloss": "Division with remainder, Bezout, divisibility, and unique-factorization or valuation arguments.",
+      "short": "Euclid, gcd",
+      "group": "number-theory"
+    },
+    {
+      "id": "modular-arithmetic",
+      "family": "algebraic",
+      "label": "Modular arithmetic",
+      "gloss": "Residues, congruences, units and inverses modulo n.",
+      "short": "Modular",
+      "group": "number-theory"
+    },
+    {
+      "id": "character-sums",
+      "family": "algebraic",
+      "label": "Character and Gauss sums",
+      "gloss": "Gauss and Jacobi sums, characters of finite fields.",
+      "short": "Character sums",
+      "group": "number-theory"
+    },
+    {
+      "id": "homology-cohomology",
+      "family": "algebraic",
+      "label": "Homology and exact sequences",
+      "gloss": "Chain complexes, exact sequences, Mayer-Vietoris, cohomology.",
+      "short": "Homology",
+      "group": "homological"
+    },
+    {
+      "id": "categorical-equivalence",
+      "family": "algebraic",
+      "label": "Categorical equivalence",
+      "gloss": "Equivalence or duality of categories used to transport a statement.",
+      "short": "Categorical",
+      "group": "homological"
+    },
+    {
+      "id": "k-theory-pushforward",
+      "family": "algebraic",
+      "label": "K-theory and cobordism",
+      "gloss": "Encode an analytic object as a K-theory or cobordism class and compare topological indices.",
+      "provisional": true,
+      "short": "K-theory",
+      "group": "homological"
     },
     {
       "id": "completeness",
       "family": "analytic",
       "label": "Completeness and order",
       "gloss": "Least upper bound, nested intervals, bisection, Cauchy sequences, Archimedean and floor arguments.",
-      "short": "Completeness"
+      "short": "Completeness",
+      "group": "real-analysis"
     },
     {
       "id": "compactness",
       "family": "analytic",
       "label": "Compactness",
       "gloss": "Finite subcovers, convergent subsequences, diagonal arguments, finite intersection property.",
-      "short": "Compactness"
+      "short": "Compactness",
+      "group": "real-analysis"
     },
     {
       "id": "baire-category",
       "family": "analytic",
       "label": "Baire category",
       "gloss": "A complete metric space is not a countable union of nowhere dense sets.",
-      "short": "Baire"
-    },
-    {
-      "id": "convexity-inequality",
-      "family": "analytic",
-      "label": "Convexity and inequalities",
-      "gloss": "Jensen, Young, tangent-line bounds, convex combinations.",
-      "short": "Convexity"
-    },
-    {
-      "id": "duality-separation",
-      "family": "analytic",
-      "label": "Duality and separation",
-      "gloss": "Linear-programming duality, convex separation, dual spaces.",
-      "short": "Duality"
-    },
-    {
-      "id": "series-asymptotics",
-      "family": "analytic",
-      "label": "Series and asymptotics",
-      "gloss": "Power series, Taylor expansion, Laplace's method, Euler-Maclaurin, summation.",
-      "short": "Series"
-    },
-    {
-      "id": "fourier-analysis",
-      "family": "analytic",
-      "label": "Fourier analysis",
-      "gloss": "Fourier series and transforms, Parseval, characteristic functions.",
-      "short": "Fourier"
-    },
-    {
-      "id": "measure-approximation",
-      "family": "analytic",
-      "label": "Measure and approximation",
-      "gloss": "Monotone classes, density and completion, mollification, outer measure, tail bounds and continuity of measure.",
-      "short": "Measure"
-    },
-    {
-      "id": "complex-analysis",
-      "family": "analytic",
-      "label": "Complex analysis",
-      "gloss": "Cauchy estimates, Goursat, normal families, the argument principle used analytically.",
-      "short": "Complex"
-    },
-    {
-      "id": "pde-potential",
-      "family": "analytic",
-      "label": "PDE and potential theory",
-      "gloss": "Harmonic functions, Green operators, elliptic regularity, heat flow.",
-      "short": "PDE, potential"
-    },
-    {
-      "id": "euler-product-zeta",
-      "family": "analytic",
-      "label": "Euler products and zeta",
-      "gloss": "Euler products, zeta and L-functions, Tauberian arguments.",
-      "short": "Euler product"
-    },
-    {
-      "id": "variational-extremum",
-      "family": "analytic",
-      "label": "Variational extremum",
-      "gloss": "Minimize or maximize a quantity: Rayleigh quotient, extremal function, least distance.",
-      "short": "Variational"
+      "short": "Baire",
+      "group": "real-analysis"
     },
     {
       "id": "rolle-mean-value",
       "family": "analytic",
       "label": "Rolle and mean value",
       "gloss": "Rolle, mean value and Cauchy mean value arguments.",
-      "short": "Rolle, MVT"
+      "short": "Rolle, MVT",
+      "group": "real-analysis"
     },
     {
       "id": "integral-calculus",
       "family": "analytic",
       "label": "Integral calculus",
       "gloss": "Fundamental theorem of calculus, Riemann sums, integration by parts, integral estimates.",
-      "short": "Integral calculus"
+      "short": "Integral calculus",
+      "group": "real-analysis"
     },
     {
-      "id": "maximum-principle",
+      "id": "series-asymptotics",
       "family": "analytic",
-      "label": "Maximum principle",
-      "gloss": "Maximum modulus, open mapping, or harmonic maximum principle.",
-      "short": "Max. principle"
+      "label": "Series and asymptotics",
+      "gloss": "Power series, Taylor expansion, Laplace's method, Euler-Maclaurin, summation.",
+      "short": "Series",
+      "group": "real-analysis"
     },
     {
-      "id": "orthogonal-decomposition",
+      "id": "measure-approximation",
       "family": "analytic",
-      "label": "Orthogonal decomposition",
-      "gloss": "Split a space as a closed subspace plus its orthogonal complement by projection.",
-      "provisional": false,
-      "short": "Orthogonal decomp."
-    },
-    {
-      "id": "ode-uniqueness",
-      "family": "analytic",
-      "label": "ODE uniqueness",
-      "gloss": "Characterize a function as the unique solution of a differential equation with given data.",
-      "provisional": false,
-      "short": "ODE uniqueness"
-    },
-    {
-      "id": "ergodic-correspondence",
-      "family": "analytic",
-      "label": "Ergodic correspondence",
-      "gloss": "Translate a combinatorial statement about dense sets into recurrence for a measure-preserving system.",
-      "provisional": true,
-      "short": "Ergodic"
+      "label": "Measure and approximation",
+      "gloss": "Monotone classes, density and completion, mollification, outer measure, tail bounds and continuity of measure.",
+      "short": "Measure",
+      "group": "functional-measure"
     },
     {
       "id": "measure-transport",
@@ -337,92 +314,131 @@
       "label": "Measure transport",
       "gloss": "Push one measure to another by an explicit monotone or triangular map and compare Jacobians.",
       "provisional": true,
-      "short": "Measure transport"
+      "short": "Measure transport",
+      "group": "functional-measure"
+    },
+    {
+      "id": "orthogonal-decomposition",
+      "family": "analytic",
+      "label": "Orthogonal decomposition",
+      "gloss": "Split a space as a closed subspace plus its orthogonal complement by projection.",
+      "provisional": false,
+      "short": "Orthogonal decomp.",
+      "group": "functional-measure"
+    },
+    {
+      "id": "fourier-analysis",
+      "family": "analytic",
+      "label": "Fourier analysis",
+      "gloss": "Fourier series and transforms, Parseval, characteristic functions.",
+      "short": "Fourier",
+      "group": "functional-measure"
+    },
+    {
+      "id": "ergodic-correspondence",
+      "family": "analytic",
+      "label": "Ergodic correspondence",
+      "gloss": "Translate a combinatorial statement about dense sets into recurrence for a measure-preserving system.",
+      "provisional": true,
+      "short": "Ergodic",
+      "group": "functional-measure"
+    },
+    {
+      "id": "complex-analysis",
+      "family": "analytic",
+      "label": "Complex analysis",
+      "gloss": "Cauchy estimates, Goursat, normal families, the argument principle used analytically.",
+      "short": "Complex",
+      "group": "complex-pde"
+    },
+    {
+      "id": "maximum-principle",
+      "family": "analytic",
+      "label": "Maximum principle",
+      "gloss": "Maximum modulus, open mapping, or harmonic maximum principle.",
+      "short": "Max. principle",
+      "group": "complex-pde"
+    },
+    {
+      "id": "pde-potential",
+      "family": "analytic",
+      "label": "PDE and potential theory",
+      "gloss": "Harmonic functions, Green operators, elliptic regularity, heat flow.",
+      "short": "PDE, potential",
+      "group": "complex-pde"
+    },
+    {
+      "id": "ode-uniqueness",
+      "family": "analytic",
+      "label": "ODE uniqueness",
+      "gloss": "Characterize a function as the unique solution of a differential equation with given data.",
+      "provisional": false,
+      "short": "ODE uniqueness",
+      "group": "complex-pde"
+    },
+    {
+      "id": "convexity-inequality",
+      "family": "analytic",
+      "label": "Convexity and inequalities",
+      "gloss": "Jensen, Young, tangent-line bounds, convex combinations.",
+      "short": "Convexity",
+      "group": "inequalities-optimisation"
+    },
+    {
+      "id": "variational-extremum",
+      "family": "analytic",
+      "label": "Variational extremum",
+      "gloss": "Minimize or maximize a quantity: Rayleigh quotient, extremal function, least distance.",
+      "short": "Variational",
+      "group": "inequalities-optimisation"
+    },
+    {
+      "id": "duality-separation",
+      "family": "analytic",
+      "label": "Duality and separation",
+      "gloss": "Linear-programming duality, convex separation, dual spaces.",
+      "short": "Duality",
+      "group": "inequalities-optimisation"
+    },
+    {
+      "id": "euler-product-zeta",
+      "family": "analytic",
+      "label": "Euler products and zeta",
+      "gloss": "Euler products, zeta and L-functions, Tauberian arguments.",
+      "short": "Euler product",
+      "group": "analytic-number-theory"
     },
     {
       "id": "dissection-area",
       "family": "geometric",
       "label": "Dissection and area",
       "gloss": "Cut, rearrange, or compare areas and volumes.",
-      "short": "Dissection"
+      "short": "Dissection",
+      "group": "elementary-geometry"
     },
     {
       "id": "similarity-trig",
       "family": "geometric",
       "label": "Similarity and trigonometry",
       "gloss": "Similar triangles, ratios, sine and cosine rules.",
-      "short": "Similarity"
+      "short": "Similarity",
+      "group": "elementary-geometry"
     },
     {
       "id": "coordinates-vectors",
       "family": "geometric",
       "label": "Coordinates and vectors",
       "gloss": "Analytic geometry, dot products, complex-plane or barycentric calculation.",
-      "short": "Vectors"
-    },
-    {
-      "id": "winding-degree",
-      "family": "geometric",
-      "label": "Winding number and degree",
-      "gloss": "Winding numbers, degree theory, homotopy invariance.",
-      "short": "Winding"
-    },
-    {
-      "id": "triangulation-euler",
-      "family": "geometric",
-      "label": "Triangulation and Euler characteristic",
-      "gloss": "Decompose into simplices or cells and count.",
-      "short": "Triangulation"
-    },
-    {
-      "id": "differential-forms",
-      "family": "geometric",
-      "label": "Differential forms and curvature",
-      "gloss": "Forms, Stokes, de Rham, curvature, connections.",
-      "short": "Diff. forms"
-    },
-    {
-      "id": "homology-cohomology",
-      "family": "geometric",
-      "label": "Homology and exact sequences",
-      "gloss": "Chain complexes, exact sequences, Mayer-Vietoris, cohomology.",
-      "short": "Homology"
-    },
-    {
-      "id": "topological-structure",
-      "family": "geometric",
-      "label": "Connectedness and covering spaces",
-      "gloss": "Connectedness, covering spaces, fundamental groups, or an auxiliary topology defined to encode a property.",
-      "short": "Topological"
+      "short": "Vectors",
+      "group": "elementary-geometry"
     },
     {
       "id": "lattice-geometry",
       "family": "geometric",
       "label": "Lattice points",
       "gloss": "Lattice-point counting, geometry of numbers, Minkowski-style area arguments.",
-      "short": "Lattice points"
-    },
-    {
-      "id": "local-to-global-patching",
-      "family": "geometric",
-      "label": "Local-to-global patching",
-      "gloss": "Partitions of unity, Mayer-Vietoris gluing, sheaf-style patching of local results.",
-      "short": "Patching"
-    },
-    {
-      "id": "morse-theory",
-      "family": "geometric",
-      "label": "Morse theory",
-      "gloss": "Critical points and gradient flows of a function on a manifold.",
-      "short": "Morse"
-    },
-    {
-      "id": "dimension-lift",
-      "family": "geometric",
-      "label": "Dimension lift",
-      "gloss": "Realize a planar configuration in a higher-dimensional space so incidences follow from simpler arguments.",
-      "provisional": true,
-      "short": "Dimension lift"
+      "short": "Lattice points",
+      "group": "elementary-geometry"
     },
     {
       "id": "symmetrization",
@@ -430,44 +446,89 @@
       "label": "Symmetrization",
       "gloss": "Replace a set or function by a more symmetric one (Steiner, Schwarz) without worsening the quantity.",
       "provisional": true,
-      "short": "Symmetrization"
+      "short": "Symmetrization",
+      "group": "elementary-geometry"
     },
     {
-      "id": "k-theory-pushforward",
+      "id": "dimension-lift",
       "family": "geometric",
-      "label": "K-theory and cobordism",
-      "gloss": "Encode an analytic object as a K-theory or cobordism class and compare topological indices.",
+      "label": "Dimension lift",
+      "gloss": "Realize a planar configuration in a higher-dimensional space so incidences follow from simpler arguments.",
       "provisional": true,
-      "short": "K-theory"
+      "short": "Dimension lift",
+      "group": "elementary-geometry"
     },
     {
-      "id": "move-invariance",
+      "id": "winding-degree",
       "family": "geometric",
-      "label": "Invariance under local moves",
-      "gloss": "Define an invariant by a local rule and verify it is unchanged under a generating set of moves.",
-      "provisional": true,
-      "short": "Local moves"
+      "label": "Winding number and degree",
+      "gloss": "Winding numbers, degree theory, homotopy invariance.",
+      "short": "Winding",
+      "group": "topology"
+    },
+    {
+      "id": "topological-structure",
+      "family": "geometric",
+      "label": "Connectedness and covering spaces",
+      "gloss": "Connectedness, covering spaces, fundamental groups, or an auxiliary topology defined to encode a property.",
+      "short": "Topological",
+      "group": "topology"
+    },
+    {
+      "id": "triangulation-euler",
+      "family": "geometric",
+      "label": "Triangulation and Euler characteristic",
+      "gloss": "Decompose into simplices or cells and count.",
+      "short": "Triangulation",
+      "group": "topology"
+    },
+    {
+      "id": "local-to-global-patching",
+      "family": "geometric",
+      "label": "Local-to-global patching",
+      "gloss": "Partitions of unity, Mayer-Vietoris gluing, sheaf-style patching of local results.",
+      "short": "Patching",
+      "group": "topology"
+    },
+    {
+      "id": "differential-forms",
+      "family": "geometric",
+      "label": "Differential forms and curvature",
+      "gloss": "Forms, Stokes, de Rham, curvature, connections.",
+      "short": "Diff. forms",
+      "group": "differential-geometry"
+    },
+    {
+      "id": "morse-theory",
+      "family": "geometric",
+      "label": "Morse theory",
+      "gloss": "Critical points and gradient flows of a function on a manifold.",
+      "short": "Morse",
+      "group": "differential-geometry"
     },
     {
       "id": "diagonalisation",
       "family": "logic",
       "label": "Diagonalisation",
       "gloss": "Diagonal construction or self-reference against an assumed list.",
-      "short": "Diagonal"
+      "short": "Diagonal",
+      "group": "set-theory"
     },
     {
       "id": "choice-maximality",
       "family": "logic",
       "label": "Choice and maximality",
       "gloss": "Zorn's lemma, ultrafilters, maximal ideals, transfinite extension.",
-      "short": "Choice"
+      "short": "Choice",
+      "group": "set-theory"
     },
     {
       "id": "model-construction",
       "family": "logic",
       "label": "Model construction",
       "gloss": "Henkin terms, tableaux, ultraproducts, syntactic-semantic translation.",
-      "short": "Models"
+      "short": "Models",
+      "group": "model-theory"
     }
   ],
   "fields": [
@@ -482,5 +543,112 @@
   ],
   "modifiers": {
     "derivesFromTheorem": "The route mainly applies a larger named theorem instead of proving the result directly. Recorded on the route, never a ring vertex. A route may carry it with no technique at all."
-  }
+  },
+  "groups": [
+    {
+      "id": "induction-descent",
+      "family": "recursion",
+      "label": "Induction and descent"
+    },
+    {
+      "id": "iteration",
+      "family": "recursion",
+      "label": "Iteration"
+    },
+    {
+      "id": "counting-bijection",
+      "family": "discrete",
+      "label": "Counting and bijection"
+    },
+    {
+      "id": "sums-identities",
+      "family": "discrete",
+      "label": "Sums and identities"
+    },
+    {
+      "id": "graphs-invariants",
+      "family": "discrete",
+      "label": "Graphs and invariants"
+    },
+    {
+      "id": "probabilistic-additive",
+      "family": "discrete",
+      "label": "Probabilistic and additive methods"
+    },
+    {
+      "id": "groups-symmetry",
+      "family": "algebraic",
+      "label": "Groups and symmetry"
+    },
+    {
+      "id": "rings-modules",
+      "family": "algebraic",
+      "label": "Rings, modules and linear algebra"
+    },
+    {
+      "id": "polynomials-fields",
+      "family": "algebraic",
+      "label": "Polynomials and fields"
+    },
+    {
+      "id": "number-theory",
+      "family": "algebraic",
+      "label": "Number theory"
+    },
+    {
+      "id": "homological",
+      "family": "algebraic",
+      "label": "Homological and categorical algebra"
+    },
+    {
+      "id": "real-analysis",
+      "family": "analytic",
+      "label": "Real analysis and calculus"
+    },
+    {
+      "id": "functional-measure",
+      "family": "analytic",
+      "label": "Measure and functional analysis"
+    },
+    {
+      "id": "complex-pde",
+      "family": "analytic",
+      "label": "Complex analysis and differential equations"
+    },
+    {
+      "id": "inequalities-optimisation",
+      "family": "analytic",
+      "label": "Inequalities and optimisation"
+    },
+    {
+      "id": "analytic-number-theory",
+      "family": "analytic",
+      "label": "Analytic number theory"
+    },
+    {
+      "id": "elementary-geometry",
+      "family": "geometric",
+      "label": "Elementary and metric geometry"
+    },
+    {
+      "id": "topology",
+      "family": "geometric",
+      "label": "Topology"
+    },
+    {
+      "id": "differential-geometry",
+      "family": "geometric",
+      "label": "Differential geometry"
+    },
+    {
+      "id": "set-theory",
+      "family": "logic",
+      "label": "Set theory"
+    },
+    {
+      "id": "model-theory",
+      "family": "logic",
+      "label": "Model theory"
+    }
+  ]
 }

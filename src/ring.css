@@ -78,3 +78,6 @@
   .ring-open { grid-column: 2; justify-self: start; }
   .ring-statement, .ring-approaches, .ring-approaches-label, .ring-others { margin-left: 0; }
 }
+
+.ring-methodsub { margin: 4px 0 8px; }
+.ring-methodsubname { margin: 0 0 4px; color: #80766b; font: italic 12px 'CMU Serif', serif; }

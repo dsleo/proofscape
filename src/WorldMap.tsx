@@ -121,6 +121,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const [hoverSite, setHoverSite] = useState<string | null>(null)
   const [focus, setFocus] = useState<number | null>(null)
   const [query, setQuery] = useState('')
+  const [tip, setTip] = useState<{ id: string; x: number; y: number } | null>(null)
   const [searchOpen, setSearchOpen] = useState(false)
   const travel = useRef(0)
   const [themeId, setThemeId] = useState(() => { try { return window.localStorage.getItem(THEME_KEY) ?? 'ink' } catch { return 'ink' } })
@@ -280,9 +281,14 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       const w = 14 + sea() * 26
       wisps += `M${fixed(x)},${fixed(y)}q${fixed(w / 2)},-5 ${fixed(w)},0q${fixed(-w / 2)},4 ${fixed(-w)},0Z`
     }
+    const groups = data.vocabulary.groups.map((g) => {
+      const mine = sites.filter((site) => model.names.get(site.id)?.group === g.id)
+      const top = mine.reduce((m, p) => (p.y < m.y ? p : m), mine[0])
+      return { ...g, n: mine.length, x: mine.reduce((a, p) => a + p.x, 0) / mine.length, y: Math.min(...mine.map((p) => p.y)) - 26 - (top ? 0 : 0) }
+    }).filter((g) => g.n > 0)
     const x0 = Math.min(...islands.map((i) => i.cx - i.r)) - 40, x1 = Math.max(...islands.map((i) => i.cx + i.r)) + 40
     const y0 = Math.min(...islands.map((i) => i.top)) - 90, y1 = Math.max(...islands.map((i) => i.bottom)) + 70
-    return { sites, islands, bridges, chords, labels, radius, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
+    return { sites, islands, groups, bridges, chords, labels, radius, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
   }, [data, model, W, H])
 
   const { x0: bx, y0: by, w: bw, h: bh } = world.bounds
@@ -305,6 +311,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       node.style.transition = next.glide ? 'transform .6s cubic-bezier(.2,.7,.2,1)' : 'none'
       node.style.transform = `translate(${g.tx.toFixed(1)}px, ${g.ty.toFixed(1)}px) scale(${g.s.toFixed(4)})`
     }
+    setTip(null)
     const root = svg.current
     if (root) {
       root.style.setProperty('--k', next.k.toFixed(3))
@@ -412,6 +419,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const dim = selection.length > 0
   // an island or a bridge on its own selects hundreds of chords: keep to the strong ones until the view is close
   const broad = selection.length > 0 && selection.every((item) => 'ib'.includes(item[0]))
+  const groupName = useMemo(() => new Map(data.vocabulary.groups.map((g) => [g.id, g.label])), [data])
   const siteById = useMemo(() => new Map(world.sites.map((site) => [site.id, site])), [world])
   const overviewFloor = useMemo(() => [...world.sites].sort((a, b) => b.use - a.use)[Math.min(11, world.sites.length - 1)].use, [world])
   const labelFloor = k < 1.35 ? Math.max(overviewFloor, 2) : k < 2 ? 5 : k < 3 ? 3 : 1
@@ -480,7 +488,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
     if (kind === 'v') {
       const t = nameOf(key)
-      return { title: t?.label ?? key, sub: `${familyName[t?.family ?? '']} island · used in ${plural(theorems.length, 'theorem')}`, body: t?.gloss ?? '', theorems }
+      return { title: t?.label ?? key, sub: `${familyName[t?.family ?? '']} › ${groupName.get(t?.group ?? '') ?? ''} · used in ${plural(theorems.length, 'theorem')}`, body: t?.gloss ?? '', theorems }
     }
     if (kind === 'i') {
       const mine = (model.byFamily.get(key) ?? []).slice().sort((a, b) => (model.uses.get(b) ?? 0) - (model.uses.get(a) ?? 0))
@@ -493,7 +501,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     }
     const names = key.split('|').map((id) => nameOf(id)?.label ?? id)
     return { title: names.join(' + '), sub: `${kind === 'e' ? 'Two' : 'Three'} rival routes in ${plural(theorems.length, 'theorem')}`, body: '', theorems }
-  }, [info, data, model])
+  }, [info, data, model, groupName])
 
   // trees overlap properly only when they are big enough to see: one merged path before that
   const close = lod >= 1.85
@@ -534,7 +542,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           </g>
   ), [world, theme, close])
 
-  return <section className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
+  return <section data-theme={theme.id} className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
     <div className="world-stage" ref={stage}>
       <svg ref={svg} className="world-svg" width={box.w} height={box.h} role="group" aria-label="A map of islands of proof methods joined by bridges"
         onClick={(event) => { if (travel.current < 4 && !(event.target as Element).closest('[data-world-item]')) clearAll() }}
@@ -605,6 +613,11 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
               </path>
             </g>
           })}
+          {world.groups.map((g) => {
+            const c = theme.hue(g.family), show = focus !== null ? 0 : (dim ? 0.35 : 1) * fade(k, 1.3, 1.9)
+            return show > 0.02 ? <text key={g.id} className="world-group" x={fixed(g.x)} y={fixed(g.y)} textAnchor="middle" opacity={show} pointerEvents="none"
+              style={{ fill: c.dark, stroke: theme.label.halo(c), fontSize: `${Math.min(17, 12.5 / scale).toFixed(1)}px` }}>{g.label}</text> : null
+          })}
           {routes.map((r) => <g key={r.id} pointerEvents="none">
             <g opacity="0.2"><path d={r.blob} fill={r.color} stroke={r.color} strokeWidth="34" strokeLinejoin="round" strokeLinecap="round" /></g>
             <path d={r.chain} fill="none" stroke={r.color} strokeWidth="2.4" strokeDasharray="7 6" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
@@ -616,9 +629,8 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             const showLabel = focus !== null ? inFocus : on || noted || (partners ? near : dim ? isLive && s.use >= labelFloor : s.use >= labelFloor)
             const faint = focus !== null ? !inFocus : partners ? !near : dim && !isLive && !on
             const l = world.labels.get(s.id), r = world.radius(s.use), c = theme.hue(s.family)
-            return <g key={item} data-world-item className="world-site" onPointerEnter={() => startTransition(() => setHoverSite(s.id))} onPointerLeave={() => startTransition(() => setHoverSite(null))} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
+            return <g key={item} data-world-item className="world-site" onPointerEnter={() => { const g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y); setTip({ id: s.id, x: g.tx + s.x * g.s, y: g.ty + (s.y - r) * g.s }); startTransition(() => setHoverSite(s.id)) }} onPointerLeave={() => { setTip(null); startTransition(() => setHoverSite(null)) }} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
               aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...choose(item)}>
-              <title>{model.names.get(s.id)?.label}</title>
               {(on || info?.item === item) && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={INK} strokeWidth="2" strokeDasharray="4 4" />}
               <circle cx={s.x} cy={s.y} r={r} fill={c.dark} stroke={focusColour.get(s.id) ?? PAPER} strokeWidth={focusColour.has(s.id) ? 4 : 2} />
               {l && showLabel && <text className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor} style={{ fill: theme.label.fill, stroke: theme.label.halo(c), fontSize: `${Math.min(23, 15 / scale).toFixed(1)}px` }}>{s.short}</text>}
@@ -638,6 +650,13 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           })}
         </g>
       </svg>
+      {tip && (() => {
+        const t = model.names.get(tip.id), c = theme.hue(t?.family ?? 'analytic'), below = tip.y < 84
+        return <div className="world-tip" style={{ left: Math.min(Math.max(tip.x, 110), box.w - 110), top: below ? tip.y + 34 : tip.y - 8, transform: below ? 'translate(-50%, 0)' : 'translate(-50%, -100%)', borderColor: c.dark, background: PAPER, color: INK }}>
+          <strong>{t?.label}</strong>
+          <span>{familyName[t?.family ?? '']} › {groupName.get(t?.group ?? '')} · {model.uses.get(tip.id) ?? 0} theorem{(model.uses.get(tip.id) ?? 0) === 1 ? '' : 's'}</span>
+        </div>
+      })()}
       {info && card && <div className="world-info" role="dialog" aria-label={card.title} style={{ left: Math.min(Math.max(8, info.x + 14), box.w - drawerInset * (drawer ? 1 : 0) - 336), top: Math.min(Math.max(72, info.y + 14), box.h - 260) }}>
         <button type="button" className="world-info-close" onClick={() => setInfo(null)} aria-label="Close">×</button>
         <strong>{card.title}</strong>
@@ -686,7 +705,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         {searchOpen && found && <div className="world-found" role="listbox">
           {found.methods.length === 0 && found.theorems.length === 0 && <p>No match.</p>}
           {found.methods.length > 0 && <span className="world-found-head">Methods</span>}
-          {found.methods.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickMethod(t.id)}>{t.label}<em>{familyName[t.family]}</em></button>)}
+          {found.methods.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickMethod(t.id)}>{t.label}<em>{familyName[t.family]} › {groupName.get(t.group ?? '')}</em></button>)}
           {found.theorems.length > 0 && <span className="world-found-head">Theorems</span>}
           {found.theorems.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickTheorem(t.id)}><MathText text={t.name} /></button>)}
         </div>}

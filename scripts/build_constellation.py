@@ -261,6 +261,7 @@ def world_layout(techniques: list[dict], families: list[str], order: list[str], 
     another island is pulled toward the coast facing it. Deterministic: no randomness.
     """
     family_of = {t["id"]: t["family"] for t in techniques}
+    group_of = {t["id"]: t.get("group") for t in techniques}
     members = {f: [m for m in order if family_of[m] == f] for f in families}
     cooc: collections.Counter = collections.Counter()
     for group in theorem_sets:
@@ -315,6 +316,8 @@ def world_layout(techniques: list[dict], families: list[str], order: list[str], 
                 d = math.hypot(dx, dy) or 0.1
                 w = cooc.get(tuple(sorted((a, b))), 0)
                 f1 = (0.05 * (d - max(38, 96 - 11 * w)) if w else 0.0) - (0.35 * (38 - d) if d < 38 else 0.0)
+                if group_of[a] == group_of[b]:  # methods of one sub-domain sit together
+                    f1 += 0.04 * (d - 54)
                 move[a][0] += f1 * dx / d; move[a][1] += f1 * dy / d
                 move[b][0] -= f1 * dx / d; move[b][1] -= f1 * dy / d
             for m in ms:
@@ -377,6 +380,9 @@ def main() -> None:
     for technique in vocabulary["techniques"]:
         if technique["family"] not in families:
             raise ValueError(f"technique {technique['id']} has unknown family {technique['family']}")
+        group = next((g for g in vocabulary["groups"] if g["id"] == technique.get("group")), None)
+        if group is None or group["family"] != technique["family"]:
+            raise ValueError(f"technique {technique['id']} needs a group inside its family {technique['family']}")
     missing = [t["id"] for t in vocabulary["techniques"] if not t.get("short")]
     if missing:
         raise ValueError(f"techniques without a short label: {missing}")
@@ -430,7 +436,7 @@ def main() -> None:
     world = frozen_world(vocabulary["techniques"], family_order, technique_order, pair_index, theorem_sets, refresh="--refresh-world" in sys.argv)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps({
-        "vocabulary": {"families": vocabulary["families"], "techniques": vocabulary["techniques"]},
+        "vocabulary": {"families": vocabulary["families"], "groups": vocabulary["groups"], "techniques": vocabulary["techniques"]},
         "ring": {"families": family_order, "techniques": technique_order, **ring_stats},
         "world": world,
         "theorems": theorems,

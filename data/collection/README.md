@@ -41,3 +41,7 @@ The ring order in [`ring-order.json`](ring-order.json) is generated from rival-p
 
 The World view's island and method positions live in [`world-layout.json`](world-layout.json). They are generated from the data (islands pulled together by the rival pairs that cross between them; within an island, methods that appear in the same theorems sit closer and bridging methods face the coast of the island they link to) and then nudged by a fixed-seed search so the bridges cross as little as the graph allows (the method graph contains K5, so one crossing is unavoidable) and never run over a third island. The result is checked in so the map stays stable. Regenerate deliberately with `npm run build:world`.
 
+
+## Technique hierarchy
+
+`technique-vocabulary.json` places every technique in a **family** (one island on the World map) and, inside it, a **group** (a sub-domain such as *Homological and categorical algebra*). A technique belongs where its mathematics lives, not where it is usually applied: chain complexes and exact sequences sit with algebra, not geometry. After changing a family or group, regenerate the frozen layouts with `npm run build:ring-order && npm run build:world`.
