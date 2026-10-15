@@ -4,9 +4,12 @@ Proofscape is a browser for exploring proof diversity: how different arguments a
 
 ## What can be explored
 
-- **Informal:** the multiple proof texts grouped under one ProofWiki or Nemotron statement record.
-- **Formal:** the human proof and prover proof paired in one NuminaMath record, with the source validation status shown for each.
-- **Course results:** a curated index of 150 historically central results taught from secondary school through graduate courses, with 462 separately tracked proof approaches. Where a source has been reviewed, its citation and paraphrased proof sketch appear together on that approach. A **World** view maps the proof methods used across those approaches as islands (one per domain) joined by bridges where two methods of different domains distinguish two routes of one theorem, with methods that share theorems placed closer, drawn as a full-window illustrated map that reveals more methods, names and trails as you zoom in, with a search box for methods and theorems and a per-theorem view that lays each proof route over the methods it uses; clicking methods, method pairs, bridges or islands lists the theorems whose proofs use them.
+The site opens on **Explore**, the map of curated results (below). A second section, the **Library**, holds the three public corpora, kept apart because they are different things:
+
+- **ProofWiki (written by people):** theorems with the proofs contributors wrote. Statements are searchable, filterable by number of proofs and by ProofWiki category text, and flagged when two proofs are nearly word-for-word the same.
+- **Nemotron (AI-generated):** competition-style problems with proofs from a single language model (DeepSeek-V4-Pro), so alternative proofs of one problem are samples from the same model.
+- **Lean (formal):** NuminaMath statements formalised in Lean 4, each with the human proof and the automated prover's proof side by side, with the source validation status shown for each.
+- **Explore (curated results):** a curated index of 150 historically central results taught from secondary school through graduate courses, with 462 separately tracked proof approaches. Where a source has been reviewed, its citation and paraphrased proof sketch appear together on that approach. A **World** view maps the proof methods used across those approaches as islands (one per domain) joined by bridges where two methods of different domains distinguish two routes of one theorem, with methods that share theorems placed closer, drawn as a full-window illustrated map that reveals more methods, names and trails as you zoom in, with a search box for methods and theorems and a per-theorem view that lays each proof route over the methods it uses; clicking methods, method pairs, bridges or islands lists the theorems whose proofs use them.
 
 The comparison keeps the shared source statement and provenance visible. Records from different datasets are not automatically matched, so Proofscape does not present cross-source pairs as proofs of the same statement. Informal records are source artifacts, not correctness certificates; source annotations are not expert-verified ground truth.
 

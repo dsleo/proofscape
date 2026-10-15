@@ -7,6 +7,8 @@ export type Item = {
   title: string | null
   statement: string
   source_id: string | null
+  categories: string[]
+  similar: number
   n_proofs: number
   record_file: string
 }
@@ -16,7 +18,6 @@ export type CollectionIndex = {
   version: number
   sources: SourceCount[]
   items: Item[]
-  position: Record<string, number>
 }
 
 export type InformalProof = {

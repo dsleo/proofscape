@@ -6,6 +6,7 @@ from __future__ import annotations
 import gzip
 import hashlib
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -13,6 +14,33 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ROOT / "data" / "source"
 OUTPUT = ROOT / "public" / "data" / "collection"
+
+
+WORD = re.compile(r"[a-z0-9]+")
+
+
+def similar_pairs(texts: list[str]) -> int:
+    """How many pairs of proofs of one statement are close to word-for-word the same.
+
+    Jaccard similarity of the sets of words; 0.6 and above is what we call near-duplicate.
+    """
+    sets = [set(WORD.findall(text.lower())) for text in texts]
+    pairs = 0
+    for i in range(len(sets)):
+        for j in range(i + 1, len(sets)):
+            union = len(sets[i] | sets[j])
+            if union and len(sets[i] & sets[j]) / union >= 0.6:
+                pairs += 1
+    return pairs
+
+
+def preview(text: str, limit: int = 420) -> str:
+    """Keep the index small: the full statement lives in the record and is read when it is opened."""
+    text = " ".join(text.split())
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0]
+    return cut + " …"
 
 
 def main() -> None:
@@ -25,8 +53,6 @@ def main() -> None:
 
     items: list[dict] = []
     source_counts: Counter[tuple[str, str]] = Counter()
-    kind_positions: Counter[str] = Counter()
-    position: dict[str, int] = {}
 
     for filename, kind in (("informal.jsonl.gz", "informal"), ("formal.jsonl.gz", "formal")):
         with gzip.open(SOURCES / filename, "rb") as source:
@@ -38,8 +64,10 @@ def main() -> None:
                     "kind": kind,
                     "dataset": row["dataset"],
                     "title": row.get("source_metadata", {}).get("title") if kind == "informal" else None,
-                    "statement": statement,
+                    "statement": preview(statement),
                     "source_id": row.get("source_id"),
+                    "categories": [c for c in (row.get("categories") or [])][:4] if kind == "informal" else [],
+                    "similar": similar_pairs([p["text"] for p in row["proofs"]]) if kind == "informal" else 0,
                     "n_proofs": row["n_proofs"] if kind == "informal" else 2,
                     # Avoid the .gz extension: static hosts may transparently
                     # serve it with Content-Encoding: gzip, which makes the
@@ -47,8 +75,6 @@ def main() -> None:
                     "record_file": f"{hashlib.sha256(row['id'].encode('utf-8')).hexdigest()}.json.bin",
                 }
                 items.append(item)
-                kind_positions[kind] += 1
-                position[row["id"]] = kind_positions[kind]
                 payload = json.dumps(row, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
                 record_path = records_dir / item["record_file"]
                 record_path.write_bytes(gzip.compress(payload, compresslevel=9, mtime=0))
@@ -58,7 +84,6 @@ def main() -> None:
         "version": 1,
         "sources": [{"kind": kind, "dataset": dataset, "count": count} for (kind, dataset), count in sorted(source_counts.items())],
         "items": items,
-        "position": position,
     }
     OUTPUT.mkdir(parents=True, exist_ok=True)
     (OUTPUT / "index.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

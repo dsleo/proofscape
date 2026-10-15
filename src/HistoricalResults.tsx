@@ -22,14 +22,14 @@ function levelMatches(entry: Entry, selected: string) {
 }
 
 
-export default function HistoricalResults() {
+export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: () => void } = {}) {
   const [catalog, setCatalog] = useState<Catalog | null>(null)
   const [error, setError] = useState('')
   const [query, setQuery] = useState('')
   const [field, setField] = useState('')
   const [level, setLevel] = useState('')
   const [page, setPage] = useState(1)
-  const [view, setView] = useState<'list' | 'world'>(() => new URLSearchParams(window.location.search).get('view') === 'world' ? 'world' : 'list')
+  const [view, setView] = useState<'list' | 'world'>(() => new URLSearchParams(window.location.search).get('view') === 'list' ? 'list' : 'world')
   const pendingPage = useRef<number | null>(null)
 
   useEffect(() => {
@@ -56,8 +56,8 @@ export default function HistoricalResults() {
 
   useEffect(() => {
     const url = new URL(window.location.href)
-    if (view !== 'list') url.searchParams.set('view', view)
-    else { url.searchParams.delete('view'); url.searchParams.delete('sel') }
+    if (view === 'list') { url.searchParams.set('view', 'list'); url.searchParams.delete('sel') }
+    else url.searchParams.delete('view')
     window.history.replaceState(null, '', url)
   }, [view])
 
@@ -84,7 +84,7 @@ export default function HistoricalResults() {
       <button type="button" aria-pressed={view === 'world'} onClick={() => setView('world')} onPointerEnter={() => void loadWorld()} onFocus={() => void loadWorld()}>World</button>
     </div>
 
-    {view !== 'list' ? (catalog ? <Suspense fallback={<div className="ring-loading" aria-live="polite">Loading the map…</div>}><WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={() => setView('list')} /></Suspense> : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
+    {view !== 'list' ? (catalog ? <Suspense fallback={<div className="ring-loading" aria-live="polite">Loading the map…</div>}><WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={() => setView('list')} onLibrary={onOpenLibrary} /></Suspense> : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
     <div className="historical-controls" aria-label="Search and filter historical results">
       <label className="historical-search"><Search size={16} aria-hidden="true" /><span className="sr-only">Search theorem, field, approach, or source</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search a result, approach, or source…" /></label>
       <label><span>Field</span><select value={field} onChange={(event) => setField(event.target.value)}><option value="">All fields</option>{fieldOptions.map((option) => <option key={option}>{option}</option>)}</select></label>

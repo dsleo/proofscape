@@ -91,7 +91,7 @@ function Ribbon({ text, size, paper, ink, tail, color }: { text: string; size: n
   </g>
 }
 
-function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: MethodData; model: MethodModel; catalog: Catalog; onOpenEntry: (id: number) => void; onClose?: () => void }) {
+function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { data: MethodData; model: MethodModel; catalog: Catalog; onOpenEntry: (id: number) => void; onClose?: () => void; onLibrary?: () => void }) {
   const sel = useMethodSelection(data, model)
   const results = useResultsRef()
   const [W, H] = data.world.size ?? [1000, 720]
@@ -801,7 +801,8 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       </div>
     </div>
     <div className="world-hud">
-      {onClose && <button type="button" className="world-back" onClick={onClose}>← Course results</button>}
+      {onClose && <button type="button" className="world-back" onClick={onClose}>← Results list</button>}
+      {onLibrary && <button type="button" className="world-back" onClick={onLibrary}>Library</button>}
       <div className="world-search">
         <input type="search" value={query} placeholder="Find a method or a theorem" aria-label="Find a method or a theorem on the map" autoComplete="off"
           onChange={(event) => { if (event.target.value.trim().toLowerCase() === 'sga') { setQuery(''); setSearchOpen(false); startSea(); return } setQuery(event.target.value); setSearchOpen(true) }} onFocus={() => setSearchOpen(true)}
@@ -829,9 +830,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   </section>
 }
 
-export default function WorldMap({ catalog, onOpenEntry, onClose }: { catalog: Catalog; onOpenEntry: (id: number) => void; onClose?: () => void }) {
+export default function WorldMap({ catalog, onOpenEntry, onClose, onLibrary }: { catalog: Catalog; onOpenEntry: (id: number) => void; onClose?: () => void; onLibrary?: () => void }) {
   const { data, model, error } = useMethodData()
   if (error) return <div className="collection-offline" role="alert">The world map is unavailable. {error}</div>
   if (!data || !model) return <div className="ring-loading" aria-live="polite">Loading the method index…</div>
-  return <WorldBody data={data} model={model} catalog={catalog} onOpenEntry={onOpenEntry} onClose={onClose} />
+  return <WorldBody data={data} model={model} catalog={catalog} onOpenEntry={onOpenEntry} onClose={onClose} onLibrary={onLibrary} />
 }
