@@ -15,7 +15,7 @@
 .world-site { transition: opacity .35s; }
 .world-minor { opacity: clamp(0, calc((var(--k) - 1.7) / 1.2), 1); }
 .world-major { opacity: clamp(.6, calc((var(--k) - 1) / 0.9), 1); }
-.world-river, .world-trees { opacity: clamp(0, calc((var(--k) - 1.25) / 0.9), 1); }
+.world-river { opacity: clamp(0, calc((var(--k) - 1.25) / 0.9), 1); }
 .world-label { font-style: italic; font-weight: 600; stroke-width: 7px; stroke-linejoin: round; paint-order: stroke; }
 .world-ribbon { font-weight: 700; letter-spacing: .14em; }
 .world-count { font-style: italic; font-weight: 700; fill: #2d352b; stroke-width: 4px; stroke-linejoin: round; paint-order: stroke; pointer-events: none; }
@@ -97,3 +97,5 @@
   background: rgba(251, 248, 240, .9); border: 1px solid #3b4438; color: #2d352b; opacity: clamp(0, calc((var(--sea, 0) - 0.62) * 4), 1); }
 .world-sea-quote blockquote { margin: 0; font-size: 21px; line-height: 1.4; font-style: italic; }
 .world-sea-quote figcaption { margin-top: 8px; font-size: 14px; color: #6b705f; }
+
+@media (prefers-reduced-motion: reduce) { .world-camera { transition: none !important; } .world-site { transition: none; } }

@@ -21,7 +21,11 @@ export default function App() {
   const [indexError, setIndexError] = useState('')
 
   useEffect(() => { document.title = 'Proofscape — explore how proofs differ' }, [])
-  useEffect(() => { loadIndex().then(setIndex).catch((error) => setIndexError(errorText(error))) }, [])
+  // the library index is large: fetch it only when the library is opened (or about to be)
+  const [wantIndex, setWantIndex] = useState(tab === 'library')
+  useEffect(() => {
+    if (wantIndex) loadIndex().then(setIndex).catch((error) => setIndexError(errorText(error)))
+  }, [wantIndex])
 
   function go(next: Tab) {
     const url = new URL(window.location.href)
@@ -29,10 +33,10 @@ export default function App() {
     url.searchParams.set('tab', next === 'explore' ? 'historical' : 'library')
     window.history.replaceState(null, '', url)
     setTab(next)
+    if (next === 'library') setWantIndex(true)
     window.scrollTo({ top: 0 })
   }
 
-  const total = index?.items.length ?? 0
   return <div className="dataset-page">
     <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
     <main className="collection-main">
@@ -45,7 +49,7 @@ export default function App() {
 
       <nav className="proof-track-tabs" role="tablist" aria-label="Section">
         <button id="explore-tab" type="button" className="proof-track-tab" role="tab" aria-selected={tab === 'explore'} aria-controls="collection-results" onClick={() => go('explore')}>Explore <span>150 curated results</span></button>
-        <button id="library-tab" type="button" className="proof-track-tab" role="tab" aria-selected={tab === 'library'} aria-controls="collection-results" onClick={() => go('library')}>Library <span>{total ? total.toLocaleString() : '…'} statements</span></button>
+        <button id="library-tab" type="button" className="proof-track-tab" role="tab" aria-selected={tab === 'library'} aria-controls="collection-results" onClick={() => go('library')} onPointerEnter={() => setWantIndex(true)} onFocus={() => setWantIndex(true)}>Library <span>3 datasets</span></button>
       </nav>
 
       <div id="collection-results" role="tabpanel" aria-labelledby={tab === 'explore' ? 'explore-tab' : 'library-tab'}>

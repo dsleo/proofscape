@@ -1,4 +1,3 @@
-.ring-view { position: relative; background: #f2efe7; padding-bottom: 8px; }
 .ring-loading { padding: 40px 0; color: #756b5e; font-size: 12px; }
 .ring-bar { position: sticky; top: 0; z-index: 4; background: #f2efe7; border-bottom: 1px solid #d3c9bc; padding: 10px 0 9px; }
 .ring-panel { min-height: 40px; border-top: 1px solid #d3c9bc; padding: 14px 0 14px; scroll-margin-top: 64px; }
@@ -47,14 +46,7 @@
 .ring-others > summary { min-height: 32px; padding-top: 7px; color: #79521f; font: 700 10px 'CMU Sans', sans-serif; cursor: pointer; }
 .ring-others .ring-approach { margin-top: 6px; }
 
-.ring-svg { display: block; width: 100%; max-width: 740px; margin: 6px auto 0; }
-.ring-svg *:focus { outline: none; }
-.ring-svg .ring-hit:focus-visible { stroke: #ae6b1f; stroke-opacity: .35; }
-.ring-svg .ring-node:focus-visible .ring-dot { stroke: #282522; stroke-width: 2; }
-.ring-svg .ring-triangle:focus-visible { stroke-width: 2.5; }
-.ring-hit, .ring-triangle, .ring-node { cursor: pointer; }
-.ring-family { font: 500 13px 'CMU Sans', sans-serif; }
-.ring-label { font: 11px 'CMU Sans', sans-serif; }
+.ring-hit, .ring-triangle { cursor: pointer; }
 .ring-note { max-width: 780px; margin: 6px 0 0; color: #80766b; font-size: 10px; line-height: 1.55; }
 
 .historical-viewswitch { display: inline-flex; margin: 0 0 12px; border: 1px solid #b99b70; }
@@ -73,8 +65,7 @@
 .ring-method-faded { color: #a69d91; border-color: #e7ded2; }
 
 @media (max-width: 640px) {
-  .ring-label { display: none; }
-  .ring-card-head { grid-template-columns: 30px minmax(0, 1fr); }
+    .ring-card-head { grid-template-columns: 30px minmax(0, 1fr); }
   .ring-open { grid-column: 2; justify-self: start; }
   .ring-statement, .ring-approaches, .ring-approaches-label, .ring-others { margin-left: 0; }
 }
