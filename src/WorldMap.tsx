@@ -554,7 +554,6 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
                   <path d={i.path} fill={c.dark} fillOpacity={theme.shade} transform="translate(0 7)" />
                 </>}
                 <path d={i.path} fill={c.land} />
-                <path className="world-texture" d={i.path} fill="url(#w-tuft)" opacity={theme.ripples ? 0.55 : 0.14} />
                 <path className="world-minor" d={i.land.minor} fill="none" stroke={c.light} strokeWidth="0.9" strokeLinecap="round" />
                 <path className="world-major" d={i.land.major} fill="none" stroke={c.dark} strokeOpacity="0.45" strokeWidth="1.1" strokeLinecap="round" />
                 <path d={i.land.lakes} fill={theme.water} stroke={c.dark} strokeOpacity="0.7" strokeWidth="1" />
@@ -600,9 +599,6 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         }}
         >
         <defs>
-          <pattern id="w-tuft" width="38" height="30" patternUnits="userSpaceOnUse">
-            <path d="M5,9l2.5,-5l2.5,5M23,24l2.5,-5l2.5,5M30,8l2,-4l2,4M14,19l2,-4l2,4" fill="none" stroke={INK} strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
-          </pattern>
           <pattern id="w-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
             <path d="M0,0V5" stroke={INK} strokeWidth="1" />
           </pattern>
