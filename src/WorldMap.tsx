@@ -404,13 +404,19 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const broad = selection.length > 0 && selection.every((item) => 'ib'.includes(item[0]))
   const groupName = useMemo(() => new Map(data.vocabulary.groups.map((g) => [g.id, g.label])), [data])
   const siteById = useMemo(() => new Map(world.sites.map((site) => [site.id, site])), [world])
-  const overviewFloor = useMemo(() => [...world.sites].sort((a, b) => b.use - a.use)[Math.min(11, world.sites.length - 1)].use, [world])
+  // a few methods per island are named at rest ("anchors"); the rest are named when you hover, select or zoom right in
+  const anchorRank = useMemo(() => {
+    const rank = new Map<string, number>()
+    for (const island of world.islands) world.sites.filter((s) => s.family === island.family).sort((a, b) => b.use - a.use).forEach((s, n) => rank.set(s.id, n))
+    return rank
+  }, [world])
+  const anchorsFor = (zoom: number) => (zoom >= 5.5 ? 99 : zoom >= 1.5 ? 3 : 1)
   // method names are placed once per zoom tier, with the type size that tier will really show, so none lands on a dot, a name or a ribbon
   const TIERS = [1, 1.5, 2.2, 3.3, 4.5, 6]
   const tier = TIERS.filter((t) => lod >= t - 0.001).length - 1
   const labelAt = useMemo(() => {
     const tk = TIERS[tier], font = Math.min(25, 16.5 / (fit * tk))
-    const floor = tier === 0 ? Math.max(overviewFloor, 2) : tier === 1 ? 5 : tier === 2 ? 3 : 1
+    const quota = anchorsFor(tk)
     const h = font * 1.3, charW = font * 0.56
     // up close the marks stop growing with the map (they keep to ~46 px on screen) so that names can sit beside them
     const shrink = (use: number) => Math.min(1, 46 / (2 * world.radius(use) * fit * tk))
@@ -420,7 +426,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     for (const i of world.islands) { const hw = ((familyName[i.family].length * 21 * 0.72 + 38) / 2 + 32) * rs, y = i.below ? i.bottom + 34 : i.top - 26; boxes.push([i.cx - hw, y - 24 * rs, i.cx + hw, y + 30 * rs]) }
     const hit = (a: number[], b: number[]) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1]
     const out = new Map<string, { x: number; y: number; anchor: Anchor }>()
-    const ordered = [...world.sites].sort((a, b) => Number(b.use >= floor) - Number(a.use >= floor) || b.use - a.use)
+    const ordered = [...world.sites].sort((a, b) => Number((anchorRank.get(b.id) ?? 99) < quota) - Number((anchorRank.get(a.id) ?? 99) < quota) || b.use - a.use)
     ordered.forEach((s) => {
       const r = world.radius(s.use) * shrink(s.use), w = s.short.length * charW + 10, g = 4
       const own = [s.x - r - 3, s.y - r - 3, s.x + r + 3, s.y + r + 3]
@@ -450,8 +456,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       }
     })
     return out
-  }, [world, fit, tier, overviewFloor, W]) // eslint-disable-line react-hooks/exhaustive-deps
-  const labelFloor = k < 1.35 ? Math.max(overviewFloor, 2) : k < 2 ? 5 : k < 3 ? 3 : 1
+  }, [world, fit, tier, anchorRank, W]) // eslint-disable-line react-hooks/exhaustive-deps
   // hovering a method previews the methods it is paired with
   const partners = useMemo(() => {
     if (!hoverSite) return null
@@ -576,7 +581,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     const item = `v:${s.id}`, on = chosen.has(item), isLive = live.methods.has(s.id)
     const inFocus = focusColour.has(s.id), near = partners?.sites.has(s.id) ?? false, noted = info?.item === item
     const shown = focus !== null || on || noted || (partners ? near : dim ? isLive : s.use >= siteFloor)
-    const showLabel = focus !== null ? inFocus : on || noted || (partners ? near : dim ? isLive && s.use >= labelFloor : s.use >= labelFloor)
+    const anchored = (anchorRank.get(s.id) ?? 99) < anchorsFor(lod)
+    const specific = selection.some((item) => 'vet'.includes(item[0]))
+    const showLabel = focus !== null ? inFocus : on || noted ? true : partners ? near : dim ? isLive && (specific || anchored) : anchored
     const faint = focus !== null ? !inFocus : partners ? !near : dim && !isLive && !on
     return { item, on, noted, shown, showLabel, faint, inFocus }
   }
@@ -599,6 +606,11 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           <pattern id="w-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
             <path d="M0,0V5" stroke={INK} strokeWidth="1" />
           </pattern>
+          {world.islands.map((i) => <radialGradient key={i.family} id={`w-clear-${i.family}`}>
+            <stop offset="0" stopColor={theme.hue(i.family).land} stopOpacity="0.96" />
+            <stop offset="0.62" stopColor={theme.hue(i.family).land} stopOpacity="0.9" />
+            <stop offset="1" stopColor={theme.hue(i.family).land} stopOpacity="0" />
+          </radialGradient>)}
         </defs>
         <rect width={box.w} height={box.h} fill={SEA} />
         <g className="world-camera" ref={camera} style={{ transform: `translate(${rested.tx.toFixed(1)}px, ${rested.ty.toFixed(1)}px) scale(${rested.s.toFixed(4)})` }}>
@@ -630,8 +642,8 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             </g>
           })}
           {Object.keys(data.triples).map((key) => {
-            const item = `t:${key}`, on = chosen.has(item), isLive = live.triples.has(key), strong = model.triples.get(key)!.size >= 2
-            const base = focus !== null ? 0 : dim ? (isLive ? 0.55 * fade(k, 1.6, 2.6) : 0) : fade(k, 2.6, 3.6) * (strong ? 0.6 : 0.3)
+            const item = `t:${key}`, on = chosen.has(item), isLive = live.triples.has(key)
+            const base = focus !== null ? 0 : dim ? (isLive ? 0.55 * fade(k, 1.6, 2.6) : 0) : 0
             if (!on && base < 0.02) return null
             const path = key.split('|').map((id) => { const s = siteById.get(id)!; return `${s.x},${s.y}` }).join('L')
             return <path key={item} data-world-item className="ring-triangle" d={`M${path}Z`} fill={GOLD} stroke={on ? INK : theme.trail} strokeDasharray="4 6" strokeLinecap="round"
@@ -641,7 +653,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           {world.chords.map((c) => {
             const item = `e:${c.key}`, on = chosen.has(item), isLive = live.edges.has(c.key)
             const strong = c.n >= 3 ? 0.9 : c.n >= 2 ? (broad ? fade(k, 2.2, 3) * 0.8 : 0.9) : broad ? fade(k, 3.2, 4) * 0.7 : fade(k, 2, 3) * 0.8
-            const reveal = focus !== null ? 0 : partners ? (partners.keys.has(c.key) ? 0.95 : 0) : dim ? (isLive ? strong : 0) : c.n >= 3 ? fade(k, 1.5, 2.3) * 0.8 : c.n >= 2 ? fade(k, 2.3, 3.1) * 0.75 : fade(k, 3.2, 4) * 0.6
+            const reveal = focus !== null ? 0 : partners ? (partners.keys.has(c.key) ? 0.95 : 0) : dim ? (isLive ? strong : 0) : 0
             const op = on ? 1 : reveal
             if (!on && op < 0.03) return null
             return <g key={item} opacity={op > 0 || on ? 1 : 0} pointerEvents={op > 0.08 || on ? undefined : 'none'}>
@@ -661,6 +673,12 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             <g opacity="0.2"><path d={r.blob} fill={r.color} stroke={r.color} strokeWidth="34" strokeLinejoin="round" strokeLinecap="round" /></g>
             <path d={r.chain} fill="none" stroke={r.color} strokeWidth="2.4" strokeDasharray="7 6" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
           </g>)}
+          {world.sites.map((s) => {
+            const { shown, faint } = siteState(s)
+            if (!shown) return null
+            const rc = world.radius(s.use) * Math.min(1, 46 / (2 * world.radius(s.use) * scale)) * 1.7
+            return <circle key={`clear-${s.id}`} cx={s.x} cy={s.y} r={rc.toFixed(1)} fill={`url(#w-clear-${s.family})`} pointerEvents="none" opacity={faint ? 0.3 : 1} />
+          })}
           {world.sites.map((s) => {
             const { item, on, noted, shown, faint } = siteState(s), shrunk = Math.min(1, 46 / (2 * world.radius(s.use) * scale)), r = world.radius(s.use) * shrunk, c = theme.hue(s.family)
             return <g key={item} data-world-item className="world-site" onPointerEnter={() => { const g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y); setTip({ id: s.id, x: g.tx + s.x * g.s, y: g.ty + (s.y - r) * g.s }); startTransition(() => setHoverSite(s.id)) }} onPointerLeave={() => { setTip(null); startTransition(() => setHoverSite(null)) }} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
