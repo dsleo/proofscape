@@ -90,3 +90,12 @@
 
 .world-glyph { font-style: normal; font-weight: 600; stroke-linejoin: round; paint-order: stroke; }
 .world-tip-glyph, .world-found-glyph { display: inline-block; min-width: 1.5em; font-weight: 600; text-align: center; }
+
+/* the rising sea: --sea runs from 0 (dry) to 1.05 (every summit under water) */
+.world-sea-layer { opacity: clamp(0, calc((var(--sea, 0) - var(--lv, 2)) * 14), 1); }
+.world-sinkable { opacity: clamp(0, calc(1 - (var(--sea, 0) - var(--h, 2)) * 14), 1); }
+.world-deepen { position: absolute; inset: 0; pointer-events: none; background: rgba(70, 112, 140, .9); opacity: calc(var(--sea, 0) * 0.34); }
+.world-sea-quote { position: absolute; left: 50%; bottom: 14%; z-index: 3; width: min(640px, 86%); margin: 0; padding: 14px 20px; transform: translateX(-50%); text-align: center; pointer-events: none;
+  background: rgba(251, 248, 240, .9); border: 1px solid #3b4438; color: #2d352b; opacity: clamp(0, calc((var(--sea, 0) - 0.62) * 4), 1); }
+.world-sea-quote blockquote { margin: 0; font-size: 21px; line-height: 1.4; font-style: italic; }
+.world-sea-quote figcaption { margin-top: 8px; font-size: 14px; color: #6b705f; }

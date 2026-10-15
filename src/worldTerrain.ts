@@ -14,6 +14,10 @@ export type Terrain = {
   spirals: string
   lakes: string
   ripples: P[][]
+  /** water-covered cells at rising sea levels, for the flood easter egg */
+  flood: { level: number; d: string }[]
+  /** height (0 coast, ~1 summit) under each input site, in the order given */
+  siteH: number[]
 }
 
 const f = (n: number) => n.toFixed(1)
@@ -164,6 +168,27 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
     h += 0.16 * (vn(x / 34, y / 34) - 0.5) + 0.07 * (vn(x / 13, y / 13) - 0.5)
     hv[k] = Math.max(0.001, Math.min(1, h))
   }
+  // the sea at rising levels: row runs of the cells it would cover
+  const flood: { level: number; d: string }[] = []
+  for (const level of [0.08, 0.15, 0.22, 0.29, 0.36, 0.43, 0.5, 0.58, 0.66, 0.75, 0.85, 0.96]) {
+    let d = ''
+    for (let j = 0; j < ny; j++) {
+      let run = -1
+      for (let i = 0; i <= nx; i++) {
+        const wet = i < nx && ins[j * nx + i] === 1 && hv[j * nx + i] <= level
+        if (wet && run < 0) run = i
+        if (!wet && run >= 0) {
+          d += `M${f(x0 + run * g - g / 2)},${f(y0 + j * g - g / 2)}h${f((i - run) * g)}v${g}h${f(-(i - run) * g)}Z`
+          run = -1
+        }
+      }
+    }
+    flood.push({ level, d })
+  }
+  const siteH = sites.map(([sx, sy]) => {
+    const i = Math.round((sx - x0) / g), j = Math.round((sy - y0) / g)
+    return i < 0 || j < 0 || i >= nx || j >= ny ? 0 : hv[j * nx + i]
+  })
   // contour lines by marching squares
   const minor: string[] = [], major: string[] = []
   const levels = Array.from({ length: 13 }, (_, i) => 0.06 + i * 0.07)
@@ -328,5 +353,5 @@ export function terrain(family: string, ring: P[], centre: P, sites: P[], rnd: (
   }
   const r0 = Math.sqrt(polygonArea(ring) / Math.PI)
   const ripples = [1 + 9 / r0, 1 + 20 / r0].map((k) => ring.map(([x, y]): P => [centre[0] + (x - centre[0]) * k, centre[1] + (y - centre[1]) * k]))
-  return { minor: minor.join(''), major: major.join(''), rivers, mountains: outline, hatch, trees, ink, fields: fieldsPath, squares, dunes, spirals, lakes, ripples }
+  return { minor: minor.join(''), major: major.join(''), rivers, mountains: outline, hatch, trees, ink, fields: fieldsPath, squares, dunes, spirals, lakes, ripples, flood, siteH }
 }

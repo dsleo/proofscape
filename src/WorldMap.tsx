@@ -36,6 +36,8 @@ const THEME_KEY = 'proofscape.world.theme'
 const MAX_ZOOM = 8, MARGIN = 90
 const ROUTE_COLOURS = ['#ae6b1f', '#2f6f73', '#7a4a73', '#5f7a2f', '#8a3b3b']
 const DRAWER = 460
+// the rising sea (Grothendieck, Récoltes et Semailles): the water climbs the islands' own contours
+const SEA_RISE = 14000, SEA_HOLD = 4200, SEA_EBB = 7000, SEA_TOP = 1.05
 
 const fade = (k: number, a: number, b: number) => Math.max(0, Math.min(1, (k - a) / (b - a)))
 
@@ -121,6 +123,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
   const [focus, setFocus] = useState<number | null>(null)
   const [query, setQuery] = useState('')
   const [tip, setTip] = useState<{ id: string; x: number; y: number } | null>(null)
+  const [seaOn, setSeaOn] = useState(false)
+  const page = useRef<HTMLElement>(null)
+  const sea = useRef({ raf: 0, phase: 'idle' as 'idle' | 'rise' | 'hold' | 'ebb', level: 0, from: 0, t0: 0 })
   const [searchOpen, setSearchOpen] = useState(false)
   const travel = useRef(0)
   const [themeId, setThemeId] = useState(() => { try { return window.localStorage.getItem(THEME_KEY) ?? 'ink' } catch { return 'ink' } })
@@ -139,11 +144,49 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     onDoubleClick: () => { setInfo(null); sel.toggle(item) },
     onKeyDown: (event: React.KeyboardEvent) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setInfo(null); sel.toggle(item) } },
   })
-  const clearAll = () => { setInfo(null); setDrawer(false); setFocus(null); setSearchOpen(false); if (selection.length) sel.clear() }
+  const setSea = (level: number) => { sea.current.level = level; page.current?.style.setProperty('--sea', level.toFixed(3)) }
+  const ease = (p: number) => (p < 0.5 ? 2 * p * p : 1 - (-2 * p + 2) ** 2 / 2)
+  function seaTick(now: number) {
+    const s = sea.current, dt = now - s.t0
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (s.phase === 'rise') {
+      const p = Math.min(1, dt / (calm ? 1200 : SEA_RISE))
+      setSea(s.from + (SEA_TOP - s.from) * ease(p))
+      if (p >= 1) { s.phase = 'hold'; s.t0 = now }
+    } else if (s.phase === 'hold') {
+      if (dt > SEA_HOLD) { s.phase = 'ebb'; s.from = s.level; s.t0 = now }
+    } else if (s.phase === 'ebb') {
+      const p = Math.min(1, dt / (calm ? 800 : SEA_EBB))
+      setSea(s.from * (1 - ease(p)))
+      if (p >= 1) { s.phase = 'idle'; setSea(0); setSeaOn(false); return }
+    }
+    s.raf = requestAnimationFrame(seaTick)
+  }
+  function startSea() {
+    const s = sea.current
+    if (s.phase !== 'idle') return
+    setInfo(null); setTip(null); setSeaOn(true)
+    s.phase = 'rise'; s.from = 0; s.t0 = performance.now()
+    s.raf = requestAnimationFrame(seaTick)
+  }
+  function endSea() {
+    const s = sea.current
+    if (s.phase === 'rise' || s.phase === 'hold') { s.phase = 'ebb'; s.from = s.level; s.t0 = performance.now() }
+  }
+  const clearAll = () => {
+    endSea(); setInfo(null); setDrawer(false); setFocus(null); setSearchOpen(false); if (selection.length) sel.clear() }
   useEffect(() => {
-    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') setInfo(null) }
+    // typing "sga" (or "sea") anywhere on the map lets the sea rise; Escape or a click on empty water lets it ebb
+    let typed = ''
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setInfo(null); endSea(); return }
+      const el = event.target as HTMLElement | null
+      if (event.metaKey || event.ctrlKey || event.altKey || event.key.length !== 1 || (el instanceof Element && el.closest('input, textarea, [contenteditable]'))) return
+      typed = (typed + event.key.toLowerCase()).slice(-3)
+      if (typed === 'sga' || typed === 'sea') { typed = ''; startSea() }
+    }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => { window.removeEventListener('keydown', onKey); cancelAnimationFrame(sea.current.raf) }
   }, [])
 
   useEffect(() => {
@@ -169,6 +212,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       const [x, y] = data.world.sites[id]
       return { id, x, y, family: model.names.get(id)!.family, short: model.names.get(id)!.short, use: model.uses.get(id) ?? 0 }
     })
+    const siteHeight = new Map<string, number>()
     const radius = (use: number) => 12 + Math.min(use, 14) * 0.7
     // the symbol that stands for a method is as large as its mark allows, and always fits inside it
     const markFont = (s: { use: number; id: string }) => Math.min(1.7 * radius(s.use), (2.1 * radius(s.use)) / (Math.max(1, [...(model.names.get(s.id)?.glyph ?? '•')].length) * 0.6))
@@ -187,7 +231,8 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         }
       })
       const land = terrain(family, ring, [cx, cy], pts, seeded(`${family}-terrain`))
-      return { family, cx: boxed.x, cy: boxed.y, r: boxed.r, top: Math.min(...ring.map((p) => p[1])), bottom: Math.max(...ring.map((p) => p[1])), path: smooth(ring), halo: smooth(land.ripples[1]), near: smooth(land.ripples[0]), ring, ox: cx, oy: cy, land, below: false, treeD: land.trees.map((t) => t.d).join(''), treeH: land.trees.map((t) => t.hatch).join('') }
+      mine.forEach((s, n) => siteHeight.set(s.id, land.siteH[n]))
+      return { family, cx: boxed.x, cy: boxed.y, r: boxed.r, top: Math.min(...ring.map((p) => p[1])), bottom: Math.max(...ring.map((p) => p[1])), path: smooth(ring), halo: smooth(land.ripples[1]), near: smooth(land.ripples[0]), ring, ox: cx, oy: cy, land, flood: land.flood, below: false, treeD: land.trees.map((t) => t.d).join(''), treeH: land.trees.map((t) => t.hatch).join('') }
     })
     // an island's name goes on the side away from most of its bridges
     for (const island of islands) {
@@ -271,7 +316,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     }
     const x0 = Math.min(...islands.map((i) => i.cx - i.r)) - 40, x1 = Math.max(...islands.map((i) => i.cx + i.r)) + 40
     const y0 = Math.min(...islands.map((i) => i.top)) - 90, y1 = Math.max(...islands.map((i) => i.bottom)) + 70
-    return { sites, islands, groups, bridges, chords, radius, markFont, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
+    return { sites, islands, groups, bridges, chords, radius, markFont, siteHeight, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
   }, [data, model, W, H])
 
   const { x0: bx, y0: by, w: bw, h: bh } = world.bounds
@@ -575,6 +620,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           </g>
   ), [world, theme, close])
 
+  const sink = (id: string) => ({ '--h': (world.siteHeight.get(id) ?? 0.5) + 0.04 }) as React.CSSProperties
   // what a method dot and its lettering look like right now: one place, so dots and names always agree
   const siteState = (s: (typeof world.sites)[number]) => {
     const item = `v:${s.id}`, on = chosen.has(item), isLive = live.methods.has(s.id)
@@ -587,7 +633,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
     return { item, on, noted, shown, showLabel, faint, inFocus }
   }
 
-  return <section data-theme={theme.id} className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
+  return <section ref={page} data-theme={theme.id} className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
     <div className="world-stage" ref={stage}>
       <svg ref={svg} className="world-svg" width={box.w} height={box.h} role="group" aria-label="A map of islands of proof methods joined by bridges"
         onClick={(event) => { if (travel.current < 4 && !(event.target as Element).closest('[data-world-item]')) clearAll() }}
@@ -602,6 +648,11 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           <pattern id="w-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
             <path d="M0,0V5" stroke={INK} strokeWidth="1" />
           </pattern>
+          <filter id="w-goo" x="-5%" y="-5%" width="110%" height="110%" colorInterpolationFilters="sRGB">
+            <feGaussianBlur stdDeviation="3.4" />
+            <feComponentTransfer><feFuncA type="linear" slope="14" intercept="-6" /></feComponentTransfer>
+          </filter>
+          {world.islands.map((i) => <clipPath key={`clip-${i.family}`} id={`w-clip-${i.family}`}><path d={i.path} /></clipPath>)}
           {world.islands.map((i) => <radialGradient key={i.family} id={`w-clear-${i.family}`}>
             <stop offset="0" stopColor={theme.hue(i.family).land} stopOpacity="0.96" />
             <stop offset="0.62" stopColor={theme.hue(i.family).land} stopOpacity="0.9" />
@@ -611,6 +662,13 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
         <rect width={box.w} height={box.h} fill={SEA} />
         <g className="world-camera" ref={camera} style={{ transform: `translate(${rested.tx.toFixed(1)}px, ${rested.ty.toFixed(1)}px) scale(${rested.s.toFixed(4)})` }}>
           {landLayer}
+          {seaOn && world.islands.map((i) => <g key={`flood-${i.family}`} clipPath={`url(#w-clip-${i.family})`} pointerEvents="none">
+            <g filter="url(#w-goo)" fill={theme.id === 'ink' ? '#7fa3af' : '#4f8cc8'} fillOpacity="0.9">
+              {i.flood.map((l) => <path key={l.level} className="world-sea-layer" style={{ '--lv': l.level } as React.CSSProperties} d={l.d} />)}
+              <path className="world-sea-layer" style={{ '--lv': 1.0 } as React.CSSProperties} d={i.path} />
+            </g>
+          </g>)}
+          <g className="world-sinkable" style={{ '--h': 0.42 } as React.CSSProperties}>
           {world.bridges.map((b) => {
             const shown = chosen.has(`b:${b.key}`) || (dim ? live.bridges.has(b.key) : hover !== null && (b.fa === hover || b.fb === hover)) ? 1 : fade(k, 1.3, 1.9)
             return <g key={`pier-${b.key}`} pointerEvents="none">
@@ -637,6 +695,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
               <text className="world-count" x={fixed(b.mid[0])} y={fixed(b.mid[1])} textAnchor="middle" style={{ fontSize: `${(17 * lettering).toFixed(1)}px`, stroke: SEA }} opacity={1 - fade(k, 2.4, 3.2)}>{b.count}</text>
             </g>
           })}
+          </g>
           {Object.keys(data.triples).map((key) => {
             const item = `t:${key}`, on = chosen.has(item), isLive = live.triples.has(key)
             const base = focus !== null ? 0 : dim ? (isLive ? 0.55 * fade(k, 1.6, 2.6) : 0) : 0
@@ -660,11 +719,13 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
               </path>
             </g>
           })}
+          <g className="world-sinkable" style={{ '--h': 0.5 } as React.CSSProperties}>
           {world.groups.map((g) => {
             const c = theme.hue(g.family), show = focus !== null ? 0 : (dim ? 0.35 : 1) * fade(k, 1.3, 1.9)
             return show > 0.02 ? <text key={g.id} className="world-group" x={fixed(g.x)} y={fixed(g.y)} textAnchor="middle" opacity={show} pointerEvents="none"
               style={{ fill: c.dark, stroke: theme.label.halo(c), fontSize: `${Math.min(17, 12.5 / scale).toFixed(1)}px` }}>{g.label}</text> : null
           })}
+          </g>
           {routes.map((r) => <g key={r.id} pointerEvents="none">
             <g opacity="0.2"><path d={r.blob} fill={r.color} stroke={r.color} strokeWidth="34" strokeLinejoin="round" strokeLinecap="round" /></g>
             <path d={r.chain} fill="none" stroke={r.color} strokeWidth="2.4" strokeDasharray="7 6" vectorEffect="non-scaling-stroke" strokeLinecap="round" />
@@ -673,16 +734,17 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
             const { shown, faint } = siteState(s)
             if (!shown) return null
             const rc = world.radius(s.use) * Math.min(1, 46 / (2 * world.radius(s.use) * scale)) * 1.7
-            return <circle key={`clear-${s.id}`} cx={s.x} cy={s.y} r={rc.toFixed(1)} fill={`url(#w-clear-${s.family})`} pointerEvents="none" opacity={faint ? 0.3 : 1} />
+            return <g key={`clear-${s.id}`} className="world-sinkable" style={sink(s.id)}><circle cx={s.x} cy={s.y} r={rc.toFixed(1)} fill={`url(#w-clear-${s.family})`} pointerEvents="none" opacity={faint ? 0.3 : 1} /></g>
           })}
           {world.sites.map((s) => {
             const { item, on, noted, shown, faint } = siteState(s), shrunk = Math.min(1, 46 / (2 * world.radius(s.use) * scale)), r = world.radius(s.use) * shrunk, c = theme.hue(s.family)
-            return <g key={item} data-world-item className="world-site" onPointerEnter={() => { const g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y); setTip({ id: s.id, x: g.tx + s.x * g.s, y: g.ty + (s.y - r) * g.s }); startTransition(() => setHoverSite(s.id)) }} onPointerLeave={() => { setTip(null); startTransition(() => setHoverSite(null)) }} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
+            return <g key={item} className="world-sinkable" style={sink(s.id)}><g data-world-item className="world-site" onPointerEnter={() => { const g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y); setTip({ id: s.id, x: g.tx + s.x * g.s, y: g.ty + (s.y - r) * g.s }); startTransition(() => setHoverSite(s.id)) }} onPointerLeave={() => { setTip(null); startTransition(() => setHoverSite(null)) }} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
               aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...choose(item)}>
               {(on || noted) && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={INK} strokeWidth="2" strokeDasharray="4 4" />}
               <circle cx={s.x} cy={s.y} r={r} fill="transparent" />
               <text className="world-glyph" x={s.x} y={s.y} dy="0.34em" textAnchor="middle"
                 style={{ fontSize: `${(world.markFont(s) * shrunk).toFixed(1)}px`, fill: theme.id === 'ink' ? c.dark : theme.label.fill, stroke: focusColour.get(s.id) ?? theme.label.halo(c), strokeWidth: focusColour.has(s.id) ? 7 : 5 }}>{model.names.get(s.id)?.glyph ?? '•'}</text>
+            </g>
             </g>
           })}
           {routes.map((r) => <g key={`badge-${r.id}`} pointerEvents="none" transform={`translate(${fixed(r.at[0])} ${fixed(r.at[1] - 34)}) scale(${lettering.toFixed(3)})`}>
@@ -691,8 +753,8 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           </g>)}
           {world.sites.map((s) => {
             const { shown, showLabel, faint } = siteState(s), l = labelAt.get(s.id), c = theme.hue(s.family)
-            return l && shown && showLabel ? <text key={`name-${s.id}`} data-world-item className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor} opacity={faint ? (focus !== null ? 0.1 : 0.3) : 1} {...choose(`v:${s.id}`)}
-              style={{ fill: theme.label.fill, stroke: theme.label.halo(c), fontSize: `${Math.min(25, 16.5 / scale).toFixed(1)}px` }}>{s.short}</text> : null
+            return l && shown && showLabel ? <g key={`name-${s.id}`} className="world-sinkable" style={sink(s.id)}><text data-world-item className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor} opacity={faint ? (focus !== null ? 0.1 : 0.3) : 1} {...choose(`v:${s.id}`)}
+              style={{ fill: theme.label.fill, stroke: theme.label.halo(c), fontSize: `${Math.min(25, 16.5 / scale).toFixed(1)}px` }}>{s.short}</text></g> : null
           })}
           {world.islands.map((i) => {
             const item = `i:${i.family}`, on = chosen.has(item), faded = dim && !live.islands.has(i.family) && !on
@@ -704,6 +766,11 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
           })}
         </g>
       </svg>
+      <div className="world-deepen" aria-hidden="true" />
+      {seaOn && <figure className="world-sea-quote" lang="fr">
+        <blockquote>« La mer avance insensiblement et sans bruit… elle finit par entourer la substance rétive. »</blockquote>
+        <figcaption>Alexandre Grothendieck, <i>Récoltes et Semailles</i></figcaption>
+      </figure>}
       {tip && (() => {
         const t = model.names.get(tip.id), c = theme.hue(t?.family ?? 'analytic'), below = tip.y < 84
         return <div className="world-tip" style={{ left: Math.min(Math.max(tip.x, 110), box.w - 110), top: below ? tip.y + 34 : tip.y - 8, transform: below ? 'translate(-50%, 0)' : 'translate(-50%, -100%)', borderColor: c.dark, background: PAPER, color: INK }}>
@@ -751,7 +818,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose }: { data: Metho
       {onClose && <button type="button" className="world-back" onClick={onClose}>← Course results</button>}
       <div className="world-search">
         <input type="search" value={query} placeholder="Find a method or a theorem" aria-label="Find a method or a theorem on the map" autoComplete="off"
-          onChange={(event) => { setQuery(event.target.value); setSearchOpen(true) }} onFocus={() => setSearchOpen(true)}
+          onChange={(event) => { if (event.target.value.trim().toLowerCase() === 'sga') { setQuery(''); setSearchOpen(false); startSea(); return } setQuery(event.target.value); setSearchOpen(true) }} onFocus={() => setSearchOpen(true)}
           onKeyDown={(event) => {
             if (event.key === 'Escape') { setSearchOpen(false); (event.target as HTMLInputElement).blur() }
             if (event.key === 'Enter' && found) { if (found.methods[0]) pickMethod(found.methods[0].id); else if (found.theorems[0]) pickTheorem(found.theorems[0].id) }
