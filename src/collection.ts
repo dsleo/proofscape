@@ -8,7 +8,6 @@ export type Item = {
   statement: string
   source_id: string | null
   categories: string[]
-  similar: number
   n_proofs: number
   record_file: string
 }

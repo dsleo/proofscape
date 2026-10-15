@@ -6,7 +6,6 @@ from __future__ import annotations
 import gzip
 import hashlib
 import json
-import re
 from collections import Counter
 from pathlib import Path
 
@@ -14,24 +13,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ROOT / "data" / "source"
 OUTPUT = ROOT / "public" / "data" / "collection"
-
-
-WORD = re.compile(r"[a-z0-9]+")
-
-
-def similar_pairs(texts: list[str]) -> int:
-    """How many pairs of proofs of one statement are close to word-for-word the same.
-
-    Jaccard similarity of the sets of words; 0.6 and above is what we call near-duplicate.
-    """
-    sets = [set(WORD.findall(text.lower())) for text in texts]
-    pairs = 0
-    for i in range(len(sets)):
-        for j in range(i + 1, len(sets)):
-            union = len(sets[i] | sets[j])
-            if union and len(sets[i] & sets[j]) / union >= 0.6:
-                pairs += 1
-    return pairs
 
 
 def preview(text: str, limit: int = 420) -> str:
@@ -67,7 +48,6 @@ def main() -> None:
                     "statement": preview(statement),
                     "source_id": row.get("source_id"),
                     "categories": [c for c in (row.get("categories") or [])][:4] if kind == "informal" else [],
-                    "similar": similar_pairs([p["text"] for p in row["proofs"]]) if kind == "informal" else 0,
                     "n_proofs": row["n_proofs"] if kind == "informal" else 2,
                     # Avoid the .gz extension: static hosts may transparently
                     # serve it with Content-Encoding: gzip, which makes the

@@ -37,7 +37,7 @@ export default function App() {
     <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
     <main className="collection-main">
       <header className="collection-intro">
-        <h1>{tab === 'explore' ? 'How do different proofs reach the same theorem?' : 'The proof library'}</h1>
+        <h1>{tab === 'explore' ? 'How do different proofs reach the same theorem?' : 'Proof Diversity Explorer'}</h1>
         <p className="collection-intro-copy">{tab === 'explore'
           ? 'A curated set of 150 results from the mathematics curriculum, each with its distinct proof approaches, mapped by the methods they use.'
           : 'Nearly ten thousand statements with their proofs, from three public datasets. The sources differ a lot in who wrote the proofs, so choose one before you read.'}</p>
