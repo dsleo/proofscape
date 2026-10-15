@@ -4,92 +4,22 @@ import type { Catalog } from './historicalShared'
 import { familyName, fixed, MethodList, ResultsPanel, SelectionBar, useMethodData, useMethodSelection, useResultsRef } from './methodShared'
 import type { MethodData, MethodModel } from './methodShared'
 import { MathText } from './MathText'
-import { terrain } from './worldTerrain'
+import LandLayer from './WorldLand'
+import Ribbon from './WorldRibbon'
+import { buildWorld } from './worldLayout'
+import { anchorsFor, placeLabels, TIERS } from './worldLabels'
+import { fade, hull, polyline } from './worldShared'
+import type { P } from './worldShared'
+import { themes } from './worldTheme'
 import './world.css'
 
-type P = [number, number]
-type Anchor = 'start' | 'end' | 'middle'
 
-type Hue = { land: string; halo: string; light: string; dark: string; peak: string }
-type Theme = {
-  id: string; name: string; sea: string; paper: string; ink: string; accent: string; trail: string; water: string; wisp: string
-  hue: (family: string) => Hue
-  tree: (h: Hue) => string; hatchInk: (h: Hue) => string
-  clouds: boolean; ripples: boolean; shade: number; treeFill: number; coast: number; label: { fill: string; halo: (h: Hue) => string }; grain: number
-}
-// Ink: the pencil-and-wash cream of the app's landscape illustration, one colour for every island.
-const inkWash: Record<string, string> = { analytic: '#f0f4e6', algebraic: '#f7ece4', geometric: '#f2f1e2', discrete: '#f7f2d9', logic: '#f6eedb' }
-const ink: Hue = { land: '#faf7ee', halo: '#ebe6d8', light: '#c4ccbb', dark: '#4a5446', peak: '#f4f1e5' }
-const themes: Theme[] = [
-  { id: 'ink', name: 'Ink', sea: '#f2efe7', paper: '#fbf8f0', ink: '#3b4438', accent: '#ae6b1f', trail: '#8a5a2b', water: '#bdd0d4', wisp: '#dcd6c6', hue: (f) => ({ ...ink, land: inkWash[f] ?? ink.land }), tree: () => '#f9f6ec', hatchInk: (h) => h.dark, clouds: false, ripples: true, shade: 0.1, treeFill: 0, coast: 1.5, label: { fill: '#2d352b', halo: () => '#f2efe7' }, grain: 0.07 },
-]
 const MAX_ZOOM = 8, MARGIN = 90
 const ROUTE_COLOURS = ['#ae6b1f', '#2f6f73', '#7a4a73', '#5f7a2f', '#8a3b3b']
 const DRAWER = 460
 // the rising sea (Grothendieck, Récoltes et Semailles): the water climbs the islands' own contours
 const SEA_RISE = 14000, SEA_HOLD = 4200, SEA_EBB = 7000, SEA_TOP = 1.05
 
-const fade = (k: number, a: number, b: number) => Math.max(0, Math.min(1, (k - a) / (b - a)))
-
-function seeded(key: string) {
-  let h = 0
-  for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0
-  return () => { h = (h * 1664525 + 1013904223) >>> 0; return h / 4294967296 }
-}
-
-function hull(points: P[]) {
-  const p = [...points].sort((a, b) => a[0] - b[0] || a[1] - b[1])
-  const cross = (o: number[], a: number[], b: number[]) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
-  const lower: P[] = [], upper: P[] = []
-  for (const q of p) { while (lower.length > 1 && cross(lower[lower.length - 2], lower[lower.length - 1], q) <= 0) lower.pop(); lower.push(q) }
-  for (const q of [...p].reverse()) { while (upper.length > 1 && cross(upper[upper.length - 2], upper[upper.length - 1], q) <= 0) upper.pop(); upper.push(q) }
-  lower.pop(); upper.pop()
-  return lower.concat(upper)
-}
-
-function smooth(points: P[]) {
-  const mid = (a: P, b: P): P => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]
-  const start = mid(points[points.length - 1], points[0])
-  let d = `M${fixed(start[0])},${fixed(start[1])}`
-  points.forEach((p, i) => { const e = mid(p, points[(i + 1) % points.length]); d += `Q${fixed(p[0])},${fixed(p[1])} ${fixed(e[0])},${fixed(e[1])}` })
-  return `${d}Z`
-}
-
-const within = (p: P, poly: P[]) => {
-  let hit = false
-  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
-    const [xi, yi] = poly[i], [xj, yj] = poly[j]
-    if ((yi > p[1]) !== (yj > p[1]) && p[0] < ((xj - xi) * (p[1] - yi)) / (yj - yi) + xi) hit = !hit
-  }
-  return hit
-}
-const quad = (a: P, c: P, b: P, n = 14): P[] => Array.from({ length: n + 1 }, (_, i) => {
-  const t = i / n
-  return [(1 - t) * (1 - t) * a[0] + 2 * (1 - t) * t * c[0] + t * t * b[0], (1 - t) * (1 - t) * a[1] + 2 * (1 - t) * t * c[1] + t * t * b[1]] as P
-})
-const polyline = (pts: P[]) => pts.map((p, i) => `${i ? 'L' : 'M'}${fixed(p[0])},${fixed(p[1])}`).join('')
-const disc = (x: number, y: number, r: number) => `M${fixed(x - r)},${fixed(y)}a${fixed(r)},${fixed(r)} 0 1,0 ${fixed(2 * r)},0a${fixed(r)},${fixed(r)} 0 1,0 ${fixed(-2 * r)},0Z`
-function waypoints(pts: P[], every = 72): P[] {
-  const out: P[] = []
-  let run = every / 2
-  for (let i = 1; i < pts.length; i++) {
-    run += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1])
-    if (run >= every) { out.push(pts[i]); run = 0 }
-  }
-  return out
-}
-
-/** A banner with folded tails, centred on the origin: island names and the map title. */
-function Ribbon({ text, size, paper, ink, tail, color }: { text: string; size: number; paper: string; ink: string; tail: string; color: string }) {
-  const w = text.length * size * 0.72 + size * 1.8, h = size * 1.75, t = size * 1.5, d = h * 0.24, n = size * 0.6
-  const side = (s: 1 | -1) => `M${s * w / 2 - s * 4},${-h / 2 + d}H${s * (w / 2 + t)}L${s * (w / 2 + t - n)},${d}L${s * (w / 2 + t)},${h / 2 + d}H${s * w / 2 - s * 4}Z`
-  return <g>
-    <path d={side(-1)} fill={tail} stroke={ink} strokeWidth="1.3" strokeLinejoin="round" />
-    <path d={side(1)} fill={tail} stroke={ink} strokeWidth="1.3" strokeLinejoin="round" />
-    <rect x={-w / 2} y={-h / 2} width={w} height={h} fill={paper} stroke={ink} strokeWidth="1.5" />
-    <text className="world-ribbon" y={size * 0.34} textAnchor="middle" fontSize={size} style={{ fill: color }}>{text}</text>
-  </g>
-}
 
 function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { data: MethodData; model: MethodModel; catalog: Catalog; onOpenEntry: (id: number) => void; onClose?: () => void; onLibrary?: () => void }) {
   const sel = useMethodSelection(data, model)
@@ -196,117 +126,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     return () => watcher.disconnect()
   }, [])
 
-  const world = useMemo(() => {
-    const sites = data.ring.techniques.map((id) => {
-      const [x, y] = data.world.sites[id]
-      return { id, x, y, family: model.names.get(id)!.family, short: model.names.get(id)!.short, use: model.uses.get(id) ?? 0 }
-    })
-    const siteHeight = new Map<string, number>()
-    const radius = (use: number) => 12 + Math.min(use, 14) * 0.7
-    // the symbol that stands for a method is as large as its mark allows, and always fits inside it
-    const markFont = (s: { use: number; id: string }) => Math.min(1.7 * radius(s.use), (2.1 * radius(s.use)) / (Math.max(1, [...(model.names.get(s.id)?.glyph ?? '•')].length) * 0.6))
-    const islands = Object.entries(data.world.islands).map(([family, boxed]) => {
-      const mine = sites.filter((s) => s.family === family)
-      const pts = mine.map((s): P => [s.x, s.y])
-      const cx = pts.reduce((a, p) => a + p[0], 0) / pts.length, cy = pts.reduce((a, p) => a + p[1], 0) / pts.length
-      let h = hull(pts)
-      if (h.length < 3) h = [[cx - 30, cy], [cx + 30, cy], [cx, cy - 30], [cx, cy + 30]]
-      const pad = pts.length < 6 ? 100 : 86, rnd = seeded(family), ring: P[] = []
-      h.forEach((p, i) => {
-        const q = h[(i + 1) % h.length], steps = Math.max(1, Math.ceil(Math.hypot(q[0] - p[0], q[1] - p[1]) / 16))
-        for (let t = 0; t < steps; t++) {
-          const u = t / steps, x = p[0] + (q[0] - p[0]) * u, y = p[1] + (q[1] - p[1]) * u, dx = x - cx, dy = y - cy, d = Math.hypot(dx, dy) || 1, e = pad + (rnd() * 2 - 1) * 12
-          ring.push([x + (dx / d) * e, y + (dy / d) * e])
-        }
-      })
-      const land = terrain(family, ring, [cx, cy], pts, seeded(`${family}-terrain`))
-      mine.forEach((s, n) => siteHeight.set(s.id, land.siteH[n]))
-      return { family, cx: boxed.x, cy: boxed.y, r: boxed.r, top: Math.min(...ring.map((p) => p[1])), bottom: Math.max(...ring.map((p) => p[1])), path: smooth(ring), halo: smooth(land.ripples[1]), near: smooth(land.ripples[0]), ring, ox: cx, oy: cy, land, flood: land.flood, below: false, treeD: land.trees.map((t) => t.d).join(''), treeH: land.trees.map((t) => t.hatch).join('') }
-    })
-    // an island's name goes on the side away from most of its bridges
-    for (const island of islands) {
-      let away = 0
-      for (const key of model.bridges.keys()) {
-        const [fa, fb] = key.split('|')
-        if (fa !== island.family && fb !== island.family) continue
-        const other = islands.find((o) => o.family === (fa === island.family ? fb : fa))
-        if (other) away += Math.sign(other.cy - island.cy)
-      }
-      island.below = away > 0 ? false : away < 0 ? true : island.cy > H / 2
-    }
-    const byFamily = new Map(islands.map((i) => [i.family, i]))
-    const siteOf = new Map(sites.map((s) => [s.id, s]))
-    const lanes = new Map<string, P[]>()
-    const bridges = [...model.bridges.entries()].map(([key, chordKeys]) => {
-      const [fa, fb] = key.split('|'), A = byFamily.get(fa)!, B = byFamily.get(fb)!
-      const dx = B.ox - A.ox, dy = B.oy - A.oy, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, px = -uy, py = ux
-      // walk out from each island's middle until the shoreline, then step back onto land: the bridge always lands
-      const shore = (island: typeof A, vx: number, vy: number): P => {
-        let t = 0
-        while (t < 1000 && within([island.ox + vx * t, island.oy + vy * t], island.ring)) t += 2
-        return [island.ox + vx * (t - 7), island.oy + vy * (t - 7)]
-      }
-      const [bx, by] = shore(A, ux, uy), [ex, ey] = shore(B, -ux, -uy)
-      const total = chordKeys.reduce((sum, k) => sum + (model.pairs.get(k)?.size ?? 0), 0)
-      const dw = Math.max(9, Math.min(24, 7 + total * 0.4)), m = chordKeys.length, pitch = Math.min(6, (dw - 3) / Math.max(1, m - 1))
-      chordKeys.forEach((k, idx) => {
-        const off = (idx - (m - 1) / 2) * pitch
-        let [a, b] = k.split('|').map((id) => siteOf.get(id)!)
-        if (a.family !== fa) [a, b] = [b, a]
-        const ha: P = [bx + px * off, by + py * off], hb: P = [ex + px * off, ey + py * off]
-        lanes.set(k, [...quad([a.x, a.y], [ha[0] - ux * 38, ha[1] - uy * 38], ha, 10), ...quad(hb, [hb[0] + ux * 38, hb[1] + uy * 38], [b.x, b.y], 10)])
-      })
-      const hw = dw / 2
-      const deck = `M${fixed(bx + px * hw)},${fixed(by + py * hw)}L${fixed(ex + px * hw)},${fixed(ey + py * hw)}L${fixed(ex - px * hw)},${fixed(ey - py * hw)}L${fixed(bx - px * hw)},${fixed(by - py * hw)}Z`
-      const at = (t: number): P => [bx + (ex - bx) * t, by + (ey - by) * t]
-      const [t1, t2] = [0.2, 0.8], th = Math.min(74, 26 + L * 0.06 + dw)
-      const T1 = at(t1), T2 = at(t2), top1: P = [T1[0], T1[1] - th], top2: P = [T2[0], T2[1] - th]
-      const midX = (top1[0] + top2[0]) / 2, midY = (top1[1] + top2[1]) / 2 + 38
-      const cable = `M${fixed(bx)},${fixed(by - 2)}L${fixed(top1[0])},${fixed(top1[1])}Q${fixed(midX)},${fixed(midY)} ${fixed(top2[0])},${fixed(top2[1])}L${fixed(ex)},${fixed(ey - 2)}`
-      let hangers = ''
-      for (let i = 1; i <= 9; i++) {
-        const u = i / 10, x = top1[0] + (top2[0] - top1[0]) * u
-        const cy = (1 - u) * (1 - u) * top1[1] + 2 * (1 - u) * u * midY + u * u * top2[1]
-        hangers += `M${fixed(x)},${fixed(cy)}V${fixed(at(t1 + (t2 - t1) * u)[1])}`
-      }
-      const towers = [[T1, top1], [T2, top2]].map(([base, top]) => `M${fixed(base[0])},${fixed(base[1])}L${fixed(top[0])},${fixed(top[1])}`).join('')
-      const cloud = seeded(key)
-      let clouds = ''
-      for (let n = 0; n < Math.max(5, Math.round(L / 46)); n++) {
-        const [x, y] = at(0.08 + (0.84 * n) / Math.max(1, Math.round(L / 46) - 1))
-        clouds += disc(x + (cloud() - 0.5) * 18, y + 8 + (cloud() - 0.5) * 22, 14 + cloud() * 14)
-      }
-      const [mx, my] = at(0.5)
-      const piers = [[bx, by], [ex, ey]].map(([x, y]) => `M${fixed(x + px * (hw + 6))},${fixed(y + py * (hw + 6))}L${fixed(x - px * (hw + 6))},${fixed(y - py * (hw + 6))}`).join('')
-      return { key, fa, fb, route: `M${fixed(bx)},${fixed(by)}L${fixed(ex)},${fixed(ey)}`, deck, cable, hangers, towers, clouds, piers, mid: [mx, my - th * 0.5] as P, count: m }
-    })
-    const chords = Object.keys(data.pairs).map((key) => {
-      const [a, b] = key.split('|').map((id) => siteOf.get(id)!)
-      let pts = lanes.get(key)
-      if (!pts) {
-        const home = byFamily.get(a.family)!, mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, vx = mx - home.cx, vy = my - home.cy, vl = Math.hypot(vx, vy) || 1
-        pts = quad([a.x, a.y], [mx + (vx / vl) * 18, my + (vy / vl) * 18], [b.x, b.y], 16)
-      }
-      return { key, d: polyline(pts), dots: waypoints(pts), cross: lanes.has(key), n: model.pairs.get(key)!.size }
-    })
-    const groups = data.vocabulary.groups.map((g) => {
-      const mine = sites.filter((site) => model.names.get(site.id)?.group === g.id)
-      const top = mine.reduce((m, p) => (p.y < m.y ? p : m), mine[0])
-      return { ...g, n: mine.length, x: mine.reduce((a, p) => a + p.x, 0) / mine.length, y: Math.min(...mine.map((p) => p.y)) - 26 - (top ? 0 : 0) }
-    }).filter((g) => g.n > 0)
-    const sea = seeded('sea')
-    let wisps = ''
-    for (let tries = 0, n = 0; tries < 600 && n < 70; tries++) {
-      const x = 30 + sea() * (W - 60), y = 30 + sea() * (H - 60)
-      if (islands.some((i) => Math.hypot(i.cx - x, i.cy - y) < i.r + 50)) continue
-      n++
-      const w = 14 + sea() * 26
-      wisps += `M${fixed(x)},${fixed(y)}q${fixed(w / 2)},-5 ${fixed(w)},0q${fixed(-w / 2)},4 ${fixed(-w)},0Z`
-    }
-    const x0 = Math.min(...islands.map((i) => i.cx - i.r)) - 40, x1 = Math.max(...islands.map((i) => i.cx + i.r)) + 40
-    const y0 = Math.min(...islands.map((i) => i.top)) - 90, y1 = Math.max(...islands.map((i) => i.bottom)) + 70
-    return { sites, islands, groups, bridges, chords, radius, markFont, siteHeight, wisps, bounds: { x0, y0, w: x1 - x0, h: y1 - y0 } }
-  }, [data, model, W, H])
+  const world = useMemo(() => buildWorld(data, model, W, H), [data, model, W, H])
 
   const { x0: bx, y0: by, w: bw, h: bh } = world.bounds
   const fit = Math.min(box.w / bw, box.h / bh) * 0.98
@@ -438,59 +258,14 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   const broad = selection.length > 0 && selection.every((item) => 'ib'.includes(item[0]))
   const groupName = useMemo(() => new Map(data.vocabulary.groups.map((g) => [g.id, g.label])), [data])
   const siteById = useMemo(() => new Map(world.sites.map((site) => [site.id, site])), [world])
-  // a few methods per island are named at rest ("anchors"); the rest are named when you hover, select or zoom right in
   const anchorRank = useMemo(() => {
     const rank = new Map<string, number>()
     for (const island of world.islands) world.sites.filter((s) => s.family === island.family).sort((a, b) => b.use - a.use).forEach((s, n) => rank.set(s.id, n))
     return rank
   }, [world])
-  const anchorsFor = (zoom: number) => (zoom >= 5.5 ? 99 : zoom >= 1.5 ? 3 : 1)
-  // method names are placed once per zoom tier, with the type size that tier will really show, so none lands on a dot, a name or a ribbon
-  const TIERS = [1, 1.5, 2.2, 3.3, 4.5, 6]
+  // method names are placed once per zoom tier, with the type size that tier will really show
   const tier = TIERS.filter((t) => lod >= t - 0.001).length - 1
-  const labelAt = useMemo(() => {
-    const tk = TIERS[tier], font = Math.min(25, 16.5 / (fit * tk))
-    const quota = anchorsFor(tk)
-    const h = font * 1.3, charW = font * 0.56
-    // up close the marks stop growing with the map (they keep to ~46 px on screen) so that names can sit beside them
-    const shrink = (use: number) => Math.min(1, 46 / (2 * world.radius(use) * fit * tk))
-    const boxes: number[][] = world.sites.map((s) => { const r = world.radius(s.use) * shrink(s.use) + 3; return [s.x - r, s.y - r, s.x + r, s.y + r] })
-    const gfont = Math.min(17, 12.5 / (fit * tk)), rs = (1 / Math.pow(Math.max(1, tk), 0.55)) ** 1.1
-    for (const g of world.groups) { const hw = g.label.length * gfont * 0.29; boxes.push([g.x - hw, g.y - gfont, g.x + hw, g.y + gfont * 0.4]) }
-    for (const i of world.islands) { const hw = ((familyName[i.family].length * 21 * 0.72 + 38) / 2 + 32) * rs, y = i.below ? i.bottom + 34 : i.top - 26; boxes.push([i.cx - hw, y - 24 * rs, i.cx + hw, y + 30 * rs]) }
-    const hit = (a: number[], b: number[]) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1]
-    const out = new Map<string, { x: number; y: number; anchor: Anchor }>()
-    const ordered = [...world.sites].sort((a, b) => Number((anchorRank.get(b.id) ?? 99) < quota) - Number((anchorRank.get(a.id) ?? 99) < quota) || b.use - a.use)
-    ordered.forEach((s) => {
-      const r = world.radius(s.use) * shrink(s.use), w = s.short.length * charW + 10, g = 4
-      const own = [s.x - r - 3, s.y - r - 3, s.x + r + 3, s.y + r + 3]
-      const spots: { x: number; y: number; anchor: Anchor; box: number[] }[] = [
-        { x: s.x + r + g, y: s.y + font * 0.32, anchor: 'start', box: [s.x + r + g, s.y - h / 2, s.x + r + g + w, s.y + h / 2] },
-        { x: s.x - r - g, y: s.y + font * 0.32, anchor: 'end', box: [s.x - r - g - w, s.y - h / 2, s.x - r - g, s.y + h / 2] },
-        { x: s.x, y: s.y - r - g - 2, anchor: 'middle', box: [s.x - w / 2, s.y - r - g - h, s.x + w / 2, s.y - r - g] },
-        { x: s.x, y: s.y + r + g + font * 0.9, anchor: 'middle', box: [s.x - w / 2, s.y + r + g, s.x + w / 2, s.y + r + g + h] },
-        { x: s.x + r * 0.7 + g, y: s.y - r * 0.7 - g, anchor: 'start', box: [s.x + r * 0.7 + g, s.y - r * 0.7 - g - h, s.x + r * 0.7 + g + w, s.y - r * 0.7 - g] },
-        { x: s.x - r * 0.7 - g, y: s.y - r * 0.7 - g, anchor: 'end', box: [s.x - r * 0.7 - g - w, s.y - r * 0.7 - g - h, s.x - r * 0.7 - g, s.y - r * 0.7 - g] },
-        { x: s.x + r * 0.7 + g, y: s.y + r * 0.7 + g + font * 0.9, anchor: 'start', box: [s.x + r * 0.7 + g, s.y + r * 0.7 + g, s.x + r * 0.7 + g + w, s.y + r * 0.7 + g + h] },
-        { x: s.x - r * 0.7 - g, y: s.y + r * 0.7 + g + font * 0.9, anchor: 'end', box: [s.x - r * 0.7 - g - w, s.y + r * 0.7 + g, s.x - r * 0.7 - g, s.y + r * 0.7 + g + h] },
-        // second ring, when the first is taken
-        { x: s.x, y: s.y - r - g - h * 1.1, anchor: 'middle', box: [s.x - w / 2, s.y - r - g - h * 2.1, s.x + w / 2, s.y - r - g - h * 1.1] },
-        { x: s.x, y: s.y + r + g + h * 1.1 + font * 0.9, anchor: 'middle', box: [s.x - w / 2, s.y + r + g + h * 1.1, s.x + w / 2, s.y + r + g + h * 2.1] },
-        { x: s.x + r + g, y: s.y + h * 1.0 + font * 0.32, anchor: 'start', box: [s.x + r + g, s.y + h * 0.5, s.x + r + g + w, s.y + h * 1.5] },
-        { x: s.x - r - g, y: s.y + h * 1.0 + font * 0.32, anchor: 'end', box: [s.x - r - g - w, s.y + h * 0.5, s.x - r - g, s.y + h * 1.5] },
-        { x: s.x + r + g, y: s.y - h * 1.0 + font * 0.32, anchor: 'start', box: [s.x + r + g, s.y - h * 1.5, s.x + r + g + w, s.y - h * 0.5] },
-        { x: s.x - r - g, y: s.y - h * 1.0 + font * 0.32, anchor: 'end', box: [s.x - r - g - w, s.y - h * 1.5, s.x - r - g, s.y - h * 0.5] },
-      ]
-      for (const spot of spots) {
-        if (spot.box[0] > 10 && spot.box[2] < W - 10 && !boxes.some((b) => b.join() !== own.join() && hit(spot.box, b))) {
-          boxes.push(spot.box)
-          out.set(s.id, spot)
-          break
-        }
-      }
-    })
-    return out
-  }, [world, fit, tier, anchorRank, W]) // eslint-disable-line react-hooks/exhaustive-deps
+  const labelAt = useMemo(() => placeLabels(world, fit, TIERS[tier], anchorRank, W), [world, fit, tier, anchorRank, W])
   // hovering a method previews the methods it is paired with
   const partners = useMemo(() => {
     if (!hoverSite) return null
@@ -573,41 +348,6 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
 
   // trees overlap properly only when they are big enough to see: one merged path before that
   const close = lod >= 1.85
-  const landLayer = useMemo(() => (
-        <g pointerEvents="none">
-            <path className="world-texture" d={world.wisps} fill={theme.wisp} fillOpacity="0.8" />
-                        {world.islands.map((i) => {
-              const c = theme.hue(i.family)
-              return <g key={i.family}>
-                {theme.ripples ? <>
-                  <path className="world-texture" d={i.halo} fill="none" stroke={c.dark} strokeOpacity="0.35" strokeWidth="1.1" strokeDasharray="9 9" />
-                  <path d={i.near} fill="none" stroke={c.dark} strokeOpacity="0.5" strokeWidth="1.2" strokeDasharray="14 6" />
-                  <path className="world-texture" d={i.path} fill="url(#w-hatch)" opacity="0.5" transform="translate(5 6)" />
-                </> : <>
-                  <path d={i.halo} fill={c.halo} fillOpacity="0.75" />
-                  <path d={i.path} fill={c.dark} fillOpacity={theme.shade} transform="translate(0 7)" />
-                </>}
-                <path d={i.path} fill={c.land} />
-                <path className="world-minor" d={i.land.minor} fill="none" stroke={c.light} strokeWidth="0.9" strokeLinecap="round" />
-                <path className="world-major" d={i.land.major} fill="none" stroke={c.dark} strokeOpacity="0.45" strokeWidth="1.1" strokeLinecap="round" />
-                <path d={i.land.lakes} fill={theme.water} stroke={c.dark} strokeOpacity="0.7" strokeWidth="1" />
-                {i.land.rivers.map((r, n) => <path key={n} className="world-river" d={r.water} fill="none" stroke={theme.water} strokeWidth="4" strokeLinecap="round" />)}
-                <path d={i.land.fields} fill="none" stroke={c.dark} strokeOpacity="0.65" strokeWidth="0.8" strokeLinejoin="round" />
-                <path d={i.land.squares} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="0.9" strokeLinejoin="round" />
-                <path d={i.land.dunes} fill="none" stroke={c.dark} strokeOpacity="0.6" strokeWidth="0.9" strokeLinecap="round" />
-                <path d={i.land.spirals} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="1" strokeLinecap="round" />
-                {close
-                  ? i.land.trees.map((t, n) => <path key={n} d={t.d} fill={theme.tree(c)} stroke={c.dark} strokeWidth="1" strokeLinejoin="round" strokeLinecap="round" />)
-                  : <path d={i.treeD} fill={theme.tree(c)} stroke={c.dark} strokeWidth="1" strokeLinejoin="round" strokeLinecap="round" />}
-                <path className="world-texture" d={i.treeH} fill="none" stroke={theme.hatchInk(c)} strokeOpacity="0.7" strokeWidth="0.8" strokeLinecap="round" />
-                <path d={i.land.mountains} fill={c.peak} stroke={c.dark} strokeWidth="1.3" strokeLinejoin="round" />
-                <path d={i.land.hatch} fill="none" stroke={c.dark} strokeOpacity="0.7" strokeWidth="0.9" strokeLinecap="round" />
-                <path d={i.land.ink} fill={theme.paper} fillOpacity="0.92" stroke={c.dark} strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d={i.path} fill="none" stroke={theme.coast ? c.dark : c.light} strokeWidth={theme.coast || 2} strokeLinejoin="round" />
-              </g>
-            })}
-          </g>
-  ), [world, theme, close])
 
   const sink = (id: string) => ({ '--h': (world.siteHeight.get(id) ?? 0.5) + 0.04 }) as React.CSSProperties
   // what a method dot and its lettering look like right now: one place, so dots and names always agree
@@ -650,7 +390,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
         </defs>
         <rect width={box.w} height={box.h} fill={SEA} />
         <g className="world-camera" ref={camera} style={{ transform: `translate(${rested.tx.toFixed(1)}px, ${rested.ty.toFixed(1)}px) scale(${rested.s.toFixed(4)})` }}>
-          {landLayer}
+          <LandLayer world={world} theme={theme} close={close} />
           {seaOn && world.islands.map((i) => <g key={`flood-${i.family}`} clipPath={`url(#w-clip-${i.family})`} pointerEvents="none">
             <g filter="url(#w-goo)" fill={theme.id === 'ink' ? '#7fa3af' : '#4f8cc8'} fillOpacity="0.9">
               {i.flood.map((l) => <path key={l.level} className="world-sea-layer" style={{ '--lv': l.level } as React.CSSProperties} d={l.d} />)}
