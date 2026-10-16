@@ -54,6 +54,20 @@ The dataset is a research collection, not a uniform proof-verification set. The 
 
 The course-results tab is maintained in [`data/collection/historical-proof-catalog.json`](data/collection/historical-proof-catalog.json). Citations and sketches are attached to individual approaches; source-extracted sketches are distinguished from assistant reconstructions. The route-by-route [`proof-extraction-ledger.json`](data/collection/proof-extraction-ledger.json) and batch files track sources checked and remaining work so extraction can continue without repeating reviews. See [`data/collection/README.md`](data/collection/README.md) for the evidence rules and merge workflow.
 
+### Links
+
+Everything you see has an address, so any view can be shared. Parameters combine freely:
+
+| Link | Opens |
+| --- | --- |
+| `?tab=historical` | the map (the default) |
+| `?tab=historical&theorem=76` | the map with that theorem's proof routes laid over the methods |
+| `?tab=historical&method=homology-cohomology` | the map flown to that method, with its note open |
+| `?tab=historical&sel=i:analytic` | the map with that island selected (`b:` for a bridge, `v:` a method, `e:` a method pair) |
+| `?tab=historical&at=1300,700,3` | the map at a spot: world x, y and zoom (the address updates as you move) |
+| `?tab=historical&view=list&entry=76` | the list of curated results at that theorem |
+| `?tab=library&source=proofwiki-math&id=...` | a Library statement (sources: `proofwiki-math`, `Nemotron-Math-Proofs-v2`, `NuminaMath-LEAN-Proof-Artifacts`; `q` searches) |
+
 ## Project layout
 
 | Path | What it holds |

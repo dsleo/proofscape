@@ -22,6 +22,9 @@ function levelMatches(entry: Entry, selected: string) {
 }
 
 
+// shown at once while the map's data and code arrive, so the page behind it is never seen
+function MapBoot() { return <div className="world-boot" role="status" aria-live="polite"><span>Loading the map…</span></div> }
+
 export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: () => void } = {}) {
   const [catalog, setCatalog] = useState<Catalog | null>(null)
   const [error, setError] = useState('')
@@ -29,8 +32,10 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
   const [field, setField] = useState('')
   const [level, setLevel] = useState('')
   const [page, setPage] = useState(1)
-  const [view, setView] = useState<'list' | 'world'>(() => new URLSearchParams(window.location.search).get('view') === 'list' ? 'list' : 'world')
+  const [view, setView] = useState<'list' | 'world'>(() => { const p = new URLSearchParams(window.location.search); return p.get('view') === 'list' || p.has('entry') ? 'list' : 'world' })
+  const wantedEntry = useRef(Number(new URLSearchParams(window.location.search).get('entry')) || null)
   const pendingPage = useRef<number | null>(null)
+  const [arrivedAt, setArrivedAt] = useState<number | null>(null)
 
   useEffect(() => {
     document.title = 'Historical results — Proofscape'
@@ -54,12 +59,31 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
 
   useEffect(() => { setPage(pendingPage.current ?? 1); pendingPage.current = null }, [query, field, level])
 
+  // a link to the entry now showing, so any result can be shared
+  const shownId = filtered[page - 1]?.id
   useEffect(() => {
+    if (wantedEntry.current !== null) return
     const url = new URL(window.location.href)
-    if (view === 'list') { url.searchParams.set('view', 'list'); url.searchParams.delete('sel') }
-    else url.searchParams.delete('view')
+    if (view === 'list') { url.searchParams.set('view', 'list'); ['sel', 'theorem', 'method', 'at'].forEach((name) => url.searchParams.delete(name)); if (shownId !== undefined) url.searchParams.set('entry', String(shownId)) }
+    else { url.searchParams.delete('view'); url.searchParams.delete('entry') }
     window.history.replaceState(null, '', url)
-  }, [view])
+  }, [view, shownId])
+
+  // opening a link that names an entry: go to it once the catalogue is here
+  useEffect(() => {
+    if (!catalog || wantedEntry.current === null) return
+    const index = catalog.entries.findIndex((entry) => entry.id === wantedEntry.current)
+    wantedEntry.current = null
+    if (index >= 0) setPage(index + 1)
+  }, [catalog])
+
+  function showOnMap(id: number) {
+    const url = new URL(window.location.href)
+    url.searchParams.set('theorem', String(id))
+    url.searchParams.delete('entry'); url.searchParams.delete('at'); url.searchParams.delete('method')
+    window.history.replaceState(null, '', url)
+    setView('world')
+  }
 
   function clearFilters() { setQuery(''); setField(''); setLevel('') }
 
@@ -69,8 +93,15 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
     pendingPage.current = query || field || level ? index + 1 : null
     clearFilters()
     setPage(index + 1)
+    setArrivedAt(id)
     setView('list')
   }
+
+  // arriving from the map: land on the theorem itself, its approaches open, not at the top of the page
+  useEffect(() => {
+    if (arrivedAt === null || view !== 'list') return
+    document.getElementById(`entry-${arrivedAt}`)?.scrollIntoView({ block: 'start' })
+  }, [arrivedAt, view, page, catalog])
 
   return <section className="historical-view" id="collection-results" role="tabpanel" aria-labelledby="historical-tab" aria-label="Historical results with multiple proof approaches">
     <header className="historical-intro">
@@ -84,7 +115,7 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
       <button type="button" aria-pressed={view === 'world'} onClick={() => setView('world')} onPointerEnter={() => void loadWorld()} onFocus={() => void loadWorld()}>World</button>
     </div>
 
-    {view !== 'list' ? (catalog ? <Suspense fallback={<div className="ring-loading" aria-live="polite">Loading the map…</div>}><WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={() => setView('list')} onLibrary={onOpenLibrary} /></Suspense> : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : null) : <>
+    {view !== 'list' ? (catalog ? <Suspense fallback={<MapBoot />}><WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={() => setView('list')} onLibrary={onOpenLibrary} /></Suspense> : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : <MapBoot />) : <>
     <div className="historical-controls" aria-label="Search and filter historical results">
       <label className="historical-search"><Search size={16} aria-hidden="true" /><span className="sr-only">Search theorem, field, approach, or source</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search a result, approach, or source…" /></label>
       <label><span>Field</span><select value={field} onChange={(event) => setField(event.target.value)}><option value="">All fields</option>{fieldOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
@@ -94,12 +125,14 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
     {(query || field || level) && <div className="historical-count" aria-live="polite"><span>{filtered.length} matching results</span><button type="button" onClick={clearFilters}>Clear filters</button></div>}
 
     {error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : <div className="historical-list">
-      {filtered.slice(page - 1, page).map((entry) => <article className="historical-entry" key={entry.id}>
+      {filtered.slice(page - 1, page).map((entry) => <article className="historical-entry" key={entry.id} id={`entry-${entry.id}`}>
         <div className="historical-entry-number">{String(entry.id).padStart(3, '0')}</div>
         <div className="historical-entry-main">
-          <header><h2><MathText text={displayTitle(entry)} /></h2></header>
+          <header><h2><MathText text={displayTitle(entry)} /></h2>
+            <p className="historical-links"><a href={`?tab=historical&view=list&entry=${entry.id}`}>Link to this result</a> · <a href={`?tab=historical&theorem=${entry.id}`} onClick={(event) => { event.preventDefault(); showOnMap(entry.id) }}>Its routes on the map</a></p>
+          </header>
           <div className="historical-statement"><span className="historical-statement-label">Statement</span><MathText text={entry.statement} /></div>
-          <details className="historical-approaches">
+          <details className="historical-approaches" open={arrivedAt === entry.id || undefined}>
             <summary>Proof approaches ({entry.routes.length})</summary>
             <ol className="historical-routes">{entry.routes.map((route) => <li key={route.id}>
               <details className="historical-approach">

@@ -14,25 +14,46 @@ import { themes } from './worldTheme'
 import './world.css'
 
 
-const MAX_ZOOM = 8, MARGIN = 90
+const MAX_ZOOM = 8
+// how far past the window's edge the map may be dragged, as a share of the window: enough that any point can be brought to the middle
+const OVERSCROLL = 0.62
+const TOP_BAR = 64 // the strip the top bar covers
 const ROUTE_COLOURS = ['#ae6b1f', '#2f6f73', '#7a4a73', '#5f7a2f', '#8a3b3b']
 const DRAWER = 460
 // the rising sea (Grothendieck, Récoltes et Semailles): the water climbs the islands' own contours
 const SEA_RISE = 14000, SEA_HOLD = 4200, SEA_EBB = 7000, SEA_TOP = 1.05
 
 
+// the address bar describes where you are: theorem, method, selection, and the spot on the map
+function setParam(name: string, value: string | null) {
+  const url = new URL(window.location.href)
+  if (value === null) url.searchParams.delete(name)
+  else url.searchParams.set(name, value)
+  window.history.replaceState(null, '', url)
+}
+
 function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { data: MethodData; model: MethodModel; catalog: Catalog; onOpenEntry: (id: number) => void; onClose?: () => void; onLibrary?: () => void }) {
   const sel = useMethodSelection(data, model)
   const results = useResultsRef()
   const [W, H] = data.world.size ?? [1000, 720]
   const stage = useRef<HTMLDivElement>(null)
+  const boot = useRef(new URLSearchParams(window.location.search))
+  const ready = useRef(false)
+  const surface = useRef<HTMLDivElement>(null)
+  const layer = useRef<HTMLDivElement>(null)
   const svg = useRef<SVGSVGElement>(null)
   const [box, setBox] = useState({ w: 1200, h: 760 })
-  // the camera lives in a ref and is applied straight to the DOM, so panning and zooming never wait for React;
-  // only the zoom level, rounded to a twelfth, is state: it decides which details are drawn
+  // The camera lives in a ref and is applied straight to the DOM, so panning and zooming never wait for React;
+  // only the zoom level, rounded to a twelfth, is state: it decides which details are drawn.
+  // The whole drawing sits in one layer that the browser moves and scales on the GPU. The layer is rasterised at
+  // `raster` (a scale) and only re-rasterised when the view has drifted well away from it, or has come to rest.
   const viewRef = useRef({ k: 1, x: 0, y: 0, glide: false })
-  const camera = useRef<SVGGElement>(null)
+  const raster = useRef(0)
   const settle = useRef(0)
+  const pointers = useRef(new Map<number, { x: number; y: number }>())
+  const grip = useRef({ dragging: false, startX: 0, startY: 0, lastX: 0, lastY: 0, lastT: 0, vx: 0, vy: 0, pinch: 0 })
+  const zoomAnim = useRef({ raf: 0, target: 1, px: 0, py: 0, t: 0 })
+  const momentum = useRef(0)
   const [lod, setLod] = useState(1)
   const [info, setInfo] = useState<{ item: string; x: number; y: number } | null>(null)
   const [hint, setHint] = useState(true)
@@ -50,17 +71,17 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   const travel = useRef(0)
   const theme = themes[0]
   const { paper: PAPER, ink: INK, accent: GOLD, sea: SEA } = theme
-  const drag = useRef<{ x: number; y: number } | null>(null)
   const seen = useRef(0)
   const { selection, live, chosen, label } = sel
   // one click shows a short note over the item; a double click (or the note's button) selects it and lists its theorems
   const choose = (item: string) => ({
     tabIndex: 0, role: 'button' as const,
     onClick: (event: React.MouseEvent) => {
+      if (travel.current >= 4) return
       const rect = stage.current?.getBoundingClientRect()
       setInfo({ item, x: event.clientX - (rect?.left ?? 0), y: event.clientY - (rect?.top ?? 0) })
     },
-    onDoubleClick: () => { setInfo(null); sel.toggle(item) },
+    onDoubleClick: () => { if (travel.current >= 4) return; setInfo(null); sel.toggle(item) },
     onKeyDown: (event: React.KeyboardEvent) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setInfo(null); sel.toggle(item) } },
   })
   const setSea = (level: number) => { sea.current.level = level; page.current?.style.setProperty('--sea', level.toFixed(3)) }
@@ -134,29 +155,51 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   const centred = (s: number) => ({ cx: (box.w - bw * s) / 2 - bx * s, cy: (box.h - bh * s) / 2 - by * s })
   const geometry = (k: number, x: number, y: number) => {
     const s = fit * k, c = centred(s)
-    const axis = (extent: number, size: number, pan: number, home: number) => size <= extent ? home : Math.min(MARGIN, Math.max(extent - size - MARGIN, home + pan))
+    const axis = (extent: number, size: number, pan: number, home: number) => {
+      const room = extent * OVERSCROLL
+      return size <= extent
+        ? Math.min(home + room + (extent - size) / 2, Math.max(home - room - (extent - size) / 2, home + pan))
+        : Math.min(room, Math.max(extent - size - room, home + pan))
+    }
     return { s, tx: axis(box.w, bw * s, x, c.cx), ty: axis(box.h, bh * s, y, c.cy), cx: c.cx, cy: c.cy }
   }
   const k = lod
   const scale = fit * lod
+  if (!raster.current) raster.current = fit
   const rested = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y)
+  const layerTransform = (g: { s: number; tx: number; ty: number }) => `translate(${(g.tx + g.s * bx).toFixed(2)}px, ${(g.ty + g.s * by).toFixed(2)}px) scale(${(g.s / raster.current).toFixed(5)})`
+  // draw the layer at scale `s`: size it for that scale, so the browser rasterises it crisp
+  function rerasterise(s: number) {
+    raster.current = s
+    layer.current?.style.setProperty('width', `${bw * s}px`)
+    layer.current?.style.setProperty('height', `${bh * s}px`)
+    svg.current?.setAttribute('width', String(bw * s))
+    svg.current?.setAttribute('height', String(bh * s))
+  }
+  function writeAt(g: { s: number; tx: number; ty: number }) {
+    if (!ready.current) return
+    const k = viewRef.current.k
+    setParam('at', k <= 1.005 ? null : `${Math.round((box.w / 2 - g.tx) / g.s)},${Math.round((box.h / 2 - g.ty) / g.s)},${k.toFixed(2)}`)
+  }
   function paint(next: { k: number; x: number; y: number; glide: boolean }) {
     viewRef.current = next
     const g = geometry(next.k, next.x, next.y)
-    const node = camera.current
+    const drift = g.s / raster.current
+    if (drift < 0.72 || drift > 1.4) rerasterise(g.s)
+    const node = layer.current
     if (node) {
       node.style.transition = next.glide ? 'transform .6s cubic-bezier(.2,.7,.2,1)' : 'none'
-      node.style.transform = `translate(${g.tx.toFixed(1)}px, ${g.ty.toFixed(1)}px) scale(${g.s.toFixed(4)})`
+      node.style.transform = layerTransform(g)
     }
     setTip(null)
-    const root = svg.current
-    if (root) {
-      root.style.setProperty('--k', next.k.toFixed(3))
-      // while the picture is moving, drop the decorative texture: it is what costs a frame, and nobody reads it in motion
-      root.classList.add('moving')
-      window.clearTimeout(settle.current)
-      settle.current = window.setTimeout(() => root.classList.remove('moving'), next.glide ? 700 : 140)
-    }
+    surface.current?.style.setProperty('--k', next.k.toFixed(3))
+    // once the picture rests, redraw it exactly at its scale
+    window.clearTimeout(settle.current)
+    settle.current = window.setTimeout(() => {
+      const now = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y)
+      writeAt(now)
+      if (Math.abs(now.s / raster.current - 1) > 0.03) { rerasterise(now.s); if (layer.current) { layer.current.style.transition = 'none'; layer.current.style.transform = layerTransform(now) } }
+    }, next.glide ? 800 : 180)
     startTransition(() => setLod(Math.round(next.k * 12) / 12))
   }
   // keep the picture where it was when the window changes size
@@ -165,6 +208,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   // zoom by a factor about a screen point: used by the wheel, trackpad pinch and the buttons
   function zoomTo(nextK: number | ((current: number) => number), px: number, py: number, glide: boolean) {
     setHint(false)
+    if (glide) stopMotion()
     const v = viewRef.current
     const cur = geometry(v.k, v.x, v.y)
     const kk = Math.min(MAX_ZOOM, Math.max(1, typeof nextK === 'function' ? nextK(v.k) : nextK))
@@ -173,27 +217,48 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     const c = centred(s)
     paint({ k: kk, x: px - wx * s - c.cx, y: py - wy * s - c.cy, glide })
   }
+  function stopMotion() {
+    cancelAnimationFrame(zoomAnim.current.raf); zoomAnim.current.raf = 0
+    cancelAnimationFrame(momentum.current); momentum.current = 0
+  }
   // carry the view to a world point so that a span of `span` fills the part of the window the drawer leaves free
-  function flyTo(wx: number, wy: number, span: number, inset = 0, left = 0) {
-    const free = box.w - inset - left
-    const kk = Math.min(MAX_ZOOM, Math.max(1, Math.min(free, box.h) / (span * fit)))
+  function flyTo(wx: number, wy: number, span: number, inset = 0, left = 0, top = 0) {
+    stopMotion()
+    const free = box.w - inset - left, freeH = box.h - top
+    const kk = Math.min(MAX_ZOOM, Math.max(1, Math.min(free, freeH) / (span * fit)))
     const s = fit * kk
     const c = centred(s)
-    paint({ k: kk, x: left + free / 2 - wx * s - c.cx, y: box.h / 2 - wy * s - c.cy, glide: true })
+    paint({ k: kk, x: left + free / 2 - wx * s - c.cx, y: top + freeH / 2 - wy * s - c.cy, glide: true })
   }
   const drawerInset = box.w > 760 ? Math.min(DRAWER, box.w * 0.5) : 0
 
-  // wheel and trackpad: a two-finger scroll or a pinch zooms about the pointer (the map fills the window, so there is no page to scroll)
+  // wheel and trackpad: a scroll or a pinch sets a zoom target about the pointer, and the camera eases toward it
+  const calm = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  function stepZoom(now: number) {
+    const a = zoomAnim.current, current = viewRef.current.k
+    const dt = Math.max(1, Math.min(50, now - a.t))
+    a.t = now
+    const next = calm() ? a.target : current + (a.target - current) * (1 - Math.exp(-dt / 90))
+    const done = Math.abs(a.target - next) < a.target * 0.0015
+    zoomTo(done ? a.target : next, a.px, a.py, false)
+    a.raf = done ? 0 : requestAnimationFrame(stepZoom)
+  }
+  function nudgeZoom(factor: number, px: number, py: number) {
+    const a = zoomAnim.current
+    cancelAnimationFrame(momentum.current)
+    a.target = Math.min(MAX_ZOOM, Math.max(1, (a.raf ? a.target : viewRef.current.k) * factor))
+    a.px = px; a.py = py
+    if (!a.raf) { a.t = performance.now(); a.raf = requestAnimationFrame(stepZoom) }
+  }
   useEffect(() => {
-    const node = svg.current
+    const node = surface.current
     if (!node) return
     const at = (event: MouseEvent) => { const rect = node.getBoundingClientRect(); return [event.clientX - rect.left, event.clientY - rect.top] as const }
     const onWheel = (event: WheelEvent) => {
       event.preventDefault()
       const lines = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? 400 : 1
       const [x, y] = at(event)
-      const factor = Math.exp(-Math.max(-120, Math.min(120, event.deltaY * lines)) * (event.ctrlKey ? 0.012 : 0.004))
-      zoomTo((current) => current * factor, x, y, false)
+      nudgeZoom(Math.exp(-Math.max(-120, Math.min(120, event.deltaY * lines)) * (event.ctrlKey ? 0.012 : 0.004)), x, y)
     }
     // Safari reports a pinch as gesture events instead of ctrl+wheel
     let last = 1
@@ -204,7 +269,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
       const [x, y] = at(g)
       const ratio = g.scale / last
       last = g.scale
-      zoomTo((current) => current * ratio, x, y, false)
+      nudgeZoom(ratio, x, y)
     }
     node.addEventListener('wheel', onWheel, { passive: false })
     node.addEventListener('gesturestart', onGestureStart)
@@ -216,37 +281,87 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     }
   })
 
+  useEffect(() => stopMotion, []) // eslint-disable-line react-hooks/exhaustive-deps
+
   // selecting a whole island or bridge carries the view there
   useEffect(() => {
     if (!measured) return
-    if (selection.length > seen.current) {
+    if (selection.length > seen.current && !(boot.current.has('at') && !ready.current)) {
       const last = selection[selection.length - 1]
       if (last.startsWith('i:')) {
         const island = world.islands.find((i) => i.family === last.slice(2))
-        if (island) flyTo(island.cx, island.cy, island.r * 2.6, drawerInset)
+        if (island) flyTo(island.cx, island.cy, island.r * 2.6, drawerInset, 0, TOP_BAR)
       } else if (last.startsWith('b:')) {
         const [a, b] = last.slice(2).split(/[|~]/).map((f) => world.islands.find((i) => i.family === f))
-        if (a && b) flyTo((a.cx + b.cx) / 2, (a.cy + b.cy) / 2, Math.max(Math.abs(a.cx - b.cx), Math.abs(a.cy - b.cy)) + 380, drawerInset)
+        if (a && b) flyTo((a.cx + b.cx) / 2, (a.cy + b.cy) / 2, Math.max(Math.abs(a.cx - b.cx), Math.abs(a.cy - b.cy)) + 380, drawerInset, 0, TOP_BAR)
       }
     }
     seen.current = selection.length
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selection, measured])
 
-  function down(event: ReactPointerEvent<SVGSVGElement>) {
-    travel.current = 0
-    if ((event.target as Element).closest('[data-world-item]') || viewRef.current.k === 1) return
-    drag.current = { x: event.clientX, y: event.clientY }
-    event.currentTarget.setPointerCapture(event.pointerId)
-  }
-  function move(event: ReactPointerEvent<SVGSVGElement>) {
-    if (!drag.current) return
-    const dx = event.clientX - drag.current.x, dy = event.clientY - drag.current.y
-    travel.current += Math.abs(dx) + Math.abs(dy)
-    drag.current = { x: event.clientX, y: event.clientY }
+  // Pressing anywhere on the map (an island, a mark, open water) and dragging moves it; a press that hardly moves is a click.
+  // Capture is taken only once the pointer has really moved, so clicks on marks and bridges are untouched.
+  function panBy(dx: number, dy: number) {
     const v = viewRef.current
     const cur = geometry(v.k, v.x, v.y)
     paint({ ...v, x: cur.tx + dx - cur.cx, y: cur.ty + dy - cur.cy, glide: false })
+  }
+  function down(event: ReactPointerEvent<HTMLDivElement>) {
+    if (event.button !== 0) return
+    stopMotion()
+    const g = grip.current
+    pointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY })
+    if (pointers.current.size === 1) {
+      travel.current = 0
+      Object.assign(g, { dragging: false, startX: event.clientX, startY: event.clientY, lastX: event.clientX, lastY: event.clientY, lastT: performance.now(), vx: 0, vy: 0, pinch: 0 })
+    } else {
+      const [a, b] = [...pointers.current.values()]
+      g.pinch = Math.hypot(a.x - b.x, a.y - b.y)
+      travel.current = 99
+    }
+  }
+  function move(event: ReactPointerEvent<HTMLDivElement>) {
+    const known = pointers.current.get(event.pointerId)
+    if (!known) return
+    known.x = event.clientX; known.y = event.clientY
+    const g = grip.current
+    if (pointers.current.size >= 2) {
+      const [a, b] = [...pointers.current.values()]
+      const dist = Math.hypot(a.x - b.x, a.y - b.y)
+      const rect = surface.current!.getBoundingClientRect()
+      if (g.pinch > 0 && dist > 0) zoomTo((current) => current * (dist / g.pinch), (a.x + b.x) / 2 - rect.left, (a.y + b.y) / 2 - rect.top, false)
+      g.pinch = dist
+      return
+    }
+    if (!g.dragging) {
+      if (Math.hypot(event.clientX - g.startX, event.clientY - g.startY) < 4) return
+      g.dragging = true
+      surface.current?.setPointerCapture(event.pointerId)
+    }
+    const now = performance.now(), dx = event.clientX - g.lastX, dy = event.clientY - g.lastY, dt = Math.max(1, now - g.lastT)
+    travel.current += Math.abs(dx) + Math.abs(dy)
+    g.vx = 0.8 * (dx / dt) + 0.2 * g.vx; g.vy = 0.8 * (dy / dt) + 0.2 * g.vy
+    Object.assign(g, { lastX: event.clientX, lastY: event.clientY, lastT: now })
+    panBy(dx, dy)
+  }
+  function up(event: ReactPointerEvent<HTMLDivElement>) {
+    pointers.current.delete(event.pointerId)
+    const g = grip.current
+    if (pointers.current.size === 1) { const [rest] = [...pointers.current.values()]; Object.assign(g, { dragging: true, lastX: rest.x, lastY: rest.y, lastT: performance.now(), vx: 0, vy: 0, pinch: 0 }); return }
+    if (pointers.current.size > 0) return
+    // let go with some speed: the map drifts on and settles
+    if (g.dragging && !calm() && performance.now() - g.lastT < 90 && Math.hypot(g.vx, g.vy) > 0.15) {
+      let vx = g.vx * 16, vy = g.vy * 16
+      const drift = () => {
+        vx *= 0.93; vy *= 0.93
+        if (Math.hypot(vx, vy) < 0.4) { momentum.current = 0; return }
+        panBy(vx, vy)
+        momentum.current = requestAnimationFrame(drift)
+      }
+      momentum.current = requestAnimationFrame(drift)
+    }
+    g.dragging = false
   }
 
   // progressive detail: what is shown depends on how far in the view is
@@ -308,7 +423,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     const site = siteById.get(id)
     if (!site) return
     setQuery(''); setSearchOpen(false); setFocus(null); setHint(false)
-    flyTo(site.x, site.y, Math.min(box.w, box.h) / (3.4 * fit))
+    flyTo(site.x, site.y, Math.min(box.w, box.h) / (3.4 * fit), drawer ? drawerInset : 0, 0, TOP_BAR)
     setInfo({ item: `v:${id}`, x: box.w / 2, y: box.h / 2 })
   }
   function pickTheorem(id: number) {
@@ -318,7 +433,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     setQuery(''); setSearchOpen(false); setInfo(null); setFocus(id); setHint(false)
     if (pts.length) {
       const xs = pts.map((p) => p.x), ys = pts.map((p) => p.y)
-      flyTo((Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2, Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)) * 1.25 + 160, 0, box.w > 760 ? 360 : 0)
+      flyTo((Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2, Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)) * 1.25 + 420, drawer ? drawerInset : 0, box.w > 760 ? 360 : 0, TOP_BAR)
     }
   }
 
@@ -349,6 +464,24 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   // trees overlap properly only when they are big enough to see: one merged path before that
   const close = lod >= 1.85
 
+  // opening a link: put the map where the address says
+  useEffect(() => {
+    if (!measured || ready.current) return
+    const p = boot.current
+    const at = p.get('at')?.split(',').map(Number)
+    const placed = !!at && at.length === 3 && at.every(Number.isFinite)
+    if (placed) {
+      const [wx, wy, kk] = at, z = Math.min(MAX_ZOOM, Math.max(1, kk)), s = fit * z, c = centred(s)
+      paint({ k: z, x: box.w / 2 - wx * s - c.cx, y: box.h / 2 - wy * s - c.cy, glide: false })
+    }
+    const theorem = Number(p.get('theorem')), method = p.get('method')
+    if (theorem && data.theorems.some((t) => t.id === theorem)) { if (placed) setFocus(theorem); else pickTheorem(theorem) }
+    else if (method && siteById.has(method)) { if (placed) setInfo({ item: `v:${method}`, x: box.w / 2, y: box.h / 2 + 30 }); else pickMethod(method) }
+    window.setTimeout(() => { ready.current = true }, 900)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [measured])
+  useEffect(() => { if (ready.current) setParam('theorem', focus === null ? null : String(focus)) }, [focus])
+  useEffect(() => { if (ready.current) setParam('method', info?.item.startsWith('v:') ? info.item.slice(2) : null) }, [info])
   const sink = (id: string) => ({ '--h': (world.siteHeight.get(id) ?? 0.5) + 0.04 }) as React.CSSProperties
   // what a method dot and its lettering look like right now: one place, so dots and names always agree
   const siteState = (s: (typeof world.sites)[number]) => {
@@ -364,15 +497,16 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
 
   return <section ref={page} data-theme={theme.id} className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
     <div className="world-stage" ref={stage}>
-      <svg ref={svg} className="world-svg" width={box.w} height={box.h} role="group" aria-label="A map of islands of proof methods joined by bridges"
+      <div className="world-surface" ref={surface}
         onClick={(event) => { if (travel.current < 4 && !(event.target as Element).closest('[data-world-item]')) clearAll() }}
-        onPointerDown={down} onPointerMove={move} onPointerUp={() => { drag.current = null }} onPointerCancel={() => { drag.current = null }}
+        onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
         onDoubleClick={(event) => {
           if ((event.target as Element).closest('[data-world-item]')) return
           const rect = event.currentTarget.getBoundingClientRect()
           zoomTo((current) => current * 2, event.clientX - rect.left, event.clientY - rect.top, true)
-        }}
-        >
+        }}>
+      <div className="world-layer" ref={layer} style={{ width: bw * raster.current, height: bh * raster.current, transform: layerTransform(rested) }}>
+      <svg ref={svg} className="world-svg" width={bw * raster.current} height={bh * raster.current} viewBox={`${bx} ${by} ${bw} ${bh}`} role="group" aria-label="A map of islands of proof methods joined by bridges">
         <defs>
           <pattern id="w-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
             <path d="M0,0V5" stroke={INK} strokeWidth="1" />
@@ -388,8 +522,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
             <stop offset="1" stopColor={theme.hue(i.family).land} stopOpacity="0" />
           </radialGradient>)}
         </defs>
-        <rect width={box.w} height={box.h} fill={SEA} />
-        <g className="world-camera" ref={camera} style={{ transform: `translate(${rested.tx.toFixed(1)}px, ${rested.ty.toFixed(1)}px) scale(${rested.s.toFixed(4)})` }}>
+        <g className="world-camera">
           <LandLayer world={world} theme={theme} close={close} />
           {seaOn && world.islands.map((i) => <g key={`flood-${i.family}`} clipPath={`url(#w-clip-${i.family})`} pointerEvents="none">
             <g filter="url(#w-goo)" fill={theme.id === 'ink' ? '#7fa3af' : '#4f8cc8'} fillOpacity="0.9">
@@ -495,6 +628,8 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
           })}
         </g>
       </svg>
+      </div>
+      </div>
       <div className="world-deepen" aria-hidden="true" />
       {seaOn && <figure className="world-sea-quote" lang="fr">
         <blockquote>« La mer avance insensiblement et sans bruit… elle finit par entourer la substance rétive. »</blockquote>

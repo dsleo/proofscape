@@ -17,6 +17,7 @@ function errorText(error: unknown) { return error instanceof Error ? error.messa
 
 export default function App() {
   const [tab, setTab] = useState<Tab>(initialTab)
+  const [homeKey, setHomeKey] = useState(0)
   const [index, setIndex] = useState<CollectionIndex | null>(null)
   const [indexError, setIndexError] = useState('')
 
@@ -33,12 +34,13 @@ export default function App() {
     url.searchParams.set('tab', next === 'explore' ? 'historical' : 'library')
     window.history.replaceState(null, '', url)
     setTab(next)
+    if (next === 'explore') setHomeKey((n) => n + 1)
     if (next === 'library') setWantIndex(true)
     window.scrollTo({ top: 0 })
   }
 
   return <div className="dataset-page">
-    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home"><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
+    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home" onClick={(event) => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey) { event.preventDefault(); go('explore') } }}><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
     <main className="collection-main">
       <header className="collection-intro">
         <h1>{tab === 'explore' ? 'How do different proofs reach the same theorem?' : 'Proof Diversity Explorer'}</h1>
@@ -48,12 +50,12 @@ export default function App() {
       </header>
 
       <nav className="proof-track-tabs" role="tablist" aria-label="Section">
-        <button id="explore-tab" type="button" className="proof-track-tab" role="tab" aria-selected={tab === 'explore'} aria-controls="collection-results" onClick={() => go('explore')}>Explore <span>150 curated results</span></button>
-        <button id="library-tab" type="button" className="proof-track-tab" role="tab" aria-selected={tab === 'library'} aria-controls="collection-results" onClick={() => go('library')} onPointerEnter={() => setWantIndex(true)} onFocus={() => setWantIndex(true)}>Library <span>3 datasets</span></button>
+        <a id="explore-tab" href="?tab=historical" className="proof-track-tab" role="tab" aria-selected={tab === 'explore'} aria-controls="collection-results" onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey) { event.preventDefault(); go('explore') } }}>Explore <span>150 curated results</span></a>
+        <a id="library-tab" href="?tab=library" className="proof-track-tab" role="tab" aria-selected={tab === 'library'} aria-controls="collection-results" onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey) { event.preventDefault(); go('library') } }} onPointerEnter={() => setWantIndex(true)} onFocus={() => setWantIndex(true)}>Library <span>3 datasets</span></a>
       </nav>
 
       <div id="collection-results" role="tabpanel" aria-labelledby={tab === 'explore' ? 'explore-tab' : 'library-tab'}>
-        {tab === 'explore' ? <HistoricalResults onOpenLibrary={() => go('library')} /> : <Library index={index} indexError={indexError} />}
+        {tab === 'explore' ? <HistoricalResults key={homeKey} onOpenLibrary={() => go('library')} /> : <Library index={index} indexError={indexError} />}
       </div>
     </main>
     <footer className="proofscape-footer"><a href="https://github.com/dsleo/proofscape">Source and dataset notes</a></footer>

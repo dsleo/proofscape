@@ -70,3 +70,7 @@
 .historical-sources-note { max-width: 800px; margin: 25px 0 0; border-top: 1px solid var(--line); padding-top: 12px; color: #80766b; font-size: 10px; line-height: 1.55; }
 @media (max-width: 760px) { .historical-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } .historical-search { grid-column: 1 / -1; } }
 @media (max-width: 520px) { .historical-entry { grid-template-columns: 28px minmax(0, 1fr); gap: 8px; } .historical-entry-main > header { align-items: flex-start; flex-direction: column; gap: 6px; } .historical-controls { grid-template-columns: 1fr; } .historical-search { grid-column: auto; } }
+
+.historical-links { margin: 4px 0 0; font: 13px 'CMU Sans', sans-serif; color: #7b7268; }
+.historical-links a { color: #79521f; }
+.historical-entry { scroll-margin-top: 12px; }
