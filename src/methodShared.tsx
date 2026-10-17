@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import type { RefObject } from 'react'
+import type { ReactNode, RefObject } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { MathText } from './MathText'
 import { cachedJson, dataUrl } from './collection'
@@ -139,12 +139,12 @@ export function useMethodSelection(data: MethodData, model: MethodModel) {
 }
 export type MethodSelection = ReturnType<typeof useMethodSelection>
 
-function Approach({ route, source, methods, names }: { route: RingRoute; source?: Route; methods: Set<string>; names: Map<string, Technique> }) {
+function Approach({ route, source, methods, names, open }: { route: RingRoute; source?: Route; methods: Set<string>; names: Map<string, Technique>; open?: boolean }) {
   const reference = source ? primaryReference(source) : undefined
   const fromSource = source?.sketchStatus === 'source-extracted'
   const lead = route.techniques.find((id) => methods.has(id)) ?? route.techniques[0]
   const color = lead ? familyColor[names.get(lead)?.family ?? ''] : undefined
-  return <details className="ring-approach" style={{ borderLeftColor: color }}>
+  return <details className="ring-approach" style={{ borderLeftColor: color }} open={open || undefined}>
     <summary>
       <span className="ring-approach-tags">
         {route.techniques.map((id) => <span key={id} className={methods.has(id) ? 'ring-tag ring-tag-on' : 'ring-tag'} style={{ color: familyColor[names.get(id)?.family ?? ''] }}>{names.get(id)?.short ?? id}</span>)}
@@ -160,31 +160,54 @@ function Approach({ route, source, methods, names }: { route: RingRoute; source?
   </details>
 }
 
-function TheoremCard({ theorem, entry, source, methods, names, heading, onOpen }: { theorem: RingTheorem; entry: Entry | undefined; source: Map<string, Route>; methods: Set<string>; names: Map<string, Technique>; heading: string; onOpen: (id: number) => void }) {
-  const [statement, setStatement] = useState(false)
+function TheoremCard({ theorem, entry, source, methods, names, onOpen }: { theorem: RingTheorem; entry: Entry | undefined; source: Map<string, Route>; methods: Set<string>; names: Map<string, Technique>; onOpen: (id: number) => void }) {
+  const [statementOpen, setStatementOpen] = useState(false)
+  const [detail, setDetail] = useState(false)
   const used = theorem.routes.filter((route) => !route.excluded && route.techniques.some((id) => methods.has(id)))
-  const others = theorem.routes.filter((route) => !used.includes(route))
-  const hidden = others.filter((route) => route.excluded).length
-  const shown = others.filter((route) => !route.excluded)
-  return <article className="ring-card">
+  const others = theorem.routes.filter((route) => !used.includes(route) && !route.excluded)
+  const title = entry ? <MathText text={displayTitle(entry)} /> : theorem.name
+  const approach = (route: RingRoute, open?: boolean) => <Approach key={route.id} route={route} source={source.get(route.id)} methods={methods} names={names} open={open} />
+  // the whole card opens the full view; the controls inside it keep their own job
+  return <article className="ring-card" onClick={(event) => { if (!(event.target as Element).closest('button, summary, a, .ring-statement, .ring-approach')) setDetail(true) }}>
     <header className="ring-card-head">
       <span className="ring-number">{String(theorem.id).padStart(3, '0')}</span>
-      <h3>{entry ? <MathText text={displayTitle(entry)} /> : theorem.name}</h3>
+      <h3><button type="button" className="ring-title" onClick={() => setDetail(true)}>{title}</button></h3>
       <button type="button" className="ring-open" onClick={() => onOpen(theorem.id)}>Open in course results <ArrowUpRight size={12} aria-hidden="true" /></button>
     </header>
-    {entry && <div className={statement ? 'ring-statement ring-statement-open' : 'ring-statement'}>
-      <MathText text={entry.statement} />
-      <button type="button" onClick={() => setStatement((value) => !value)}>{statement ? 'Collapse statement' : 'Full statement'}</button>
-    </div>}
-    <div className="ring-approaches-label">Approaches matching {heading}</div>
-    <div className="ring-approaches">
-      {used.map((route) => <Approach key={route.id} route={route} source={source.get(route.id)} methods={methods} names={names} />)}
-    </div>
-    {(shown.length > 0 || hidden > 0) && <details className="ring-others">
-      <summary>{shown.length} other approach{shown.length === 1 ? '' : 'es'}{hidden > 0 ? `, ${hidden} omitted as duplicate or incomplete` : ''}</summary>
-      {shown.map((route) => <Approach key={route.id} route={route} source={source.get(route.id)} methods={methods} names={names} />)}
+    {entry && <div className={statementOpen ? 'ring-statement ring-statement-open' : 'ring-statement'} role="button" tabIndex={0} aria-expanded={statementOpen} title={statementOpen ? 'Show less' : 'Show the whole statement'}
+      onClick={() => setStatementOpen((value) => !value)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setStatementOpen((value) => !value) } }}><MathText text={entry.statement} /></div>}
+    <div className="ring-approaches">{used.map((route) => approach(route))}</div>
+    {others.length > 0 && <details className="ring-others">
+      <summary>{others.length} other approach{others.length === 1 ? '' : 'es'}</summary>
+      {others.map((route) => approach(route))}
     </details>}
+    {detail && <TheoremDialog number={theorem.id} title={title} statement={entry?.statement} onClose={() => setDetail(false)} onOpen={() => onOpen(theorem.id)}>
+      {theorem.routes.filter((route) => !route.excluded).map((route) => approach(route, true))}
+    </TheoremDialog>}
   </article>
+}
+
+/** One theorem in full, centred over the map: the whole statement and every approach, opened. */
+function TheoremDialog({ number, title, statement, onClose, onOpen, children }: { number: number; title: ReactNode; statement?: string; onClose: () => void; onOpen: () => void; children: ReactNode }) {
+  const close = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    close.current?.focus()
+    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') { event.stopPropagation(); onClose() } }
+    window.addEventListener('keydown', onKey, true)
+    return () => window.removeEventListener('keydown', onKey, true)
+  }, [onClose])
+  return <div className="ring-dialog-back" onClick={(event) => { event.stopPropagation(); if (event.target === event.currentTarget) onClose() }}>
+    <section className="ring-dialog" role="dialog" aria-modal="true" aria-label={typeof title === 'string' ? title : `Theorem ${number}`}>
+      <header>
+        <span className="ring-number">{String(number).padStart(3, '0')}</span>
+        <h3>{title}</h3>
+        <button type="button" ref={close} className="ring-dialog-close" onClick={onClose} aria-label="Close">×</button>
+      </header>
+      {statement && <div className="ring-statement ring-statement-open"><MathText text={statement} /></div>}
+      <div className="ring-approaches">{children}</div>
+      <button type="button" className="ring-open ring-dialog-open" onClick={onOpen}>Open in course results <ArrowUpRight size={12} aria-hidden="true" /></button>
+    </section>
+  </div>
 }
 
 export function SelectionBar({ sel, lead, results }: { sel: MethodSelection; lead: string; results: RefObject<HTMLDivElement | null> }) {
@@ -202,13 +225,12 @@ export function ResultsPanel({ sel, model, catalog, hint, results, onOpenEntry }
   const entries = useMemo(() => new Map(catalog.entries.map((entry) => [entry.id, entry])), [catalog])
   const routes = useMemo(() => new Map(catalog.entries.flatMap((entry) => entry.routes.map((route) => [route.id, route] as const))), [catalog])
   const shown = sel.matched.slice(0, sel.count)
-  const heading = sel.selection.map(sel.label).join(' · ')
   return <div className="ring-panel" ref={results}>
     {sel.selection.length === 0 ? <p className="ring-hint">{hint}</p> : <>
       <p className="ring-summary">Theorems matching all of: {sel.selection.map((item, index) => <span key={item}>{index > 0 && ', '}<strong>{sel.label(item)}</strong></span>)}</p>
       {sel.matched.length === 0 && <p className="ring-hint">No theorem fits all of these. Remove one of them.</p>}
       <div className="ring-results">
-        {shown.map((theorem) => <TheoremCard key={theorem.id} theorem={theorem} entry={entries.get(theorem.id)} source={routes} methods={sel.methods} names={model.names} heading={heading} onOpen={onOpenEntry} />)}
+        {shown.map((theorem) => <TheoremCard key={theorem.id} theorem={theorem} entry={entries.get(theorem.id)} source={routes} methods={sel.methods} names={model.names} onOpen={onOpenEntry} />)}
       </div>
       {sel.matched.length > sel.count && <button type="button" className="ring-more" onClick={() => sel.setCount(sel.matched.length)}>Show all {sel.matched.length}</button>}
     </>}

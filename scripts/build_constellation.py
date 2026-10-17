@@ -418,6 +418,8 @@ def main() -> None:
         for route in entry["routes"]:
             tag = tags[route["id"]]
             excluded = tag.get("flag") if tag.get("flag") in EXCLUDED else None
+            if excluded:
+                continue  # set aside by the reviewers: kept in the data files, left out of the app
             routes.append({
                 "id": route["id"],
                 "title": route["title"],

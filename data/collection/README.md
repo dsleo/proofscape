@@ -37,6 +37,21 @@ To validate and publish the static catalog, run `npm run build:historical-catalo
 
 The build (`npm run build:constellation`, also part of `build:collection`) validates the tags against the vocabulary and the catalog, then publishes `constellation.json`. Method pairs are **strict**: a pair joins two methods only when each one distinguishes its route from another route of the same theorem, so methods shared by two routes, or used together inside one route, never form a pair (triples follow the same rule across three routes). The build asserts this rule on every run.
 
+### Approaches set aside from the map
+
+In `route-techniques.json`, a route's `flag` can mark it as one the reviewers set aside. 136 of the 462 catalogued approaches carry such a flag, and `build_constellation.py` leaves them out of `constellation.json`, so they never appear on the map, in its pairs, or in its theorem lists. They stay in the catalog, in `route-techniques.json`, and in the Explore list, where every theorem keeps all of its recorded approaches (30 theorems would be left with a single approach otherwise).
+
+| Flag | Routes | Meaning | Example (the set-aside route is the last one) |
+| --- | --- | --- | --- |
+| `near-duplicate` | 72 | the same idea as a kept approach | Binomial theorem: induct on the exponent; count subsets by size; *multiply out and group monomials* |
+| `incomplete` | 29 | the sketch is too thin to say which methods it uses | Cauchy–Schwarz: *Hölder as a more general route* |
+| `not-the-stated-theorem` | 15 | it proves a stronger or different statement | Weak law of large numbers: *truncation plus Borel–Cantelli* (the strong law) |
+| `dependent` | 14 | it is a kept approach in disguise, or needs it | Mean value theorem: *subtract the secant line and apply Rolle* |
+| `sketch-mismatch` | 4 | the title and the sketch describe different proofs | Irrationality of √p: *lowest-terms divisibility* |
+| `not-a-route` | 2 | a remark or caution, not a proof | Primes in an arithmetic progression: *do not conflate these special cases with Dirichlet's theorem* |
+
+The flags are the reviewers' judgement, not source-verified, and several are debatable. To bring a route back onto the map, remove its `flag` (and check that it has techniques) and run `npm run build:constellation`.
+
 The technique order in [`ring-order.json`](ring-order.json) (from the retired Ring view; it still orders the method list) is generated from rival-pair co-occurrence and checked in so it stays stable. Regenerate it deliberately with `npm run build:ring-order`.
 
 The World view's island and method positions live in [`world-layout.json`](world-layout.json). They are generated from the data (islands pulled together by the rival pairs that cross between them; within an island, methods that appear in the same theorems sit closer and bridging methods face the coast of the island they link to) and then nudged by a fixed-seed search so the bridges cross as little as the graph allows (the method graph contains K5, so one crossing is unavoidable) and never run over a third island. The result is checked in so the map stays stable. Regenerate deliberately with `npm run build:world`.
