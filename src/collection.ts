@@ -16,7 +16,6 @@ export type SourceCount = { kind: Kind; dataset: string; count: number }
 export type CollectionIndex = {
   version: number
   sources: SourceCount[]
-  items: Item[]
 }
 
 export type InformalProof = {
@@ -54,20 +53,25 @@ export type FormalRecord = {
 export type RecordDetail = InformalRecord | FormalRecord
 
 const collectionBase = `${import.meta.env.BASE_URL}data/collection/`
-let indexPromise: Promise<CollectionIndex> | undefined
 
-async function responseJson<T>(response: Response): Promise<T> {
-  if (!response.ok) throw new Error(`Collection request failed (${response.status}).`)
-  return response.json() as Promise<T>
+// One request per file, however many parts of the page ask for it; a failed request may be tried again.
+const downloads = new Map<string, Promise<unknown>>()
+export function cachedJson<T>(url: string): Promise<T> {
+  let download = downloads.get(url)
+  if (!download) {
+    download = fetch(url).then((response) => {
+      if (!response.ok) throw new Error(`Request for ${url.split('/').pop()} failed (${response.status}).`)
+      return response.json()
+    }).catch((error) => { downloads.delete(url); throw error })
+    downloads.set(url, download)
+  }
+  return download as Promise<T>
 }
 
-export function loadIndex(): Promise<CollectionIndex> {
-  indexPromise ??= fetch(`${collectionBase}index.json`).then((response) => responseJson<CollectionIndex>(response)).catch((error) => {
-    indexPromise = undefined
-    throw error
-  })
-  return indexPromise
-}
+export const dataUrl = (name: string) => `${collectionBase}${name}`
+export const loadIndex = () => cachedJson<CollectionIndex>(dataUrl('index.json'))
+/** The statements of one source (a dataset name from the index). */
+export const loadItems = (dataset: string) => cachedJson<{ items: Item[] }>(dataUrl(`index-${dataset}.json`)).then((part) => part.items)
 
 export async function loadRecord(recordFile: string, signal?: AbortSignal): Promise<RecordDetail> {
   const path = `${collectionBase}records/${recordFile}`

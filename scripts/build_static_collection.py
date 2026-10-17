@@ -60,14 +60,20 @@ def main() -> None:
                 record_path.write_bytes(gzip.compress(payload, compresslevel=9, mtime=0))
                 source_counts[(kind, row["dataset"])] += 1
 
+    # index.json holds only the source list; each source's statements live in index-<dataset>.json,
+    # so the library downloads the one source being read, not all three
     payload = {
-        "version": 1,
+        "version": 2,
         "sources": [{"kind": kind, "dataset": dataset, "count": count} for (kind, dataset), count in sorted(source_counts.items())],
-        "items": items,
     }
     OUTPUT.mkdir(parents=True, exist_ok=True)
+    for old_index in OUTPUT.glob("index*.json"):
+        old_index.unlink()
     (OUTPUT / "index.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    total_bytes = sum(path.stat().st_size for path in records_dir.iterdir() if path.is_file()) + (OUTPUT / "index.json").stat().st_size
+    for _kind, dataset in source_counts:
+        part = {"items": [item for item in items if item["dataset"] == dataset]}
+        (OUTPUT / f"index-{dataset}.json").write_text(json.dumps(part, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    total_bytes = sum(path.stat().st_size for path in records_dir.iterdir() if path.is_file()) + sum(path.stat().st_size for path in OUTPUT.glob("index*.json"))
     print(f"Wrote {len(items):,} records ({total_bytes:,} static bytes) to {OUTPUT}")
 
 

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { RefObject } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { MathText } from './MathText'
+import { cachedJson, dataUrl } from './collection'
 import { displayRouteTitle, displayTitle, primaryReference, ProofMathText, SourceCitation } from './historicalShared'
 import type { Catalog, Entry, Route } from './historicalShared'
 import './ring.css'
@@ -19,7 +20,7 @@ export type MethodData = {
   triples: Record<string, number[]>
 }
 
-const dataUrl = `${import.meta.env.BASE_URL}data/collection/constellation.json`
+export const constellationUrl = dataUrl('constellation.json')
 export const familyColor: Record<string, string> = { logic: '#6a4f7a', discrete: '#4f6b5a', algebraic: '#8a4a5a', analytic: '#3f5a7a', geometric: '#7a6a2a' }
 export const familyName: Record<string, string> = { logic: 'Logic', discrete: 'Combinatorics', algebraic: 'Algebra', analytic: 'Analysis', geometric: 'Geometry' }
 export const PAGE = 4
@@ -45,10 +46,7 @@ export function useMethodData() {
   const [data, setData] = useState<MethodData | null>(null)
   const [error, setError] = useState('')
   useEffect(() => {
-    fetch(dataUrl).then(async (response) => {
-      if (!response.ok) throw new Error(`Method index request failed (${response.status}).`)
-      return response.json() as Promise<MethodData>
-    }).then(setData).catch((reason: unknown) => setError(reason instanceof Error ? reason.message : 'The method index could not be loaded.'))
+    cachedJson<MethodData>(constellationUrl).then(setData).catch((reason: unknown) => setError(reason instanceof Error ? reason.message : 'The method index could not be loaded.'))
   }, [])
   const model = useMemo(() => {
     if (!data) return null

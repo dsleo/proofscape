@@ -18,6 +18,8 @@ const MAX_ZOOM = 8
 // how far past the window's edge the map may be dragged, as a share of the window: enough that any point can be brought to the middle
 const OVERSCROLL = 0.62
 const TOP_BAR = 64 // the strip the top bar covers
+const TOP_BAR_PHONE = 120 // two rows of buttons
+const PHONE = 760, PHONE_HOME = 1.9 // below this width the map opens zoomed in, so that names and marks can be read and touched
 const ROUTE_COLOURS = ['#ae6b1f', '#2f6f73', '#7a4a73', '#5f7a2f', '#8a3b3b']
 const DRAWER = 460
 // the rising sea (Grothendieck, Récoltes et Semailles): the water climbs the islands' own contours
@@ -68,14 +70,16 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   const page = useRef<HTMLElement>(null)
   const sea = useRef({ raf: 0, phase: 'idle' as 'idle' | 'rise' | 'hold' | 'ebb', level: 0, from: 0, t0: 0 })
   const [searchOpen, setSearchOpen] = useState(false)
+  const [active, setActive] = useState(-1) // the highlighted match in the search list
   const travel = useRef(0)
   const theme = themes[0]
   const { paper: PAPER, ink: INK, accent: GOLD, sea: SEA } = theme
   const seen = useRef(0)
   const { selection, live, chosen, label } = sel
+  const act = useRef({ pan: (_dx: number, _dy: number) => {}, zoom: (_factor: number) => {}, home: () => {} })
   // one click shows a short note over the item; a double click (or the note's button) selects it and lists its theorems
-  const choose = (item: string) => ({
-    tabIndex: 0, role: 'button' as const,
+  const choose = (item: string, tabbable = true) => ({
+    tabIndex: tabbable ? 0 : -1, role: 'button' as const,
     onClick: (event: React.MouseEvent) => {
       if (travel.current >= 4) return
       const rect = stage.current?.getBoundingClientRect()
@@ -121,6 +125,14 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') { setInfo(null); endSea(); return }
       const el = event.target as HTMLElement | null
+      // the map answers the keyboard unless focus is in a field or a panel that has its own use for the keys
+      if (!event.metaKey && !event.ctrlKey && !event.altKey && !(el instanceof Element && el.closest('input, textarea, select, [contenteditable], .world-drawer, .world-info, .world-theorem, [role=listbox]'))) {
+        const moves: Record<string, [number, number]> = { ArrowLeft: [90, 0], ArrowRight: [-90, 0], ArrowUp: [0, 90], ArrowDown: [0, -90] }
+        if (moves[event.key]) { event.preventDefault(); act.current.pan(...moves[event.key]); return }
+        if (event.key === '+' || event.key === '=') { act.current.zoom(1.5); return }
+        if (event.key === '-' || event.key === '_') { act.current.zoom(1 / 1.5); return }
+        if (event.key === '0') { act.current.home(); return }
+      }
       if (event.metaKey || event.ctrlKey || event.altKey || event.key.length !== 1 || (el instanceof Element && el.closest('input, textarea, [contenteditable]'))) return
       typed = (typed + event.key.toLowerCase()).slice(-3)
       if (typed === 'sga' || typed === 'sea') { typed = ''; startSea() }
@@ -222,15 +234,20 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     cancelAnimationFrame(momentum.current); momentum.current = 0
   }
   // carry the view to a world point so that a span of `span` fills the part of the window the drawer leaves free
-  function flyTo(wx: number, wy: number, span: number, inset = 0, left = 0, top = 0) {
+  function flyTo(wx: number, wy: number, span: number, inset = 0, left = 0, top = 0, bottom = 0) {
     stopMotion()
-    const free = box.w - inset - left, freeH = box.h - top
+    const free = box.w - inset - left, freeH = box.h - top - bottom
     const kk = Math.min(MAX_ZOOM, Math.max(1, Math.min(free, freeH) / (span * fit)))
     const s = fit * kk
     const c = centred(s)
     paint({ k: kk, x: left + free / 2 - wx * s - c.cx, y: top + freeH / 2 - wy * s - c.cy, glide: true })
   }
-  const drawerInset = box.w > 760 ? Math.min(DRAWER, box.w * 0.5) : 0
+  const phone = box.w <= PHONE
+  const coarse = useMemo(() => window.matchMedia('(pointer: coarse)').matches, []) // a finger needs more room than a pointer
+  const home = phone ? PHONE_HOME : 1
+  const topBar = phone ? TOP_BAR_PHONE : TOP_BAR
+  const drawerInset = phone ? 0 : Math.min(DRAWER, box.w * 0.5)
+  const sheet = drawer && phone ? Math.round(box.h * 0.5) : 0 // on a phone the drawer is a sheet over the lower half
 
   // wheel and trackpad: a scroll or a pinch sets a zoom target about the pointer, and the camera eases toward it
   const calm = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -290,10 +307,10 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
       const last = selection[selection.length - 1]
       if (last.startsWith('i:')) {
         const island = world.islands.find((i) => i.family === last.slice(2))
-        if (island) flyTo(island.cx, island.cy, island.r * 2.6, drawerInset, 0, TOP_BAR)
+        if (island) flyTo(island.cx, island.cy, island.r * 2.6, drawerInset, 0, topBar, sheet)
       } else if (last.startsWith('b:')) {
         const [a, b] = last.slice(2).split(/[|~]/).map((f) => world.islands.find((i) => i.family === f))
-        if (a && b) flyTo((a.cx + b.cx) / 2, (a.cy + b.cy) / 2, Math.max(Math.abs(a.cx - b.cx), Math.abs(a.cy - b.cy)) + 380, drawerInset, 0, TOP_BAR)
+        if (a && b) flyTo((a.cx + b.cx) / 2, (a.cy + b.cy) / 2, Math.max(Math.abs(a.cx - b.cx), Math.abs(a.cy - b.cy)) + 380, drawerInset, 0, topBar, sheet)
       }
     }
     seen.current = selection.length
@@ -419,12 +436,16 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     const theorems = data.theorems.filter((t) => t.usableRoutes > 0 && plain(t.name).includes(plain(q))).slice(0, 6)
     return { methods, theorems }
   }, [query, data, model])
+  // the matches as one list, so that the arrow keys can walk it
+  const options = useMemo(() => found ? [...found.methods.map((t) => ({ id: t.id, theorem: false })), ...found.theorems.map((t) => ({ id: String(t.id), theorem: true }))] : [], [found])
+  const choosePick = (option: { id: string; theorem: boolean } | undefined) => { if (option) { if (option.theorem) pickTheorem(Number(option.id)); else pickMethod(option.id) } }
   function pickMethod(id: string) {
     const site = siteById.get(id)
     if (!site) return
     setQuery(''); setSearchOpen(false); setFocus(null); setHint(false)
-    flyTo(site.x, site.y, Math.min(box.w, box.h) / (3.4 * fit), drawer ? drawerInset : 0, 0, TOP_BAR)
-    setInfo({ item: `v:${id}`, x: box.w / 2, y: box.h / 2 })
+    flyTo(site.x, site.y, Math.min(box.w, box.h) / (3.4 * fit), drawer ? drawerInset : 0, 0, topBar, sheet)
+    // the note goes just under the method, which now sits in the middle of what the panels leave free
+    setInfo({ item: `v:${id}`, x: (box.w - (drawer ? drawerInset : 0)) / 2, y: topBar + (box.h - topBar - sheet) / 2 })
   }
   function pickTheorem(id: number) {
     const theorem = data.theorems.find((t) => t.id === id)
@@ -433,7 +454,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     setQuery(''); setSearchOpen(false); setInfo(null); setFocus(id); setHint(false)
     if (pts.length) {
       const xs = pts.map((p) => p.x), ys = pts.map((p) => p.y)
-      flyTo((Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2, Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)) * 1.25 + 420, drawer ? drawerInset : 0, box.w > 760 ? 360 : 0, TOP_BAR)
+      flyTo((Math.min(...xs) + Math.max(...xs)) / 2, (Math.min(...ys) + Math.max(...ys)) / 2, Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)) * 1.25 + 420, drawer ? drawerInset : 0, phone ? 0 : 360, topBar, Math.max(sheet, phone ? Math.round(box.h * 0.4) + 56 : 0))
     }
   }
 
@@ -474,6 +495,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
       const [wx, wy, kk] = at, z = Math.min(MAX_ZOOM, Math.max(1, kk)), s = fit * z, c = centred(s)
       paint({ k: z, x: box.w / 2 - wx * s - c.cx, y: box.h / 2 - wy * s - c.cy, glide: false })
     }
+    if (!placed && home !== 1 && !p.get('theorem') && !p.get('method')) paint({ k: home, x: 0, y: 0, glide: false })
     const theorem = Number(p.get('theorem')), method = p.get('method')
     if (theorem && data.theorems.some((t) => t.id === theorem)) { if (placed) setFocus(theorem); else pickTheorem(theorem) }
     else if (method && siteById.has(method)) { if (placed) setInfo({ item: `v:${method}`, x: box.w / 2, y: box.h / 2 + 30 }); else pickMethod(method) }
@@ -481,7 +503,13 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [measured])
   useEffect(() => { if (ready.current) setParam('theorem', focus === null ? null : String(focus)) }, [focus])
+  useEffect(() => { document.title = `${focusTheorem ? `${focusTheorem.name.replace(/\$/g, '')} — ` : 'Map of proof methods — '}Proofscape` }, [focusTheorem])
   useEffect(() => { if (ready.current) setParam('method', info?.item.startsWith('v:') ? info.item.slice(2) : null) }, [info])
+  // the land itself answers a click like its name does
+  const landHit = useMemo(() => {
+    const ctx = document.createElement('canvas').getContext('2d')
+    return (wx: number, wy: number) => ctx ? world.islands.find((i) => ctx.isPointInPath(new Path2D(i.path), wx, wy)) : undefined
+  }, [world])
   const sink = (id: string) => ({ '--h': (world.siteHeight.get(id) ?? 0.5) + 0.04 }) as React.CSSProperties
   // what a method dot and its lettering look like right now: one place, so dots and names always agree
   const siteState = (s: (typeof world.sites)[number]) => {
@@ -495,13 +523,46 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     return { item, on, noted, shown, showLabel, faint, inFocus }
   }
 
+  act.current = { pan: (dx, dy) => panBy(dx, dy), zoom: (factor) => zoomTo((current) => current * factor, box.w / 2, box.h / 2, true), home: () => paint({ k: home, x: 0, y: 0, glide: true }) }
   return <section ref={page} data-theme={theme.id} className={`world-page${drawer ? ' world-open' : ''}`} style={{ '--grain': theme.grain, background: SEA } as React.CSSProperties} aria-label="A world of proof methods and the theorems they prove">
+    <h1 className="sr-only">Proofscape: a map of proof methods</h1>
+    <div className="world-hud">
+      {onClose && <button type="button" className="world-back" onClick={onClose}>← <span className="world-long">Results list</span><span className="world-short">List</span></button>}
+      {onLibrary && <button type="button" className="world-back" onClick={onLibrary}>Library</button>}
+      <div className="world-search">
+        <input type="search" role="combobox" aria-expanded={searchOpen && options.length > 0} aria-controls="world-found" aria-autocomplete="list" aria-activedescendant={active >= 0 ? `world-option-${active}` : undefined}
+          value={query} placeholder="Find a method or a theorem" aria-label="Find a method or a theorem on the map" autoComplete="off"
+          onChange={(event) => { if (event.target.value.trim().toLowerCase() === 'sga') { setQuery(''); setSearchOpen(false); startSea(); return } setQuery(event.target.value); setSearchOpen(true); setActive(-1) }} onFocus={() => setSearchOpen(true)}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') { setSearchOpen(false); (event.target as HTMLInputElement).blur() }
+            else if (event.key === 'ArrowDown' && options.length) { event.preventDefault(); setSearchOpen(true); setActive((a) => (a + 1) % options.length) }
+            else if (event.key === 'ArrowUp' && options.length) { event.preventDefault(); setActive((a) => (a <= 0 ? options.length : a) - 1) }
+            else if (event.key === 'Enter') choosePick(options[Math.max(0, active)])
+          }} />
+        {searchOpen && found && <div className="world-found" id="world-found" role="listbox" aria-label="Matches">
+          {options.length === 0 && <p>No match.</p>}
+          {found.methods.length > 0 && <span className="world-found-head">Methods</span>}
+          {found.methods.map((t, n) => <button type="button" tabIndex={-1} key={t.id} id={`world-option-${n}`} role="option" aria-selected={active === n} onClick={() => pickMethod(t.id)}><span><b className="world-found-glyph">{t.glyph}</b> {t.label}</span><em>{familyName[t.family]} › {groupName.get(t.group ?? '')}</em></button>)}
+          {found.theorems.length > 0 && <span className="world-found-head">Theorems</span>}
+          {found.theorems.map((t, n) => <button type="button" tabIndex={-1} key={t.id} id={`world-option-${found.methods.length + n}`} role="option" aria-selected={active === found.methods.length + n} onClick={() => pickTheorem(t.id)}><MathText text={t.name} /></button>)}
+        </div>}
+      </div>
+      <SelectionBar sel={sel} results={results} lead="" />
+      <button type="button" className="world-toggle" aria-expanded={drawer} onClick={() => setDrawer((v) => !v)}>{drawer ? <>Hide<span className="world-long"> theorems</span></> : <><span className="world-long">Theorems &amp; methods</span><span className="world-short">Browse</span></>}</button>
+    </div>
     <div className="world-stage" ref={stage}>
       <div className="world-surface" ref={surface}
-        onClick={(event) => { if (travel.current < 4 && !(event.target as Element).closest('[data-world-item]')) clearAll() }}
+        tabIndex={0} role="group" aria-label="The map. Arrow keys move it; plus and minus zoom; zero resets the view." aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown + - 0"
+        onClick={(event) => {
+          if (travel.current >= 4 || (event.target as Element).closest('[data-world-item]')) return
+          const rect = event.currentTarget.getBoundingClientRect(), g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y)
+          const island = landHit((event.clientX - rect.left - g.tx) / g.s, (event.clientY - rect.top - g.ty) / g.s)
+          if (island) { setHint(false); setInfo({ item: `i:${island.family}`, x: event.clientX - rect.left, y: event.clientY - rect.top }) } else clearAll()
+        }}
         onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
         onDoubleClick={(event) => {
           if ((event.target as Element).closest('[data-world-item]')) return
+          setInfo(null)
           const rect = event.currentTarget.getBoundingClientRect()
           zoomTo((current) => current * 2, event.clientX - rect.left, event.clientY - rect.top, true)
         }}>
@@ -601,9 +662,9 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
           {world.sites.map((s) => {
             const { item, on, noted, shown, faint } = siteState(s), shrunk = Math.min(1, 46 / (2 * world.radius(s.use) * scale)), r = world.radius(s.use) * shrunk, c = theme.hue(s.family)
             return <g key={item} className="world-sinkable" style={sink(s.id)}><g data-world-item className="world-site" onPointerEnter={() => { const g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y); setTip({ id: s.id, x: g.tx + s.x * g.s, y: g.ty + (s.y - r) * g.s }); startTransition(() => setHoverSite(s.id)) }} onPointerLeave={() => { setTip(null); startTransition(() => setHoverSite(null)) }} opacity={shown ? (faint ? (focus !== null ? 0.1 : 0.25) : 1) : 0} pointerEvents={shown ? undefined : 'none'}
-              aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...choose(item)}>
+              aria-label={`${s.short}, ${s.use} theorem${s.use === 1 ? '' : 's'}`} {...choose(item, lod >= 2)}>
               {(on || noted) && <circle cx={s.x} cy={s.y} r={r + 7} fill="none" stroke={INK} strokeWidth="2" strokeDasharray="4 4" />}
-              <circle cx={s.x} cy={s.y} r={r} fill="transparent" />
+              <circle cx={s.x} cy={s.y} r={Math.max(r, coarse ? 16 / scale : 0)} fill="transparent" />
               <text className="world-glyph" x={s.x} y={s.y} dy="0.34em" textAnchor="middle"
                 style={{ fontSize: `${(world.markFont(s) * shrunk).toFixed(1)}px`, fill: theme.id === 'ink' ? c.dark : theme.label.fill, stroke: focusColour.get(s.id) ?? theme.label.halo(c), strokeWidth: focusColour.has(s.id) ? 7 : 5 }}>{model.names.get(s.id)?.glyph ?? '•'}</text>
             </g>
@@ -615,14 +676,14 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
           </g>)}
           {world.sites.map((s) => {
             const { shown, showLabel, faint } = siteState(s), l = labelAt.get(s.id), c = theme.hue(s.family)
-            return l && shown && showLabel ? <g key={`name-${s.id}`} className="world-sinkable" style={sink(s.id)}><text data-world-item className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor} opacity={faint ? (focus !== null ? 0.1 : 0.3) : 1} {...choose(`v:${s.id}`)}
+            return l && shown && showLabel ? <g key={`name-${s.id}`} className="world-sinkable" style={sink(s.id)}><text data-world-item className="world-label" x={fixed(l.x)} y={fixed(l.y)} textAnchor={l.anchor} opacity={faint ? (focus !== null ? 0.1 : 0.3) : 1} {...choose(`v:${s.id}`, false)}
               style={{ fill: theme.label.fill, stroke: theme.label.halo(c), fontSize: `${Math.min(25, 16.5 / scale).toFixed(1)}px` }}>{s.short}</text></g> : null
           })}
           {world.islands.map((i) => {
             const item = `i:${i.family}`, on = chosen.has(item), faded = dim && !live.islands.has(i.family) && !on
             const below = i.below, c = theme.hue(i.family)
             return <g key={item} data-world-item className="world-island-name" onPointerEnter={() => startTransition(() => setHover(i.family))} onPointerLeave={() => startTransition(() => setHover(null))} opacity={faded ? 0.4 : 1} aria-label={`${familyName[i.family]} island`} {...choose(item)}
-              transform={`translate(${fixed(i.cx)} ${fixed(below ? i.bottom + 34 : i.top - 26)}) scale(${(tone(k) ** 1.1).toFixed(3)})`}>
+              transform={`translate(${fixed(i.cx)} ${fixed(below ? i.bottom + 34 : i.top - 26)}) scale(${((tone(k) ** 1.1) * (phone ? 2 : 1)).toFixed(3)})`}>
               <Ribbon text={familyName[i.family].toUpperCase()} size={21} paper={PAPER} color={on ? GOLD : c.dark} ink={c.dark} tail={c.halo} />
             </g>
           })}
@@ -666,35 +727,14 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
         </ol>
         <button type="button" className="world-info-open" onClick={() => onOpenEntry(focusTheorem.id)}>Open the theorem</button>
       </div>}
-      {hint && <div className="world-hint">Click for a quick note, double-click to list theorems · scroll or pinch to zoom, drag to move</div>}
+      {hint && <div className="world-hint"><span className="world-hint-mouse">Click for a quick note, double-click to list theorems · scroll or pinch to zoom, drag to move</span><span className="world-hint-touch">Pinch to zoom, drag to move, tap an island or a mark</span></div>}
       <div className="world-controls">
         <div className="world-zoom" role="group" aria-label="Map zoom">
           <button type="button" onClick={() => zoomTo(k * 1.6, box.w / 2, box.h / 2, true)} aria-label="Zoom in" disabled={k >= MAX_ZOOM}>+</button>
           <button type="button" onClick={() => zoomTo(k / 1.6, box.w / 2, box.h / 2, true)} aria-label="Zoom out" disabled={k <= 1}>−</button>
-          <button type="button" onClick={() => paint({ k: 1, x: 0, y: 0, glide: true })} aria-label="Reset view" disabled={k === 1}>⌂</button>
+          <button type="button" onClick={() => act.current.home()} aria-label="Reset view" disabled={Math.abs(k - home) < 0.01}>⌂</button>
         </div>
       </div>
-    </div>
-    <div className="world-hud">
-      {onClose && <button type="button" className="world-back" onClick={onClose}>← Results list</button>}
-      {onLibrary && <button type="button" className="world-back" onClick={onLibrary}>Library</button>}
-      <div className="world-search">
-        <input type="search" value={query} placeholder="Find a method or a theorem" aria-label="Find a method or a theorem on the map" autoComplete="off"
-          onChange={(event) => { if (event.target.value.trim().toLowerCase() === 'sga') { setQuery(''); setSearchOpen(false); startSea(); return } setQuery(event.target.value); setSearchOpen(true) }} onFocus={() => setSearchOpen(true)}
-          onKeyDown={(event) => {
-            if (event.key === 'Escape') { setSearchOpen(false); (event.target as HTMLInputElement).blur() }
-            if (event.key === 'Enter' && found) { if (found.methods[0]) pickMethod(found.methods[0].id); else if (found.theorems[0]) pickTheorem(found.theorems[0].id) }
-          }} />
-        {searchOpen && found && <div className="world-found" role="listbox">
-          {found.methods.length === 0 && found.theorems.length === 0 && <p>No match.</p>}
-          {found.methods.length > 0 && <span className="world-found-head">Methods</span>}
-          {found.methods.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickMethod(t.id)}><span><b className="world-found-glyph">{t.glyph}</b> {t.label}</span><em>{familyName[t.family]} › {groupName.get(t.group ?? '')}</em></button>)}
-          {found.theorems.length > 0 && <span className="world-found-head">Theorems</span>}
-          {found.theorems.map((t) => <button type="button" key={t.id} role="option" aria-selected="false" onClick={() => pickTheorem(t.id)}><MathText text={t.name} /></button>)}
-        </div>}
-      </div>
-      <SelectionBar sel={sel} results={results} lead="" />
-      <button type="button" className="world-toggle" aria-expanded={drawer} onClick={() => setDrawer((v) => !v)}>{drawer ? 'Hide theorems' : 'Theorems & methods'}</button>
     </div>
     <aside className="world-drawer" hidden={!drawer} aria-label="Theorems and methods">
       <ResultsPanel sel={sel} model={model} catalog={catalog} results={results} onOpenEntry={onOpenEntry}

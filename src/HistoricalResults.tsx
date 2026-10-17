@@ -1,17 +1,20 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 import { ExternalLink, Search } from 'lucide-react'
 import { MathText } from './MathText'
-// the two map views carry their own code (terrain generator, selection model): load them when asked for
-let warmed = false
+import ErrorBoundary from './ErrorBoundary'
+import { cachedJson, dataUrl } from './collection'
+// the map carries its own code (terrain generator, selection model): load it when asked for
 const loadWorld = () => {
-  if (!warmed) { warmed = true; void fetch(`${import.meta.env.BASE_URL}data/collection/constellation.json`).catch(() => undefined) } // warm the cache for the map's data
+  void cachedJson(dataUrl('constellation.json')).catch(() => undefined) // start the map's data now; the map asks for the same request
   return import('./WorldMap')
 }
 const WorldMap = lazy(loadWorld)
 import { displayRouteTitle, displayTitle, primaryReference, ProofExcerpt, ProofMathText, RelatedSourceLinks, SourceCitation } from './historicalShared'
 import type { Catalog, Entry } from './historicalShared'
 
-const catalogUrl = `${import.meta.env.BASE_URL}data/collection/historical-proof-catalog.json`
+const catalogUrl = dataUrl('historical-proof-catalog.json')
 const fieldOptions = ['Algebra', 'Analysis', 'Combinatorics', 'Geometry', 'Logic & foundations', 'Number theory', 'Probability', 'Topology']
 const levelOptions = ['School', 'Undergraduate', 'Graduate']
 
@@ -24,6 +27,20 @@ function levelMatches(entry: Entry, selected: string) {
 
 // shown at once while the map's data and code arrive, so the page behind it is never seen
 function MapBoot() { return <div className="world-boot" role="status" aria-live="polite"><span>Loading the map…</span></div> }
+function MapNotice({ onBack, children }: { onBack: () => void; children: ReactNode }) {
+  return <div className="world-boot" role="alert"><span>{children}</span><button type="button" className="world-boot-back" onClick={onBack}>← Results list</button></div>
+}
+
+// The map owns the whole window. It is drawn straight into the page body and the rest of the page is made inert,
+// so that keyboard focus and screen readers stay on what can be seen.
+function MapHost({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    const root = document.getElementById('root')
+    root?.setAttribute('inert', '')
+    return () => root?.removeAttribute('inert')
+  }, [])
+  return createPortal(children, document.body)
+}
 
 export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: () => void } = {}) {
   const [catalog, setCatalog] = useState<Catalog | null>(null)
@@ -37,12 +54,9 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
   const pendingPage = useRef<number | null>(null)
   const [arrivedAt, setArrivedAt] = useState<number | null>(null)
 
+  const touched = useRef(false) // the address names an entry only once the reader has moved, or arrived by a link that did
   useEffect(() => {
-    document.title = 'Historical results — Proofscape'
-    fetch(catalogUrl).then(async (response) => {
-      if (!response.ok) throw new Error(`Historical catalog request failed (${response.status}).`)
-      return response.json() as Promise<Catalog>
-    }).then(setCatalog).catch((reason: unknown) => setError(reason instanceof Error ? reason.message : 'The historical catalog could not be loaded.'))
+    cachedJson<Catalog>(catalogUrl).then(setCatalog).catch((reason: unknown) => setError(reason instanceof Error ? reason.message : 'The historical catalog could not be loaded.'))
   }, [])
 
   const filtered = useMemo(() => {
@@ -62,9 +76,13 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
   // a link to the entry now showing, so any result can be shared
   const shownId = filtered[page - 1]?.id
   useEffect(() => {
+    const entry = filtered[page - 1]
+    document.title = view === 'world' ? 'Map of proof methods — Proofscape' : entry ? `${displayTitle(entry).replace(/\$/g, '')} — Proofscape` : 'Proofscape — explore how proofs differ'
+  }, [view, filtered, page])
+  useEffect(() => {
     if (wantedEntry.current !== null) return
     const url = new URL(window.location.href)
-    if (view === 'list') { url.searchParams.set('view', 'list'); ['sel', 'theorem', 'method', 'at'].forEach((name) => url.searchParams.delete(name)); if (shownId !== undefined) url.searchParams.set('entry', String(shownId)) }
+    if (view === 'list') { url.searchParams.set('view', 'list'); ['sel', 'theorem', 'method', 'at'].forEach((name) => url.searchParams.delete(name)); if (shownId !== undefined && touched.current) url.searchParams.set('entry', String(shownId)) }
     else { url.searchParams.delete('view'); url.searchParams.delete('entry') }
     window.history.replaceState(null, '', url)
   }, [view, shownId])
@@ -74,7 +92,7 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
     if (!catalog || wantedEntry.current === null) return
     const index = catalog.entries.findIndex((entry) => entry.id === wantedEntry.current)
     wantedEntry.current = null
-    if (index >= 0) setPage(index + 1)
+    if (index >= 0) { touched.current = true; setPage(index + 1) }
   }, [catalog])
 
   function showOnMap(id: number) {
@@ -90,6 +108,7 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
   function openEntry(id: number) {
     const index = catalog?.entries.findIndex((entry) => entry.id === id) ?? -1
     if (index < 0) return
+    touched.current = true
     pendingPage.current = query || field || level ? index + 1 : null
     clearFilters()
     setPage(index + 1)
@@ -103,23 +122,32 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
     document.getElementById(`entry-${arrivedAt}`)?.scrollIntoView({ block: 'start' })
   }, [arrivedAt, view, page, catalog])
 
-  return <section className="historical-view" id="collection-results" role="tabpanel" aria-labelledby="historical-tab" aria-label="Historical results with multiple proof approaches">
+  if (view === 'world') {
+    const back = () => setView('list')
+    return <MapHost>
+      <ErrorBoundary fallback={<MapNotice onBack={back}>The map could not be loaded.</MapNotice>}>
+        {catalog
+          ? <Suspense fallback={<MapBoot />}><WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={back} onLibrary={onOpenLibrary} /></Suspense>
+          : error ? <MapNotice onBack={back}>The historical results are unavailable. {error}</MapNotice> : <MapBoot />}
+      </ErrorBoundary>
+    </MapHost>
+  }
+
+  const move = (change: (current: number) => number) => { touched.current = true; setPage(change) }
+  return <section className="historical-view" aria-label="Course-level results with their proof approaches">
     <header className="historical-intro">
-      <p className="historical-eyebrow">CURATED RESEARCH INDEX · {catalog?.entryCount ?? '—'} RESULTS · {catalog?.approachRecordCount ?? '—'} APPROACHES</p>
-      <h1>Course-level results, different ways in.</h1>
-      <p>This catalog collects central results taught from secondary school through graduate courses and records distinct proof approaches. It excludes contest problems and isolated exercises.</p>
+      <p className="historical-eyebrow">{catalog?.entryCount ?? '—'} results · {catalog?.approachRecordCount ?? '—'} approaches</p>
+      <p>Central results taught from secondary school through graduate courses, with their distinct proof approaches. Contest problems and isolated exercises are left out.</p>
     </header>
 
     <div className="historical-viewswitch" role="group" aria-label="Course results view">
-      <button type="button" aria-pressed={view === 'list'} onClick={() => setView('list')}>List</button>
-      <button type="button" aria-pressed={view === 'world'} onClick={() => setView('world')} onPointerEnter={() => void loadWorld()} onFocus={() => void loadWorld()}>World</button>
+      <button type="button" aria-pressed={false} onClick={() => setView('world')} onPointerEnter={() => void loadWorld()} onFocus={() => void loadWorld()}>Show the map</button>
     </div>
 
-    {view !== 'list' ? (catalog ? <Suspense fallback={<MapBoot />}><WorldMap catalog={catalog} onOpenEntry={openEntry} onClose={() => setView('list')} onLibrary={onOpenLibrary} /></Suspense> : error ? <div className="collection-offline" role="alert">The historical results are unavailable. {error}</div> : <MapBoot />) : <>
     <div className="historical-controls" aria-label="Search and filter historical results">
-      <label className="historical-search"><Search size={16} aria-hidden="true" /><span className="sr-only">Search theorem, field, approach, or source</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search a result, approach, or source…" /></label>
-      <label><span>Field</span><select value={field} onChange={(event) => setField(event.target.value)}><option value="">All fields</option>{fieldOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
-      <label><span>Course level</span><select value={level} onChange={(event) => setLevel(event.target.value)}><option value="">All levels</option>{levelOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
+      <label className="historical-search"><Search size={16} aria-hidden="true" /><span className="sr-only">Search theorem, field, approach, or source</span><input value={query} onChange={(event) => { touched.current = true; setQuery(event.target.value) }} placeholder="Search a result, approach, or source…" /></label>
+      <label><span>Field</span><select value={field} onChange={(event) => { touched.current = true; setField(event.target.value) }}><option value="">All fields</option>{fieldOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
+      <label><span>Course level</span><select value={level} onChange={(event) => { touched.current = true; setLevel(event.target.value) }}><option value="">All levels</option>{levelOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
     </div>
 
     {(query || field || level) && <div className="historical-count" aria-live="polite"><span>{filtered.length} matching results</span><button type="button" onClick={clearFilters}>Clear filters</button></div>}
@@ -149,8 +177,7 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
       {catalog && filtered.length === 0 && <div className="collection-empty">No results match these filters. Try a broader search.</div>}
     </div>}
 
-    {catalog && filtered.length > 0 && <nav className="historical-pagination" aria-label="Historical results pagination"><button type="button" onClick={() => setPage((current) => Math.max(1, current - 1))} disabled={page <= 1}>← Previous</button><span>{page} / {filtered.length}</span><button type="button" onClick={() => setPage((current) => Math.min(filtered.length, current + 1))} disabled={page >= filtered.length}>Next →</button></nav>}
-    </>}
+    {catalog && filtered.length > 0 && <nav className="historical-pagination" aria-label="Historical results pagination"><button type="button" onClick={() => move((current) => Math.max(1, current - 1))} disabled={page <= 1}>← Previous</button><span>{page} / {filtered.length}</span><button type="button" onClick={() => move((current) => Math.min(filtered.length, current + 1))} disabled={page >= filtered.length}>Next →</button></nav>}
     {catalog && <details className="historical-source-register"><summary>Full source register <span>{Object.keys(catalog.sources).length} catalog-wide records</span></summary>
       <p>The full source register is the bibliography for the whole index: theorem sources, books and papers, plus discovery leads such as community discussions and datasets. Not every register item supports a specific approach; direct route citations appear with that approach above.</p>
       {Object.values(catalog.sources).map((source) => <section key={source.id}>

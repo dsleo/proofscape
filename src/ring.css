@@ -18,12 +18,12 @@
 .ring-card-head { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: baseline; gap: 10px; }
 .ring-number { color: #a18460; font: 11px 'CMU Typewriter', monospace; }
 .ring-card-head h3 { margin: 0; color: #332d26; font: 400 clamp(18px, 2.2vw, 23px)/1.25 'CMU Serif', serif; }
-.ring-open { display: inline-flex; align-items: center; gap: 4px; border: 0; background: transparent; color: #7a4911; font: 700 10px 'CMU Sans', sans-serif; white-space: nowrap; cursor: pointer; }
+.ring-open { display: inline-flex; align-items: center; gap: 4px; border: 0; background: transparent; color: #7a4911; font: 700 11px 'CMU Sans', sans-serif; white-space: nowrap; cursor: pointer; }
 .ring-open:hover { text-decoration: underline; }
 .ring-statement { position: relative; margin: 10px 0 12px 48px; border-left: 3px solid #a96f2d; background: #f5eee2; padding: 9px 12px; color: #383128; font: 400 14px/1.6 'CMU Serif', serif; max-height: 4.9em; overflow: hidden; }
 .ring-statement-open { max-height: none; }
-.ring-statement button { position: absolute; right: 8px; bottom: 5px; border: 0; background: #f5eee2; padding: 0 0 0 8px; color: #7a4911; font: 700 9px 'CMU Sans', sans-serif; cursor: pointer; }
-.ring-approaches-label { margin: 0 0 7px 48px; color: #89602e; font: 700 9px 'CMU Sans', sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.ring-statement button { position: absolute; right: 8px; bottom: 5px; border: 0; background: #f5eee2; padding: 0 0 0 8px; color: #7a4911; font: 700 11px 'CMU Sans', sans-serif; cursor: pointer; }
+.ring-approaches-label { margin: 0 0 7px 48px; color: #89602e; font: 700 11px 'CMU Sans', sans-serif; letter-spacing: .13em; text-transform: uppercase; }
 .ring-approaches { display: grid; gap: 6px; margin-left: 48px; }
 
 .ring-approach { border: 1px solid #e0d6c8; border-left: 4px solid #b9ae9f; background: #fffdf8; }
@@ -32,7 +32,7 @@
 .ring-approach > summary::before { content: '▸'; position: absolute; left: 11px; top: 9px; color: #9b8b75; font-size: 11px; }
 .ring-approach[open] > summary::before { content: '▾'; }
 .ring-approach > summary:hover { background: #fbf6ea; }
-.ring-approach-tags { display: flex; flex-wrap: wrap; gap: 3px 10px; font: 700 10px 'CMU Sans', sans-serif; }
+.ring-approach-tags { display: flex; flex-wrap: wrap; gap: 3px 10px; font: 700 11px 'CMU Sans', sans-serif; }
 .ring-tag { opacity: .62; }
 .ring-tag-on { opacity: 1; }
 .ring-tag-quiet { color: #8b8073; font-weight: 400; opacity: 1; }
@@ -40,14 +40,14 @@
 .ring-warning { color: #9a5a12; font-size: 12px; }
 .ring-approach-body { border-top: 1px solid #efe7d9; padding: 9px 12px 10px 30px; }
 .ring-sketch { color: #554d44; font-size: 12px; line-height: 1.65; }
-.ring-evidence { margin-top: 8px; color: #8b8073; font-size: 10px; }
+.ring-evidence { margin-top: 8px; color: #8b8073; font-size: 11px; }
 .ring-evidence-source { color: #5f6f3f; }
 .ring-others { margin: 12px 0 0 48px; border-top: 1px solid #e7ded2; }
-.ring-others > summary { min-height: 32px; padding-top: 7px; color: #79521f; font: 700 10px 'CMU Sans', sans-serif; cursor: pointer; }
+.ring-others > summary { min-height: 32px; padding-top: 7px; color: #79521f; font: 700 11px 'CMU Sans', sans-serif; cursor: pointer; }
 .ring-others .ring-approach { margin-top: 6px; }
 
 .ring-hit, .ring-triangle { cursor: pointer; }
-.ring-note { max-width: 780px; margin: 6px 0 0; color: #80766b; font-size: 10px; line-height: 1.55; }
+.ring-note { max-width: 780px; margin: 6px 0 0; color: #80766b; font-size: 11px; line-height: 1.55; }
 
 .historical-viewswitch { display: inline-flex; margin: 0 0 12px; border: 1px solid #b99b70; }
 .historical-viewswitch button { min-height: 34px; border: 0; background: #fffdf8; padding: 0 16px; color: #674c29; font: 11px 'CMU Sans', sans-serif; cursor: pointer; }

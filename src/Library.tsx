@@ -1,15 +1,15 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import { ChevronDown, ExternalLink, Search } from 'lucide-react'
+import { ChevronDown, ExternalLink, Search, Shuffle } from 'lucide-react'
 import { MathText } from './MathText'
-import { loadRecord, type CollectionIndex, type FormalProof, type FormalRecord, type InformalProof, type InformalRecord, type Item, type RecordDetail } from './collection'
+import { loadItems, loadRecord, type CollectionIndex, type FormalProof, type FormalRecord, type InformalProof, type InformalRecord, type Item, type RecordDetail } from './collection'
 import './library.css'
 
 type SourceId = 'proofwiki-math' | 'Nemotron-Math-Proofs-v2' | 'NuminaMath-LEAN-Proof-Artifacts'
 
 // What each corpus really is, said where a reader chooses between them.
-const sources: { id: SourceId; label: string; badge: string; blurb: string; url: string }[] = [
-  { id: 'proofwiki-math', label: 'ProofWiki', badge: 'Written by people', url: 'https://huggingface.co/datasets/avewright/proofwiki-math',
+const sources: { id: SourceId; label: string; badge: string; blurb: string; url: string; featured?: string }[] = [
+  { id: 'proofwiki-math', label: 'ProofWiki', badge: 'Written by people', featured: "Pythagoras's Theorem", url: 'https://huggingface.co/datasets/avewright/proofwiki-math',
     blurb: 'Theorems and the proofs contributors wrote for them on ProofWiki. Several proofs of one statement are often genuinely different arguments.' },
   { id: 'Nemotron-Math-Proofs-v2', label: 'Nemotron', badge: 'AI-generated', url: 'https://huggingface.co/datasets/nvidia/Nemotron-Math-Proofs-v2',
     blurb: 'Competition-style problems with proofs written by a single language model (DeepSeek-V4-Pro). Proofs of one problem are samples from the same model, so they tend to take the same route.' },
@@ -21,17 +21,40 @@ const params = () => new URLSearchParams(window.location.search)
 const isInformal = (record: RecordDetail): record is InformalRecord => 'proofs' in record
 const errorText = (error: unknown) => (error instanceof Error ? error.message : 'The record could not be loaded.')
 const sourceOf = (id: string | null) => sources.find((s) => s.id === id)
+// a record's id begins with the name of its source
+const prefixSource: Record<string, SourceId> = { proofwiki: 'proofwiki-math', nemotron: 'Nemotron-Math-Proofs-v2', numina: 'NuminaMath-LEAN-Proof-Artifacts' }
 function startSource(): SourceId {
   const p = params()
   if (sourceOf(p.get('source'))) return p.get('source') as SourceId
+  const named = prefixSource[(p.get('id') ?? '').split(':')[0]]
+  if (named) return named
   return p.get('kind') === 'formal' ? 'NuminaMath-LEAN-Proof-Artifacts' : 'proofwiki-math'
 }
 
-function proofLabel(proof: InformalProof) {
+const words = (text: string) => text.toLocaleLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean)
+// "pythagorean" should find "Pythagoras": long words are compared by their first letters
+const stemOf = (term: string) => (term.length >= 6 ? term.slice(0, Math.max(4, term.length - 3)) : term)
+/** How well an item answers the search terms: 0 means not at all. A hit in the title counts for more than one in the statement. */
+function score(terms: string[], titleWords: string[], bodyWords: string[], raw: string) {
+  let total = 0
+  for (const term of terms) {
+    const stem = stemOf(term)
+    if (titleWords.some((w) => w.startsWith(stem))) total += 3
+    else if (bodyWords.some((w) => w.startsWith(stem))) total += 1
+    else if (raw.includes(term)) total += 0.5
+    else return 0
+  }
+  return total
+}
+/** One line to recognise a statement by in a list of matches. */
+function gist(item: Item) {
+  return (item.title ?? item.statement).replace(/\$|\\[a-z]+|[{}:]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 90)
+}
+
+function proofLabel(proof: InformalProof, number: number) {
   if (proof.method_cluster) return `${proof.method_cluster.id} · ${proof.method_cluster.name}`
   if (proof.content_type === 'proof_summary') return 'Human solution summary'
-  if (proof.origin === 'synthetic') return 'Model-written proof'
-  return 'Published proof'
+  return `Proof ${number}`
 }
 
 function ProofContent({ record, proofId }: { record: InformalRecord; proofId: string }) {
@@ -44,15 +67,15 @@ function ProofContent({ record, proofId }: { record: InformalRecord; proofId: st
   </>
 }
 
-function ProofDisclosure({ id, number, label, openProof, setOpenProof, selected, onCompare, compareDisabled, children }: {
-  id: string; number: number; label: string; openProof: string | null; setOpenProof: (value: string | null) => void
+function ProofDisclosure({ id, label, openProof, setOpenProof, selected, onCompare, compareDisabled, children }: {
+  id: string; label: string; openProof: string | null; setOpenProof: (value: string | null) => void
   selected: boolean; onCompare: (id: string) => void; compareDisabled: boolean; children: ReactNode
 }) {
   const open = openProof === id
   return <div className="collection-proof-row">
     <section className="collection-proof">
       <button type="button" className="collection-proof-toggle" aria-expanded={open} onClick={() => setOpenProof(open ? null : id)}>
-        <span className="collection-proof-number">{String(number).padStart(2, '0')}</span><span>{label}</span><ChevronDown size={17} aria-hidden="true" />
+        <span>{label}</span><ChevronDown size={17} aria-hidden="true" />
       </button>
       {open && <div className="collection-proof-body">{children}</div>}
     </section>
@@ -64,7 +87,7 @@ function InformalProofs({ record, openProof, setOpenProof, selected, onToggle }:
   record: InformalRecord; openProof: string | null; setOpenProof: (value: string | null) => void; selected: string[]; onToggle: (id: string) => void
 }) {
   const ready = selected.length === 2
-  const label = (id: string) => proofLabel(record.proofs.find((p) => p.proof_id === id)!)
+  const label = (id: string) => { const at = record.proofs.findIndex((p) => p.proof_id === id); return proofLabel(record.proofs[at], at + 1) }
   return <section className="collection-expanded" aria-label="Proofs">
     {record.answer && <p className="collection-answer"><span>Answer</span>{record.answer}</p>}
     <div className="collection-proofs-heading"><span>{record.proofs.length} {record.proofs.length === 1 ? 'proof' : 'proofs'}</span></div>
@@ -76,7 +99,7 @@ function InformalProofs({ record, openProof, setOpenProof, selected, onToggle }:
       </article>)}
     </div>}
     <div className="collection-proof-list">
-      {record.proofs.map((proof, index) => <ProofDisclosure key={proof.proof_id} id={proof.proof_id} number={index + 1} label={proofLabel(proof)} openProof={openProof} setOpenProof={setOpenProof}
+      {record.proofs.map((proof, index) => <ProofDisclosure key={proof.proof_id} id={proof.proof_id} label={proofLabel(proof, index + 1)} openProof={openProof} setOpenProof={setOpenProof}
         selected={selected.includes(proof.proof_id)} onCompare={onToggle} compareDisabled={selected.length === 2 && !selected.includes(proof.proof_id)}>
         <ProofContent record={record} proofId={proof.proof_id} />
       </ProofDisclosure>)}
@@ -118,38 +141,56 @@ function writeUrl(state: { source: SourceId; query: string; id: string | null; c
 export default function Library({ index, indexError }: { index: CollectionIndex | null; indexError: string }) {
   const start = useRef(params())
   const [source, setSource] = useState<SourceId>(startSource)
+  const [items, setItems] = useState<Item[] | null>(null)
+  const [itemsError, setItemsError] = useState('')
   const [query, setQuery] = useState(start.current.get('q') ?? '')
   const [id, setId] = useState<string | null>(start.current.get('id'))
   const [record, setRecord] = useState<RecordDetail | null>(null)
   const [recordError, setRecordError] = useState('')
   const [openProof, setOpenProof] = useState<string | null>(start.current.get('proof'))
   const [selected, setSelected] = useState<string[]>(start.current.getAll('compare').slice(0, 2))
+  const [matchesOpen, setMatchesOpen] = useState(false)
+  const [active, setActive] = useState(-1)
 
   const counts = useMemo(() => new Map(index?.sources.map((s) => [s.dataset, s.count]) ?? []), [index])
   const meta = sourceOf(source)!
 
-  // an old link names only a record: find its source
+  // only the source being read is downloaded
   useEffect(() => {
-    if (!index || !id) return
-    const item = index.items.find((candidate) => candidate.id === id)
-    if (item && sourceOf(item.dataset) && item.dataset !== source) setSource(item.dataset as SourceId)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index])
+    let live = true
+    setItems(null); setItemsError('')
+    loadItems(source).then((loaded) => { if (live) setItems(loaded) }).catch((error) => { if (live) setItemsError(errorText(error)) })
+    return () => { live = false }
+  }, [source])
 
+  // the library opens on a showcase statement, then those with the most proofs: that is where different routes can be compared
+  // (past twelve, a pile of proofs stops being a comparison, so the count is capped for ranking)
+  const ranked = useMemo(() => {
+    const rank = (item: Item) => (item.title && item.title === meta.featured ? -99 : -Math.min(item.n_proofs, 12))
+    return (items ?? []).slice().sort((a, b) => rank(a) - rank(b))
+  }, [items, meta.featured])
+  const searchable = useMemo(() => ranked.map((item) => ({
+    title: words(`${item.title ?? ''} ${(item.categories ?? []).join(' ')}`),
+    body: words(item.statement),
+    raw: `${item.title ?? ''} ${item.statement} ${(item.categories ?? []).join(' ')} ${item.source_id ?? ''}`.toLocaleLowerCase(),
+  })), [ranked])
+
+  const wanted = useDeferredValue(query)
   const filtered = useMemo(() => {
-    if (!index) return []
-    const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean)
-    return index.items.filter((item) => {
-      if (item.dataset !== source) return false
-      const text = `${item.title ?? ''} ${item.statement} ${(item.categories ?? []).join(' ')} ${item.source_id ?? ''}`.toLocaleLowerCase()
-      return terms.every((term) => text.includes(term))
+    const terms = words(wanted)
+    if (terms.length === 0) return ranked
+    const hits: { item: Item; points: number }[] = []
+    ranked.forEach((item, at) => {
+      const points = score(terms, searchable[at].title, searchable[at].body, searchable[at].raw)
+      if (points > 0) hits.push({ item, points })
     })
-  }, [index, source, query])
+    return hits.sort((a, b) => b.points - a.points).map((hit) => hit.item) // a stable sort: ties keep their order by proofs
+  }, [ranked, searchable, wanted])
 
-  // one statement at a time: the one named by the link, else the first match
+  // one statement at a time: the one named by the link, else the best match
   const found = id ? filtered.findIndex((item) => item.id === id) : -1
   const position = found >= 0 ? found : 0
-  const current: Item | null = filtered[position] ?? (id ? index?.items.find((item) => item.id === id) ?? null : null)
+  const current: Item | null = filtered[position] ?? (id ? ranked.find((item) => item.id === id) ?? null : null)
 
   useEffect(() => {
     if (!current) { setRecord(null); return }
@@ -160,30 +201,54 @@ export default function Library({ index, indexError }: { index: CollectionIndex 
     return () => controller.abort()
   }, [current?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => { writeUrl({ source, query, id: current?.id ?? null, compare: selected, proof: openProof }) }, [source, query, current?.id, selected, openProof])
+  // the address names a statement only once one has been chosen
+  useEffect(() => { writeUrl({ source, query, id, compare: selected, proof: openProof }) }, [source, query, id, selected, openProof])
+  useEffect(() => { document.title = `${current?.title ?? 'Library'} — Proofscape` }, [current?.title])
 
-  function go(next: number) {
-    const item = filtered[Math.min(filtered.length - 1, Math.max(0, next))]
-    if (item) { setId(item.id); setOpenProof(null); setSelected([]) }
+  function show(item: Item | undefined) {
+    if (!item) return
+    setId(item.id); setOpenProof(null); setSelected([]); setMatchesOpen(false); setActive(-1)
   }
-  function choose(next: SourceId) { setSource(next); setId(null); setQuery(''); setOpenProof(null); setSelected([]) }
+  const go = (next: number) => show(filtered[Math.min(filtered.length - 1, Math.max(0, next))])
+  const surprise = () => show(filtered[Math.floor(Math.random() * filtered.length)])
+  function choose(next: SourceId) { setSource(next); setId(null); setQuery(''); setOpenProof(null); setSelected([]); setMatchesOpen(false) }
   const toggle = (proofId: string) => setSelected((c) => c.includes(proofId) ? c.filter((v) => v !== proofId) : c.length < 2 ? [...c, proofId] : c)
 
+  const matches = query.trim() && matchesOpen ? filtered.slice(0, 8) : []
+  function onSearchKey(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Escape') { setMatchesOpen(false); setActive(-1) }
+    else if (event.key === 'ArrowDown' && matches.length) { event.preventDefault(); setActive((a) => (a + 1) % matches.length) }
+    else if (event.key === 'ArrowUp' && matches.length) { event.preventDefault(); setActive((a) => (a <= 0 ? matches.length : a) - 1) }
+    else if (event.key === 'Enter' && matches.length) { event.preventDefault(); show(matches[Math.max(0, active)]) }
+  }
+
   return <div className="library">
-    <div className="library-sources" role="tablist" aria-label="Library source">
-      {sources.map((s) => <button type="button" key={s.id} role="tab" aria-selected={s.id === source} onClick={() => choose(s.id)}>
+    <div className="library-sources" role="group" aria-label="Library source">
+      {sources.map((s) => <button type="button" key={s.id} aria-pressed={s.id === source} onClick={() => choose(s.id)}>
         <strong>{s.label}</strong><em>{s.badge}</em><span>{(counts.get(s.id) ?? 0).toLocaleString()}</span>
       </button>)}
     </div>
     <p className="library-blurb">{meta.blurb} <a href={meta.url} target="_blank" rel="noreferrer">Dataset <ExternalLink size={12} /></a></p>
-    {indexError && <div className="collection-offline" role="alert"><strong>Library unavailable.</strong> {indexError}</div>}
+    {(indexError || itemsError) && <div className="collection-offline" role="alert"><strong>Library unavailable.</strong> {indexError || itemsError}</div>}
 
     <div className="library-filters">
-      <label className="collection-search"><Search size={17} /><span className="sr-only">Search statements</span>
-        <input value={query} onChange={(event) => { setQuery(event.target.value); setId(null); setOpenProof(null); setSelected([]) }}
-          placeholder={source === 'proofwiki-math' ? 'Search statements, titles and ProofWiki categories…' : 'Search statements…'} /></label>
+      <div className="library-search">
+        <label className="collection-search"><Search size={17} /><span className="sr-only">Search statements</span>
+          <input value={query} role="combobox" aria-expanded={matches.length > 0} aria-controls="library-matches" aria-autocomplete="list" aria-activedescendant={active >= 0 ? `library-match-${active}` : undefined} autoComplete="off"
+            onChange={(event) => { setQuery(event.target.value); setId(null); setOpenProof(null); setSelected([]); setMatchesOpen(true); setActive(-1) }}
+            onFocus={() => setMatchesOpen(true)} onBlur={() => window.setTimeout(() => setMatchesOpen(false), 150)} onKeyDown={onSearchKey}
+            placeholder={source === 'proofwiki-math' ? 'Search statements, titles and ProofWiki categories…' : 'Search statements…'} /></label>
+        {matches.length > 0 && <ul className="library-matches" id="library-matches" role="listbox" aria-label="Matching statements">
+          {matches.map((item, at) => <li key={item.id} id={`library-match-${at}`} role="option" aria-selected={at === active} onMouseDown={(event) => { event.preventDefault(); show(item) }}>
+            <span>{gist(item)}</span><em>{item.n_proofs} proofs</em>
+          </li>)}
+          {filtered.length > matches.length && <li className="library-matches-more" role="presentation">{(filtered.length - matches.length).toLocaleString()} more: use the arrows below</li>}
+        </ul>}
+      </div>
+      <button type="button" className="library-surprise" onClick={surprise} disabled={filtered.length === 0}><Shuffle size={15} aria-hidden="true" /> Random statement</button>
     </div>
 
+    {!items && !itemsError && <div className="collection-loading" role="status">Loading the statements…</div>}
     {current && <article className="collection-item">
       <div className="collection-item-meta"><span>{sourceOf(current.dataset)?.label} · {sourceOf(current.dataset)?.badge}</span><span>{current.n_proofs} {current.n_proofs === 1 ? 'proof' : 'proofs'}</span></div>
       {current.title && <p className="collection-item-title">{current.title}</p>}
@@ -195,12 +260,12 @@ export default function Library({ index, indexError }: { index: CollectionIndex 
         : <FormalDuel record={record} />)}
       {record && <div className="collection-provenance"><span>Source ID: <code>{record.source_id}</code></span>{isInformal(record) && record.source_url && <a href={record.source_url} target="_blank" rel="noreferrer">Original <ExternalLink size={12} /></a>}</div>}
     </article>}
-    {index && !current && <div className="collection-empty">No statements match. Try a shorter search.</div>}
+    {items && !current && <div className="collection-empty">No statements match. Try a shorter search.</div>}
 
     {current && <nav className="collection-pagination" aria-label="Browse statements">
-      <button type="button" aria-label="Previous statement" disabled={position <= 0} onClick={() => go(position - 1)}>←</button>
+      <button type="button" disabled={position <= 0} onClick={() => go(position - 1)}>← Previous</button>
       <span>{(position + 1).toLocaleString()} / {filtered.length.toLocaleString()}</span>
-      <button type="button" aria-label="Next statement" disabled={position >= filtered.length - 1} onClick={() => go(position + 1)}>→</button>
+      <button type="button" disabled={position >= filtered.length - 1} onClick={() => go(position + 1)}>Next →</button>
     </nav>}
   </div>
 }

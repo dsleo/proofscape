@@ -1,5 +1,20 @@
-import katex from 'katex'
-import 'katex/dist/katex.min.css'
+import { useEffect, useState } from 'react'
+
+// KaTeX is large: it is fetched the first time a formula is shown, not with the page.
+type Katex = typeof import('katex').default
+let katexReady: Katex | null = null
+let katexLoading: Promise<void> | null = null
+function useKatex() {
+  const [katex, setKatex] = useState<Katex | null>(katexReady)
+  useEffect(() => {
+    if (katex) return
+    katexLoading ??= Promise.all([import('katex'), import('katex/dist/katex.min.css')]).then(([module]) => { katexReady = module.default })
+    let live = true
+    void katexLoading.then(() => { if (live) setKatex(katexReady) })
+    return () => { live = false }
+  }, [katex])
+  return katex
+}
 
 const DELIMITERS = /(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$\$[\s\S]*?\$\$|(?<!\\)\$(?:\\.|[^$])+?(?<!\\)\$)/g
 const PROOFWIKI_MACROS: Record<string, string> = {
@@ -400,11 +415,13 @@ function MathFragments({ text }: { text: string }) {
 }
 
 function MathDelimitedFragments({ text }: { text: string }) {
+  const katex = useKatex()
   return <>{text.split(DELIMITERS).map((part, index) => {
     const display = (part.startsWith('\\[') && part.endsWith('\\]')) || (part.startsWith('$$') && part.endsWith('$$'))
     const inline = (part.startsWith('\\(') && part.endsWith('\\)')) || (part.startsWith('$') && part.endsWith('$'))
     if (!display && !inline) return part
     const math = part.startsWith('\\') ? part.slice(2, -2) : display ? part.slice(2, -2) : part.slice(1, -1)
+    if (!katex) return <span className="dataset-math-pending" key={index}>{part}</span>
     try {
       const html = katex.renderToString(math, { displayMode: display, macros: PROOFWIKI_MACROS, throwOnError: false, trust: false })
       return <span className={display ? 'dataset-math-display' : 'dataset-math-inline'} key={index} dangerouslySetInnerHTML={{ __html: html }} />

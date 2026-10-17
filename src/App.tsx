@@ -21,12 +21,8 @@ export default function App() {
   const [index, setIndex] = useState<CollectionIndex | null>(null)
   const [indexError, setIndexError] = useState('')
 
-  useEffect(() => { document.title = 'Proofscape — explore how proofs differ' }, [])
-  // the library index is large: fetch it only when the library is opened (or about to be)
-  const [wantIndex, setWantIndex] = useState(tab === 'library')
-  useEffect(() => {
-    if (wantIndex) loadIndex().then(setIndex).catch((error) => setIndexError(errorText(error)))
-  }, [wantIndex])
+  // the source list is tiny; each source's statements are fetched by the library when it is opened
+  useEffect(() => { loadIndex().then(setIndex).catch((error) => setIndexError(errorText(error))) }, [])
 
   function go(next: Tab) {
     const url = new URL(window.location.href)
@@ -35,13 +31,14 @@ export default function App() {
     window.history.replaceState(null, '', url)
     setTab(next)
     if (next === 'explore') setHomeKey((n) => n + 1)
-    if (next === 'library') setWantIndex(true)
     window.scrollTo({ top: 0 })
   }
 
+  const plainClick = (event: React.MouseEvent) => event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey
   return <div className="dataset-page">
-    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home" onClick={(event) => { if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey) { event.preventDefault(); go('explore') } }}><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
-    <main className="collection-main">
+    <a className="skip-link" href="#content">Skip to the content</a>
+    <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home" onClick={(event) => { if (plainClick(event)) { event.preventDefault(); go('explore') } }}><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
+    <main className="collection-main" id="content">
       <header className="collection-intro">
         <h1>{tab === 'explore' ? 'How do different proofs reach the same theorem?' : 'Proof Diversity Explorer'}</h1>
         <p className="collection-intro-copy">{tab === 'explore'
@@ -49,15 +46,13 @@ export default function App() {
           : 'One statement, many routes. Nearly ten thousand statements from three public datasets, each with the proofs written for it: read them side by side and watch different approaches arrive at the same result.'}</p>
       </header>
 
-      <nav className="proof-track-tabs" role="tablist" aria-label="Section">
-        <a id="explore-tab" href="?tab=historical" className="proof-track-tab" role="tab" aria-selected={tab === 'explore'} aria-controls="collection-results" onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey) { event.preventDefault(); go('explore') } }}>Explore <span>150 curated results</span></a>
-        <a id="library-tab" href="?tab=library" className="proof-track-tab" role="tab" aria-selected={tab === 'library'} aria-controls="collection-results" onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey) { event.preventDefault(); go('library') } }} onPointerEnter={() => setWantIndex(true)} onFocus={() => setWantIndex(true)}>Library <span>3 datasets</span></a>
+      <nav className="proof-track-tabs" aria-label="Section">
+        <a href="?tab=historical" className="proof-track-tab" aria-current={tab === 'explore' ? 'page' : undefined} onClick={(event) => { if (plainClick(event)) { event.preventDefault(); go('explore') } }}>Explore <span>150 curated results</span></a>
+        <a href="?tab=library" className="proof-track-tab" aria-current={tab === 'library' ? 'page' : undefined} onClick={(event) => { if (plainClick(event)) { event.preventDefault(); go('library') } }}>Library <span>3 datasets</span></a>
       </nav>
 
-      <div id="collection-results" role="tabpanel" aria-labelledby={tab === 'explore' ? 'explore-tab' : 'library-tab'}>
-        {tab === 'explore' ? <HistoricalResults key={homeKey} onOpenLibrary={() => go('library')} /> : <Library index={index} indexError={indexError} />}
-      </div>
+      {tab === 'explore' ? <HistoricalResults key={homeKey} onOpenLibrary={() => go('library')} /> : <Library index={index} indexError={indexError} />}
     </main>
-    <footer className="proofscape-footer"><a href="https://github.com/dsleo/proofscape">Source and dataset notes</a></footer>
+    <footer className="proofscape-footer"><a href="https://github.com/dsleo/proofscape/issues/new">Send feedback</a><a href="https://github.com/dsleo/proofscape">Source and dataset notes</a></footer>
   </div>
 }
