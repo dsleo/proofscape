@@ -17,7 +17,7 @@ The **Library** reads one statement at a time, with a search box per source (mat
 ### Using the map
 
 - **Zoom** with two-finger scroll, pinch, double-click or the buttons; **drag** to move. Names, trails and bridge cables appear as you zoom in.
-- **Click** a method, trail, bridge or island for a short note; **double-click** (or use the note's button) to list the theorems that use it. Selections narrow each other.
+- **Click** a method to light up the methods it is paired with (hovering does the same); **click one of those** to list the theorems that use both. **Double-click** a method (or use "Its note and theorems") for its note and the theorems that use it. Click a trail, bridge or island for a short note; double-click it to list its theorems. Selections narrow each other.
 - **Hover** a method to see its name and the methods it is paired with.
 - **Search** for a method, or for a theorem to lay each of its proof routes over the methods it uses.
 - Tap or click an island's land for its note. Click an empty spot of water, or press Esc, to start over.

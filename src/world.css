@@ -114,3 +114,10 @@
 
 @media (prefers-reduced-motion: reduce) { .world-layer { transition: none !important; } .world-site { transition: none; } }
 
+
+.world-pin { position: absolute; z-index: 3; left: 50%; bottom: 16px; display: flex; align-items: center; gap: 12px; max-width: min(760px, calc(100% - 32px)); padding: 8px 8px 8px 14px; transform: translateX(-50%); border: 1px solid #3b4438; background: #fbf8f0; box-shadow: 3px 4px 0 rgba(59, 68, 56, .18); font-size: 14px; line-height: 1.35; }
+.world-pin button { flex: none; min-height: 34px; padding: 0 12px; border: 1px solid #3b4438; background: #3b4438; color: #fbf8f0; font-size: 14px; cursor: pointer; }
+.world-pin .world-pin-close { padding: 0 10px; border-color: transparent; background: none; color: #3b4438; font-size: 22px; line-height: 1; }
+.world-open .world-pin { left: calc((100% - min(460px, 100vw)) / 2); }
+@media (max-width: 760px) { .world-pin { bottom: 70px; left: 14px; right: 14px; max-width: none; transform: none; flex-wrap: wrap; } .world-open .world-pin { left: 14px; } }
+@media (pointer: coarse) { .world-pin button { min-height: 44px; } }

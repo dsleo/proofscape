@@ -182,12 +182,12 @@ function TheoremCard({ theorem, entry, source, methods, names, onOpen }: { theor
       {others.map((route) => approach(route))}
     </details>}
     {detail && <TheoremDialog number={theorem.id} title={title} statement={entry?.statement} onClose={() => setDetail(false)} onOpen={() => onOpen(theorem.id)}>
-      {theorem.routes.filter((route) => !route.excluded).map((route) => approach(route, true))}
+      {theorem.routes.filter((route) => !route.excluded).map((route) => approach(route))}
     </TheoremDialog>}
   </article>
 }
 
-/** One theorem in full, centred over the map: the whole statement and every approach, opened. */
+/** One theorem in full, centred over the map: the whole statement and every approach. */
 function TheoremDialog({ number, title, statement, onClose, onOpen, children }: { number: number; title: ReactNode; statement?: string; onClose: () => void; onOpen: () => void; children: ReactNode }) {
   const close = useRef<HTMLButtonElement>(null)
   useEffect(() => {

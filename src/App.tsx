@@ -40,7 +40,7 @@ export default function App() {
     <header className="proofscape-header"><a className="proofscape-brand" href={`${import.meta.env.BASE_URL}`} aria-label="Proofscape home" onClick={(event) => { if (plainClick(event)) { event.preventDefault(); go('explore') } }}><img className="proofscape-mark" src={`${import.meta.env.BASE_URL}proofscape-mark.svg`} alt="" /><strong>Proofscape</strong></a></header>
     <main className="collection-main" id="content">
       <header className="collection-intro">
-        <h1>{tab === 'explore' ? 'How do different proofs reach the same theorem?' : 'Proof Diversity Explorer'}</h1>
+        <h1>{tab === 'explore' ? 'How do different proofs establish the same theorem?' : 'Proof Diversity Explorer'}</h1>
         <p className="collection-intro-copy">{tab === 'explore'
           ? 'A curated set of 150 results from the mathematics curriculum, each with its distinct proof approaches, mapped by the methods they use.'
           : 'One statement, many routes. Nearly ten thousand statements from three public datasets, each with the proofs written for it: read them side by side and watch different approaches arrive at the same result.'}</p>

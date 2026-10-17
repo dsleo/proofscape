@@ -160,7 +160,7 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
             <p className="historical-links"><a href={`?tab=historical&view=list&entry=${entry.id}`}>Link to this result</a> · <a href={`?tab=historical&theorem=${entry.id}`} onClick={(event) => { event.preventDefault(); showOnMap(entry.id) }}>Its routes on the map</a></p>
           </header>
           <div className="historical-statement"><span className="historical-statement-label">Statement</span><MathText text={entry.statement} /></div>
-          <details className="historical-approaches" open={arrivedAt === entry.id || undefined}>
+          <details className="historical-approaches">
             <summary>Proof approaches ({entry.routes.length})</summary>
             <ol className="historical-routes">{entry.routes.map((route) => <li key={route.id}>
               <details className="historical-approach">

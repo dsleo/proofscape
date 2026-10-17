@@ -63,6 +63,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   const [drawer, setDrawer] = useState(false)
   const [hover, setHover] = useState<string | null>(null)
   const [hoverSite, setHoverSite] = useState<string | null>(null)
+  const [pinned, setPinned] = useState<string | null>(null) // a method clicked once: its partners stay lit, ready to be picked
   const [focus, setFocus] = useState<number | null>(null)
   const [query, setQuery] = useState('')
   const [tip, setTip] = useState<{ id: string; x: number; y: number } | null>(null)
@@ -77,16 +78,47 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   const seen = useRef(0)
   const { selection, live, chosen, label } = sel
   const act = useRef({ pan: (_dx: number, _dy: number) => {}, zoom: (_factor: number) => {}, home: () => {} })
-  // one click shows a short note over the item; a double click (or the note's button) selects it and lists its theorems
+  // A method: one click lights up its partners (click one of them to narrow to both); a double click opens its note and lists its theorems.
+  // Other things (islands, bridges, trails): one click shows a short note, a double click selects.
+  const pairedWith = (id: string) => {
+    const ids = new Set<string>()
+    for (const key of Object.keys(data.pairs)) { const [a, b] = key.split('|'); if (a === id) ids.add(b); else if (b === id) ids.add(a) }
+    return ids
+  }
+  function tapMethod(id: string) {
+    setHint(false); setInfo(null)
+    if (pinned && pinned !== id && pairedWith(pinned).has(id)) {
+      for (const item of [`v:${pinned}`, `v:${id}`]) if (!chosen.has(item)) sel.toggle(item)
+      setPinned(null)
+    } else setPinned(pinned === id ? null : id)
+  }
+  const screenOf = (id: string): [number, number] => {
+    const g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y), site = siteById.get(id)
+    return site ? [g.tx + site.x * g.s, g.ty + site.y * g.s] : [box.w / 2, box.h / 2]
+  }
+  function openMethod(item: string, x: number, y: number) {
+    setPinned(null); setInfo({ item, x, y })
+    if (!chosen.has(item)) sel.toggle(item)
+  }
   const choose = (item: string, tabbable = true) => ({
     tabIndex: tabbable ? 0 : -1, role: 'button' as const,
     onClick: (event: React.MouseEvent) => {
       if (travel.current >= 4) return
+      if (item[0] === 'v') { if (event.detail < 2) tapMethod(item.slice(2)); return }
       const rect = stage.current?.getBoundingClientRect()
       setInfo({ item, x: event.clientX - (rect?.left ?? 0), y: event.clientY - (rect?.top ?? 0) })
     },
-    onDoubleClick: () => { if (travel.current >= 4) return; setInfo(null); sel.toggle(item) },
-    onKeyDown: (event: React.KeyboardEvent) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setInfo(null); sel.toggle(item) } },
+    onDoubleClick: (event: React.MouseEvent) => {
+      if (travel.current >= 4) return
+      if (item[0] === 'v') { const rect = stage.current?.getBoundingClientRect(); openMethod(item, event.clientX - (rect?.left ?? 0), event.clientY - (rect?.top ?? 0)); return }
+      setInfo(null); sel.toggle(item)
+    },
+    onKeyDown: (event: React.KeyboardEvent) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return
+      event.preventDefault()
+      if (item[0] === 'v') { openMethod(item, ...screenOf(item.slice(2))); return }
+      setInfo(null); sel.toggle(item)
+    },
   })
   const setSea = (level: number) => { sea.current.level = level; page.current?.style.setProperty('--sea', level.toFixed(3)) }
   const ease = (p: number) => (p < 0.5 ? 2 * p * p : 1 - (-2 * p + 2) ** 2 / 2)
@@ -118,12 +150,12 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     if (s.phase === 'rise' || s.phase === 'hold') { s.phase = 'ebb'; s.from = s.level; s.t0 = performance.now() }
   }
   const clearAll = () => {
-    endSea(); setInfo(null); setDrawer(false); setFocus(null); setSearchOpen(false); if (selection.length) sel.clear() }
+    endSea(); setInfo(null); setPinned(null); setDrawer(false); setFocus(null); setSearchOpen(false); if (selection.length) sel.clear() }
   useEffect(() => {
     // typing "sga" (or "sea") anywhere on the map lets the sea rise; Escape or a click on empty water lets it ebb
     let typed = ''
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') { setInfo(null); endSea(); return }
+      if (event.key === 'Escape') { setInfo(null); setPinned(null); endSea(); return }
       const el = event.target as HTMLElement | null
       // the map answers the keyboard unless focus is in a field or a panel that has its own use for the keys
       if (!event.metaKey && !event.ctrlKey && !event.altKey && !(el instanceof Element && el.closest('input, textarea, select, [contenteditable], .world-drawer, .world-info, .world-theorem, [role=listbox]'))) {
@@ -399,15 +431,16 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   const tier = TIERS.filter((t) => lod >= t - 0.001).length - 1
   const labelAt = useMemo(() => placeLabels(world, fit, TIERS[tier], anchorRank, W), [world, fit, tier, anchorRank, W])
   // hovering a method previews the methods it is paired with
+  const lit = pinned ?? hoverSite // a clicked method keeps its partners lit; otherwise the one under the pointer
   const partners = useMemo(() => {
-    if (!hoverSite) return null
-    const sites = new Set([hoverSite]), keys = new Set<string>()
+    if (!lit) return null
+    const sites = new Set([lit]), keys = new Set<string>()
     for (const key of Object.keys(data.pairs)) {
       const [a, b] = key.split('|')
-      if (a === hoverSite || b === hoverSite) { sites.add(a); sites.add(b); keys.add(key) }
+      if (a === lit || b === lit) { sites.add(a); sites.add(b); keys.add(key) }
     }
     return { sites, keys }
-  }, [hoverSite, data])
+  }, [lit, data])
   // a theorem on its own: each usable route is a zone over the methods it uses
   const focusTheorem = focus === null ? null : data.theorems.find((t) => t.id === focus) ?? null
   const routes = useMemo(() => {
@@ -442,7 +475,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
   function pickMethod(id: string) {
     const site = siteById.get(id)
     if (!site) return
-    setQuery(''); setSearchOpen(false); setFocus(null); setHint(false)
+    setQuery(''); setSearchOpen(false); setFocus(null); setHint(false); setPinned(id)
     flyTo(site.x, site.y, Math.min(box.w, box.h) / (3.4 * fit), drawer ? drawerInset : 0, 0, topBar, sheet)
     // the note goes just under the method, which now sits in the middle of what the panels leave free
     setInfo({ item: `v:${id}`, x: (box.w - (drawer ? drawerInset : 0)) / 2, y: topBar + (box.h - topBar - sheet) / 2 })
@@ -557,7 +590,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
           if (travel.current >= 4 || (event.target as Element).closest('[data-world-item]')) return
           const rect = event.currentTarget.getBoundingClientRect(), g = geometry(viewRef.current.k, viewRef.current.x, viewRef.current.y)
           const island = landHit((event.clientX - rect.left - g.tx) / g.s, (event.clientY - rect.top - g.ty) / g.s)
-          if (island) { setHint(false); setInfo({ item: `i:${island.family}`, x: event.clientX - rect.left, y: event.clientY - rect.top }) } else clearAll()
+          if (island) { setHint(false); setPinned(null); setInfo({ item: `i:${island.family}`, x: event.clientX - rect.left, y: event.clientY - rect.top }) } else clearAll()
         }}
         onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
         onDoubleClick={(event) => {
@@ -715,6 +748,14 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
         <button type="button" className="world-info-open" onClick={() => { const item = info.item; setInfo(null); sel.toggle(item) }}>{chosen.has(info.item) ? 'Remove from selection' : `List the theorem${card.theorems.length === 1 ? '' : 's'}`}</button>
         <span className="world-info-tip">or double-click it · click a theorem to see its routes</span>
       </div>}
+      {pinned && (() => {
+        const t = model.names.get(pinned), n = pairedWith(pinned).size
+        return <div className="world-pin" role="status">
+          <span><b>{t?.glyph} {t?.label}</b> · {n === 0 ? 'no paired methods' : `${n} paired method${n === 1 ? '' : 's'} lit: click one to see the theorems that use both`}</span>
+          <button type="button" onClick={() => openMethod(`v:${pinned}`, ...screenOf(pinned))}>Its note and theorems</button>
+          <button type="button" className="world-pin-close" onClick={() => setPinned(null)} aria-label="Release this method">×</button>
+        </div>
+      })()}
       {focusTheorem && <div className="world-theorem">
         <button type="button" className="world-info-close" onClick={() => setFocus(null)} aria-label="Close">×</button>
         <strong><MathText text={focusTheorem.name} /></strong>
@@ -727,7 +768,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
         </ol>
         <button type="button" className="world-info-open" onClick={() => onOpenEntry(focusTheorem.id)}>Open the theorem</button>
       </div>}
-      {hint && <div className="world-hint"><span className="world-hint-mouse">Click for a quick note, double-click to list theorems · scroll or pinch to zoom, drag to move</span><span className="world-hint-touch">Pinch to zoom, drag to move, tap an island or a mark</span></div>}
+      {hint && <div className="world-hint"><span className="world-hint-mouse">Click a method to see what it pairs with, double-click for its note and theorems · scroll or pinch to zoom, drag to move</span><span className="world-hint-touch">Pinch to zoom, drag to move, tap a mark to see its pairs</span></div>}
       <div className="world-controls">
         <div className="world-zoom" role="group" aria-label="Map zoom">
           <button type="button" onClick={() => zoomTo(k * 1.6, box.w / 2, box.h / 2, true)} aria-label="Zoom in" disabled={k >= MAX_ZOOM}>+</button>
@@ -738,7 +779,7 @@ function WorldBody({ data, model, catalog, onOpenEntry, onClose, onLibrary }: { 
     </div>
     <aside className="world-drawer" hidden={!drawer} aria-label="Theorems and methods">
       <ResultsPanel sel={sel} model={model} catalog={catalog} results={results} onOpenEntry={onOpenEntry}
-        hint="Each island is a domain of method, and methods that appear in the same theorems sit closer together. Zoom in to reveal more methods, their names, and the trails between them. A trail inside an island, or a lane on a bridge between islands, is a chord: two methods that distinguish two routes of one theorem. Click anything for a short note; double-click it to list its theorems. Click an empty spot to start over." />
+        hint="Each island is a domain of method, and methods that appear in the same theorems sit closer together. Zoom in to reveal more methods, their names, and the trails between them. A trail inside an island, or a lane on a bridge between islands, is a chord: two methods that distinguish two routes of one theorem. Click a method to light up the methods it is paired with, then click one of those to see the theorems that use both; double-click a method for its note and theorems. Click an island, bridge or trail for a short note. Click an empty spot to start over." />
       <MethodList data={data} model={model} sel={sel} />
       <p className="ring-note">Bridge numbers count the method pairs that cross; dot size is the number of theorems using the method. Methods are tagged by two independent reviewers from the proof sketches, so they are inferred, not source-verified.</p>
     </aside>
