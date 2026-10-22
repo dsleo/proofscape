@@ -1,0 +1,1393 @@
+{
+  "count": 100,
+  "records": [
+    {
+      "id": "41-r1",
+      "title": "Extend a basis of the kernel",
+      "disposition": "route-mismatch",
+      "reason": "The source proves rank-nullity by pivot and free-variable counting, not by extending a kernel basis.",
+      "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "locator": "Theorem 3, rank and nullity; pivot/free-variable argument",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+        "format": "html",
+        "wordCount": 3550,
+        "proofMentions": 2
+      }
+    },
+    {
+      "id": "41-r3",
+      "title": "split exact sequence in finite-dimensional vector spaces",
+      "disposition": "route-mismatch",
+      "reason": "The source uses pivot and free-variable counting, not split exact sequences.",
+      "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "locator": "Theorem 3, rank and nullity; pivot/free-variable argument",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+        "format": "html",
+        "wordCount": 3550,
+        "proofMentions": 2
+      }
+    },
+    {
+      "id": "42-r1",
+      "title": "Adapted basis",
+      "disposition": "route-mismatch",
+      "reason": "The cited rank-nullity argument does not give this adapted-basis dimension proof.",
+      "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "locator": "Theorem 3 and the associated kernel/image dimension argument",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+        "format": "html",
+        "wordCount": 3550,
+        "proofMentions": 2
+      }
+    },
+    {
+      "id": "42-r2",
+      "title": "kernel/image of the addition map U⊕W→U+W",
+      "disposition": "route-mismatch",
+      "reason": "The cited rank-nullity argument does not construct the addition-map proof.",
+      "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "locator": "Theorem 3 and the associated kernel/image dimension argument",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+        "format": "html",
+        "wordCount": 3550,
+        "proofMentions": 2
+      }
+    },
+    {
+      "id": "42-r3",
+      "title": "Grassmannian/linear-map rank count",
+      "disposition": "route-mismatch",
+      "reason": "The cited rank-nullity argument does not give the proposed Grassmannian route.",
+      "url": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "locator": "Theorem 3 and the associated kernel/image dimension argument",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+        "format": "html",
+        "wordCount": 3550,
+        "proofMentions": 2
+      }
+    },
+    {
+      "id": "43-r2",
+      "title": "characteristic polynomial/eigenvector induction",
+      "disposition": "index-or-abstract-only",
+      "reason": "The MIT link is a resource landing page; its separate PDF was not checked here.",
+      "url": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+      "locator": "Supplementary note “Proof of the Spectral Theorem,” induction proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+        "format": "html",
+        "wordCount": 215,
+        "proofMentions": 4
+      }
+    },
+    {
+      "id": "43-r3",
+      "title": "orthogonal diagonalization through self-adjoint operators",
+      "disposition": "index-or-abstract-only",
+      "reason": "The MIT link is a resource landing page; its separate PDF was not checked here.",
+      "url": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+      "locator": "Supplementary note “Proof of the Spectral Theorem,” induction proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+        "format": "html",
+        "wordCount": 215,
+        "proofMentions": 4
+      }
+    },
+    {
+      "id": "44-r1",
+      "title": "Induct using elements of maximal prime-power order",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+        "format": "pdf",
+        "wordCount": 76277,
+        "proofMentions": 137
+      }
+    },
+    {
+      "id": "44-r2",
+      "title": "Smith normal form over Z",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+        "format": "pdf",
+        "wordCount": 76277,
+        "proofMentions": 137
+      }
+    },
+    {
+      "id": "44-r3",
+      "title": "module classification over a PID",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+        "format": "pdf",
+        "wordCount": 76277,
+        "proofMentions": 137
+      }
+    },
+    {
+      "id": "45-r2",
+      "title": "induction using the class equation",
+      "disposition": "route-mismatch",
+      "reason": "The Sylow lecture uses actions on subsets and cosets, not a class-equation induction proof.",
+      "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "locator": "Lecture 23, Sylow theorems and proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+        "format": "pdf",
+        "wordCount": 76277,
+        "proofMentions": 137
+      }
+    },
+    {
+      "id": "45-r3",
+      "title": "polynomial/permutation representation constructions",
+      "disposition": "route-mismatch",
+      "reason": "The Sylow lecture does not prove a separate polynomial or permutation-representation construction.",
+      "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "locator": "Lecture 23, Sylow theorems and proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+        "format": "pdf",
+        "wordCount": 76277,
+        "proofMentions": 137
+      }
+    },
+    {
+      "id": "46-r1",
+      "title": "Cyclic rotation acts on p-tuples with product 1",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+        "format": "pdf",
+        "wordCount": 76277,
+        "proofMentions": 137
+      }
+    },
+    {
+      "id": "46-r2",
+      "title": "class-equation induction",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+        "format": "pdf",
+        "wordCount": 76277,
+        "proofMentions": 137
+      }
+    },
+    {
+      "id": "46-r3",
+      "title": "count conjugation orbits on p-subgroups in suitable formulations",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "locator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+        "format": "pdf",
+        "wordCount": 76277,
+        "proofMentions": 137
+      }
+    },
+    {
+      "id": "49-r1",
+      "title": "Gauss's lemma and lattice-point parity",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "49-r2",
+      "title": "Eisenstein's lattice-point proof",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "49-r3",
+      "title": "Jacobi sums/Gaussian sums",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "50-r1",
+      "title": "Euclidean algorithm/induction on degree",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "50-r2",
+      "title": "factorization in the PID F[x]",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "50-r3",
+      "title": "algebraic closure and root splitting",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "51-r1",
+      "title": "Polynomial Euclidean algorithm",
+      "disposition": "route-mismatch",
+      "reason": "The text invokes the polynomial Euclidean algorithm in another proof; it does not prove this route.",
+      "url": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+      "locator": "Euclidean algorithm / polynomial gcd and Bézout identity",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+        "format": "html",
+        "wordCount": 3274,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "51-r2",
+      "title": "principal ideal generator",
+      "disposition": "context-only-citation",
+      "reason": "The UIC page discusses elimination and resultants, not the principal-ideal-generator argument.",
+      "url": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+      "locator": "Euclidean algorithm / polynomial gcd and Bézout identity",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+        "format": "html",
+        "wordCount": 3274,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "54-r3",
+      "title": "alternating binomial expansion",
+      "disposition": "statement-only",
+      "reason": "The notes give binomial inversion examples without proving the alternating coefficient cancellation.",
+      "url": "https://www.cs.columbia.edu/~cs4205/files/CM4.pdf",
+      "locator": "§4.2, Binomial Inversion Operation, pp. 25–27; alternating binomial expansion",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.cs.columbia.edu/~cs4205/files/CM4.pdf",
+        "format": "pdf",
+        "wordCount": 444,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "55-r3",
+      "title": "weighted generating functions",
+      "disposition": "index-or-abstract-only",
+      "reason": "The MIT resource page points to a separate document, rather than displaying its proof.",
+      "url": "https://ocw.mit.edu/courses/18-212-algebraic-combinatorics-spring-2019/resources/mit18_212s19_lec28/",
+      "locator": "Lecture 28: Matrix-tree theorem proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-212-algebraic-combinatorics-spring-2019/resources/mit18_212s19_lec28/",
+        "format": "html",
+        "wordCount": 250,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "58-r1",
+      "title": "Triangulation and edge-face count",
+      "disposition": "partial-proof",
+      "reason": "The lecture gives combinatorial Gauss–Bonnet but not the proposed standalone triangulation-invariance proof.",
+      "url": "https://ocw.iti.hr/courses/mathematics/18-950-differential-geometry-fall-2008/lecture-notes/ch3_revised.pdf",
+      "locator": "Lecture 35, combinatorial Euler characteristic and triangulations",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.iti.hr/courses/mathematics/18-950-differential-geometry-fall-2008/lecture-notes/ch3_revised.pdf",
+        "format": "pdf",
+        "wordCount": 4601,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "58-r2",
+      "title": "homology ranks",
+      "disposition": "statement-only",
+      "reason": "The source states the Euler characteristic as an alternating sum of Betti numbers without this route's derivation.",
+      "url": "https://www.math.lmu.de/~forster/eprints/gaussbonnet.pdf",
+      "locator": "Opening section, χ(X)=b₀−b₁+b₂ and Euler characteristic",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.lmu.de/~forster/eprints/gaussbonnet.pdf",
+        "format": "pdf",
+        "wordCount": 2369,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "59-r3",
+      "title": "induction after contracting a configuration",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 59-r1 (Minimal-counterexample vertex of degree ≤5 plus recoloring); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "60-r1",
+      "title": "Chebyshev inequality and variance",
+      "disposition": "scope-mismatch",
+      "reason": "The linked discussion establishes the Bernoulli-average case; it does not prove the stated finite-variance iid theorem.",
+      "url": "https://math.mit.edu/~djk/18.310/Lecture-Notes/some_probability_theory_2007.html",
+      "locator": "Weak law of large numbers / Chebyshev inequality discussion",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~djk/18.310/Lecture-Notes/some_probability_theory_2007.html",
+        "format": "html",
+        "wordCount": 3735,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "60-r3",
+      "title": "truncation plus Borel–Cantelli for stronger variants",
+      "disposition": "route-set-aside",
+      "reason": "This uses strong-law machinery rather than proving the stated weak law as an independent route.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "61-r1",
+      "title": "Characteristic-function convergence",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked MIT page is a course index rather than a CLT proof.",
+      "url": "https://math.mit.edu/~sheffield/spring2014math175.html",
+      "locator": "Lecture 15, characteristic functions and central limit theorem",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~sheffield/spring2014math175.html",
+        "format": "html",
+        "wordCount": 643,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "61-r3",
+      "title": "Fourier inversion/smoothing",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 61-r1 (Characteristic-function convergence); grouped with that proof idea. This unpacks the characteristic-function convergence route rather than giving an independent proof.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "62-r1",
+      "title": "Union bound and tail events",
+      "disposition": "statement-only",
+      "reason": "The lecture states Borel–Cantelli without a complete proof.",
+      "url": "https://math.mit.edu/~sheffield/2016175/Lecture6.pdf",
+      "locator": "Borel–Cantelli and strong law",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~sheffield/2016175/Lecture6.pdf",
+        "format": "pdf",
+        "wordCount": 5400,
+        "proofMentions": 46
+      }
+    },
+    {
+      "id": "63-r2",
+      "title": "finite weighted induction then approximation",
+      "disposition": "scope-mismatch",
+      "reason": "The slides prove finite Jensen by induction and mention Riemann-sum limits, but do not prove the stated expectation-level extension.",
+      "url": "https://www.math.utah.edu/~treiberg/InequalitiesSlides.pdf",
+      "locator": "Jensen's inequality, finite weighted induction proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.utah.edu/~treiberg/InequalitiesSlides.pdf",
+        "format": "pdf",
+        "wordCount": 4650,
+        "proofMentions": 11
+      }
+    },
+    {
+      "id": "63-r3",
+      "title": "convex combinations/expectation",
+      "disposition": "route-mismatch",
+      "reason": "The MIT source gives the supporting-line argument, not the finite-approximation route in the sketch.",
+      "url": "https://math.mit.edu/~sheffield/2017600/Lecture31.pdf",
+      "locator": "Jensen inequality tangent-line proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~sheffield/2017600/Lecture31.pdf",
+        "format": "pdf",
+        "wordCount": 4664,
+        "proofMentions": 26
+      }
+    },
+    {
+      "id": "64-r2",
+      "title": "convex duality",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 64-r1 (Young's inequality and normalization); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "64-r3",
+      "title": "duality of Lᵖ spaces (with standard hypotheses)",
+      "disposition": "route-set-aside",
+      "reason": "The proposed duality formula normally uses Hölder's inequality, so this proof would be circular.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "65-r3",
+      "title": "locally compact Hausdorff/open-set formulation",
+      "disposition": "scope-mismatch",
+      "reason": "The source proves Baire for complete metric spaces, not the proposed locally compact Hausdorff version.",
+      "url": "https://math.mit.edu/~rbm/18.102-S13/Chapter1.pdf",
+      "locator": "§8, Baire’s theorem",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~rbm/18.102-S13/Chapter1.pdf",
+        "format": "pdf",
+        "wordCount": 14739,
+        "proofMentions": 26
+      }
+    },
+    {
+      "id": "66-r1",
+      "title": "Iteration and geometric error estimate",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked course page does not contain the claimed proof.",
+      "url": "https://people.tamu.edu/~phoward/M615.html",
+      "locator": "Proof of the Contraction Mapping Theorem (linked full lecture PDF)",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://people.tamu.edu/~phoward/M615.html",
+        "format": "html",
+        "wordCount": 1222,
+        "proofMentions": 4
+      }
+    },
+    {
+      "id": "66-r2",
+      "title": "contraction mapping on complete metric space via Cauchy sequences",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked course page does not contain the claimed proof.",
+      "url": "https://people.tamu.edu/~phoward/M615.html",
+      "locator": "Proof of the Contraction Mapping Theorem (linked full lecture PDF)",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://people.tamu.edu/~phoward/M615.html",
+        "format": "html",
+        "wordCount": 1222,
+        "proofMentions": 4
+      }
+    },
+    {
+      "id": "66-r3",
+      "title": "applications through successive approximation to ODEs",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked course page does not contain the claimed proof.",
+      "url": "https://people.tamu.edu/~phoward/M615.html",
+      "locator": "Applications to ODEs I–II (linked full lecture PDFs)",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://people.tamu.edu/~phoward/M615.html",
+        "format": "html",
+        "wordCount": 1222,
+        "proofMentions": 4
+      }
+    },
+    {
+      "id": "67-r3",
+      "title": "compactness in C(K)",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 67-r2 (finite ε-net/total boundedness); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "68-r2",
+      "title": "polynomial algebra via Bernstein polynomials in the interval case",
+      "disposition": "route-mismatch",
+      "reason": "The cited Bernstein-polynomial argument concerns the Weierstrass theorem, not this Stone–Weierstrass route.",
+      "url": "https://web.math.utk.edu/~freire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+      "locator": "Proof of Weierstrass theorem using Bernstein polynomials",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://web.math.utk.edu/~afreire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+        "format": "pdf",
+        "wordCount": 1856,
+        "proofMentions": 10
+      }
+    },
+    {
+      "id": "69-r3",
+      "title": "separation of convex sets",
+      "disposition": "route-set-aside",
+      "reason": "This derives a separation corollary from Hahn–Banach rather than proving Hahn–Banach.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "71-r3",
+      "title": "polarization and representing vector",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 71-r1 (Orthogonal projection onto kernel); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "72-r2",
+      "title": "quotient-space argument",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 72-r1 (Baire category and nested balls); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "72-r3",
+      "title": "closed graph theorem followed by inverse mapping",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 72-r1 (Baire category and nested balls); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "73-r2",
+      "title": "Baire category directly",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 73-r1 (Open mapping theorem on the graph); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "73-r3",
+      "title": "uniform boundedness plus duality",
+      "disposition": "route-set-aside",
+      "reason": "The duality argument assumes a bounded adjoint that closedness alone does not supply.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "74-r2",
+      "title": "Newton iteration with estimates",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 74-r1 (Contraction mapping/fixed point); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "74-r3",
+      "title": "differential/topological degree",
+      "disposition": "route-set-aside",
+      "reason": "The degree argument supplies local existence but the cited sources do not supply an independent full inverse-function proof.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "75-r3",
+      "title": "local coordinate/submersion theorem",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 75-r1 (Inverse function theorem); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "76-r1",
+      "title": "Differential forms and local charts/partition of unity",
+      "disposition": "index-or-abstract-only",
+      "reason": "The MIT course description does not contain the Stokes proof.",
+      "url": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+      "locator": "Course description: integration on manifolds and Stokes theorem; linked Guillemin notes",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+        "format": "html",
+        "wordCount": 196,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "76-r2",
+      "title": "reduce to the fundamental theorem of calculus on boxes",
+      "disposition": "index-or-abstract-only",
+      "reason": "The MIT course description does not contain the Stokes proof.",
+      "url": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+      "locator": "Course description: integration on manifolds and Stokes theorem; linked Guillemin notes",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+        "format": "html",
+        "wordCount": 196,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "76-r3",
+      "title": "singular homology/cohomology pairing",
+      "disposition": "statement-only",
+      "reason": "The cited theorem is stated as a de Rham pairing, without its proof.",
+      "url": "https://math.berkeley.edu/~wodzicki/H185.S11/Integral%20Calculus.pdf",
+      "locator": "§2.6, Theorem 2.4, Stokes theorem as de Rham/singular-chain pairing",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.berkeley.edu/~wodzicki/H185.S11/Integral%20Calculus.pdf",
+        "format": "pdf",
+        "wordCount": 2751,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "77-r1",
+      "title": "Rectangle/box subdivision and cancellation of interior faces",
+      "disposition": "partial-proof",
+      "reason": "The source calculates Stokes on a cube but only asserts the general partition-of-unity reduction.",
+      "url": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+      "locator": "§6, Theorem 6.0.3: verify on cube by the Fundamental Theorem of Calculus, then reduce general manifold case using a partition of unity",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+        "format": "pdf",
+        "wordCount": 3997,
+        "proofMentions": 9
+      }
+    },
+    {
+      "id": "77-r2",
+      "title": "differential forms/Stokes",
+      "disposition": "partial-proof",
+      "reason": "The source calculates Stokes on a cube but leaves the general manifold reduction to a sentence.",
+      "url": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+      "locator": "§6, Theorem 6.0.3: verify on cube by the Fundamental Theorem of Calculus, then reduce general manifold case using a partition of unity",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+        "format": "pdf",
+        "wordCount": 3997,
+        "proofMentions": 9
+      }
+    },
+    {
+      "id": "77-r3",
+      "title": "potential/flux arguments in special cases",
+      "disposition": "route-set-aside",
+      "reason": "Potential fields give only special cases, not Green's or the divergence theorem generally.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "79-r3",
+      "title": "maximum principle on expanding disks",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 79-r1 (Cauchy estimates with radius→∞); grouped with that proof idea. The maximum-modulus principle on expanding disks does not by itself force constancy; a further estimate is needed.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "80-r3",
+      "title": "obtain from the power-series coefficient formula",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 80-r1 (Derive from Goursat's theorem and a small-circle deformation); grouped with that proof idea. The power-series expansion and contour deformation require prior analytic results and overlap with the Cauchy–Goursat route.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "81-r1",
+      "title": "Sperner's lemma/combinatorial labeling",
+      "disposition": "partial-proof",
+      "reason": "The n-dimensional Brouwer deduction is written out, but its Sperner lemma is stated without proof.",
+      "url": "https://sites.math.rutgers.edu/~ag930/Some%20Math/Brouwer%20Fixed%20Point%20Theorem.pdf",
+      "locator": "§4, Theorem 4.5, n-dimensional Sperner-labeling proof; Sperner's lemma is stated as Lemma 4.4",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://sites.math.rutgers.edu/~ag930/Some%20Math/Brouwer%20Fixed%20Point%20Theorem.pdf",
+        "auditUrl": "https://sites.math.rutgers.edu/~ag930/Some%20Math/Brouwer%20Fixed%20Point%20Theorem.pdf",
+        "format": "pdf",
+        "wordCount": 1719,
+        "proofMentions": 11
+      }
+    },
+    {
+      "id": "83-r1",
+      "title": "Polygonal approximation and winding number",
+      "disposition": "route-mismatch",
+      "reason": "The lecture uses winding numbers and local crossing, not the sketched polygonal-approximation limit.",
+      "url": "https://math.colorado.edu/~casa/teaching/26fall/4230/lecture_notes/index.html",
+      "locator": "Lecture 8, winding number and tubular neighborhood approach to Jordan theorem",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.colorado.edu/~casa/teaching/26fall/4230/lecture_notes/index.html",
+        "format": "html",
+        "wordCount": 45522,
+        "proofMentions": 67
+      }
+    },
+    {
+      "id": "83-r3",
+      "title": "combinatorial planar graph arguments for polygonal curves",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked course schedule does not contain the Jordan-curve proof.",
+      "url": "https://jeffe.cs.illinois.edu/teaching/comptop/2020/schedule.html",
+      "locator": "Simple polygons / Jordan polygon theorem (lecture notes linked from course schedule)",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://jeffe.cs.illinois.edu/teaching/comptop/2020/schedule.html",
+        "format": "html",
+        "wordCount": 1334,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "85-r3",
+      "title": "Gröbner-basis/monomial ideal argument",
+      "disposition": "scope-mismatch",
+      "reason": "The slides prove the field-coefficient polynomial case; the sketch claims the full Noetherian coefficient-ring case.",
+      "url": "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/d792e60582882807d4b80057bcc61697_MIT15_083JF09_lec14.pdf",
+      "locator": "Lecture 14, Hilbert basis theorem via leading terms",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/d792e60582882807d4b80057bcc61697_MIT15_083JF09_lec14.pdf",
+        "format": "pdf",
+        "wordCount": 2726,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "86-r1",
+      "title": "Generic linear changes and induction on generators",
+      "disposition": "scope-mismatch",
+      "reason": "The proof assumes an infinite base field; the catalogued theorem has no such restriction.",
+      "url": "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2015/ec341c7a2524e5dba7c3e939f322613a_MIT18_725F15_notes.pdf",
+      "locator": "Noether normalization lemma proof via linear coordinate change",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2015/ec341c7a2524e5dba7c3e939f322613a_MIT18_725F15_notes.pdf",
+        "format": "pdf",
+        "wordCount": 38724,
+        "proofMentions": 145
+      }
+    },
+    {
+      "id": "86-r2",
+      "title": "dimension/transcendence-degree argument",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 86-r1 (Generic linear changes and induction on generators); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "86-r3",
+      "title": "graded algebra/homogeneous forms",
+      "disposition": "scope-mismatch",
+      "reason": "The graded Noether-normalization source assumes an infinite base field; the catalogue statement is unrestricted.",
+      "url": "https://smakdonald.github.io/Homological-Algebra/sec-noether-normalizations.html",
+      "locator": "Lemma 14.18 and Theorem 14.21, graded Noether normalization over an infinite field",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://smakdonald.github.io/Homological-Algebra/sec-noether-normalizations.html",
+        "format": "html",
+        "wordCount": 2742,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "88-r2",
+      "title": "use embeddings into an algebraic closure and count conjugates",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 88-r1 (Inductively choose a linear combination avoiding finitely many bad coefficients); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "88-r3",
+      "title": "finite-field cyclicity as the finite-field special case",
+      "disposition": "statement-only",
+      "reason": "The notes invoke finite-field multiplicative-group cyclicity without proving it.",
+      "url": "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.3.html",
+      "locator": "Primitive element theorem, finite-field cyclic multiplicative group case",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.3.html",
+        "format": "html",
+        "wordCount": 147,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "89-r3",
+      "title": "variational min–max principle",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 89-r1 (Maximize Rayleigh quotient and iterate); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "90-r1",
+      "title": "Ultrafilters/maximal ideals",
+      "disposition": "partial-proof",
+      "reason": "The source states the representation and leaves key ultrafilter steps as exercises.",
+      "url": "https://fa.ewi.tudelft.nl/~hart/37/onderwijs/old-courses/boole.pdf",
+      "locator": "Chapter 2 §2, Theorem 2.1 and Exercises I.3–I.6, ultrafilter construction",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://fa.ewi.tudelft.nl/~hart/37/onderwijs/old-courses/boole.pdf",
+        "format": "pdf",
+        "wordCount": 12598,
+        "proofMentions": 2
+      }
+    },
+    {
+      "id": "90-r2",
+      "title": "duality with compact zero-dimensional Hausdorff spaces",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 90-r1 (Ultrafilters/maximal ideals); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "90-r3",
+      "title": "prime ideal theorem",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 90-r1 (Ultrafilters/maximal ideals); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "91-r3",
+      "title": "graph-folding methods",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 91-r2 (fundamental groups of covering graphs and spanning trees); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "92-r2",
+      "title": "finite multiplicative group/inverses",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 92-r1 (Multiplication by a nonzero element is injective and hence surjective on a finite set); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "92-r3",
+      "title": "polynomial root-counting in a finite domain",
+      "disposition": "route-set-aside",
+      "reason": "Variation of 92-r1 (Multiplication by a nonzero element is injective and hence surjective on a finite set); grouped with that proof idea. ",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "96-r2",
+      "title": "Tauberian theorem",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr01.pdf",
+      "locator": "The Wiener–Ikehara theorem and its application to the prime number theorem",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr01.pdf"
+      }
+    },
+    {
+      "id": "97-r1",
+      "title": "Dirichlet L-functions and Euler products",
+      "disposition": "partial-proof",
+      "reason": "The lecture begins the Dirichlet argument but stops before proving the theorem.",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes18.pdf",
+      "locator": "§18, Dirichlet L-functions and proof of Dirichlet's theorem",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes18.pdf",
+        "format": "pdf",
+        "wordCount": 6284,
+        "proofMentions": 20
+      }
+    },
+    {
+      "id": "97-r2",
+      "title": "algebraic number fields/ideal classes in selected generalizations",
+      "disposition": "statement-only",
+      "reason": "The notes state Chebotarev density and its relation to Dirichlet's theorem, without proving this route.",
+      "url": "https://www.math.columbia.edu/~chaoli/docs/ClassFieldTheory.html",
+      "locator": "Chebotarev density theorem and cyclotomic specialization to primes in residue classes",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.columbia.edu/~chaoli/docs/ClassFieldTheory.html",
+        "format": "html",
+        "wordCount": 17553,
+        "proofMentions": 71
+      }
+    },
+    {
+      "id": "98-r1",
+      "title": "Minimal-polynomial/generalized-eigenspace decomposition",
+      "disposition": "index-or-abstract-only",
+      "reason": "The UCSD page lists lecture topics; it contains no Jordan-form proof text.",
+      "url": "https://mathweb.ucsd.edu/~drogalsk/200b-w15/200b.html",
+      "locator": "Lecture 7, Jordan canonical form over algebraically closed field and generalized eigenspaces",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Read timed out. (read timeout=18)"
+      }
+    },
+    {
+      "id": "98-r2",
+      "title": "modules over the PID F[x]",
+      "disposition": "index-or-abstract-only",
+      "reason": "The UCSD page lists lecture topics; it contains no PID-module proof text.",
+      "url": "https://mathweb.ucsd.edu/~drogalsk/200b-w15/200b.html",
+      "locator": "Lectures 4–7, PID module structure then Jordan form",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Read timed out. (read timeout=18)"
+      }
+    },
+    {
+      "id": "98-r3",
+      "title": "construct Jordan chains by kernels of powers",
+      "disposition": "partial-proof",
+      "reason": "The located section proves generalized-eigenspace decomposition but does not construct the full Jordan-chain basis in this route.",
+      "url": "https://www.math.hkust.edu.hk/~mameng/Teaching/LinearAlgebra/book.pdf",
+      "locator": "§6.2, generalized eigenspace decomposition and Jordan form",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.hkust.edu.hk/~mameng/Teaching/LinearAlgebra/book.pdf",
+        "format": "pdf",
+        "wordCount": 40524,
+        "proofMentions": 28
+      }
+    },
+    {
+      "id": "100-r3",
+      "title": "weak compactness/duality route in suitable formulations",
+      "disposition": "route-set-aside",
+      "reason": "The proposed weak-compactness argument invokes uniform boundedness rather than proving it.",
+      "url": null,
+      "locator": "",
+      "sourceCheck": null
+    },
+    {
+      "id": "102-r1",
+      "title": "Original combinatorial regularity argument",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://arxiv.org/abs/math/0405251",
+      "locator": "Introduction: four proof families; full paper for ergodic proof; verify the distinct route articles before treating each as extracted",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/math/0405251",
+        "auditUrl": "https://arxiv.org/pdf/math/0405251",
+        "format": "pdf",
+        "wordCount": 24554,
+        "proofMentions": 98
+      }
+    },
+    {
+      "id": "102-r2",
+      "title": "ergodic-theory correspondence",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://arxiv.org/abs/math/0405251",
+      "locator": "Introduction: four proof families; full paper for ergodic proof; verify the distinct route articles before treating each as extracted",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/math/0405251",
+        "auditUrl": "https://arxiv.org/pdf/math/0405251",
+        "format": "pdf",
+        "wordCount": 24554,
+        "proofMentions": 98
+      }
+    },
+    {
+      "id": "102-r3",
+      "title": "Fourier/higher-uniformity methods",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://arxiv.org/abs/math/0405251",
+      "locator": "Introduction: four proof families; full paper for ergodic proof; verify the distinct route articles before treating each as extracted",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/math/0405251",
+        "auditUrl": "https://arxiv.org/pdf/math/0405251",
+        "format": "pdf",
+        "wordCount": 24554,
+        "proofMentions": 98
+      }
+    },
+    {
+      "id": "102-r4",
+      "title": "hypergraph regularity/density Hales–Jewett",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://arxiv.org/abs/math/0405251",
+      "locator": "Introduction: four proof families; full paper for ergodic proof; verify the distinct route articles before treating each as extracted",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/math/0405251",
+        "auditUrl": "https://arxiv.org/pdf/math/0405251",
+        "format": "pdf",
+        "wordCount": 24554,
+        "proofMentions": 98
+      }
+    },
+    {
+      "id": "103-r1",
+      "title": "Hook-walk probabilistic proof",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1016/0097-3165(79)90080-0",
+      "locator": "1979 paper: hook walk proof; exact theorem and hook-walk sections",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0"
+      }
+    },
+    {
+      "id": "103-r2",
+      "title": "determinant evaluation",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1016/0097-3165(79)90080-0",
+      "locator": "1979 paper: hook walk proof; exact theorem and hook-walk sections",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0"
+      }
+    },
+    {
+      "id": "103-r3",
+      "title": "representation-theoretic dimension formula",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1016/0097-3165(79)90080-0",
+      "locator": "1979 paper: hook walk proof; exact theorem and hook-walk sections",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0"
+      }
+    },
+    {
+      "id": "103-r4",
+      "title": "bijective/combinatorial proofs",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1016/0097-3165(79)90080-0",
+      "locator": "1979 paper: hook walk proof; exact theorem and hook-walk sections",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0"
+      }
+    },
+    {
+      "id": "104-r3",
+      "title": "topological proof using compactness of a product space",
+      "disposition": "route-mismatch",
+      "reason": "The cited notes use Henkin's construction, not the proposed product-space proof.",
+      "url": "https://math.berkeley.edu/~scanlon/mn13.pdf",
+      "locator": "Lecture 16, §16.1 (Henkin construction); semantic counterpart: Internet Encyclopedia of Philosophy, “Compactness Theorem,” §4",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.berkeley.edu/~scanlon/mn13.pdf",
+        "format": "pdf",
+        "wordCount": 50465,
+        "proofMentions": 161
+      }
+    },
+    {
+      "id": "105-r1",
+      "title": "Synthetic projective incidence proof",
+      "disposition": "route-mismatch",
+      "reason": "The cited homogeneous-coordinate proof is not the proposed synthetic route.",
+      "url": "https://planetmath.org/ProofofDesarguesTheorem",
+      "locator": "Homogeneous-coordinate proof; route-specific axiom assumptions must be checked",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://planetmath.org/ProofofDesarguesTheorem",
+        "format": "html",
+        "wordCount": 606,
+        "proofMentions": 4
+      }
+    },
+    {
+      "id": "105-r3",
+      "title": "derive from Pappus in a Desarguesian plane",
+      "disposition": "route-mismatch",
+      "reason": "The cited homogeneous-coordinate proof is not the proposed route.",
+      "url": "https://planetmath.org/ProofofDesarguesTheorem",
+      "locator": "Homogeneous-coordinate proof; route-specific axiom assumptions must be checked",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://planetmath.org/ProofofDesarguesTheorem",
+        "format": "html",
+        "wordCount": 606,
+        "proofMentions": 4
+      }
+    },
+    {
+      "id": "106-r1",
+      "title": "Eisenstein after substituting x+1 for prime-power cases plus induction/divisibility",
+      "disposition": "partial-proof",
+      "reason": "The source proves the Eisenstein substitution for prime powers but not the claimed general-n induction.",
+      "url": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+      "locator": "§5, irreducibility and Frobenius/order arguments; Lehigh paper surveys classical alternatives: https://www.lehigh.edu/~shw2/c-poly/several_proofs.pdf",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+        "format": "pdf",
+        "wordCount": 6761,
+        "proofMentions": 18
+      }
+    },
+    {
+      "id": "108-r1",
+      "title": "Parity count of boundary-labeled simplices",
+      "disposition": "index-or-abstract-only",
+      "reason": "The MIT link is a course landing page.",
+      "url": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+      "locator": "Lecture note PDF “sperner.pdf,” theorem and proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+        "format": "html",
+        "wordCount": 222,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "108-r2",
+      "title": "graph-path counting",
+      "disposition": "index-or-abstract-only",
+      "reason": "The MIT link is a course landing page.",
+      "url": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+      "locator": "Lecture note PDF “sperner.pdf,” theorem and proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+        "format": "html",
+        "wordCount": 222,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "108-r3",
+      "title": "induction on dimension",
+      "disposition": "index-or-abstract-only",
+      "reason": "The MIT link is a course landing page.",
+      "url": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+      "locator": "Lecture note PDF “sperner.pdf,” theorem and proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+        "format": "html",
+        "wordCount": 222,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "109-r1",
+      "title": "Induction on number of colors/vertices",
+      "disposition": "scope-mismatch",
+      "reason": "The lecture proves the two-color graph case; the catalogue sketch uses arbitrary uniformity and color count.",
+      "url": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+      "locator": "Finite Ramsey theorem, induction proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+        "format": "pdf",
+        "wordCount": 1174,
+        "proofMentions": 5
+      }
+    },
+    {
+      "id": "109-r2",
+      "title": "greedy pigeonhole construction",
+      "disposition": "route-mismatch",
+      "reason": "The source proves finite Ramsey by recurrence, not the proposed greedy route.",
+      "url": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+      "locator": "Finite Ramsey theorem, induction proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+        "format": "pdf",
+        "wordCount": 1174,
+        "proofMentions": 5
+      }
+    }
+  ]
+}

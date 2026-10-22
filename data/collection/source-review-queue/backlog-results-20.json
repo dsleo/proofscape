@@ -1,0 +1,62 @@
+[
+ {
+  "routeId": "150-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://www3.nd.edu/~pmnev/f19/Moment_Maps_Talk.pdf",
+  "sourceLabel": "Boustany, Moment Maps and Symplectic Reduction (Notre Dame notes); with Evans, arXiv 2110.08643, App. D.3",
+  "preciseLocator": "Boustany Sec. 1 (Prop 1.3, Thm 1.4) and Sec. 3 Thm 3.2 plus Ex. 3.3; Evans Thm D.11",
+  "evidence": "Boustany Thm 3.2 proves via L_{X_f}mu(X)=-L_{X#}f that the moment map is constant along X_f exactly when f is G-invariant (so H invariant gives conserved J); Prop 1.3 is left as an exercise. Evans Thm D.11 proves the cotangent-lift Hamiltonian is p(xi(q)). Neither source treats the Legendre/Lagrangian correspondence or the divergence term B.",
+  "sketchProblem": "Missing step: Lagrangian-Hamiltonian correspondence under the Legendre map and handling of the divergence term B; the sketch's 'dJ/dt={J,H}=\u00b1X_J(H)' is covered, the Lagrangian link is not.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "150-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://www.math.uwaterloo.ca/~karigian/papers/noether.pdf",
+  "sourceLabel": "Karigiannis, Noether's theorem in classical mechanics",
+  "preciseLocator": "Sec. 4, Thm 4.2 and proof",
+  "evidence": "Proves Noether for n=1 via prolongation pr(1)X(L)+L dX/dt = dB/dt and the evolutionary form, producing dP/dt = sum Q E(L); this is a total-derivative argument, not the differential-form Lie derivative / first variation d(theta-eta)=0 / Stokes route. Wikipedia 'Noether's theorem' field-theory section was also read and is coordinate-based; Olver (cited) is not freely retrievable.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "44-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://math.mit.edu/~setia/6310fa18.pdf",
+  "sourceLabel": "Setia, MIT 18.701/6310 graduate algebra notes (Fall 2018)",
+  "preciseLocator": "Sec. 3.24 (Oct 22, 2018) and Sec. 3.25 (Oct 24, 2018): Smith Normal Form over a PID, existence proof/algorithm, Example 3.25.1; Thm 3.24.1-3.24.2",
+  "evidence": "Sec. 3.25 proves existence of SNF over a PID by unimodular row/column operations with a gcd-descent termination argument, worked on a Z^3 presentation example; Sec. 3.24 deduces M=R^m/D(R^n) splits as a sum of R/(a_i), i.e. Thm 3.24.2 for abelian groups (r=0 for finite groups is immediate but not spelled out).",
+  "sketchProblem": "Catalogue cites the wrong source (MIT 18.701 Sylow lectures); the correct source is the MIT notes above. Route is the same as 44-r3 in substance.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "44-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://math.mit.edu/~setia/6310fa18.pdf",
+  "sourceLabel": "Setia, MIT 18.701/6310 graduate algebra notes (Fall 2018)",
+  "preciseLocator": "Sec. 3.24, Thm 3.24.1 (structure theorem over a PID, proof from SNF) and Thm 3.24.2 (f.g. abelian groups)",
+  "evidence": "The notes state and prove the structure theorem for f.g. modules over a PID from Smith normal form and specialize to Z; applying it to a finite abelian group (r=0) gives the classification. Proof of uniqueness is not included here.",
+  "sketchProblem": "Sketch says the route 'imports rather than reproves' the structure theorem; it is essentially not independent of 44-r2 (the proof in the source goes through SNF). Wrong catalogue citation (Sylow lectures).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "45-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.lsu.edu/~madden/M7210fall2012/lec20121126-SylowTheorems.pdf",
+  "sourceLabel": "Madden, LSU M7210 Lecture 38, Sylow Theorems",
+  "preciseLocator": "Class Equation paragraph, Sylow Theorem 1 proof, Sylow Theorem 2 (a)-(d) proof",
+  "evidence": "Sylow I proved by induction on |G|: p | |Z(G)| gives a central subgroup H of order p (via the structure theorem for abelian groups) and induction in G/H; otherwise the class equation gives a proper centralizer with index prime to p, apply induction. Conjugacy and count are proved by actions. Order-p subgroup of the center is obtained from the abelian structure theorem, not Cauchy by name. Same induction also in Harvard Math 122 Lecture 17 (Krylov), Sec. 2, which cites Cauchy and only sketches Sylow III.",
+  "sketchProblem": "Sketch's Case 'proper centralizer with full p-part ... extend/conjugate' is slightly muddled: the source simply takes a subgroup of the centralizer, no conjugation step.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "45-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Sylow_theorems",
+  "sourceLabel": "Wikipedia, Sylow theorems, 'Proof of the Sylow theorems' (Wielandt)",
+  "preciseLocator": "Theorem (1), Lemma, Theorem (2), Theorem (3) proofs",
+  "evidence": "Full Wielandt argument: G acts on p^k-subsets by left multiplication, stabilizer has size <= p^k, nu_p(|Omega|)=nu_p(m) computed explicitly so some orbit forces a stabilizer of order p^k; Sylow II/III by p-group fixed-point lemma on G/P and conjugation. MIT 18.701 Lecture 23 (Sec 23.3) has same route but only sketches the binomial lemma.",
+  "sketchProblem": "Sketch is not a separate route from route 1 (group-action method); title 'polynomial/permutation representation constructions' does not match the content (subset action).",
+  "confidence": "medium"
+ }
+]

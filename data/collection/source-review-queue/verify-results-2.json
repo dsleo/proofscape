@@ -1,0 +1,107 @@
+[
+ {
+  "routeId": "17-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read 'Proof of validity': termination from |r_i|<|r_{i-1}|, gcd(x,0)=x and gcd(x,y)=gcd(y,x-zy) proved via common-divisor sets. Complete."
+ },
+ {
+  "routeId": "18-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read 'Bezout's identity' section: explicit back-substitution through the division equations to g=sa+tb; gcd=last remainder from 'Proof of validity'. Complete."
+ },
+ {
+  "routeId": "20-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "MIT 18.100A Lec 5 Thm 2(ii): n(y-x)>1 by Archimedes, m least integer >nx so m<=nx+1<ny; same floor construction as sketch (1/n<b-a, m=floor(na)+1). Sign cases handled. Complete."
+ },
+ {
+  "routeId": "21-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Part B proves sqrt p irrational via coprime a,b, Euclid's Lemma on p|a^2 then p|b^2. Matches sketch. Informal self-published note (ornaverum.org) but argument complete and Euclid's lemma is a named result."
+ },
+ {
+  "routeId": "21-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "ProofWiki Proof 1: m^2=n^2 p, prime exponents in squares are even, so p occurs odd times in n^2 p, contradiction. Uses unique factorization implicitly (standard). Complete but short."
+ },
+ {
+  "routeId": "23-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read Garbett thesis. Thm 2.8 dissection into primitive triangles (induction on interior points), Prop 2.15/2.17/Lemma 2.18/Thm 2.19 area 1/2 via unimodular map det 1, Lemma 3.11 Euler, Thm 3.12 Pick counting. Full. Note Thm 2.13 is the visible-point/coprime lemma (supporting), not the area claim; area proof uses a det-1 integer matrix, in line with sketch's determinant remark."
+ },
+ {
+  "routeId": "26-r2",
+  "verdict": "partial",
+  "correctedLocator": "Section 2.6, Theorem 2.13 (relies on Lemma 2.6 Dog-Walking and Prop 2.9, Cor 1.58 from earlier lectures)",
+  "missingStep": "Proofs of the Dog-Walking Lemma (Lemma 2.6) and Prop 2.9 (winding number continuous/homotopy-invariant in r) are in earlier lectures, not in this document; they are the heart of the argument.",
+  "note": "Wilkins Thm 2.13 does exactly the winding-number route (P_m dominates for |z|>R, n(gamma_r,0)=m, but constant 0 if P has no zero). Main estimates written out, but the two key topological inputs are cited to previous lectures. Strictly partial; a reader may accept them as standard named results."
+ },
+ {
+  "routeId": "26-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Lebl Lemma 11.5.1 (d'Alembert, |p(re^{it})|<|p(0)| for small r), Lemma 11.5.4 (|p|->inf), Thm 11.5.5 (min attained on compact disk, hence zero). Matches sketch fully. NB route title says 'symmetric polynomials/Galois' but sketch and source are the analytic minimum-modulus proof; title mismatch only. Proof of 11.5.1 uses existence of t with a_k e^{ikt}=-|a_k| (trig discussion, standard)."
+ },
+ {
+  "routeId": "28-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikiversity Thm: bisection with nested intervals, limit x, continuity (sequential) gives f(x)<=u and >=u. Lebl Lemma 3.3.7 (pp.132-133) and Thm 3.3.8 also contain complete bisection proof; page locators correct."
+ },
+ {
+  "routeId": "28-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Handout 6: Thm 1 interval connected (sup argument), Thm 2 connected=>interval, Thm 3 continuous image connected, Cor 1 IVT. All proved. Minor: Thm 1 proof cites an unnumbered 'lemma to the LUB property' (sup is in set or a limit point), and Thm 3's proof only shows connectedness, interval conclusion comes from Thm 2; neither is a real gap."
+ },
+ {
+  "routeId": "29-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Lebl Lemma 3.3.1 (bounded, via Bolzano-Weierstrass) and Thm 3.3.2 (take maximizing/minimizing sequences, BW subsequence, continuity gives attainment). Matches; pp.130-131 correct. BW itself is cited to Sec 2.3 where it is proved. Wikipedia part of locator not read."
+ },
+ {
+  "routeId": "29-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Handout (1996): continuous image of compact is compact (pullback of cover), Heine-Borel for [a,b], compact=>bounded via cover (-n,n) and closed, EVT corollary via sup/inf in compact image. Complete. Sketch's cover U_n={|f|<n} is the same idea applied through the image; locator should name the handout theorems rather than 'TFAE (a)=>(b)' alone (fine)."
+ },
+ {
+  "routeId": "29-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Same Lebl Lemma 3.3.1/Thm 3.3.2 as 29-r1: maximizing sequence + BW subsequence + continuity. Duplicate source/route of 29-r1 (acceptable). pp.130-131 correct."
+ },
+ {
+  "routeId": "30-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia section 'Alternative proof over R using nested intervals': halving with infinitely many terms, nested intervals theorem (named) gives common point, lengths ->0 so every neighbourhood contains some I_n with infinitely many terms, hence accumulation point/subsequence. Complete; final step accumulation point -> convergent subsequence stated tersely but standard."
+ },
+ {
+  "routeId": "32-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia Cauchy MVT proof: h(x)=(g(b)-g(a))f(x)-(f(b)-f(a))g(x), h(a)=h(b), Rolle gives h'(c)=0. Statement notes MVT is the case g(t)=t. h differs from sketch's H by sign and a constant (equivalent). Specialization to MVT stated, not computed, but trivial."
+ }
+]

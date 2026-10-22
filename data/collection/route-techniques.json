@@ -843,7 +843,8 @@
       "borrowsFrom": "Analysis",
       "status": "inferred",
       "taggers": 2,
-      "agreement": "full"
+      "agreement": "full",
+      "flag": "dependent"
     },
     "66-r1": {
       "techniques": [
@@ -989,7 +990,8 @@
       "borrowsFrom": "Analysis",
       "status": "inferred",
       "taggers": 2,
-      "agreement": "resolved-by-review"
+      "agreement": "resolved-by-review",
+      "flag": "incomplete"
     },
     "83-r1": {
       "techniques": [
@@ -2702,7 +2704,8 @@
       "borrowsFrom": "Analysis",
       "status": "inferred",
       "taggers": 2,
-      "agreement": "intersection"
+      "agreement": "intersection",
+      "flag": "dependent"
     },
     "82-r1": {
       "techniques": [
@@ -3090,8 +3093,7 @@
       "borrowsFrom": "Analysis",
       "status": "inferred",
       "taggers": 2,
-      "agreement": "full",
-      "flag": "dependent"
+      "agreement": "full"
     },
     "99-r4": {
       "techniques": [

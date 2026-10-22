@@ -1,0 +1,1243 @@
+{
+  "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.3.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.3.html",
+    "format": "html",
+    "wordCount": 147,
+    "proofMentions": 1
+  },
+  "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.5.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.5.html",
+    "format": "html",
+    "wordCount": 303,
+    "proofMentions": 1
+  },
+  "https://arxiv.org/abs/1111.4972": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://arxiv.org/pdf/1111.4972",
+    "auditUrl": "https://arxiv.org/pdf/1111.4972",
+    "format": "pdf",
+    "wordCount": 19805,
+    "proofMentions": 115
+  },
+  "https://arxiv.org/abs/1202.3670": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://arxiv.org/pdf/1202.3670",
+    "auditUrl": "https://arxiv.org/pdf/1202.3670",
+    "format": "pdf",
+    "wordCount": 35820,
+    "proofMentions": 327
+  },
+  "https://arxiv.org/abs/1506.07019": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://arxiv.org/pdf/1506.07019",
+    "auditUrl": "https://arxiv.org/pdf/1506.07019",
+    "format": "pdf",
+    "wordCount": 10838,
+    "proofMentions": 29
+  },
+  "https://arxiv.org/abs/2309.14024": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://arxiv.org/pdf/2309.14024",
+    "auditUrl": "https://arxiv.org/pdf/2309.14024",
+    "format": "pdf",
+    "wordCount": 17401,
+    "proofMentions": 64
+  },
+  "https://arxiv.org/abs/2410.19555": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://arxiv.org/abs/2410.19555",
+    "format": "html",
+    "wordCount": 598,
+    "proofMentions": 1
+  },
+  "https://arxiv.org/abs/math/0405251": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://arxiv.org/pdf/math/0405251",
+    "auditUrl": "https://arxiv.org/pdf/math/0405251",
+    "format": "pdf",
+    "wordCount": 24554,
+    "proofMentions": 98
+  },
+  "https://arxiv.org/pdf/2410.19555": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://arxiv.org/pdf/2410.19555",
+    "format": "pdf",
+    "wordCount": 6540,
+    "proofMentions": 11
+  },
+  "https://citeseerx.ist.psu.edu/document?doi=db3d3dcf1e5ea4d34bfd7253f92bba195e0a2317&repid=rep1&type=pdf": {
+    "access": "fetch-failed",
+    "error": "HTTPSConnectionPool(host='citeseerx.ist.psu.edu', port=443): Max retries exceeded with url: /document?doi=db3d3dcf1e5ea4d34bfd7253f92bba195e0a2317&repid=rep1&type=pdf (Caused by ConnectTimeoutError(<HTTPSConnection(host="
+  },
+  "https://complexanalysis.org/web/sec_cauchy-integral-formulas.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://complexanalysis.org/web/sec_cauchy-integral-formulas.html",
+    "format": "html",
+    "wordCount": 1887,
+    "proofMentions": 9
+  },
+  "https://cse.iitkgp.ac.in/~palash/Courses/2024Algorithms2/Files/Hall-Konig-Theorem.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://cse.iitkgp.ac.in/~palash/Courses/2024Algorithms2/Files/Hall-Konig-Theorem.pdf",
+    "format": "pdf",
+    "wordCount": 533,
+    "proofMentions": 1
+  },
+  "https://cuhkmath.wordpress.com/2010/11/19/a-nontopological-proof-of-the-uniform-boundedness-principle/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://cuhkmath.wordpress.com/2010/11/19/a-nontopological-proof-of-the-uniform-boundedness-principle/",
+    "format": "html",
+    "wordCount": 1005,
+    "proofMentions": 6
+  },
+  "https://diestel-graph-theory.com/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://diestel-graph-theory.com/",
+    "format": "html",
+    "wordCount": 518,
+    "proofMentions": 0
+  },
+  "https://dlmf.nist.gov/5.12": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://dlmf.nist.gov/5.12",
+    "format": "html",
+    "wordCount": 2210,
+    "proofMentions": 0
+  },
+  "https://doi.org/10.1002/9780470317064": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1002/9780470317064"
+  },
+  "https://doi.org/10.1002/cpa.20308": {
+    "access": "fetch-failed",
+    "error": "403 Client Error: Forbidden for url: https://onlinelibrary.wiley.com/doi/10.1002/cpa.20308"
+  },
+  "https://doi.org/10.1007/978-1- phải": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-%20ph%E1%BA%A3i"
+  },
+  "https://doi.org/10.1007/978-1-4612-0979-9": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/book/10.1007/978-1-4612-0979-9",
+    "format": "html",
+    "wordCount": 1115,
+    "proofMentions": 0
+  },
+  "https://doi.org/10.1007/978-1-4613-0039-7": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+    "format": "html",
+    "wordCount": 1238,
+    "proofMentions": 0
+  },
+  "https://doi.org/10.1007/978-1-4614-9821-7": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4614-9821-7"
+  },
+  "https://doi.org/10.1007/978-1-4684-9446-5": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9446-5"
+  },
+  "https://doi.org/10.1007/978-1-4684-9934-7": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9934-7"
+  },
+  "https://doi.org/10.1007/978-3-319-61860-9": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-61860-9",
+    "format": "html",
+    "wordCount": 1199,
+    "proofMentions": 0
+  },
+  "https://doi.org/10.1007/978-3-540-76649-0": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/book/10.1007/978-3-540-76649-0",
+    "format": "html",
+    "wordCount": 1534,
+    "proofMentions": 1
+  },
+  "https://doi.org/10.1007/BF01213674": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/article/10.1007/BF01213674",
+    "format": "html",
+    "wordCount": 1459,
+    "proofMentions": 0
+  },
+  "https://doi.org/10.1007/BF02592048": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/article/10.1007/BF02592048",
+    "format": "html",
+    "wordCount": 791,
+    "proofMentions": 0
+  },
+  "https://doi.org/10.1016/0097-3165(79)90080-0": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0"
+  },
+  "https://doi.org/10.1017/CBO9780511804079": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511804079"
+  },
+  "https://doi.org/10.1017/CBO9780511845279": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511845279"
+  },
+  "https://doi.org/10.1090/S0002-9904-1978-14453-4": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4"
+  },
+  "https://doi.org/10.1090/S0273-0979-01-00930-2": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://pubs.ams.org/journals/bull/2002-39-01/S0273-0979-01-00930-2/home.html",
+    "format": "html",
+    "wordCount": 4470,
+    "proofMentions": 1
+  },
+  "https://extremalcombinatorics.com/optimization/notes/sec_matchingBip.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://extremalcombinatorics.com/optimization/notes/sec_matchingBip.html",
+    "format": "html",
+    "wordCount": 1440,
+    "proofMentions": 6
+  },
+  "https://fa.ewi.tudelft.nl/~hart/37/onderwijs/old-courses/boole.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://fa.ewi.tudelft.nl/~hart/37/onderwijs/old-courses/boole.pdf",
+    "format": "pdf",
+    "wordCount": 12598,
+    "proofMentions": 2
+  },
+  "https://faculty.bard.edu/~hhaggard/teaching/phys105/lectures/Lectures10and11Charman.pdf": {
+    "access": "fetch-failed",
+    "error": "403 Client Error: Forbidden for url: https://faculty.bard.edu/~hhaggard/teaching/phys105/lectures/Lectures10and11Charman.pdf"
+  },
+  "https://faculty.ksu.edu.sa/sites/default/files/ultra.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://faculty.ksu.edu.sa/sites/default/files/ultra.pdf",
+    "format": "pdf",
+    "wordCount": 2250,
+    "proofMentions": 8
+  },
+  "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+    "format": "html",
+    "wordCount": 3274,
+    "proofMentions": 3
+  },
+  "https://ics.uci.edu/~eppstein/junkyard/euler/all.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+    "format": "html",
+    "wordCount": 7494,
+    "proofMentions": 72
+  },
+  "https://jeffe.cs.illinois.edu/teaching/comptop/2020/schedule.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://jeffe.cs.illinois.edu/teaching/comptop/2020/schedule.html",
+    "format": "html",
+    "wordCount": 1334,
+    "proofMentions": 0
+  },
+  "https://joelshapiro.org/Pubvit/Downloads/SpernerBrouwer/Sperner_Brouwer.html": {
+    "access": "little-or-no-text",
+    "httpStatus": 200,
+    "finalUrl": "https://joelshapiro.org/Pubvit/Downloads/SpernerBrouwer/Sperner_Brouwer.html",
+    "format": "html",
+    "wordCount": 76,
+    "proofMentions": 1
+  },
+  "https://jwilson.coe.uga.edu/EMT668/EMAT6680.2000/Umberger/MATH7200/HeronFormulaProject/AlgebraicProof/algproof.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://jwilson.coe.uga.edu/EMT668/EMAT6680.2000/Umberger/MATH7200/HeronFormulaProject/AlgebraicProof/algproof.html",
+    "auditUrl": "https://jwilson.coe.uga.edu/EMT668/EMAT6680.2000/Umberger/MATH7200/HeronFormulaProject/AlgebraicProof/algproof.html",
+    "format": "html",
+    "wordCount": 798,
+    "proofMentions": 4
+  },
+  "https://kconrad.math.uconn.edu/blurbs/analysis/stirling.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://kconrad.math.uconn.edu/blurbs/analysis/stirling.pdf",
+    "format": "pdf",
+    "wordCount": 4235,
+    "proofMentions": 24
+  },
+  "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+    "format": "pdf",
+    "wordCount": 6761,
+    "proofMentions": 18
+  },
+  "https://linearalgebra.math.umanitoba.ca/math1220/section-48.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://linearalgebra.math.umanitoba.ca/math1220/section-48.html",
+    "auditUrl": "https://linearalgebra.math.umanitoba.ca/math1220/section-48.html",
+    "format": "html",
+    "wordCount": 1714,
+    "proofMentions": 4
+  },
+  "https://link.springer.com/book/10.1007/978-1-4612-0619-4": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+    "auditUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+    "format": "html",
+    "wordCount": 1040,
+    "proofMentions": 0
+  },
+  "https://link.springer.com/book/10.1007/978-3-319-17368-9": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+    "format": "html",
+    "wordCount": 1118,
+    "proofMentions": 3
+  },
+  "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+    "format": "html",
+    "wordCount": 1526,
+    "proofMentions": 7
+  },
+  "https://lorecchia.github.io/cmsc35410/notes/la-review-part1.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://lorecchia.github.io/cmsc35410/notes/la-review-part1.html",
+    "auditUrl": "https://lorecchia.github.io/cmsc35410/notes/la-review-part1.html",
+    "format": "html",
+    "wordCount": 7674,
+    "proofMentions": 39
+  },
+  "https://math.berkeley.edu/~scanlon/mn13.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.berkeley.edu/~scanlon/mn13.pdf",
+    "format": "pdf",
+    "wordCount": 50465,
+    "proofMentions": 161
+  },
+  "https://math.berkeley.edu/~wodzicki/H185.S11/Integral%20Calculus.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.berkeley.edu/~wodzicki/H185.S11/Integral%20Calculus.pdf",
+    "format": "pdf",
+    "wordCount": 2751,
+    "proofMentions": 1
+  },
+  "https://math.camden.rutgers.edu/files/Real_Analysis_CHPTR4-End.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.camden.rutgers.edu/files/Real_Analysis_CHPTR4-End.pdf",
+    "format": "pdf",
+    "wordCount": 66977,
+    "proofMentions": 130
+  },
+  "https://math.colorado.edu/~casa/teaching/26fall/4230/lecture_notes/index.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.colorado.edu/~casa/teaching/26fall/4230/lecture_notes/index.html",
+    "format": "html",
+    "wordCount": 45522,
+    "proofMentions": 67
+  },
+  "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+    "format": "html",
+    "wordCount": 339,
+    "proofMentions": 1
+  },
+  "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_%28Barrus_and_Clark%29/01%253A_Chapters/1.23%253A_Chinese_Remainder_Theorem": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_%28Barrus_and_Clark%29/01%253A_Chapters/1.23%253A_Chinese_Remainder_Theorem",
+    "auditUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_%28Barrus_and_Clark%29/01%253A_Chapters/1.23%253A_Chinese_Remainder_Theorem",
+    "format": "html",
+    "wordCount": 3042,
+    "proofMentions": 5
+  },
+  "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+    "format": "html",
+    "wordCount": 1075,
+    "proofMentions": 1
+  },
+  "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/03%3A_Primes_Numbers/3.02%3A_Wilson%27s_Theorem": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/03%3A_Primes_Numbers/3.02%3A_Wilson%27s_Theorem",
+    "auditUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/03%3A_Primes_Numbers/3.02%3A_Wilson%27s_Theorem",
+    "format": "html",
+    "wordCount": 1021,
+    "proofMentions": 3
+  },
+  "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+    "format": "html",
+    "wordCount": 3550,
+    "proofMentions": 2
+  },
+  "https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Math/3%3A_Proof_Techniques/3.6%3A_Mathematical_Induction_-_An_Introduction": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Math/3%3A_Proof_Techniques/3.6%3A_Mathematical_Induction_-_An_Introduction",
+    "auditUrl": "https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Math/3%3A_Proof_Techniques/3.6%3A_Mathematical_Induction_-_An_Introduction",
+    "format": "html",
+    "wordCount": 2515,
+    "proofMentions": 11
+  },
+  "https://math.mit.edu/classes/18.785/2021fa/LectureNotes16.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes16.pdf",
+    "format": "pdf",
+    "wordCount": 6732,
+    "proofMentions": 28
+  },
+  "https://math.mit.edu/classes/18.785/2021fa/LectureNotes18.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes18.pdf",
+    "format": "pdf",
+    "wordCount": 6284,
+    "proofMentions": 20
+  },
+  "https://math.mit.edu/classes/18.952/2014SP/docs/chapter4.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/classes/18.952/2014SP/docs/chapter4.pdf",
+    "auditUrl": "https://math.mit.edu/classes/18.952/2014SP/docs/chapter4.pdf",
+    "format": "pdf",
+    "wordCount": 23979,
+    "proofMentions": 51
+  },
+  "https://math.mit.edu/classes/18.952/spring2012/index.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/classes/18.952/spring2012/index.html",
+    "format": "html",
+    "wordCount": 196,
+    "proofMentions": 0
+  },
+  "https://math.mit.edu/~dav/spectral.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~dav/spectral.pdf",
+    "auditUrl": "https://math.mit.edu/~dav/spectral.pdf",
+    "format": "pdf",
+    "wordCount": 1269,
+    "proofMentions": 8
+  },
+  "https://math.mit.edu/~djk/18.310/Lecture-Notes/some_probability_theory_2007.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~djk/18.310/Lecture-Notes/some_probability_theory_2007.html",
+    "format": "html",
+    "wordCount": 3735,
+    "proofMentions": 0
+  },
+  "https://math.mit.edu/~djk/18_01/chapter05/proof05.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~djk/18_01/chapter05/proof05.html",
+    "auditUrl": "https://math.mit.edu/~djk/18_01/chapter05/proof05.html",
+    "format": "html",
+    "wordCount": 168,
+    "proofMentions": 2
+  },
+  "https://math.mit.edu/~djk/calculus_beginners/chapter13/section02.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~djk/calculus_beginners/chapter13/section02.html",
+    "format": "html",
+    "wordCount": 797,
+    "proofMentions": 0
+  },
+  "https://math.mit.edu/~dunkel/Teach/18.04_2019S/notes/1804_Main.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~dunkel/Teach/18.04_2019S/notes/1804_Main.pdf",
+    "format": "pdf",
+    "wordCount": 50492,
+    "proofMentions": 113
+  },
+  "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf": {
+    "access": "little-or-no-text",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+    "format": "pdf",
+    "wordCount": 0,
+    "proofMentions": 0
+  },
+  "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+    "format": "pdf",
+    "wordCount": 37891,
+    "proofMentions": 152
+  },
+  "https://math.mit.edu/~rbm/18.102-S13/Chapter1.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~rbm/18.102-S13/Chapter1.pdf",
+    "format": "pdf",
+    "wordCount": 14739,
+    "proofMentions": 26
+  },
+  "https://math.mit.edu/~rbm/18.102Sp20/Chapter3.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~rbm/18.102Sp20/Chapter3.pdf",
+    "format": "pdf",
+    "wordCount": 24252,
+    "proofMentions": 81
+  },
+  "https://math.mit.edu/~rstan/ec/ec1.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~rstan/ec/ec1.pdf",
+    "format": "pdf",
+    "wordCount": 290318,
+    "proofMentions": 784
+  },
+  "https://math.mit.edu/~sheffield/2016175/Lecture6.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~sheffield/2016175/Lecture6.pdf",
+    "format": "pdf",
+    "wordCount": 5400,
+    "proofMentions": 46
+  },
+  "https://math.mit.edu/~sheffield/2017600/Lecture31.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~sheffield/2017600/Lecture31.pdf",
+    "format": "pdf",
+    "wordCount": 4664,
+    "proofMentions": 26
+  },
+  "https://math.mit.edu/~sheffield/440/Lecture31.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~sheffield/440/Lecture31.pdf",
+    "auditUrl": "https://math.mit.edu/~sheffield/440/Lecture31.pdf",
+    "format": "pdf",
+    "wordCount": 5157,
+    "proofMentions": 16
+  },
+  "https://math.mit.edu/~sheffield/spring2014math175.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.mit.edu/~sheffield/spring2014math175.html",
+    "format": "html",
+    "wordCount": 643,
+    "proofMentions": 0
+  },
+  "https://math.oxford.emory.edu/site/math111/proofs/ivt/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.oxford.emory.edu/site/math111/proofs/ivt/",
+    "auditUrl": "https://math.oxford.emory.edu/site/math111/proofs/ivt/",
+    "format": "html",
+    "wordCount": 671,
+    "proofMentions": 3
+  },
+  "https://math.ucr.edu/~res/math145A-2017/sutherland-supplements.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://math.ucr.edu/~res/math145A-2017/sutherland-supplements.pdf",
+    "format": "pdf",
+    "wordCount": 67345,
+    "proofMentions": 196
+  },
+  "https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr01.pdf": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr01.pdf"
+  },
+  "https://mathweb.ucsd.edu/~doprea/220w21.html": {
+    "access": "fetch-failed",
+    "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection "
+  },
+  "https://mathweb.ucsd.edu/~drogalsk/200b-w15/200b.html": {
+    "access": "fetch-failed",
+    "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Read timed out. (read timeout=18)"
+  },
+  "https://mathweb.ucsd.edu/~jverstra/erdos-szekeres.pdf": {
+    "access": "fetch-failed",
+    "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Read timed out. (read timeout=18)"
+  },
+  "https://mikespivey.wordpress.com/2017/05/05/pascal-matrices-and-binomial-inversion/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://mikespivey.wordpress.com/2017/05/05/pascal-matrices-and-binomial-inversion/",
+    "format": "html",
+    "wordCount": 799,
+    "proofMentions": 0
+  },
+  "https://ocw.iti.hr/courses/mathematics/18-950-differential-geometry-fall-2008/lecture-notes/ch3_revised.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.iti.hr/courses/mathematics/18-950-differential-geometry-fall-2008/lecture-notes/ch3_revised.pdf",
+    "format": "pdf",
+    "wordCount": 4601,
+    "proofMentions": 14
+  },
+  "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/d792e60582882807d4b80057bcc61697_MIT15_083JF09_lec14.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/d792e60582882807d4b80057bcc61697_MIT15_083JF09_lec14.pdf",
+    "format": "pdf",
+    "wordCount": 2726,
+    "proofMentions": 1
+  },
+  "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+    "format": "html",
+    "wordCount": 386,
+    "proofMentions": 0
+  },
+  "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/3d4cc88026d44a01f936cd6a0aa995cb_MIT18_102s20_lec_FA.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/3d4cc88026d44a01f936cd6a0aa995cb_MIT18_102s20_lec_FA.pdf",
+    "format": "pdf",
+    "wordCount": 79503,
+    "proofMentions": 196
+  },
+  "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/8fb8d5c170f1613151aca71de21027bc_MIT18_102s21_full_lec.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/8fb8d5c170f1613151aca71de21027bc_MIT18_102s21_full_lec.pdf",
+    "format": "pdf",
+    "wordCount": 57458,
+    "proofMentions": 152
+  },
+  "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+    "format": "html",
+    "wordCount": 232,
+    "proofMentions": 0
+  },
+  "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/887e96172e82a615dac16fb26702d88b_MIT18_175S14_Lecture8.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/887e96172e82a615dac16fb26702d88b_MIT18_175S14_Lecture8.pdf",
+    "format": "pdf",
+    "wordCount": 2277,
+    "proofMentions": 5
+  },
+  "https://ocw.mit.edu/courses/18-200-principles-of-discrete-applied-mathematics-spring-2024/mit18_200_s24_lec11-12.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-200-principles-of-discrete-applied-mathematics-spring-2024/mit18_200_s24_lec11-12.pdf",
+    "auditUrl": "https://ocw.mit.edu/courses/18-200-principles-of-discrete-applied-mathematics-spring-2024/mit18_200_s24_lec11-12.pdf",
+    "format": "pdf",
+    "wordCount": 4716,
+    "proofMentions": 9
+  },
+  "https://ocw.mit.edu/courses/18-212-algebraic-combinatorics-spring-2019/resources/mit18_212s19_lec28/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-212-algebraic-combinatorics-spring-2019/resources/mit18_212s19_lec28/",
+    "format": "html",
+    "wordCount": 250,
+    "proofMentions": 3
+  },
+  "https://ocw.mit.edu/courses/18-314-combinatorial-analysis-fall-2014/2724112ea36679f82dc04f0b2f4f355e_MIT18_314F14_mt.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-314-combinatorial-analysis-fall-2014/2724112ea36679f82dc04f0b2f4f355e_MIT18_314F14_mt.pdf",
+    "format": "pdf",
+    "wordCount": 4370,
+    "proofMentions": 18
+  },
+  "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-318-topics-in-algebraic-combinatorics-spring-2006/resources/sperner/",
+    "format": "html",
+    "wordCount": 222,
+    "proofMentions": 0
+  },
+  "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+    "format": "html",
+    "wordCount": 215,
+    "proofMentions": 4
+  },
+  "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2015/ec341c7a2524e5dba7c3e939f322613a_MIT18_725F15_notes.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2015/ec341c7a2524e5dba7c3e939f322613a_MIT18_725F15_notes.pdf",
+    "format": "pdf",
+    "wordCount": 38724,
+    "proofMentions": 145
+  },
+  "https://ocw.mit.edu/courses/18-965-geometry-of-manifolds-fall-2004/55a7137272a97179db2a80b6e20d5de0_lecture4.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/18-965-geometry-of-manifolds-fall-2004/55a7137272a97179db2a80b6e20d5de0_lecture4.pdf",
+    "format": "pdf",
+    "wordCount": 1036,
+    "proofMentions": 2
+  },
+  "https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2005/8346e77d563c80b0ae714a21bc9a4541_max_flow_dff.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2005/8346e77d563c80b0ae714a21bc9a4541_max_flow_dff.pdf",
+    "auditUrl": "https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2005/8346e77d563c80b0ae714a21bc9a4541_max_flow_dff.pdf",
+    "format": "pdf",
+    "wordCount": 3703,
+    "proofMentions": 4
+  },
+  "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+    "format": "pdf",
+    "wordCount": 76277,
+    "proofMentions": 137
+  },
+  "https://ocw.mit.edu/courses/res-18-012-algebra-ii-student-notes-spring-2022/mit18_702s22_full_lec.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://ocw.mit.edu/courses/res-18-012-algebra-ii-student-notes-spring-2022/mit18_702s22_full_lec.pdf",
+    "format": "pdf",
+    "wordCount": 86023,
+    "proofMentions": 242
+  },
+  "https://openstax.org/books/calculus-volume-1": {
+    "access": "little-or-no-text",
+    "httpStatus": 200,
+    "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+    "format": "html",
+    "wordCount": 11,
+    "proofMentions": 0
+  },
+  "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem",
+    "format": "html",
+    "wordCount": 7743,
+    "proofMentions": 7
+  },
+  "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+    "format": "html",
+    "wordCount": 5077,
+    "proofMentions": 0
+  },
+  "https://people.cs.umass.edu/~barring/cs250s13/lecture/15.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://people.cs.umass.edu/~barring/cs250s13/lecture/15.pdf",
+    "format": "pdf",
+    "wordCount": 2367,
+    "proofMentions": 2
+  },
+  "https://people.cs.umass.edu/~sheldon/teaching/cs311/lec/lec20.pdf": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://people.cs.umass.edu/~sheldon/teaching/cs311/lec/lec20.pdf"
+  },
+  "https://people.math.harvard.edu/~siu/math113/5_cauchy_integral_formula_power_and_laurent_series_expansion.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://people.math.harvard.edu/~siu/math113/5_cauchy_integral_formula_power_and_laurent_series_expansion.pdf",
+    "format": "pdf",
+    "wordCount": 2759,
+    "proofMentions": 6
+  },
+  "https://people.math.wisc.edu/~awmille1/old/m222-10/free222-1-7.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://people.math.wisc.edu/~awmille1/old/m222-10/free222-1-7.pdf",
+    "auditUrl": "https://people.math.wisc.edu/~awmille1/old/m222-10/free222-1-7.pdf",
+    "format": "pdf",
+    "wordCount": 64851,
+    "proofMentions": 28
+  },
+  "https://people.maths.bris.ac.uk/~ki18754/LA_notes/LA_notes.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://people.maths.bris.ac.uk/~ki18754/LA_notes/LA_notes.html",
+    "auditUrl": "https://people.maths.bris.ac.uk/~ki18754/LA_notes/LA_notes.html",
+    "format": "html",
+    "wordCount": 51828,
+    "proofMentions": 82
+  },
+  "https://people.tamu.edu/~phoward/M615.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://people.tamu.edu/~phoward/M615.html",
+    "format": "html",
+    "wordCount": 1222,
+    "proofMentions": 4
+  },
+  "https://personal.lse.ac.uk/allenpd/LTCC/notes1.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://personal.lse.ac.uk/allenpd/LTCC/notes1.pdf",
+    "format": "pdf",
+    "wordCount": 10169,
+    "proofMentions": 47
+  },
+  "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+    "format": "pdf",
+    "wordCount": 313026,
+    "proofMentions": 463
+  },
+  "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+    "format": "html",
+    "wordCount": 104,
+    "proofMentions": 0
+  },
+  "https://planetmath.org/ProofofDesarguesTheorem": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://planetmath.org/ProofofDesarguesTheorem",
+    "format": "html",
+    "wordCount": 606,
+    "proofMentions": 4
+  },
+  "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis": {
+    "access": "fetch-failed",
+    "error": "403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis"
+  },
+  "https://profs.scienze.univr.it/~baldo/AAcorrente/FunctionalAnalysisNotes.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://profs.scienze.univr.it/~baldo/AAcorrente/FunctionalAnalysisNotes.pdf",
+    "format": "pdf",
+    "wordCount": 18101,
+    "proofMentions": 44
+  },
+  "https://publikationen.bibliothek.kit.edu/1000042944/3288564": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://publikationen.bibliothek.kit.edu/1000042944/3288564",
+    "auditUrl": "https://publikationen.bibliothek.kit.edu/1000042944/3288564",
+    "format": "pdf",
+    "wordCount": 39360,
+    "proofMentions": 76
+  },
+  "https://richardhammack.github.io/BookOfProof/Main.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://richardhammack.github.io/BookOfProof/Main.pdf",
+    "auditUrl": "https://richardhammack.github.io/BookOfProof/Main.pdf",
+    "format": "pdf",
+    "wordCount": 174706,
+    "proofMentions": 814
+  },
+  "https://richardhammack.github.io/BookOfProof/index.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+    "format": "html",
+    "wordCount": 723,
+    "proofMentions": 14
+  },
+  "https://sites.math.rutgers.edu/~ag930/Some%20Math/Brouwer%20Fixed%20Point%20Theorem.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://sites.math.rutgers.edu/~ag930/Some%20Math/Brouwer%20Fixed%20Point%20Theorem.pdf",
+    "auditUrl": "https://sites.math.rutgers.edu/~ag930/Some%20Math/Brouwer%20Fixed%20Point%20Theorem.pdf",
+    "format": "pdf",
+    "wordCount": 1719,
+    "proofMentions": 11
+  },
+  "https://sites.math.rutgers.edu/~zeilberg/mamarimY/Zeilberger_y1984_p319.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://sites.math.rutgers.edu/~zeilberg/mamarimY/Zeilberger_y1984_p319.pdf",
+    "format": "pdf",
+    "wordCount": 293,
+    "proofMentions": 2
+  },
+  "https://sites.math.washington.edu/~mcgovern/504%20pdf%202024/504.10-4.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://sites.math.washington.edu/~mcgovern/504%20pdf%202024/504.10-4.pdf",
+    "format": "pdf",
+    "wordCount": 2019,
+    "proofMentions": 6
+  },
+  "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+    "format": "html",
+    "wordCount": 3667,
+    "proofMentions": 21
+  },
+  "https://smakdonald.github.io/Homological-Algebra/sec-noether-normalizations.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://smakdonald.github.io/Homological-Algebra/sec-noether-normalizations.html",
+    "format": "html",
+    "wordCount": 2742,
+    "proofMentions": 14
+  },
+  "https://users.math.msu.edu/users/shapiro/Pubvit/Downloads/ArzNotes/ArzNotes.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://users.math.msu.edu/users/shapiro/Pubvit/Downloads/ArzNotes/ArzNotes.pdf",
+    "format": "pdf",
+    "wordCount": 1079,
+    "proofMentions": 3
+  },
+  "https://web.math.princeton.edu/~const/deg.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://web.math.princeton.edu/~const/deg.pdf",
+    "format": "pdf",
+    "wordCount": 3100,
+    "proofMentions": 19
+  },
+  "https://web.math.utk.edu/~dcartwr1/iaawa/section-domains-and-fields.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://web.math.utk.edu/~dcartwr1/iaawa/section-domains-and-fields.html",
+    "format": "html",
+    "wordCount": 1053,
+    "proofMentions": 3
+  },
+  "https://web.math.utk.edu/~freire/teaching/m561f22/Stone_Weierstrass_proof.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://web.math.utk.edu/~afreire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+    "format": "pdf",
+    "wordCount": 1856,
+    "proofMentions": 10
+  },
+  "https://web.stanford.edu/class/math161/CantorBernstein.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://web.stanford.edu/class/math161/CantorBernstein.pdf",
+    "auditUrl": "https://web.stanford.edu/class/math161/CantorBernstein.pdf",
+    "format": "pdf",
+    "wordCount": 632,
+    "proofMentions": 3
+  },
+  "https://web.stanford.edu/class/math220b/handouts/laplace.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://web.stanford.edu/class/math220b/handouts/laplace.pdf",
+    "format": "pdf",
+    "wordCount": 6486,
+    "proofMentions": 9
+  },
+  "https://webapps.math.uci.edu/~ndonalds/math140a/1complete.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://webapps.math.uci.edu/~ndonalds/math140a/1complete.html",
+    "auditUrl": "https://webapps.math.uci.edu/~ndonalds/math140a/1complete.html",
+    "format": "html",
+    "wordCount": 8387,
+    "proofMentions": 4
+  },
+  "https://www-math.mit.edu/~gs/LectureNotes/": {
+    "access": "fetch-failed",
+    "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+  },
+  "https://www.amsi.org.au/ESA_Senior_Years/SeniorTopic1/1c/1c_2content_6.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.amsi.org.au/ESA_Senior_Years/SeniorTopic1/1c/1c_2content_6.html",
+    "auditUrl": "https://www.amsi.org.au/ESA_Senior_Years/SeniorTopic1/1c/1c_2content_6.html",
+    "format": "html",
+    "wordCount": 224,
+    "proofMentions": 3
+  },
+  "https://www.colorado.edu/amath/sites/default/files/attached-files/wallis_stirling2.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.colorado.edu/amath/sites/default/files/attached-files/wallis_stirling2.pdf",
+    "format": "pdf",
+    "wordCount": 1046,
+    "proofMentions": 1
+  },
+  "https://www.cs.columbia.edu/~cs4205/files/CM4.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.cs.columbia.edu/~cs4205/files/CM4.pdf",
+    "format": "pdf",
+    "wordCount": 444,
+    "proofMentions": 1
+  },
+  "https://www.cs.utexas.edu/~misra/Hall-2021.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.cs.utexas.edu/~misra/Hall-2021.pdf",
+    "format": "pdf",
+    "wordCount": 629,
+    "proofMentions": 4
+  },
+  "https://www.jmilne.org/math/CourseNotes/AG500.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.jmilne.org/math/CourseNotes/AG500.pdf",
+    "auditUrl": "https://www.jmilne.org/math/CourseNotes/AG500.pdf",
+    "format": "pdf",
+    "wordCount": 120268,
+    "proofMentions": 64
+  },
+  "https://www.jmilne.org/math/CourseNotes/ANT.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+    "format": "pdf",
+    "wordCount": 82541,
+    "proofMentions": 94
+  },
+  "https://www.jmilne.org/math/CourseNotes/FT.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.jmilne.org/math/CourseNotes/FT.pdf",
+    "format": "pdf",
+    "wordCount": 62826,
+    "proofMentions": 214
+  },
+  "https://www.jmilne.org/math/xnotes/CA.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.jmilne.org/math/xnotes/CA.pdf",
+    "format": "pdf",
+    "wordCount": 60590,
+    "proofMentions": 52
+  },
+  "https://www.macs.hw.ac.uk/~bernd/schroers.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+    "format": "pdf",
+    "wordCount": 38903,
+    "proofMentions": 33
+  },
+  "https://www.math.brown.edu/~res/M1230/cauchy.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.brown.edu/reschwar/M1230/cauchy.pdf",
+    "auditUrl": "https://www.math.brown.edu/~res/M1230/cauchy.pdf",
+    "format": "pdf",
+    "wordCount": 2304,
+    "proofMentions": 12
+  },
+  "https://www.math.chalmers.se/Math/Grundutb/GU/MMA110/A09/MeasureTheory.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://utb.math.chalmers.se/Math/Grundutb/GU/MMA110/A09/MeasureTheory.pdf",
+    "format": "pdf",
+    "wordCount": 51329,
+    "proofMentions": 109
+  },
+  "https://www.math.columbia.edu/~chaoli/docs/ClassFieldTheory.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.columbia.edu/~chaoli/docs/ClassFieldTheory.html",
+    "format": "html",
+    "wordCount": 17553,
+    "proofMentions": 71
+  },
+  "https://www.math.hkbu.edu.hk/~ttang/UsefulCollections/matrix-book-2011-02.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.hkbu.edu.hk/~ttang/UsefulCollections/matrix-book-2011-02.pdf",
+    "format": "pdf",
+    "wordCount": 114670,
+    "proofMentions": 116
+  },
+  "https://www.math.hkust.edu.hk/~mameng/Teaching/LinearAlgebra/book.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.hkust.edu.hk/~mameng/Teaching/LinearAlgebra/book.pdf",
+    "format": "pdf",
+    "wordCount": 40524,
+    "proofMentions": 28
+  },
+  "https://www.math.lmu.de/~forster/eprints/gaussbonnet.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.lmu.de/~forster/eprints/gaussbonnet.pdf",
+    "format": "pdf",
+    "wordCount": 2369,
+    "proofMentions": 3
+  },
+  "https://www.math.lsu.edu/~mahlburg/teaching/handouts/2014-7230/Selberg-ElemPNT1949.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.lsu.edu/~mahlburg/teaching/handouts/2014-7230/Selberg-ElemPNT1949.pdf",
+    "format": "pdf",
+    "wordCount": 2282,
+    "proofMentions": 6
+  },
+  "https://www.math.miami.edu/~galloway/IntroDGnotes.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.miami.edu/~galloway/IntroDGnotes.pdf",
+    "format": "pdf",
+    "wordCount": 34366,
+    "proofMentions": 54
+  },
+  "https://www.math.stonybrook.edu/~cschnell/pdf/notes/mat530.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.stonybrook.edu/~cschnell/pdf/notes/mat530.pdf",
+    "auditUrl": "https://www.math.stonybrook.edu/~cschnell/pdf/notes/mat530.pdf",
+    "format": "pdf",
+    "wordCount": 79283,
+    "proofMentions": 231
+  },
+  "https://www.math.ubc.ca/~feldman/m425/impFnThm.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://personal.math.ubc.ca/~feldman/m425/impFnThm.pdf",
+    "format": "pdf",
+    "wordCount": 3238,
+    "proofMentions": 4
+  },
+  "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+    "format": "pdf",
+    "wordCount": 1174,
+    "proofMentions": 5
+  },
+  "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+    "format": "pdf",
+    "wordCount": 3997,
+    "proofMentions": 9
+  },
+  "https://www.math.ucla.edu/~pak/courses/206-Fall-2018/Course-notes-Raban-Discrete-Geometry.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.ucla.edu/~pak/courses/206-Fall-2018/Course-notes-Raban-Discrete-Geometry.pdf",
+    "auditUrl": "https://www.math.ucla.edu/~pak/courses/206-Fall-2018/Course-notes-Raban-Discrete-Geometry.pdf",
+    "format": "pdf",
+    "wordCount": 19074,
+    "proofMentions": 116
+  },
+  "https://www.math.ucla.edu/~sharifi/notes/topology-ch03.html": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.ucla.edu/~sharifi/notes/topology-ch03.html",
+    "format": "html",
+    "wordCount": 9169,
+    "proofMentions": 4
+  },
+  "https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf": {
+    "access": "fetch-failed",
+    "error": "404 Client Error: Not Found for url: https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf"
+  },
+  "https://www.math.utah.edu/~treiberg/InequalitiesSlides.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.math.utah.edu/~treiberg/InequalitiesSlides.pdf",
+    "format": "pdf",
+    "wordCount": 4650,
+    "proofMentions": 11
+  },
+  "https://www.maths.tcd.ie/~mozgovoy/2013_MA2223/notes_MA2223.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.maths.tcd.ie/~mozgovoy/2013_MA2223/notes_MA2223.pdf",
+    "auditUrl": "https://www.maths.tcd.ie/~mozgovoy/2013_MA2223/notes_MA2223.pdf",
+    "format": "pdf",
+    "wordCount": 17194,
+    "proofMentions": 66
+  },
+  "https://www.mit.edu/~dimitrib/Convex_Slides_2010.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.mit.edu/~dimitrib/Convex_Slides_2010.pdf",
+    "auditUrl": "https://www.mit.edu/~dimitrib/Convex_Slides_2010.pdf",
+    "format": "pdf",
+    "wordCount": 55903,
+    "proofMentions": 69
+  },
+  "https://www.uni-muenster.de/AMM/Veranstaltungen/WS23/InverseProblems/lectureNotes.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www.uni-muenster.de/AMM/Veranstaltungen/WS23/InverseProblems/lectureNotes.pdf",
+    "format": "pdf",
+    "wordCount": 29193,
+    "proofMentions": 90
+  },
+  "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+    "format": "pdf",
+    "wordCount": 2317,
+    "proofMentions": 9
+  },
+  "https://yakovenko.wordpress.com/wp-content/uploads/2011/04/lecture5symmetry.pdf": {
+    "access": "text-available",
+    "httpStatus": 200,
+    "finalUrl": "https://yakovenko.wordpress.com/wp-content/uploads/2011/04/lecture5symmetry.pdf",
+    "format": "pdf",
+    "wordCount": 4855,
+    "proofMentions": 11
+  }
+}

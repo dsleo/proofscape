@@ -1,0 +1,902 @@
+[
+  {
+    "id": "109-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+    "preciseLocator": "Finite Ramsey theorem, induction proof",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The source proves finite Ramsey by recurrence, not the proposed compactness route. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "110-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://mathweb.ucsd.edu/~jverstra/erdos-szekeres.pdf",
+    "preciseLocator": "Proof of the Erdős–Szekeres theorem; compare with rank-pair proof",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The note proves Erdős–Szekeres by longest-increasing-subsequence ranks, not the proposed poset chain–antichain route. Source text was not retrievable; no exact route proof was verified.",
+    "confidence": "medium",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "110-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://mathweb.ucsd.edu/~jverstra/erdos-szekeres.pdf",
+    "preciseLocator": "Proof of the Erdős–Szekeres theorem; compare with rank-pair proof",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The note proves Erdős–Szekeres by ranks, not the proposed permutation-diagram proof. Source text was not retrievable; no exact route proof was verified.",
+    "confidence": "medium",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "111-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+    "preciseLocator": "Euler product argument; for Erdős proof see Mathlib documentation “SumPrimeReciprocals,” references",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The source gives Euler's product argument, not the proposed Erdős proof. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "111-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+    "preciseLocator": "Euler product argument; for Erdős proof see Mathlib documentation “SumPrimeReciprocals,” references",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The source gives Euler's product argument, not the proposed grouping proof. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "112-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://dlmf.nist.gov/5.12",
+    "preciseLocator": "§5.12, beta function and Wallis integral/product identities",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is statement only: The DLMF page records beta-function identities without this route's proof. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "112-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://dlmf.nist.gov/5.12",
+    "preciseLocator": "§5.12, beta function and Wallis integral/product identities",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is statement only: The DLMF page records beta-function identities without this route's proof. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "112-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://dlmf.nist.gov/5.12",
+    "preciseLocator": "§5.12, beta function and Wallis integral/product identities",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is statement only: The DLMF page records beta-function identities without this route's proof. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "113-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf",
+    "preciseLocator": "Bernstein polynomial proof, section on Weierstrass approximation",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "113-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf",
+    "preciseLocator": "Bernstein polynomial proof, section on Weierstrass approximation",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "114-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+    "preciseLocator": "Lectures 18–19, extremal-function proof of Riemann mapping theorem",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection ). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "114-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+    "preciseLocator": "Lectures 18–19, extremal-function proof of Riemann mapping theorem",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection ). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "115-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+    "preciseLocator": "Lecture 13, Montel theorem from Arzelà–Ascoli and Cauchy estimates",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection ). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "115-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+    "preciseLocator": "Lecture 13, Montel theorem from Arzelà–Ascoli and Cauchy estimates",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection ). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "116-r1",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://arxiv.org/abs/1506.07019",
+    "preciseLocator": "Article: Ahlfors lemma and Picard theorems; verify the specific variant before attribution",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The article proves Little Picard via Ahlfors' geometric lemma, not this original value-distribution route. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "116-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://arxiv.org/abs/1506.07019",
+    "preciseLocator": "Article: Ahlfors lemma and Picard theorems; verify the specific variant before attribution",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The article mentions Nevanlinna theory but does not prove Picard through its second main theorem. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "117-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.uni-muenster.de/AMM/Veranstaltungen/WS23/InverseProblems/lectureNotes.pdf",
+    "preciseLocator": "Chapter “Inverse formulas for Radon and X-ray transform”; Fourier slice theorem and inversion",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The notes prove moment consistency, not injectivity by compact-support polynomial density. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "118-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+    "preciseLocator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "118-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+    "preciseLocator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "118-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+    "preciseLocator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "119-r1",
+    "conclusion": "partial",
+    "sourceUrl": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+    "preciseLocator": "§5.5, two proofs; contraction-mapping sketch",
+    "evidence": "The cited source was text-available and its proof section was inspected. It supplies only part of the catalog route: The local Picard–Lindelöf proof ends with an exercise to complete the argument. The remaining steps are not present at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and the queue audit reason were inspected; the cited source was previously marked text-available, but the complete proof text was not personally re-read in this pass."
+  },
+  {
+    "id": "119-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+    "preciseLocator": "§5.5, two proofs; contraction-mapping sketch",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The cited chapter gives a contraction argument, not Peano polygonal approximations. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "119-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+    "preciseLocator": "§5.5, two proofs; contraction-mapping sketch",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The cited chapter gives a contraction argument, not the proposed Gronwall route. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "120-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+    "preciseLocator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "120-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+    "preciseLocator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "120-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+    "preciseLocator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "121-r1",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1002/9780470317064",
+    "preciseLocator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1002/9780470317064). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "121-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1002/9780470317064",
+    "preciseLocator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1002/9780470317064). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "121-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1002/9780470317064",
+    "preciseLocator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1002/9780470317064). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "124-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+    "preciseLocator": "Product measures and Fubini–Tonelli theorem unit",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "124-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+    "preciseLocator": "Product measures and Fubini–Tonelli theorem unit",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "124-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+    "preciseLocator": "Product measures and Fubini–Tonelli theorem unit",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "125-r1",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+    "preciseLocator": "Chapter 1, Fourier inversion; edition locator",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "125-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+    "preciseLocator": "Chapter 1, Fourier inversion; edition locator",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "125-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+    "preciseLocator": "Chapter 1, Fourier inversion; edition locator",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "126-r1",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+    "preciseLocator": "Chapter 1, Parseval/Plancherel theorem; edition locator",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "126-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+    "preciseLocator": "Chapter 1, Parseval/Plancherel theorem; edition locator",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "126-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+    "preciseLocator": "Chapter 1, Parseval/Plancherel theorem; edition locator",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "127-r1",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+    "preciseLocator": "Bulletin survey: classical proofs and generalizations; exact proof sections",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "127-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+    "preciseLocator": "Bulletin survey: classical proofs and generalizations; exact proof sections",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "127-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+    "preciseLocator": "Bulletin survey: classical proofs and generalizations; exact proof sections",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "127-r4",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+    "preciseLocator": "Bulletin survey: classical proofs and generalizations; exact proof sections",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "128-r1",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://indico.math.cnrs.fr/event/15533/attachments/6324/11076/pgmo-2.pdf",
+    "preciseLocator": "PDF pp.15–16, “Hadwiger-Ohman proof of Theorem 1.11”: parallel boxes, AM–GM, finite-box induction, hyperplane cut, and approximation.",
+    "evidence": "Direct proof text inspected. The source proves the box case by AM–GM, then explicitly introduces induction on the total number of boxes and proceeds by a coordinate hyperplane cut, matching the catalog induction-and-slicing route. Approximation closes the measurable-set statement.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected PDF pp.15–16, including the stated induction and slicing steps."
+  },
+  {
+    "id": "128-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1090/S0273-0979-01-00930-2",
+    "preciseLocator": "Bulletin survey, proof approaches and history",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "128-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1090/S0273-0979-01-00930-2",
+    "preciseLocator": "Bulletin survey, proof approaches and history",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "129-r1",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://www.mit.edu/~dimitrib/Convex_Slides_2010.pdf",
+    "preciseLocator": "PDF p.1, “Proof of Caratheodory’s Theorem,” parts (a)–(b): minimal positive representation, dependence elimination, and lifting (x,1).",
+    "evidence": "Direct PDF proof text inspected. Part (a) eliminates a linear dependence by choosing the largest gamma until a coefficient vanishes; part (b) applies the lifting (x,1), yielding the affine coefficient-elimination route and the d+1 bound. This matches the catalog route.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the proof text in the MIT convexity slides, PDF page 1; exact elimination and lifting steps are present."
+  },
+  {
+    "id": "129-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.mit.edu/~dimitrib/Convex_Slides_2010.pdf",
+    "preciseLocator": "PDF p.1, “Proof of Caratheodory’s Theorem,” parts (a)–(b).",
+    "evidence": "Direct proof text inspected. The source proves conical/minimal-representation elimination and lifting, not the catalog route’s linear-programming basic-feasible-solution argument; no LP vertex/basic-feasible proof appears.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected PDF page 1; source proof text was read, and its route was compared with the catalog LP sketch."
+  },
+  {
+    "id": "129-r3",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://www.mit.edu/~dimitrib/Convex_Slides_2010.pdf",
+    "preciseLocator": "PDF p.1, “Proof of Caratheodory’s Theorem,” parts (a)–(b): minimal positive representation, dependence elimination, and lifting (x,1).",
+    "evidence": "Direct PDF proof text inspected. Part (a) eliminates a linear dependence by choosing the largest gamma until a coefficient vanishes; part (b) applies the lifting (x,1), yielding the affine coefficient-elimination route and the d+1 bound. This matches the catalog route.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the proof text in the MIT convexity slides, PDF page 1; exact elimination and lifting steps are present."
+  },
+  {
+    "id": "130-r1",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://www.math.ucla.edu/~pak/courses/206-Fall-2018/Course-notes-Raban-Discrete-Geometry.pdf",
+    "preciseLocator": "PDF p.7, §2.1 “Proof of Helly’s theorem,” after Lemma 2.1 (Radon): induction on n.",
+    "evidence": "Direct proof text inspected. The notes state Helly and Radon, prove Radon by solving d+1 affine equations and splitting signs, then prove Helly by induction using points chosen from intersections omitting each set. This matches the catalog Radon-plus-induction route.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the complete Radon lemma and Helly induction passage on PDF pp.6–7."
+  },
+  {
+    "id": "130-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.math.ucla.edu/~pak/courses/206-Fall-2018/Course-notes-Raban-Discrete-Geometry.pdf",
+    "preciseLocator": "PDF p.7, §2.1 “Proof of Helly’s theorem.”",
+    "evidence": "Direct proof text inspected. The notes use Radon plus induction and do not use the catalog minimal-empty-subfamily affine-dependence proof; that exact route was not verified.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected PDF pp.6–7 and compared the proof structure with the catalog minimal-subfamily sketch."
+  },
+  {
+    "id": "130-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4613-0039-7",
+    "preciseLocator": "Chapter 1, Helly theorem proofs",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "131-r1",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://www.math.ucla.edu/~pak/courses/206-Fall-2018/Course-notes-Raban-Discrete-Geometry.pdf",
+    "preciseLocator": "PDF p.7, §2.1, Lemma 2.1 (Radon), proof lines/formulas solving d+1 affine equations and splitting positive/negative coefficients.",
+    "evidence": "Direct proof text inspected. The Radon proof sets Στ_i=0 and Στ_i y_i=0, chooses positive and negative index sets, and normalizes equal convex combinations. This exactly matches the catalog sign-partition/nullspace route.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the complete Radon proof on PDF p.7; the affine system and sign split are explicit."
+  },
+  {
+    "id": "131-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4613-0039-7",
+    "preciseLocator": "Chapter 1, Radon theorem",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "131-r3",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://www.math.ucla.edu/~pak/courses/206-Fall-2018/Course-notes-Raban-Discrete-Geometry.pdf",
+    "preciseLocator": "PDF p.7, §2.1, Lemma 2.1 (Radon), proof lines/formulas solving d+1 affine equations and splitting positive/negative coefficients.",
+    "evidence": "Direct proof text inspected. The Radon proof sets Στ_i=0 and Στ_i y_i=0, chooses positive and negative index sets, and normalizes equal convex combinations. This exactly matches the catalog sign-partition/nullspace route.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the complete Radon proof on PDF p.7; the affine system and sign split are explicit."
+  },
+  {
+    "id": "132-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1017/CBO9780511845279",
+    "preciseLocator": "Chapter 3, max-flow min-cut theorem and augmenting paths; later LP duality discussion",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511845279). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "133-r1",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://www.math.brown.edu/~res/M1230/cauchy.pdf",
+    "preciseLocator": "PDF pp.3–5, §0.3 “Proof of the Matrix Tree Theorem”: oriented incidence matrix, Cauchy–Binet, and nonzero minors indexed by spanning trees.",
+    "evidence": "Direct PDF proof text inspected. It forms the oriented incidence matrix A, uses the reduced Laplacian as AAᵀ, expands the determinant by Cauchy–Binet, and identifies nonzero incidence minors with spanning trees. This matches the catalog Laplacian cofactor/determinant route.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the complete Matrix Tree proof in the Brown PDF, pp.3–5."
+  },
+  {
+    "id": "133-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+    "preciseLocator": "Bibliographic book record; the electrical-network proof was not located in accessible text",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "133-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+    "preciseLocator": "Bibliographic book record; the all-minors proof was not located in accessible text",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "134-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://diestel-graph-theory.com/",
+    "preciseLocator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "134-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://diestel-graph-theory.com/",
+    "preciseLocator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "134-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://diestel-graph-theory.com/",
+    "preciseLocator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "135-r1",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1002/cpa.20308",
+    "preciseLocator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://onlinelibrary.wiley.com/doi/10.1002/cpa.20308). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "135-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1002/cpa.20308",
+    "preciseLocator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://onlinelibrary.wiley.com/doi/10.1002/cpa.20308). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "135-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1002/cpa.20308",
+    "preciseLocator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (403 Client Error: Forbidden for url: https://onlinelibrary.wiley.com/doi/10.1002/cpa.20308). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "136-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+    "preciseLocator": "Chapter 2, homology and degree methods for invariance of domain",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "136-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+    "preciseLocator": "Chapter 2, homology and degree methods for invariance of domain",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "136-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+    "preciseLocator": "Chapter 2, homology and degree methods for invariance of domain",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "138-r1",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://web.stanford.edu/class/math161/CantorBernstein.pdf",
+    "preciseLocator": "PDF p.1, lines 17–67: recursive C_n construction, piecewise H, onto and one-to-one case proof.",
+    "evidence": "Direct PDF proof text inspected. It defines C0=A\\g[B], Cn+1=g[f[Cn]], C=union Cn, then H=f on C and g^{-1} on A\\C; the source proves surjectivity and injectivity in three cases. This is the catalog iterative alternating-chain route.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the complete one-page Stanford proof, including construction and both verification arguments."
+  },
+  {
+    "id": "138-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://web.stanford.edu/class/math161/CantorBernstein.pdf",
+    "preciseLocator": "PDF p.1, lines 17–67.",
+    "evidence": "Direct proof text inspected. The Stanford source gives the recursive C_n chain construction, not the catalog maximal-admissible-subset construction; no maximality or union-of-admissible-sets argument appears.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the complete Stanford proof and compared its construction with the catalog maximal-subset sketch."
+  },
+  {
+    "id": "138-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://web.stanford.edu/class/math161/CantorBernstein.pdf",
+    "preciseLocator": "PDF p.1, lines 17–67.",
+    "evidence": "Direct proof text inspected. The Stanford source gives the elementary recursive chain proof, not the catalog Boolean-algebra/Knaster–Tarski fixed-point formulation; no fixed-point theorem appears.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the complete Stanford proof and compared its construction with the catalog fixed-point sketch."
+  },
+  {
+    "id": "139-r1",
+    "conclusion": "partial",
+    "sourceUrl": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+    "preciseLocator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources",
+    "evidence": "The cited source was text-available and its proof section was inspected. It supplies only part of the catalog route: The cited chapter gives propositional compactness and opens the Henkin method; it does not finish the first-order completeness proof. The remaining steps are not present at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and the queue audit reason were inspected; the cited source was previously marked text-available, but the complete proof text was not personally re-read in this pass."
+  },
+  {
+    "id": "139-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+    "preciseLocator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The cited chapter discusses Henkin's method, not the proposed tableaux route. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "139-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+    "preciseLocator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The cited chapter discusses Henkin's method, not the proposed cut-elimination route. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "140-r1",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1017/CBO9780511804079",
+    "preciseLocator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511804079). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "140-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1017/CBO9780511804079",
+    "preciseLocator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511804079). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "140-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1017/CBO9780511804079",
+    "preciseLocator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511804079). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "141-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+    "preciseLocator": "Chapter 3, Dedekind domains and unique factorization of nonzero ideals",
+    "evidence": "Catalog theorem route and proof sketch were checked against the cited locator. The audit identifies a different proof scope/route: The cited text proves ideal factorization, not the proposed geometry-of-numbers route. Source text was read in the audit; no exact route proof was verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, and cited source locator were inspected; the queue audit records the source text as available and identifies the route/scope mismatch, but no fresh complete-proof verification was made."
+  },
+  {
+    "id": "143-r1",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4684-9934-7",
+    "preciseLocator": "Uniformization theorem chapter; classification of simply connected surfaces",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9934-7). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "143-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4684-9934-7",
+    "preciseLocator": "Uniformization theorem chapter; classification of simply connected surfaces",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9934-7). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "143-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4684-9934-7",
+    "preciseLocator": "Uniformization theorem chapter; classification of simply connected surfaces",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9934-7). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "144-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/BF02592048",
+    "preciseLocator": "Original index theorem paper, Part I; proof program, not each later proof",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "144-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/BF02592048",
+    "preciseLocator": "Original index theorem paper, Part I; proof program, not each later proof",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "144-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/BF02592048",
+    "preciseLocator": "Original index theorem paper, Part I; proof program, not each later proof",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "144-r4",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/BF02592048",
+    "preciseLocator": "Original index theorem paper, Part I; proof program, not each later proof",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "146-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/BF01213674",
+    "preciseLocator": "State-sum construction/invariance under Reidemeister moves",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "146-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/BF01213674",
+    "preciseLocator": "State-sum construction/invariance under Reidemeister moves",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "146-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/BF01213674",
+    "preciseLocator": "State-sum construction/invariance under Reidemeister moves",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "146-r4",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/BF01213674",
+    "preciseLocator": "State-sum construction/invariance under Reidemeister moves",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "147-r1",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4614-9821-7",
+    "preciseLocator": "Chapter on constant sectional curvature and local space-form theorem",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4614-9821-7). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "147-r2",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4614-9821-7",
+    "preciseLocator": "Chapter on constant sectional curvature and local space-form theorem",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4614-9821-7). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "147-r3",
+    "conclusion": "source-inaccessible",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4614-9821-7",
+    "preciseLocator": "Chapter on constant sectional curvature and local space-form theorem",
+    "evidence": "Catalog theorem route, proof sketch, and citation were checked, but the cited source could not be fetched in this audit (404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4614-9821-7). The citation is therefore search/citation-only; the complete route proof cannot be verified.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source text was not personally accessible in this pass, so this is not a proof-text verification."
+  },
+  {
+    "id": "148-r1",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/978-3-319-61860-9",
+    "preciseLocator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "148-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/978-3-319-61860-9",
+    "preciseLocator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "148-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/978-3-319-61860-9",
+    "preciseLocator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "149-r1",
+    "conclusion": "partial",
+    "sourceUrl": "https://www.maths.gla.ac.uk/~mpowell/alg-top-notes-19-20.pdf",
+    "preciseLocator": "§33 “The Borsuk–Ulam theorem,” Proposition 33.1 and Theorem 33.2.",
+    "evidence": "Direct proof text inspected. Theorem 33.2 gives the exact odd-map restriction argument: normalize g(x)−g(−x), restrict to the equator, and obtain the degree contradiction. However Proposition 33.1 (odd map has odd degree) is explicitly labeled a sketch using the covering-space long exact sequence, so the complete degree/mod-2 route is only partially verified.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the theorem proof and the source’s explicit “Sketch of proof” qualification for Proposition 33.1."
+  },
+  {
+    "id": "149-r2",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.maths.gla.ac.uk/~mpowell/alg-top-notes-19-20.pdf",
+    "preciseLocator": "§33, Theorem 33.2.",
+    "evidence": "Direct proof text inspected. The source uses degree and odd-map restriction, not Tucker’s lemma or antipodal triangulation; no complementary-edge labeling proof appears.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected §33 and compared its degree proof with the catalog Tucker route."
+  },
+  {
+    "id": "149-r3",
+    "conclusion": "route-mismatch",
+    "sourceUrl": "https://www.maths.gla.ac.uk/~mpowell/alg-top-notes-19-20.pdf",
+    "preciseLocator": "§33, Theorem 33.2.",
+    "evidence": "Direct proof text inspected. The source uses degree and covering-space homology, not the catalog equivariant Z₂-index/cohomology-height formulation.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected §33 and compared its proof with the catalog equivariant-index route."
+  },
+  {
+    "id": "150-r1",
+    "conclusion": "full-proof-verified",
+    "sourceUrl": "https://faculty.bard.edu/~hhaggard/teaching/phys105/lectures/Lectures10and11Charman.pdf",
+    "preciseLocator": "PDF pp.16–17, §III.C “A Derivative-Based Proof,” equations (53)–(58): Euler–Lagrange substitution yields dJ/dt=0 with J=(τL+(ξ−τq̇)·∂L/∂q̇−f).",
+    "evidence": "Direct proof text inspected. The notes state the finite-degree-of-freedom first theorem, derive the infinitesimal symmetry condition, add/subtract Euler–Lagrange terms, combine total derivatives, and conclude the displayed conserved J on Euler–Lagrange trajectories. This matches the catalog Euler–Lagrange variational identity route.",
+    "confidence": "high",
+    "inspectionBasis": "Personally inspected the complete derivative-based proof on PDF pp.16–17, including equations (53)–(58) and the conservation conclusion."
+  },
+  {
+    "id": "150-r2",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4612-0979-9",
+    "preciseLocator": "Chapter 4, Noether theorem for variational problems; exact finite-dimensional hypotheses",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  },
+  {
+    "id": "150-r3",
+    "conclusion": "source-limitation",
+    "sourceUrl": "https://doi.org/10.1007/978-1-4612-0979-9",
+    "preciseLocator": "Chapter 4, Noether theorem for variational problems; exact finite-dimensional hypotheses",
+    "evidence": "Catalog theorem route and proof sketch were checked. The cited page/source was accessible enough for the audit, but it is index or abstract only: The linked page is a publisher record, book or course index, rather than the located proof section. No complete exact proof for this route was verified at the cited locator.",
+    "confidence": "high",
+    "inspectionBasis": "Catalog theorem statement, route sketch, citation, and queue audit disposition were inspected; source availability was recorded, but the complete proof text was not personally verified in this pass."
+  }
+]

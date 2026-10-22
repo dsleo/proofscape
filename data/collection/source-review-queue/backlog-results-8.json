@@ -1,0 +1,132 @@
+[
+ {
+  "routeId": "46-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cauchy%27s_theorem_(group_theory)",
+  "sourceLabel": "Wikipedia, Cauchy's theorem (group theory)",
+  "preciseLocator": "Section 'Statement and proof', Proof 2",
+  "evidence": "Read the full proof: set X of p-tuples with product e, |X|=|G|^(p-1), C_p rotation, orbit sizes 1 or p, fixed tuples (x,...,x) with x^p=e, count divisible by p and includes e, so a nonidentity element of order p exists.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "46-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cauchy%27s_theorem_(group_theory)",
+  "sourceLabel": "Wikipedia, Cauchy's theorem (group theory)",
+  "preciseLocator": "Section 'Statement and proof', Proof 1",
+  "evidence": "Read the full proof: abelian case by induction via quotient G/H, then general case via center Z and class equation, finding a noncentral class of size not divisible by p so p divides a proper centralizer, then induction.",
+  "sketchProblem": "Sketch wording is garbled (it says classes 'divisible by p can be removed'); the actual argument picks a class whose size is NOT divisible by p.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "46-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Wikipedia's Cauchy page proves the theorem only by class-equation induction and the tuple-rotation action; no source read proves it via conjugation on p-subgroups plus Sylow I. Did not find an open text with this route.",
+  "sketchProblem": "Route is circular/dependent: it assumes Sylow I, which standard texts prove using Cauchy; also 'conjugation orbits on p-subgroups' is not what the described argument actually uses.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "49-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://people.reed.edu/~jerry/361/lectures/lec08.pdf",
+  "sourceLabel": "Reed College Math 361 lecture 8, quadratic reciprocity",
+  "preciseLocator": "Lemma 3.2 (Gauss's Lemma) with proof; Section 7, Proposition 7.1 (lattice point counting)",
+  "evidence": "Read Gauss's lemma proof and Prop 7.1: parity of S(q,p)=sum floor(qi/p) equals Gauss's count mu, then S(p,q)+S(q,p) is the lattice-point count of the box, giving (-1)^((p-1)/2*(q-1)/2). Relies on Euler's lemma (Section 3).",
+  "sketchProblem": "Sketch says N_p+N_q equals the product, but N is the Gauss-lemma count; the identity actually holds for the floor sums S, which agree with N mod 2.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "49-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Proofs_of_quadratic_reciprocity",
+  "sourceLabel": "Wikipedia, Proofs of quadratic reciprocity",
+  "preciseLocator": "Section 'Eisenstein's proof' with subsection 'Proof of Eisenstein's lemma'",
+  "evidence": "Read Eisenstein's lemma with proof, the lattice-point parity argument on triangles AXY and WYA, absence of lattice points on line AY, and total (p-1)/2*(q-1)/2 points in the rectangle. Uses Euler's criterion as input.",
+  "sketchProblem": "Sketch says regions are counted by 'Gauss-lemma exponents'; the source uses Eisenstein's lemma (floor sums), not Gauss's lemma directly.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "49-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/2208.07242",
+  "sourceLabel": "D'Hoker and Kaidi, Lectures on modular forms and strings (arXiv 2208.07242)",
+  "preciseLocator": "Appendix A.5 (Gauss sums, eq. A.5.4 g^2=(-1)^((p-1)/2) p, with proof) and A.6 (Quadratic reciprocity, pp. 289-290)",
+  "evidence": "Read the proof of g^2 by summing g_a g_{-a} over a in two ways, then g^(q-1) computed via Euler's criterion and via the q-th power congruence in the algebraic integers, giving (q|p)=(p*|q) sign. Gauss sum is written with Legendre symbol weights rather than sum of e^(2 pi i x^2/p).",
+  "sketchProblem": "Sketch conflates Gauss sum with 'Jacobi sums' and defines G as sum of e^(2 pi i x^2/p); the source uses sum (k|p) zeta^k (equal by standard identity, not shown). No Jacobi sums are involved.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "50-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.utoronto.ca/gscott/oct7_2015.pdf",
+  "sourceLabel": "G. Scott, Algebra Notes Oct. 7: Unique Factorization of Polynomials",
+  "preciseLocator": "Theorem (unique factorization), Lemma, and their proofs",
+  "evidence": "Existence by degree descent and uniqueness via irreducible-implies-prime and induction are written out, but the Euclidean algorithm/gcd and Bezout step is missing: primality uses 'F[x] is a PID' cited from the previous class.",
+  "sketchProblem": "Sketch says gcd is a linear combination via repeated division; none of the sources read prove that for this route in full.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "50-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.utoronto.ca/gscott/oct7_2015.pdf",
+  "sourceLabel": "G. Scott, Algebra Notes Oct. 7: Unique Factorization of Polynomials",
+  "preciseLocator": "Lemma and proof of unique factorization",
+  "evidence": "Existence by induction on degree, PID-based Euclid lemma, and uniqueness induction are present; the step 'F[x] is a PID by polynomial division' is only cited from an earlier class, not proved. Sudan (Harvard AM106 L17) and Ackerman (Harvard 371) notes omit the proofs.",
+  "sketchProblem": "Sketch phrase 'In any UFD, every nonzero nonunit factors...' is garbled; it should say 'in a PID'.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "50-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Read Scott, Sudan, Ackerman, W&M and UMD notes: existence of factorization is by degree descent in F[x] itself, none uses an algebraic closure.",
+  "sketchProblem": "Sketch is internally inconsistent: it admits algebraic closure is unnecessary, so the route is not a distinct proof (degenerates to the degree-induction route); root splitting yields only linear factors over the closure, not irreducibles over F.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "51-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://people.seas.harvard.edu/~madhusudan/courses/Fall2017/lecture-notes/L17.pdf",
+  "sourceLabel": "Sudan, Harvard AM 106/206 Lecture 17",
+  "preciseLocator": "Section 1, Euclidean Algorithm for Polynomials",
+  "evidence": "States the algorithm, strict degree decrease and existence of s,t with h=sf+tg, but the proof is 'analogous to integers, using repeated division' with no back-substitution written out.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "51-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.utoronto.ca/gscott/oct7_2015.pdf",
+  "sourceLabel": "G. Scott, Algebra Notes Oct. 7",
+  "preciseLocator": "Proof of Lemma (ideal I=(f,p)=(r))",
+  "evidence": "Uses that an ideal of F[x] is principal and extracts a combination, but only for an irreducible f; the general gcd argument is absent and the PID fact is cited, not proved. The arXiv text 2508.13165 has 'Any Euclidean domain is a PID' (Prop 2.14.2) but I did not read it through.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "54-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://users.math.msu.edu/users/hensh/courses/482/spring25/handouts/BinomialInversion.pdf",
+  "sourceLabel": "MSU MTH 481 Lecture 10, Binomial Inversion",
+  "preciseLocator": "Proposition 1 and Theorem 2",
+  "evidence": "Substitution of the inverse into the sum and reduction to the orthogonality identity are present, but the vanishing is proved by a sign-reversing involution, not by the binom(n,j)binom(n-j,r) factorization and alternating binomial expansion in the sketch; one direction is called 'similar'.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "55-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://archive.math.arizona.edu/faris/combinatoricsweb/graph.pdf",
+  "sourceLabel": "J. Faris, Graph Topics notes for Math 447",
+  "preciseLocator": "Section 2 (Rooted trees, eqs 6-8) and Section 5 (Appendix: Lagrange inversion, eqs 28-35)",
+  "evidence": "Read w=z e^w from rooted-tree decomposition, Lagrange inversion with its residue proof, coefficient n^(n-1)/n!, then Cayley's n^(n-2). The division by n is stated tersely; P. Cameron's LTCC Enumerative Combinatorics 10, Sec. 10.4, states it explicitly but does not prove Lagrange inversion.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ }
+]

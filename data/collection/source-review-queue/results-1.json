@@ -1,0 +1,902 @@
+[
+  {
+    "id": "2-r4",
+    "conclusion": "source-limitation",
+    "source URL": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "3-r4",
+    "conclusion": "source-limitation",
+    "source URL": "https://arxiv.org/abs/1202.3670",
+    "precise locator": "Sections 2.4–2.8, survey of analytic and other proof families",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "4-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://arxiv.org/abs/1202.3670",
+    "precise locator": "Section 3.2, “A survey of elementary proofs of IP in special arithmetic progressions”",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "4-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://arxiv.org/abs/1202.3670",
+    "precise locator": "Sections 2.3 and 3.2, algebraic-number-theory methods and special arithmetic progressions",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "4-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://arxiv.org/abs/1202.3670",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "5-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+    "precise locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "5-r2",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Math/3%3A_Proof_Techniques/3.6%3A_Mathematical_Induction_-_An_Introduction",
+    "precise locator": "Example 3.6.1, lines 233–260",
+    "evidence/limitation": "Read the complete induction proof: base n=1, assume the k case, append k+1, simplify to (k+1)(k+2)/2, and conclude by induction. This exactly matches the route sketch.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "5-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+    "precise locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "5-r4",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+    "precise locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "6-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+    "precise locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "6-r2",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://math.libretexts.org/Courses/Monroe_Community_College/MTH_220_Discrete_Math/3%3A_Proof_Techniques/3.6%3A_Mathematical_Induction_-_An_Introduction",
+    "precise locator": "Exercise 3.6.2 solution, lines 334–351",
+    "evidence/limitation": "Read the complete induction solution: base case n=1, inductive hypothesis for k, append 2(k+1)−1, simplify k²+2k+1=(k+1)², then conclude by PMI. This is a direct educational source and exactly matches the route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "6-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+    "precise locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "7-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://www.amsi.org.au/ESA_Senior_Years/SeniorTopic1/1c/1c_2content_6.html",
+    "precise locator": "“Proof of the binomial theorem by mathematical induction,” complete proof section",
+    "evidence/limitation": "Read the complete induction proof: establish n=1, multiply the k expansion by (a+b), collect adjacent coefficients, apply Pascal identity, and conclude the k+1 expansion. This is a direct educational lecture text and matches the exponent-induction route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "7-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+    "precise locator": "§11.6, Binomial Theorem (the expansion and combinatorial coefficient discussion)",
+    "evidence/limitation": "Inspected the linked source page and the catalog route statement/sketch. The page states or develops the theorem/topic but does not print the complete proof route specified here; this is search/statement evidence only, so full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "7-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+    "precise locator": "§11.6, Binomial Theorem (the expansion and combinatorial coefficient discussion)",
+    "evidence/limitation": "Inspected the linked source page and the catalog route statement/sketch. The page states or develops the theorem/topic but does not print the complete proof route specified here; this is search/statement evidence only, so full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "8-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "8-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "8-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "9-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "9-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "9-r4",
+    "conclusion": "source-limitation",
+    "source URL": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "10-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+    "precise locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited book landing page exposes metadata/contents rather than proof text, and I did not verify a complete exact route proof.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "10-r2",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://people.maths.bris.ac.uk/~ki18754/LA_notes/LA_notes.html",
+    "precise locator": "Theorems 1.13–1.14, lines 382–421",
+    "evidence/limitation": "Read the complete Euclidean norm proof: prove Cauchy–Schwarz by nonnegative squared norms, expand ||v+w||², bound the cross term, compare with (||v||+||w||)², and take square roots. This exactly matches the squared-norm/Cauchy–Schwarz route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "10-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+    "precise locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited book landing page exposes metadata/contents rather than proof text, and I did not verify a complete exact route proof.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "11-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://linearalgebra.math.umanitoba.ca/math1220/section-48.html",
+    "precise locator": "§7.3.2, Theorem 7.3.2 proof, lines 49–99",
+    "evidence/limitation": "Read the complete perpendicular proof, including acute and obtuse cases: define the altitude and segments, apply Pythagoras, substitute the projection a cos(theta), and simplify to c²=a²+b²−2ab cos(theta). This exactly matches the route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "11-r2",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://people.math.wisc.edu/~awmille1/old/m222-10/free222-1-7.pdf",
+    "precise locator": "Law of cosines proof, displayed equations (61) and subsequent vector expansion",
+    "evidence/limitation": "Read the proof text: after the perpendicular/Pythagorean derivation, it identifies the opposite side vector b−a and expands its dot product to obtain the cosine-law identity. The dot-product route is explicitly written.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "11-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+    "precise locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited book landing page exposes metadata/contents rather than proof text, and I did not verify a complete exact route proof.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "12-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://jwilson.coe.uga.edu/EMT668/EMAT6680.2000/Umberger/MATH7200/HeronFormulaProject/AlgebraicProof/algproof.html",
+    "precise locator": "University of Georgia MATH 7200 algebraic proof, lines 27–34",
+    "evidence/limitation": "Read the complete altitude/elimination proof: construct altitude h, solve d=(a²−b²+c²)/(2c), substitute A=ch/2, factor 16A² into the four Heron factors, and convert to semiperimeter form. This exactly matches the route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "12-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+    "precise locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited book landing page exposes metadata/contents rather than proof text, and I did not verify a complete exact route proof.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "12-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+    "precise locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited book landing page exposes metadata/contents rather than proof text, and I did not verify a complete exact route proof.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "13-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://richardhammack.github.io/BookOfProof/Main.pdf",
+    "precise locator": "§7.3, Proposition 7.1, pp. 152–153 (PDF pp. 163–164)",
+    "evidence/limitation": "Read both linked proof stages in Hammack: Proposition 7.1 proves Bézout coefficients via the least positive linear combination (PDF pp. 163–164), and Proposition 10.1 then explicitly deduces Euclid’s lemma from Bézout in its base case and completes induction on the number of factors (PDF p. 197). This directly proves the requested route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "13-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "13-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "14-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://richardhammack.github.io/BookOfProof/Main.pdf",
+    "precise locator": "§10.4, Theorem 10.1, p. 192 (PDF p. 203)",
+    "evidence/limitation": "Read the complete theorem proof: strong induction establishes existence of prime factorizations; smallest-counterexample argument plus Proposition 10.1 establishes uniqueness. This is the requested existence/uniqueness route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "14-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "15-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "15-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "15-r3",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://www.dpmms.cam.ac.uk/~wtg10/fermat.html",
+    "precise locator": "“The statement, and sketches of the usual proofs,” lines 6–9; “Finding the proof via binomial coefficients,” lines 86–90",
+    "evidence/limitation": "Read the complete induction proof: reformulate to x^p≡x, expand (x+1)^p, use p|C(p,r) for 1≤r<p, and apply the inductive hypothesis. The page explicitly closes the induction argument and derives Fermat’s little theorem.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "16-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/03%3A_Primes_Numbers/3.02%3A_Wilson%27s_Theorem",
+    "precise locator": "§3.2, Theorem 3.2.1 proof, lines 220–229",
+    "evidence/limitation": "Read the complete Wilson proof: the lemma identifies self-inverse residues as ±1, then the theorem pairs every remaining unit with its inverse, leaving 1 and p−1; the converse is also proved. This directly matches the inverse-pairing route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "16-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The cited item is contextual or addresses a different proof approach; I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "17-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "17-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "17-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "18-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "18-r2",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://richardhammack.github.io/BookOfProof/Main.pdf",
+    "precise locator": "§7.3, Proposition 7.1, pp. 152–153 (PDF pp. 163–164)",
+    "evidence/limitation": "Read the complete least-positive-element proof for the ideal {ax+by}: the least positive d is shown to divide a,b and every common divisor divides d, giving d=gcd(a,b). This matches the route sketch.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "18-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "19-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_%28Barrus_and_Clark%29/01%253A_Chapters/1.23%253A_Chinese_Remainder_Theorem",
+    "precise locator": "Theorem 1.23.1 proof, lines 221–233; especially lines 225–231",
+    "evidence/limitation": "Read the full constructive proof: Bézout coefficients combine the first two congruences into x₂, then induction combines x₂ with each next congruence; lines 232–233 prove uniqueness. This directly matches the coefficient construction route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "19-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+    "precise locator": "§2.3, constructive idempotent proof and uniqueness",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "20-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://webapps.math.uci.edu/~ndonalds/math140a/1complete.html",
+    "precise locator": "Theorem 1.22 and Corollary 1.23, “Archimedean Property and Density of the Rationals,” lines 2046–2157",
+    "evidence/limitation": "Read the complete density proof: scale (a,b) by n using Archimedean property, choose the least integer m above an, prove m−1≤an and m<bn, then divide by n. This is the requested Archimedean scaling route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "20-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "20-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "21-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "21-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "21-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "22-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "22-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "22-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://richardhammack.github.io/BookOfProof/index.html",
+    "precise locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source is a general textbook/context page and I did not find a complete exact proof matching this route in the inspected text. Full-proof verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "23-r1",
+    "conclusion": "route-mismatch",
+    "source URL": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+    "precise locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed.",
+    "evidence/limitation": "Inspected the linked Euler formula page and the catalog sketch. Its displayed proofs use spanning trees/dual graphs or other Euler-formula arguments; they do not contain the requested lattice triangulation route, so this route is a mismatch.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "23-r2",
+    "conclusion": "route-mismatch",
+    "source URL": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+    "precise locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed.",
+    "evidence/limitation": "Inspected the linked Euler formula page and the catalog sketch. Its displayed proofs use spanning trees/dual graphs or other Euler-formula arguments; they do not contain the requested lattice triangulation route, so this route is a mismatch.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "23-r3",
+    "conclusion": "route-mismatch",
+    "source URL": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+    "precise locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed.",
+    "evidence/limitation": "Inspected the linked Euler formula page and the catalog sketch. Its displayed proofs use spanning trees/dual graphs or other Euler-formula arguments; they do not contain the requested lattice triangulation route, so this route is a mismatch.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "26-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "26-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "27-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://math.mit.edu/~djk/calculus_beginners/chapter13/section02.html",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "28-r1",
+    "conclusion": "full-proof-verified",
+    "source URL": "https://math.oxford.emory.edu/site/math111/proofs/ivt/",
+    "precise locator": "Proof of the Intermediate Value Theorem, lines 15–47",
+    "evidence/limitation": "Read the complete supremum proof: define S={x:f(x)<k}, set c=sup S, use continuity on both sides to obtain k−ε<f(c)<k+ε for every ε, and conclude f(c)=k. This exactly matches the least-upper-bound route.",
+    "confidence": "high",
+    "inspectionBasis": "independently inspected proof text"
+  },
+  {
+    "id": "28-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "28-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "29-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "29-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "29-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "30-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "30-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "30-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "31-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "31-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "31-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "32-r3",
+    "conclusion": "route-mismatch",
+    "source URL": "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem",
+    "precise locator": "§4.4, Rolle and Mean Value Theorem proofs",
+    "evidence/limitation": "Inspected the linked source and catalog sketch. The cited location addresses a neighboring theorem/proof route and does not contain the complete route specified here; this is a route mismatch.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "33-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "33-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "33-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "34-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "34-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "34-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "35-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "35-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "35-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://openstax.org/books/calculus-volume-1",
+    "precise locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "36-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "36-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "36-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+    "precise locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+    "evidence/limitation": "Inspected the linked source and catalog route sketch. The source provides theorem/topic exposition or a different proof strategy, but I did not find complete proof text matching this route at the cited location. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "37-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "37-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "37-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "38-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "38-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "38-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "39-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "39-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "39-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "40-r1",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "40-r2",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  },
+  {
+    "id": "40-r3",
+    "conclusion": "source-limitation",
+    "source URL": "https://www-math.mit.edu/~gs/LectureNotes/",
+    "precise locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+    "evidence/limitation": "Inspected the MIT Linear Algebra lecture-notes index and catalog sketch. The index is accessible, but it is a table of contents/sample-links page; no complete proof text for this exact route is available at the cited URL. Full verification is withheld.",
+    "confidence": "high",
+    "inspectionBasis": "inherited audit-only"
+  }
+]

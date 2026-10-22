@@ -1,0 +1,142 @@
+[
+ {
+  "routeId": "8-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/AM%E2%80%93GM_inequality",
+  "sourceLabel": "Wikipedia, AM-GM inequality",
+  "preciseLocator": "Section \"Proofs of the AM-GM inequality\" > \"Proof by successive replacement of elements\"",
+  "evidence": "Full proof is written out, but it replaces x_i by the mean alpha and x_j by x_i+x_j-alpha (product gain (alpha-x_i)(x_j-alpha)), not the sketch's averaging of an arbitrary unequal pair with ((a+b)/2)^2-ab=(a-b)^2/4; same smoothing family, termination in n-1 steps given explicitly. Not an exact match.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "8-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/AM%E2%80%93GM_inequality",
+  "sourceLabel": "Wikipedia, AM-GM inequality",
+  "preciseLocator": "Section \"Proofs of the AM-GM inequality\" > \"Proof using Jensen's inequality\"",
+  "evidence": "Concavity of log gives log(mean) >= (1/n) sum log x_i = log of geometric mean; exponentiate. Every sketched step is written out. Equality case (all equal) is not derived in that subsection (strictness only mentioned in the weighted section), and Jensen is cited not proved.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "8-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Checked Wikipedia AM-GM (weighted section uses Jensen on ln), Poonen Berkeley Math Circle handout (states weighted AM-GM only), Prakash/Practical Topics in Optimization arXiv 2503.05882 Prop 1.17 (Jensen on -ln). None uses t_i=x_i/g with log t<=t-1. AoPS wiki blocked by Cloudflare. Sketch proof is correct and short but no free source found.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "9-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://people.math.sc.edu/vasquezp/Math550/Review/sec-inequalities.html",
+  "sourceLabel": "Univ. of South Carolina Math 550 review, Vector Inequalities",
+  "preciseLocator": "Theorem 1.5.1 (Cauchy-Schwarz) proof",
+  "evidence": "Proof uses u.v=|u||v|cos(theta) and |cos|<=1, which is the second half of the sketch. The parallelogram-area / sin theta step is absent from every source read.",
+  "sketchProblem": "The area step (area >= 0 = |x||y||sin theta|) contributes nothing to the conclusion; the real content is the angle definition plus |cos theta|<=1 (and the angle definition itself presupposes C-S for it to be well defined, so the route is circular as a foundation).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "9-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://files.ele-math.com/articles/mia-11-52.pdf",
+  "sourceLabel": "Arav, Hall, Li, Cauchy-Schwarz for three vectors (Math. Inequal. Appl. 2008)",
+  "preciseLocator": "Introduction, eqs (1)-(2)",
+  "evidence": "States that nonnegativity of the 2x2 Gramian is equivalent to Cauchy-Schwarz, citing a reference; no proof that the Gram matrix is positive semidefinite or that its determinant is >=0 is given for the 2-vector case.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "9-r4",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Searched for Holder p=q=2 derivations; hits (arXiv 1503.00348, Birmingham notes, JIPAM) only state p=q=2 as a special case or were not retrievable as a worked route. Did not find a free text proving C-S from a previously proved Holder with the |sum|<=sum| | step.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "10-r1",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://people.math.sc.edu/vasquezp/Math550/Review/sec-inequalities.html",
+  "sourceLabel": "Univ. of South Carolina Math 550 review, Vector Inequalities",
+  "preciseLocator": "Theorem 1.5.3 (Triangle Inequality)",
+  "evidence": "Proof expands ||u+v||^2 and applies Cauchy-Schwarz (algebraic), not a shortest-path/geometry argument. Wikipedia Triangle inequality only gives the polygonal-path/arc-length corollary, not the Euclidean-norm proof from straight-segment minimality.",
+  "sketchProblem": "The sketch takes \"Euclidean distance is the shortest path\" as given, which is itself the triangle inequality, so as written it is circular unless a separate geometric proof of the segment minimality is supplied.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "10-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/0710.2690",
+  "sourceLabel": "Semmes, Another introduction to the geometry of metric spaces (arXiv 0710.2690)",
+  "preciseLocator": "Section 3, eqs (3.1)-(3.8)",
+  "evidence": "Proves that convexity of the unit ball B_N implies the triangle inequality by exactly the convex combination t=N(x)/(N(x)+N(y)) of x/N(x), y/N(y). Convexity of the Euclidean ball is only asserted (\"one can use convexity of r^2\"), which matches the sketch's own assumption.",
+  "sketchProblem": "Not independent: convexity of the Euclidean ball is itself shown via convexity of r^2 or Cauchy-Schwarz, as the sketch admits.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "11-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Law_of_cosines",
+  "sourceLabel": "Wikipedia, Law of cosines",
+  "preciseLocator": "Section \"Proofs\" > \"Using vectors\"",
+  "evidence": "Proof is the real-vector one: dot c.c=(a-b).(a-b) and the cosine identity for the dot product. No complex-plane argument with (a-be^{iC})(a-be^{-iC}) appears; ProofWiki/web hits only surfaced a related modulus-of-sum result I did not read as a full law-of-cosines proof.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "12-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Heron's_formula",
+  "sourceLabel": "Wikipedia, Heron's formula",
+  "preciseLocator": "Section \"Proofs\" > \"Trigonometric proof using the law of cosines\"",
+  "evidence": "Uses cos gamma=(a^2+b^2-c^2)/(2ab), sin gamma=sqrt(1-cos^2), area=(1/2)ab sin gamma, then factors 4a^2b^2-(a^2+b^2-c^2)^2 into the four linear factors to get sqrt(s(s-a)(s-b)(s-c)). Every step of the sketch is written out.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "12-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Read Kock's slides (tildeweb.au.dk/au76680/mex.pdf), which only state Heron = Cayley-Menger determinant and a Heron-Gram comparison without derivation; Wikipedia Heron proofs list no Gram route; Lagrange-identity pages not a worked Heron proof. No source with the full Gram factorization found.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "13-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_(Clark)/01:_Chapters/1.11:_Unique_Factorization",
+  "sourceLabel": "Clark, Elementary Number Theory, LibreTexts 1.11",
+  "preciseLocator": "Lemma 1 and Lemma 2 (Euclid's Lemma)",
+  "evidence": "Proof: if p does not divide a then gcd(p,a)=1, then Bezout 1=as+bt multiplied by c gives p | c. Complete modulo Bezout's lemma, which is cited from an earlier chapter (8, Bezout's Lemma) that I did not open. Wikipedia Euclid's lemma (\"Using Bezout's identity\") is the same, citing Bezout without proof.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "13-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.uwaterloo.ca/~snew/PMATH348/Chap2Rings.pdf",
+  "sourceLabel": "Waterloo PMATH 348, Chapter 2 Rings (review)",
+  "preciseLocator": "Thm 2.19 (1)-(3) proofs; Ex. 2.15, Ex. 2.23, Thm 2.27",
+  "evidence": "2.19(2) shows irreducible iff maximal among nonzero proper principal ideals; 2.19(3) concludes in a PID (a) is maximal hence prime, and (1) prime implies irreducible. Z is a Euclidean domain (Ex. 2.23) and ED implies PID (Thm 2.27, proved); Ex. 2.15 says irreducibles of Z are +-primes (stated without proof). Alternative: Lisbon aula24 notes Lemma 8.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "14-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_(Clark)/01:_Chapters/1.11:_Unique_Factorization",
+  "sourceLabel": "Clark, Elementary Number Theory, LibreTexts 1.11",
+  "preciseLocator": "Lemmas 3-5 (existence by induction, uniqueness by induction)",
+  "evidence": "Complete FTA proof, but uniqueness is by induction cancelling the largest prime via Euclid's lemma, not via additive exponent functions v_p. No free source with the v_p-additivity formulation was found.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ }
+]

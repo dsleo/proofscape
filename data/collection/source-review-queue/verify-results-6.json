@@ -1,0 +1,107 @@
+[
+ {
+  "routeId": "111-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read ProofWiki Proof 2 (Euler/Simmons): finite product expands via FTA to reciprocals of integers with prime factors <= p_n, dominates sum_{k<=p_n}1/k > ln p_n, then ln(1-x)>-2x on [-1/2,0] gives sum 1/p_k > (1/2) ln ln p_n. Same method as sketch (stated as a direct lower bound rather than by contradiction)."
+ },
+ {
+  "routeId": "112-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia 'Proof using integration' does integration by parts, recurrence I(n)=((n-1)/n)I(n-2), I(0), I(1), monotonicity squeeze, product. It uses the interval [0,pi] (I(0)=pi, I(1)=2), not [0,pi/2]; equivalent by symmetry, so the sketch's constants differ but the route is identical."
+ },
+ {
+  "routeId": "114-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read in full: family nonempty (square root branch + Moebius), Montel normality, Hurwitz (limit univalent or constant), extremal f'(a), contradiction via Moebius+square root. Only the final derivative identity F'(a)=f'(a)(sqrt|c|+1/sqrt|c|)/2 is called 'a routine computation'; the Schwarz-lemma/simple-connectivity facts are proved earlier in the section."
+ },
+ {
+  "routeId": "115-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia gives Weierstrass convergence theorem (via Morera/Cauchy), Cauchy-based derivative bound for locally bounded families (one line, 'differentiating the Cauchy integral formula'), countable dense subset + diagonal argument, equicontinuity -> uniformly Cauchy on compacta. The proof text is slightly garbled (typos) and does not explicitly say 'the limit is holomorphic by Weierstrass' inside the Montel paragraph, but the theorem is stated just above."
+ },
+ {
+  "routeId": "118-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Gradient theorem page, 'Proof of the converse': defines f by path integral from a, well-defined by path independence, computes directional derivative via short straight segment and FTC, gets grad f = F. Uses directional derivatives (all v) rather than partials d_i, equivalent; assumes F continuous."
+ },
+ {
+  "routeId": "119-r2",
+  "verdict": "partial",
+  "correctedLocator": "Peano existence theorem, Theorem 1, Case 1 and Case 2",
+  "missingStep": "Source treats only the autonomous equation x'=F(x) forward in time (t in [0,delta]); the sketch's non-autonomous F(t,y) on a cylinder with h=min(a,b/M) and 'the same works backward in time' are not written out (reduction by adding t as a variable not given). Truncation to a ball (Case 2) replaces the cylinder argument.",
+  "note": "Euler polygons, Arzela-Ascoli, uniform continuity of F to pass to the limit are all fully written (Claims 1-3). The method matches; only the non-autonomous/backward-time setting is missing. Also the source proves existence only, as the sketch says."
+ },
+ {
+  "routeId": "120-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia 'Proof by Hoelder's inequality' fully written for 1<p<inf incl. finiteness of ||f+g||_p and the zero case. Endpoints p=1 and p=inf (stated as trivial in the sketch) are not written in the source but are trivial."
+ },
+ {
+  "routeId": "120-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia 'Proof by a direct convexity argument': pointwise convexity with weights (1-t),t, integrate, choose t=||g||/(||f||+||g||). Equivalent to the sketch's normalisation (lambda<->1-t). The final substitution of t and the zero-norm case are left implicit ('to reach the conclusion'); both are one-line algebra."
+ },
+ {
+  "routeId": "121-r1",
+  "verdict": "confirmed",
+  "correctedLocator": "Theorem 6.9 proof, Steps I-V (Lemmas 6.10-6.13); note Lemma 6.10 cites 'Lemma 6.7' but means Lemma 6.5 (Urysohn)",
+  "missingStep": null,
+  "note": "Source proves the LCH version for Cc(K) (covers compact K): outer measure mu*(U)=sup{L f}, subadditivity via partition of unity Lemma 6.12 (proved), Caratheodory measurability (Step III), regularity (Step IV), L f=int f dmu by level-set slicing (Step V), uniqueness (Step I). Minor reader-left items: existence of precompact open V between S and U ('why?') and standard Caratheodory theorem used implicitly."
+ },
+ {
+  "routeId": "121-r2",
+  "verdict": "partial",
+  "correctedLocator": "arXiv 1409.2662 Section 2.8.2, Lemmas 2.156-2.161, Theorem 2.162, Theorem 2.164 (Dini step proved inside Thm 2.164)",
+  "missingStep": "Source proves the theorem only for compact METRIC X (yielding a Borel = Baire measure); for general compact Hausdorff K it explicitly defers the extension of the Baire measure to a regular Borel measure to [Bog07, Sec 7.3]. Also Caratheodory extension (Prop 2.158) is cited to [Dob13].",
+  "note": "Daniell route, Dini continuity from above, L+ extension, G, mu*, sigma-algebra comparison are all written out and correct."
+ },
+ {
+  "routeId": "124-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Feldman notes: Def 5.1 + Remark 5.2 (rectangles algebra, premeasure well-defined), Prop 5.4 (sections measurable), Lemma 5.7 (monotone class theorem proved), Prop 5.8 (monotone class argument for finite then sigma-finite; iterated integrals equal mu x nu), Thm 5.9 (simple functions, MCT, Fubini via parts). Uses monotone-class lemma directly rather than pi-lambda/uniqueness; same route in substance. Caratheodory (Thm 2.36) cited."
+ },
+ {
+  "routeId": "125-r1",
+  "verdict": "confirmed",
+  "correctedLocator": "arXiv 1709.03377 Theorem 1.13 (with Theorem 1.12 for the Gaussian transform); Wikipedia part of locator not checked",
+  "missingStep": null,
+  "note": "Proof via Gauss-Weierstrass kernel: Fubini, Fourier transform of Gaussian (Thm 1.12 proved by completing the square + analytic continuation), approximate identity, dominated convergence. Conclusion in source is 'almost every x' (approximate-identity convergence cited as known), not 'every continuity point'; kernel transform is a 'straightforward calculation'. Convention 1/(2pi) with e^{ixt} instead of e^{2 pi i}."
+ },
+ {
+  "routeId": "125-r2",
+  "verdict": "confirmed",
+  "correctedLocator": "Laugesen notes: Ch. 15 (Example 15.4 Fejer kernel, (15.17)-(15.21), Thm 15.7 whose proof 'argues as for Theorem 2.6' in Ch. 2) and Ch. 16 Theorem 16.2(a)",
+  "missingStep": null,
+  "note": "Fejer (Cesaro) summability of the truncated inversion integral: Dirichlet/Fejer kernels as convolutions, Fejer kernel mass computed by parts (using int sin x/x = pi, not contour integration), L1 convergence of F_lambda*f -> f, a.e. subsequence, dominated convergence gives inversion a.e., continuity gives everywhere. Source uses L1 convergence/subsequence rather than 'continuity points'. Theorem 15.7 relies on Theorem 2.6 (proved with Minkowski integral inequality), so cite Ch. 2 too."
+ },
+ {
+  "routeId": "125-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Theorem 17.1: Plancherel proved on L1 cap L2 via Gaussian damping + Fubini + monotone convergence (uses G_eps*f -> f in L2 from Thm 15.7), extension by density, Parseval by polarization, inversion on L2 from L1 inversion Theorem 16.2. Density class is L1 cap L2, not Schwartz functions as in the sketch, and L2 inversion/unitarity uses Thm 16.2 (L1 inversion, proved in Ch.16). Core method (Gaussian damping, Fubini, density, extension) is the same; suggest rewording sketch."
+ },
+ {
+  "routeId": "127-r3",
+  "verdict": "partial",
+  "correctedLocator": "Sections 2 (Thm 2.3 Prekopa-Leindler, proof; d=1 base in 2.1) and 4.2 (Thm 4.3 proof)",
+  "missingStep": "Isoperimetric statement is proved only for the Minkowski-content definition of 'area' (Def 4.2: lim (vol(A+tB)-vol(A))/t, existence of the limit assumed); no identification with Per(E) and no approximation argument to finite-perimeter sets, which the sketch claims. Measurability issues in Brunn-Minkowski/Prekopa-Leindler are explicitly not discussed (closed sets only). Klartag lecture not checked.",
+  "note": "The core argument (BM with tB, first-order comparison, ball computation) is written out and matches the sketch for d=2."
+ }
+]

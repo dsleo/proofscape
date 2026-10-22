@@ -1,0 +1,132 @@
+[
+ {
+  "routeId": "30-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Bolzano%E2%80%93Weierstrass_theorem",
+  "sourceLabel": "Wikipedia: Bolzano-Weierstrass theorem",
+  "preciseLocator": "Section 'Alternative proof over R using nested intervals'",
+  "evidence": "Read: repeated halving keeping a half with infinitely many terms, nested interval theorem gives common point x, shown to be an accumulation point, hence a subsequence converges to x. Subsequence extraction from accumulation point is one sentence but present.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "30-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.mcgill.ca/labute/courses/255w03/L25.pdf",
+  "sourceLabel": "McGill MATH 255 Lecture 25 (Labute)",
+  "preciseLocator": "Proof of Theorem 3, (d)=>(a), Lemma 3 (p.2)",
+  "evidence": "Read: for totally bounded X, nested infinite sets Y_n inside balls of radius 1/n, indices chosen increasing, subsequence Cauchy. Missing: that bounded intervals in R are totally bounded and Cauchy implies convergent in R are not written for R (completeness only used abstractly); R^n corollary stated without proof.",
+  "sketchProblem": "Sketch says 'finite-cover pigeonhole... diagonal selection'; source's nested sets Y_n with increasing indices is the diagonal step. OK.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "30-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.mcgill.ca/labute/courses/255w03/L25.pdf",
+  "sourceLabel": "McGill MATH 255 Lecture 25 (Labute)",
+  "preciseLocator": "Theorem 3, proof of (b)=>(a) (p.2) and Corollary (Heine-Borel) p.1",
+  "evidence": "Read: compact => every infinite set has a limit point (full proof). Missing in this source: that closed bounded intervals are compact (Heine-Borel corollary is stated, not proved). Wikipedia Heine-Borel 'Proof without Choice' (sup argument for [0,1]) would supply it but is another source; also metric equivalence gives limit point, not explicitly sequence subsequence.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "31-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Heine%E2%80%93Borel_theorem",
+  "sourceLabel": "Wikipedia: Heine-Borel theorem",
+  "preciseLocator": "Section 'Proofs' > Proof 1 (lemma closed subset of compact is compact; box argument)",
+  "evidence": "Read: closed subset of compact is compact, bounded set enclosed in n-box, but box compactness is proved by n-dimensional bisection and nested boxes, not by repeated one-dimensional Heine-Borel (product step absent). The 1-D sup argument is in 'Proof without Choice'.",
+  "sketchProblem": "Sketch 'supremum/finite-subcover on a box' vs reduction from 1-D; source uses bisection of boxes.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "31-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Bolzano%E2%80%93Weierstrass_theorem",
+  "sourceLabel": "Wikipedia: Bolzano-Weierstrass theorem",
+  "preciseLocator": "Section 'Proof' (R^n case via coordinates) and 'Sequential compactness in Euclidean spaces'",
+  "evidence": "Read: coordinatewise BW gives convergent subsequence, closed set contains limit, so closed+bounded => sequentially compact. Step 'hence compact' is only asserted ('metrizable compact iff sequentially compact'), not proved; McGill Lecture 25 Thm 3 (a)=>(b) proves it for metric spaces but is a second source.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "31-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.mcgill.ca/labute/courses/255w03/L25.pdf",
+  "sourceLabel": "McGill MATH 255 Lecture 25 (Labute)",
+  "preciseLocator": "Theorem 3, (d)=>(a) with Lemma 3, then (a)=>(b); Corollary p.1",
+  "evidence": "Read: complete+totally bounded => BW property (Lemma 3 plus completeness) => compact, in general metric spaces. Missing: the R^n step (cubes of side eps cover a box; closed subsets complete) is not written; corollary stated without proof.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "32-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Mean_value_theorem",
+  "sourceLabel": "Wikipedia: Mean value theorem",
+  "preciseLocator": "Section 'Cauchy's mean value theorem' and its 'Proof' subsection",
+  "evidence": "Read: h(x)=(g(b)-g(a))f(x)-(f(b)-f(a))g(x), h(a)=h(b), Rolle gives c with h'(c)=0; text states MVT is the case g(t)=t. Auxiliary function is the sign-flipped form of the sketch's H.",
+  "sketchProblem": "Sketch phrase 'hypotheses ensuring a zero of g'' is wrong/backwards: the theorem needs no zero of g' (only needs g'(c)!=0 to divide).",
+  "confidence": "high"
+ },
+ {
+  "routeId": "33-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://proofwiki.org/wiki/Taylor%27s_Theorem/One_Variable",
+  "sourceLabel": "ProofWiki: Taylor's Theorem/One Variable",
+  "preciseLocator": "Section 'Proof using Rolle's Theorem directly'",
+  "evidence": "Read: g(t)=R_n(t)-((t-a)^{n+1}/(x-a)^{n+1})R_n(x), g^(k)(a)=0 for k<=n and g(x)=0, Rolle applied successively to get xi with g^(n+1)(xi)=0 giving Lagrange remainder. Terse but all steps present.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "33-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://proofwiki.org/wiki/Taylor%27s_Theorem/One_Variable",
+  "sourceLabel": "ProofWiki: Taylor's Theorem/One Variable",
+  "preciseLocator": "Section 'Proof' > 'Integral Version'",
+  "evidence": "Read: FTC, integration by parts, induction on n giving integral remainder. Error-bound step in sketch not shown but is trivial.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "33-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Taylor%27s_theorem",
+  "sourceLabel": "Wikipedia: Taylor's theorem",
+  "preciseLocator": "Section 'Taylor's theorem in complex analysis'",
+  "evidence": "Read: Cauchy formula for derivatives, geometric series expansion of 1/(w-z) giving Taylor series equals f, exact remainder R_k(z)=(z-c)^{k+1}/(2 pi i) integral f(w)dw/((w-c)^{k+1}(w-z)). Remainder derivation is compressed ('modifying slightly').",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "34-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule",
+  "sourceLabel": "Wikipedia: L'Hopital's rule",
+  "preciseLocator": "Section 'Proof of L'Hopital's rule' > 'General proof'",
+  "evidence": "Read: unified 0/0 and infinity/infinity proof using Cauchy MVT with inf/sup bounds m(x),M(x) and squeeze, both cases written out. It uses inf/sup of f'/g' rather than 'c->a', same route in substance.",
+  "sketchProblem": "Sketch's 'c->a under monotonicity' differs from source's inf/sup device but route (Cauchy MVT) is same.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "34-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule",
+  "sourceLabel": "Wikipedia: L'Hopital's rule",
+  "preciseLocator": "Section 'Proof of L'Hopital's rule' > 'Special case'",
+  "evidence": "Read: for C^1 f,g with f(c)=g(c)=0, g'(c)!=0, quotient equals ratio of difference quotients tending to f'(c)/g'(c). No inverse function theorem is used and general case is not by this route.",
+  "sketchProblem": "Inverse function theorem is unnecessary/irrelevant to the sketch; the 'more general endpoint limits follow' sentence is not a proof, so the route is only the special case.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "34-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule",
+  "sourceLabel": "Wikipedia: L'Hopital's rule",
+  "preciseLocator": "Section 'Other indeterminate forms' (table and x^x example)",
+  "evidence": "Read: exponent forms reduced via logs to a quotient then standard rule applied; worked example for 0^0. This is a reduction, not a proof of the rule; 'log f / log g' via Cauchy MVT as in the sketch is not what the source does.",
+  "sketchProblem": "Sketch is muddled: the technique is to take log of f^g (exp of g log f), not to apply the rule to log f and log g.",
+  "confidence": "medium"
+ }
+]

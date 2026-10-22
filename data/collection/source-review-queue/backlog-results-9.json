@@ -1,0 +1,152 @@
+[
+ {
+  "routeId": "58-r1",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Searched for notes on Euler characteristic via triangulation counts (3F=2E) and subdivision invariance; did not open a source that proves it. Prior OCW chapter gave only combinatorial Gauss-Bonnet.",
+  "sketchProblem": "Sketch conflates Euler's formula V-E+F=2-2g (needs 3F=2E only for sphere-type counts, not general triangulated genus g surface where 3F=2E holds but V-E+F=2-2g is the theorem itself) with an invariance claim; circular as written.",
+  "confidence": "low"
+ },
+ {
+  "routeId": "58-r2",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "No source with the chain-dimension/rank-nullity telescoping argument was located and read; Forster source previously only stated chi as alternating Betti sum.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "59-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Read Towson notes 5-10 (Kempe-chain proof, incomplete: case 2 deferred), Heawood.pdf (iisc) and Bondy-Murty slides: all use degree<=5 plus Kempe chains. Cranston-Rabern arXiv 1410.7233 uses the contract-two-nonadjacent-neighbours step but for fractional coloring, not the five-colour theorem. No contraction-based full proof found.",
+  "sketchProblem": "Sketch admits it is not independent of the Kempe argument and names no concrete reducible configuration; the contraction of two nonadjacent neighbours of a degree-5 vertex is the only coherent version.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "60-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://math.mit.edu/~sheffield/2017600/Lecture29.pdf",
+  "sourceLabel": "MIT 18.600 Lecture 29 (Sheffield)",
+  "preciseLocator": "Slides 'Markov and Chebyshev' (with proofs) and 'Proof of weak law of large numbers in finite variance case'",
+  "evidence": "Read: Markov and Chebyshev proved; then E[A_n]=mu, Var[A_n]=sigma^2/n, Chebyshev gives P(|A_n-mu|>=eps)<=sigma^2/(n eps^2)->0. Matches sketch step for step (slide format).",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "60-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Read Roch gradprob-notes4 (L2 weak law only; no truncation/Borel-Cantelli text found) and MIT 6.436 lec19 snippet says proof omitted. No full truncation+BC proof opened.",
+  "sketchProblem": "Route proves a strong-law variant, not the weak law as stated; belongs to strong law of large numbers, not this result.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "61-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/2602.06234",
+  "sourceLabel": "Vershynin, Two friendly proofs of the Berry-Esseen theorem, Part I",
+  "preciseLocator": "Sections 1, 3 (Lemma 3.1, 3.2, Thm 3.3 Esseen smoothing), 4 (Lemma 4.1-4.3)",
+  "evidence": "Read a full Fourier smoothing proof (compactly supported Fourier transform, characteristic function estimates), but it proves Berry-Esseen under finite third moments, not the classical finite-variance CLT at continuity points.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "62-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://uregina.ca/~kozdron/Teaching/Regina/451Fall13/Handouts/451lecture10.pdf",
+  "sourceLabel": "Kozdron STAT 451 Lecture 10",
+  "preciseLocator": "Theorem 10.4 (Borel-Cantelli), using Thm 10.2 and Exercise 10.3",
+  "evidence": "Read proof: B_n=union_{m>=n}A_m decreasing, P(limsup)=lim P(B_n) by continuity, P(B_n)<=sum_{m>=n}P(A_m)->0. Continuity from above is only an exercise (10.3), derived from proved Thm 10.2 by complements.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "63-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://home.ttic.edu/~dmcallester/ttic101-07/lectures/jensen/jensen.pdf",
+  "sourceLabel": "McAllester TTIC Jensen's Inequality notes",
+  "preciseLocator": "Theorem 1 and its induction proof",
+  "evidence": "Finite-distribution Jensen proved by induction merging first two points (matches induction step); source explicitly proves only finite M. Approximation to general expectations is missing.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "63-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://www.cs.cornell.edu/~sridharan/concentration.pdf",
+  "sourceLabel": "Sridharan concentration notes",
+  "preciseLocator": "Jensen section",
+  "evidence": "Per what I opened, integral Jensen is proved via a supporting line at the mean, not by finite-to-simple approximation; no source found with simple-function approximation argument.",
+  "sketchProblem": "Sketch itself says it is a restatement of finite Jensen, not an independent route.",
+  "confidence": "low"
+ },
+ {
+  "routeId": "64-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Young%27s_inequality_for_products",
+  "sourceLabel": "Wikipedia, Young's inequality for products",
+  "preciseLocator": "Section 'Generalization using Fenchel-Legendre transforms'",
+  "evidence": "Read: ab<=f(a)+g(b) from conjugate definition and statement that conjugate of a^p/p is b^q/q; H\u00f6lder integration/normalization step and conjugate computation not written out. Bauschke-Lucet note only mentions it.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "64-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "No search done beyond routine; no source read.",
+  "sketchProblem": "Route is circular: the duality formula for the L^p norm needs H\u00f6lder for the upper bound.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "65-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.uh.edu/~bgb/Courses/Math7320F16/Math7320-20161027a.pdf",
+  "sourceLabel": "Math 7320 lecture notes 27 Oct 2016",
+  "preciseLocator": "Theorem 3.0.6(1)",
+  "evidence": "Read: nested nonempty open B_n with compact closure inside V_n and B_{n-1}, compactness gives nonempty intersection. But stated for locally compact topological vector spaces and very terse (choice of B_n not justified via Hausdorff/regularity); ProofWiki and Wikipedia only outline.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "66-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://arxiv.org/pdf/2512.01050",
+  "sourceLabel": "Sreekanth, Contraction Mapping: Case Studies",
+  "preciseLocator": "Section 1 (Picard-Lindelof)",
+  "evidence": "Read a full existence/uniqueness proof, but via Picard iterates with factorial bound (Lh)^n/n! and Gronwall for uniqueness, not a contraction in sup norm with Lh<1 plus interval-by-interval extension.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "67-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://users.math.msu.edu/users/shapiro/Pubvit/Downloads/ArzNotes/ArzNotes.pdf",
+  "sourceLabel": "MSU Math 829 Arzela-Ascoli notes",
+  "preciseLocator": "Section 2, Steps I-III",
+  "evidence": "Full proof that bounded equicontinuous sequences have a uniformly convergent subsequence (separability, diagonal argument, Cauchy). The converse (compact implies bounded equicontinuous) is left as Exercise 1.2.",
+  "sketchProblem": "Sketch is vacuous: 'compactness in C(K)' is the theorem itself, not a distinct route.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "68-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://web.math.utk.edu/~freire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+  "sourceLabel": "Freire, Weierstrass and Stone approximation theorems",
+  "preciseLocator": "'Proof of the Weierstrass approximation theorem', Lemma 3 and its proof (pp. 3-4)",
+  "evidence": "Read Bernstein operator proof: B_n[1], B_n[x], B_n[x^2] computed, split k by |x-k/n|<delta vs >=delta, modulus of continuity on near part, second-moment bound x(1-x)/(4 n delta^2) on far part. Argument is the variance/Chebyshev bound in analytic rather than probabilistic E f(S_n/n) language.",
+  "sketchProblem": "Sketch proves Weierstrass on [0,1], not Stone-Weierstrass in general; route title says interval case.",
+  "confidence": "medium"
+ }
+]

@@ -1,0 +1,142 @@
+[
+ {
+  "routeId": "69-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.utoronto.ca/almut/MAT1001/Brezis-Chap1(Hahn-Banach).pdf",
+  "sourceLabel": "Brezis, Functional Analysis ch.1 (hosted at U Toronto)",
+  "preciseLocator": "Lemma 1.2 (gauge p: bound p<=M||x||, C={p<1}, sublinear), Lemma 1.3 (open convex C, x0 not in C: translate so 0 in C, extend g(t x0)=t dominated by p, f continuous, f<f(x0) on C), Theorem 1.6",
+  "evidence": "Read the full proofs: translation to 0 in C, gauge, Hahn-Banach extension dominated by gauge, continuity from p<=M||x||, strict inequality from C={p<1}. Normed-space case only; the locally convex/seminorm variant in the sketch is not proved there (Kesavan hahn.pdf Prop 2.1 follows the same proof and just cites Rudin for locally convex).",
+  "sketchProblem": null,
+  "confidence": "medium-high"
+ },
+ {
+  "routeId": "71-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.impan.pl/~tkoch/FA_lecturenotes/lecture8.pdf",
+  "sourceLabel": "T. Kochanek, Functional Analysis lecture notes, lecture 8",
+  "preciseLocator": "Theorem 5.7 (Riesz representation) with Corollary 5.6 and Thm 5.5 just before",
+  "evidence": "Read proof: M=ker phi, pick unit z in M-perp (Cor 5.6), set y=alpha z, decompose x=x1+x2 with x1 in M, solve alpha=conj(phi(z)). Existence of M-perp nonzero depends on the projection theorem 5.5 in the same notes.",
+  "sketchProblem": "Sketch's polarization remark is irrelevant to the construction (sketch itself says so); sketch says 'choose unit u spanning M-perp' whereas the source only picks a unit z in M-perp (no need for dimension one).",
+  "confidence": "high"
+ },
+ {
+  "routeId": "72-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://www.impan.pl/~tkoch/FA_lecturenotes/lecture12.pdf",
+  "sourceLabel": "T. Kochanek, Functional Analysis lecture notes, lecture 12",
+  "preciseLocator": "Theorem 7.5(c), final paragraphs of its proof (quotient X/ker Phi)",
+  "evidence": "Quotient factorization Phi=tilde-Phi o pi and homeomorphism of tilde-Phi are written out, but openness of Phi is proved directly by Baire beforehand (7.5(b)) and the quotient is used only to get completeness of Y; openness is not derived from bounded inverse of the quotient map. UH Math7320 20161103b (Thm 3.1.14) and Melrose 18.155 L11 Thm 3 (only 'use quotients instead') are the same or weaker.",
+  "sketchProblem": "Sketch's direction (bounded inverse of X/kerT -> Y gives openness) is reversed relative to sources, where openness comes first.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "72-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.imsc.res.in/~kesh/trinity.pdf",
+  "sourceLabel": "S. Kesavan, A note on the grand theorems of functional analysis",
+  "preciseLocator": "Theorem 2.1, proof of (i)=>(ii) (closed graph => open mapping via S: W -> V/N, N=ker T) and (ii)=>(iii)",
+  "evidence": "Read proof: defines S y = x+N, shows its graph is closed, closed graph gives S bounded, so T(B_V(0,1)) contains a ball and T is open. Closed graph theorem is assumed, not proved (as the sketch itself says).",
+  "sketchProblem": "Sketch applies closed graph to T^-1 of a bijection; source applies it to the quotient section S, which also covers the bijective case.",
+  "confidence": "medium-high"
+ },
+ {
+  "routeId": "73-r2",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Tried Melrose 18.155 L11, MIT 18.102 lec13, Kochanek lec12, Kesavan trinity, UH Math7320 notes, arXiv 1601.02600 and 1912.02626: every closed graph proof goes through open mapping/bounded inverse, uniform boundedness or Zabreiko-type lemma; none is a direct Baire argument with x_n, ||x_n||<=2^-n, ||Tx_n||>=n.",
+  "sketchProblem": "Sketch is vague and not a recognizable proof (Baire/series argument not specified); it does not track any standard direct proof.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "73-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://www.imsc.res.in/~kesh/trinity.pdf",
+  "sourceLabel": "S. Kesavan, A note on the grand theorems of functional analysis",
+  "preciseLocator": "Theorem 3.1 proof of (v)=>(i) and Remark 3.1 (Hilbert spaces); also arXiv 1601.02600 (Ramm) Theorems 1-3",
+  "evidence": "Complete uniform-boundedness plus adjoint (Riesz, D(T*)=W) proof is written, but only for Hilbert spaces. Remark 3.1 says the Banach version needs reflexive target W (cited, not proved), and the general case is open for arbitrary normed W.",
+  "sketchProblem": "Sketch's caveat is basically right (needs Hilbert/reflexive target); it also wrongly suggests the route is only incomplete, whereas Hilbert-space version is fully valid.",
+  "confidence": "medium-high"
+ },
+ {
+  "routeId": "74-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://mtaylor.web.unc.edu/wp-content/uploads/sites/16915/2018/04/invfn.pdf",
+  "sourceLabel": "M. Taylor, The Inverse Function Theorem via Newton's Method",
+  "preciseLocator": "Theorem 1, Proposition 2, Newton iteration (13)-(31), Remark 2",
+  "evidence": "Read full proof: normalization Df(0)=I, injectivity via Prop 2, Newton iteration x_{k+1}=x_k+Df(x_k)^-1(y-f(x_k)), geometric convergence, existence in ball, DG(q)=DF(p)^-1, C^k by induction (briefly).",
+  "sketchProblem": "Sketch says 'Lipschitz derivative' and 'contraction'; source needs only C^1 (continuity of Df) and shows linear convergence of residuals, not a contraction map. C^k regularity is sketched in two lines in the introduction.",
+  "confidence": "medium-high"
+ },
+ {
+  "routeId": "74-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Checked Dancer (ANU CMA Proc 34), arXiv 2304.06463, arXiv 2105.11652, searches for degree-theory proof of inverse function theorem: sources use the inverse function theorem to define/compute degree or prove definable versions; none derives it from degree.",
+  "sketchProblem": "Degree theory presupposes regular-value/IFT arguments (possibly circular); sketch is also thin on injectivity.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "75-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://cims.nyu.edu/~yangd/MATH-GA1002Spring2024/lectures/MultivariableAnalysisLecture20240304.pdf",
+  "sourceLabel": "D. Yang, Multivariable analysis lecture slides (4 Mar 2024)",
+  "preciseLocator": "Slides 'Proof of Implicit Function Theorem' and 'Normal Form for Submersion'",
+  "evidence": "The IFT is proved from the inverse function theorem via F(x,y)=(f(x,y),y); the submersion normal form is derived from the IFT, i.e. the opposite direction to the sketch.",
+  "sketchProblem": "Sketch is circular: submersion theorem is usually proved from IFT (as the sketch itself admits), so it is not an independent route.",
+  "confidence": "medium-high"
+ },
+ {
+  "routeId": "76-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://math.nyu.edu/~dy444/papers/exterior_derivative.pdf",
+  "sourceLabel": "D. Yang, The exterior derivative via Stokes's theorem",
+  "preciseLocator": "Section 11, Theorem 2 (simplex) and Corollary 3 (triangulated manifold)",
+  "evidence": "Full computation of Stokes on the standard simplex is written; Corollary 3 for a smoothly triangulated manifold is stated without proof, so interior-face cancellation is missing. Wodzicki Thm 2.4, Dresdner 6.0.3 and Toledo (Utah) use charts/cubes, not triangulation.",
+  "sketchProblem": "Route title says singular homology/cohomology pairing but the sketch is a triangulation argument, which mismatches the title.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "77-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://www.ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/fc757ef1e527abe8ac1154d78b084637_MIT18_02SC_notes_67.pdf",
+  "sourceLabel": "MIT 18.02SC, Green's Theorem: Sketch of Proof",
+  "preciseLocator": "whole note (1 page)",
+  "evidence": "Rectangle case is computed via FTC and the cancellation of shared edges is described, but extension to arbitrary regions is only 'approximate by rectangles'; labeled a sketch. Knill S21a lecture 21 and Dresdner Thm 6.0.3 are similarly partial. A rigorous grid proof (UFAM TCC_FelipeAzeredo.pdf) could not be downloaded.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "77-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Green%27s_theorem",
+  "sourceLabel": "Wikipedia, Green's theorem",
+  "preciseLocator": "Section 'Relationship to Stokes' theorem' and 'Relationship to the divergence theorem'",
+  "evidence": "Planar Green deduced in one display from general Stokes with omega=L dx+M dy; 2D divergence equivalence given. No derivation of the 3D divergence theorem via contraction with volume form, and Stokes itself is not proved there. Dresdner 6.0.3 proves Stokes only via cube plus partition of unity.",
+  "sketchProblem": "Sketch conflates Green and 3D divergence; only Green is derived from Stokes in a free source I read.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "77-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "No source needed: the route only treats conservative fields F=grad phi and cannot prove Green or divergence in general. Searches found only the general theorems.",
+  "sketchProblem": "Sketch proves only special cases, so it is not a proof route for the stated result.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "79-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Searched for a maximum-modulus proof of Liouville; sources (Wikipedia, CUHK notes) use Cauchy estimates or averaging, not an expanding-disks maximum principle.",
+  "sketchProblem": "Sketch is invalid as stated (it admits a bounded common bound does not force constancy); with Cauchy estimates it becomes route 1.",
+  "confidence": "high"
+ }
+]

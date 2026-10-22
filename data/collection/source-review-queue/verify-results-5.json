@@ -1,0 +1,107 @@
+[
+ {
+  "routeId": "74-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read in full. Complete proof via Newton iteration x_{k+1}=x_k+Df(x_k)^{-1}(y-f(x_k)) with explicit residual estimates (21)-(31); injectivity from Prop 2; C^k regularity of the inverse via DG=DF^{-1}∘G (brief inductive remark, standard). Uses only C^1 plus Df-I small; Lipschitz/C^2 quadratic convergence only in Remark 1. Locator accurate."
+ },
+ {
+  "routeId": "86-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. Lemma 3 gives linear change making P monic in x_n (via nonzero polynomial nonvanishing on infinite field, proved by induction claim only mentioned); induction on number of generators; finiteness over subring transitive. Same method as sketch (finite module rather than integral, equivalent). Locator correct."
+ },
+ {
+  "routeId": "90-r1",
+  "verdict": "confirmed",
+  "correctedLocator": "Prop 3.10, Lemmas 3.13-3.15, 3.24, Thm 3.25 (compactness), Thm 4.1 (Sec 3.2 and 4)",
+  "missingStep": null,
+  "note": "Read. Ultrafilters, U_x basis, clopen, Hausdorff, compactness via FIP + ultrafilter extension (Zorn, Lemma 3.13), then Thm 4.1 gives B ≅ Clop(U(B)) with injectivity and surjectivity (Cor 3.28). Full argument; 'straightforward' homomorphism check follows from Lemma 3.24. Locator note: Note 3.10 is a Proposition, not a Lemma"
+ },
+ {
+  "routeId": "90-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. Cor 3.28 proves exactly: clopen C is open so union of U_x, compact so finite union, equals U_{x1+...+xn}. Injectivity in Thm 4.1 by separating ultrafilter. Duality direction also in Thm 4.3. Complete."
+ },
+ {
+  "routeId": "92-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. First proof of Problem 2 is exactly the power-repeat/cancellation argument giving a^{m-n}=1 hence inverse a^{m-n-1}. Complete and short."
+ },
+ {
+  "routeId": "97-r1",
+  "verdict": "confirmed",
+  "correctedLocator": "Ch.1 Sec 1.2: Props 1.2.5 (Euler product), 1.2.7, 1.2.8, proof of Dirichlet's theorem; non-vanishing of L(1,chi): Cor 1.3.3 (complex chars, via Prop 1.3.1-1.3.2) and Prop 1.3.5 with Lemma 1.3.4 (real chars) in Sec 1.3",
+  "missingStep": null,
+  "note": "Read. Complete analytic proof with all steps written (log of L, orthogonality identity, boundedness vs divergence, product of L-functions >= 1, real-character case via Lemma 1.3.4). Caveat: the final step shows the class sum is unbounded (infinitely many primes), not the asymptotic density 1/phi(q) stated in the sketch, though it follows from the same identity. Locator note: Theorem 1.2.6 is only stated in 1.2; its proof is Cor 1.3.3 + Prop 1.3.5 in Sec 1.3"
+ },
+ {
+  "routeId": "98-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. Smith normal form proved (Thm 3), module structure Thm 5, primary decomposition Thm 6 via CRT, V as F[x]-module Thm 1, basis 1,(x-lam),... gives Jordan block, Thm 4 gives JCF when char poly splits. Block-matrix computation is stated rather than expanded (routine). Complete."
+ },
+ {
+  "routeId": "103-r1",
+  "verdict": "partial",
+  "correctedLocator": null,
+  "missingStep": "Justification that hook-walk transition weights have the grid-label form 1/(x_i+y_j) (rectangle law h(a)+h(d)=h(b)+h(c) and Fact 3.1 only asserted) and that Lemma 5.1 (hook walks) follows from lattice-path sum ('expand the product!', no detail)",
+  "note": "Read. Overall structure of GNW proof is right and the main induction, lattice-path Prop 3.2 and final double-counting are written out, but the key bridging steps are terse/asserted in lecture-note style. Also the sketch's description (start at an outside corner, move left/above) differs from the source (start at uniformly random cell u, move to a uniformly random cell to the right of or below it in the hook, stop at a corner), so the sketch is not literally the same walk."
+ },
+ {
+  "routeId": "103-r4",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read (JSTOR scan; some formulas garbled in text extraction). Proof is exactly: remove largest entry gives f=sum f_{lambda-corner}, base case, verify product formula satisfies the recursion; verification is done analytically via residue theorem (Lemma 2), not bijectively, so the route title 'bijective/combinatorial' is a misnomer though the sketch body matches. Corollary 3 equates formula (2) with the hook product (stated as 'easily seen')."
+ },
+ {
+  "routeId": "105-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. Non-coplanar case fully argued (coplanarity from concurrency, two planes meet in a line containing the three points). Coplanar case reduced by lifting out of the plane and projecting back in a single sentence (not detailed), consistent with the sketch's stated assumption of embedding in 3-space. Page is a secondary source."
+ },
+ {
+  "routeId": "109-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. Second proof (Erdos-Rado style, induction on k) selects x_1..x_t with homogeneous neighbourhoods via Ramsey for k-1, then pigeonhole on colours of x_i (k=1 case), and Y+K is monochromatic. Final checks are said to be 'easy to verify/check' but are straightforward (I verified them). Sketch's 'uniformity r' corresponds to k in source. First proof (Erdos-Szekeres) also in same section."
+ },
+ {
+  "routeId": "109-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. Full Erdos-Rado proof for graphs with r colours: n=r^t, t=R^(1)(l_i-1), greedy choice of x_i, X_i, then pigeonhole. Covers only k=2 (hypergraph versions are in Sec 2.3). The sketch's recursion remark R_k(r)<=kR_k(r-1)+... belongs rather to the 2.2.2.1 induction (n=2+sum R(...)-r), but the construction described is exactly 2.2.2.2."
+ },
+ {
+  "routeId": "109-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. Thm 5 proved by induction on n; Thm 7 deduced by contradiction via inverse limit of nonempty finite sets Z0(k) (Konig-type argument) and also reformulated with Tychonoff. Complete and matches sketch."
+ },
+ {
+  "routeId": "110-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. The text proves it by labelling each term with (a_i,b_i) and noting labels are distinct, at most (r-1)(s-1) labels: exactly the sketch body. Note the route title 'poset-chain/antichain' matches the Dilworth/Mirsky subsection instead, which delegates to Mirsky/Dilworth (named standard results); the sketch body itself is the pigeonhole proof."
+ },
+ {
+  "routeId": "111-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Read. Same contradiction argument. Difference: Wikipedia bounds numbers with only primes <= p_k by 2^k*sqrt(x) (square-free times square), not O((log x)^k); both are o(x) so the argument is equivalent. Lower estimate sum_{i>k} x/p_i < x/2 as in the sketch."
+ }
+]

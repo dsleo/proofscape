@@ -1,0 +1,494 @@
+{
+  "method": "The original 74 routes without a direct citation were reviewed against route-specific sources and mathematical validity. A set-aside route remains visible in the catalog but is excluded from map route counts; its generic bibliography is not presented as proof evidence.",
+  "initialQueueCount": 74,
+  "nowCitedCount": 47,
+  "setAsideCount": 27,
+  "setAsideByReason": {
+    "dependent": 6,
+    "incomplete": 6,
+    "near-duplicate": 11,
+    "not-a-route": 1,
+    "not-the-stated-theorem": 3
+  },
+  "setAsideByResolution": {
+    "merged-variant": 20,
+    "retired-or-unresolved": 7
+  },
+  "catalogRouteCount": 462,
+  "catalogCitedCount": 435,
+  "cited": [
+    {
+      "id": "100-r2",
+      "source": "Mathematics@CUHK, Gliding-hump proof",
+      "url": "https://cuhkmath.wordpress.com/2010/11/19/a-nontopological-proof-of-the-uniform-boundedness-principle/",
+      "locator": "Displayed proof, steps (1)–(5), construction of a point with unbounded operator images"
+    },
+    {
+      "id": "52-r1",
+      "source": "Yakovenko, Symmetric Polynomials and Newton Identities",
+      "url": "https://yakovenko.wordpress.com/wp-content/uploads/2011/04/lecture5symmetry.pdf",
+      "locator": "Theorem 21 and its proof, pp. 8–10, logarithmic derivative and coefficient comparison"
+    },
+    {
+      "id": "52-r2",
+      "source": "Yakovenko, Symmetric Polynomials and Newton Identities",
+      "url": "https://yakovenko.wordpress.com/wp-content/uploads/2011/04/lecture5symmetry.pdf",
+      "locator": "Theorem 21 and its proof, pp. 8–10, expansion of E'=PE and coefficient comparison"
+    },
+    {
+      "id": "52-r3",
+      "source": "Zeilberger, A Combinatorial Proof of Newton's Identities",
+      "url": "https://sites.math.rutgers.edu/~zeilberg/mamarimY/Zeilberger_y1984_p319.pdf",
+      "locator": "p. 319, sign-reversing involution on weighted pairs (A,j^l)"
+    },
+    {
+      "id": "54-r1",
+      "source": "Mike Spivey, Pascal Matrices and Binomial Inversion",
+      "url": "https://mikespivey.wordpress.com/2017/05/05/pascal-matrices-and-binomial-inversion/",
+      "locator": "Pascal matrix inverse and binomial inversion, paragraphs after displayed P3 and P3 inverse"
+    },
+    {
+      "id": "54-r2",
+      "source": "Stanley, Enumerative Combinatorics I",
+      "url": "https://math.mit.edu/~rstan/ec/ec1.pdf",
+      "locator": "§3.8, Möbius inversion and Boolean-algebra Möbius function"
+    },
+    {
+      "id": "54-r3",
+      "source": "Columbia CS4205, Binomial Coefficients",
+      "url": "https://www.cs.columbia.edu/~cs4205/files/CM4.pdf",
+      "locator": "§4.2, Binomial Inversion Operation, pp. 25–27; alternating binomial expansion"
+    },
+    {
+      "id": "56-r2",
+      "source": "MIT 18.200, Network Flows and Matching",
+      "url": "https://ocw.mit.edu/courses/18-200-principles-of-discrete-applied-mathematics-spring-2024/mit18_200_s24_lec11-12.pdf",
+      "locator": "Theorem 4 and proof, PDF pp. 8–9, Hall's theorem via an integral max-flow/min-cut network"
+    },
+    {
+      "id": "56-r3",
+      "source": "UMass Amherst, Lecture 15: Hall's Marriage Theorem",
+      "url": "https://people.cs.umass.edu/~barring/cs250s13/lecture/15.pdf",
+      "locator": "pp. 11–13, induction with a tight subset and the strict-inequality case"
+    },
+    {
+      "id": "57-r3",
+      "source": "IIT Kharagpur, Hall and König theorems",
+      "url": "https://cse.iitkgp.ac.in/~palash/Courses/2024Algorithms2/Files/Hall-Konig-Theorem.pdf",
+      "locator": "Theorem 3, König's theorem by integral max-flow/min-cut"
+    },
+    {
+      "id": "60-r2",
+      "source": "MIT 18.175, Theory of Probability, Lecture 8",
+      "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/887e96172e82a615dac16fb26702d88b_MIT18_175S14_Lecture8.pdf",
+      "locator": "slides 21–24, characteristic-function proof of weak law with finite mean"
+    },
+    {
+      "id": "61-r2",
+      "source": "Terence Tao, Topics in Random Matrix Theory",
+      "url": "https://www.math.hkbu.edu.hk/~ttang/UsefulCollections/matrix-book-2011-02.pdf",
+      "locator": "§2.2, pp. 107–110, truncation to bounded summands and method-of-moments CLT proof"
+    },
+    {
+      "id": "63-r2",
+      "source": "Utah, Inequalities of Analysis",
+      "url": "https://www.math.utah.edu/~treiberg/InequalitiesSlides.pdf",
+      "locator": "Jensen's inequality, finite weighted induction proof"
+    },
+    {
+      "id": "67-r2",
+      "source": "UC Riverside, Sutherland analysis supplements",
+      "url": "https://math.ucr.edu/~res/math145A-2017/sutherland-supplements.pdf",
+      "locator": "Theorem C.1.28, finite-net proof of Arzelà–Ascoli"
+    },
+    {
+      "id": "70-r2",
+      "source": "Sharifi, Point-Set Topology",
+      "url": "https://www.math.ucla.edu/~sharifi/notes/topology-ch03.html",
+      "locator": "Theorems 3.4.10–3.4.11, Alexander subbase theorem and Tychonoff"
+    },
+    {
+      "id": "73-r1",
+      "source": "MIT 18.102, Introduction to Functional Analysis",
+      "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/8fb8d5c170f1613151aca71de21027bc_MIT18_102s21_full_lec.pdf",
+      "locator": "Theorem 40, closed graph theorem via the open mapping theorem, PDF p. 19"
+    },
+    {
+      "id": "74-r1",
+      "source": "MIT 18.965, Geometry of Manifolds, Lecture 4",
+      "url": "https://ocw.mit.edu/courses/18-965-geometry-of-manifolds-fall-2004/55a7137272a97179db2a80b6e20d5de0_lecture4.pdf",
+      "locator": "Theorem 5.1, contraction proof of inverse function theorem, pp. 1–2"
+    },
+    {
+      "id": "75-r1",
+      "source": "MIT 18.965, Geometry of Manifolds, Lecture 4",
+      "url": "https://ocw.mit.edu/courses/18-965-geometry-of-manifolds-fall-2004/55a7137272a97179db2a80b6e20d5de0_lecture4.pdf",
+      "locator": "Theorem 5.2, implicit function theorem from inverse function theorem, pp. 2–4"
+    },
+    {
+      "id": "75-r2",
+      "source": "UBC, The Contraction Mapping Theorem and the Implicit Function Theorem",
+      "url": "https://www.math.ubc.ca/~feldman/m425/impFnThm.pdf",
+      "locator": "pp. 3–5, fixed-point map g(x,z)=z−A⁻¹f(x,z+y₀)"
+    },
+    {
+      "id": "76-r3",
+      "source": "Berkeley, Integral Calculus",
+      "url": "https://math.berkeley.edu/~wodzicki/H185.S11/Integral%20Calculus.pdf",
+      "locator": "§2.6, Theorem 2.4, Stokes theorem as de Rham/singular-chain pairing"
+    },
+    {
+      "id": "79-r2",
+      "source": "Stanford Math 220B, Laplace Equation notes",
+      "url": "https://web.stanford.edu/class/math220b/handouts/laplace.pdf",
+      "locator": "§3.2.5, Liouville theorem for bounded harmonic functions via mean-value estimates"
+    },
+    {
+      "id": "80-r2",
+      "source": "Howell and Mathews, Complex Analysis",
+      "url": "https://complexanalysis.org/web/sec_cauchy-integral-formulas.html",
+      "locator": "§6.4, Cauchy's integral formula; read with §6.3 Green's-theorem proof of Cauchy–Goursat"
+    },
+    {
+      "id": "81-r2",
+      "source": "Princeton, Degree Theory",
+      "url": "https://web.math.princeton.edu/~const/deg.pdf",
+      "locator": "Brouwer fixed-point theorem, proof by homotopy invariance of degree"
+    },
+    {
+      "id": "81-r3",
+      "source": "Hatcher, Algebraic Topology",
+      "url": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+      "locator": "Corollary 2.15, no-retraction theorem and Brouwer fixed-point theorem"
+    },
+    {
+      "id": "82-r1",
+      "source": "Galloway, Introduction to Differential Geometry",
+      "url": "https://www.math.miami.edu/~galloway/IntroDGnotes.pdf",
+      "locator": "Chapter 6, Gauss–Bonnet via geodesic triangulation"
+    },
+    {
+      "id": "82-r3",
+      "source": "Yin Li, The Gauss–Bonnet–Chern Theorem on Riemannian Manifolds",
+      "url": "https://arxiv.org/abs/1111.4972",
+      "locator": "Chern–Weil and Euler-class proofs of Gauss–Bonnet–Chern"
+    },
+    {
+      "id": "83-r2",
+      "source": "Hatcher, Algebraic Topology",
+      "url": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+      "locator": "Proposition 2B.1(b), Jordan curve theorem as a homology separation result"
+    },
+    {
+      "id": "84-r3",
+      "source": "Milne, Fields and Galois Theory",
+      "url": "https://www.jmilne.org/math/CourseNotes/FT.pdf",
+      "locator": "Chapter 8, Galois theory of étale algebras and finite G-sets"
+    },
+    {
+      "id": "85-r2",
+      "source": "Milne, A Primer of Commutative Algebra",
+      "url": "https://www.jmilne.org/math/xnotes/CA.pdf",
+      "locator": "Theorem 3.7, Hilbert basis theorem and finite-generation argument"
+    },
+    {
+      "id": "86-r3",
+      "source": "Makdonald, Homological Algebra: Noether Normalizations",
+      "url": "https://smakdonald.github.io/Homological-Algebra/sec-noether-normalizations.html",
+      "locator": "Lemma 14.18 and Theorem 14.21, graded Noether normalization over an infinite field"
+    },
+    {
+      "id": "87-r1",
+      "source": "Milne, A Primer of Commutative Algebra",
+      "url": "https://www.jmilne.org/math/xnotes/CA.pdf",
+      "locator": "Theorem 13.1 and Theorem 13.8, Zariski's lemma and weak Nullstellensatz"
+    },
+    {
+      "id": "87-r3",
+      "source": "Milne, A Primer of Commutative Algebra",
+      "url": "https://www.jmilne.org/math/xnotes/CA.pdf",
+      "locator": "Theorem 13.10 and Corollary 13.9, radical ideals and affine points"
+    },
+    {
+      "id": "89-r1",
+      "source": "MIT 18.102, Functional Analysis, Chapter 3",
+      "url": "https://math.mit.edu/~rbm/18.102Sp20/Chapter3.pdf",
+      "locator": "Theorem 3.4 and its proof, PDF pp. 24–27, variational extremum and iteration"
+    },
+    {
+      "id": "89-r2",
+      "source": "MIT 18.102, Functional Analysis, Chapter 3",
+      "url": "https://math.mit.edu/~rbm/18.102Sp20/Chapter3.pdf",
+      "locator": "Theorem 3.4 and its proof, PDF pp. 24–27, compact eigenvector and orthogonal complement"
+    },
+    {
+      "id": "90-r1",
+      "source": "Delft, Boolean Algebras and Logic",
+      "url": "https://fa.ewi.tudelft.nl/~hart/37/onderwijs/old-courses/boole.pdf",
+      "locator": "Chapter 2 §2, Theorem 2.1 and Exercises I.3–I.6, ultrafilter construction"
+    },
+    {
+      "id": "91-r1",
+      "source": "University of Washington, Group Theory Lecture 10-4",
+      "url": "https://sites.math.washington.edu/~mcgovern/504%20pdf%202024/504.10-4.pdf",
+      "locator": "pp. 6–10, Schreier transversal and free-generator proof"
+    },
+    {
+      "id": "91-r2",
+      "source": "Hatcher, Algebraic Topology",
+      "url": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+      "locator": "Proposition 1A.2 and Theorem 1A.4, covering graphs and maximal trees"
+    },
+    {
+      "id": "92-r1",
+      "source": "University of Tennessee, Integral Domains and Fields",
+      "url": "https://web.math.utk.edu/~dcartwr1/iaawa/section-domains-and-fields.html",
+      "locator": "Theorem 4.16, injective multiplication on a finite domain"
+    },
+    {
+      "id": "96-r1",
+      "source": "MIT 18.785, Number Theory I, Lecture 16",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes16.pdf",
+      "locator": "§16.1–16.2, zero-free line and Newman's analytic proof of the prime number theorem"
+    },
+    {
+      "id": "96-r2",
+      "source": "TIFR, Lectures on the Riemann Zeta Function",
+      "url": "https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr01.pdf",
+      "locator": "The Wiener–Ikehara theorem and its application to the prime number theorem"
+    },
+    {
+      "id": "96-r3",
+      "source": "Atle Selberg, An Elementary Proof of the Prime-Number Theorem",
+      "url": "https://www.math.lsu.edu/~mahlburg/teaching/handouts/2014-7230/Selberg-ElemPNT1949.pdf",
+      "locator": "Annals of Mathematics 50 (1949), pp. 305–313, symmetry formula and elementary proof"
+    },
+    {
+      "id": "97-r1",
+      "source": "MIT 18.785, Number Theory I, Lecture 18",
+      "url": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes18.pdf",
+      "locator": "§18, Dirichlet L-functions and proof of Dirichlet's theorem"
+    },
+    {
+      "id": "97-r2",
+      "source": "Columbia, Class Field Theory notes",
+      "url": "https://www.math.columbia.edu/~chaoli/docs/ClassFieldTheory.html",
+      "locator": "Chebotarev density theorem and cyclotomic specialization to primes in residue classes"
+    },
+    {
+      "id": "99-r1",
+      "source": "Keith Conrad, Stirling's Formula",
+      "url": "https://kconrad.math.uconn.edu/blurbs/analysis/stirling.pdf",
+      "locator": "§3, Laplace's method applied to the gamma integral"
+    },
+    {
+      "id": "99-r2",
+      "source": "University of Colorado, Wallis' Formula and Stirling's Formula",
+      "url": "https://www.colorado.edu/amath/sites/default/files/attached-files/wallis_stirling2.pdf",
+      "locator": "pp. 1–4, Wallis product followed by Stirling's formula"
+    },
+    {
+      "id": "99-r3",
+      "source": "Rutgers, Real Analysis, Euler–Maclaurin Summation Formula",
+      "url": "https://math.camden.rutgers.edu/files/Real_Analysis_CHPTR4-End.pdf",
+      "locator": "§4.15, pp. 310–312, Euler–Maclaurin expansion for log(n!) and evaluation of the constant via Wallis"
+    },
+    {
+      "id": "99-r4",
+      "source": "Hjort and Stoltenberg, Probability Proofs for Stirling",
+      "url": "https://arxiv.org/pdf/2410.19555",
+      "locator": "§2.1, Poisson CLT and telescoping positive-part expectation"
+    }
+  ],
+  "setAside": [
+    {
+      "id": "100-r3",
+      "flag": "dependent",
+      "resolution": "retired-or-unresolved",
+      "mergedInto": null,
+      "reason": "The proposed weak-compactness argument invokes uniform boundedness rather than proving it."
+    },
+    {
+      "id": "59-r3",
+      "flag": "dependent",
+      "resolution": "merged-variant",
+      "mergedInto": "59-r1",
+      "reason": "Variation of 59-r1 (Minimal-counterexample vertex of degree ≤5 plus recoloring); grouped with that proof idea. "
+    },
+    {
+      "id": "60-r3",
+      "flag": "not-the-stated-theorem",
+      "resolution": "retired-or-unresolved",
+      "mergedInto": null,
+      "reason": "This uses strong-law machinery rather than proving the stated weak law as an independent route."
+    },
+    {
+      "id": "61-r3",
+      "flag": "dependent",
+      "resolution": "merged-variant",
+      "mergedInto": "61-r1",
+      "reason": "Variation of 61-r1 (Characteristic-function convergence); grouped with that proof idea. This unpacks the characteristic-function convergence route rather than giving an independent proof."
+    },
+    {
+      "id": "64-r2",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "64-r1",
+      "reason": "Variation of 64-r1 (Young's inequality and normalization); grouped with that proof idea. "
+    },
+    {
+      "id": "64-r3",
+      "flag": "incomplete",
+      "resolution": "retired-or-unresolved",
+      "mergedInto": null,
+      "reason": "The proposed duality formula normally uses Hölder's inequality, so this proof would be circular."
+    },
+    {
+      "id": "67-r3",
+      "flag": "not-a-route",
+      "resolution": "merged-variant",
+      "mergedInto": "67-r2",
+      "reason": "Variation of 67-r2 (finite ε-net/total boundedness); grouped with that proof idea. "
+    },
+    {
+      "id": "69-r3",
+      "flag": "not-the-stated-theorem",
+      "resolution": "retired-or-unresolved",
+      "mergedInto": null,
+      "reason": "This derives a separation corollary from Hahn–Banach rather than proving Hahn–Banach."
+    },
+    {
+      "id": "71-r3",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "71-r1",
+      "reason": "Variation of 71-r1 (Orthogonal projection onto kernel); grouped with that proof idea. "
+    },
+    {
+      "id": "72-r2",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "72-r1",
+      "reason": "Variation of 72-r1 (Baire category and nested balls); grouped with that proof idea. "
+    },
+    {
+      "id": "72-r3",
+      "flag": "dependent",
+      "resolution": "merged-variant",
+      "mergedInto": "72-r1",
+      "reason": "Variation of 72-r1 (Baire category and nested balls); grouped with that proof idea. "
+    },
+    {
+      "id": "73-r2",
+      "flag": "incomplete",
+      "resolution": "merged-variant",
+      "mergedInto": "73-r1",
+      "reason": "Variation of 73-r1 (Open mapping theorem on the graph); grouped with that proof idea. "
+    },
+    {
+      "id": "73-r3",
+      "flag": "incomplete",
+      "resolution": "retired-or-unresolved",
+      "mergedInto": null,
+      "reason": "The duality argument assumes a bounded adjoint that closedness alone does not supply."
+    },
+    {
+      "id": "74-r2",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "74-r1",
+      "reason": "Variation of 74-r1 (Contraction mapping/fixed point); grouped with that proof idea. "
+    },
+    {
+      "id": "74-r3",
+      "flag": "incomplete",
+      "resolution": "retired-or-unresolved",
+      "mergedInto": null,
+      "reason": "The degree argument supplies local existence but the cited sources do not supply an independent full inverse-function proof."
+    },
+    {
+      "id": "75-r3",
+      "flag": "dependent",
+      "resolution": "merged-variant",
+      "mergedInto": "75-r1",
+      "reason": "Variation of 75-r1 (Inverse function theorem); grouped with that proof idea. "
+    },
+    {
+      "id": "77-r3",
+      "flag": "not-the-stated-theorem",
+      "resolution": "retired-or-unresolved",
+      "mergedInto": null,
+      "reason": "Potential fields give only special cases, not Green's or the divergence theorem generally."
+    },
+    {
+      "id": "79-r3",
+      "flag": "incomplete",
+      "resolution": "merged-variant",
+      "mergedInto": "79-r1",
+      "reason": "Variation of 79-r1 (Cauchy estimates with radius→∞); grouped with that proof idea. The maximum-modulus principle on expanding disks does not by itself force constancy; a further estimate is needed."
+    },
+    {
+      "id": "80-r3",
+      "flag": "dependent",
+      "resolution": "merged-variant",
+      "mergedInto": "80-r1",
+      "reason": "Variation of 80-r1 (Derive from Goursat's theorem and a small-circle deformation); grouped with that proof idea. The power-series expansion and contour deformation require prior analytic results and overlap with the Cauchy–Goursat route."
+    },
+    {
+      "id": "86-r2",
+      "flag": "incomplete",
+      "resolution": "merged-variant",
+      "mergedInto": "86-r1",
+      "reason": "Variation of 86-r1 (Generic linear changes and induction on generators); grouped with that proof idea. "
+    },
+    {
+      "id": "88-r2",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "88-r1",
+      "reason": "Variation of 88-r1 (Inductively choose a linear combination avoiding finitely many bad coefficients); grouped with that proof idea. "
+    },
+    {
+      "id": "89-r3",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "89-r1",
+      "reason": "Variation of 89-r1 (Maximize Rayleigh quotient and iterate); grouped with that proof idea. "
+    },
+    {
+      "id": "90-r2",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "90-r1",
+      "reason": "Variation of 90-r1 (Ultrafilters/maximal ideals); grouped with that proof idea. "
+    },
+    {
+      "id": "90-r3",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "90-r1",
+      "reason": "Variation of 90-r1 (Ultrafilters/maximal ideals); grouped with that proof idea. "
+    },
+    {
+      "id": "91-r3",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "91-r2",
+      "reason": "Variation of 91-r2 (fundamental groups of covering graphs and spanning trees); grouped with that proof idea. "
+    },
+    {
+      "id": "92-r2",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "92-r1",
+      "reason": "Variation of 92-r1 (Multiplication by a nonzero element is injective and hence surjective on a finite set); grouped with that proof idea. "
+    },
+    {
+      "id": "92-r3",
+      "flag": "near-duplicate",
+      "resolution": "merged-variant",
+      "mergedInto": "92-r1",
+      "reason": "Variation of 92-r1 (Multiplication by a nonzero element is injective and hence surjective on a finite set); grouped with that proof idea. "
+    }
+  ]
+}

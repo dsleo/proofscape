@@ -1,0 +1,122 @@
+[
+ {
+  "routeId": "92-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://abel.math.harvard.edu/archive/122_fall_05/Homework/Problem%20Set%2010%20Solutions.pdf",
+  "sourceLabel": "Harvard Math 122 (Fall 2005), Problem Set 10 Solutions",
+  "preciseLocator": "Problem 2, first proof (a^m=a^n, m>n)",
+  "evidence": "Read the written solution: powers of nonzero a repeat, a^n(a^(m-n)-1)=0, cancel a^n in a domain to get a^(m-n)=1, so a^(m-n-1) is the inverse. Exactly the sketch; also a second multiplication-map proof in the same problem. UMD Math 403 ch13 Thm (d) has the same argument but contains a typo (=0 for =1).",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "92-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Read ProofWiki 'Finite Integral Domain is Galois Field' and 'Finite Ring with No Proper Zero Divisors is Field': all use injectivity/surjectivity of multiplication, cancellation or ideals, none a root-counting route. The sketch itself concedes root counting is not an independent proof.",
+  "sketchProblem": "Sketch is self-contradictory ('X-a?') and says the route is a duplicate of 92-r1; it is not a distinct route and should be flagged not-a-route/near-duplicate.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "96-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://pims.math.ca/~hoek/notes/dvi90/Pnthm.pdf",
+  "sourceLabel": "K. Hoechsmann, Tauberian Theorems and Prime Densities (PIMS notes)",
+  "preciseLocator": "Para. 1 (derivation of PNT from Theorem I; Mertens/Deligne non-vanishing on Re s=1), Para. 2 and Appendices A, B (Theorem I via Lemmas A, B)",
+  "evidence": "Read all. Wiener-Ikehara (Theorem I, via Laplace transform, Fourier kernels, Lemma A, steady-function Lemma B) is proved in full, as is non-vanishing of zeta on Re s=1; PNT then follows from Theorem I. Missing: meromorphic continuation of zeta with simple pole is asserted, and the step removing log (Remark 2 elementary lemma) is stated without proof. Original TIFR link is 404.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "97-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://math.cuni.cz/dl/klazar/ln_antcI.pdf",
+  "sourceLabel": "M. Klazar, Analytic and combinatorial number theory I (lecture notes)",
+  "preciseLocator": "Ch.1 Sec 1.2 (Props 1.2.3-1.2.8, proof of Dirichlet's theorem) and Sec 1.3 (non-vanishing of L(1,chi), Thm 1.2.6)",
+  "evidence": "Read Sec 1.2-1.3: Euler product of L(s,chi), log-sum over primes bounded for nonprincipal chi and divergent for principal, character orthogonality isolating a mod m, then full proof that L(1,chi)!=0 via the Dirichlet-series nonnegativity argument. Every step is written out.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "97-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.columbia.edu/~chaoli/docs/ClassFieldTheory.html",
+  "sourceLabel": "Chao Li, Class Field Theory course notes (Columbia)",
+  "preciseLocator": "Section 'Chebotarev's density theorem', Theorem 34 and surrounding text",
+  "evidence": "Read: Chebotarev is proved (abelian case via class field theory/Weber L-functions, general case by reduction to cyclic subextensions), and Dirichlet is mentioned as a special case. The explicit specialization to Q(zeta_q) (Frobenius = a mod q, density 1/phi(q) implies infinitely many primes) is not written out, and the CFT inputs are quoted from earlier sections.",
+  "sketchProblem": "Route is a deep re-derivation of Dirichlet from Chebotarev/CFT, which itself uses Dirichlet-type L-function nonvanishing; arguably circular as an independent proof.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "98-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.miami.edu/~ec/book/ch06.pdf",
+  "sourceLabel": "E. Connell, Elements of Abstract and Linear Algebra, Ch. 6 Appendix",
+  "preciseLocator": "Sections 'Euclidean Domains' (Thm 3 Smith form, Thm 5, Lemma, Thm 6), 'Jordan Blocks' and 'Jordan Canonical Form' (Thms 1-4)",
+  "evidence": "Read: V becomes an F[x]-module (Thm 1), structure theorem for f.g. modules over a Euclidean domain proved from Smith normal form (Thm 3, 5), primary splitting by CRT (Thm 6), then basis 1,(x-lambda),... of F[x]/(x-lambda)^s gives Jordan blocks (Thm 4). Matches the sketch.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "98-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.mcgill.ca/labute/courses/247B/jordan1.pdf (with jordan2.pdf)",
+  "sourceLabel": "J. Labute, The Jordan Canonical Form Parts 1 and 2 (McGill 247B)",
+  "preciseLocator": "Part 1 Lemmas 2-4 and block-count Theorem 1; Part 2 proof of theorem (algorithm)",
+  "evidence": "Read both parts: kernel-of-powers chains, Lemma 3/4 (injectivity mod kernels) and block counts dim ker ratios, plus the algorithm completing bases mod ker. But Part 2 asserts that the resulting chain vectors form a basis/direct sum without writing the independence and spanning proof, and quotes primary decomposition.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "100-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "No source searched or read as the route proves nothing: it presupposes uniform boundedness or reflexivity.",
+  "sketchProblem": "Sketch is not a proof route: it admits it invokes Banach-Steinhaus indirectly and reflexivity is not needed. Flag dependent / not-a-route.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "102-r1",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Opened Tao arXiv math/0405251 (quantitative ergodic proof) and the Tao hypergraph paper, DHJ paper intro: they discuss Szemeredi's original combinatorial proof only by citation; none writes it out. Szemeredi's 1975 paper not found free.",
+  "sketchProblem": "Sketch looks wrong: graph regularity lemma plus counting lemma only yields k=3 (Roth/triangle removal); Szemeredi's original proof uses a different combinatorial argument for all k, and the sketch conflates them with van der Waerden structure.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "102-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/math/0604456",
+  "sourceLabel": "T. Tao, The ergodic and combinatorial approaches to Szemeredi's theorem",
+  "preciseLocator": "Section 4, Furstenberg correspondence principle and 'Proof of Szemeredi's theorem assuming Theorem 4.5'",
+  "evidence": "Read: correspondence principle and deduction of Szemeredi from Furstenberg multiple recurrence (Thm 4.5) are proved in full, but the author states he will not prove Theorem 4.5 here. Missing step: the recurrence theorem itself. (Tao arXiv math/0405251 is a finitary ergodic-style proof without the correspondence, so does not match.)",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "102-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Tried guessed Gowers author-page PDFs (HTML errors, not retrieved); read Tao math/0405251 which is an ergodic-style, not Gowers-norm inverse, proof. Gowers' GAFA paper was not opened.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "102-r4",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/math/0503572",
+  "sourceLabel": "T. Tao, A variant of the hypergraph removal lemma",
+  "preciseLocator": "Intro, Theorem 1.13 / Corollary 1.14 and paragraph after it",
+  "evidence": "Read: gives a self-contained proof of the hypergraph removal lemma via regularity and counting, but the deduction of Szemeredi's theorem from it is only stated (omitted, cited to other papers). The Polymath DHJ paper (arXiv 0910.3926) proves density Hales-Jewett but only remarks Szemeredi follows; not checked line by line.",
+  "sketchProblem": "Sketch conflates two routes (hypergraph removal vs density Hales-Jewett); should be split.",
+  "confidence": "medium"
+ }
+]

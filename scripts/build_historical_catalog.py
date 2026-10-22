@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import shutil
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -70,6 +72,10 @@ def primary_reference(route: dict) -> dict | None:
         ranked.append((score, index, reference))
     best = max(ranked, key=lambda item: (item[0], item[1]))
     return best[2] if best[0] > 0 else references[-1]
+
+
+# Source-page crops were made under owner authorization for personal research. Set PROOFSCAPE_EXCERPT_IMAGES=include to ship them.
+INCLUDE_EXCERPT_IMAGES = os.environ.get("PROOFSCAPE_EXCERPT_IMAGES") == "include"
 
 
 def main() -> None:
@@ -161,6 +167,10 @@ def main() -> None:
         "withLocatedReference": sum(bool(route.get("references")) for entry in entries for route in entry["routes"]),
         "withoutRouteCitation": sum(not route.get("references") for entry in entries for route in entry["routes"]),
     }
+    catalog["routeEvidenceCoverage"] = {
+        key: sum(route.get("routeEvidenceStatus") == key for entry in entries for route in entry["routes"])
+        for key in ("route-checked", "route-unverified", "background-only", "no-route-citation")
+    }
     catalog["verbatimCoverage"] = {
         "source-hosted-only": sum(route.get("verbatimStatus") == "source-hosted-only" for entry in entries for route in entry["routes"]),
         "not-reproduced-rights": sum(route.get("verbatimStatus") == "not-reproduced-rights" for entry in entries for route in entry["routes"]),
@@ -174,9 +184,12 @@ def main() -> None:
     # proof-excerpt images: validate and copy next to the catalog
     image_src = ROOT / "data" / "collection" / "proof-images"
     image_dst = OUTPUT.parent / "proof-images"
+    shutil.rmtree(image_dst, ignore_errors=True)  # no stale crops from an earlier build
     image_dst.mkdir(parents=True, exist_ok=True)
     for entry in entries:
         for route in entry["routes"]:
+            if not INCLUDE_EXCERPT_IMAGES:
+                route.pop("proofImages", None)  # third-party page crops stay out of the public build until reuse is cleared
             for image in route.get("proofImages", []):
                 name = Path(image["src"]).name
                 if not (image_src / name).is_file():

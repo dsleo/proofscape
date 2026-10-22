@@ -1,0 +1,807 @@
+{
+  "schemaVersion": 1,
+  "batch": "batch-2",
+  "count": 100,
+  "records": [
+    {
+      "id": "41-r1",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "preciseLocator": "Theorem 3, rank and nullity; pivot/free-variable argument",
+      "evidence": "Inspected fetched html text (3550 words; 2 proof mentions). The source proves rank-nullity by pivot and free-variable counting, not by extending a kernel basis. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "41-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "preciseLocator": "Theorem 3, rank and nullity; pivot/free-variable argument",
+      "evidence": "Inspected fetched html text (3550 words; 2 proof mentions). The source uses pivot and free-variable counting, not split exact sequences. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "42-r1",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "preciseLocator": "Theorem 3 and the associated kernel/image dimension argument",
+      "evidence": "Inspected fetched html text (3550 words; 2 proof mentions). The cited rank-nullity argument does not give this adapted-basis dimension proof. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "42-r2",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "preciseLocator": "Theorem 3 and the associated kernel/image dimension argument",
+      "evidence": "Inspected fetched html text (3550 words; 2 proof mentions). The cited rank-nullity argument does not construct the addition-map proof. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "42-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.libretexts.org/Courses/De_Anza_College/Linear_Algebra%3A_A_First_Course/04%3A_R/4.07%3A_Row_Column_and_Null_Spaces",
+      "preciseLocator": "Theorem 3 and the associated kernel/image dimension argument",
+      "evidence": "Inspected fetched html text (3550 words; 2 proof mentions). The cited rank-nullity argument does not give the proposed Grassmannian route. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "43-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/resources/mit18_700f13_spctrl_thrm/",
+      "preciseLocator": "Supplementary note “Proof of the Spectral Theorem,” induction proof",
+      "evidence": "Inspected fetched html text (215 words; 4 proof mentions). The MIT link is a resource landing page; its separate PDF was not checked here. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "43-r3",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://math.mit.edu/~dav/spectral.pdf",
+      "preciseLocator": "Theorem 1.2 and Proof of Spectral Theorem, pp. 1–3; Lemmas 1.6–1.7",
+      "evidence": "Read the complete 4-page MIT note. It proves self-adjoint spectral decomposition by maximizing the Rayleigh quotient, proving the maximizing vector is an eigenvector, showing its orthogonal complement is invariant, and inducting on dimension (lines 48–94, 98–122). This exactly matches the route sketch.",
+      "confidence": "high"
+    },
+    {
+      "id": "44-r1",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "preciseLocator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "evidence": "Inspected fetched pdf text (76277 words; 137 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "44-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "preciseLocator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "evidence": "Inspected fetched pdf text (76277 words; 137 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "44-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "preciseLocator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "evidence": "Inspected fetched pdf text (76277 words; 137 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "45-r2",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "preciseLocator": "Lecture 23, Sylow theorems and proofs",
+      "evidence": "Inspected fetched pdf text (76277 words; 137 proof mentions). The Sylow lecture uses actions on subsets and cosets, not a class-equation induction proof. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "45-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "preciseLocator": "Lecture 23, Sylow theorems and proofs",
+      "evidence": "Inspected fetched pdf text (76277 words; 137 proof mentions). The Sylow lecture does not prove a separate polynomial or permutation-representation construction. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "46-r1",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "preciseLocator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "evidence": "Inspected fetched pdf text (76277 words; 137 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "46-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "preciseLocator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "evidence": "Inspected fetched pdf text (76277 words; 137 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "46-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/mit18_701f21_full_lec_new.pdf",
+      "preciseLocator": "Course notes, relevant finite group theory lectures; exact route not verified except where stated.",
+      "evidence": "Inspected fetched pdf text (76277 words; 137 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "49-r1",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "preciseLocator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "evidence": "Inspected fetched html text (1526 words; 7 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "49-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "preciseLocator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "evidence": "Inspected fetched html text (1526 words; 7 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "49-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "preciseLocator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "evidence": "Inspected fetched html text (1526 words; 7 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "50-r1",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "preciseLocator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "evidence": "Inspected fetched html text (1118 words; 3 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "50-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "preciseLocator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "evidence": "Inspected fetched html text (1118 words; 3 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "50-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "preciseLocator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "evidence": "Inspected fetched html text (1118 words; 3 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "51-r1",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+      "preciseLocator": "Euclidean algorithm / polynomial gcd and Bézout identity",
+      "evidence": "Inspected fetched html text (3274 words; 3 proof mentions). The text invokes the polynomial Euclidean algorithm in another proof; it does not prove this route. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "51-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://homepages.math.uic.edu/~jan/mcs563/mcs563notes/lec02.html",
+      "preciseLocator": "Euclidean algorithm / polynomial gcd and Bézout identity",
+      "evidence": "Inspected fetched html text (3274 words; 3 proof mentions). The UIC page discusses elimination and resultants, not the principal-ideal-generator argument. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "54-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://www.cs.columbia.edu/~cs4205/files/CM4.pdf",
+      "preciseLocator": "§4.2, Binomial Inversion Operation, pp. 25–27; alternating binomial expansion",
+      "evidence": "Inspected fetched pdf text (444 words; 1 proof mentions). The notes give binomial inversion examples without proving the alternating coefficient cancellation. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "55-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://ocw.mit.edu/courses/18-212-algebraic-combinatorics-spring-2019/094b76c5c29782d6279ab112f2e75328_MIT18_212S19_lec28.pdf",
+      "preciseLocator": "Lecture 28, Lemma 1 and Theorem 3, pp. 1–2",
+      "evidence": "Read the complete 5-page lecture PDF. It proves the (weighted) matrix-tree theorem by Cauchy–Binet and determinant induction (Lemma 1, Theorem 3), but contains no rooted-tree exponential generating function, Lagrange inversion, or n^(n−2) enumeration. The source is therefore a direct mismatch for this route.",
+      "confidence": "high"
+    },
+    {
+      "id": "58-r1",
+      "conclusion": "partial",
+      "sourceUrl": "https://ocw.iti.hr/courses/mathematics/18-950-differential-geometry-fall-2008/lecture-notes/ch3_revised.pdf",
+      "preciseLocator": "Lecture 35, combinatorial Euler characteristic and triangulations",
+      "evidence": "Inspected fetched pdf text (4601 words; 14 proof mentions). The lecture gives combinatorial Gauss–Bonnet but not the proposed standalone triangulation-invariance proof. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "58-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://www.math.lmu.de/~forster/eprints/gaussbonnet.pdf",
+      "preciseLocator": "Opening section, χ(X)=b₀−b₁+b₂ and Euler characteristic",
+      "evidence": "Inspected fetched pdf text (2369 words; 3 proof mentions). The source states the Euler characteristic as an alternating sum of Betti numbers without this route's derivation. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "59-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 59-r1 (Minimal-counterexample vertex of degree ≤5 plus recoloring); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "60-r1",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.mit.edu/~djk/18.310/Lecture-Notes/some_probability_theory_2007.html",
+      "preciseLocator": "Weak law of large numbers / Chebyshev inequality discussion",
+      "evidence": "Inspected fetched html text (3735 words; 0 proof mentions). The linked discussion establishes the Bernoulli-average case; it does not prove the stated finite-variance iid theorem. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "60-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (This uses strong-law machinery rather than proving the stated weak law as an independent route.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "61-r1",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://math.mit.edu/~sheffield/440/Lecture31.pdf",
+      "preciseLocator": "Lecture 31, pp. 54–64, ‘Proof of central limit theorem with characteristic functions’",
+      "evidence": "Read the characteristic-function proof text. After stating Lévy’s continuity theorem, it defines φY and g=log φY, computes g(0)=g′(0)=0 and g″(0)=−1, obtains g(t)=−t²/2+o(t²), uses independence to get φ_{B_n}(t)=exp(n g(t/√n)), and concludes convergence to exp(−t²/2). This matches the catalog route for finite-variance centered variables after standardization.",
+      "confidence": "high"
+    },
+    {
+      "id": "61-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 61-r1 (Characteristic-function convergence); grouped with that proof idea. This unpacks the characteristic-function convergence route rather than giving an independent proof.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "62-r1",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://math.mit.edu/~sheffield/2016175/Lecture6.pdf",
+      "preciseLocator": "Borel–Cantelli and strong law",
+      "evidence": "Inspected fetched pdf text (5400 words; 46 proof mentions). The lecture states Borel–Cantelli without a complete proof. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "63-r2",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://www.math.utah.edu/~treiberg/InequalitiesSlides.pdf",
+      "preciseLocator": "Jensen's inequality, finite weighted induction proof",
+      "evidence": "Inspected fetched pdf text (4650 words; 11 proof mentions). The slides prove finite Jensen by induction and mention Riemann-sum limits, but do not prove the stated expectation-level extension. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "63-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.mit.edu/~sheffield/2017600/Lecture31.pdf",
+      "preciseLocator": "Jensen inequality tangent-line proof",
+      "evidence": "Inspected fetched pdf text (4664 words; 26 proof mentions). The MIT source gives the supporting-line argument, not the finite-approximation route in the sketch. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "64-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 64-r1 (Young's inequality and normalization); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "64-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (The proposed duality formula normally uses Hölder's inequality, so this proof would be circular.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "65-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.mit.edu/~rbm/18.102-S13/Chapter1.pdf",
+      "preciseLocator": "§8, Baire’s theorem",
+      "evidence": "Inspected fetched pdf text (14739 words; 26 proof mentions). The source proves Baire for complete metric spaces, not the proposed locally compact Hausdorff version. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "66-r1",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://www.maths.tcd.ie/~mozgovoy/2013_MA2223/notes_MA2223.pdf",
+      "preciseLocator": "§1.7.1, Theorem 1.77, pp. 19–20",
+      "evidence": "Read the complete Banach fixed-point proof: iterates are defined, successive gaps are bounded geometrically, the geometric tail proves Cauchy convergence, completeness supplies the limit, continuity gives fixedness, and contraction gives uniqueness. The displayed proof text covers the exact route.",
+      "confidence": "high"
+    },
+    {
+      "id": "66-r2",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://www.maths.tcd.ie/~mozgovoy/2013_MA2223/notes_MA2223.pdf",
+      "preciseLocator": "§1.7.1, Theorem 1.77, pp. 19–20",
+      "evidence": "Read the complete proof text. Its estimate d(x_n,x_{n+k})≤α^n d(x_0,x_1)/(1−α) is the requested Cauchy-sequence organization; it then passes to the complete-space limit and proves fixedness and uniqueness.",
+      "confidence": "high"
+    },
+    {
+      "id": "66-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://people.tamu.edu/~phoward/M615.html",
+      "preciseLocator": "Applications to ODEs I–II (linked full lecture PDFs)",
+      "evidence": "Inspected fetched html text (1222 words; 4 proof mentions). The linked course page does not contain the claimed proof. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "67-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 67-r2 (finite ε-net/total boundedness); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "68-r2",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://web.math.utk.edu/~freire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+      "preciseLocator": "Proof of Weierstrass theorem using Bernstein polynomials",
+      "evidence": "Inspected fetched pdf text (1856 words; 10 proof mentions). The cited Bernstein-polynomial argument concerns the Weierstrass theorem, not this Stone–Weierstrass route. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "69-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (This derives a separation corollary from Hahn–Banach rather than proving Hahn–Banach.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "71-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 71-r1 (Orthogonal projection onto kernel); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "72-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 72-r1 (Baire category and nested balls); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "72-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 72-r1 (Baire category and nested balls); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "73-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 73-r1 (Open mapping theorem on the graph); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "73-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (The duality argument assumes a bounded adjoint that closedness alone does not supply.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "74-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 74-r1 (Contraction mapping/fixed point); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "74-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (The degree argument supplies local existence but the cited sources do not supply an independent full inverse-function proof.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "75-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 75-r1 (Inverse function theorem); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "76-r1",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://math.mit.edu/classes/18.952/2014SP/docs/chapter4.pdf",
+      "preciseLocator": "§4.6, Theorem 4.6.1, pp. 193–195; partition of unity and half-space calculation",
+      "evidence": "Read the complete Stokes proof. It uses a partition of unity to reduce to parametrizable charts, then reduces to a half-space/box and integrates each coefficient derivative in one coordinate; compact support kills the opposite face and the remaining face equals the boundary integral (pp. 193–195, lines 2646–2803). This exactly matches the local-chart/partition-of-unity route.",
+      "confidence": "high"
+    },
+    {
+      "id": "76-r2",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://math.mit.edu/classes/18.952/2014SP/docs/chapter4.pdf",
+      "preciseLocator": "§4.6, ‘Stokes theorem for H^n’, pp. 194–195, lines 2733–2803",
+      "evidence": "Read the Euclidean calculation in full. Writing μ as a sum of coordinate-omission terms, the source integrates ∂f_i/∂x_i first, applies the one-variable fundamental theorem, cancels compact-support faces, and identifies the surviving face with the oriented boundary pullback. This is the requested reduction to FTC on boxes/half-spaces.",
+      "confidence": "high"
+    },
+    {
+      "id": "76-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://math.berkeley.edu/~wodzicki/H185.S11/Integral%20Calculus.pdf",
+      "preciseLocator": "§2.6, Theorem 2.4, Stokes theorem as de Rham/singular-chain pairing",
+      "evidence": "Inspected fetched pdf text (2751 words; 1 proof mentions). The cited theorem is stated as a de Rham pairing, without its proof. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "77-r1",
+      "conclusion": "partial",
+      "sourceUrl": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+      "preciseLocator": "§6, Theorem 6.0.3: verify on cube by the Fundamental Theorem of Calculus, then reduce general manifold case using a partition of unity",
+      "evidence": "Inspected fetched pdf text (3997 words; 9 proof mentions). The source calculates Stokes on a cube but only asserts the general partition-of-unity reduction. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "77-r2",
+      "conclusion": "partial",
+      "sourceUrl": "https://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Dresdner.pdf",
+      "preciseLocator": "§6, Theorem 6.0.3: verify on cube by the Fundamental Theorem of Calculus, then reduce general manifold case using a partition of unity",
+      "evidence": "Inspected fetched pdf text (3997 words; 9 proof mentions). The source calculates Stokes on a cube but leaves the general manifold reduction to a sentence. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "77-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Potential fields give only special cases, not Green's or the divergence theorem generally.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "79-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 79-r1 (Cauchy estimates with radius→∞); grouped with that proof idea. The maximum-modulus principle on expanding disks does not by itself force constancy; a further estimate is needed.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "80-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 80-r1 (Derive from Goursat's theorem and a small-circle deformation); grouped with that proof idea. The power-series expansion and contour deformation require prior analytic results and overlap with the Cauchy–Goursat route.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "81-r1",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://publikationen.bibliothek.kit.edu/1000042944/3288564",
+      "preciseLocator": "§1.2, Theorem 1.1 and proof, pp. 10–12 (PDF pages 24–25), lines 380–416",
+      "evidence": "Read the complete N-dimensional Sperner proof. It states the boundary labeling theorem, defines cell types and counts boundary faces of type (0,…,N−1), observes interior faces occur twice, invokes the (N−1)-dimensional induction hypothesis for an odd boundary count, and concludes the number of fully labeled N-cells is odd. This directly verifies the parity, graph/path consequence, and dimension-induction route.",
+      "confidence": "high"
+    },
+    {
+      "id": "83-r1",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.colorado.edu/~casa/teaching/26fall/4230/lecture_notes/index.html",
+      "preciseLocator": "Lecture 8, winding number and tubular neighborhood approach to Jordan theorem",
+      "evidence": "Inspected fetched html text (45522 words; 67 proof mentions). The lecture uses winding numbers and local crossing, not the sketched polygonal-approximation limit. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "83-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://jeffe.cs.illinois.edu/teaching/comptop/2020/notes/01-simple-polygons.html",
+      "preciseLocator": "‘Proof of the Jordan Polygon Theorem’, Lemma ≤2 and parity argument, lines 33–70",
+      "evidence": "Read the complete polygon proof. It partitions the plane into vertical slabs/trapezoids and uses left/right labels plus parity propagation to prove at most two components, then combines Lemmas ≤2 and ≥2. This is a valid direct polygon proof, but it does not use the catalog’s proposed planar graph Euler/face-traversal argument.",
+      "confidence": "high"
+    },
+    {
+      "id": "85-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://ocw.mit.edu/courses/15-083j-integer-programming-and-combinatorial-optimization-fall-2009/d792e60582882807d4b80057bcc61697_MIT15_083JF09_lec14.pdf",
+      "preciseLocator": "Lecture 14, Hilbert basis theorem via leading terms",
+      "evidence": "Inspected fetched pdf text (2726 words; 1 proof mentions). The slides prove the field-coefficient polynomial case; the sketch claims the full Noetherian coefficient-ring case. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "86-r1",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2015/ec341c7a2524e5dba7c3e939f322613a_MIT18_725F15_notes.pdf",
+      "preciseLocator": "Noether normalization lemma proof via linear coordinate change",
+      "evidence": "Inspected fetched pdf text (38724 words; 145 proof mentions). The proof assumes an infinite base field; the catalogued theorem has no such restriction. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "86-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 86-r1 (Generic linear changes and induction on generators); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "86-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://smakdonald.github.io/Homological-Algebra/sec-noether-normalizations.html",
+      "preciseLocator": "Lemma 14.18 and Theorem 14.21, graded Noether normalization over an infinite field",
+      "evidence": "Inspected fetched html text (2742 words; 14 proof mentions). The graded Noether-normalization source assumes an infinite base field; the catalogue statement is unrestricted. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "88-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 88-r1 (Inductively choose a linear combination avoiding finitely many bad coefficients); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "88-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.3.html",
+      "preciseLocator": "Primitive element theorem, finite-field cyclic multiplicative group case",
+      "evidence": "Inspected fetched html text (147 words; 1 proof mentions). The notes invoke finite-field multiplicative-group cyclicity without proving it. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "89-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 89-r1 (Maximize Rayleigh quotient and iterate); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "90-r1",
+      "conclusion": "partial",
+      "sourceUrl": "https://fa.ewi.tudelft.nl/~hart/37/onderwijs/old-courses/boole.pdf",
+      "preciseLocator": "Chapter 2 §2, Theorem 2.1 and Exercises I.3–I.6, ultrafilter construction",
+      "evidence": "Inspected fetched pdf text (12598 words; 2 proof mentions). The source states the representation and leaves key ultrafilter steps as exercises. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "90-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 90-r1 (Ultrafilters/maximal ideals); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "90-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 90-r1 (Ultrafilters/maximal ideals); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "91-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 91-r2 (fundamental groups of covering graphs and spanning trees); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "92-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 92-r1 (Multiplication by a nonzero element is injective and hence surjective on a finite set); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "92-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (Variation of 92-r1 (Multiplication by a nonzero element is injective and hence surjective on a finite set); grouped with that proof idea.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "96-r2",
+      "conclusion": "source-inaccessible",
+      "sourceUrl": "https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr01.pdf",
+      "preciseLocator": "The Wiener–Ikehara theorem and its application to the prime number theorem",
+      "evidence": "The cited source was attempted but was inaccessible in this audit (404 Client Error: Not Found for url: https://mathweb.tifr.res.in/sites/default/files/publications/ln/tifr01.pdf). The route therefore cannot be verified from proof text.",
+      "confidence": "high"
+    },
+    {
+      "id": "97-r1",
+      "conclusion": "partial",
+      "sourceUrl": "https://math.mit.edu/classes/18.785/2021fa/LectureNotes18.pdf",
+      "preciseLocator": "§18, Dirichlet L-functions and proof of Dirichlet's theorem",
+      "evidence": "Inspected fetched pdf text (6284 words; 20 proof mentions). The lecture begins the Dirichlet argument but stops before proving the theorem. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "97-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://www.math.columbia.edu/~chaoli/docs/ClassFieldTheory.html",
+      "preciseLocator": "Chebotarev density theorem and cyclotomic specialization to primes in residue classes",
+      "evidence": "Inspected fetched html text (17553 words; 71 proof mentions). The notes state Chebotarev density and its relation to Dirichlet's theorem, without proving this route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "98-r1",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://lorecchia.github.io/cmsc35410/notes/la-review-part1.html",
+      "preciseLocator": "§6.1 Theorem 6.1 and §6.3 Theorem 6.3, lines 270–314",
+      "evidence": "Read the theorem proofs. The source factors the minimal/characteristic polynomial into coprime primary factors, proves the generalized-eigenspace direct sum via Cayley–Hamilton, then proves the nilpotent chain basis by induction on dimension/range (Theorems 6.1 and 6.3). This supplies the complete minimal-polynomial/generalized-eigenspace plus chain route.",
+      "confidence": "high"
+    },
+    {
+      "id": "98-r2",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://lorecchia.github.io/cmsc35410/notes/la-review-part1.html",
+      "preciseLocator": "§6.1 Theorem 6.1 proof and §6.3 Theorem 6.3, lines 277–314",
+      "evidence": "Read the proof text. It uses coprime primary decomposition and induction for nilpotent chains, not the proposed F[x]-module structure theorem decomposition. The conclusion is mathematically related but the cited proof route does not match.",
+      "confidence": "high"
+    },
+    {
+      "id": "98-r3",
+      "conclusion": "partial",
+      "sourceUrl": "https://www.math.hkust.edu.hk/~mameng/Teaching/LinearAlgebra/book.pdf",
+      "preciseLocator": "§6.2, generalized eigenspace decomposition and Jordan form",
+      "evidence": "Inspected fetched pdf text (40524 words; 28 proof mentions). The located section proves generalized-eigenspace decomposition but does not construct the full Jordan-chain basis in this route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "100-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": null,
+      "preciseLocator": null,
+      "evidence": "No direct citation was retained for this route in the audit (The proposed weak-compactness argument invokes uniform boundedness rather than proving it.). No proof text was inspected; this is a search/audit gap.",
+      "confidence": "high"
+    },
+    {
+      "id": "102-r1",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://arxiv.org/abs/math/0405251",
+      "preciseLocator": "Introduction: four proof families; full paper for ergodic proof; verify the distinct route articles before treating each as extracted",
+      "evidence": "Inspected fetched pdf text (24554 words; 98 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "102-r2",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://arxiv.org/abs/math/0405251",
+      "preciseLocator": "Introduction: four proof families; full paper for ergodic proof; verify the distinct route articles before treating each as extracted",
+      "evidence": "Inspected fetched pdf text (24554 words; 98 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "102-r3",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://arxiv.org/abs/math/0405251",
+      "preciseLocator": "Introduction: four proof families; full paper for ergodic proof; verify the distinct route articles before treating each as extracted",
+      "evidence": "Inspected fetched pdf text (24554 words; 98 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "102-r4",
+      "conclusion": "source-limitation",
+      "sourceUrl": "https://arxiv.org/abs/math/0405251",
+      "preciseLocator": "Introduction: four proof families; full paper for ergodic proof; verify the distinct route articles before treating each as extracted",
+      "evidence": "Inspected fetched pdf text (24554 words; 98 proof mentions). The catalog locator itself disclaims evidence for this exact proof route. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "103-r1",
+      "conclusion": "source-inaccessible",
+      "sourceUrl": "https://doi.org/10.1016/0097-3165(79)90080-0",
+      "preciseLocator": "1979 paper: hook walk proof; exact theorem and hook-walk sections",
+      "evidence": "The cited source was attempted but was inaccessible in this audit (404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0). The route therefore cannot be verified from proof text.",
+      "confidence": "high"
+    },
+    {
+      "id": "103-r2",
+      "conclusion": "source-inaccessible",
+      "sourceUrl": "https://doi.org/10.1016/0097-3165(79)90080-0",
+      "preciseLocator": "1979 paper: hook walk proof; exact theorem and hook-walk sections",
+      "evidence": "The cited source was attempted but was inaccessible in this audit (404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0). The route therefore cannot be verified from proof text.",
+      "confidence": "high"
+    },
+    {
+      "id": "103-r3",
+      "conclusion": "source-inaccessible",
+      "sourceUrl": "https://doi.org/10.1016/0097-3165(79)90080-0",
+      "preciseLocator": "1979 paper: hook walk proof; exact theorem and hook-walk sections",
+      "evidence": "The cited source was attempted but was inaccessible in this audit (404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0). The route therefore cannot be verified from proof text.",
+      "confidence": "high"
+    },
+    {
+      "id": "103-r4",
+      "conclusion": "source-inaccessible",
+      "sourceUrl": "https://doi.org/10.1016/0097-3165(79)90080-0",
+      "preciseLocator": "1979 paper: hook walk proof; exact theorem and hook-walk sections",
+      "evidence": "The cited source was attempted but was inaccessible in this audit (404 Client Error: Not Found for url: https://doi.org/10.1016/0097-3165(79)90080-0). The route therefore cannot be verified from proof text.",
+      "confidence": "high"
+    },
+    {
+      "id": "104-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://math.berkeley.edu/~scanlon/mn13.pdf",
+      "preciseLocator": "Lecture 16, §16.1 (Henkin construction); semantic counterpart: Internet Encyclopedia of Philosophy, “Compactness Theorem,” §4",
+      "evidence": "Inspected fetched pdf text (50465 words; 161 proof mentions). The cited notes use Henkin's construction, not the proposed product-space proof. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "105-r1",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://planetmath.org/ProofofDesarguesTheorem",
+      "preciseLocator": "Homogeneous-coordinate proof; route-specific axiom assumptions must be checked",
+      "evidence": "Inspected fetched html text (606 words; 4 proof mentions). The cited homogeneous-coordinate proof is not the proposed synthetic route. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "105-r3",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://planetmath.org/ProofofDesarguesTheorem",
+      "preciseLocator": "Homogeneous-coordinate proof; route-specific axiom assumptions must be checked",
+      "evidence": "Inspected fetched html text (606 words; 4 proof mentions). The cited homogeneous-coordinate proof is not the proposed route. Full exact route proof was not verified.",
+      "confidence": "high"
+    },
+    {
+      "id": "106-r1",
+      "conclusion": "partial",
+      "sourceUrl": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+      "preciseLocator": "§5, irreducibility and Frobenius/order arguments; Lehigh paper surveys classical alternatives: https://www.lehigh.edu/~shw2/c-poly/several_proofs.pdf",
+      "evidence": "Inspected fetched pdf text (6761 words; 18 proof mentions). The source proves the Eisenstein substitution for prime powers but not the claimed general-n induction. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "108-r1",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://publikationen.bibliothek.kit.edu/1000042944/3288564",
+      "preciseLocator": "§1.2, Theorem 1.1 and proof, pp. 10–12 (PDF pages 24–25), lines 380–416",
+      "evidence": "Read the complete N-dimensional Sperner proof. It states the boundary labeling theorem, defines cell types and counts boundary faces of type (0,…,N−1), observes interior faces occur twice, invokes the (N−1)-dimensional induction hypothesis for an odd boundary count, and concludes the number of fully labeled N-cells is odd. This directly verifies the parity, graph/path consequence, and dimension-induction route.",
+      "confidence": "high"
+    },
+    {
+      "id": "108-r2",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://publikationen.bibliothek.kit.edu/1000042944/3288564",
+      "preciseLocator": "§1.2, Theorem 1.1 and proof, pp. 10–12 (PDF pages 24–25), lines 380–416",
+      "evidence": "Read the complete N-dimensional Sperner proof. It states the boundary labeling theorem, defines cell types and counts boundary faces of type (0,…,N−1), observes interior faces occur twice, invokes the (N−1)-dimensional induction hypothesis for an odd boundary count, and concludes the number of fully labeled N-cells is odd. This directly verifies the parity, graph/path consequence, and dimension-induction route.",
+      "confidence": "high"
+    },
+    {
+      "id": "108-r3",
+      "conclusion": "full-proof-verified",
+      "sourceUrl": "https://publikationen.bibliothek.kit.edu/1000042944/3288564",
+      "preciseLocator": "§1.2, Theorem 1.1 and proof, pp. 10–12 (PDF pages 24–25), lines 380–416",
+      "evidence": "Read the complete N-dimensional Sperner proof. It states the boundary labeling theorem, defines cell types and counts boundary faces of type (0,…,N−1), observes interior faces occur twice, invokes the (N−1)-dimensional induction hypothesis for an odd boundary count, and concludes the number of fully labeled N-cells is odd. This directly verifies the parity, graph/path consequence, and dimension-induction route.",
+      "confidence": "high"
+    },
+    {
+      "id": "109-r1",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+      "preciseLocator": "Finite Ramsey theorem, induction proof",
+      "evidence": "Inspected fetched pdf text (1174 words; 5 proof mentions). The lecture proves the two-color graph case; the catalogue sketch uses arbitrary uniformity and color count. Full exact route proof was not verified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "109-r2",
+      "conclusion": "route-mismatch",
+      "sourceUrl": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+      "preciseLocator": "Finite Ramsey theorem, induction proof",
+      "evidence": "Inspected fetched pdf text (1174 words; 5 proof mentions). The source proves finite Ramsey by recurrence, not the proposed greedy route. Full exact route proof was not verified.",
+      "confidence": "high"
+    }
+  ]
+}

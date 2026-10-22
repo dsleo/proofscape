@@ -1,0 +1,72 @@
+[
+ {
+  "routeId": "128-r1",
+  "verdict": "partial",
+  "correctedLocator": "Lecture 2 (Klartag), p.3-5, 'Hadwiger-Ohman proof of Theorem 2.2' (equation (9) AM-GM, then induction on N boxes)",
+  "missingStep": "The reduction to finite unions of disjoint boxes is only asserted ('By approximation, we may assume'); the outer approximation of compact sets by decreasing finite box unions and the inner approximation of measurable sets by compact sets are not written out or cited.",
+  "note": "Box case (AM-GM), hyperplane splitting, volume-ratio matching of T by continuity, induction on N, and disjointness of S1+T1, S2+T2 are all fully written and match the sketch. Only the approximation/limit step is missing."
+ },
+ {
+  "routeId": "128-r3",
+  "verdict": "partial",
+  "correctedLocator": "Notes Sec 2 (Thm 2.1 and its multiplicative form (2), p.2) and Thm 2.3 Prekopa-Leindler with proof (p.3-4)",
+  "missingStep": "1D Prekopa-Leindler is proved here from 1D Brunn-Minkowski via level sets (layer-cake), not by monotone rearrangement as the sketch says; the final step 'apply PL to indicator functions' is stated in one sentence without checking that the hypothesis holds (and level-set nonemptiness/measurability are glossed). Statement of Thm 2.3 has hypothesis/conclusion roles of f,g,h swapped relative to the sketch.",
+  "note": "Dimension induction PL(d-1)+PL(1) => PL(d) is fully written, and the equivalence (1)<=>(2) with normalisation lambda=a/(a+b) is fully written. Method of the 1D base case differs from the sketch."
+ },
+ {
+  "routeId": "130-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia 'Helly's theorem' section Proof: base case n=d+2 via Radon partition and point p, distinct-points caveat, and inductive step by merging X_{n-1} and X_n are all written. 'Radon's theorem' section 'Proof and construction' gives the linear-algebra proof of Radon. Read both (via raw wikitext)."
+ },
+ {
+  "routeId": "136-r3",
+  "verdict": "confirmed",
+  "correctedLocator": "Hatcher Algebraic Topology, Sec 2.B: Prop 2B.1(a),(b) pp.169-170; Thm 2B.3 p.172",
+  "missingStep": null,
+  "note": "Prop 2B.1 proved by Mayer-Vietoris/compactness; Thm 2B.3 proof works in S^n using that S^n minus embedded ball is connected and S^n minus embedded S^{n-1} has two components; same Jordan-Brouwer separation idea as the sketch (phrased in S^n rather than bounded/unbounded components in R^n). Complete."
+ },
+ {
+  "routeId": "138-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "nLab: Knaster-Tarski lemma proved (intersection of prefixed points), then CSB proof with phi = not exists_g not exists_f, h defined as f on A and g^-1 off A, inverse verified. Same operator as sketch. Only the closing remark about Sikorski-Tarski complete Boolean algebra versions is not proved there (a side remark, not needed for the set-theoretic theorem)."
+ },
+ {
+  "routeId": "139-r3",
+  "verdict": "confirmed",
+  "correctedLocator": "Cook notes pp.31-37: Completeness Lemma proof (stagewise cut-free proof search, term model from open/infinite branch via Konig, Claim)",
+  "missingStep": null,
+  "note": "Full cut-free proof-search completeness argument for LK is written; scope is countable vocabulary and no equality (stated explicitly). Gentzen's Hauptsatz is not proved there but is a named standard result and is in fact unnecessary for the transfer (cut-free completeness trivially gives completeness of LK)."
+ },
+ {
+  "routeId": "140-r1",
+  "verdict": "confirmed",
+  "correctedLocator": "Open Logic 'Incompleteness' Sec 5.2 Lemma 5.2 (fixed-point lemma, proved, pp.63-64); Sec 5.3 Lemma 5.3, Def 5.4, Lemma 5.5, Thm 5.6 (pp.64-66)",
+  "missingStep": null,
+  "note": "Diagonal lemma proved in Q; unprovability of G from consistency and of not-G from omega-consistency are both proved as in the sketch. Representability of Prf_T is cited as established earlier."
+ },
+ {
+  "routeId": "140-r2",
+  "verdict": "confirmed",
+  "correctedLocator": "Open Logic 'Incompleteness' Sec 5.4, Thm 5.7 and proof with Eq (5.4) (pp.66-67)",
+  "missingStep": null,
+  "note": "Both cases are proved using only consistency, via RProv(y) = exists x (Prf(x,y) and forall z<x not Ref(z,y)) and Lemmas 3.24/3.25 of the same text. Formulation uses 'z<x' in the negated form rather than the sketch's 'exists z<=y' but is the same Rosser trick."
+ },
+ {
+  "routeId": "141-r3",
+  "verdict": "confirmed",
+  "correctedLocator": "Milne ANT v3.08 Sec 4: Thm 4.3 (statement p.70, proof p.81), Thm 4.4 (p.70-71), Examples 4.5-4.6, Thm 4.19 (Minkowski, proved p.76), Props 4.26-4.27 (p.79-81)",
+  "missingStep": null,
+  "note": "Minkowski convex body theorem is proved, covolume of ideal lattice computed, Minkowski bound proved, finiteness of class number and non-PID examples (e.g. Q[sqrt-5] class number 2) derived. Source does not claim this reproves ideal factorization, consistent with sketch's framing."
+ },
+ {
+  "routeId": "143-r1",
+  "verdict": "partial",
+  "correctedLocator": "Marshall, Uniformization Theorem note: Perron family/Green's function def (p.2); Lemmas 1-3; Thm 4 (Case 1, pp.7-8); Lemma 5 and Case 2 proof (pp.9-13)",
+  "missingStep": "The sketch's parabolic/compact cases (single log-pole harmonic function with controlled growth; Dirichlet principle giving a meromorphic function with one simple pole; exhaustion by regular domains) are not what the source does. The source treats non-hyperbolic cases uniformly by a dipole Green's function (two opposite poles) built as a limit of Green's functions of W minus shrinking disks, and its Case 1 uses a Perron family on W directly, not an exhaustion; symmetry of g needs universal cover (Lemma 3, Cor 6).",
+  "note": "Hyperbolic case (Green's function -> exp(-g - i g*) injective -> RMT onto D) is fully proved and matches. Non-hyperbolic cases are fully proved in the source but by a different (dipole) method than the sketch's indicated route, so the source does not prove the route exactly as described; the sketch itself says those cases are only indicated."
+ }
+]

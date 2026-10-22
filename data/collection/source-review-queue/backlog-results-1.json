@@ -1,0 +1,122 @@
+[
+ {
+  "routeId": "2-r4",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://proofwiki.org/wiki/Square_Root_of_2_is_Irrational",
+  "sourceLabel": "ProofWiki, Square Root of 2 is Irrational",
+  "preciseLocator": "Proof 5",
+  "evidence": "Read Proof 5: applies the Rational Root Theorem to n^2-2, numerator divides 2 and denominator divides 1, candidates +-1,+-2 checked to fail. Rational Root Theorem itself is cited, not reproved, as in the sketch.",
+  "sketchProblem": null,
+  "confidence": "medium-high"
+ },
+ {
+  "routeId": "3-r4",
+  "outcome": "partial",
+  "sourceUrl": "https://sites.pitt.edu/~caw203/pdfs/primes_and_riemann.pdf",
+  "sourceLabel": "C. Erickson, Prime Numbers and the Riemann Hypothesis (Pitt)",
+  "preciseLocator": "Section 2, The Riemann Zeta Function and the Primes (Euler product, Theorem 5)",
+  "evidence": "Read it: derives the Euler product from unique factorization, then takes s->1+ and says the limit diverges because the harmonic series does, concluding infinitely many primes. Missing: the integral-comparison divergence step and an explicit 'finite product stays bounded' step (only implicit).",
+  "sketchProblem": "Sketch says it overlaps route 3-r2 and is not distinct unless developed separately; arXiv 1202.3670 (current ref) only lists proofs and does not write this one out.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "4-r1",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Read arXiv 1202.3670 sec 3.2 (survey, no worked proof of this route), Conrad 'Euclidean proofs of Dirichlet's theorem' (only lists polynomials h(T) and Schur/Murty theorems), MIT 18.781 lecture 12 (cyclotomic only). No free source found proving a generic aN+1 product route.",
+  "sketchProblem": "Sketch is incoherent: 'a N+1' with generic a cannot force q = a mod m, and it admits as much. It is not a single provable route; a real Euclid-style proof needs a specific polynomial per progression (e.g. 4p1...pk-1 for 3 mod 4). Suggest rewriting around a concrete case or merging with 4-r2.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "4-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/7312c3e8e2dbb9af9a1677425fc3a0e7_MIT18_781S12_lec12.pdf",
+  "sourceLabel": "MIT OCW 18.781 Theory of Numbers, Lecture 12",
+  "preciseLocator": "Proposition 45, Lemma 46, Theorem 47 (pp. 1-4)",
+  "evidence": "Read the full text: Phi_n integral, monic, constant term 1 (Prop 45); no common root mod p with x^m-1 for m|n proper, p not dividing n (Lemma 46); Theorem 47 takes Phi_n(l n p1...pN), a prime divisor has order exactly n so n | p-1, giving a new prime = 1 mod n.",
+  "sketchProblem": "Source proves only 1 mod n, matching sketch. Slight variant: it uses a = l n p1...pN with l large rather than 'choose A to exclude exceptional divisors'.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "4-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Opened Conrad 'Euclidean proofs of Dirichlet's theorem' (kconrad.math.uconn.edu/blurbs/gradnumthy/dirichleteuclid.pdf): Theorems 1-2 (Schur, Murty) say Euclid-style polynomials exist for a mod m iff a^2=1 mod m, which supports the scope remark but is not the claimed statement; did not read the Springer book proof.",
+  "sketchProblem": "Route is a scope warning, not a proof route; there is nothing to verify as a complete proof. Suggest flagging not-a-route. The statement about L-function nonvanishing is true but is not what Conrad's text proves.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "5-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://campus.lakeforest.edu/trevino/ManyProofsSumConsecutives.pdf",
+  "sourceLabel": "Edgar and Trevino, Many proofs that 1+2+...+n = n(n+1)/2",
+  "preciseLocator": "Proof 2 (Gauss trick), p. 1",
+  "evidence": "Read: S=1+...+n, reversed S=n+...+1, adding gives 2S=n(n+1). Exactly the sketch. Also Wikipedia Arithmetic progression, Sum > Derivation, gives the general reverse-and-add.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "5-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://campus.lakeforest.edu/trevino/ManyProofsSumConsecutives.pdf",
+  "sourceLabel": "Edgar and Trevino, Many proofs that 1+2+...+n = n(n+1)/2",
+  "preciseLocator": "Proof 7 (Counting Two Different Ways), p. 3",
+  "evidence": "Read: counts 2-subsets of {1,...,n+1} as C(n+1,2) and by larger element b as sum (b-1)=1+...+n. Same double-counting idea, but on strict pairs of n+1 objects, not pairs i<=j on n or multisets; the identification of i<=j pairs with C(n+1,2) is not written. Same proof in discrete.openmathbooks.org/dmoi2/sec_comb-proofs.html, exercise 3.",
+  "sketchProblem": "Sketch's 'choosing two with repetition gives n(n+1)/2' is asserted without justification; it needs the shift (i,j)->(i,j+1).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "5-r4",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://campus.lakeforest.edu/trevino/ManyProofsSumConsecutives.pdf",
+  "sourceLabel": "Edgar and Trevino, Many proofs that 1+2+...+n = n(n+1)/2",
+  "preciseLocator": "Proof 11 (Geometric Series + L'Hospital), p. 4",
+  "evidence": "Read: differentiates sum x^k = (1-x^{n+1})/(1-x), gets sum k x^{k-1} = (n x^{n+1}-(n+1)x^n+1)/(1-x)^2, takes x->1 with L'Hospital to get n(n+1)/2. Matches the sketch.",
+  "sketchProblem": "Sketch's S(x)=1+x+...+x^n is right; derivative at 1 needs the limit step, which the source supplies.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "6-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Gnomon_(figure)",
+  "sourceLabel": "Wikipedia, Gnomon (figure)",
+  "preciseLocator": "Section on gnomons of square numbers (the n-square to (n+1)-square paragraph)",
+  "evidence": "Read: going from n-square to (n+1)-square adds 2n+1 elements (one per row, one per column, one corner), and states this gnomonic technique proves the sum of the first n odd numbers is n^2. Short, but all steps present. Wikipedia Square number only has pictures.",
+  "sketchProblem": "Source indexes the border as 2n+1 (n -> n+1); sketch's nth border 2n-1 is the same up to shift.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "6-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Read ProofWiki Odd Number Theorem (induction and arithmetic-sum proofs only), Wikipedia Galileo's law of odd numbers (algebraic via AP sum), Wikipedia Square number (picture), Edgar-Trevino (telescopes (k+1)^2-k^2 to sum 1..n, not the odd-sum). No source found telescoping k^2-(k-1)^2=2k-1 to get n^2.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "7-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Binomial_theorem",
+  "sourceLabel": "Wikipedia, Binomial theorem",
+  "preciseLocator": "Proofs > Combinatorial proof (also Combinatorial interpretation)",
+  "evidence": "Read: expands (x+y)^n by distributivity into 2^n products, groups by number k of y's, counts k-element subsets of the n factors as C(n,k). Matches the sketch. OpenStax 11.6 does not print this.",
+  "sketchProblem": "Sketch 7-r2 and 7-r3 are essentially the same argument (near-duplicate).",
+  "confidence": "high"
+ },
+ {
+  "routeId": "7-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Binomial_theorem",
+  "sourceLabel": "Wikipedia, Binomial theorem",
+  "preciseLocator": "Proofs > Combinatorial proof",
+  "evidence": "Read: distributive expansion into 2^n products e1...en with ei in {x,y}, rearranged to x^{n-k}y^k, count of those equals number of k-subsets C(n,k). Matches sketch step for step.",
+  "sketchProblem": "Near-duplicate of 7-r2; consider merging.",
+  "confidence": "high"
+ }
+]

@@ -1,0 +1,152 @@
+[
+ {
+  "routeId": "103-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://web.stanford.edu/%7Elindrew/hooklength.pdf",
+  "sourceLabel": "Shiyue and Andrew, Young Tableaux and Probability (Mathcamp 2019 notes)",
+  "preciseLocator": "Sections 2-5: recurrence f=sum f_{lambda-v}; Prop 3.2 / Lemma 4.2 (lattice-path weights); Lemma 5.1 (hook walks); end of Sec 5 (sum over u and corners gives n)",
+  "evidence": "Read the full hook-walk argument: recurrence reduces to sum_v H(lambda)/(n H(lambda-v))=1, hook-walk probability P(u,v)=H(lambda)/H(lambda-v) proved via the rectangle law and path-weight lemmas, then summing over u gives n. Every step is written out.",
+  "sketchProblem": "Direction is wrong: in the Greene-Nijenhuis-Wilf walk one starts at a uniformly random cell and jumps to a uniform cell in its hook strictly to the RIGHT or BELOW, ending at a corner; sketch says 'from an outside corner ... left or above'.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "103-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/0704.3381",
+  "sourceLabel": "Guoce Xin, Determinant Formulas Relating to Tableaux of Bounded Height (arXiv:0704.3381)",
+  "preciseLocator": "Section 3.1, Theorem 6 and Proposition 7",
+  "evidence": "Proves f^lambda=(|lambda|)! det[1/(lambda_i-i+j)!] by an algebraic reflection-principle/alternant argument, not LGV nonintersecting paths, and only remarks that setting mu=lambda gives the hook formula; the evaluation of the determinant to the hook product is not written. Gessel-Viennot 1985 (Cor. 12, Prop. 10) does LGV but for tableaux with entries in [a] (hook-content), not standard tableaux directly.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "103-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Hook_length_formula",
+  "sourceLabel": "Wikipedia: Hook length formula",
+  "preciseLocator": "Section 'Proof of hook formula using Frobenius formula' (after 'Connection to representations of the symmetric group')",
+  "evidence": "Derives f^lambda=n!prod(l_i-l_j)/prod l_i! from the Frobenius character formula and then converts to hooks, but takes as given that f^lambda=dim V_lambda (Specht basis indexed by standard tableaux) and the Frobenius formula; those steps are asserted/cited (Fulton-Harris), not proved.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "103-r4",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://sites.math.washington.edu/~billey/classes/561.fall.2019/past.articles/glass.ng.2004.pdf",
+  "sourceLabel": "Glass and Ng, A Simple Proof of the Hook Length Formula, Amer. Math. Monthly 111 (2004) 700-704",
+  "preciseLocator": "pp. 700-703: recursion (i)-(iii), Theorem 1, Lemma 2, Corollary 3",
+  "evidence": "Read the recursion from removing the largest entry (corner), base case f(empty)=1, and a full verification that the product formula satisfies the recursion (via a residue/partial-fraction identity, Lemma 2), then conversion to hook lengths. Complete; the verification uses a residue-theorem lemma rather than a purely bijective argument.",
+  "sketchProblem": "Title says 'bijective/combinatorial' but the sketch body is a recurrence-verification proof (which is what the source does); no bijection is involved.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "104-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://arxiv.org/pdf/2210.09239",
+  "sourceLabel": "Qin, A Topological Representation of Semantics of First-Order Logic (arXiv:2210.09239)",
+  "preciseLocator": "Theorem 4.1 and its proof (Sec 4.2), relying on Theorem 3.2",
+  "evidence": "The only topological proof of first-order compactness found is built on a large cylindric-space framework (basis-preserving injection into a product, surjectivity via Lemmas 4.1-4.2); it is not the simple clopen-set/finite-intersection-in-a-product argument sketched. Wikipedia and Scanlon notes give Henkin/ultraproduct proofs instead.",
+  "sketchProblem": "As stated the sketch cannot work for first-order logic: a point in a product of truth-value spaces only gives a propositional valuation, not a structure. A Henkin/Skolem step (add witnesses, reduce to propositional compactness) is essential and absent.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "105-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Desargues%27s_theorem",
+  "sourceLabel": "Wikipedia: Desargues's theorem",
+  "preciseLocator": "Section 'Proof of Desargues's theorem' > 'Three-dimensional proof'",
+  "evidence": "The page writes out the proof: coplanarity of lines Aa, Bb gives AB meets ab; if triangles lie in different planes these points lie in both planes, hence on their line of intersection; coplanar case handled by lifting out of the plane with an external point and projecting back. Written briefly but each step present.",
+  "sketchProblem": "Wording slightly garbled: concurrency of vertex joins is the hypothesis (used to get coplanarity), not a conclusion.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "105-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://planetmath.org/ProofofDesarguesTheorem",
+  "sourceLabel": "PlanetMath: proof of Desargues' theorem",
+  "preciseLocator": "whole entry",
+  "evidence": "Gives a full homogeneous-coordinate calculation (A,B,C,P as basis points, six line equations, determinant zero) which matches the sketch body, but works with commutative scalars and never states a division-ring/Desarguesian hypothesis; non-commutative case (determinants over a division ring) is not handled.",
+  "sketchProblem": "Route title ('derive from Pappus') does not match the sketch body (coordinatization over a division ring); Pappus does not imply Desargues, only the reverse in the Pappian-from-commutative sense; the title belongs to a different route. Also determinants over non-commutative division rings need care.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "106-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+  "sourceLabel": "Keith Conrad, Cyclotomic Extensions",
+  "preciseLocator": "Theorem 5.2 (Eisenstein for Phi_{p^r}(X+1)); general n proved in Sec 3 by a different (Frobenius/reduction mod p) argument",
+  "evidence": "Eisenstein for prime powers is proved; the general-n step is done by a different method, not the induction/divisibility the route title suggests. No source found doing Eisenstein plus an induction for general n.",
+  "sketchProblem": "Sketch itself admits only prime powers are covered, so it is not a proof of the stated result; Phi_{p^k}=(x^{p^k}-1)/(x^{p^{k-1}}-1) is stated with p^{k} slip-free but general n is missing.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "109-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.uni-hamburg.de/home/schacht/lnotes/Ramsey.pdf",
+  "sourceLabel": "Mathias Schacht, Ramsey Theory lecture notes (Hamburg 2011)",
+  "preciseLocator": "Section 2.3, Second proof of Theorem 2.2 (pp. 13-14); also First proof (Erdos-Szekeres) same section",
+  "evidence": "Read: for general uniformity k and r colours, select vertices x_i with sets X_i whose k-1 sets through x_i share a colour (using Ramsey for k-1), then pigeonhole on the colours of x_1..x_t. Complete induction on k. Penev Lecture 11 (iuuk.mff.cuni.cz/~ipenev/KG1W2020Lecture11.pdf) also proves it via induction on k and sum of sizes.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "109-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.uni-hamburg.de/home/schacht/lnotes/Ramsey.pdf",
+  "sourceLabel": "Mathias Schacht, Ramsey Theory lecture notes (Hamburg 2011)",
+  "preciseLocator": "Section 2.2.2.2 'Reduction to k=1' (pp. 11-12), Erdos-Rado proof for graphs with r colours",
+  "evidence": "Read: repeatedly pick a vertex and keep a largest same-colour neighbourhood (size >= n/r^i), t=R^(1)(l_j-1) steps, then pigeonhole on the colours of the selected vertices to get a monochromatic clique. Matches the greedy route.",
+  "sketchProblem": "The recurrence 'R_k(r) <= kR_k(r-1)+...' in the sketch is garbled; the actual bound is n=r^t with t from the pigeonhole function.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "109-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.ias.edu/%7Elurie/155notes/lecture26.pdf",
+  "sourceLabel": "Jacob Lurie, Math 155 Lecture 26",
+  "preciseLocator": "Theorem 5 (infinite Ramsey) and Theorem 7 with the compactness/product-space remark at the end",
+  "evidence": "Read full proofs: infinite Ramsey for n-sets by induction, and finite Ramsey for all n, T, m by a nested bad-colourings compactness argument, with the Tychonoff/product-of-finite-sets formulation spelled out. Wikipedia 'Ramsey's theorem' has the same argument.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "110-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Szekeres_theorem",
+  "sourceLabel": "Wikipedia: Erdos-Szekeres theorem",
+  "preciseLocator": "Section 'Proofs' > 'Pigeonhole principle'",
+  "evidence": "Full written proof with pairs (a_i,b_i) of longest increasing/decreasing subsequence lengths ending at i, distinctness argument, and (r-1)(s-1) count. This matches the sketch body. (mathweb.ucsd.edu/~jverstra PDF could not be retrieved.)",
+  "sketchProblem": "Route title says poset chain/antichain, but the sketch body is the Seidenberg rank-pair argument; the title belongs to the Dilworth/Mirsky route (110-r3).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "110-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Szekeres_theorem",
+  "sourceLabel": "Wikipedia: Erdos-Szekeres theorem",
+  "preciseLocator": "Section 'Proofs' > 'Dilworth's theorem' and 'Application of the Robinson-Schensted correspondence'",
+  "evidence": "Gives the chain/antichain argument by invoking Mirsky's or Dilworth's theorem and the RS correspondence, but these are cited, not proved, and there is no permutation-diagram write-up of points (i,pi(i)).",
+  "sketchProblem": "Sketch says 'Dilworth/Mirsky or insertion/Young-diagram' as alternatives, so the route is not a single argument.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "111-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Divergence_of_the_sum_of_the_reciprocals_of_the_primes",
+  "sourceLabel": "Wikipedia: Divergence of the sum of the reciprocals of the primes",
+  "preciseLocator": "Section 'Erdos's proof by upper and lower estimates'",
+  "evidence": "Full proof by contradiction: tail <1/2, count of n<=x with a prime factor >p_k is < x/2, count of p_k-smooth numbers <= 2^k sqrt(x) (square-free times square), contradiction for x>=2^(2k+2).",
+  "sketchProblem": "Minor variant: the source bounds smooth numbers by 2^k sqrt(x) rather than O((log x)^k); same argument.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "111-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://proofwiki.org/wiki/Sum_of_Reciprocals_of_Primes_is_Divergent/Proof_2",
+  "sourceLabel": "ProofWiki: Sum of Reciprocals of Primes is Divergent, Proof 2",
+  "preciseLocator": "Proof 2",
+  "evidence": "Page (read via fetch tool summary only, direct curl blocked) expands the finite product prod_{p<=p_n}(1-1/p)^{-1}, shows it dominates the harmonic sum > ln p_n, then uses ln(1-x)>=-2x to get sum 1/p_k > (1/2) ln ln p_n. Same finite-Euler-product route, direct rather than by contradiction.",
+  "sketchProblem": "Sketch's O(sum 1/p^2) estimate is replaced in the source by ln(1-x)>=-2x; also ProofWiki has a minor ln(p_n+1)=ln p_n slip.",
+  "confidence": "low"
+ }
+]

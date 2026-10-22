@@ -1,0 +1,152 @@
+[
+ {
+  "routeId": "119-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://math.iisc.ac.in/~vamsipingali/teaching/ma241ODE2025spring/Lec13Jan29MA2412025.pdf",
+  "sourceLabel": "IISc MA241 ODE lecture 13 (Jan 29 2025), with Lecture 12 (Jan 27 2025)",
+  "preciseLocator": "Lec 13 Theorem 1 (Picard) proof; uniqueness in Lec 12 Theorem 1",
+  "evidence": "Lec 13 proves existence by Picard iterates with h<=min(a,b/M,1/(2L)): iterates stay in the cylinder, contraction estimate, uniform convergence by M-test, limit solves the integral equation. Uniqueness is deferred to the previous lecture (Gronwall; closedness left as '(why?)'), and Banach's fixed-point theorem is not invoked.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "119-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://math63cm.stanford.edu/peano-existence.pdf",
+  "sourceLabel": "Brian White, Peano Existence Theorem (Stanford Math 63CM notes)",
+  "preciseLocator": "Theorem 1, proof Case 1 (bounded F) and Case 2 (truncation to a ball)",
+  "evidence": "Builds Euler polygons x_k with step 1/k, shows M-Lipschitz (Claim 1) and uniformly bounded (Claim 2), Arzela-Ascoli subsequence, uniform continuity of F gives F(y_k)->F(x) uniformly (Claim 3), passes to the limit in the integral equation; Case 2 reduces local continuous F to the bounded case.",
+  "sketchProblem": "Source treats autonomous x'=F(x) forward in time only; the sketch's F(t,y) on a cylinder with h=min(a,b/M) and backward time is a routine adaptation (add t as a variable), not written out.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "119-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://math.iisc.ac.in/~vamsipingali/teaching/ma241ODE2025spring/Lec12Jan27MA2412025.pdf",
+  "sourceLabel": "IISc MA241 ODE lecture 12 (Jan 27 2025)",
+  "preciseLocator": "Section 2, Theorem 1 (uniqueness) proof",
+  "evidence": "Proves uniqueness: S={t: y1=y2} is nonempty and 'closed (why?)'; shows openness at t0 by local Lipschitz bound u<=M|int u| and 'By Gronwall's inequality' u=0. The closedness step is left to the reader and Gronwall's inequality itself is only invoked, not proved, in this file.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "120-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Minkowski_inequality",
+  "sourceLabel": "Wikipedia, Minkowski inequality",
+  "preciseLocator": "Section 'Proof' > 'Proof by H\u00f6lder's inequality'",
+  "evidence": "Shows |f+g|^p<=2^{p-1}(|f|^p+|g|^p) so the norm is finite, then writes ||f+g||_p^p<=int(|f|+|g|)|f+g|^{p-1}, applies H\u00f6lder to each term and divides by ||f+g||_p^{p-1}. Endpoint cases p=1 and p=infinity are not written out.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "120-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Minkowski_inequality",
+  "sourceLabel": "Wikipedia, Minkowski inequality",
+  "preciseLocator": "Section 'Proof' > 'Proof by a direct convexity argument'",
+  "evidence": "Applies convexity (Jensen) pointwise to |f+g|^p with weight t, integrates, and chooses t=||g||_p/(||f||_p+||g||_p); this is the sketch's normalization lambda=a/(a+b) in unnormalized form.",
+  "sketchProblem": "Wikipedia's version does not normalize F=f/a, G=g/b explicitly but is the same convexity argument.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "120-r3",
+  "outcome": "none-found",
+  "sourceUrl": "",
+  "sourceLabel": "",
+  "preciseLocator": "",
+  "evidence": "Checked Wikipedia (H\u00f6lder and convexity proofs only), MIT OCW 18.125 lecture 10 (no Minkowski proof), and a web search for a simple-function/monotone-convergence proof; no free source found that proves Minkowski by reducing to simple functions then the finite weighted l^p inequality.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "121-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://mathweb.tifr.res.in/~goswami/LECTUREVI.pdf",
+  "sourceLabel": "TIFR Analysis I (Goswami) Lecture XXV, Riesz-Markov",
+  "preciseLocator": "Theorem 6.9 proof: Steps II (outer measure, Lemma 6.12 partition of unity), III (Borel measurability), IV (regularity), V (L(f)=int f dmu); uniqueness Step I",
+  "evidence": "Defines mu*(U)=sup{L f: 0<=f<=1_U, supp f in U}, extends by infimum over open sets, proves subadditivity via partitions of unity, Caratheodory measurability of Borel sets, regularity, and L f=int f dmu by level-slice approximation f=sum f_n squeezed between mu(K_n) sums; uniqueness via Lemma 6.11. Proved for locally compact Hausdorff, which includes compact Hausdorff.",
+  "sketchProblem": "Sketch says 'finite additivity on disjoint opens' then extension; source gets additivity via Caratheodory rather than a separate finite-additivity step. r1 and r3 overlap heavily (both use sup over C(K) functions on open sets).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "121-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/1409.2662",
+  "sourceLabel": "Measures and all that: a tutorial (arXiv 1409.2662)",
+  "preciseLocator": "Section 2.8.2: Lemmas 2.156-2.161, Theorem 2.162, Theorem 2.164 (Dini step inside its proof)",
+  "evidence": "Treats L as positive normed functional on vector lattice C(X) continuous from above (Dini shown inside Thm 2.164), extends to monotone limits L+, builds sets G and outer measure by Caratheodory, shows sigma(F) in B and L(f)=int f dmu with uniqueness; remark after Cor 2.163 notes the general case gives a Baire measure.",
+  "sketchProblem": "Theorem 2.164 is stated for compact metric spaces; the same proof gives a Baire measure on compact Hausdorff K as the sketch's caveat says, but regularity/Borel extension for non-metrizable K is only referenced, not proved.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "121-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://mathweb.tifr.res.in/~goswami/LECTUREVI.pdf",
+  "sourceLabel": "TIFR Analysis I (Goswami) Lecture XXV, Riesz-Markov",
+  "preciseLocator": "Theorem 6.9 proof, Steps II-V",
+  "evidence": "The source builds the measure from open sets by sup over C functions and an outer measure inf, but never extends L to lower semicontinuous functions or uses Dini for increasing nets; no free source found with the semicontinuous-function (Bourbaki) route.",
+  "sketchProblem": "Sketch largely duplicates 121-r1 (differs only in the lsc extension step).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "124-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://personal.math.ubc.ca/~feldman/m420/product.pdf",
+  "sourceLabel": "Joel Feldman (UBC), Measure Theory notes Part 5",
+  "preciseLocator": "Theorem 5.9 (Tonelli: cases 2-3, Fubini) and Proposition 5.8",
+  "evidence": "Simple functions by linearity, monotone convergence for Tonelli, positive/negative parts for Fubini are all written out. But the indicator case for general product-measurable E is proved by a monotone-class argument (Prop 5.8), not by approximating from rectangles.",
+  "sketchProblem": "Sketch only treats indicators of measurable rectangles, then 'simple functions'; simple functions on the product sigma-algebra need indicators of arbitrary E, which requires a monotone-class/pi-lambda step the sketch omits.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "124-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://personal.math.ubc.ca/~feldman/m420/product.pdf",
+  "sourceLabel": "Joel Feldman (UBC), Measure Theory notes Part 5",
+  "preciseLocator": "Def 5.1, Prop 5.4, Lemma 5.7, Prop 5.8, Theorem 5.9",
+  "evidence": "Product measure from rectangles by Caratheodory, sections measurable (Prop 5.4), monotone-class proof that x->nu(E_x) is measurable and both iterated integrals equal mu x nu (finite then sigma-finite), then simple/monotone limits give Tonelli and positive/negative parts give Fubini.",
+  "sketchProblem": "Source uses the monotone class lemma directly rather than uniqueness of extension from a pi-system, and uniqueness of mu x nu is only asserted in Def 5.1(d); same overall method.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "124-r3",
+  "outcome": "none-found",
+  "sourceUrl": "",
+  "sourceLabel": "",
+  "preciseLocator": "",
+  "evidence": "Read Feldman Part 5, Stanford Math 205A supplement 2 (product outer measure, uses open/G_delta only in a remark) and ProofWiki/Wikipedia; none proves Fubini-Tonelli for Lebesgue measure via dyadic boxes and G_delta null sets.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "125-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/1709.03377",
+  "sourceLabel": "Notes on Harmonic Analysis Part I: The Fourier Transform (arXiv 1709.03377)",
+  "preciseLocator": "Theorem 1.13 (Inversion Theorem) and its proof; also Wikipedia 'Fourier inversion theorem' Proof",
+  "evidence": "Integrates f-hat against the Gaussian Fourier transform with Fubini to get (f * Gauss-Weierstrass kernel), lets the parameter go to 0: right side tends to f a.e. (approximate identity), left side tends to the inverse integral by dominated convergence. Wikipedia gives the same argument for continuous f.",
+  "sketchProblem": "Source gets the result a.e. (and Wikipedia at continuity points), with approximate-identity convergence taken as known.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "125-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/0903.3845",
+  "sourceLabel": "Harmonic Analysis Lecture Notes (Univ. of Illinois, arXiv 0903.3845)",
+  "preciseLocator": "Ch. 15 (Fejer kernel, Thm 15.7, formula 15.18, 15.21) and Ch. 16 Theorem 16.2(a)",
+  "evidence": "Writes the Fejer mean of the Fourier integral as F_lambda * f, uses positivity/mass of the Fejer kernel (integral of sin^2(x/2)/x^2 by parts) and approximate-identity convergence in L1, then dominated convergence using f-hat in L1 to identify the limit with the full inverse integral.",
+  "sketchProblem": "Source obtains convergence in L1 and then a.e. via a subsequence, not pointwise at continuity points; the mass computation uses the Dirichlet integral rather than contour integration.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "125-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/0903.3845",
+  "sourceLabel": "Harmonic Analysis Lecture Notes (Univ. of Illinois, arXiv 0903.3845)",
+  "preciseLocator": "Ch. 17, Theorem 17.1 and proof",
+  "evidence": "Proves Plancherel on L1 intersect L2 via Gaussian damping and Fubini, extends by density to a bounded isometry on L2, then shows inversion on the dense set and bijectivity (unitary).",
+  "sketchProblem": "Dense class used is L1 intersect L2 (and smooth compact support for inversion), not the Schwartz class named in the sketch; the Gaussian-damping/Fubini isometry step matches. Inversion step relies on Thm 16.2.",
+  "confidence": "medium"
+ }
+]

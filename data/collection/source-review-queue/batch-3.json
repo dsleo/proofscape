@@ -1,0 +1,1462 @@
+{
+  "count": 100,
+  "records": [
+    {
+      "id": "109-r3",
+      "title": "product/compactness argument for infinite Ramsey followed by finite extraction",
+      "disposition": "route-mismatch",
+      "reason": "The source proves finite Ramsey by recurrence, not the proposed compactness route.",
+      "url": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+      "locator": "Finite Ramsey theorem, induction proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.math.ucdavis.edu/~gravner/MAT145/materials/MAT145_lec09.pdf",
+        "format": "pdf",
+        "wordCount": 1174,
+        "proofMentions": 5
+      }
+    },
+    {
+      "id": "110-r2",
+      "title": "poset-chain/antichain formulation",
+      "disposition": "route-mismatch",
+      "reason": "The note proves Erdős–Szekeres by longest-increasing-subsequence ranks, not the proposed poset chain–antichain route.",
+      "url": "https://mathweb.ucsd.edu/~jverstra/erdos-szekeres.pdf",
+      "locator": "Proof of the Erdős–Szekeres theorem; compare with rank-pair proof",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Read timed out. (read timeout=18)"
+      }
+    },
+    {
+      "id": "110-r3",
+      "title": "permutation diagram/partition argument",
+      "disposition": "route-mismatch",
+      "reason": "The note proves Erdős–Szekeres by ranks, not the proposed permutation-diagram proof.",
+      "url": "https://mathweb.ucsd.edu/~jverstra/erdos-szekeres.pdf",
+      "locator": "Proof of the Erdős–Szekeres theorem; compare with rank-pair proof",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Read timed out. (read timeout=18)"
+      }
+    },
+    {
+      "id": "111-r2",
+      "title": "Erdős's elementary counting contradiction",
+      "disposition": "route-mismatch",
+      "reason": "The source gives Euler's product argument, not the proposed Erdős proof.",
+      "url": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+      "locator": "Euler product argument; for Erdős proof see Mathlib documentation “SumPrimeReciprocals,” references",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+        "format": "html",
+        "wordCount": 339,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "111-r3",
+      "title": "compare prime-factor decompositions of integers with a hypothetical convergent reciprocal-prime sum",
+      "disposition": "route-mismatch",
+      "reason": "The source gives Euler's product argument, not the proposed grouping proof.",
+      "url": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+      "locator": "Euler product argument; for Erdős proof see Mathlib documentation “SumPrimeReciprocals,” references",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.hmc.edu/funfacts/sum-of-prime-reciprocals/",
+        "format": "html",
+        "wordCount": 339,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "112-r1",
+      "title": "Integrate powers of sine/cosine and use recurrence",
+      "disposition": "statement-only",
+      "reason": "The DLMF page records beta-function identities without this route's proof.",
+      "url": "https://dlmf.nist.gov/5.12",
+      "locator": "§5.12, beta function and Wallis integral/product identities",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://dlmf.nist.gov/5.12",
+        "format": "html",
+        "wordCount": 2210,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "112-r2",
+      "title": "compare central binomial coefficients",
+      "disposition": "statement-only",
+      "reason": "The DLMF page records beta-function identities without this route's proof.",
+      "url": "https://dlmf.nist.gov/5.12",
+      "locator": "§5.12, beta function and Wallis integral/product identities",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://dlmf.nist.gov/5.12",
+        "format": "html",
+        "wordCount": 2210,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "112-r3",
+      "title": "beta/gamma integrals",
+      "disposition": "statement-only",
+      "reason": "The DLMF page records beta-function identities without this route's proof.",
+      "url": "https://dlmf.nist.gov/5.12",
+      "locator": "§5.12, beta function and Wallis integral/product identities",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://dlmf.nist.gov/5.12",
+        "format": "html",
+        "wordCount": 2210,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "113-r2",
+      "title": "Stone–Weierstrass algebra/separation theorem",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf",
+      "locator": "Bernstein polynomial proof, section on Weierstrass approximation",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf"
+      }
+    },
+    {
+      "id": "113-r3",
+      "title": "constructive positive-kernel approximation",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf",
+      "locator": "Bernstein polynomial proof, section on Weierstrass approximation",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://www.math.ucla.edu/~tao/preprints/Expository/approx.pdf"
+      }
+    },
+    {
+      "id": "114-r2",
+      "title": "normal-family/compactness method",
+      "disposition": "index-or-abstract-only",
+      "reason": "The UCSD course page lists a separate Riemann-mapping lecture PDF; the page contains no proof.",
+      "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+      "locator": "Lectures 18–19, extremal-function proof of Riemann mapping theorem",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection "
+      }
+    },
+    {
+      "id": "114-r3",
+      "title": "Green-function or potential-theoretic approach in standard variants",
+      "disposition": "index-or-abstract-only",
+      "reason": "The UCSD course page lists the extremal-function approach, not a Green-function proof.",
+      "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+      "locator": "Lectures 18–19, extremal-function proof of Riemann mapping theorem",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection "
+      }
+    },
+    {
+      "id": "115-r2",
+      "title": "diagonal compactness on compact subsets",
+      "disposition": "index-or-abstract-only",
+      "reason": "The UCSD course page lists separate normal-family lectures without their proof text.",
+      "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+      "locator": "Lecture 13, Montel theorem from Arzelà–Ascoli and Cauchy estimates",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection "
+      }
+    },
+    {
+      "id": "115-r3",
+      "title": "equicontinuity and holomorphic limit arguments",
+      "disposition": "index-or-abstract-only",
+      "reason": "The UCSD course page lists separate normal-family lectures without their proof text.",
+      "url": "https://mathweb.ucsd.edu/~doprea/220w21.html",
+      "locator": "Lecture 13, Montel theorem from Arzelà–Ascoli and Cauchy estimates",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='mathweb.ucsd.edu', port=443): Max retries exceeded with url: /~doprea/220w21.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='mathweb.ucsd.edu', port=443) at 0x123f54990>, 'Connection "
+      }
+    },
+    {
+      "id": "116-r1",
+      "title": "Original value-distribution/complex-analysis proof",
+      "disposition": "route-mismatch",
+      "reason": "The article proves Little Picard via Ahlfors' geometric lemma, not this original value-distribution route.",
+      "url": "https://arxiv.org/abs/1506.07019",
+      "locator": "Article: Ahlfors lemma and Picard theorems; verify the specific variant before attribution",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/1506.07019",
+        "auditUrl": "https://arxiv.org/pdf/1506.07019",
+        "format": "pdf",
+        "wordCount": 10838,
+        "proofMentions": 29
+      }
+    },
+    {
+      "id": "116-r2",
+      "title": "Nevanlinna theory and logarithmic derivative estimates",
+      "disposition": "scope-mismatch",
+      "reason": "The article mentions Nevanlinna theory but does not prove Picard through its second main theorem.",
+      "url": "https://arxiv.org/abs/1506.07019",
+      "locator": "Article: Ahlfors lemma and Picard theorems; verify the specific variant before attribution",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/1506.07019",
+        "auditUrl": "https://arxiv.org/pdf/1506.07019",
+        "format": "pdf",
+        "wordCount": 10838,
+        "proofMentions": 29
+      }
+    },
+    {
+      "id": "117-r3",
+      "title": "moments/polynomial-density arguments",
+      "disposition": "route-mismatch",
+      "reason": "The notes prove moment consistency, not injectivity by compact-support polynomial density.",
+      "url": "https://www.uni-muenster.de/AMM/Veranstaltungen/WS23/InverseProblems/lectureNotes.pdf",
+      "locator": "Chapter “Inverse formulas for Radon and X-ray transform”; Fourier slice theorem and inversion",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.uni-muenster.de/AMM/Veranstaltungen/WS23/InverseProblems/lectureNotes.pdf",
+        "format": "pdf",
+        "wordCount": 29193,
+        "proofMentions": 90
+      }
+    },
+    {
+      "id": "118-r1",
+      "title": "Construct a potential by path integration",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+      "locator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+        "format": "html",
+        "wordCount": 386,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "118-r2",
+      "title": "differential forms/closed-versus-exact 1-forms on simply connected sets",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+      "locator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+        "format": "html",
+        "wordCount": 386,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "118-r3",
+      "title": "vector calculus using Green/Stokes",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+      "locator": "Line integrals, conservative fields, Green/Stokes theorem units; direct theorem statements",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/",
+        "format": "html",
+        "wordCount": 386,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "119-r1",
+      "title": "Successive approximations/contraction mapping",
+      "disposition": "partial-proof",
+      "reason": "The local Picard–Lindelöf proof ends with an exercise to complete the argument.",
+      "url": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+      "locator": "§5.5, two proofs; contraction-mapping sketch",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+        "format": "pdf",
+        "wordCount": 38903,
+        "proofMentions": 33
+      }
+    },
+    {
+      "id": "119-r2",
+      "title": "Peano polygonal approximations plus equicontinuity for existence",
+      "disposition": "route-mismatch",
+      "reason": "The cited chapter gives a contraction argument, not Peano polygonal approximations.",
+      "url": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+      "locator": "§5.5, two proofs; contraction-mapping sketch",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+        "format": "pdf",
+        "wordCount": 38903,
+        "proofMentions": 33
+      }
+    },
+    {
+      "id": "119-r3",
+      "title": "differential inequalities/Gronwall for uniqueness",
+      "disposition": "route-mismatch",
+      "reason": "The cited chapter gives a contraction argument, not the proposed Gronwall route.",
+      "url": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+      "locator": "§5.5, two proofs; contraction-mapping sketch",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.macs.hw.ac.uk/~bernd/schroers.pdf",
+        "format": "pdf",
+        "wordCount": 38903,
+        "proofMentions": 33
+      }
+    },
+    {
+      "id": "120-r1",
+      "title": "Hölder duality and integration",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+      "locator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+        "format": "html",
+        "wordCount": 232,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "120-r2",
+      "title": "convexity/Young's inequality",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+      "locator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+        "format": "html",
+        "wordCount": 232,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "120-r3",
+      "title": "interpolate from the triangle inequality for simple functions and pass by approximation",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+      "locator": "Lp spaces and Hölder/Minkowski inequalities; locate Minkowski theorem in lecture notes",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+        "format": "html",
+        "wordCount": 232,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "121-r1",
+      "title": "Positive-functional construction by outer measure",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://doi.org/10.1002/9780470317064",
+      "locator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1002/9780470317064"
+      }
+    },
+    {
+      "id": "121-r2",
+      "title": "Daniell integral approach",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://doi.org/10.1002/9780470317064",
+      "locator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1002/9780470317064"
+      }
+    },
+    {
+      "id": "121-r3",
+      "title": "duality/measure representation from continuous functions",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://doi.org/10.1002/9780470317064",
+      "locator": "Chapter 7, representation of positive linear functionals (Riesz–Markov); book locator, not open proof text",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1002/9780470317064"
+      }
+    },
+    {
+      "id": "124-r1",
+      "title": "Approximate by indicator rectangles/simple functions and monotone convergence",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+      "locator": "Product measures and Fubini–Tonelli theorem unit",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+        "format": "html",
+        "wordCount": 232,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "124-r2",
+      "title": "product-measure construction",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+      "locator": "Product measures and Fubini–Tonelli theorem unit",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+        "format": "html",
+        "wordCount": 232,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "124-r3",
+      "title": "iterated-integration/measure regularity argument",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+      "locator": "Product measures and Fubini–Tonelli theorem unit",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/",
+        "format": "html",
+        "wordCount": 232,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "125-r1",
+      "title": "Gaussian/approximate-identity regularization",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+      "locator": "Chapter 1, Fourier inversion; edition locator",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis"
+      }
+    },
+    {
+      "id": "125-r2",
+      "title": "inversion via contour or Fourier integrals",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+      "locator": "Chapter 1, Fourier inversion; edition locator",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis"
+      }
+    },
+    {
+      "id": "125-r3",
+      "title": "Plancherel plus density",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+      "locator": "Chapter 1, Fourier inversion; edition locator",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis"
+      }
+    },
+    {
+      "id": "126-r1",
+      "title": "Parseval identity on a dense class plus completion",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+      "locator": "Chapter 1, Parseval/Plancherel theorem; edition locator",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis"
+      }
+    },
+    {
+      "id": "126-r2",
+      "title": "Gaussian regularization",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+      "locator": "Chapter 1, Parseval/Plancherel theorem; edition locator",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis"
+      }
+    },
+    {
+      "id": "126-r3",
+      "title": "unitary representation of translations/Fourier transform",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis",
+      "locator": "Chapter 1, Parseval/Plancherel theorem; edition locator",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://press.princeton.edu/books/paperback/9780691113845/fourier-analysis"
+      }
+    },
+    {
+      "id": "127-r1",
+      "title": "Variational/calculus of variations",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+      "locator": "Bulletin survey: classical proofs and generalizations; exact proof sections",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4"
+      }
+    },
+    {
+      "id": "127-r2",
+      "title": "Fourier-series proof for closed curves",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+      "locator": "Bulletin survey: classical proofs and generalizations; exact proof sections",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4"
+      }
+    },
+    {
+      "id": "127-r3",
+      "title": "Brunn–Minkowski and convex-geometric argument",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+      "locator": "Bulletin survey: classical proofs and generalizations; exact proof sections",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4"
+      }
+    },
+    {
+      "id": "127-r4",
+      "title": "symmetrization",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1090/S0002-9904-1978-14453-4",
+      "locator": "Bulletin survey: classical proofs and generalizations; exact proof sections",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1090/S0002-9904-1978-14453-4"
+      }
+    },
+    {
+      "id": "128-r1",
+      "title": "Induction and slicing",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1090/S0273-0979-01-00930-2",
+      "locator": "Bulletin survey, proof approaches and history",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://pubs.ams.org/journals/bull/2002-39-01/S0273-0979-01-00930-2/home.html",
+        "format": "html",
+        "wordCount": 4470,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "128-r2",
+      "title": "transport-map/Jacobian argument",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1090/S0273-0979-01-00930-2",
+      "locator": "Bulletin survey, proof approaches and history",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://pubs.ams.org/journals/bull/2002-39-01/S0273-0979-01-00930-2/home.html",
+        "format": "html",
+        "wordCount": 4470,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "128-r3",
+      "title": "Prékopa–Leindler functional inequality",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1090/S0273-0979-01-00930-2",
+      "locator": "Bulletin survey, proof approaches and history",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://pubs.ams.org/journals/bull/2002-39-01/S0273-0979-01-00930-2/home.html",
+        "format": "html",
+        "wordCount": 4470,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "129-r1",
+      "title": "Affine-dependence coefficient elimination",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Helly/Carathéodory/Radon theorems and proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "129-r2",
+      "title": "linear-programming basic feasible solutions",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Helly/Carathéodory/Radon theorems and proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "129-r3",
+      "title": "induction on support size",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Helly/Carathéodory/Radon theorems and proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "130-r1",
+      "title": "Radon's theorem plus induction",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Helly theorem proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "130-r2",
+      "title": "minimal subfamily and affine dependence",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Helly theorem proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "130-r3",
+      "title": "nerve/topological methods for generalizations",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Helly theorem proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "131-r1",
+      "title": "Affine dependence and sign partition",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Radon theorem",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "131-r2",
+      "title": "convex-hull separation",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Radon theorem",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "131-r3",
+      "title": "linear-algebra nullspace argument",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4613-0039-7",
+      "locator": "Chapter 1, Radon theorem",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4613-0039-7",
+        "format": "html",
+        "wordCount": 1238,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "132-r3",
+      "title": "circulation/polyhedral integrality",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1017/CBO9780511845279",
+      "locator": "Chapter 3, max-flow min-cut theorem and augmenting paths; later LP duality discussion",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511845279"
+      }
+    },
+    {
+      "id": "133-r1",
+      "title": "Laplacian cofactor and determinant expansion",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+      "locator": "Bibliographic book record; the Cauchy–Binet proof was not located in accessible text",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+        "auditUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+        "format": "html",
+        "wordCount": 1040,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "133-r2",
+      "title": "electrical-network spanning-tree identity",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+      "locator": "Bibliographic book record; the electrical-network proof was not located in accessible text",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+        "auditUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+        "format": "html",
+        "wordCount": 1040,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "133-r3",
+      "title": "all-minors/forest counting",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+      "locator": "Bibliographic book record; the all-minors proof was not located in accessible text",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+        "auditUrl": "https://link.springer.com/book/10.1007/978-1-4612-0619-4",
+        "format": "html",
+        "wordCount": 1040,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "134-r1",
+      "title": "Finite-subset compactness/König lemma for countable locally finite cases",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://diestel-graph-theory.com/",
+      "locator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://diestel-graph-theory.com/",
+        "format": "html",
+        "wordCount": 518,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "134-r2",
+      "title": "maximal matching and augmenting paths",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://diestel-graph-theory.com/",
+      "locator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://diestel-graph-theory.com/",
+        "format": "html",
+        "wordCount": 518,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "134-r3",
+      "title": "choice/Zorn argument under stated cardinal assumptions",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://diestel-graph-theory.com/",
+      "locator": "Matching chapter; infinite Hall theorem depends on exact neighborhood/cardinality hypotheses",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://diestel-graph-theory.com/",
+        "format": "html",
+        "wordCount": 518,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "135-r1",
+      "title": "Minimal-bad-sequence proof",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1002/cpa.20308",
+      "locator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://onlinelibrary.wiley.com/doi/10.1002/cpa.20308"
+      }
+    },
+    {
+      "id": "135-r2",
+      "title": "tree embedding/wqo argument",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1002/cpa.20308",
+      "locator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://onlinelibrary.wiley.com/doi/10.1002/cpa.20308"
+      }
+    },
+    {
+      "id": "135-r3",
+      "title": "algebraic proof via graph-minor structure (advanced)",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1002/cpa.20308",
+      "locator": "Peer-reviewed proof of graph minor well-quasi-ordering; minimal bad sequence argument",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "403 Client Error: Forbidden for url: https://onlinelibrary.wiley.com/doi/10.1002/cpa.20308"
+      }
+    },
+    {
+      "id": "136-r1",
+      "title": "Homology/degree",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+      "locator": "Chapter 2, homology and degree methods for invariance of domain",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+        "format": "html",
+        "wordCount": 104,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "136-r2",
+      "title": "local homology and orientation",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+      "locator": "Chapter 2, homology and degree methods for invariance of domain",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+        "format": "html",
+        "wordCount": 104,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "136-r3",
+      "title": "contradiction using compactness and boundary/sphere separation",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+      "locator": "Chapter 2, homology and degree methods for invariance of domain",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATchapters.html",
+        "format": "html",
+        "wordCount": 104,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "138-r1",
+      "title": "Iterative decomposition into alternating chains",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4684-9446-5",
+      "locator": "Chapter on equivalent sets, Cantor–Bernstein theorem proof",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9446-5"
+      }
+    },
+    {
+      "id": "138-r2",
+      "title": "maximal invariant subset construction",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4684-9446-5",
+      "locator": "Chapter on equivalent sets, Cantor–Bernstein theorem proof",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9446-5"
+      }
+    },
+    {
+      "id": "138-r3",
+      "title": "Boolean-algebra/fixed-point formulation",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4684-9446-5",
+      "locator": "Chapter on equivalent sets, Cantor–Bernstein theorem proof",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9446-5"
+      }
+    },
+    {
+      "id": "139-r1",
+      "title": "Henkin term-model construction",
+      "disposition": "partial-proof",
+      "reason": "The cited chapter gives propositional compactness and opens the Henkin method; it does not finish the first-order completeness proof.",
+      "url": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+      "locator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+        "format": "pdf",
+        "wordCount": 2317,
+        "proofMentions": 9
+      }
+    },
+    {
+      "id": "139-r2",
+      "title": "semantic tableaux",
+      "disposition": "route-mismatch",
+      "reason": "The cited chapter discusses Henkin's method, not the proposed tableaux route.",
+      "url": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+      "locator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+        "format": "pdf",
+        "wordCount": 2317,
+        "proofMentions": 9
+      }
+    },
+    {
+      "id": "139-r3",
+      "title": "sequent-calculus cut-elimination route",
+      "disposition": "route-mismatch",
+      "reason": "The cited chapter discusses Henkin's method, not the proposed cut-elimination route.",
+      "url": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+      "locator": "Chapter 14, Henkin completeness proof; tableaux/calculus variants need separate sources",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www3.cs.stonybrook.edu/~cse541/chapter14%281hcompl%29.pdf",
+        "format": "pdf",
+        "wordCount": 2317,
+        "proofMentions": 9
+      }
+    },
+    {
+      "id": "140-r1",
+      "title": "Gödel sentence/diagonalization",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1017/CBO9780511804079",
+      "locator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511804079"
+      }
+    },
+    {
+      "id": "140-r2",
+      "title": "Rosser sentence removing ω-consistency",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1017/CBO9780511804079",
+      "locator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511804079"
+      }
+    },
+    {
+      "id": "140-r3",
+      "title": "computability/recursion-theoretic formulations",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1017/CBO9780511804079",
+      "locator": "Gödel incompleteness chapter; Gödel and Rosser formulations/hypotheses",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1017/CBO9780511804079"
+      }
+    },
+    {
+      "id": "141-r3",
+      "title": "geometry of numbers for class-group consequences",
+      "disposition": "route-mismatch",
+      "reason": "The cited text proves ideal factorization, not the proposed geometry-of-numbers route.",
+      "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+      "locator": "Chapter 3, Dedekind domains and unique factorization of nonzero ideals",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+        "format": "pdf",
+        "wordCount": 82541,
+        "proofMentions": 94
+      }
+    },
+    {
+      "id": "143-r1",
+      "title": "Classical potential-theoretic/Dirichlet methods",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4684-9934-7",
+      "locator": "Uniformization theorem chapter; classification of simply connected surfaces",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9934-7"
+      }
+    },
+    {
+      "id": "143-r2",
+      "title": "extremal and normal-family arguments",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4684-9934-7",
+      "locator": "Uniformization theorem chapter; classification of simply connected surfaces",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9934-7"
+      }
+    },
+    {
+      "id": "143-r3",
+      "title": "modern Ricci-flow uniformization",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4684-9934-7",
+      "locator": "Uniformization theorem chapter; classification of simply connected surfaces",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4684-9934-7"
+      }
+    },
+    {
+      "id": "144-r1",
+      "title": "K-theory and cobordism",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/BF02592048",
+      "locator": "Original index theorem paper, Part I; proof program, not each later proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/BF02592048",
+        "format": "html",
+        "wordCount": 791,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "144-r2",
+      "title": "heat-kernel/supertrace proof",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/BF02592048",
+      "locator": "Original index theorem paper, Part I; proof program, not each later proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/BF02592048",
+        "format": "html",
+        "wordCount": 791,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "144-r3",
+      "title": "elliptic PDE and symbol classes",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/BF02592048",
+      "locator": "Original index theorem paper, Part I; proof program, not each later proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/BF02592048",
+        "format": "html",
+        "wordCount": 791,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "144-r4",
+      "title": "mathematical-physics path-integral approaches",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/BF02592048",
+      "locator": "Original index theorem paper, Part I; proof program, not each later proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/BF02592048",
+        "format": "html",
+        "wordCount": 791,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "146-r1",
+      "title": "Reidemeister-move skein relation",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/BF01213674",
+      "locator": "State-sum construction/invariance under Reidemeister moves",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/BF01213674",
+        "format": "html",
+        "wordCount": 1459,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "146-r2",
+      "title": "Temperley–Lieb algebras",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/BF01213674",
+      "locator": "State-sum construction/invariance under Reidemeister moves",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/BF01213674",
+        "format": "html",
+        "wordCount": 1459,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "146-r3",
+      "title": "quantum-group representations",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/BF01213674",
+      "locator": "State-sum construction/invariance under Reidemeister moves",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/BF01213674",
+        "format": "html",
+        "wordCount": 1459,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "146-r4",
+      "title": "Chern–Simons/topological quantum field theory",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/BF01213674",
+      "locator": "State-sum construction/invariance under Reidemeister moves",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/article/10.1007/BF01213674",
+        "format": "html",
+        "wordCount": 1459,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "147-r1",
+      "title": "Jacobi-field comparison and exponential coordinates",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4614-9821-7",
+      "locator": "Chapter on constant sectional curvature and local space-form theorem",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4614-9821-7"
+      }
+    },
+    {
+      "id": "147-r2",
+      "title": "Frobenius/integrability of parallel frames",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4614-9821-7",
+      "locator": "Chapter on constant sectional curvature and local space-form theorem",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4614-9821-7"
+      }
+    },
+    {
+      "id": "147-r3",
+      "title": "Cartan connection/structure equations",
+      "disposition": "source-text-not-available-in-audit",
+      "reason": "This pass could not retrieve readable source text; it does not establish that the proof is unavailable elsewhere.",
+      "url": "https://doi.org/10.1007/978-1-4614-9821-7",
+      "locator": "Chapter on constant sectional curvature and local space-form theorem",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "404 Client Error: Not Found for url: https://doi.org/10.1007/978-1-4614-9821-7"
+      }
+    },
+    {
+      "id": "148-r1",
+      "title": "Elliptic PDE and Green operators",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-3-319-61860-9",
+      "locator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-61860-9",
+        "format": "html",
+        "wordCount": 1199,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "148-r2",
+      "title": "Hilbert-space orthogonal decomposition",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-3-319-61860-9",
+      "locator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-61860-9",
+        "format": "html",
+        "wordCount": 1199,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "148-r3",
+      "title": "heat-flow convergence to harmonic representatives",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-3-319-61860-9",
+      "locator": "Hodge theory chapter: elliptic theory, orthogonal decomposition, harmonic representatives",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-61860-9",
+        "format": "html",
+        "wordCount": 1199,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "149-r1",
+      "title": "Degree/mod-2 homology",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-3-540-76649-0",
+      "locator": "Chapter 1, degree/mod-2 and combinatorial Tucker proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-540-76649-0",
+        "format": "html",
+        "wordCount": 1534,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "149-r2",
+      "title": "Tucker's lemma and combinatorial antipodal labeling",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-3-540-76649-0",
+      "locator": "Chapter 1, degree/mod-2 and combinatorial Tucker proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-540-76649-0",
+        "format": "html",
+        "wordCount": 1534,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "149-r3",
+      "title": "equivariant topology",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-3-540-76649-0",
+      "locator": "Chapter 1, degree/mod-2 and combinatorial Tucker proof",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-540-76649-0",
+        "format": "html",
+        "wordCount": 1534,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "150-r1",
+      "title": "Euler–Lagrange variational identity",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4612-0979-9",
+      "locator": "Chapter 4, Noether theorem for variational problems; exact finite-dimensional hypotheses",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4612-0979-9",
+        "format": "html",
+        "wordCount": 1115,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "150-r2",
+      "title": "Hamiltonian/symplectic moment-map formulation",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4612-0979-9",
+      "locator": "Chapter 4, Noether theorem for variational problems; exact finite-dimensional hypotheses",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4612-0979-9",
+        "format": "html",
+        "wordCount": 1115,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "150-r3",
+      "title": "current conservation via differential forms",
+      "disposition": "index-or-abstract-only",
+      "reason": "The linked page is a publisher record, book or course index, rather than the located proof section.",
+      "url": "https://doi.org/10.1007/978-1-4612-0979-9",
+      "locator": "Chapter 4, Noether theorem for variational problems; exact finite-dimensional hypotheses",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-1-4612-0979-9",
+        "format": "html",
+        "wordCount": 1115,
+        "proofMentions": 0
+      }
+    }
+  ]
+}

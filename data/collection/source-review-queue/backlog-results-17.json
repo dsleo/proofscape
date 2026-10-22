@@ -1,0 +1,142 @@
+[
+ {
+  "routeId": "132-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://www.lehigh.edu/~gi02/04m446hw2s.pdf",
+  "sourceLabel": "Lehigh Math 446 (Fall 2004) homework 2 solutions",
+  "preciseLocator": "Problem 9 (max-flow min-cut via Hoffman circulation); Problem 8 (basic circulations)",
+  "evidence": "Problem 9 adds arc ts with lower bound nu and upper bound infinity and uses Hoffman's condition on a violating vertex set T, exactly the sketch's reduction, but Hoffman's theorem is invoked, not derived from Farkas, and there is no total-unimodularity integrality argument.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "133-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://math.uwaterloo.ca/~dgwagner/Networks.pdf",
+  "sourceLabel": "D. Wagner, Combinatorics of Electrical Networks (Waterloo)",
+  "preciseLocator": "Sec. I Thm 1 proof; Sec. II Thm 8 (Kirchhoff's formula), first and second proofs",
+  "evidence": "Matrix-tree is proved by Binet-Cauchy and effective admittance by Cramer's rule plus forest-counting minors; no deletion-contraction induction with the matrix determinant lemma appears (deletion/contraction is only mentioned as a slower recursion).",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "133-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://math.uwaterloo.ca/~dgwagner/Networks.pdf",
+  "sourceLabel": "D. Wagner, Combinatorics of Electrical Networks (Waterloo)",
+  "preciseLocator": "Sec. I: proof of Thm 1 (Binet-Cauchy), Thm 6, Thm 7, proof of Binet-Cauchy",
+  "evidence": "Binet-Cauchy with L=DD^T is fully proved and used for the matrix-tree theorem (n-1 minors via Prop. 3), but the all-minors statement Thm 7 is left with 'follows the above pattern' and Thm 6 is an exercise, so the forest characterisation of general minors is not proved.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "134-r1",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://mat.unb.br/ayala/TeoremaHall.pdf",
+  "sourceLabel": "Serrano Suarez, Ayala-Rincon, de Lima, Hall's Theorem for Enumerable Families of Finite Sets",
+  "preciseLocator": "Sec. 2 (Cameron's informal proof)",
+  "evidence": "Proves countable infinite Hall from finite Hall via the propositional Compactness Theorem (finite satisfiability of a clause set), not Tychonoff/Konig/diagonal extraction on choice functions; finite Hall and compactness are cited. Same finite-subfamily idea, different tool.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "134-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch2.pdf",
+  "sourceLabel": "R. Diestel, Graph Theory (free Ch. 2 preview)",
+  "preciseLocator": "Thm 2.1.2 (Hall), First proof (augmenting/alternating paths)",
+  "evidence": "Takes a matching leaving a unmatched, defines A',B' reachable by alternating paths, shows all of B' matched into A' minus a, and the marriage condition gives an edge leaving B', contradiction; full finite Hall proof matching the sketch (which itself claims only the finite theorem).",
+  "sketchProblem": "Route is titled for the infinite version but proves only the finite case, as the sketch admits.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "134-r3",
+  "outcome": "none-found",
+  "sourceUrl": "https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch2.pdf",
+  "sourceLabel": "R. Diestel, Graph Theory (free Ch. 2 preview)",
+  "preciseLocator": "Thm 2.1.2 Third proof (minimal subgraph) read; Ch. 8 preview searched",
+  "evidence": "Diestel's third proof is the minimal-subgraph argument for finite graphs (two tight sets, union/intersection counting) but there is no Zorn chain/intersection step for infinite finite-set families; Ch. 8 preview and Wikipedia contain no such proof.",
+  "sketchProblem": "Sketch's chain step is plausible but unsourced; Wikipedia's Hall page only states the Marshall Hall variant.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "135-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch12.pdf",
+  "sourceLabel": "R. Diestel, Graph Theory (free Ch. 12 preview); also C. Nash-Williams, Proc. Camb. Phil. Soc. 59 (1963) 833-835 (copy at https://www.cs.umd.edu/~gasarch/COURSES/752/S22/slides/nashwilliams.pdf)",
+  "preciseLocator": "Lemma 12.1.3 and proof of Thm 12.2.1 (Kruskal); Nash-Williams Lemma 2 and Theorem 1",
+  "evidence": "Minimal bad sequence of rooted trees, branches at the root's children shown wqo by minimality, finite-subsets lemma gives a good pair of child sets, extended to an embedding: full proof of the tree theorem.",
+  "sketchProblem": "Result/route mismatch: the sketches describe Kruskal's tree theorem (wqo of finite trees), not the graph-minor (Robertson-Seymour) theorem named in the result; the title's 'obstruction sets' statement is the graph-minor theorem. The proof found is for trees only (the sketch itself says so).",
+  "confidence": "high"
+ },
+ {
+  "routeId": "135-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch12.pdf",
+  "sourceLabel": "R. Diestel, Graph Theory (free Ch. 12 preview)",
+  "preciseLocator": "Lemma 12.1.3, Thm 12.2.1",
+  "evidence": "Complete proof exists but uses the finite-subsets wqo lemma (injective embedding of child sets), not Higman's lemma on words; also is a minimal-bad-sequence proof, nearly identical to route r1.",
+  "sketchProblem": "Result/route mismatch: the sketches describe Kruskal's tree theorem (wqo of finite trees), not the graph-minor (Robertson-Seymour) theorem named in the result; the title's 'obstruction sets' statement is the graph-minor theorem. r1 and r2 are essentially the same argument; Diestel's footnote explicitly says sets suffice instead of sequences/multisets.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "135-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "No free text found giving a complete proof of the graph-minor theorem; only expository outlines (Diestel Ch. 12 preview discusses it, full proof is the Graph Minors I-XX series, publisher-gated). Sketch itself says outline only.",
+  "sketchProblem": "Sketch is only an outline; belongs to the Robertson-Seymour theorem, not 'algebraic'.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "136-r1",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATch2.pdf",
+  "sourceLabel": "A. Hatcher, Algebraic Topology, Ch. 2",
+  "preciseLocator": "Prop 2B.1, Thm 2B.3",
+  "evidence": "Hatcher's invariance of domain proof uses acyclicity of S^n minus an embedded disk and the Jordan-Brouwer separation of S^n minus an embedded sphere, not local homology H_n(U,U-x) at boundary points as in the sketch.",
+  "sketchProblem": "Sketch is vague: 'local homology in the target complement vanishes' at a boundary point is not a stated argument.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "136-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATch2.pdf",
+  "sourceLabel": "A. Hatcher, Algebraic Topology, Ch. 2",
+  "preciseLocator": "Prop 2B.1, Thm 2B.3",
+  "evidence": "Hatcher proves openness via Alexander-duality-type complement homology and component counting, with no local-degree +-1 argument; the sketch itself omits its key step.",
+  "sketchProblem": "Sketch quotes Alexander duality without proving the boundary step, so it is not a standalone route.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "136-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATch2.pdf",
+  "sourceLabel": "A. Hatcher, Algebraic Topology, Ch. 2 (book pp. 169-172)",
+  "preciseLocator": "Prop 2B.1(a),(b) and Theorem 2B.3 (Invariance of Domain)",
+  "evidence": "Prop 2B.1 proves complement of embedded disk is acyclic (connected) and complement of embedded S^{n-1} has two components; Thm 2B.3 then shows h(int D^n) is the second component and hence open, exactly the sketch's argument (done in S^n instead of R^n).",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "138-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://ncatlab.org/nlab/show/Cantor-Schroeder-Bernstein+theorem",
+  "sourceLabel": "nLab, Cantor-Schroeder-Bernstein theorem",
+  "preciseLocator": "Proof of Cantor-Schroeder-Bernstein (Knaster-Tarski)",
+  "evidence": "Proof takes the least fixed point (intersection of pre-fixed points) of A -> not g(not f(A)); it never builds the largest admissible set as a union, though that is dual and could be adapted.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "138-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://ncatlab.org/nlab/show/Cantor-Schroeder-Bernstein+theorem",
+  "sourceLabel": "nLab, Cantor-Schroeder-Bernstein theorem",
+  "preciseLocator": "Lemma (Knaster-Tarski) and Proof of Cantor-Schroeder-Bernstein",
+  "evidence": "Proves Knaster-Tarski on P(X), applies it to the monotone operator not.exists_g.not.exists_f, glues f on A with g^-1 off A and checks the inverse; matches the fixed-point route. The Sikorski-Tarski Boolean-algebra remark is not proved there (nLab works in a Boolean topos).",
+  "sketchProblem": "Remark about complete Boolean algebras is extra and unsourced here.",
+  "confidence": "medium"
+ }
+]

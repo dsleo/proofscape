@@ -1,0 +1,152 @@
+[
+ {
+  "routeId": "126-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://courses.maths.ox.ac.uk/mod/resource/view.php?id=52296",
+  "sourceLabel": "Oxford B4.4 Fourier Analysis HT22, Lecture 8 slides",
+  "preciseLocator": "Slides 3-6, Plancherel theorem proof",
+  "evidence": "Proves the multiplication formula plus inversion on S, hence the L2 isometry on S, extends by density and completeness, and gets onto-ness from distributional Fourier inversion. S->S and inversion are cited from earlier lectures, density comes from an external B4.3 result, and agreement with the integral on L1∩L2 is not shown.",
+  "sketchProblem": "Only the last sketch step (agreement on L1∩L2) and the S->S/inversion prerequisites are missing; onto-ness is argued via S' inversion, not range closed + contains S.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "126-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://www.impan.pl/~tkoch/FA_lecturenotes/lecture15.pdf",
+  "sourceLabel": "Koch, Functional Analysis lecture 15",
+  "preciseLocator": "Theorem 9.7, Parts 1-4",
+  "evidence": "Part 1 proves the L1∩L2 isometry by regularizing g=f*f~ with the kernel whose transform is e^{-eps|x|} (Abel-Poisson, not Gaussian), via Prop 9.4 from an earlier lecture; the extension, inversion and unitarity then use Fourier inversion (Thm 9.5). Different regularization and uses inversion, so not the sketched route.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "126-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Searched for Plancherel via Stone/SNAG spectral theorem for the translation group; only abstract statements or non-accessible papers turned up, no source with the proof written out.",
+  "sketchProblem": "The sketch itself says it does not carry out the identification of the spectral measure with Lebesgue measure or multiplicity one, so the route as catalogued is not a complete proof.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "127-r1",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Searched for a free source proving the planar isoperimetric inequality by existence of a maximizer plus first variation (constant curvature). Found Fourier (Hurwitz), Steiner and BM proofs only; Burchard's notes only sketch Steiner and state existence by De Giorgi compactness, no Euler-Lagrange argument.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "127-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/2603.14663",
+  "sourceLabel": "Samarakkody, Formalizing the Classical Isoperimetric Inequality (arXiv 2603.14663)",
+  "preciseLocator": "Sections 5.2 (Wirtinger via Parseval) and 7.2-7.7",
+  "evidence": "Writes out Hurwitz's Fourier proof of A<=L^2/4pi: area formula (Green cited), integration by parts, AM-GM, Wirtinger via Parseval. It uses real sine/cosine coefficients with pointwise AM-GM then Wirtinger, not the sum |n||a_n||b_n| chain, and the main theorem takes the Parseval/Wirtinger identities as hypotheses; the equality case (circle) for curves is not proved.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "127-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://home.ttic.edu/~yury/courses/geometry-in-cs/notes/brunn-minkowski.pdf",
+  "sourceLabel": "Makarychev, Brunn-Minkowski Inequality and Its Applications (TTIC notes)",
+  "preciseLocator": "Sections 2 (Thm 2.1, proof) and 4.2 (Thm 4.3 proof), d=2; cf. Klartag lecture 2, Cor 2.4",
+  "evidence": "Proves BM, then Thm 4.3 derives area(A)>=area(B_r) from vol(A+tB)^{1/d} expansion, comparing first-order terms in t, with area defined as the Minkowski-content derivative. The sketch's closing step (approximation to finite-perimeter sets) is not given, and Per is identified with the derivative by definition.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "127-r4",
+  "outcome": "partial",
+  "sourceUrl": "https://eclass.uoa.gr/modules/document/file.php/MATH121/04-%CE%95%CF%81%CE%B3%CE%B1%CF%83%CE%AF%CE%B5%CF%82/04-1.%20%CE%A4%CE%B1%20%CE%B8%CE%AD%CE%BC%CE%B1%CF%84%CE%B1/16.%20rearrange.pdf",
+  "sourceLabel": "Burchard, Short Course on Rearrangement Inequalities",
+  "preciseLocator": "Sec 2.1, 2.4 (Thm 2.17) and 3.2 (Prop 3.8)",
+  "evidence": "Prop 3.8 proves iterated Steiner/Schwarz symmetrization converges to the ball in symmetric difference, and Thm 2.17 proves the isoperimetric inequality via a perimeter minimizer (De Giorgi compactness, lsc). The step that Steiner symmetrization does not increase perimeter, and the final deduction Per(E)>=Per(ball) from the iteration, are only stated, not proved.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "128-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.weizmann.ac.il/math/klartag/sites/math.klartag/files/uploads/lecture2_151025.pdf",
+  "sourceLabel": "Klartag, Lecture 2 (Weizmann)",
+  "preciseLocator": "Hadwiger-Ohman proof of Theorem 2.2",
+  "evidence": "Box case by AM-GM, induction on the total number of boxes, separating coordinate hyperplane, translating the splitting hyperplane of T to match volume ratio, adding the two inductive inequalities. Passage to general sets is only 'by approximation' (not detailed).",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "128-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://www-users.cse.umn.edu/~bobko001/papers/2011_JMS-179_Bitriangular.pdf",
+  "sourceLabel": "Bobkov, BM inequality in spaces with bitriangular laws (J. Math. Sci. 2011)",
+  "preciseLocator": "Section 2, Triangular Maps and Transportation Argument",
+  "evidence": "Gives the Knothe map argument: triangular T pushes normalized Lebesgue on A to B, product of diagonal derivatives |B|/|A|, Jacobian of x+T(x) bounded by AM-GM, and S(A) inside A+B. Only for open bounded convex sets; existence/regularity of T and the change-of-variables justification are cited from references, and the nonsmooth compact case is not handled.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "128-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://home.ttic.edu/~yury/courses/geometry-in-cs/notes/brunn-minkowski.pdf",
+  "sourceLabel": "Makarychev, Brunn-Minkowski Inequality and Its Applications (TTIC notes)",
+  "preciseLocator": "Section 2: Thm 2.3 (Prekopa-Leindler) proof, multiplicative form (2) and its equivalence with (1)",
+  "evidence": "Proves PL by induction on dimension (1D via level sets and 1D BM, then Fubini slicing), applies it to indicators, and derives additive BM by normalizing with a=vol(A)^{1/d}, b=vol(B)^{1/d}, lambda=a/(a+b). The 1D case is via level sets and a shifting argument rather than monotone rearrangement.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "129-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://web.stanford.edu/class/msande311/lecture03.pdf",
+  "sourceLabel": "Ye, CME307/MS&E311 Lecture Note 03 (Stanford)",
+  "preciseLocator": "Caratheodory's theorem and Basic Feasible Solution I, Theorems 1-2",
+  "evidence": "States that a feasible point of {Ax=b,x>=0} yields a basic feasible solution (supported on linearly independent columns) and equates BFS with extreme points, but the proof is only referenced to a textbook page; no written proof, and no specialization to d+1 constraints for convex hulls.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "130-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Helly%27s_theorem",
+  "sourceLabel": "Wikipedia, Helly's theorem (with Radon's theorem proof)",
+  "preciseLocator": "Helly: Proof (base case n=d+2 and inductive step); Radon: Proof and construction",
+  "evidence": "Induction on family size, with the base case applying Radon's theorem to points x_j chosen in the intersections omitting X_j and showing the Radon point lies in all X_j; Radon's own affine dependence proof is written out on the Radon page. Matches the sketch.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "130-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Helly%27s_theorem",
+  "sourceLabel": "Wikipedia, Helly's theorem",
+  "preciseLocator": "Proof section",
+  "evidence": "Wikipedia proves Helly via Radon and induction on family size (base d+2, then merge two sets), not by a minimal subfamily with empty intersection and an inlined affine dependence argument. The mathematics is closely related, but the catalogued structure is different.",
+  "sketchProblem": "Route largely coincides with 130-r1 (same Radon core); consider merging.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "130-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Helly%27s_theorem",
+  "sourceLabel": "Wikipedia, Helly's theorem; also arXiv 1508.07606 (Helly survey) Sec 2",
+  "preciseLocator": "Helly: 'Topological proof of the base case'; survey remark on d-Leray nerves",
+  "evidence": "Wikipedia uses the nerve lemma only for the base case (nerve would be the boundary of a simplex, so X would be homotopy equivalent to S^n, contradicting a non-compact manifold), not the Alexander duality / d-Leray induced-subcomplex argument; the survey only states that nerves are d-Leray without proof. The Tancer thesis could not be downloaded.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "131-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Radon%27s_theorem",
+  "sourceLabel": "Wikipedia, Radon's theorem",
+  "preciseLocator": "Proof and construction",
+  "evidence": "The written proof is the linear-algebra affine-dependence argument (d+2 unknowns, d+1 equations), with topological Borsuk-Ulam proofs only for the topological version; no separation or VC-dimension proof of the classical theorem appears.",
+  "sketchProblem": "Sketch is questionable: saying halfspaces have VC dimension d+1 is itself usually derived from Radon's theorem, so the argument is circular unless proved independently.",
+  "confidence": "medium"
+ }
+]

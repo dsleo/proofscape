@@ -1,0 +1,152 @@
+[
+ {
+  "routeId": "35-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://proofwiki.org/wiki/Harmonic_Series_is_Divergent",
+  "sourceLabel": "ProofWiki, Harmonic Series is Divergent",
+  "preciseLocator": "Proof 1",
+  "evidence": "Read the full proof: groups terms into dyadic blocks s_k (2^k..2^(k+1)-1), shows each block exceeds 2^k/2^(k+1)=1/2, derives H_{2^m} > 1+m/2 and concludes divergence by the comparison test. Block indexing differs trivially from the sketch (2^k+1..2^(k+1)). Wikipedia 'Harmonic series (mathematics)', section 'Comparison test', gives the same Oresme argument.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "35-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://openstax.org/books/calculus-volume-2/pages/5-3-the-divergence-and-integral-tests",
+  "sourceLabel": "OpenStax Calculus Volume 2, 5.3 The Divergence and Integral Tests",
+  "preciseLocator": "Section 5.3, integral-test introduction, Figure 5.12 and the displayed computation following it",
+  "evidence": "Read the text: since 1/x is decreasing, the rectangles give S_k > integral_1^{k+1} dx/x = ln(k+1); as ln(k+1) -> infinity the partial sums are unbounded so the series diverges. Matches the sketch step for step (inequality justified by the figure). The previous audit cited the Volume 1 book URL, which is the wrong volume.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "35-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cauchy_condensation_test",
+  "sourceLabel": "Wikipedia, Cauchy condensation test",
+  "preciseLocator": "Section 'Proof' (rebracketing into power-of-two runs, both inequalities) plus section 'Examples' (harmonic series condenses to sum of 1, which diverges); also ProofWiki Harmonic_Series_is_Divergent Proof 2",
+  "evidence": "Read the test's proof via displayed rebracketing inequalities (sum f(n) <= sum 2^n f(2^n) <= 2 sum f(n)) and the Examples paragraph stating the harmonic series becomes the sum of 1, which clearly diverges. ProofWiki Proof 2 applies the test to 1/n but only cites the test, so Wikipedia is the primary locator. Wikipedia describes its proof as 'the essential thrust', so it is somewhat compressed.",
+  "sketchProblem": "Route title says 'assume convergence' but the sketch is a direct application of the test with no contradiction hypothesis; title is slightly off.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "36-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Basel_problem",
+  "sourceLabel": "Wikipedia, Basel problem",
+  "preciseLocator": "Section 'Euler's approach'",
+  "evidence": "The coefficient extraction is written out: x^2 coefficient of the product is -(1/pi^2) sum 1/n^2, compared with -1/3! from the Taylor series. But the sine product itself is only asserted via a Weierstrass factorization citation and described as an unjustified heuristic by Euler. ProofWiki Basel_Problem Proof 2 does the same coefficient step, citing 'Euler Formula for Sine Function', whose page (Euler_Formula_for_Sine_Function) has no proof. Missing step: proof of the product identity. A Theorem of the Day PDF derives it only by glossing over convergence.",
+  "sketchProblem": "The sketch's last sentence defers the product identity to sine's zeros/factorization; a source must prove that to be complete.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "36-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Basel_problem",
+  "sourceLabel": "Wikipedia, Basel problem",
+  "preciseLocator": "Section 'A proof using Fourier series'",
+  "evidence": "Read: Parseval applied to f(x)=x on (-pi,pi); Fourier coefficients c_n computed explicitly (|c_n|^2=1/n^2, c_0=0), giving 2 sum 1/n^2 = (1/2pi) integral x^2 dx, hence pi^2/6. Uses complex rather than real coefficients, which is equivalent to the sketch. ProofWiki Basel_Problem Proof 8 is the same with real coefficients 2(-1)^(n+1)/n but cites the Fourier series page without computing them.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "36-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://proofwiki.org/wiki/Mittag-Leffler_Expansion_for_Cotangent_Function",
+  "sourceLabel": "ProofWiki, Mittag-Leffler Expansion for Cotangent Function (with Basel_Problem Proof 10)",
+  "preciseLocator": "Proof 7 (Herglotz method) for the expansion; Basel_Problem Proof 10 for a limit argument with coth",
+  "evidence": "Proof 7 proves pi cot(pi x) = 1/x + 2x sum 1/(x^2-n^2) by Herglotz's functional-equation argument. Neither page, however, compares the x coefficient of this with the Taylor series cot x = 1/x - x/3 + ... to get sum 1/n^2 = pi^2/6; Basel Proof 10 uses the hyperbolic cotangent and a limit z->0 instead, and Basel Proof 6 uses Bernoulli numbers. Wikipedia Basel problem states zeta(2k)=[x^(2k)] (1-pi x cot pi x)/2 only after the sine-product derivation. Missing: the coefficient-comparison deduction from the cot expansion.",
+  "sketchProblem": "Sketch text opens with a false identity ('1/n^2 = sum_{k>=n}(1/k-1/(k+1))?', which it admits is false) and then switches to a different method; the route title 'telescoping trigonometric series' does not describe the cotangent partial-fractions route, which is a separate, valid route.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "37-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://proofwiki.org/wiki/Euler%27s_Formula",
+  "sourceLabel": "ProofWiki, Euler's Formula (with Euler's Identity)",
+  "preciseLocator": "Euler's Formula, section 'Proof'; Euler's_Identity, section 'Proof'",
+  "evidence": "Read: with sin and cos defined by their power series, cos z + i sin z is regrouped (absolute convergence) into sum (iz)^n/n! = e^{iz}; Euler's Identity page then sets z=pi and uses cos pi=-1, sin pi=0 to get e^{i pi}+1=0. The values of cos/sin at pi are taken as known, not derived.",
+  "sketchProblem": "Sketch says the addition law gives the formula; the source uses termwise rearrangement of series, not the addition law, which is not needed.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "37-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://arxiv.org/pdf/1803.11458",
+  "sourceLabel": "Singh and Bajaj, Pythagoras, Binomial, and de Moivre Revisited Through Differential Equations (arXiv:1803.11458)",
+  "preciseLocator": "Section 3 'Euler's formula'",
+  "evidence": "Read: e^{it} is defined as the solution of the first-order IVP y'-iy=0, y(0)=1; cos t+i sin t satisfies it, so uniqueness gives Euler's formula. This is not the second-order y''=-y route with sin/cos defined by initial data (1,0),(0,1), and the uniqueness theorem is only cited. Wikipedia 'Euler's formula' proofs (differentiation quotient, series, polar coordinates) are likewise different arguments.",
+  "sketchProblem": "Sketch is muddled: it says the exponential 'solves the same ODE and initial value as cos t + i sin t', but e^{it} has y(0)=1, y'(0)=i; it solves y''=-y with these data. Needs rewording.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "37-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Searched for a rotation or geometric characterization of e^{i theta} leading to e^{i pi}=-1. Wikipedia 'Euler's formula' (polar-coordinates proof, interpretation section) and Clark's rotation-matrix note were read; none proves the rotation parametrization of the exponential, only an ODE-based polar derivation. Nothing retrievable matches this route.",
+  "sketchProblem": "Sketch concedes it depends on the prior identification of the exponential with rotation, i.e. it is not a self-contained proof route.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "38-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/De_Moivre%27s_formula",
+  "sourceLabel": "Wikipedia, De Moivre's formula",
+  "preciseLocator": "Section 'Proof by induction'",
+  "evidence": "Read: base case n=1, inductive step multiplies (cos kx + i sin kx) by (cos x + i sin x) and applies the angle-addition identities to get cos((k+1)x)+i sin((k+1)x); extends to n=0 and negative integers. Matches sketch. ProofWiki De_Moivre's_Formula/Integer_Index has only the statement.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "38-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/De_Moivre%27s_formula",
+  "sourceLabel": "Wikipedia, De Moivre's formula",
+  "preciseLocator": "Section 'Relation to Euler's formula'; also ProofWiki De_Moivre%27s_Formula, Proof 1",
+  "evidence": "Read: from Euler's formula and the exponential law (e^{ix})^n=e^{inx} the left side equals (cos x+i sin x)^n and the right side cos nx+i sin nx. ProofWiki Proof 1 gives the same chain (Euler's Formula, Power of Power, Euler's Formula) for complex exponent. Both are short and rely on Euler's formula as a cited prior result, as the sketch itself does.",
+  "sketchProblem": "Sketch says 'multiplicative group C^x' but the source argument is just the exponential law for integer powers; group language is not needed.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "38-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://dfcd.net/articles/demoivre.pdf",
+  "sourceLabel": "Chris Clark, An Algebraic Derivation of De Moivre's Theorem",
+  "preciseLocator": "Sections 2-4",
+  "evidence": "Read: derives the rotation matrix, shows R_a R_b = R_{a+b} by an infinitesimal-angle limit argument, then maps C to rotation matrices and gets (cos+i sin)^n = cos n+i sin n (also rational n). The composition-of-rotations step is non-rigorous (drops 'negligible' terms; author footnotes it as not purely algebraic), so the route is present but the angle-addition step is not properly proved.",
+  "sketchProblem": "Route title 'roots-of-unity geometry' does not match the sketch, which is about composing rotations and has no roots of unity.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "39-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://kconrad.math.uconn.edu/blurbs/galoistheory/symmfunction.pdf",
+  "sourceLabel": "Keith Conrad, Symmetric Polynomials (UConn)",
+  "preciseLocator": "Theorem 1.5; Section 2 (Theorems 2.4, 2.10, 2.12, lexicographic order) and Section 3 'Proof of Theorem 1.5', Example 3.1",
+  "evidence": "Read the full proof: take the lex-leading monomial of symmetric f, whose exponents satisfy d1>=...>=dn, subtract c s1^(d1-d2)...sn^(dn) to lower the multidegree, and terminate by well-ordering of N^n under lex order. Lemmas and a worked example included. Wikipedia 'Elementary symmetric polynomial', section 'Alternative proof', has the same argument.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "39-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://kconrad.math.uconn.edu/blurbs/galoistheory/symmfunction.pdf",
+  "sourceLabel": "Keith Conrad, Symmetric Polynomials (UConn)",
+  "preciseLocator": "Section 3 'Proof of Theorem 1.5' (repeated subtraction, termination via Theorem 2.12)",
+  "evidence": "Read: the proof subtracts leading-term multiples of products of the s_i in decreasing multidegree until zero, with finiteness from Theorem 2.12; this covers the 'lexicographic elimination' alternative of the route. The source does not group terms into orbit sums explicitly.",
+  "sketchProblem": "Sketch is essentially a duplicate of 39-r1 (same leading-term descent, orbit-sum wording is cosmetic); not a distinct route.",
+  "confidence": "low"
+ },
+ {
+  "routeId": "39-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Elementary_symmetric_polynomial",
+  "sourceLabel": "Wikipedia, Elementary symmetric polynomial",
+  "preciseLocator": "Section 'Fundamental theorem of symmetric polynomials', subsection 'Alternative proof'",
+  "evidence": "Read: leading-monomial induction gives that every symmetric polynomial is a polynomial in the e_i (existence), and the Lemma that e_lambda^t has leading term X^lambda shows distinct products have distinct leading monomials, so they are linearly independent, i.e. e_1..e_n are algebraically independent and A[X]^{S_n} is isomorphic to A[Y]. Uniqueness is argued in a short paragraph. Conrad's notes (above) prove only existence, not independence.",
+  "sketchProblem": "Sketch itself says this is a restatement of route 1 in invariant-ring language, not a distinct proof.",
+  "confidence": "medium"
+ }
+]

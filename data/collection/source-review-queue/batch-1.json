@@ -1,0 +1,1561 @@
+{
+  "count": 100,
+  "records": [
+    {
+      "id": "2-r4",
+      "title": "rational-root theorem",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://sites.pitt.edu/~jdnorton/teaching/paradox/paradox_fall_2021/chapters/impossible_incommensurability/impossible_incommensurability.html",
+        "format": "html",
+        "wordCount": 3667,
+        "proofMentions": 21
+      }
+    },
+    {
+      "id": "3-r4",
+      "title": "analytic counting arguments",
+      "disposition": "context-only-citation",
+      "reason": "The cited survey describes analytic proof families without locating this complete route.",
+      "url": "https://arxiv.org/abs/1202.3670",
+      "locator": "Sections 2.4–2.8, survey of analytic and other proof families",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/1202.3670",
+        "auditUrl": "https://arxiv.org/pdf/1202.3670",
+        "format": "pdf",
+        "wordCount": 35820,
+        "proofMentions": 327
+      }
+    },
+    {
+      "id": "4-r1",
+      "title": "Euclid-style products with congruence control",
+      "disposition": "context-only-citation",
+      "reason": "The cited survey discusses special-progression arguments rather than locating this exact proof.",
+      "url": "https://arxiv.org/abs/1202.3670",
+      "locator": "Section 3.2, “A survey of elementary proofs of IP in special arithmetic progressions”",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/1202.3670",
+        "auditUrl": "https://arxiv.org/pdf/1202.3670",
+        "format": "pdf",
+        "wordCount": 35820,
+        "proofMentions": 327
+      }
+    },
+    {
+      "id": "4-r2",
+      "title": "algebraic norms/cyclotomic factors for suitable progressions",
+      "disposition": "context-only-citation",
+      "reason": "The cited survey discusses algebraic proof families rather than locating this exact proof.",
+      "url": "https://arxiv.org/abs/1202.3670",
+      "locator": "Sections 2.3 and 3.2, algebraic-number-theory methods and special arithmetic progressions",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/1202.3670",
+        "auditUrl": "https://arxiv.org/pdf/1202.3670",
+        "format": "pdf",
+        "wordCount": 35820,
+        "proofMentions": 327
+      }
+    },
+    {
+      "id": "4-r3",
+      "title": "do not conflate these special cases with Dirichlet's theorem",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://arxiv.org/abs/1202.3670",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://arxiv.org/pdf/1202.3670",
+        "auditUrl": "https://arxiv.org/pdf/1202.3670",
+        "format": "pdf",
+        "wordCount": 35820,
+        "proofMentions": 327
+      }
+    },
+    {
+      "id": "5-r1",
+      "title": "Pair terms from opposite ends",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "5-r2",
+      "title": "induction",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "5-r3",
+      "title": "count pairs (i,j) with i≤j",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "5-r4",
+      "title": "sum an arithmetic progression geometrically",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "6-r1",
+      "title": "Square-layer dissection",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "6-r2",
+      "title": "induction using (n+1)²−n²=2n+1",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "6-r3",
+      "title": "telescoping finite differences",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "For binomial theorem context only; not evidence for the other distinct elementary arguments.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "7-r1",
+      "title": "Induct on exponent",
+      "disposition": "statement-only",
+      "reason": "The textbook page presents and applies binomial expansion without an induction proof.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "§11.6, Binomial Theorem (the expansion and combinatorial coefficient discussion)",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "7-r2",
+      "title": "count subsets by size",
+      "disposition": "statement-only",
+      "reason": "The textbook page presents binomial coefficients without the proposed subset-counting proof.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "§11.6, Binomial Theorem (the expansion and combinatorial coefficient discussion)",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "7-r3",
+      "title": "multiply out and group monomials",
+      "disposition": "statement-only",
+      "reason": "The textbook page presents the expansion without this monomial-grouping proof.",
+      "url": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+      "locator": "§11.6, Binomial Theorem (the expansion and combinatorial coefficient discussion)",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/precalculus-2e/pages/11-6-binomial-theorem",
+        "format": "html",
+        "wordCount": 5077,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "8-r1",
+      "title": "Pairwise smoothing/induction",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "8-r2",
+      "title": "concavity of log or Jensen",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "8-r3",
+      "title": "weighted AM–GM from tangent-line convexity",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "9-r2",
+      "title": "area/dot-product geometry",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+        "format": "pdf",
+        "wordCount": 37891,
+        "proofMentions": 152
+      }
+    },
+    {
+      "id": "9-r3",
+      "title": "determinant/Gram matrix positivity",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+        "format": "pdf",
+        "wordCount": 37891,
+        "proofMentions": 152
+      }
+    },
+    {
+      "id": "9-r4",
+      "title": "Hölder as a more general route",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~kehle/files/Introduction_to_functional_analysis_18_102.pdf",
+        "format": "pdf",
+        "wordCount": 37891,
+        "proofMentions": 152
+      }
+    },
+    {
+      "id": "10-r1",
+      "title": "Geometric shortest-path/angle argument",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "10-r2",
+      "title": "expand squared norms and use Cauchy–Schwarz",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "10-r3",
+      "title": "convexity of the norm",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "11-r1",
+      "title": "Drop a perpendicular and use Pythagoras",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "11-r2",
+      "title": "dot-product expansion",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "11-r3",
+      "title": "complex-plane/vector calculation",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "12-r1",
+      "title": "Geometric altitude plus algebraic elimination",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "12-r2",
+      "title": "trigonometric area formula and cosine law",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "12-r3",
+      "title": "factor a Gram/Cayley–Menger determinant",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+      "locator": "Publisher table of contents / case-study bibliographic locator; full chapter proof text not checked.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-319-17368-9",
+        "format": "html",
+        "wordCount": 1118,
+        "proofMentions": 3
+      }
+    },
+    {
+      "id": "13-r1",
+      "title": "Bezout identity",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "13-r2",
+      "title": "Euclid's gcd lemma",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "13-r3",
+      "title": "prime elements in a UFD/irreducible-is-prime in a PID",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "14-r1",
+      "title": "Existence by strong induction and uniqueness via Euclid's lemma",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "14-r2",
+      "title": "valuation/exponent functions and prime divisibility",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "15-r1",
+      "title": "Permute nonzero residues under multiplication by a",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "15-r2",
+      "title": "Lagrange's theorem in the multiplicative group",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "15-r3",
+      "title": "binomial coefficients/induction for the congruence",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "16-r1",
+      "title": "Pair each unit with its inverse, leaving ±1",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "16-r2",
+      "title": "use the structure of the finite multiplicative group (with the p=2 case handled separately)",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "17-r1",
+      "title": "Strict descent of remainders",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "17-r2",
+      "title": "invariant ideals/generated subgroups",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "17-r3",
+      "title": "continued fractions",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "18-r1",
+      "title": "Back-substitute Euclidean divisions",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "18-r2",
+      "title": "least positive element of the ideal (a,b)",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "18-r3",
+      "title": "lattice-point/linear-combination argument",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "19-r1",
+      "title": "Construct coefficients with Bezout identities",
+      "disposition": "source-page-not-proof",
+      "reason": "The linked page exposes metadata and navigation, not the constructive proof.",
+      "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+      "locator": "§2.3, constructive idempotent proof and uniqueness",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+        "format": "html",
+        "wordCount": 1075,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "19-r2",
+      "title": "ring isomorphism via kernels/ideals",
+      "disposition": "source-page-not-proof",
+      "reason": "The linked page exposes metadata and navigation, not the ring-isomorphism proof.",
+      "url": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+      "locator": "§2.3, constructive idempotent proof and uniqueness",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Yet_Another_Introductory_Number_Theory_Textbook_-_Cryptology_Emphasis_%28Poritz%29/02%3A_Congruences/2.03%3A_The_Chinese_Remainder_Theorem",
+        "format": "html",
+        "wordCount": 1075,
+        "proofMentions": 1
+      }
+    },
+    {
+      "id": "20-r1",
+      "title": "Archimedean property and integer scaling",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "20-r2",
+      "title": "floor/ceiling construction",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "20-r3",
+      "title": "decimal/rational approximation",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "21-r1",
+      "title": "Prime-exponent parity in unique factorization",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "21-r2",
+      "title": "lowest-terms divisibility",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "21-r3",
+      "title": "rational-root theorem",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "22-r1",
+      "title": "Euclid's parametrization",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "22-r2",
+      "title": "generate triples from rational points on the unit circle",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "22-r3",
+      "title": "primitive triples from coprime opposite-parity parameters",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://richardhammack.github.io/BookOfProof/index.html",
+      "locator": "Free proof-course text; broad proof-method context. No claim that this exact theorem route is printed there.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://richardhammack.github.io/BookOfProof/index.html",
+        "format": "html",
+        "wordCount": 723,
+        "proofMentions": 14
+      }
+    },
+    {
+      "id": "23-r1",
+      "title": "Triangulation and induction",
+      "disposition": "route-mismatch",
+      "reason": "The article uses Pick's theorem to prove Euler's formula; it does not prove Pick's theorem by triangulation.",
+      "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+      "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+        "format": "html",
+        "wordCount": 7494,
+        "proofMentions": 72
+      }
+    },
+    {
+      "id": "23-r2",
+      "title": "boundary/interior lattice-point counting plus Euler characteristic",
+      "disposition": "route-mismatch",
+      "reason": "The article assumes Pick's theorem in a proof of Euler's formula; it does not prove the catalogued route.",
+      "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+      "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+        "format": "html",
+        "wordCount": 7494,
+        "proofMentions": 72
+      }
+    },
+    {
+      "id": "23-r3",
+      "title": "reduce to unimodular triangles",
+      "disposition": "route-mismatch",
+      "reason": "The article assumes Pick's theorem in a proof of Euler's formula; it does not give a unimodular-triangle proof.",
+      "url": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+      "locator": "The page gives multiple Euler formula proofs and Pick theorem proof; other route sketches below are independently reconstructed.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://ics.uci.edu/~eppstein/junkyard/euler/all.html",
+        "format": "html",
+        "wordCount": 7494,
+        "proofMentions": 72
+      }
+    },
+    {
+      "id": "26-r2",
+      "title": "topology: winding number/fundamental group or degree",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+        "format": "pdf",
+        "wordCount": 0,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "26-r3",
+      "title": "algebraic proof via symmetric polynomials/Galois theory",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~hrm/palestine/munkres-topology.pdf",
+        "format": "pdf",
+        "wordCount": 0,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "27-r3",
+      "title": "measure-theoretic absolute continuity formulation",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://math.mit.edu/~djk/calculus_beginners/chapter13/section02.html",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://math.mit.edu/~djk/calculus_beginners/chapter13/section02.html",
+        "format": "html",
+        "wordCount": 797,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "28-r1",
+      "title": "Supremum/least-upper-bound argument",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "28-r2",
+      "title": "bisection/nested intervals",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "28-r3",
+      "title": "connectedness of an interval and continuous images",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "29-r1",
+      "title": "Supremum plus convergent maximizing subsequence",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "29-r2",
+      "title": "open-cover compactness and finite subcover",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "29-r3",
+      "title": "sequential compactness",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "30-r1",
+      "title": "Nested interval/bisection construction",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "30-r2",
+      "title": "repeated finite-cover pigeonhole argument",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "30-r3",
+      "title": "compactness/sequential compactness equivalences",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "31-r1",
+      "title": "Supremum/finite-subcover argument on a box",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "31-r2",
+      "title": "sequential compactness plus Bolzano–Weierstrass",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "31-r3",
+      "title": "total boundedness and completeness",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "32-r3",
+      "title": "Cauchy mean value theorem as a paired-derivative generalization",
+      "disposition": "route-mismatch",
+      "reason": "The cited section proves the ordinary mean-value theorem, not this Cauchy mean-value argument.",
+      "url": "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem",
+      "locator": "§4.4, Rolle and Mean Value Theorem proofs",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/books/calculus-volume-1/pages/4-4-the-mean-value-theorem",
+        "format": "html",
+        "wordCount": 7743,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "33-r1",
+      "title": "Repeated Rolle argument",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "33-r2",
+      "title": "integral remainder from repeated FTC",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "33-r3",
+      "title": "complex-analytic Cauchy integral formula",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "34-r1",
+      "title": "Cauchy mean value theorem",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "34-r2",
+      "title": "inverse-function/local linearization",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "34-r3",
+      "title": "logarithmic differentiation for 0/0 or ∞/∞ forms",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "35-r1",
+      "title": "Group terms in dyadic blocks",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "35-r2",
+      "title": "compare partial sums with log/integral",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "35-r3",
+      "title": "assume convergence and use condensation",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://openstax.org/books/calculus-volume-1",
+      "locator": "Open textbook course context. Route-specific proof checked only where named in the page; other sketches are reconstructed.",
+      "sourceCheck": {
+        "access": "little-or-no-text",
+        "httpStatus": 200,
+        "finalUrl": "https://openstax.org/details/books/calculus-volume-1",
+        "format": "html",
+        "wordCount": 11,
+        "proofMentions": 0
+      }
+    },
+    {
+      "id": "36-r1",
+      "title": "Euler's sine-product coefficients",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "36-r2",
+      "title": "Fourier series/Parseval",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "36-r3",
+      "title": "telescoping trigonometric series",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+      "locator": "Bibliographic/context locator only; this batch did not verify that the linked item presents this exact route.",
+      "sourceCheck": {
+        "access": "text-available",
+        "httpStatus": 200,
+        "finalUrl": "https://link.springer.com/book/10.1007/978-3-642-00856-6?detailsPage=toc",
+        "format": "html",
+        "wordCount": 1526,
+        "proofMentions": 7
+      }
+    },
+    {
+      "id": "37-r1",
+      "title": "Power series",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "37-r2",
+      "title": "solve the differential equations for sine/cosine and exponential",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "37-r3",
+      "title": "geometric/complex-rotation characterization",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "38-r1",
+      "title": "Induction with angle-addition formulas",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "38-r2",
+      "title": "exponentiation in the complex multiplicative group",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "38-r3",
+      "title": "roots-of-unity geometry",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "39-r1",
+      "title": "Leading-monomial reduction/induction",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "39-r2",
+      "title": "orbit-sum or lexicographic elimination",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "39-r3",
+      "title": "invariant theory of the symmetric group",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "40-r1",
+      "title": "Adjugate identity and coefficient comparison",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "40-r2",
+      "title": "cyclic vector/rational canonical form",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    },
+    {
+      "id": "40-r3",
+      "title": "polynomial interpolation on eigenvalues (with hypotheses carefully controlled)",
+      "disposition": "context-only-citation",
+      "reason": "The catalog locator itself disclaims evidence for this exact proof route.",
+      "url": "https://www-math.mit.edu/~gs/LectureNotes/",
+      "locator": "Course notes landing page; contextual reference only, not verified for this exact proof route.",
+      "sourceCheck": {
+        "access": "fetch-failed",
+        "error": "HTTPSConnectionPool(host='www-math.mit.edu', port=443): Max retries exceeded with url: /~gs/LectureNotes/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostn"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3024 @@
+{
+ "method": "Each unverified route was searched by one reviewer; every claimed complete proof was re-read by a second, independent verifier instructed to refute it. Only routes confirmed by both, with the same method as the sketch, were promoted. Reviewers' sketch criticisms are kept here and were not applied to the catalogue.",
+ "routeCount": 266,
+ "counts": {
+  "promoted": 80,
+  "partial": 87,
+  "none-found": 49,
+  "route-mismatch": 24,
+  "verifier-partial": 13,
+  "held-back": 10,
+  "claimed-unverified": 2,
+  "verifier-route-mismatch": 1
+ },
+ "promoted": [
+  "2-r4",
+  "4-r2",
+  "5-r1",
+  "5-r4",
+  "6-r1",
+  "7-r2",
+  "7-r3",
+  "8-r2",
+  "12-r2",
+  "15-r1",
+  "15-r2",
+  "15-r3",
+  "16-r2",
+  "17-r1",
+  "18-r1",
+  "20-r2",
+  "21-r2",
+  "23-r3",
+  "26-r3",
+  "28-r2",
+  "28-r3",
+  "29-r1",
+  "29-r2",
+  "29-r3",
+  "30-r1",
+  "32-r3",
+  "33-r2",
+  "34-r1",
+  "35-r1",
+  "35-r2",
+  "35-r3",
+  "36-r2",
+  "38-r1",
+  "38-r2",
+  "39-r1",
+  "39-r2",
+  "39-r3",
+  "40-r1",
+  "41-r1",
+  "42-r1",
+  "46-r1",
+  "46-r2",
+  "49-r2",
+  "49-r3",
+  "55-r3",
+  "60-r1",
+  "62-r1",
+  "68-r2",
+  "69-r3",
+  "71-r3",
+  "72-r3",
+  "74-r2",
+  "86-r1",
+  "90-r1",
+  "90-r2",
+  "92-r2",
+  "98-r2",
+  "105-r1",
+  "109-r1",
+  "109-r3",
+  "110-r2",
+  "111-r2",
+  "111-r3",
+  "112-r1",
+  "114-r2",
+  "118-r1",
+  "120-r1",
+  "120-r2",
+  "121-r1",
+  "124-r2",
+  "125-r2",
+  "125-r3",
+  "130-r1",
+  "136-r3",
+  "138-r3",
+  "139-r3",
+  "140-r1",
+  "140-r2",
+  "141-r3",
+  "147-r1"
+ ],
+ "records": [
+  {
+   "routeId": "2-r4",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://proofwiki.org/wiki/Square_Root_of_2_is_Irrational",
+   "preciseLocator": "Proof 5",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "ProofWiki Proof 5 applies the Rational Root Theorem (named, standard) to n^2-2, lists candidates +-1,+-2, shows they fail. Read directly."
+   }
+  },
+  {
+   "routeId": "3-r4",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://sites.pitt.edu/~caw203/pdfs/primes_and_riemann.pdf",
+   "preciseLocator": "Section 2, The Riemann Zeta Function and the Primes (Euler product, Theorem 5)",
+   "sketchProblem": "Sketch says it overlaps route 3-r2 and is not distinct unless developed separately; arXiv 1202.3670 (current ref) only lists proofs and does not write this one out.",
+   "verification": null
+  },
+  {
+   "routeId": "4-r1",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is incoherent: 'a N+1' with generic a cannot force q = a mod m, and it admits as much. It is not a single provable route; a real Euclid-style proof needs a specific polynomial per progression (e.g. 4p1...pk-1 for 3 mod 4). Suggest rewriting around a concrete case or merging with 4-r2.",
+   "verification": null
+  },
+  {
+   "routeId": "4-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/7312c3e8e2dbb9af9a1677425fc3a0e7_MIT18_781S12_lec12.pdf",
+   "preciseLocator": "Proposition 45, Lemma 46, Theorem 47 (pp. 1-4)",
+   "sketchProblem": "Source proves only 1 mod n, matching sketch. Slight variant: it uses a = l n p1...pN with l large rather than 'choose A to exclude exceptional divisors'.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "MIT 18.781 lec12: Prop 45 (cyclotomic facts), Lemma 46 (no common root with x^m-1 mod p, p not dividing n), Thm 47 (order of a mod p is n so p=1 mod n; contradiction). All steps written out. Proves primes = 1 mod n, as sketch says."
+   }
+  },
+  {
+   "routeId": "4-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Route is a scope warning, not a proof route; there is nothing to verify as a complete proof. Suggest flagging not-a-route. The statement about L-function nonvanishing is true but is not what Conrad's text proves.",
+   "verification": null
+  },
+  {
+   "routeId": "5-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://campus.lakeforest.edu/trevino/ManyProofsSumConsecutives.pdf",
+   "preciseLocator": "Proof 2 (Gauss trick), p. 1",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Proof 2 (Gauss trick) on p.1 writes S forward and reversed, adds to 2S=n(n+1)."
+   }
+  },
+  {
+   "routeId": "5-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://campus.lakeforest.edu/trevino/ManyProofsSumConsecutives.pdf",
+   "preciseLocator": "Proof 7 (Counting Two Different Ways), p. 3",
+   "sketchProblem": "Sketch's 'choosing two with repetition gives n(n+1)/2' is asserted without justification; it needs the shift (i,j)->(i,j+1).",
+   "verification": null
+  },
+  {
+   "routeId": "5-r4",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://campus.lakeforest.edu/trevino/ManyProofsSumConsecutives.pdf",
+   "preciseLocator": "Proof 11 (Geometric Series + L'Hospital), p.5 (starts at bottom of p.4 in PDF page count; printed page 5)",
+   "sketchProblem": "Sketch's S(x)=1+x+...+x^n is right; derivative at 1 needs the limit step, which the source supplies.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Proof 11 (Geometric Series + L'Hospital), p.5 (starts at bottom of p.4 in PDF page count; printed page 5)",
+    "missingStep": null,
+    "note": "Differentiates (1-x^{n+1})/(1-x), takes limit x->1 with L'Hospital twice, full computation shown. Page number corrected to p.5."
+   }
+  },
+  {
+   "routeId": "6-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Gnomon_(figure)",
+   "preciseLocator": "Section on gnomons of square numbers (the n-square to (n+1)-square paragraph)",
+   "sketchProblem": "Source indexes the border as 2n+1 (n -> n+1); sketch's nth border 2n-1 is the same up to shift.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia Gnomon: gnomon of n-square is 2n+1 (n to side, n to column, 1 corner); 'also provides a proof that sum of first n odd numbers is n^2', illustrated with 8-square. General step given in prose; picture-style proof, example n=8 shown."
+   }
+  },
+  {
+   "routeId": "6-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "7-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Binomial_theorem",
+   "preciseLocator": "Proofs > Combinatorial proof (also Combinatorial interpretation)",
+   "sketchProblem": "Sketch 7-r2 and 7-r3 are essentially the same argument (near-duplicate).",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia Binomial theorem, Combinatorial proof: 2^n products, group by number k of y's, equal to count of k-subsets of {1..n}. Complete."
+   }
+  },
+  {
+   "routeId": "7-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Binomial_theorem",
+   "preciseLocator": "Proofs > Combinatorial proof",
+   "sketchProblem": "Near-duplicate of 7-r2; consider merging.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Same Combinatorial proof section: distributive expansion into 2^n products e1...en, grouped by k; exact match."
+   }
+  },
+  {
+   "routeId": "8-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/AM%E2%80%93GM_inequality",
+   "preciseLocator": "Section \"Proofs of the AM-GM inequality\" > \"Proof by successive replacement of elements\"",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "8-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/AM%E2%80%93GM_inequality",
+   "preciseLocator": "Section \"Proofs of the AM-GM inequality\" > \"Proof using Jensen's inequality\"",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Section 'Proof using Jensen's inequality': strict concavity of ln, Jensen finite form, exponentiate; handles zeros and equality case (weighted version covering equal weights)."
+   }
+  },
+  {
+   "routeId": "8-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "9-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://people.math.sc.edu/vasquezp/Math550/Review/sec-inequalities.html",
+   "preciseLocator": "Theorem 1.5.1 (Cauchy-Schwarz) proof",
+   "sketchProblem": "The area step (area >= 0 = |x||y||sin theta|) contributes nothing to the conclusion; the real content is the angle definition plus |cos theta|<=1 (and the angle definition itself presupposes C-S for it to be well defined, so the route is circular as a foundation).",
+   "verification": null
+  },
+  {
+   "routeId": "9-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://files.ele-math.com/articles/mia-11-52.pdf",
+   "preciseLocator": "Introduction, eqs (1)-(2)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "9-r4",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "10-r1",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://people.math.sc.edu/vasquezp/Math550/Review/sec-inequalities.html",
+   "preciseLocator": "Theorem 1.5.3 (Triangle Inequality)",
+   "sketchProblem": "The sketch takes \"Euclidean distance is the shortest path\" as given, which is itself the triangle inequality, so as written it is circular unless a separate geometric proof of the segment minimality is supplied.",
+   "verification": null
+  },
+  {
+   "routeId": "10-r3",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/0710.2690",
+   "preciseLocator": "Section 3, eqs (3.1)-(3.8)",
+   "sketchProblem": "Not independent: convexity of the Euclidean ball is itself shown via convexity of r^2 or Cauchy-Schwarz, as the sketch admits.",
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": null,
+    "missingStep": "Convexity of the Euclidean unit ball is only asserted ('One can use the convexity of r^2 ... to show directly', after eq 3.8); not written out.",
+    "note": "Semmes eqs (3.1)-(3.8) give the convex-combination argument in full for any N with convex unit ball. Euclidean ball convexity is only stated with a hint. The sketch itself assumes it, so the route step is present, but the source is not a complete proof for the Euclidean norm. Locator correct (p.4)."
+   }
+  },
+  {
+   "routeId": "11-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Law_of_cosines",
+   "preciseLocator": "Section \"Proofs\" > \"Using vectors\"",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "12-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Heron's_formula",
+   "preciseLocator": "Section \"Proofs\" > \"Trigonometric proof using the law of cosines\"",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia Heron: law of cosines, A=(1/2)ab sin gamma, sin gamma=sqrt(1-cos^2), algebra through factorization to s(s-a)(s-b)(s-c). Same method; displayed as one chain of equalities."
+   }
+  },
+  {
+   "routeId": "12-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "13-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_(Clark)/01:_Chapters/1.11:_Unique_Factorization",
+   "preciseLocator": "Lemma 1 and Lemma 2 (Euclid's Lemma)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "13-r3",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.uwaterloo.ca/~snew/PMATH348/Chap2Rings.pdf",
+   "preciseLocator": "Thm 2.19 (1)-(3) proofs; Ex. 2.15, Ex. 2.23, Thm 2.27",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Thm 2.19(2)(3), Thm 2.27 proofs; Ex 2.15, 2.23 are bare statements; Thm 2.18(2) proof is left as exercise (p.2-4)",
+    "missingStep": "Thm 2.18(2) (element prime iff generated ideal prime) is 'left as an exercise' and is needed in the last step of 2.19(3); Ex 2.15 (primes of Z are irreducible) and Ex 2.23 (Z Euclidean) are only stated.",
+    "note": "2.19(1)(2) and 2.27 (ED => PID) fully proved; 2.19(3) concludes 'maximal ideal, hence prime ideal, hence a is prime' with last step deferred. Route matches."
+   }
+  },
+  {
+   "routeId": "14-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://math.libretexts.org/Bookshelves/Combinatorics_and_Discrete_Mathematics/Elementary_Number_Theory_(Clark)/01:_Chapters/1.11:_Unique_Factorization",
+   "preciseLocator": "Lemmas 3-5 (existence by induction, uniqueness by induction)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "15-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Proofs_of_Fermat%27s_little_theorem",
+   "preciseLocator": "Section 'Proof as a particular case of Euler's theorem' with subsections 'The cancellation law' and 'The rearrangement property'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Sections 'Proof as a particular case of Euler's theorem', 'The cancellation law', 'The rearrangement property' prove a^{p-1}=1 for p not dividing a, via Euclid's lemma. Case p|a (for a^p=a) is trivial and not stated in that section; minor."
+   }
+  },
+  {
+   "routeId": "15-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Proofs_of_Fermat%27s_little_theorem",
+   "preciseLocator": "Section 'Proofs using group theory' > 'Standard proof'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Standard proof: G={1..p-1} group (inverses via Bezout), Lagrange (named) gives order k divides p-1, so a^{p-1}=1. Complete for a not divisible by p."
+   }
+  },
+  {
+   "routeId": "15-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Proofs_of_Fermat%27s_little_theorem",
+   "preciseLocator": "Section 'Proofs using the binomial theorem' > 'Proof 1' (induction) and 'Proof of Lemma'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Proof 1: induction via Lemma (x+y)^p=x^p+y^p mod p, with Proof of Lemma showing p | C(p,i) for 0<i<p; base 0. For a>=0; negative integers trivially by residues."
+   }
+  },
+  {
+   "routeId": "16-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Wilson%27s_theorem",
+   "preciseLocator": "Section 'Proofs' > 'Prime modulus' > 'Elementary proof'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Elementary proof: p=2 trivial, odd p: inverses exist (field), a=a^-1 iff a=+-1 by Euclid's lemma, pair rest, product -1. Complete, example p=11."
+   }
+  },
+  {
+   "routeId": "17-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
+   "preciseLocator": "Section 'Proof of validity'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read 'Proof of validity': termination from |r_i|<|r_{i-1}|, gcd(x,0)=x and gcd(x,y)=gcd(y,x-zy) proved via common-divisor sets. Complete."
+   }
+  },
+  {
+   "routeId": "17-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
+   "preciseLocator": "Sections 'Proof of validity' and 'Principal ideals and related problems'",
+   "sketchProblem": "Route is close to the standard divisor-invariance proof; only the ideal language differs.",
+   "verification": null
+  },
+  {
+   "routeId": "17-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://math.albany.edu/pers/hammond/course/cfrac/confrac.html",
+   "preciseLocator": "Section 4 'The case of a rational number'; Section 7 Corollary 3",
+   "sketchProblem": "Sketch is essentially the Euclid proof renamed; the continued-fraction content adds no independent argument.",
+   "verification": null
+  },
+  {
+   "routeId": "18-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
+   "preciseLocator": "Section \"Bezout's identity\" (together with 'Proof of validity' for gcd = last nonzero remainder)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read 'Bezout's identity' section: explicit back-substitution through the division equations to g=sa+tb; gcd=last remainder from 'Proof of validity'. Complete."
+   }
+  },
+  {
+   "routeId": "18-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity",
+   "preciseLocator": "Section 'Existence proof'",
+   "sketchProblem": "Sketch looks wrong: vectors (a,b) in Z^2 project to aZ, not aZ+bZ; should be the image of Z^2 under (x,y)->ax+by.",
+   "verification": null
+  },
+  {
+   "routeId": "19-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Chinese_remainder_theorem",
+   "preciseLocator": "Statement (ring isomorphism remark); 'Proof' > 'Uniqueness' and 'Existence (first proof)'",
+   "sketchProblem": "Cited reference (Poritz 2.3) is a route mismatch for this sketch.",
+   "verification": null
+  },
+  {
+   "routeId": "20-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_lec5.pdf",
+   "preciseLocator": "Density of the rationals, part ii) (case 0<=x<y, then sign cases)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "MIT 18.100A Lec 5 Thm 2(ii): n(y-x)>1 by Archimedes, m least integer >nx so m<=nx+1<ny; same floor construction as sketch (1/n<b-a, m=floor(na)+1). Sign cases handled. Complete."
+   }
+  },
+  {
+   "routeId": "20-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "https://abstractmath.org/MM/MMRealDensity.htm",
+   "preciseLocator": "Theorem on density of rationals/irrationals",
+   "sketchProblem": "Sketch's 'differ by more than one unit' step is only informal; the route reduces to the floor/Archimedean argument.",
+   "verification": null
+  },
+  {
+   "routeId": "21-r1",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.ornaverum.org/reference/pdf/697.pdf",
+   "preciseLocator": "Part B, 'To prove that sqrt p is irrational using Euclid's Lemma'",
+   "sketchProblem": "Route title ('Prime-exponent parity') does not match its sketch (Euclid's lemma descent); titles of 21-r1 and 21-r2 appear swapped.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Part B proves sqrt p irrational via coprime a,b, Euclid's Lemma on p|a^2 then p|b^2. Matches sketch. Informal self-published note (ornaverum.org) but argument complete and Euclid's lemma is a named result."
+   },
+   "heldBackReason": "only source is an informal self-published note"
+  },
+  {
+   "routeId": "21-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://proofwiki.org/wiki/Square_Root_of_Prime_is_Irrational/Proof_1",
+   "preciseLocator": "Proof 1",
+   "sketchProblem": "Route title ('lowest-terms divisibility') does not match its sketch (prime exponents); titles of 21-r1 and 21-r2 appear swapped.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "ProofWiki Proof 1: m^2=n^2 p, prime exponents in squares are even, so p occurs odd times in n^2 p, contradiction. Uses unique factorization implicitly (standard). Complete but short."
+   }
+  },
+  {
+   "routeId": "21-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Rational_root_theorem",
+   "preciseLocator": "Section 'Proofs' > 'Elementary proof'",
+   "sketchProblem": "Sketch's sentence 'For p= square this would differ' is garbled; also needs only m|p, n|1 giving integers +-1,+-p.",
+   "verification": null
+  },
+  {
+   "routeId": "22-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.cs.uaf.edu/~maxwell/AY2005/math490/RossLectureNotes.pdf",
+   "preciseLocator": "Theorem 3 (p.1)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "22-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://jansn19.gitlab-pages.liu.se/tata54-kurshemsida/lectures/lecture8.pdf",
+   "preciseLocator": "Section 'Rational parametrization': theorem that t -> ((1-t^2)/(1+t^2), 2t/(1+t^2)) bijects R onto the unit circle minus (-1,0), preserving rationality; example t=7/11 -> (36,77,85)",
+   "sketchProblem": "The sketch says 'for every integer t' yet x=(1-t^2)/(1+t^2) with integer t only gives a triple after clearing denominators (1-t^2,2t,1+t^2); correct but not stated as such, and the route is really Euclid's formula again.",
+   "verification": null
+  },
+  {
+   "routeId": "22-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://jansn19.gitlab-pages.liu.se/tata54-kurshemsida/lectures/lecture8.pdf",
+   "preciseLocator": "Theorem 'PPT with y even iff exist 0<n<m, m,n of different parity...', second half of proof (slides 'Proof (contd)')",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "23-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://documents.kenyon.edu/math/GarbettJSenEx2011.pdf",
+   "preciseLocator": "Section 2.1-2.2 Thm 2.5, Cor 2.6, Thm 2.8; Sec 2.6 Thm 2.19; Thm 3.12",
+   "sketchProblem": "Sketch mixes inductive and invariant formulations and gives 'determinant' for the primitive-triangle lemma; the source's proof is different (basis of Z^2).",
+   "verification": null
+  },
+  {
+   "routeId": "23-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://documents.kenyon.edu/math/GarbettJSenEx2011.pdf",
+   "preciseLocator": "Sec 3.2 Lemma 3.11 (Euler), Thm 3.12 (Pick's theorem proof)",
+   "sketchProblem": "Sketch says 'each triangle satisfies Pick' then sums; this is not the same as the primitive-triangle count and the interior-edge/vertex bookkeeping is left vague.",
+   "verification": null
+  },
+  {
+   "routeId": "23-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://documents.kenyon.edu/math/GarbettJSenEx2011.pdf",
+   "preciseLocator": "Sec 2.2 Thm 2.8 (every lattice polygon dissects into primitive triangles); Sec 2.3-2.6 Thm 2.13, Prop 2.15/2.17, Lemma 2.18, Thm 2.19 (primitive triangle has area 1/2); Sec 3.2 Lemma 3.11 (Euler) and Thm 3.12",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read Garbett thesis. Thm 2.8 dissection into primitive triangles (induction on interior points), Prop 2.15/2.17/Lemma 2.18/Thm 2.19 area 1/2 via unimodular map det 1, Lemma 3.11 Euler, Thm 3.12 Pick counting. Full. Note Thm 2.13 is the visible-point/coprime lemma (supporting), not the area claim; area proof uses a det-1 integer matrix, in line with sketch's determinant remark."
+   }
+  },
+  {
+   "routeId": "26-r2",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.maths.tcd.ie/~dwilkins/Courses/MA342R/MA342R_Hil2017_Lectures/MA342R_Hil2017_Lecture12.pdf",
+   "preciseLocator": "Section 2.6, Theorem 2.13 (Fundamental Theorem of Algebra)",
+   "sketchProblem": "Sketch says f=P/z^n and invokes the argument principle/Rouche; the source uses the topological winding-number argument. Equivalent route family but not literally the same tools.",
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Section 2.6, Theorem 2.13 (relies on Lemma 2.6 Dog-Walking and Prop 2.9, Cor 1.58 from earlier lectures)",
+    "missingStep": "Proofs of the Dog-Walking Lemma (Lemma 2.6) and Prop 2.9 (winding number continuous/homotopy-invariant in r) are in earlier lectures, not in this document; they are the heart of the argument.",
+    "note": "Wilkins Thm 2.13 does exactly the winding-number route (P_m dominates for |z|>R, n(gamma_r,0)=m, but constant 0 if P has no zero). Main estimates written out, but the two key topological inputs are cited to previous lectures. Strictly partial; a reader may accept them as standard named results."
+   }
+  },
+  {
+   "routeId": "26-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.jirka.org/ra/html/sec_fundalgeb.html",
+   "preciseLocator": "Lemma 11.5.1 (d'Alembert/minimum modulus), Lemma 11.5.4 (|p|->infinity), Theorem 11.5.5",
+   "sketchProblem": "Route title 'algebraic proof via symmetric polynomials/Galois theory' does not match the sketch, which is the analytic minimum-modulus (d'Alembert) proof. Title/sketch swapped with another route; the Galois route is untested here.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Lebl Lemma 11.5.1 (d'Alembert, |p(re^{it})|<|p(0)| for small r), Lemma 11.5.4 (|p|->inf), Thm 11.5.5 (min attained on compact disk, hence zero). Matches sketch fully. NB route title says 'symmetric polynomials/Galois' but sketch and source are the analytic minimum-modulus proof; title mismatch only. Proof of 11.5.1 uses existence of t with a_k e^{ikt}=-|a_k| (trig discussion, standard)."
+   }
+  },
+  {
+   "routeId": "27-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://faculty.etsu.edu/gardnerr/5210/notes/6-5.pdf",
+   "preciseLocator": "Theorem 6.10 (AC => f(b)-f(a)=int f'), Theorem 6.11 (statement only), Theorem 6.14 (derivative of integral = f a.e.)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "28-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikiversity.org/wiki/Mathematics_for_Applied_Sciences_(Osnabr%C3%BCck_2023-2024)/Part_I/Lecture_11",
+   "preciseLocator": "Section 'The Intermediate value theorem', Theorem and proof; also Jiri Lebl, Basic Analysis I, Lemma 3.3.7 + Thm 3.3.8 (https://www.jirka.org/ra/realanal.pdf, pp.132-133)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikiversity Thm: bisection with nested intervals, limit x, continuity (sequential) gives f(x)<=u and >=u. Lebl Lemma 3.3.7 (pp.132-133) and Thm 3.3.8 also contain complete bisection proof; page locators correct."
+   }
+  },
+  {
+   "routeId": "28-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://people.math.sc.edu/sharpley/math554_08/Lectures/554_6_f08.pdf",
+   "preciseLocator": "Theorem 1 (intervals connected), Theorem 3 (continuous image connected; image of [a,b] an interval), Corollary 1 (Intermediate Value Theorem)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Handout 6: Thm 1 interval connected (sup argument), Thm 2 connected=>interval, Thm 3 continuous image connected, Cor 1 IVT. All proved. Minor: Thm 1 proof cites an unnumbered 'lemma to the LUB property' (sup is in set or a limit point), and Thm 3's proof only shows connectedness, interval conclusion comes from Thm 2; neither is a real gap."
+   }
+  },
+  {
+   "routeId": "29-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.jirka.org/ra/realanal.pdf",
+   "preciseLocator": "Section 3.3.1, Lemma 3.3.1 and Theorem 3.3.2 (pp.130-131); also Wikipedia 'Extreme value theorem', 'Proof of the Extreme Value Theorem'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Lebl Lemma 3.3.1 (bounded, via Bolzano-Weierstrass) and Thm 3.3.2 (take maximizing/minimizing sequences, BW subsequence, continuity gives attainment). Matches; pp.130-131 correct. BW itself is cited to Sec 2.3 where it is proved. Wikipedia part of locator not read."
+   }
+  },
+  {
+   "routeId": "29-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://people.math.sc.edu/sharpley/math554_s96/554_6.pdf",
+   "preciseLocator": "Theorem 'continuous image of a compact set is compact'; Heine-Borel for [a,b]; TFAE (a)=>(b) via cover {(-n,n)}; Corollary: Extreme Value Theorem",
+   "sketchProblem": "Sketch's cover U_n={x:|f(x)|<n} is a slight variant of the source's cover of the image by (-n,n).",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Handout (1996): continuous image of compact is compact (pullback of cover), Heine-Borel for [a,b], compact=>bounded via cover (-n,n) and closed, EVT corollary via sup/inf in compact image. Complete. Sketch's cover U_n={|f|<n} is the same idea applied through the image; locator should name the handout theorems rather than 'TFAE (a)=>(b)' alone (fine)."
+   }
+  },
+  {
+   "routeId": "29-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.jirka.org/ra/realanal.pdf",
+   "preciseLocator": "Section 3.3.1, Lemma 3.3.1 and Theorem 3.3.2 (pp.130-131)",
+   "sketchProblem": "Route essentially duplicates 29-r1 (supremum + maximizing subsequence = sequential compactness); catalogue should merge or differentiate them.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Same Lebl Lemma 3.3.1/Thm 3.3.2 as 29-r1: maximizing sequence + BW subsequence + continuity. Duplicate source/route of 29-r1 (acceptable). pp.130-131 correct."
+   }
+  },
+  {
+   "routeId": "30-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Bolzano%E2%80%93Weierstrass_theorem",
+   "preciseLocator": "Section 'Alternative proof over R using nested intervals'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia section 'Alternative proof over R using nested intervals': halving with infinitely many terms, nested intervals theorem (named) gives common point, lengths ->0 so every neighbourhood contains some I_n with infinitely many terms, hence accumulation point/subsequence. Complete; final step accumulation point -> convergent subsequence stated tersely but standard."
+   }
+  },
+  {
+   "routeId": "30-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.mcgill.ca/labute/courses/255w03/L25.pdf",
+   "preciseLocator": "Proof of Theorem 3, (d)=>(a), Lemma 3 (p.2)",
+   "sketchProblem": "Sketch says 'finite-cover pigeonhole... diagonal selection'; source's nested sets Y_n with increasing indices is the diagonal step. OK.",
+   "verification": null
+  },
+  {
+   "routeId": "30-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.mcgill.ca/labute/courses/255w03/L25.pdf",
+   "preciseLocator": "Theorem 3, proof of (b)=>(a) (p.2) and Corollary (Heine-Borel) p.1",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "31-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Heine%E2%80%93Borel_theorem",
+   "preciseLocator": "Section 'Proofs' > Proof 1 (lemma closed subset of compact is compact; box argument)",
+   "sketchProblem": "Sketch 'supremum/finite-subcover on a box' vs reduction from 1-D; source uses bisection of boxes.",
+   "verification": null
+  },
+  {
+   "routeId": "31-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Bolzano%E2%80%93Weierstrass_theorem",
+   "preciseLocator": "Section 'Proof' (R^n case via coordinates) and 'Sequential compactness in Euclidean spaces'",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "31-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.mcgill.ca/labute/courses/255w03/L25.pdf",
+   "preciseLocator": "Theorem 3, (d)=>(a) with Lemma 3, then (a)=>(b); Corollary p.1",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "32-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Mean_value_theorem",
+   "preciseLocator": "Section 'Cauchy's mean value theorem' and its 'Proof' subsection",
+   "sketchProblem": "Sketch phrase 'hypotheses ensuring a zero of g'' is wrong/backwards: the theorem needs no zero of g' (only needs g'(c)!=0 to divide).",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia Cauchy MVT proof: h(x)=(g(b)-g(a))f(x)-(f(b)-f(a))g(x), h(a)=h(b), Rolle gives h'(c)=0. Statement notes MVT is the case g(t)=t. h differs from sketch's H by sign and a constant (equivalent). Specialization to MVT stated, not computed, but trivial."
+   }
+  },
+  {
+   "routeId": "33-r1",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://proofwiki.org/wiki/Taylor%27s_Theorem/One_Variable",
+   "preciseLocator": "Section 'Proof using Rolle's Theorem directly'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Section 'Proof' > 'Proof using Rolle's Theorem directly' (ProofWiki Taylor's Theorem/One Variable)",
+    "missingStep": "R_n(t) as a function of t is never defined in that section (only R_n as a number earlier) and the claims g^(k)(a)=0 for k=0..n and g^(n+1)(t)=f^(n+1)(t)-(n+1)!R_n(x)/(x-a)^(n+1) are asserted without computation; 'apply Rolle n times' vs listed n+1 points is sloppy. Core Rolle iteration is written out and standard.",
+    "note": "Same method as sketch (Rolle iteration on f minus Taylor poly minus correction). Terse but essentially complete; strict reading makes it partial."
+   }
+  },
+  {
+   "routeId": "33-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://proofwiki.org/wiki/Taylor%27s_Theorem/One_Variable",
+   "preciseLocator": "Section 'Proof' > 'Integral Version'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Integral Version: FTC base, integration by parts, explicit induction step n -> n+1 giving integral remainder. Read it. (Page's closing Lagrange step is sloppy but not part of this route; bounding step not shown but sketch only remarks it.)"
+   }
+  },
+  {
+   "routeId": "33-r3",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Taylor%27s_theorem",
+   "preciseLocator": "Section 'Taylor's theorem in complex analysis'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Wikipedia Taylor's theorem, 'Taylor's theorem in complex analysis' (last paragraphs: exact formula for R_k)",
+    "missingStep": null,
+    "note": "Cauchy integral formulas for derivatives, geometric series computation, and the exact remainder R_k(z)=(z-c)^{k+1}/(2 pi i) oint f(w)dw/((w-c)^{k+1}(w-z)) are given (index k+1 vs sketch n). Tail-sum step is stated as 'modifying slightly the computation', condensed but routine."
+   },
+   "heldBackReason": "tail-sum step is only described as a slight modification"
+  },
+  {
+   "routeId": "34-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule",
+   "preciseLocator": "Section 'Proof of L'Hopital's rule' > 'General proof'",
+   "sketchProblem": "Sketch's 'c->a under monotonicity' differs from source's inf/sup device but route (Cauchy MVT) is same.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "General proof uses Cauchy MVT with inf/sup of f'/g' bounds, both 0/0 and infinity/infinity cases, squeeze with liminf/limsup. Complete and rigorous; more careful than sketch's 'c->a' phrasing but same Cauchy-MVT method."
+   }
+  },
+  {
+   "routeId": "34-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule",
+   "preciseLocator": "Section 'Proof of L'Hopital's rule' > 'Special case'",
+   "sketchProblem": "Inverse function theorem is unnecessary/irrelevant to the sketch; the 'more general endpoint limits follow' sentence is not a proof, so the route is only the special case.",
+   "verification": null
+  },
+  {
+   "routeId": "34-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule",
+   "preciseLocator": "Section 'Other indeterminate forms' (table and x^x example)",
+   "sketchProblem": "Sketch is muddled: the technique is to take log of f^g (exp of g log f), not to apply the rule to log f and log g.",
+   "verification": null
+  },
+  {
+   "routeId": "35-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://proofwiki.org/wiki/Harmonic_Series_is_Divergent",
+   "preciseLocator": "Proof 1",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Proof 1: dyadic blocks s_k each >1/2, H_{2^m}>1+m/2, comparison. Blocks indexed 2^k..2^{k+1}-1 rather than 2^k+1..2^{k+1}; same method."
+   }
+  },
+  {
+   "routeId": "35-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://openstax.org/books/calculus-volume-2/pages/5-3-the-divergence-and-integral-tests",
+   "preciseLocator": "Section 5.3, integral-test introduction, Figure 5.12 and the displayed computation following it",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "OpenStax 5.3 intro: S_k > integral_1^{k+1} dx/x = ln(k+1) -> infinity; the inequality is justified by Figure 5.12 rectangles (picture, acceptable)."
+   }
+  },
+  {
+   "routeId": "35-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Cauchy_condensation_test",
+   "preciseLocator": "Section 'Proof' (rebracketing into power-of-two runs, both inequalities) plus section 'Examples' (harmonic series condenses to sum of 1, which diverges); also ProofWiki Harmonic_Series_is_Divergent Proof 2",
+   "sketchProblem": "Route title says 'assume convergence' but the sketch is a direct application of the test with no contradiction hypothesis; title is slightly off.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia Cauchy condensation test proof gives both inequalities by rebracketing into dyadic runs; Examples says harmonic series becomes sum of 1, diverges. ProofWiki Proof 2 only cites the test (not independent). Sketch title says 'assume convergence', but the argument is the direct condensation test."
+   }
+  },
+  {
+   "routeId": "36-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Basel_problem",
+   "preciseLocator": "Section 'Euler's approach'",
+   "sketchProblem": "The sketch's last sentence defers the product identity to sine's zeros/factorization; a source must prove that to be complete.",
+   "verification": null
+  },
+  {
+   "routeId": "36-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Basel_problem",
+   "preciseLocator": "Section 'A proof using Fourier series'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Section 'A proof using Fourier series' uses Parseval for f(x)=x with complex coefficients c_n=(-1)^n/(n i); coefficient integral result is stated without the integration by parts. Parseval cited as named result. Same method (complex vs real coefficient normalization differs)."
+   }
+  },
+  {
+   "routeId": "36-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://proofwiki.org/wiki/Mittag-Leffler_Expansion_for_Cotangent_Function",
+   "preciseLocator": "Proof 7 (Herglotz method) for the expansion; Basel_Problem Proof 10 for a limit argument with coth",
+   "sketchProblem": "Sketch text opens with a false identity ('1/n^2 = sum_{k>=n}(1/k-1/(k+1))?', which it admits is false) and then switches to a different method; the route title 'telescoping trigonometric series' does not describe the cotangent partial-fractions route, which is a separate, valid route.",
+   "verification": null
+  },
+  {
+   "routeId": "37-r1",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://proofwiki.org/wiki/Euler%27s_Formula",
+   "preciseLocator": "Euler's Formula, section 'Proof'; Euler's_Identity, section 'Proof'",
+   "sketchProblem": "Sketch says the addition law gives the formula; the source uses termwise rearrangement of series, not the addition law, which is not needed.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "ProofWiki Euler's Formula regroups cos+i sin series into the exponential series (absolute convergence cited); Euler's Identity page plugs z=pi using cos pi=-1, sin pi=0 (asserted as known values). Does NOT use the addition law as the sketch says; it is direct series regrouping. Minor wording difference only."
+   },
+   "heldBackReason": "source regroups the series directly instead of using the addition law"
+  },
+  {
+   "routeId": "37-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://arxiv.org/pdf/1803.11458",
+   "preciseLocator": "Section 3 'Euler's formula'",
+   "sketchProblem": "Sketch is muddled: it says the exponential 'solves the same ODE and initial value as cos t + i sin t', but e^{it} has y(0)=1, y'(0)=i; it solves y''=-y with these data. Needs rewording.",
+   "verification": null
+  },
+  {
+   "routeId": "37-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch concedes it depends on the prior identification of the exponential with rotation, i.e. it is not a self-contained proof route.",
+   "verification": null
+  },
+  {
+   "routeId": "38-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/De_Moivre%27s_formula",
+   "preciseLocator": "Section 'Proof by induction'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "'Proof by induction': base, step via angle-sum identities, n=0, and negative integers. Read fully."
+   }
+  },
+  {
+   "routeId": "38-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/De_Moivre%27s_formula",
+   "preciseLocator": "Section 'Relation to Euler's formula'; also ProofWiki De_Moivre%27s_Formula, Proof 1",
+   "sketchProblem": "Sketch says 'multiplicative group C^x' but the source argument is just the exponential law for integer powers; group language is not needed.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia 'Relation to Euler's formula' derives it from Euler's formula and (e^{ix})^n=e^{inx}; ProofWiki Proof 1 is the same three-line argument. Exponential law and Euler's formula are cited, not proved here, which is acceptable as standard named results."
+   }
+  },
+  {
+   "routeId": "38-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://dfcd.net/articles/demoivre.pdf",
+   "preciseLocator": "Sections 2-4",
+   "sketchProblem": "Route title 'roots-of-unity geometry' does not match the sketch, which is about composing rotations and has no roots of unity.",
+   "verification": null
+  },
+  {
+   "routeId": "39-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://kconrad.math.uconn.edu/blurbs/galoistheory/symmfunction.pdf",
+   "preciseLocator": "Conrad, Symmetric Polynomials, Section 3 'Proof of Theorem 1.5' (uses Thms 2.4, 2.10, 2.12 from Section 2)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Conrad, Symmetric Polynomials, Section 3 'Proof of Theorem 1.5' (uses Thms 2.4, 2.10, 2.12 from Section 2)",
+    "missingStep": null,
+    "note": "Full leading-term elimination: d1>=...>=dn from symmetry, exponents a_i=d_i-d_{i+1}, subtract, terminate by well-ordering. Proof of second half of Thm 2.10 left to reader (trivial). Existence only; uniqueness part of Theorem 1.5 not needed by sketch."
+   }
+  },
+  {
+   "routeId": "39-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://kconrad.math.uconn.edu/blurbs/galoistheory/symmfunction.pdf",
+   "preciseLocator": "Conrad Section 3 'Proof of Theorem 1.5'",
+   "sketchProblem": "Sketch is essentially a duplicate of 39-r1 (same leading-term descent, orbit-sum wording is cosmetic); not a distinct route.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Conrad Section 3 'Proof of Theorem 1.5'",
+    "missingStep": null,
+    "note": "Source does lexicographic elimination with termination via Thm 2.12; it does not use orbit sums, but sketch says 'orbit-sum or lexicographic', so the lexicographic alternative is matched. Essentially duplicates 39-r1."
+   }
+  },
+  {
+   "routeId": "39-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Elementary_symmetric_polynomial",
+   "preciseLocator": "Wikipedia Elementary symmetric polynomial, 'Fundamental theorem of symmetric polynomials' > 'Alternative proof'",
+   "sketchProblem": "Sketch itself says this is a restatement of route 1 in invariant-ring language, not a distinct proof.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Wikipedia Elementary symmetric polynomial, 'Fundamental theorem of symmetric polynomials' > 'Alternative proof'",
+    "missingStep": null,
+    "note": "Gives leading-term lemma for e_lambda^t, existence by induction on leading monomial, and uniqueness/algebraic independence via distinct leading monomials; isomorphism of invariant ring with polynomial ring stated in the preceding proof. Invariant-theory framing is light but the mathematics is complete."
+   }
+  },
+  {
+   "routeId": "40-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Cayley%E2%80%93Hamilton_theorem",
+   "preciseLocator": "Section 'Proofs' > 'A direct algebraic proof'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "'A direct algebraic proof': adjugate identity, B=sum t^i B_i, coefficient comparison, multiply by A^i and sum telescopes to p(A)=0; explicitly warns against treating matrix-coefficient polynomials. Complete."
+   }
+  },
+  {
+   "routeId": "40-r2",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://sites.math.rutgers.edu/~ds2005/Math%20320%20Week%2015.pdf",
+   "preciseLocator": "Lemmas 3,5,7,8 and 'Proof of Theorem 1'",
+   "sketchProblem": "Sketch mentions cyclic decomposition/rational canonical form; the source needs neither.",
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": null,
+    "missingStep": "Lemma 8 asserts the companion matrix has characteristic polynomial (-1)^k(a0+...+t^k) with only 'One can verify'; the step is not written out or cited.",
+    "note": "Read pp.1-4. Lemmas 3,5,7 and the Proof of Theorem 1 are complete and match the sketch (per-vector cyclic subspace, companion matrix, char poly of restriction divides chi_A). Source does the argument vector by vector (no cyclic decomposition/rational canonical form), which is fine. Sole gap: companion char poly."
+   }
+  },
+  {
+   "routeId": "40-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://www.math.brown.edu/streil/papers/LADW/LADW_2017-09-04.pdf",
+   "preciseLocator": "Ch.9 sec.1 'A standard proof'",
+   "sketchProblem": "Title says 'polynomial interpolation' but sketch is triangularization/generalized eigenspaces; also claims triangular argument alone insufficient, yet the flag argument is a complete proof. Sketch muddled.",
+   "verification": null
+  },
+  {
+   "routeId": "41-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem",
+   "preciseLocator": "Section 'Proofs' > 'First proof'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read the First proof: basis of Ker extended by Steinitz exchange, T(S) spans and is independent via relation in Ker, count k+(n-k). Matches sketch exactly."
+   }
+  },
+  {
+   "routeId": "41-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem",
+   "preciseLocator": "Section 'Reformulations and generalizations'",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "42-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.maths.tcd.ie/~vdots/teaching/files/MA1112-1819/1112L3handout.pdf",
+   "preciseLocator": "Theorem 1 and proof",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Theorem 1 proof read in full: basis of intersection extended both ways, spanning and independence shown, count p+q+r. Matches sketch."
+   }
+  },
+  {
+   "routeId": "42-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "",
+   "preciseLocator": "",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "42-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "",
+   "preciseLocator": "",
+   "sketchProblem": "Sketch itself says it is not distinct from route 2; should be merged or dropped.",
+   "verification": null
+  },
+  {
+   "routeId": "43-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Spectral_theorem",
+   "preciseLocator": "Hermitian case theorem and its proof sketch, near the start",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "44-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/1210.7958",
+   "preciseLocator": "Lemma 11.30 and Corollary 11.31",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "44-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "",
+   "preciseLocator": "",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "44-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "",
+   "preciseLocator": "",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "45-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "",
+   "preciseLocator": "",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "45-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "",
+   "preciseLocator": "",
+   "sketchProblem": "Sketch admits it is the group-action method, not a separate route.",
+   "verification": null
+  },
+  {
+   "routeId": "46-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Cauchy%27s_theorem_(group_theory)",
+   "preciseLocator": "Section 'Statement and proof', Proof 2",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Proof 2 read: C_p rotating p-tuples with product e, |X|=|G|^(p-1), orbits sizes 1 or p, fixed tuples (x,..,x) with x^p=e, includes e. Complete and same method. Heading is 'Proof 2' under the Cauchy's theorem proof section."
+   }
+  },
+  {
+   "routeId": "46-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Cauchy%27s_theorem_(group_theory)",
+   "preciseLocator": "Section 'Statement and proof', Proof 1",
+   "sketchProblem": "Sketch wording is garbled (it says classes 'divisible by p can be removed'); the actual argument picks a class whose size is NOT divisible by p.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Proof 1 read: abelian case by induction via quotient, general case via center + class equation and centralizer of a noncentral class of size not divisible by p. Complete; sketch wording is garbled but describes this argument."
+   }
+  },
+  {
+   "routeId": "46-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Route is circular/dependent: it assumes Sylow I, which standard texts prove using Cauchy; also 'conjugation orbits on p-subgroups' is not what the described argument actually uses.",
+   "verification": null
+  },
+  {
+   "routeId": "49-r1",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://people.reed.edu/~jerry/361/lectures/lec08.pdf",
+   "preciseLocator": "Lemma 3.2 (Gauss's Lemma) with proof; Section 7, Proposition 7.1 (lattice point counting)",
+   "sketchProblem": "Sketch says N_p+N_q equals the product, but N is the Gauss-lemma count; the identity actually holds for the floor sums S, which agree with N mod 2.",
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Lemma 3.2 with proof (p.5); Proposition 7.1 (pp.11-12)",
+    "missingStep": "Final identification that S(p,q)+S(q,p) equals the lattice-point count of the (p-1)/2 by (q-1)/2 box (no lattice point on the line, two complementary triangles) is only asserted with Figure 2, not argued.",
+    "note": "Gauss's Lemma proof and the parity computation of sum floor(qi/p) are fully written. Source uses parity of the floor sum rather than counting residues N directly, a minor variant. Euler's criterion is cited."
+   }
+  },
+  {
+   "routeId": "49-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Proofs_of_quadratic_reciprocity",
+   "preciseLocator": "Section 'Eisenstein's proof' with subsection 'Proof of Eisenstein's lemma'",
+   "sketchProblem": "Sketch says regions are counted by 'Gauss-lemma exponents'; the source uses Eisenstein's lemma (floor sums), not Gauss's lemma directly.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read Eisenstein's proof and its lemma proof: lemma proved, parity-of-columns argument, no lattice points on the line since gcd(p,q)=1, rectangle count. Uses Eisenstein's lemma (floor sum over even u, proved) rather than Gauss's lemma exponent, an equivalent variant. Euler's criterion cited."
+   }
+  },
+  {
+   "routeId": "49-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/2208.07242",
+   "preciseLocator": "Appendix A.5 (eq A.5.1-A.5.5) and A.6 (A.6.1-A.6.5), pp.289-290",
+   "sketchProblem": "Sketch conflates Gauss sum with 'Jacobi sums' and defines G as sum of e^(2 pi i x^2/p); the source uses sum (k|p) zeta^k (equal by standard identity, not shown). No Jacobi sums are involved.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Appendix A.5 (eq A.5.1-A.5.5) and A.6 (A.6.1-A.6.5), pp.289-290",
+    "missingStep": null,
+    "note": "Read both: g^2=(-1)^((p-1)/2)p proved, then g^(q-1) computed two ways with g^q = g_q mod q in Z[zeta_p]. Complete; final step (congruence of +-1 mod q implies equality) is left implicit but trivial. Source sum is over Legendre symbol times zeta^k, equivalent to the quadratic Gauss sum in the sketch."
+   }
+  },
+  {
+   "routeId": "50-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.utoronto.ca/gscott/oct7_2015.pdf",
+   "preciseLocator": "Theorem (unique factorization), Lemma, and their proofs",
+   "sketchProblem": "Sketch says gcd is a linear combination via repeated division; none of the sources read prove that for this route in full.",
+   "verification": null
+  },
+  {
+   "routeId": "50-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.utoronto.ca/gscott/oct7_2015.pdf",
+   "preciseLocator": "Lemma and proof of unique factorization",
+   "sketchProblem": "Sketch phrase 'In any UFD, every nonzero nonunit factors...' is garbled; it should say 'in a PID'.",
+   "verification": null
+  },
+  {
+   "routeId": "50-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is internally inconsistent: it admits algebraic closure is unnecessary, so the route is not a distinct proof (degenerates to the degree-induction route); root splitting yields only linear factors over the closure, not irreducibles over F.",
+   "verification": null
+  },
+  {
+   "routeId": "51-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://people.seas.harvard.edu/~madhusudan/courses/Fall2017/lecture-notes/L17.pdf",
+   "preciseLocator": "Section 1, Euclidean Algorithm for Polynomials",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "51-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.utoronto.ca/gscott/oct7_2015.pdf",
+   "preciseLocator": "Proof of Lemma (ideal I=(f,p)=(r))",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "54-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://users.math.msu.edu/users/hensh/courses/482/spring25/handouts/BinomialInversion.pdf",
+   "preciseLocator": "Proposition 1 and Theorem 2",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "55-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://archive.math.arizona.edu/faris/combinatoricsweb/graph.pdf",
+   "preciseLocator": "Section 2 (Rooted trees, eqs 6-8) and Section 5 (Appendix: Lagrange inversion, eqs 28-35)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read Section 2 (w=z e^w, Lagrange inversion gives n^(n-1)/n!, divide by n) and Appendix Sec.5 (residue-based proof of Lagrange inversion, eqs 28-35). Complete."
+   }
+  },
+  {
+   "routeId": "58-r1",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch conflates Euler's formula V-E+F=2-2g (needs 3F=2E only for sphere-type counts, not general triangulated genus g surface where 3F=2E holds but V-E+F=2-2g is the theorem itself) with an invariance claim; circular as written.",
+   "verification": null
+  },
+  {
+   "routeId": "58-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "59-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch admits it is not independent of the Kempe argument and names no concrete reducible configuration; the contraction of two nonadjacent neighbours of a degree-5 vertex is the only coherent version.",
+   "verification": null
+  },
+  {
+   "routeId": "60-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://math.mit.edu/~sheffield/2017600/Lecture29.pdf",
+   "preciseLocator": "Slides 'Markov and Chebyshev' (with proofs) and 'Proof of weak law of large numbers in finite variance case'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Slides prove Markov, Chebyshev, then Var(A_n)=sigma^2/n and P(|A_n-mu|>=eps)<=sigma^2/(n eps^2) -> 0. Same method."
+   }
+  },
+  {
+   "routeId": "60-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Route proves a strong-law variant, not the weak law as stated; belongs to strong law of large numbers, not this result.",
+   "verification": null
+  },
+  {
+   "routeId": "61-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/2602.06234",
+   "preciseLocator": "Sections 1, 3 (Lemma 3.1, 3.2, Thm 3.3 Esseen smoothing), 4 (Lemma 4.1-4.3)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "62-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://uregina.ca/~kozdron/Teaching/Regina/451Fall13/Handouts/451lecture10.pdf",
+   "preciseLocator": "Theorem 10.4 (p.102) using Theorem 10.2 (p.101) and Exercise 10.3",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Theorem 10.4 (p.102) using Theorem 10.2 (p.101) and Exercise 10.3",
+    "missingStep": null,
+    "note": "Proof read: B_n decreasing, continuity from above, countable subadditivity, tail of convergent series. Continuity from above is only an exercise (Ex 10.3, immediate from 10.2 by complements) but is a standard named result, acceptable."
+   }
+  },
+  {
+   "routeId": "63-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://home.ttic.edu/~dmcallester/ttic101-07/lectures/jensen/jensen.pdf",
+   "preciseLocator": "Theorem 1 and its induction proof",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "63-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://www.cs.cornell.edu/~sridharan/concentration.pdf",
+   "preciseLocator": "Jensen section",
+   "sketchProblem": "Sketch itself says it is a restatement of finite Jensen, not an independent route.",
+   "verification": null
+  },
+  {
+   "routeId": "64-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Young%27s_inequality_for_products",
+   "preciseLocator": "Section 'Generalization using Fenchel-Legendre transforms'",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "64-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Route is circular: the duality formula for the L^p norm needs Hölder for the upper bound.",
+   "verification": null
+  },
+  {
+   "routeId": "65-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.uh.edu/~bgb/Courses/Math7320F16/Math7320-20161027a.pdf",
+   "preciseLocator": "Theorem 3.0.6(1)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "66-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://arxiv.org/pdf/2512.01050",
+   "preciseLocator": "Section 1 (Picard-Lindelof)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "67-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://users.math.msu.edu/users/shapiro/Pubvit/Downloads/ArzNotes/ArzNotes.pdf",
+   "preciseLocator": "Section 2, Steps I-III",
+   "sketchProblem": "Sketch is vacuous: 'compactness in C(K)' is the theorem itself, not a distinct route.",
+   "verification": null
+  },
+  {
+   "routeId": "68-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://web.math.utk.edu/~freire/teaching/m561f22/Stone_Weierstrass_proof.pdf",
+   "preciseLocator": "'Proof of the Weierstrass approximation theorem' with Lemma 3 (pp.3-4)",
+   "sketchProblem": "Sketch proves Weierstrass on [0,1], not Stone-Weierstrass in general; route title says interval case.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "'Proof of the Weierstrass approximation theorem' with Lemma 3 (pp.3-4)",
+    "missingStep": null,
+    "note": "Bernstein operator, moments B_n[1],B_n[x],B_n[x^2], modulus-of-continuity split with second-moment (Chebyshev-type) tail bound. Same method though not phrased probabilistically (no S_n). Minor slip: the chain-of-delta-segments count needs a ceiling, so the constant in Lemma 3 is slightly loose; the theorem still follows."
+   }
+  },
+  {
+   "routeId": "69-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.utoronto.ca/almut/MAT1001/Brezis-Chap1(Hahn-Banach).pdf",
+   "preciseLocator": "Lemma 1.2, Lemma 1.3 and Theorem 1.6 with proof (Brezis ch.1, pp.6-7)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Lemma 1.2, Lemma 1.3 and Theorem 1.6 with proof (Brezis ch.1, pp.6-7)",
+    "missingStep": null,
+    "note": "Gauge properties (9),(10), subadditivity proved; Lemma 1.3 applies Theorem 1.1 (analytic Hahn-Banach, cited named result) to g(tx0)=t; Theorem 1.6 derived. Normed-space setting, not general locally convex; sketch's parenthetical is not covered but the main route is."
+   }
+  },
+  {
+   "routeId": "71-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.impan.pl/~tkoch/FA_lecturenotes/lecture8.pdf",
+   "preciseLocator": "Theorem 5.7 (Riesz representation) with Corollary 5.6 and Thm 5.5 just before",
+   "sketchProblem": "Sketch's polarization remark is irrelevant to the construction (sketch itself says so); sketch says 'choose unit u spanning M-perp' whereas the source only picks a unit z in M-perp (no need for dimension one).",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Theorem 5.7 proof read: M=ker, unit z in M-perp (nonzero by Cor 5.6), decompose x, y=conj(phi(z)) z. Relies on projection theorem 5.5 (proved in notes, using Prop 5.4 minimal-norm element in closed convex set). Matches sketch."
+   }
+  },
+  {
+   "routeId": "72-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.impan.pl/~tkoch/FA_lecturenotes/lecture12.pdf",
+   "preciseLocator": "Theorem 7.5(c), final paragraphs of its proof (quotient X/ker Phi)",
+   "sketchProblem": "Sketch's direction (bounded inverse of X/kerT -> Y gives openness) is reversed relative to sources, where openness comes first.",
+   "verification": null
+  },
+  {
+   "routeId": "72-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.imsc.res.in/~kesh/trinity.pdf",
+   "preciseLocator": "Theorem 2.1, proof of (i)=>(ii) only (pp.3-4)",
+   "sketchProblem": "Sketch applies closed graph to T^-1 of a bijection; source applies it to the quotient section S, which also covers the bijective case.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Theorem 2.1, proof of (i)=>(ii) only (pp.3-4)",
+    "missingStep": null,
+    "note": "Closed graph => open mapping via S: W -> V/ker T proved with closed graph check; final 'easily conclude' open sets is standard. The (ii)=>(iii) step in the claimed locator is the wrong direction for deriving open mapping; drop it. Sketch's wording about T^{-1} of a bijection is looser than the quotient argument actually given."
+   }
+  },
+  {
+   "routeId": "73-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is vague and not a recognizable proof (Baire/series argument not specified); it does not track any standard direct proof.",
+   "verification": null
+  },
+  {
+   "routeId": "73-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.imsc.res.in/~kesh/trinity.pdf",
+   "preciseLocator": "Theorem 3.1 proof of (v)=>(i) and Remark 3.1 (Hilbert spaces); also arXiv 1601.02600 (Ramm) Theorems 1-3",
+   "sketchProblem": "Sketch's caveat is basically right (needs Hilbert/reflexive target); it also wrongly suggests the route is only incomplete, whereas Hilbert-space version is fully valid.",
+   "verification": null
+  },
+  {
+   "routeId": "74-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://mtaylor.web.unc.edu/wp-content/uploads/sites/16915/2018/04/invfn.pdf",
+   "preciseLocator": "Theorem 1, Proposition 2, Newton iteration (13)-(31), Remark 2",
+   "sketchProblem": "Sketch says 'Lipschitz derivative' and 'contraction'; source needs only C^1 (continuity of Df) and shows linear convergence of residuals, not a contraction map. C^k regularity is sketched in two lines in the introduction.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read in full. Complete proof via Newton iteration x_{k+1}=x_k+Df(x_k)^{-1}(y-f(x_k)) with explicit residual estimates (21)-(31); injectivity from Prop 2; C^k regularity of the inverse via DG=DF^{-1}∘G (brief inductive remark, standard). Uses only C^1 plus Df-I small; Lipschitz/C^2 quadratic convergence only in Remark 1. Locator accurate."
+   }
+  },
+  {
+   "routeId": "74-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Degree theory presupposes regular-value/IFT arguments (possibly circular); sketch is also thin on injectivity.",
+   "verification": null
+  },
+  {
+   "routeId": "75-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://cims.nyu.edu/~yangd/MATH-GA1002Spring2024/lectures/MultivariableAnalysisLecture20240304.pdf",
+   "preciseLocator": "Slides 'Proof of Implicit Function Theorem' and 'Normal Form for Submersion'",
+   "sketchProblem": "Sketch is circular: submersion theorem is usually proved from IFT (as the sketch itself admits), so it is not an independent route.",
+   "verification": null
+  },
+  {
+   "routeId": "76-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://math.nyu.edu/~dy444/papers/exterior_derivative.pdf",
+   "preciseLocator": "Section 11, Theorem 2 (simplex) and Corollary 3 (triangulated manifold)",
+   "sketchProblem": "Route title says singular homology/cohomology pairing but the sketch is a triangulation argument, which mismatches the title.",
+   "verification": null
+  },
+  {
+   "routeId": "77-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/fc757ef1e527abe8ac1154d78b084637_MIT18_02SC_notes_67.pdf",
+   "preciseLocator": "whole note (1 page)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "77-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Green%27s_theorem",
+   "preciseLocator": "Section 'Relationship to Stokes' theorem' and 'Relationship to the divergence theorem'",
+   "sketchProblem": "Sketch conflates Green and 3D divergence; only Green is derived from Stokes in a free source I read.",
+   "verification": null
+  },
+  {
+   "routeId": "77-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch proves only special cases, so it is not a proof route for the stated result.",
+   "verification": null
+  },
+  {
+   "routeId": "79-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is invalid as stated (it admits a bounded common bound does not force constancy); with Cauchy estimates it becomes route 1.",
+   "verification": null
+  },
+  {
+   "routeId": "80-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch itself concedes it is a dependent/circular derivation; likely not a distinct foundational route.",
+   "verification": null
+  },
+  {
+   "routeId": "83-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.brown.edu/~res/M1410/polygon.pdf",
+   "preciseLocator": "Whole note (Lemmas 0.1-0.3 and sides-of-a-loop argument)",
+   "sketchProblem": "Missing: polygonal approximation of an arbitrary Jordan curve, winding-number step, and compactness passage to the limit.",
+   "verification": null
+  },
+  {
+   "routeId": "83-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://www.math.brown.edu/~res/M1410/polygon.pdf",
+   "preciseLocator": "Whole note",
+   "sketchProblem": "Sketch (Euler/faces) is not what standard free sources do; also it correctly notes extension to general curves needs separate approximation (not in the source).",
+   "verification": null
+  },
+  {
+   "routeId": "85-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch conflates cases: Dickson's lemma + division gives only the field-coefficient case; the Noetherian-R claim is not delivered by the described argument as written.",
+   "verification": null
+  },
+  {
+   "routeId": "86-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2015/ec341c7a2524e5dba7c3e939f322613a_MIT18_725F15_notes.pdf",
+   "preciseLocator": "Lecture 3, Theorem 3.2 with Lemma 3 and its proof",
+   "sketchProblem": "Source does not cover finite fields; the route's statement should carry the infinite-field qualifier (the sketch does).",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. Lemma 3 gives linear change making P monic in x_n (via nonzero polynomial nonvanishing on infinite field, proved by induction claim only mentioned); induction on number of generators; finiteness over subring transitive. Same method as sketch (finite module rather than integral, equivalent). Locator correct."
+   }
+  },
+  {
+   "routeId": "86-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch admits it yields only integrality over a localization, i.e. is not a full normalization proof; Makdonald Thm 14.19 (localize at a, A_a finite over A_a[x]) is the nearest but is induction on generators, not transcendence bases.",
+   "verification": null
+  },
+  {
+   "routeId": "86-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://smakdonald.github.io/Homological-Algebra/sec-noether-normalizations.html",
+   "preciseLocator": "Lemma 14.18 and Theorem 14.21 (graded, infinite field)",
+   "sketchProblem": "Sketch describes a dimension-dropping quotient argument; source uses the generator-induction proof instead. The sketch's infinite-k hypothesis is stated, so the earlier 'unrestricted statement' mismatch objection does not apply to this route.",
+   "verification": null
+  },
+  {
+   "routeId": "88-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://proofwiki.org/wiki/Primitive_Element_Theorem",
+   "preciseLocator": "Proof section",
+   "sketchProblem": "Uses a generic element alpha rather than alpha+c*beta (equivalent); finite-field step missing in the free source. Page is tagged 'Tidy' by ProofWiki.",
+   "verification": null
+  },
+  {
+   "routeId": "88-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.3.html",
+   "preciseLocator": "page",
+   "sketchProblem": "Sketch says it only treats finite fields; and its claim 'exponent = order' step is not a source-derived text.",
+   "verification": null
+  },
+  {
+   "routeId": "89-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://loss.math.gatech.edu/16FALLTEA/NOTES/minmax.pdf",
+   "preciseLocator": "Theorems 0.1, 0.2",
+   "sketchProblem": "Missing: the existence step (attainment of sup by compactness, iteration on orthogonal complements) as a proof of the spectral theorem.",
+   "verification": null
+  },
+  {
+   "routeId": "90-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/2112.07821",
+   "preciseLocator": "Prop 3.10, Lemmas 3.13-3.15, 3.24, Thm 3.25 (compactness), Thm 4.1 (Sec 3.2 and 4)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Prop 3.10, Lemmas 3.13-3.15, 3.24, Thm 3.25 (compactness), Thm 4.1 (Sec 3.2 and 4)",
+    "missingStep": null,
+    "note": "Read. Ultrafilters, U_x basis, clopen, Hausdorff, compactness via FIP + ultrafilter extension (Zorn, Lemma 3.13), then Thm 4.1 gives B ≅ Clop(U(B)) with injectivity and surjectivity (Cor 3.28). Full argument; 'straightforward' homomorphism check follows from Lemma 3.24. Locator note: Note 3.10 is a Proposition, not a Lemma"
+   }
+  },
+  {
+   "routeId": "90-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/2112.07821",
+   "preciseLocator": "Corollary 3.28 with Theorem 3.25 and Theorem 4.1",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. Cor 3.28 proves exactly: clopen C is open so union of U_x, compact so finite union, equals U_{x1+...+xn}. Injectivity in Thm 4.1 by separating ultrafilter. Duality direction also in Thm 4.3. Complete."
+   }
+  },
+  {
+   "routeId": "90-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/2112.07821",
+   "preciseLocator": "Lemma 3.13 (Zorn), Lemma 3.15, Theorem 3.25",
+   "sketchProblem": "Route is not independent of r1 (sketch says so); only a labelling of the same proof. Could be treated as complete if the extension lemma counts as the BPIT.",
+   "verification": null
+  },
+  {
+   "routeId": "91-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/math/0202285",
+   "preciseLocator": "Prop 3.8 (fold to core graph), Lemma 6.1, Cor 6.8",
+   "sketchProblem": "Missing: arbitrary subgroups of arbitrary free groups (folding handles only the f.g. case); Lemma 6.1 itself applies to any folded graph, so the infinite case needs the coset-graph version, not folding.",
+   "verification": null
+  },
+  {
+   "routeId": "92-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://abel.math.harvard.edu/archive/122_fall_05/Homework/Problem%20Set%2010%20Solutions.pdf",
+   "preciseLocator": "Problem 2, first proof (a^m=a^n, m>n)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. First proof of Problem 2 is exactly the power-repeat/cancellation argument giving a^{m-n}=1 hence inverse a^{m-n-1}. Complete and short."
+   }
+  },
+  {
+   "routeId": "92-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is self-contradictory ('X-a?') and says the route is a duplicate of 92-r1; it is not a distinct route and should be flagged not-a-route/near-duplicate.",
+   "verification": null
+  },
+  {
+   "routeId": "96-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://pims.math.ca/~hoek/notes/dvi90/Pnthm.pdf",
+   "preciseLocator": "Para. 1 (derivation of PNT from Theorem I; Mertens/Deligne non-vanishing on Re s=1), Para. 2 and Appendices A, B (Theorem I via Lemmas A, B)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "97-r1",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://math.cuni.cz/dl/klazar/ln_antcI.pdf",
+   "preciseLocator": "Ch.1 Sec 1.2 (Props 1.2.3-1.2.8, proof of Dirichlet's theorem) and Sec 1.3 (non-vanishing of L(1,chi), Thm 1.2.6)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Ch.1 Sec 1.2: Props 1.2.5 (Euler product), 1.2.7, 1.2.8, proof of Dirichlet's theorem; non-vanishing of L(1,chi): Cor 1.3.3 (complex chars, via Prop 1.3.1-1.3.2) and Prop 1.3.5 with Lemma 1.3.4 (real chars) in Sec 1.3",
+    "missingStep": null,
+    "note": "Read. Complete analytic proof with all steps written (log of L, orthogonality identity, boundedness vs divergence, product of L-functions >= 1, real-character case via Lemma 1.3.4). Caveat: the final step shows the class sum is unbounded (infinitely many primes), not the asymptotic density 1/phi(q) stated in the sketch, though it follows from the same identity. Locator note: Theorem 1.2.6 is only stated in 1.2; its proof is Cor 1.3.3 + Prop 1.3.5 in Sec 1.3"
+   },
+   "heldBackReason": "source proves infinitely many primes, not the density in the sketch"
+  },
+  {
+   "routeId": "97-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.columbia.edu/~chaoli/docs/ClassFieldTheory.html",
+   "preciseLocator": "Section 'Chebotarev's density theorem', Theorem 34 and surrounding text",
+   "sketchProblem": "Route is a deep re-derivation of Dirichlet from Chebotarev/CFT, which itself uses Dirichlet-type L-function nonvanishing; arguably circular as an independent proof.",
+   "verification": null
+  },
+  {
+   "routeId": "98-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.miami.edu/~ec/book/ch06.pdf",
+   "preciseLocator": "Sections 'Euclidean Domains' (Thm 3 Smith form, Thm 5, Lemma, Thm 6), 'Jordan Blocks' and 'Jordan Canonical Form' (Thms 1-4)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. Smith normal form proved (Thm 3), module structure Thm 5, primary decomposition Thm 6 via CRT, V as F[x]-module Thm 1, basis 1,(x-lam),... gives Jordan block, Thm 4 gives JCF when char poly splits. Block-matrix computation is stated rather than expanded (routine). Complete."
+   }
+  },
+  {
+   "routeId": "98-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.math.mcgill.ca/labute/courses/247B/jordan1.pdf (with jordan2.pdf)",
+   "preciseLocator": "Part 1 Lemmas 2-4 and block-count Theorem 1; Part 2 proof of theorem (algorithm)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "100-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is not a proof route: it admits it invokes Banach-Steinhaus indirectly and reflexivity is not needed. Flag dependent / not-a-route.",
+   "verification": null
+  },
+  {
+   "routeId": "102-r1",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch looks wrong: graph regularity lemma plus counting lemma only yields k=3 (Roth/triangle removal); Szemeredi's original proof uses a different combinatorial argument for all k, and the sketch conflates them with van der Waerden structure.",
+   "verification": null
+  },
+  {
+   "routeId": "102-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/math/0604456",
+   "preciseLocator": "Section 4, Furstenberg correspondence principle and 'Proof of Szemeredi's theorem assuming Theorem 4.5'",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "102-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "102-r4",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/math/0503572",
+   "preciseLocator": "Intro, Theorem 1.13 / Corollary 1.14 and paragraph after it",
+   "sketchProblem": "Sketch conflates two routes (hypergraph removal vs density Hales-Jewett); should be split.",
+   "verification": null
+  },
+  {
+   "routeId": "103-r1",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://web.stanford.edu/%7Elindrew/hooklength.pdf",
+   "preciseLocator": "Sections 2-5: recurrence f=sum f_{lambda-v}; Prop 3.2 / Lemma 4.2 (lattice-path weights); Lemma 5.1 (hook walks); end of Sec 5 (sum over u and corners gives n)",
+   "sketchProblem": "Direction is wrong: in the Greene-Nijenhuis-Wilf walk one starts at a uniformly random cell and jumps to a uniform cell in its hook strictly to the RIGHT or BELOW, ending at a corner; sketch says 'from an outside corner ... left or above'.",
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": null,
+    "missingStep": "Justification that hook-walk transition weights have the grid-label form 1/(x_i+y_j) (rectangle law h(a)+h(d)=h(b)+h(c) and Fact 3.1 only asserted) and that Lemma 5.1 (hook walks) follows from lattice-path sum ('expand the product!', no detail)",
+    "note": "Read. Overall structure of GNW proof is right and the main induction, lattice-path Prop 3.2 and final double-counting are written out, but the key bridging steps are terse/asserted in lecture-note style. Also the sketch's description (start at an outside corner, move left/above) differs from the source (start at uniformly random cell u, move to a uniformly random cell to the right of or below it in the hook, stop at a corner), so the sketch is not literally the same walk."
+   }
+  },
+  {
+   "routeId": "103-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/0704.3381",
+   "preciseLocator": "Section 3.1, Theorem 6 and Proposition 7",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "103-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Hook_length_formula",
+   "preciseLocator": "Section 'Proof of hook formula using Frobenius formula' (after 'Connection to representations of the symmetric group')",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "103-r4",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://sites.math.washington.edu/~billey/classes/561.fall.2019/past.articles/glass.ng.2004.pdf",
+   "preciseLocator": "pp. 700-703: recursion (i)-(iii), Theorem 1, Lemma 2, Corollary 3",
+   "sketchProblem": "Title says 'bijective/combinatorial' but the sketch body is a recurrence-verification proof (which is what the source does); no bijection is involved.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read (JSTOR scan; some formulas garbled in text extraction). Proof is exactly: remove largest entry gives f=sum f_{lambda-corner}, base case, verify product formula satisfies the recursion; verification is done analytically via residue theorem (Lemma 2), not bijectively, so the route title 'bijective/combinatorial' is a misnomer though the sketch body matches. Corollary 3 equates formula (2) with the hook product (stated as 'easily seen')."
+   },
+   "heldBackReason": "source checks the recurrence by residues, not by a bijection"
+  },
+  {
+   "routeId": "104-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://arxiv.org/pdf/2210.09239",
+   "preciseLocator": "Theorem 4.1 and its proof (Sec 4.2), relying on Theorem 3.2",
+   "sketchProblem": "As stated the sketch cannot work for first-order logic: a point in a product of truth-value spaces only gives a propositional valuation, not a structure. A Henkin/Skolem step (add witnesses, reduce to propositional compactness) is essential and absent.",
+   "verification": null
+  },
+  {
+   "routeId": "105-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Desargues%27s_theorem",
+   "preciseLocator": "Section 'Proof of Desargues's theorem' > 'Three-dimensional proof'",
+   "sketchProblem": "Wording slightly garbled: concurrency of vertex joins is the hypothesis (used to get coplanarity), not a conclusion.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. Non-coplanar case fully argued (coplanarity from concurrency, two planes meet in a line containing the three points). Coplanar case reduced by lifting out of the plane and projecting back in a single sentence (not detailed), consistent with the sketch's stated assumption of embedding in 3-space. Page is a secondary source."
+   }
+  },
+  {
+   "routeId": "105-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://planetmath.org/ProofofDesarguesTheorem",
+   "preciseLocator": "whole entry",
+   "sketchProblem": "Route title ('derive from Pappus') does not match the sketch body (coordinatization over a division ring); Pappus does not imply Desargues, only the reverse in the Pappian-from-commutative sense; the title belongs to a different route. Also determinants over non-commutative division rings need care.",
+   "verification": null
+  },
+  {
+   "routeId": "106-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://kconrad.math.uconn.edu/math5211s13/handouts/cyclotomic.pdf",
+   "preciseLocator": "Theorem 5.2 (Eisenstein for Phi_{p^r}(X+1)); general n proved in Sec 3 by a different (Frobenius/reduction mod p) argument",
+   "sketchProblem": "Sketch itself admits only prime powers are covered, so it is not a proof of the stated result; Phi_{p^k}=(x^{p^k}-1)/(x^{p^{k-1}}-1) is stated with p^{k} slip-free but general n is missing.",
+   "verification": null
+  },
+  {
+   "routeId": "109-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.uni-hamburg.de/home/schacht/lnotes/Ramsey.pdf",
+   "preciseLocator": "Section 2.3, Second proof of Theorem 2.2 (pp. 13-14); also First proof (Erdos-Szekeres) same section",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. Second proof (Erdos-Rado style, induction on k) selects x_1..x_t with homogeneous neighbourhoods via Ramsey for k-1, then pigeonhole on colours of x_i (k=1 case), and Y+K is monochromatic. Final checks are said to be 'easy to verify/check' but are straightforward (I verified them). Sketch's 'uniformity r' corresponds to k in source. First proof (Erdos-Szekeres) also in same section."
+   }
+  },
+  {
+   "routeId": "109-r2",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.uni-hamburg.de/home/schacht/lnotes/Ramsey.pdf",
+   "preciseLocator": "Section 2.2.2.2 'Reduction to k=1' (pp. 11-12), Erdos-Rado proof for graphs with r colours",
+   "sketchProblem": "The recurrence 'R_k(r) <= kR_k(r-1)+...' in the sketch is garbled; the actual bound is n=r^t with t from the pigeonhole function.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. Full Erdos-Rado proof for graphs with r colours: n=r^t, t=R^(1)(l_i-1), greedy choice of x_i, X_i, then pigeonhole. Covers only k=2 (hypergraph versions are in Sec 2.3). The sketch's recursion remark R_k(r)<=kR_k(r-1)+... belongs rather to the 2.2.2.1 induction (n=2+sum R(...)-r), but the construction described is exactly 2.2.2.2."
+   },
+   "heldBackReason": "source covers only the two-uniform (graph) case"
+  },
+  {
+   "routeId": "109-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.ias.edu/%7Elurie/155notes/lecture26.pdf",
+   "preciseLocator": "Theorem 5 (infinite Ramsey) and Theorem 7 with the compactness/product-space remark at the end",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. Thm 5 proved by induction on n; Thm 7 deduced by contradiction via inverse limit of nonempty finite sets Z0(k) (Konig-type argument) and also reformulated with Tychonoff. Complete and matches sketch."
+   }
+  },
+  {
+   "routeId": "110-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Szekeres_theorem",
+   "preciseLocator": "Section 'Proofs' > 'Pigeonhole principle'",
+   "sketchProblem": "Route title says poset chain/antichain, but the sketch body is the Seidenberg rank-pair argument; the title belongs to the Dilworth/Mirsky route (110-r3).",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. The text proves it by labelling each term with (a_i,b_i) and noting labels are distinct, at most (r-1)(s-1) labels: exactly the sketch body. Note the route title 'poset-chain/antichain' matches the Dilworth/Mirsky subsection instead, which delegates to Mirsky/Dilworth (named standard results); the sketch body itself is the pigeonhole proof."
+   }
+  },
+  {
+   "routeId": "110-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Szekeres_theorem",
+   "preciseLocator": "Section 'Proofs' > 'Dilworth's theorem' and 'Application of the Robinson-Schensted correspondence'",
+   "sketchProblem": "Sketch says 'Dilworth/Mirsky or insertion/Young-diagram' as alternatives, so the route is not a single argument.",
+   "verification": null
+  },
+  {
+   "routeId": "111-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Divergence_of_the_sum_of_the_reciprocals_of_the_primes",
+   "preciseLocator": "Section 'Erdos's proof by upper and lower estimates'",
+   "sketchProblem": "Minor variant: the source bounds smooth numbers by 2^k sqrt(x) rather than O((log x)^k); same argument.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read. Same contradiction argument. Difference: Wikipedia bounds numbers with only primes <= p_k by 2^k*sqrt(x) (square-free times square), not O((log x)^k); both are o(x) so the argument is equivalent. Lower estimate sum_{i>k} x/p_i < x/2 as in the sketch."
+   }
+  },
+  {
+   "routeId": "111-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://proofwiki.org/wiki/Sum_of_Reciprocals_of_Primes_is_Divergent/Proof_2",
+   "preciseLocator": "Proof 2",
+   "sketchProblem": "Sketch's O(sum 1/p^2) estimate is replaced in the source by ln(1-x)>=-2x; also ProofWiki has a minor ln(p_n+1)=ln p_n slip.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read ProofWiki Proof 2 (Euler/Simmons): finite product expands via FTA to reciprocals of integers with prime factors <= p_n, dominates sum_{k<=p_n}1/k > ln p_n, then ln(1-x)>-2x on [-1/2,0] gives sum 1/p_k > (1/2) ln ln p_n. Same method as sketch (stated as a direct lower bound rather than by contradiction)."
+   }
+  },
+  {
+   "routeId": "112-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Wallis_product",
+   "preciseLocator": "Section 'Proof using integration'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia 'Proof using integration' does integration by parts, recurrence I(n)=((n-1)/n)I(n-2), I(0), I(1), monotonicity squeeze, product. It uses the interval [0,pi] (I(0)=pi, I(1)=2), not [0,pi/2]; equivalent by symmetry, so the sketch's constants differ but the route is identical."
+   }
+  },
+  {
+   "routeId": "112-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch itself flags circularity with Stirling's constant.",
+   "verification": null
+  },
+  {
+   "routeId": "112-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "114-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Riemann_mapping_theorem",
+   "preciseLocator": "Section 'Proof via normal families' > 'Riemann mapping theorem'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Read in full: family nonempty (square root branch + Moebius), Montel normality, Hurwitz (limit univalent or constant), extremal f'(a), contradiction via Moebius+square root. Only the final derivative identity F'(a)=f'(a)(sqrt|c|+1/sqrt|c|)/2 is called 'a routine computation'; the Schwarz-lemma/simple-connectivity facts are proved earlier in the section."
+   }
+  },
+  {
+   "routeId": "114-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Riemann_mapping_theorem",
+   "preciseLocator": "Section 'Sketch proof via Dirichlet problem'",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "115-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Riemann_mapping_theorem",
+   "preciseLocator": "Section 'Proof via normal families' (Montel's theorem)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "115-r3",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Riemann_mapping_theorem",
+   "preciseLocator": "Section 'Proof via normal families', Weierstrass convergence theorem and Montel's theorem paragraphs",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia gives Weierstrass convergence theorem (via Morera/Cauchy), Cauchy-based derivative bound for locally bounded families (one line, 'differentiating the Cauchy integral formula'), countable dense subset + diagonal argument, equicontinuity -> uniformly Cauchy on compacta. The proof text is slightly garbled (typos) and does not explicitly say 'the limit is holomorphic by Weierstrass' inside the Montel paragraph, but the theorem is stated just above."
+   },
+   "heldBackReason": "Cauchy derivative bound is a one-line remark"
+  },
+  {
+   "routeId": "116-r1",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is vague: 'standard growth estimates' suppressed, no concrete route to verify.",
+   "verification": null
+  },
+  {
+   "routeId": "116-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "117-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "118-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Gradient_theorem",
+   "preciseLocator": "Section 'Proof of the converse'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Gradient theorem page, 'Proof of the converse': defines f by path integral from a, well-defined by path independence, computes directional derivative via short straight segment and FTC, gets grad f = F. Uses directional derivatives (all v) rather than partials d_i, equivalent; assumes F continuous."
+   }
+  },
+  {
+   "routeId": "118-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "118-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "119-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://math.iisc.ac.in/~vamsipingali/teaching/ma241ODE2025spring/Lec13Jan29MA2412025.pdf",
+   "preciseLocator": "Lec 13 Theorem 1 (Picard) proof; uniqueness in Lec 12 Theorem 1",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "119-r2",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://math63cm.stanford.edu/peano-existence.pdf",
+   "preciseLocator": "Theorem 1, proof Case 1 (bounded F) and Case 2 (truncation to a ball)",
+   "sketchProblem": "Source treats autonomous x'=F(x) forward in time only; the sketch's F(t,y) on a cylinder with h=min(a,b/M) and backward time is a routine adaptation (add t as a variable), not written out.",
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Peano existence theorem, Theorem 1, Case 1 and Case 2",
+    "missingStep": "Source treats only the autonomous equation x'=F(x) forward in time (t in [0,delta]); the sketch's non-autonomous F(t,y) on a cylinder with h=min(a,b/M) and 'the same works backward in time' are not written out (reduction by adding t as a variable not given). Truncation to a ball (Case 2) replaces the cylinder argument.",
+    "note": "Euler polygons, Arzela-Ascoli, uniform continuity of F to pass to the limit are all fully written (Claims 1-3). The method matches; only the non-autonomous/backward-time setting is missing. Also the source proves existence only, as the sketch says."
+   }
+  },
+  {
+   "routeId": "119-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://math.iisc.ac.in/~vamsipingali/teaching/ma241ODE2025spring/Lec12Jan27MA2412025.pdf",
+   "preciseLocator": "Section 2, Theorem 1 (uniqueness) proof",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "120-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Minkowski_inequality",
+   "preciseLocator": "Section 'Proof' > 'Proof by Hölder's inequality'",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia 'Proof by Hoelder's inequality' fully written for 1<p<inf incl. finiteness of ||f+g||_p and the zero case. Endpoints p=1 and p=inf (stated as trivial in the sketch) are not written in the source but are trivial."
+   }
+  },
+  {
+   "routeId": "120-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Minkowski_inequality",
+   "preciseLocator": "Section 'Proof' > 'Proof by a direct convexity argument'",
+   "sketchProblem": "Wikipedia's version does not normalize F=f/a, G=g/b explicitly but is the same convexity argument.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia 'Proof by a direct convexity argument': pointwise convexity with weights (1-t),t, integrate, choose t=||g||/(||f||+||g||). Equivalent to the sketch's normalisation (lambda<->1-t). The final substitution of t and the zero-norm case are left implicit ('to reach the conclusion'); both are one-line algebra."
+   }
+  },
+  {
+   "routeId": "120-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "",
+   "preciseLocator": "",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "121-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://mathweb.tifr.res.in/~goswami/LECTUREVI.pdf",
+   "preciseLocator": "Theorem 6.9 proof, Steps I-V (Lemmas 6.10-6.13); note Lemma 6.10 cites 'Lemma 6.7' but means Lemma 6.5 (Urysohn)",
+   "sketchProblem": "Sketch says 'finite additivity on disjoint opens' then extension; source gets additivity via Caratheodory rather than a separate finite-additivity step. r1 and r3 overlap heavily (both use sup over C(K) functions on open sets).",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Theorem 6.9 proof, Steps I-V (Lemmas 6.10-6.13); note Lemma 6.10 cites 'Lemma 6.7' but means Lemma 6.5 (Urysohn)",
+    "missingStep": null,
+    "note": "Source proves the LCH version for Cc(K) (covers compact K): outer measure mu*(U)=sup{L f}, subadditivity via partition of unity Lemma 6.12 (proved), Caratheodory measurability (Step III), regularity (Step IV), L f=int f dmu by level-set slicing (Step V), uniqueness (Step I). Minor reader-left items: existence of precompact open V between S and U ('why?') and standard Caratheodory theorem used implicitly."
+   }
+  },
+  {
+   "routeId": "121-r2",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/1409.2662",
+   "preciseLocator": "Section 2.8.2: Lemmas 2.156-2.161, Theorem 2.162, Theorem 2.164 (Dini step inside its proof)",
+   "sketchProblem": "Theorem 2.164 is stated for compact metric spaces; the same proof gives a Baire measure on compact Hausdorff K as the sketch's caveat says, but regularity/Borel extension for non-metrizable K is only referenced, not proved.",
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "arXiv 1409.2662 Section 2.8.2, Lemmas 2.156-2.161, Theorem 2.162, Theorem 2.164 (Dini step proved inside Thm 2.164)",
+    "missingStep": "Source proves the theorem only for compact METRIC X (yielding a Borel = Baire measure); for general compact Hausdorff K it explicitly defers the extension of the Baire measure to a regular Borel measure to [Bog07, Sec 7.3]. Also Caratheodory extension (Prop 2.158) is cited to [Dob13].",
+    "note": "Daniell route, Dini continuity from above, L+ extension, G, mu*, sigma-algebra comparison are all written out and correct."
+   }
+  },
+  {
+   "routeId": "121-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://mathweb.tifr.res.in/~goswami/LECTUREVI.pdf",
+   "preciseLocator": "Theorem 6.9 proof, Steps II-V",
+   "sketchProblem": "Sketch largely duplicates 121-r1 (differs only in the lsc extension step).",
+   "verification": null
+  },
+  {
+   "routeId": "124-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://personal.math.ubc.ca/~feldman/m420/product.pdf",
+   "preciseLocator": "Theorem 5.9 (Tonelli: cases 2-3, Fubini) and Proposition 5.8",
+   "sketchProblem": "Sketch only treats indicators of measurable rectangles, then 'simple functions'; simple functions on the product sigma-algebra need indicators of arbitrary E, which requires a monotone-class/pi-lambda step the sketch omits.",
+   "verification": null
+  },
+  {
+   "routeId": "124-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://personal.math.ubc.ca/~feldman/m420/product.pdf",
+   "preciseLocator": "Def 5.1, Prop 5.4, Lemma 5.7, Prop 5.8, Theorem 5.9",
+   "sketchProblem": "Source uses the monotone class lemma directly rather than uniqueness of extension from a pi-system, and uniqueness of mu x nu is only asserted in Def 5.1(d); same overall method.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Feldman notes: Def 5.1 + Remark 5.2 (rectangles algebra, premeasure well-defined), Prop 5.4 (sections measurable), Lemma 5.7 (monotone class theorem proved), Prop 5.8 (monotone class argument for finite then sigma-finite; iterated integrals equal mu x nu), Thm 5.9 (simple functions, MCT, Fubini via parts). Uses monotone-class lemma directly rather than pi-lambda/uniqueness; same route in substance. Caratheodory (Thm 2.36) cited."
+   }
+  },
+  {
+   "routeId": "124-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "",
+   "preciseLocator": "",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "125-r1",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/1709.03377",
+   "preciseLocator": "Theorem 1.13 (Inversion Theorem) and its proof; also Wikipedia 'Fourier inversion theorem' Proof",
+   "sketchProblem": "Source gets the result a.e. (and Wikipedia at continuity points), with approximate-identity convergence taken as known.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "arXiv 1709.03377 Theorem 1.13 (with Theorem 1.12 for the Gaussian transform); Wikipedia part of locator not checked",
+    "missingStep": null,
+    "note": "Proof via Gauss-Weierstrass kernel: Fubini, Fourier transform of Gaussian (Thm 1.12 proved by completing the square + analytic continuation), approximate identity, dominated convergence. Conclusion in source is 'almost every x' (approximate-identity convergence cited as known), not 'every continuity point'; kernel transform is a 'straightforward calculation'. Convention 1/(2pi) with e^{ixt} instead of e^{2 pi i}."
+   },
+   "heldBackReason": "source concludes only almost everywhere"
+  },
+  {
+   "routeId": "125-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/0903.3845",
+   "preciseLocator": "Laugesen notes: Ch. 15 (Example 15.4 Fejer kernel, (15.17)-(15.21), Thm 15.7 whose proof 'argues as for Theorem 2.6' in Ch. 2) and Ch. 16 Theorem 16.2(a)",
+   "sketchProblem": "Source obtains convergence in L1 and then a.e. via a subsequence, not pointwise at continuity points; the mass computation uses the Dirichlet integral rather than contour integration.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Laugesen notes: Ch. 15 (Example 15.4 Fejer kernel, (15.17)-(15.21), Thm 15.7 whose proof 'argues as for Theorem 2.6' in Ch. 2) and Ch. 16 Theorem 16.2(a)",
+    "missingStep": null,
+    "note": "Fejer (Cesaro) summability of the truncated inversion integral: Dirichlet/Fejer kernels as convolutions, Fejer kernel mass computed by parts (using int sin x/x = pi, not contour integration), L1 convergence of F_lambda*f -> f, a.e. subsequence, dominated convergence gives inversion a.e., continuity gives everywhere. Source uses L1 convergence/subsequence rather than 'continuity points'. Theorem 15.7 relies on Theorem 2.6 (proved with Minkowski integral inequality), so cite Ch. 2 too."
+   }
+  },
+  {
+   "routeId": "125-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/0903.3845",
+   "preciseLocator": "Ch. 17, Theorem 17.1 and proof",
+   "sketchProblem": "Dense class used is L1 intersect L2 (and smooth compact support for inversion), not the Schwartz class named in the sketch; the Gaussian-damping/Fubini isometry step matches. Inversion step relies on Thm 16.2.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Theorem 17.1: Plancherel proved on L1 cap L2 via Gaussian damping + Fubini + monotone convergence (uses G_eps*f -> f in L2 from Thm 15.7), extension by density, Parseval by polarization, inversion on L2 from L1 inversion Theorem 16.2. Density class is L1 cap L2, not Schwartz functions as in the sketch, and L2 inversion/unitarity uses Thm 16.2 (L1 inversion, proved in Ch.16). Core method (Gaussian damping, Fubini, density, extension) is the same; suggest rewording sketch."
+   }
+  },
+  {
+   "routeId": "126-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://courses.maths.ox.ac.uk/mod/resource/view.php?id=52296",
+   "preciseLocator": "Slides 3-6, Plancherel theorem proof",
+   "sketchProblem": "Only the last sketch step (agreement on L1∩L2) and the S->S/inversion prerequisites are missing; onto-ness is argued via S' inversion, not range closed + contains S.",
+   "verification": null
+  },
+  {
+   "routeId": "126-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://www.impan.pl/~tkoch/FA_lecturenotes/lecture15.pdf",
+   "preciseLocator": "Theorem 9.7, Parts 1-4",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "126-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "The sketch itself says it does not carry out the identification of the spectral measure with Lebesgue measure or multiplicity one, so the route as catalogued is not a complete proof.",
+   "verification": null
+  },
+  {
+   "routeId": "127-r1",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "127-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/2603.14663",
+   "preciseLocator": "Sections 5.2 (Wirtinger via Parseval) and 7.2-7.7",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "127-r3",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://home.ttic.edu/~yury/courses/geometry-in-cs/notes/brunn-minkowski.pdf",
+   "preciseLocator": "Sections 2 (Thm 2.1, proof) and 4.2 (Thm 4.3 proof), d=2; cf. Klartag lecture 2, Cor 2.4",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Sections 2 (Thm 2.3 Prekopa-Leindler, proof; d=1 base in 2.1) and 4.2 (Thm 4.3 proof)",
+    "missingStep": "Isoperimetric statement is proved only for the Minkowski-content definition of 'area' (Def 4.2: lim (vol(A+tB)-vol(A))/t, existence of the limit assumed); no identification with Per(E) and no approximation argument to finite-perimeter sets, which the sketch claims. Measurability issues in Brunn-Minkowski/Prekopa-Leindler are explicitly not discussed (closed sets only). Klartag lecture not checked.",
+    "note": "The core argument (BM with tB, first-order comparison, ball computation) is written out and matches the sketch for d=2."
+   }
+  },
+  {
+   "routeId": "127-r4",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://eclass.uoa.gr/modules/document/file.php/MATH121/04-%CE%95%CF%81%CE%B3%CE%B1%CF%83%CE%AF%CE%B5%CF%82/04-1.%20%CE%A4%CE%B1%20%CE%B8%CE%AD%CE%BC%CE%B1%CF%84%CE%B1/16.%20rearrange.pdf",
+   "preciseLocator": "Sec 2.1, 2.4 (Thm 2.17) and 3.2 (Prop 3.8)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "128-r1",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.weizmann.ac.il/math/klartag/sites/math.klartag/files/uploads/lecture2_151025.pdf",
+   "preciseLocator": "Hadwiger-Ohman proof of Theorem 2.2",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Lecture 2 (Klartag), p.3-5, 'Hadwiger-Ohman proof of Theorem 2.2' (equation (9) AM-GM, then induction on N boxes)",
+    "missingStep": "The reduction to finite unions of disjoint boxes is only asserted ('By approximation, we may assume'); the outer approximation of compact sets by decreasing finite box unions and the inner approximation of measurable sets by compact sets are not written out or cited.",
+    "note": "Box case (AM-GM), hyperplane splitting, volume-ratio matching of T by continuity, induction on N, and disjointness of S1+T1, S2+T2 are all fully written and match the sketch. Only the approximation/limit step is missing."
+   }
+  },
+  {
+   "routeId": "128-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www-users.cse.umn.edu/~bobko001/papers/2011_JMS-179_Bitriangular.pdf",
+   "preciseLocator": "Section 2, Triangular Maps and Transportation Argument",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "128-r3",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://home.ttic.edu/~yury/courses/geometry-in-cs/notes/brunn-minkowski.pdf",
+   "preciseLocator": "Section 2: Thm 2.3 (Prekopa-Leindler) proof, multiplicative form (2) and its equivalence with (1)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Notes Sec 2 (Thm 2.1 and its multiplicative form (2), p.2) and Thm 2.3 Prekopa-Leindler with proof (p.3-4)",
+    "missingStep": "1D Prekopa-Leindler is proved here from 1D Brunn-Minkowski via level sets (layer-cake), not by monotone rearrangement as the sketch says; the final step 'apply PL to indicator functions' is stated in one sentence without checking that the hypothesis holds (and level-set nonemptiness/measurability are glossed). Statement of Thm 2.3 has hypothesis/conclusion roles of f,g,h swapped relative to the sketch.",
+    "note": "Dimension induction PL(d-1)+PL(1) => PL(d) is fully written, and the equivalence (1)<=>(2) with normalisation lambda=a/(a+b) is fully written. Method of the 1D base case differs from the sketch."
+   }
+  },
+  {
+   "routeId": "129-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://web.stanford.edu/class/msande311/lecture03.pdf",
+   "preciseLocator": "Caratheodory's theorem and Basic Feasible Solution I, Theorems 1-2",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "130-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Helly%27s_theorem",
+   "preciseLocator": "Helly: Proof (base case n=d+2 and inductive step); Radon: Proof and construction",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Wikipedia 'Helly's theorem' section Proof: base case n=d+2 via Radon partition and point p, distinct-points caveat, and inductive step by merging X_{n-1} and X_n are all written. 'Radon's theorem' section 'Proof and construction' gives the linear-algebra proof of Radon. Read both (via raw wikitext)."
+   }
+  },
+  {
+   "routeId": "130-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Helly%27s_theorem",
+   "preciseLocator": "Proof section",
+   "sketchProblem": "Route largely coincides with 130-r1 (same Radon core); consider merging.",
+   "verification": null
+  },
+  {
+   "routeId": "130-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Helly%27s_theorem",
+   "preciseLocator": "Helly: 'Topological proof of the base case'; survey remark on d-Leray nerves",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "131-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://en.wikipedia.org/wiki/Radon%27s_theorem",
+   "preciseLocator": "Proof and construction",
+   "sketchProblem": "Sketch is questionable: saying halfspaces have VC dimension d+1 is itself usually derived from Radon's theorem, so the argument is circular unless proved independently.",
+   "verification": null
+  },
+  {
+   "routeId": "132-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www.lehigh.edu/~gi02/04m446hw2s.pdf",
+   "preciseLocator": "Problem 9 (max-flow min-cut via Hoffman circulation); Problem 8 (basic circulations)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "133-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://math.uwaterloo.ca/~dgwagner/Networks.pdf",
+   "preciseLocator": "Sec. I Thm 1 proof; Sec. II Thm 8 (Kirchhoff's formula), first and second proofs",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "133-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://math.uwaterloo.ca/~dgwagner/Networks.pdf",
+   "preciseLocator": "Sec. I: proof of Thm 1 (Binet-Cauchy), Thm 6, Thm 7, proof of Binet-Cauchy",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "134-r1",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://mat.unb.br/ayala/TeoremaHall.pdf",
+   "preciseLocator": "Sec. 2 (Cameron's informal proof)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "134-r2",
+   "finalStatus": "claimed-unverified",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch2.pdf",
+   "preciseLocator": "Thm 2.1.2 (Hall), First proof (augmenting/alternating paths)",
+   "sketchProblem": "Route is titled for the infinite version but proves only the finite case, as the sketch admits.",
+   "verification": null,
+   "heldBackReason": "source proves only finite Hall; also read from a restricted PDF"
+  },
+  {
+   "routeId": "134-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch2.pdf",
+   "preciseLocator": "Thm 2.1.2 Third proof (minimal subgraph) read; Ch. 8 preview searched",
+   "sketchProblem": "Sketch's chain step is plausible but unsourced; Wikipedia's Hall page only states the Marshall Hall variant.",
+   "verification": null
+  },
+  {
+   "routeId": "135-r1",
+   "finalStatus": "claimed-unverified",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch12.pdf",
+   "preciseLocator": "Lemma 12.1.3 and proof of Thm 12.2.1 (Kruskal); Nash-Williams Lemma 2 and Theorem 1",
+   "sketchProblem": "Result/route mismatch: the sketches describe Kruskal's tree theorem (wqo of finite trees), not the graph-minor (Robertson-Seymour) theorem named in the result; the title's 'obstruction sets' statement is the graph-minor theorem. The proof found is for trees only (the sketch itself says so).",
+   "verification": null,
+   "heldBackReason": "restricted PDF; proves Kruskal's tree theorem, not the stated graph-minor result"
+  },
+  {
+   "routeId": "135-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://www.math.uni-hamburg.de/home/diestel/books/graph.theory/preview/Ch12.pdf",
+   "preciseLocator": "Lemma 12.1.3, Thm 12.2.1",
+   "sketchProblem": "Result/route mismatch: the sketches describe Kruskal's tree theorem (wqo of finite trees), not the graph-minor (Robertson-Seymour) theorem named in the result; the title's 'obstruction sets' statement is the graph-minor theorem. r1 and r2 are essentially the same argument; Diestel's footnote explicitly says sets suffice instead of sequences/multisets.",
+   "verification": null
+  },
+  {
+   "routeId": "135-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is only an outline; belongs to the Robertson-Seymour theorem, not 'algebraic'.",
+   "verification": null
+  },
+  {
+   "routeId": "136-r1",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATch2.pdf",
+   "preciseLocator": "Prop 2B.1, Thm 2B.3",
+   "sketchProblem": "Sketch is vague: 'local homology in the target complement vanishes' at a boundary point is not a stated argument.",
+   "verification": null
+  },
+  {
+   "routeId": "136-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATch2.pdf",
+   "preciseLocator": "Prop 2B.1, Thm 2B.3",
+   "sketchProblem": "Sketch quotes Alexander duality without proving the boundary step, so it is not a standalone route.",
+   "verification": null
+  },
+  {
+   "routeId": "136-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/ATch2.pdf",
+   "preciseLocator": "Hatcher Algebraic Topology, Sec 2.B: Prop 2B.1(a),(b) pp.169-170; Thm 2B.3 p.172",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Hatcher Algebraic Topology, Sec 2.B: Prop 2B.1(a),(b) pp.169-170; Thm 2B.3 p.172",
+    "missingStep": null,
+    "note": "Prop 2B.1 proved by Mayer-Vietoris/compactness; Thm 2B.3 proof works in S^n using that S^n minus embedded ball is connected and S^n minus embedded S^{n-1} has two components; same Jordan-Brouwer separation idea as the sketch (phrased in S^n rather than bounded/unbounded components in R^n). Complete."
+   }
+  },
+  {
+   "routeId": "138-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://ncatlab.org/nlab/show/Cantor-Schroeder-Bernstein+theorem",
+   "preciseLocator": "Proof of Cantor-Schroeder-Bernstein (Knaster-Tarski)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "138-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://ncatlab.org/nlab/show/Cantor-Schroeder-Bernstein+theorem",
+   "preciseLocator": "Lemma (Knaster-Tarski) and Proof of Cantor-Schroeder-Bernstein",
+   "sketchProblem": "Remark about complete Boolean algebras is extra and unsourced here.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "nLab: Knaster-Tarski lemma proved (intersection of prefixed points), then CSB proof with phi = not exists_g not exists_f, h defined as f on A and g^-1 off A, inverse verified. Same operator as sketch. Only the closing remark about Sikorski-Tarski complete Boolean algebra versions is not proved there (a side remark, not needed for the set-theoretic theorem)."
+   }
+  },
+  {
+   "routeId": "139-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://builds.openlogicproject.org/content/first-order-logic/completeness/completeness.pdf",
+   "preciseLocator": "Sections com.4-com.8: Prop com.3, Lemma com.6, Lemma com.8, Def com.9, Lemma com.12, Lemma com.19, Thm com.20",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "139-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://cs.cornell.edu/courses/cs6862/2011sp/Lecture%2014,%202010.pdf",
+   "preciseLocator": "Section 17.2 Completeness: first-order Hintikka sets, Hintikka Lemma (Thm 2), systematic procedure, Lemma 3, Thm 5",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "139-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.math.utoronto.ca/swastik/courses/logic-S23/steve-cooks-notes/page31.pdf",
+   "preciseLocator": "Cook notes pp.31-37: Completeness Lemma proof (stagewise cut-free proof search, term model from open/infinite branch via Konig, Claim)",
+   "sketchProblem": "The 'Hauptsatz transfers completeness' step is logically unnecessary and arguably backwards: cut-free completeness directly gives completeness of LK (cut-free proofs are LK proofs); cut elimination is needed only for the converse (cut-free LK no weaker). Cook does not prove the Hauptsatz. Also the construction uses free variables rather than fresh constants.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Cook notes pp.31-37: Completeness Lemma proof (stagewise cut-free proof search, term model from open/infinite branch via Konig, Claim)",
+    "missingStep": null,
+    "note": "Full cut-free proof-search completeness argument for LK is written; scope is countable vocabulary and no equality (stated explicitly). Gentzen's Hauptsatz is not proved there but is a named standard result and is in fact unnecessary for the transfer (cut-free completeness trivially gives completeness of LK)."
+   }
+  },
+  {
+   "routeId": "140-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://builds.openlogicproject.org/content/incompleteness/incompleteness.pdf",
+   "preciseLocator": "Open Logic 'Incompleteness' Sec 5.2 Lemma 5.2 (fixed-point lemma, proved, pp.63-64); Sec 5.3 Lemma 5.3, Def 5.4, Lemma 5.5, Thm 5.6 (pp.64-66)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Open Logic 'Incompleteness' Sec 5.2 Lemma 5.2 (fixed-point lemma, proved, pp.63-64); Sec 5.3 Lemma 5.3, Def 5.4, Lemma 5.5, Thm 5.6 (pp.64-66)",
+    "missingStep": null,
+    "note": "Diagonal lemma proved in Q; unprovability of G from consistency and of not-G from omega-consistency are both proved as in the sketch. Representability of Prf_T is cited as established earlier."
+   }
+  },
+  {
+   "routeId": "140-r2",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://builds.openlogicproject.org/content/incompleteness/incompleteness.pdf",
+   "preciseLocator": "Open Logic 'Incompleteness' Sec 5.4, Thm 5.7 and proof with Eq (5.4) (pp.66-67)",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Open Logic 'Incompleteness' Sec 5.4, Thm 5.7 and proof with Eq (5.4) (pp.66-67)",
+    "missingStep": null,
+    "note": "Both cases are proved using only consistency, via RProv(y) = exists x (Prf(x,y) and forall z<x not Ref(z,y)) and Lemmas 3.24/3.25 of the same text. Formulation uses 'z<x' in the negated form rather than the sketch's 'exists z<=y' but is the same Rosser trick."
+   }
+  },
+  {
+   "routeId": "140-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://builds.openlogicproject.org/content/incompleteness/incompleteness.pdf",
+   "preciseLocator": "Sec 4.2 (Q is c.e.-complete), Thm 4.5, Lemma 4.8, Thm 4.9, Lemma 4.10 (provable/refutable in Q inseparable), Thm 4.11",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "141-r3",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+   "preciseLocator": "Milne ANT v3.08 Sec 4: Thm 4.3 (statement p.70, proof p.81), Thm 4.4 (p.70-71), Examples 4.5-4.6, Thm 4.19 (Minkowski, proved p.76), Props 4.26-4.27 (p.79-81)",
+   "sketchProblem": "The sketch itself says this is a consequence/application and not a second proof route for unique factorization of ideals; it should not be listed as a route for this result (it belongs under class-group finiteness / non-UFD criteria). 'Criteria for non-UFD behaviour' is only loosely supported (Milne uses the Minkowski bound for class group computations, Examples after Thm 4.4).",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Milne ANT v3.08 Sec 4: Thm 4.3 (statement p.70, proof p.81), Thm 4.4 (p.70-71), Examples 4.5-4.6, Thm 4.19 (Minkowski, proved p.76), Props 4.26-4.27 (p.79-81)",
+    "missingStep": null,
+    "note": "Minkowski convex body theorem is proved, covolume of ideal lattice computed, Minkowski bound proved, finiteness of class number and non-PID examples (e.g. Q[sqrt-5] class number 2) derived. Source does not claim this reproves ideal factorization, consistent with sketch's framing."
+   }
+  },
+  {
+   "routeId": "143-r1",
+   "finalStatus": "verifier-partial",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://sites.math.washington.edu/~marshall/preprints/uniformizationII.pdf",
+   "preciseLocator": "Perron family definition and Cases 1/2; Lemmas 1-3; Thm 4 (Green's function => biholomorphism onto D, via monodromy, |phi|=exp(-g), injectivity, Riemann mapping); Lemma 5 + proof of Case 2 (dipole Green's function => C or sphere)",
+   "sketchProblem": "Sketch says parabolic case uses a harmonic function with a single pole and compact case a separate Dirichlet-principle argument; Marshall treats both uniformly with a dipole Green's function, and uses Perron families not an exhaustion by regular domains. Same potential-theoretic method, different details.",
+   "verification": {
+    "verdict": "partial",
+    "correctedLocator": "Marshall, Uniformization Theorem note: Perron family/Green's function def (p.2); Lemmas 1-3; Thm 4 (Case 1, pp.7-8); Lemma 5 and Case 2 proof (pp.9-13)",
+    "missingStep": "The sketch's parabolic/compact cases (single log-pole harmonic function with controlled growth; Dirichlet principle giving a meromorphic function with one simple pole; exhaustion by regular domains) are not what the source does. The source treats non-hyperbolic cases uniformly by a dipole Green's function (two opposite poles) built as a limit of Green's functions of W minus shrinking disks, and its Case 1 uses a Perron family on W directly, not an exhaustion; symmetry of g needs universal cover (Lemma 3, Cor 6).",
+    "note": "Hyperbolic case (Green's function -> exp(-g - i g*) injective -> RMT onto D) is fully proved and matches. Non-hyperbolic cases are fully proved in the source but by a different (dipole) method than the sketch's indicated route, so the source does not prove the route exactly as described; the sketch itself says those cases are only indicated."
+   }
+  },
+  {
+   "routeId": "143-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "The route presupposes the family of injective maps X->D is nonempty (obtained from a Green's function or embedding), so it is not an independent proof; it only reproves surjectivity in the hyperbolic case after route 1 has done the real work. It also leaves C and the sphere uncovered.",
+   "verification": null
+  },
+  {
+   "routeId": "143-r3",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": "https://arxiv.org/pdf/math/0505163",
+   "preciseLocator": null,
+   "sketchProblem": "Ricci flow proves uniformization of compact surfaces; for simply connected X only the sphere is covered, and the sketch admits C and D are not. Also Hamilton's soliton step historically used uniformization (circularity fixed by Chen-Lu-Tian), which the sketch omits.",
+   "verification": null
+  },
+  {
+   "routeId": "144-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/atiyahsing.pdf",
+   "preciseLocator": "Sections 4-5: Prop 3 (Ell(X)), Sec 5 Cobordism, Prop 4 and remarks",
+   "sketchProblem": "Sketch mixes the 1963 cobordism proof and the 1968 K-theory/embedding proof; these are separate routes (the latter is 144-r3).",
+   "verification": null
+  },
+  {
+   "routeId": "144-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/1911.09766",
+   "preciseLocator": "Sec 4.4 On the heat kernel proof of the index theorem, 4.4.2 McKean-Singer (Prop 4.4.10-4.4.11), Getzler rescaling, Mehler formula (Prop 4.4.15)",
+   "sketchProblem": "Sketch covers only Dirac-type operators; general elliptic operators need a reduction (e.g. to twisted Dirac) not mentioned.",
+   "verification": null
+  },
+  {
+   "routeId": "144-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/as1.pdf",
+   "preciseLocator": "AS I: Sec 3-4 (topological index, uniqueness Thm 4.6), Sec 6 (analytic index, Thm 6.7), Secs 8-9 (axioms verified); Landweber Sec 3 and Appendix A",
+   "sketchProblem": "Sketch's 'principal symbol is Fredholm and stable-homotopy invariant' and 'reduction to the Bott generator' are present, but the sketch is essentially the same proof as 144-r1's K-theory half, so r1/r3 overlap.",
+   "verification": null
+  },
+  {
+   "routeId": "144-r4",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/1605.06982",
+   "preciseLocator": "Secs 1-2 (time-slicing path integral, Thm 2.1-2.2), Sec 3.3 (N=1/2 SUSY QM), Sec 4 (Thm 4.1, Props 4.1-4.3, Remark 4.2)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "146-r1",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "http://sporadic.stanford.edu/quantum/lecture8.pdf",
+   "preciseLocator": "Slides: Kauffman bracket definition; Theorem (invariance under Type O, II, III); curl computation <L>=-a^3<L'>; normalized bracket f(L)=(-a)^{-3w}<L>; Jones polynomial V_L(t)=f_L(t^{-1/4})",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": null,
+    "missingStep": null,
+    "note": "Bump Lecture 8 slides: skein relation <L>=a<L0>+a^-1<L∞>, <L⊔O>=d<L> with d=-a^2-a^-2, curl <L>=-a^3<L'>, Type II and III invariance, normalized f(L)=(-a)^-3w<L>, V_L(t)=f_L(t^-1/4). Reidemeister moves are drawn as pictures (figures not in text extraction), standard slide-level proof; Type III is brief but complete via Type II."
+   },
+   "heldBackReason": "Reidemeister moves are figures that were not read"
+  },
+  {
+   "routeId": "146-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/quant-ph/0511096",
+   "preciseLocator": "Sec 2.9-2.11: Def 2.12, Claim 2.3, Lemma 2.1, Lemma 2.2",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "146-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "http://sporadic.stanford.edu/quantum/lecture9.pdf",
+   "preciseLocator": "Slides 'Knot invariants' to 'The Kauffman bracket as a quantum trace'",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "146-r4",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": "Sketch is explicitly heuristic (path integral undefined), so a complete rigorous proof of this exact route cannot exist; consider relabeling as heuristic/physics route.",
+   "verification": null
+  },
+  {
+   "routeId": "147-r1",
+   "finalStatus": "promoted",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://loeh.app.uni-regensburg.de/teaching/diffgeo_ws2021/lecture_notes.pdf",
+   "preciseLocator": "Clara Loeh, Differentialgeometrie (WS 2020/21) lecture notes, Sec. 4.2 'Constant sectional curvature, locally': Prop 4.2.1 (Jacobi fields u*E, u generalized sine), Prop 4.2.3 (Jacobi fields along radial geodesics), Thm 4.2.4 (metric in normal coordinates), Cor 4.2.5 (local uniqueness / locally isometric to model space, using Thm 2.5.11); pp. 172-176. The Edinburgh textbook locator was not used.",
+   "sketchProblem": null,
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Clara Loeh, Differentialgeometrie (WS 2020/21) lecture notes, Sec. 4.2 'Constant sectional curvature, locally': Prop 4.2.1 (Jacobi fields u*E, u generalized sine), Prop 4.2.3 (Jacobi fields along radial geodesics), Thm 4.2.4 (metric in normal coordinates), Cor 4.2.5 (local uniqueness / locally isometric to model space, using Thm 2.5.11); pp. 172-176. The Edinburgh textbook locator was not used.",
+    "missingStep": null,
+    "note": "Full argument present: Jacobi equation reduces to u''+cu=0, dimension count, Gauss lemma split, explicit metric, corollary via polarisation. Routine computations marked '(check!)'/Exercise (initial data of radial Jacobi field, polarisation step); Gauss lemma and Jacobi existence cited from earlier in the notes. Local classification only (as required)."
+   }
+  },
+  {
+   "routeId": "147-r2",
+   "finalStatus": "none-found",
+   "reviewOutcome": "none-found",
+   "sourceUrl": null,
+   "preciseLocator": null,
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "147-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://webusers.imj-prg.fr/~elisha.falbel/Cartan/poly.pdf",
+   "preciseLocator": "Thm 3.13 (Maurer-Cartan integration), Thm 6.9 (mutation), Prop 6.18, Cor 6.22",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "148-r1",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/2210.07952",
+   "preciseLocator": "Sec 3.2: Props 3.2-3.3, Thms 3.1-3.4 (Hodge), Cor 3.1; also Etnyre notes Thm 1.22, Cor 1.23-1.24 (etnyre.math.gatech.edu/class/8803Fall18/Hodge.pdf)",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "148-r2",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://etnyre.math.gatech.edu/class/8803Fall18/Hodge.pdf",
+   "preciseLocator": "Sec 1.3, Thm A, Thm B, proof of Hodge Thm 1.22; Cor 1.24",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "148-r3",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://users.math.msu.edu/users/sutravek/Hodge.pdf",
+   "preciseLocator": "Sec 4 (Thm 1.1 proof, Lemma 4.3-4.4), Appendix 6",
+   "sketchProblem": null,
+   "verification": null
+  },
+  {
+   "routeId": "149-r1",
+   "finalStatus": "held-back",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+   "preciseLocator": "Prop 2B.6 and Cor 2B.7 (transfer sequence with Z2 coefficients)",
+   "sketchProblem": "Sketch's mechanism (w^{n-1}) differs from source; same degree-mod-2 route.",
+   "verification": {
+    "verdict": "confirmed",
+    "correctedLocator": "Hatcher, Algebraic Topology, Sec. 2.B 'The Borsuk-Ulam Theorem', book pp. 174-176: Prop 2B.6 (odd maps S^n->S^n have odd degree, via Z2 transfer sequence of S^n->RP^n) and Cor 2B.7 (proof via odd map to S^{n-1}, equator, nullhomotopic via hemisphere)",
+    "missingStep": null,
+    "note": "Proof is complete and matches the degree/mod-2 homology structure. Mechanism differs slightly from sketch: Hatcher uses the transfer exact sequence in mod-2 homology (isomorphism by induction, Lemma 2.49 for degree mod 2), not the cup-power w^{n-1}. Proof of 2B.6 assumes n>1 (n=1 left to reader), consistent with the sketch's n>=2."
+   },
+   "heldBackReason": "source uses the mod-2 transfer sequence, not the cup-power argument of the sketch"
+  },
+  {
+   "routeId": "149-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://arxiv.org/pdf/1604.02395",
+   "preciseLocator": "Thm 1 and its proof (Sec 3)",
+   "sketchProblem": "Sketch pulls back to hemisphere with arbitrary triangulation; Tucker as stated needs antipodally symmetric triangulation refining coordinate hyperplanes or a detour (de Longueville-Zivaljevic Sec 2).",
+   "verification": null
+  },
+  {
+   "routeId": "149-r3",
+   "finalStatus": "verifier-route-mismatch",
+   "reviewOutcome": "complete-proof-found",
+   "sourceUrl": "https://arxiv.org/pdf/1008.1134",
+   "preciseLocator": "Main theorem proof, p=2 case (pp. 2-3)",
+   "sketchProblem": "Sketch asserts f* pulls w1 back to w1 directly; source needs separate lifting argument for the zero case.",
+   "verification": {
+    "verdict": "route-mismatch",
+    "correctedLocator": "M. Singh, 'A simple proof of the Borsuk-Ulam theorem for Z_p-actions', pp. 2-3 (proof, p=2 case)",
+    "missingStep": "The source never uses the classifying class w1 of the double cover or the monotonicity h(X)<=h(Y) of an index. Its proof is a covering-space lifting argument: shows f-bar_* on pi_1 is zero (H^1 = Hom(H_1,Z_p), and f-bar* =0 else s1^{m+1}=0 vs s^{m+1}!=0 in RP^n cohomology ring), lifts f-bar to S^m, then uses uniqueness of lifts to get f(Tx)=f(x), contradicting equivariance. The sketch's naturality f-bar* w1(Y)=w1(X) is not proved there.",
+    "note": "Shares the cohomology ring H^*(RP^n;Z2)=Z2[s]/(s^{n+1}) ingredient (cited to Hatcher), but the overall method is different, so it does not substantiate the Z2-index route."
+   }
+  },
+  {
+   "routeId": "150-r2",
+   "finalStatus": "partial",
+   "reviewOutcome": "partial",
+   "sourceUrl": "https://www3.nd.edu/~pmnev/f19/Moment_Maps_Talk.pdf",
+   "preciseLocator": "Boustany Sec. 1 (Prop 1.3, Thm 1.4) and Sec. 3 Thm 3.2 plus Ex. 3.3; Evans Thm D.11",
+   "sketchProblem": "Missing step: Lagrangian-Hamiltonian correspondence under the Legendre map and handling of the divergence term B; the sketch's 'dJ/dt={J,H}=±X_J(H)' is covered, the Lagrangian link is not.",
+   "verification": null
+  },
+  {
+   "routeId": "150-r3",
+   "finalStatus": "route-mismatch",
+   "reviewOutcome": "route-mismatch",
+   "sourceUrl": "https://www.math.uwaterloo.ca/~karigian/papers/noether.pdf",
+   "preciseLocator": "Sec. 4, Thm 4.2 and proof",
+   "sketchProblem": null,
+   "verification": null
+  }
+ ]
+}

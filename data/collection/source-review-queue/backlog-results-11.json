@@ -1,0 +1,142 @@
+[
+ {
+  "routeId": "80-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Search found only sources that expand the Cauchy kernel in a geometric series to derive the Taylor series FROM the integral formula (the opposite direction); none was opened in full. No source found that derives the formula from a pre-existing power-series expansion plus contour deformation.",
+  "sketchProblem": "Sketch itself concedes it is a dependent/circular derivation; likely not a distinct foundational route.",
+  "confidence": "low"
+ },
+ {
+  "routeId": "83-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://www.math.brown.edu/~res/M1410/polygon.pdf",
+  "sourceLabel": "Schwartz, Math 1410: The Polygonal Jordan Curve Theorem",
+  "preciseLocator": "Whole note (Lemmas 0.1-0.3 and sides-of-a-loop argument)",
+  "evidence": "Read: proves only the polygonal case via transverse-intersection parity (no winding number, no approximation of a general Jordan curve by polygons). Schwartz's jordan.pdf (cut locus) uses cycle approximation, not polygonal approximation with winding numbers.",
+  "sketchProblem": "Missing: polygonal approximation of an arbitrary Jordan curve, winding-number step, and compactness passage to the limit.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "83-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://www.math.brown.edu/~res/M1410/polygon.pdf",
+  "sourceLabel": "Schwartz, Math 1410: The Polygonal Jordan Curve Theorem",
+  "preciseLocator": "Whole note",
+  "evidence": "Complete polygonal Jordan theorem is proved, but by transverse-intersection parity and sides of a loop (induction on number of sides), not by planar-graph Euler formula / face traversal. Same mismatch as the earlier Erickson-notes audit.",
+  "sketchProblem": "Sketch (Euler/faces) is not what standard free sources do; also it correctly notes extension to general curves needs separate approximation (not in the source).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "85-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Web search for Groebner-basis proofs of Hilbert basis theorem returned only field-coefficient or PID-coefficient treatments; Wikipedia 'Hilbert's basis theorem' (opened) proves the Noetherian-ring case by leading-coefficient ideals, not monomial orders/Dickson. No source found for Noetherian coefficient ring via Groebner leading terms.",
+  "sketchProblem": "Sketch conflates cases: Dickson's lemma + division gives only the field-coefficient case; the Noetherian-R claim is not delivered by the described argument as written.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "86-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2015/ec341c7a2524e5dba7c3e939f322613a_MIT18_725F15_notes.pdf",
+  "sourceLabel": "MIT 18.725 Fall 2015 notes",
+  "preciseLocator": "Lecture 3, Theorem 3.2 with Lemma 3 and its proof",
+  "evidence": "Read: Lemma 3 gives a linear change x_i -> x_i + a_i x_n making a relation P monic in x_n (infinite k, via nonzero polynomial taking nonzero value); then A is finite over image of k[x_1..x_{n-1}] and induction on generators. The source proves only infinite k, which matches the sketch's own 'over infinite base field' hypothesis.",
+  "sketchProblem": "Source does not cover finite fields; the route's statement should carry the infinite-field qualifier (the sketch does).",
+  "confidence": "medium-high"
+ },
+ {
+  "routeId": "86-r2",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Opened Yekutieli Lecture 13 (Thm 1.19, nonlinear substitution proof), Wikipedia (Nagata proof) and MIT 18.725; none proves via a maximal algebraically independent set and clearing denominators. Wikipedia/de Jong only derive transcendence degree from normalization.",
+  "sketchProblem": "Sketch admits it yields only integrality over a localization, i.e. is not a full normalization proof; Makdonald Thm 14.19 (localize at a, A_a finite over A_a[x]) is the nearest but is induction on generators, not transcendence bases.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "86-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://smakdonald.github.io/Homological-Algebra/sec-noether-normalizations.html",
+  "sourceLabel": "MacDonald, Homological Algebra notes, Noether normalizations",
+  "preciseLocator": "Lemma 14.18 and Theorem 14.21 (graded, infinite field)",
+  "evidence": "Read: Lemma 14.18 gives degree-preserving change x_i + a_i x_n making a homogeneous f have pure x_n^N leading term; Theorem 14.21 (homogeneous x_i in R_1, R=k[R_1], infinite k) proof is just 'repeat the proof of 14.19 using 14.18'. Induction is on generators; no 'dimension drops on quotient' step as in the sketch.",
+  "sketchProblem": "Sketch describes a dimension-dropping quotient argument; source uses the generator-induction proof instead. The sketch's infinite-k hypothesis is stated, so the earlier 'unrestricted statement' mismatch objection does not apply to this route.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "88-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://proofwiki.org/wiki/Primitive_Element_Theorem",
+  "sourceLabel": "ProofWiki, Primitive Element Theorem",
+  "preciseLocator": "Proof section",
+  "evidence": "Read: for infinite F, takes all n=[E:F]_s=[E:F] embeddings into an algebraic closure, picks alpha outside union of ker(sigma_i-sigma_j) (a vector space is not a finite union of proper subspaces) so the sigma_i(alpha) are distinct, hence [F(alpha):F]>=n. Finite-field case is delegated to another ProofWiki page, which is an empty page with no text.",
+  "sketchProblem": "Uses a generic element alpha rather than alpha+c*beta (equivalent); finite-field step missing in the free source. Page is tagged 'Tidy' by ProofWiki.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "88-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://archive.nptel.ac.in/content/storage2/courses/111101001/modules/lec12/12.3.html",
+  "sourceLabel": "NPTEL module 12.3",
+  "preciseLocator": "page",
+  "evidence": "Previous audit: notes invoke cyclicity without proof. I also checked ProofWiki 'Multiplicative Group of Finite Field is Cyclic': the page is empty. Search surfaced other cyclicity proofs (Dartmouth, Hawaii, etc.) but I did not open one in full.",
+  "sketchProblem": "Sketch says it only treats finite fields; and its claim 'exponent = order' step is not a source-derived text.",
+  "confidence": "low"
+ },
+ {
+  "routeId": "89-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://loss.math.gatech.edu/16FALLTEA/NOTES/minmax.pdf",
+  "sourceLabel": "Georgia Tech, The min-max and max-min principle",
+  "preciseLocator": "Theorems 0.1, 0.2",
+  "evidence": "Read: proves min-max and max-min characterisations of eigenvalues, but assumes the eigenvectors x_j already exist (spectral theorem given as recalled). It does not construct eigenvectors by successive Rayleigh-quotient extrema on orthogonal complements.",
+  "sketchProblem": "Missing: the existence step (attainment of sup by compactness, iteration on orthogonal complements) as a proof of the spectral theorem.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "90-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/2112.07821",
+  "sourceLabel": "Rashed, The Stone's Representation Theorems and compactifications of a discrete space (arXiv 2112.07821)",
+  "preciseLocator": "Lemmas 3.10, 3.13-3.15, 3.24; Theorems 3.25 and 4.1",
+  "evidence": "Read: ultrafilter space U(B), sets U_x with U_{xy}=U_x∩U_y, U_{x+y}=U_x∪U_y, U_{¬x}=complement (Lemma 3.24); Hausdorff and compactness via finite intersection property and extension to an ultrafilter (Thm 3.25); homomorphism U: B->Clop(U(B)), injective by separating ultrafilter, surjective by Cor 3.28 (Thm 4.1).",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "90-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/2112.07821",
+  "sourceLabel": "Rashed, The Stone's Representation Theorems and compactifications of a discrete space (arXiv 2112.07821)",
+  "preciseLocator": "Corollary 3.28 with Theorem 3.25 and Theorem 4.1",
+  "evidence": "Read: U(B) is compact Hausdorff with clopen basis {U_x}; a clopen C is closed hence compact and open hence a union of U_x, so finite union, equal to U_{x1+..+xn}; injectivity via ultrafilter containing x but not y.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "90-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/2112.07821",
+  "sourceLabel": "Rashed, The Stone's Representation Theorems and compactifications of a discrete space (arXiv 2112.07821)",
+  "preciseLocator": "Lemma 3.13 (Zorn), Lemma 3.15, Theorem 3.25",
+  "evidence": "Read: filter extension to ultrafilters is proved with Zorn's lemma (not cited as the Boolean prime ideal theorem), then compactness and the representation proceed as in r1. The substance is present but identical to r1; BPIT is never named (only appears in the reference list).",
+  "sketchProblem": "Route is not independent of r1 (sketch says so); only a labelling of the same proof. Could be treated as complete if the extension lemma counts as the BPIT.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "91-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/math/0202285",
+  "sourceLabel": "Kapovich-Myasnikov, Stallings foldings and subgroups of free groups",
+  "preciseLocator": "Prop 3.8 (fold to core graph), Lemma 6.1, Cor 6.8",
+  "evidence": "Read: finitely generated H gets a finite folded core graph with L(Gamma,v)=H; for a spanning tree T, edges outside T give a free basis (Lemma 6.1), hence f.g. subgroups of F(X) are free. Theorem 5.1 builds the coset graph for arbitrary subgroups, but the full freeness theorem via folding is stated for finitely generated H and finite-rank F(X).",
+  "sketchProblem": "Missing: arbitrary subgroups of arbitrary free groups (folding handles only the f.g. case); Lemma 6.1 itself applies to any folded graph, so the infinite case needs the coset-graph version, not folding.",
+  "confidence": "medium"
+ }
+]

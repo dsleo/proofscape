@@ -1,0 +1,132 @@
+[
+ {
+  "routeId": "112-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Wallis_product",
+  "sourceLabel": "Wikipedia: Wallis product",
+  "preciseLocator": "Section 'Proof using integration'",
+  "evidence": "Read full proof: integration by parts recurrence I(n)=(n-1)/n I(n-2), I(0), I(1), even/odd products, sin^(2n+1)<=sin^(2n)<=sin^(2n-1) squeeze. Integrates over [0,pi] rather than [0,pi/2]; same method.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "112-r2",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Wikipedia Wallis product 'Relation to Stirling's approximation' only goes from Stirling to Wallis in outline; no full central-binomial proof read. Not read in this pass beyond the previous audit; no source containing this exact route was found/read.",
+  "sketchProblem": "Sketch itself flags circularity with Stirling's constant.",
+  "confidence": "low"
+ },
+ {
+  "routeId": "112-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Wikipedia 'Wallis's integrals' fetched but gave no usable Beta/Gamma proof text. Not read in this pass beyond the previous audit; no source containing this exact route was found/read.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "114-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Riemann_mapping_theorem",
+  "sourceLabel": "Wikipedia: Riemann mapping theorem",
+  "preciseLocator": "Section 'Proof via normal families' > 'Riemann mapping theorem'",
+  "evidence": "Read: normalized univalent family nonempty and normal (Montel), extremal f maximizing f'(z0), Hurwitz gives univalent limit, omitted point handled by square root and Moebius competitor contradicting maximality.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "114-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Riemann_mapping_theorem",
+  "sourceLabel": "Wikipedia: Riemann mapping theorem",
+  "preciseLocator": "Section 'Sketch proof via Dirichlet problem'",
+  "evidence": "Read: only a sketch assuming bounded smooth boundary, existence of harmonic function by Dirichlet principle, conjugate via Cauchy-Riemann; final verification (bijectivity) is not carried out and Green function/argument principle not used.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "115-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Riemann_mapping_theorem",
+  "sourceLabel": "Wikipedia: Riemann mapping theorem",
+  "preciseLocator": "Section 'Proof via normal families' (Montel's theorem)",
+  "evidence": "Read Montel proof: dense countable set, diagonal argument, Cauchy estimate via local bound on derivatives; no Arzela-Ascoli or exhaustion as sketched.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "115-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Riemann_mapping_theorem",
+  "sourceLabel": "Wikipedia: Riemann mapping theorem",
+  "preciseLocator": "Section 'Proof via normal families', Weierstrass convergence theorem and Montel's theorem paragraphs",
+  "evidence": "Read: diagonal subsequence on countable dense set, derivatives locally bounded via Cauchy formula, finite cover gives uniform Cauchy on compacta; holomorphic limit by Weierstrass. Equi-Lipschitz step stated rather than detailed.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "116-r1",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Previously audited as route-mismatch (Ahlfors lemma article). Not read in this pass beyond the previous audit; no source containing this exact route was found/read.",
+  "sketchProblem": "Sketch is vague: 'standard growth estimates' suppressed, no concrete route to verify.",
+  "confidence": "low"
+ },
+ {
+  "routeId": "116-r2",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Wikipedia Picard theorem page downloaded but no Nevanlinna proof confirmed. Not read in this pass beyond the previous audit; no source containing this exact route was found/read.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "117-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Not read in this pass beyond the previous audit; no source containing this exact route was found/read.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "118-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Gradient_theorem",
+  "sourceLabel": "Wikipedia: Gradient theorem",
+  "preciseLocator": "Section 'Proof of the converse'",
+  "evidence": "Read: define f(x) by integral from fixed a along any curve (well defined by path independence), directional derivative along straight segment x to x+tv via FTC gives grad f=F.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "118-r2",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "No source with homotopy/Stokes closed-versus-exact argument read. Not read in this pass beyond the previous audit; no source containing this exact route was found/read.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "118-r3",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "No source with the Green/Stokes route read. Not read in this pass beyond the previous audit; no source containing this exact route was found/read.",
+  "sketchProblem": null,
+  "confidence": "low"
+ }
+]

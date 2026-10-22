@@ -1,0 +1,199 @@
+{
+  "reviewer": "luna",
+  "sourceDispositionReviewed": "source-text-retrieved-proof-unverified",
+  "reviewedRouteCount": 23,
+  "records": [
+    {
+      "id": "45-r2",
+      "title": "induction using the class equation",
+      "disposition": "route-mismatch",
+      "reason": "Lecture 23 proves Sylow I–III by actions on subsets, cosets, and Sylow subgroups; it contains no class-equation induction proof.",
+      "locator": "MIT notes, Lecture 23 §23.3, printed pp. 115–118 (Theorems 23.4, 23.7, 23.8 and proofs).",
+      "catalogueDecision": "route-mismatch"
+    },
+    {
+      "id": "45-r3",
+      "title": "polynomial/permutation representation constructions",
+      "disposition": "route-mismatch",
+      "reason": "The cited lecture gives the subset/coset conjugation actions only; no separate polynomial or symmetric-group representation construction is proved.",
+      "locator": "MIT notes, Lecture 23 §23.3, printed pp. 115–118.",
+      "catalogueDecision": "route-mismatch"
+    },
+    {
+      "id": "51-r2",
+      "title": "principal ideal generator",
+      "disposition": "context-only-citation",
+      "reason": "The UIC page introduces projective elimination, Sylvester resultants, and states Bézout in projective space, but does not prove the polynomial ideal principal-generator route.",
+      "locator": "UIC Lecture 2, sections “Projective Coordinates” and “Sylvester resultant method”; Bézout statement in the projective-coordinate discussion.",
+      "catalogueDecision": "context-only-citation"
+    },
+    {
+      "id": "54-r3",
+      "title": "alternating binomial expansion",
+      "disposition": "statement-only",
+      "reason": "The Columbia PDF has the Binomial Inversion section and examples, but the retrieved pages contain no proof of the alternating-sum coefficient cancellation.",
+      "locator": "§4.2 “Binomial Inversion,” printed pp. 25–35; heading and examples, no proof passage.",
+      "catalogueDecision": "statement-only"
+    },
+    {
+      "id": "58-r1",
+      "title": "Triangulation and edge-face count",
+      "disposition": "partial-proof",
+      "reason": "Lecture 35 states the combinatorial Gauss–Bonnet formula and derives the polygon/edge/vertex count, but does not supply the catalog’s standalone triangulation-invariance proof.",
+      "locator": "MIT 18.950 notes, Lecture 35, Definition 35.3 and Theorem 35.4 (printed pp. 17–18).",
+      "catalogueDecision": "partial-proof"
+    },
+    {
+      "id": "58-r3",
+      "title": "Gauss–Bonnet and curvature",
+      "disposition": "complete-proof-located",
+      "reason": "Forster gives the geodesic-triangulation proof: angle excess integrates curvature, vertex angles sum to 2π, and 2E=3F yields 2χ; it also states χ=2−2g.",
+      "locator": "Forster, “The Theorem of Gauss-Bonnet in Complex Analysis,” pp. 1–2, theorem and proof following “Euler characteristic.”",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "77-r1",
+      "title": "Rectangle/box subdivision and cancellation of interior faces",
+      "disposition": "complete-proof-located",
+      "reason": "The cited Stokes paper proves the cube case by FTC with opposite face terms canceling, then uses a partition of unity for the general manifold case; this is the stated box-cancellation route in m dimensions.",
+      "locator": "Dresdner, §6, Theorem 6.0.3 proof, pp. 8–9: cube calculation and partition-of-unity reduction.",
+      "catalogueDecision": "partial-proof",
+      "integrationNote": "Cube calculation is present, but the general partition-of-unity reduction is asserted without proof."
+    },
+    {
+      "id": "77-r2",
+      "title": "differential forms/Stokes",
+      "disposition": "complete-proof-located",
+      "reason": "Theorem 6.0.3 explicitly proves Stokes on a cube and reduces to compact manifolds by coordinate-supported forms and a partition of unity.",
+      "locator": "Dresdner, §6, Theorem 6.0.3 and proof, pp. 8–9.",
+      "catalogueDecision": "partial-proof",
+      "integrationNote": "Cube calculation is present, but the general partition-of-unity reduction is asserted without proof."
+    },
+    {
+      "id": "80-r2",
+      "title": "prove with Green's theorem and the Cauchy–Riemann equations",
+      "disposition": "complete-proof-located",
+      "reason": "The web text gives Cauchy’s integral formula with a proof using the Cauchy–Goursat/Green framework and the punctured contour; the hypotheses and kernel normalization match the route.",
+      "locator": "Complex Analysis, §6.5, Theorem 6.5.1 and hidden Proof 6.5.1; prerequisites §6.3 Cauchy–Goursat.",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "82-r2",
+      "title": "triangulation plus angle defect",
+      "disposition": "complete-proof-located",
+      "reason": "Forster’s proof is exactly the geodesic-triangle angle-excess summation: vertex angle totals and two-triangles-per-edge reduce the integral to 2χ.",
+      "locator": "Forster, pp. 1–2, “Geodesic triangles,” “Euler characteristic,” and proof of Theorem (Gauß–Bonnet).",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "82-r3",
+      "title": "index theorem/characteristic classes in generalized forms",
+      "disposition": "complete-proof-located",
+      "reason": "The cited expository paper contains four proofs of Gauss–Bonnet–Chern and explicitly develops Chern–Weil/characteristic-class and index-theoretic routes; this is broader than the surface sketch but directly supports the generalized route.",
+      "locator": "Xiong, “The Gauss-Bonnet-Chern Theorem on Riemannian Manifolds,” abstract and §§3–6, arXiv:1111.4972 (59-page PDF).",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "83-r1",
+      "title": "Polygonal approximation and winding number",
+      "disposition": "partial-proof",
+      "reason": "Lecture 8 proves Jordan using winding number and a tubular-neighborhood local crossing argument, but not the catalog’s polygonal-approximation/annular-limit proof.",
+      "locator": "Colorado notes, Lecture 8 §8.3, “Proof of the Jordan curve theorem,” especially the paragraphs after the winding-number constancy lemma.",
+      "catalogueDecision": "route-mismatch",
+      "integrationNote": "The source has a different winding-number route; the catalog sketch specifies a polygonal-approximation limit."
+    },
+    {
+      "id": "84-r3",
+      "title": "equivalence of finite etale algebras and finite G-sets in a more advanced framing",
+      "disposition": "complete-proof-located",
+      "reason": "Milne Chapter 8 develops finite étale algebras, finite G-sets, the embedding constructions, and proves the contravariant equivalence theorem under separability assumptions.",
+      "locator": "Milne, Chapter 8, §§8.13–8.22, especially Theorem 8.21 and its proof (printed pp. 109–112).",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "87-r2",
+      "title": "Rabinowitsch trick",
+      "disposition": "complete-proof-located",
+      "reason": "The paper explicitly derives the strong Nullstellensatz from the weak form via Rabinowitsch’s substitution, with the algebraic-closed-field and vanishing hypotheses stated in the introduction and proof discussion.",
+      "locator": "Stevens, “Early Proofs of Hilbert’s Nullstellensatz,” arXiv:2309.14024, introduction and Rabinowitsch discussion (pp. 1–2; see also the cited Rab29 argument).",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "88-r1",
+      "title": "Inductively choose a linear combination avoiding finitely many bad coefficients",
+      "disposition": "complete-proof-located",
+      "reason": "Lecture 12 proves the finite separable primitive element theorem by choosing c outside finitely many roots so α+cβ has distinct conjugate images, then iterating.",
+      "locator": "NPTEL Lecture 12, Theorem 11.3, proof paragraph beginning “We look for a primitive element of the form …”.",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "88-r3",
+      "title": "finite-field cyclicity as the finite-field special case",
+      "disposition": "statement-only",
+      "reason": "The lecture invokes that a finite field’s multiplicative group is cyclic and then proceeds to primitive elements; the cited page does not prove the cyclicity theorem.",
+      "locator": "NPTEL Lecture 12, opening of §11 “The Primitive Element Theorem,” finite-field paragraph before Definition 11.1.",
+      "catalogueDecision": "statement-only"
+    },
+    {
+      "id": "106-r1",
+      "title": "Eisenstein after substituting x+1 for prime-power cases plus induction/divisibility",
+      "disposition": "partial-proof",
+      "reason": "Conrad proves the x+1 Eisenstein argument for Φ_{p^r} only. The cited §5 does not provide the catalog’s additional induction/divisibility proof for general n in this route.",
+      "locator": "Conrad, §5, Theorem 5.2 and following paragraph, pp. 8–9; prime-power case explicitly identified as an alternate proof.",
+      "catalogueDecision": "partial-proof"
+    },
+    {
+      "id": "116-r1",
+      "title": "Original value-distribution/complex-analysis proof",
+      "disposition": "route-mismatch",
+      "reason": "The cited article proves Little Picard via Ahlfors’ geometric lemma; it does not present the catalog’s logarithm-plus-original value-distribution argument.",
+      "locator": "Simonič, arXiv:1506.07019, §§5.1–5.2 (pp. 10–14), Ahlfors lemma and Little Picard proof.",
+      "catalogueDecision": "route-mismatch"
+    },
+    {
+      "id": "116-r2",
+      "title": "Nevanlinna theory and logarithmic derivative estimates",
+      "disposition": "scope-mismatch",
+      "reason": "The article mentions Nevanlinna theory only as later context and does not prove Little Picard using the second main theorem or logarithmic-derivative estimates.",
+      "locator": "Simonič, arXiv:1506.07019, concluding discussion around §7; no Nevanlinna proof of Little Picard.",
+      "catalogueDecision": "scope-mismatch"
+    },
+    {
+      "id": "116-r3",
+      "title": "differential-geometric/Ahlfors–Schwarz approach",
+      "disposition": "complete-proof-located",
+      "reason": "The article’s stated purpose and §§5.1–5.2 give the Ahlfors lemma and use hyperbolic metric comparison to prove Little Picard, matching the differential-geometric route.",
+      "locator": "Simonič, arXiv:1506.07019, Theorem 8 and §5.2 “The Little Picard theorem,” pp. 9–14.",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "117-r1",
+      "title": "Fourier-slice theorem and Fourier inversion",
+      "disposition": "complete-proof-located",
+      "reason": "The Münster notes prove the Fourier-slice theorem and use it to establish injectivity of the Radon transform on Schwartz functions; Fourier inversion supplies recovery.",
+      "locator": "Münster notes, Chapter 20, Corollary 191 (Fourier slice theorem), Theorem 202 (Riesz inversion), and the injectivity statement near p. 49.",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "117-r2",
+      "title": "filtered back-projection",
+      "disposition": "complete-proof-located",
+      "reason": "The notes state the Riesz inversion formula and identify the d−1 case as filtered backprojection, with the Fourier-slice derivation and recovery formula.",
+      "locator": "Münster notes, Chapter 20, Theorem 202, Remark 203, and formula following Remark 204 (pp. 47–48).",
+      "catalogueDecision": "complete-proof-located"
+    },
+    {
+      "id": "117-r3",
+      "title": "moments/polynomial-density arguments",
+      "disposition": "route-mismatch",
+      "reason": "The cited chapter proves moment consistency conditions, but does not prove injectivity by polynomial density and compact-support moment annihilation as sketched.",
+      "locator": "Münster notes, Chapter 21, Theorem 208 (Helgason–Ludwig moment conditions); no polynomial-density injectivity proof at the cited chapter locator.",
+      "catalogueDecision": "route-mismatch"
+    }
+  ],
+  "integrationSummary": {
+    "completeProofsAccepted": 10,
+    "routeLimitationsAccepted": 13,
+    "decisionsDifferentFromReviewer": 3
+  }
+}

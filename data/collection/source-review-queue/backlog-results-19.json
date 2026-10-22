@@ -1,0 +1,132 @@
+[
+ {
+  "routeId": "146-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "http://sporadic.stanford.edu/quantum/lecture8.pdf",
+  "sourceLabel": "D. Bump, Math 263C Lecture 8 slides (Kauffman brackets and the Jones polynomial)",
+  "preciseLocator": "Slides: Kauffman bracket definition; Theorem (invariance under Type O, II, III); curl computation <L>=-a^3<L'>; normalized bracket f(L)=(-a)^{-3w}<L>; Jones polynomial V_L(t)=f_L(t^{-1/4})",
+  "evidence": "Read slides: skein recursion with loop factor d, curl removal giving -a^3, Type II and III computations, writhe normalization and change of variable to Jones V. Move diagrams are pictures, Type III is short.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "146-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/quant-ph/0511096",
+  "sourceLabel": "Aharonov-Jones-Landau, quantum algorithm for Jones polynomial, Sec 2",
+  "preciseLocator": "Sec 2.9-2.11: Def 2.12, Claim 2.3, Lemma 2.1, Lemma 2.2",
+  "evidence": "Read TL algebra, braid representation, Markov trace with properties tr(XY)=tr(YX) and Markov property (checked 'by pictures'), and identity of braid closure with Kauffman bracket. Alexander and Markov theorems and bracket invariance are only cited, so link invariance is not proved.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "146-r3",
+  "outcome": "partial",
+  "sourceUrl": "http://sporadic.stanford.edu/quantum/lecture9.pdf",
+  "sourceLabel": "D. Bump, Math 263C Lecture 9 slides",
+  "preciseLocator": "Slides 'Knot invariants' to 'The Kauffman bracket as a quantum trace'",
+  "evidence": "Read: links as ribbon-category morphisms, standard U_q(sl2) module R-matrix T with T^2=(q-q^-1)T+1, skein relation for quantum trace. Source says twist not computed and checks left to reader; Reidemeister I/II/III invariance and Yang-Baxter use not proved here.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "146-r4",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Tried Witten CMP 1989 on Project Euclid (blocked by bot protection, not bypassed), Labastida review hep-th/9905057 and Dunne hep-th/9902115 (read, no conformal-block derivation of the skein relation), Bump lectures. No free text of the derivation obtained.",
+  "sketchProblem": "Sketch is explicitly heuristic (path integral undefined), so a complete rigorous proof of this exact route cannot exist; consider relabeling as heuristic/physics route.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "147-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/leeriemm.pdf",
+  "sourceLabel": "J. M. Lee, Riemannian Manifolds: An Introduction to Curvature (GTM 176), copy on Ranicki's Edinburgh page",
+  "preciseLocator": "Ch. 10: Lemma 10.7, Lemma 10.8, Prop 10.9 (metric in normal coordinates, formula 10.8), Prop 10.10 (local uniqueness); pp. ~178-181",
+  "evidence": "Read the proofs: Jacobi equation reduces to u''+Cu=0 with explicit solutions, Gauss lemma gives metric in normal coordinates identical to model, hence local isometry. Also Lohs notes Thm 4.2.4 (loeh.app.uni-regensburg.de) same argument. Hosting of the book copy may be unauthorized; Loeh notes are a legitimate alternative.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "147-r2",
+  "outcome": "none-found",
+  "sourceUrl": null,
+  "sourceLabel": null,
+  "preciseLocator": null,
+  "evidence": "Searched for Frobenius/Pfaffian-system proof on frame bundles: read Lee GTM 176, Loeh lecture notes, Wang Lec10, de Bray M392C Lec18 (states Theorem 18.4, structure equations only, exercise), Falbel-Alexandre. None gives the O(M)xO(S) Pfaffian system with Frobenius argument.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "147-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://webusers.imj-prg.fr/~elisha.falbel/Cartan/poly.pdf",
+  "sourceLabel": "Alexandre-Falbel, Introduction to Cartan geometry",
+  "preciseLocator": "Thm 3.13 (Maurer-Cartan integration), Thm 6.9 (mutation), Prop 6.18, Cor 6.22",
+  "evidence": "Read: omega with Maurer-Cartan equation is locally f^*theta; constant curvature + zero torsion gives flat mutated geometry. Cor 6.22 is stated for complete case without proof, and the Riemannian specialization (Levi-Civita, kappa curvature, local isometry to sphere/Euclid/hyperbolic) is not carried out.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "148-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/2210.07952",
+  "sourceLabel": "U. Lim, Harmonic Forms, Hodge Theory and the Kodaira Embedding Theorem",
+  "preciseLocator": "Sec 3.2: Props 3.2-3.3, Thms 3.1-3.4 (Hodge), Cor 3.1; also Etnyre notes Thm 1.22, Cor 1.23-1.24 (etnyre.math.gatech.edu/class/8803Fall18/Hodge.pdf)",
+  "evidence": "Read: Green operator G, I=H+GDelta, commutation with d, exactness argument and uniqueness are fully proved. Missing: ellipticity of Laplacian not checked, PDO symbol lemma omitted, regularity only 'essentially'. Etnyre notes end with Gaarding/regularity (Thm 4.12) stated without proof.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "148-r2",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://etnyre.math.gatech.edu/class/8803Fall18/Hodge.pdf",
+  "sourceLabel": "Etnyre, Class notes on Hodge theory",
+  "preciseLocator": "Sec 1.3, Thm A, Thm B, proof of Hodge Thm 1.22; Cor 1.24",
+  "evidence": "Read: Warner-style proof via weak solutions of Delta phi=omega, Hahn-Banach, elliptic regularity and Rellich; not the projection onto orthogonal complement of closure of d(Omega) with weak d,delta closedness. Analytic Thm 4.12 not proved. Same family as M. George notes.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "148-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://users.math.msu.edu/users/sutravek/Hodge.pdf",
+  "sourceLabel": "K. Sutrave, Heat equation proof of the Hodge theorem",
+  "preciseLocator": "Sec 4 (Thm 1.1 proof, Lemma 4.3-4.4), Appendix 6",
+  "evidence": "Read: alpha_t closed, alpha_t-alpha=d(...) exact, spectral expansion, limit is harmonic projection, injectivity by <d beta,..>. Heat solution existence (Thm 4.1) is asserted, spectral decomposition only sketched, C^infty convergence not shown. Arapura Part II Sec 7.3 is only an outline.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "149-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf",
+  "sourceLabel": "A. Hatcher, Algebraic Topology, Sec 2.B",
+  "preciseLocator": "Prop 2B.6 and Cor 2B.7 (transfer sequence with Z2 coefficients)",
+  "evidence": "Read: odd maps S^n->S^n have odd degree via Z2 transfer sequence, then Borsuk-Ulam by normalizing g(x)-g(-x) and restricting to equator which is nullhomotopic. Odd-degree mechanism uses transfer sequence not the cup power w^{n-1}; n=1 left to reader.",
+  "sketchProblem": "Sketch's mechanism (w^{n-1}) differs from source; same degree-mod-2 route.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "149-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/1604.02395",
+  "sourceLabel": "Kuture et al., Proving Tucker's Lemma with a Volume Argument",
+  "preciseLocator": "Thm 1 and its proof (Sec 3)",
+  "evidence": "Read: full proof of Tucker's lemma on triangulated cross-polytope (volume argument). The deduction of Borsuk-Ulam from Tucker (labeling by max coordinate, mesh to 0) is not in this or Prescott-Su math/0310444 or de Longueville-Zivaljevic, which only cite it.",
+  "sketchProblem": "Sketch pulls back to hemisphere with arbitrary triangulation; Tucker as stated needs antipodally symmetric triangulation refining coordinate hyperplanes or a detour (de Longueville-Zivaljevic Sec 2).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "149-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://arxiv.org/pdf/1008.1134",
+  "sourceLabel": "M. Singh, A simple proof of the Borsuk-Ulam theorem for Z_p-actions",
+  "preciseLocator": "Main theorem proof, p=2 case (pp. 2-3)",
+  "evidence": "Read: equivariant f:S^n->S^m with n>m; cohomology ring Z2[s]/s^{n+1} of RP^n; if f* nonzero on H^1 then s^{m+1}=0 contradiction; zero case excluded by lifting argument. Uses RP^n ring from Hatcher as known; does not derive the BU statement for f:S^n->R^n from nonexistence.",
+  "sketchProblem": "Sketch asserts f* pulls w1 back to w1 directly; source needs separate lifting argument for the zero case.",
+  "confidence": "low"
+ }
+]

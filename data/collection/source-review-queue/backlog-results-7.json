@@ -1,0 +1,142 @@
+[
+ {
+  "routeId": "40-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Cayley%E2%80%93Hamilton_theorem",
+  "sourceLabel": "Wikipedia, Cayley-Hamilton theorem",
+  "preciseLocator": "Section 'Proofs' > 'A direct algebraic proof'",
+  "evidence": "Read in full: (tI-A)B=p(t)I, B=sum t^i B_i, coefficient equations B_{i-1}-AB_i=c_i I, multiply by A^i and sum; telescoping cancels leaving p(A)=0.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "40-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://sites.math.rutgers.edu/~ds2005/Math%20320%20Week%2015.pdf",
+  "sourceLabel": "Rutgers Math 320 notes, Week 15, section 5.4",
+  "preciseLocator": "Lemmas 3,5,7,8 and 'Proof of Theorem 1'",
+  "evidence": "Per vector x: cyclic subspace basis x..T^{k-1}x, companion matrix, char poly of restriction g with g(T)x=0, g divides f (block triangular), so f(T)x=0. Two routine facts (block determinant, companion char poly) only outlined ('one can verify'). Uses every x, not a global cyclic decomposition.",
+  "sketchProblem": "Sketch mentions cyclic decomposition/rational canonical form; the source needs neither.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "40-r3",
+  "outcome": "route-mismatch",
+  "sourceUrl": "https://www.math.brown.edu/streil/papers/LADW/LADW_2017-09-04.pdf",
+  "sourceLabel": "Treil, Linear Algebra Done Wrong",
+  "preciseLocator": "Ch.9 sec.1 'A standard proof'",
+  "evidence": "Proves via upper-triangular flag E_k with (A-lambda_k I)E_k in E_{k-1}, not generalized eigenspaces. No source found with the generalized-eigenspace argument (only search snippets).",
+  "sketchProblem": "Title says 'polynomial interpolation' but sketch is triangularization/generalized eigenspaces; also claims triangular argument alone insufficient, yet the flag argument is a complete proof. Sketch muddled.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "41-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem",
+  "sourceLabel": "Wikipedia, Rank-nullity theorem",
+  "preciseLocator": "Section 'Proofs' > 'First proof'",
+  "evidence": "Basis of Ker T extended to basis of V; T(S) spans Im T and is independent via relation placing a combination in Ker T; counts k+(n-k).",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "41-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem",
+  "sourceLabel": "Wikipedia, Rank-nullity theorem",
+  "preciseLocator": "Section 'Reformulations and generalizations'",
+  "evidence": "States every short exact sequence of vector spaces splits so U+R ~ V, but gives no proof of splitting or that T restricted to a complement is an isomorphism (only brief remark in the Linear transformations section citing the splitting lemma). Missing: complement construction and isomorphism step.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "42-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.maths.tcd.ie/~vdots/teaching/files/MA1112-1819/1112L3handout.pdf",
+  "sourceLabel": "TCD MA1112 Lecture 3 handout (Dotsenko)",
+  "preciseLocator": "Theorem 1 and proof",
+  "evidence": "Basis of V1\u2229V2 extended two ways; combined list shown spanning V1+V2 and independent; counts p+q+r.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "42-r2",
+  "outcome": "none-found",
+  "sourceUrl": "",
+  "sourceLabel": "",
+  "preciseLocator": "",
+  "evidence": "Checked TCD handout, Wikipedia rank-nullity and Treil: they prove the formula by adapted bases or only state rank-nullity; no source read that writes the addition map U\u2295W\u2192U+W with kernel {(z,-z)}.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "42-r3",
+  "outcome": "none-found",
+  "sourceUrl": "",
+  "sourceLabel": "",
+  "preciseLocator": "",
+  "evidence": "Same as 42-r2; nothing read presents a distinct Grassmannian count.",
+  "sketchProblem": "Sketch itself says it is not distinct from route 2; should be merged or dropped.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "43-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Spectral_theorem",
+  "sourceLabel": "Wikipedia, Spectral theorem",
+  "preciseLocator": "Hermitian case theorem and its proof sketch, near the start",
+  "evidence": "Uses FTA for an eigenvalue, shows it is real, orthogonal complement invariant, induction. Self-described as a sketch and omits the real-eigenvector choice for the real symmetric case. MIT OCW 18.700 spctrl_thrm note (read) uses a maximization/Rayleigh argument instead; Rutgers and Treil use Schur triangularization.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "44-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://arxiv.org/pdf/1210.7958",
+  "sourceLabel": "Excursions in Group Theory",
+  "preciseLocator": "Lemma 11.30 and Corollary 11.31",
+  "evidence": "Lemma 11.30 fully proves a max-order element generates a direct summand in any finite abelian group (written out). The final induction is stated as 'straightforward'; no p-primary decomposition step. Willamette slides read were outline only.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "44-r2",
+  "outcome": "none-found",
+  "sourceUrl": "",
+  "sourceLabel": "",
+  "preciseLocator": "",
+  "evidence": "Excursions Lemma 11.29 reduces to a stacked-basis theorem (Thm 11.19), not matrix row/column operations; I did not confirm Thm 11.19's proof. Harvard/Reed pages were not read.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "44-r3",
+  "outcome": "none-found",
+  "sourceUrl": "",
+  "sourceLabel": "",
+  "preciseLocator": "",
+  "evidence": "No source read proving the PID structure theorem and deducing the group case; not examined beyond search results.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "45-r2",
+  "outcome": "none-found",
+  "sourceUrl": "",
+  "sourceLabel": "",
+  "preciseLocator": "",
+  "evidence": "Not examined in this session beyond the earlier mismatch finding.",
+  "sketchProblem": null,
+  "confidence": "low"
+ },
+ {
+  "routeId": "45-r3",
+  "outcome": "none-found",
+  "sourceUrl": "",
+  "sourceLabel": "",
+  "preciseLocator": "",
+  "evidence": "Not examined.",
+  "sketchProblem": "Sketch admits it is the group-action method, not a separate route.",
+  "confidence": "low"
+ }
+]

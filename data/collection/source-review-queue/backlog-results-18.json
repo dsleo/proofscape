@@ -1,0 +1,142 @@
+[
+  {
+    "routeId": "139-r1",
+    "outcome": "partial",
+    "sourceUrl": "https://builds.openlogicproject.org/content/first-order-logic/completeness/completeness.pdf",
+    "sourceLabel": "Open Logic Project, Completeness Theorem chapter (first-order logic)",
+    "preciseLocator": "Sections com.4-com.8: Prop com.3, Lemma com.6, Lemma com.8, Def com.9, Lemma com.12, Lemma com.19, Thm com.20",
+    "evidence": "Read the full chapter: Henkin expansion with fresh constants (Lemma com.6 proved via generalization on constants), Lindenbaum (com.8), term model, truth lemma, quotient by provable equality (com.16-19) and Thm com.20 are all written out. But Prop com.3 (consistency preserved under adding constants) has no proof in the text, and Prop com.2/com.14 (closure and congruence properties) are left as Problems com.1/com.2, so the route is not fully self-contained.",
+    "sketchProblem": null,
+    "confidence": "medium-high"
+  },
+  {
+    "routeId": "139-r2",
+    "outcome": "partial",
+    "sourceUrl": "https://cs.cornell.edu/courses/cs6862/2011sp/Lecture%2014,%202010.pdf",
+    "sourceLabel": "Cornell CS 486 (2005) Lecture 17: Correctness and Completeness (first-order tableaux)",
+    "preciseLocator": "Section 17.2 Completeness: first-order Hintikka sets, Hintikka Lemma (Thm 2), systematic procedure, Lemma 3, Thm 5",
+    "evidence": "Read it: Hintikka lemma for first-order is proved by induction, and the systematic tableau (gamma formulas recopied, fresh parameters) and the completeness theorem Thm 5 are given. But Lemma 3 (finished systematic tableau => every open branch is a Hintikka sequence) is only asserted ('a detailed proof would have to show...'), and the theorem is for a single formula, not Sigma |= phi with a set of premises. Smullyan's excerpt (Cornell cs4860 Smullyan_57-59) stops just after the procedure, before the key lemma; LMU slides are propositional for completeness.",
+    "sketchProblem": null,
+    "confidence": "medium"
+  },
+  {
+    "routeId": "139-r3",
+    "outcome": "complete-proof-found",
+    "sourceUrl": "https://www.math.utoronto.ca/swastik/courses/logic-S23/steve-cooks-notes/page31.pdf",
+    "sourceLabel": "S. Cook, CSC 438F notes: Completeness of System LK for Predicate Calculus",
+    "preciseLocator": "Notes pp. 31-37: Completeness Lemma and its proof (stagewise cut-free proof search, term model from open/infinite branch, Claim)",
+    "evidence": "Read the proof: bottom-up systematic construction applying all rules, with the contraction trick re-instantiating forall-left/exists-right at every term and fresh variables for eigenvariable rules; if the search halts it is a cut-free LK proof, else an (infinite) branch yields a term model falsifying the sequent, with the quantifier cases of the Claim written out (other cases called straightforward; Exercises 3,4 left).",
+    "sketchProblem": "The 'Hauptsatz transfers completeness' step is logically unnecessary and arguably backwards: cut-free completeness directly gives completeness of LK (cut-free proofs are LK proofs); cut elimination is needed only for the converse (cut-free LK no weaker). Cook does not prove the Hauptsatz. Also the construction uses free variables rather than fresh constants.",
+    "confidence": "medium"
+  },
+  {
+    "routeId": "140-r1",
+    "outcome": "complete-proof-found",
+    "sourceUrl": "https://builds.openlogicproject.org/content/incompleteness/incompleteness.pdf",
+    "sourceLabel": "Open Logic Project, Incompleteness chapter 5 (Incompleteness and Provability)",
+    "preciseLocator": "Sec 5.2 Lemma 5.2 (fixed-point lemma, proved); Sec 5.3 Lemma 5.3, Def 5.4, Lemma 5.5, Thm 5.6",
+    "evidence": "Read: diagonal lemma with full proof in Q, Goedel sentence with Q |- G <-> not Prov(G); Lemma 5.3 shows consistency gives T does not prove G; Lemma 5.5 shows omega-consistency gives T does not prove not-G; Thm 5.6 concludes. Representability of the decidable proof predicate is taken from earlier chapters (Ch 3).",
+    "sketchProblem": null,
+    "confidence": "high"
+  },
+  {
+    "routeId": "140-r2",
+    "outcome": "complete-proof-found",
+    "sourceUrl": "https://builds.openlogicproject.org/content/incompleteness/incompleteness.pdf",
+    "sourceLabel": "Open Logic Project, Incompleteness chapter 5",
+    "preciseLocator": "Sec 5.4 Rosser's Theorem, Thm 5.7 and proof (eq 5.4 and both cases)",
+    "evidence": "Read: Rosser provability predicate RProv(y)=exists x(Prf(x,y) & forall z<x not Ref(z,y)), fixed point R <-> not RProv(R), then both halves: a proof n of R yields Q |- RProv(R) hence inconsistency, and a refutation n yields Q |- not RProv-negation using bounded-quantifier lemmas 3.24/3.25. Uses only consistency. Equivalent to the sketch's R <-> forall y(Prf -> exists z<=y Prf(neg)) up to < vs <=.",
+    "sketchProblem": null,
+    "confidence": "high"
+  },
+  {
+    "routeId": "140-r3",
+    "outcome": "route-mismatch",
+    "sourceUrl": "https://builds.openlogicproject.org/content/incompleteness/incompleteness.pdf",
+    "sourceLabel": "Open Logic Project, Incompleteness chapter 4 (Theories and Computability)",
+    "preciseLocator": "Sec 4.2 (Q is c.e.-complete), Thm 4.5, Lemma 4.8, Thm 4.9, Lemma 4.10 (provable/refutable in Q inseparable), Thm 4.11",
+    "evidence": "Read: a recursion-theoretic proof of first incompleteness exists there (complete axiomatizable => decidable; consistent extensions of Q undecidable via a diagonal argument on a universal computable relation, and inseparability of Q-provable vs Q-refutable sentences). It does not use the sketch's sets A={e:phi_e(e)=0}, B={e:phi_e(e)=1}; the separation/diagonal step is different, so the exact catalogue argument is not present.",
+    "sketchProblem": null,
+    "confidence": "medium"
+  },
+  {
+    "routeId": "141-r3",
+    "outcome": "complete-proof-found",
+    "sourceUrl": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+    "sourceLabel": "J. S. Milne, Algebraic Number Theory, Chapter 4 The Finiteness of the Class Number",
+    "preciseLocator": "Thm 4.3 (Minkowski bound), Thm 4.4 (class number finite), Props 4.26-4.27, Thm 4.19 (Minkowski convex body theorem, proved)",
+    "evidence": "Read: Minkowski's lattice-point theorem, covolume of the ideal lattice (Prop 4.26), existence of an element of bounded norm in each ideal (Prop 4.27), hence each class has an integral ideal of norm <= Minkowski bound and the class group is finite (Thm 4.3-4.4), all proved. This proves the finiteness/application content the sketch describes, not unique ideal factorization.",
+    "sketchProblem": "The sketch itself says this is a consequence/application and not a second proof route for unique factorization of ideals; it should not be listed as a route for this result (it belongs under class-group finiteness / non-UFD criteria). 'Criteria for non-UFD behaviour' is only loosely supported (Milne uses the Minkowski bound for class group computations, Examples after Thm 4.4).",
+    "confidence": "medium"
+  },
+  {
+    "routeId": "143-r1",
+    "outcome": "complete-proof-found",
+    "sourceUrl": "https://sites.math.washington.edu/~marshall/preprints/uniformizationII.pdf",
+    "sourceLabel": "Donald E. Marshall, The Uniformization Theorem (notes)",
+    "preciseLocator": "Perron family definition and Cases 1/2; Lemmas 1-3; Thm 4 (Green's function => biholomorphism onto D, via monodromy, |phi|=exp(-g), injectivity, Riemann mapping); Lemma 5 + proof of Case 2 (dipole Green's function => C or sphere)",
+    "evidence": "Read the whole note: Perron's method decides whether Green's function exists; if so a holomorphic phi with |phi|=exp(-g) (single-valued by monodromy on the simply connected surface) is shown injective and onto D; otherwise a Perron-built dipole Green's function gives an injective meromorphic map, onto C or the sphere. Essentially self-contained (monodromy theorem, Harnack, Riemann mapping cited).",
+    "sketchProblem": "Sketch says parabolic case uses a harmonic function with a single pole and compact case a separate Dirichlet-principle argument; Marshall treats both uniformly with a dipole Green's function, and uses Perron families not an exhaustion by regular domains. Same potential-theoretic method, different details.",
+    "confidence": "medium"
+  },
+  {
+    "routeId": "143-r2",
+    "outcome": "none-found",
+    "sourceUrl": null,
+    "sourceLabel": "Marshall notes; Anghel-Stan arXiv 2008.12189; Beliaev notes (Stony Brook math627)",
+    "preciseLocator": null,
+    "evidence": "Searched and read: Marshall's note (uniformization via Perron/Green's function; its Comment 1 contains the Koebe square-root + Schwarz lemma step but no Montel maximizer of |h'(p)| over injective maps X->D), Anghel-Stan (exhaustion, Green function, Montel used inside a different compactness argument, non-compact case only) and Beliaev (planar Riemann mapping only). None carries out the extremal-family argument on a Riemann surface.",
+    "sketchProblem": "The route presupposes the family of injective maps X->D is nonempty (obtained from a Green's function or embedding), so it is not an independent proof; it only reproves surjectivity in the hyperbolic case after route 1 has done the real work. It also leaves C and the sphere uncovered.",
+    "confidence": "medium"
+  },
+  {
+    "routeId": "143-r3",
+    "outcome": "none-found",
+    "sourceUrl": "https://arxiv.org/pdf/math/0505163",
+    "sourceLabel": "Chen-Lu-Tian, A note on uniformization of Riemann surfaces by Ricci flow (arXiv math/0505163); Ji arXiv 2404.01980",
+    "preciseLocator": null,
+    "evidence": "Opened Chen-Lu-Tian (3 pages: only proves that gradient shrinking solitons on S^2 have constant curvature, citing Hamilton 1988 and Chow 1991 for everything else) and Ji (sphere case by a different isoperimetric-ratio argument, again building on Hamilton/Andrews-Bryan). Hamilton and Chow papers and Chow-Knopf book were not free to retrieve; Paris-Saclay Ricci-flow notes only seen as a table of contents.",
+    "sketchProblem": "Ricci flow proves uniformization of compact surfaces; for simply connected X only the sphere is covered, and the sketch admits C and D are not. Also Hamilton's soliton step historically used uniformization (circularity fixed by Chen-Lu-Tian), which the sketch omits.",
+    "confidence": "medium"
+  },
+  {
+    "routeId": "144-r1",
+    "outcome": "partial",
+    "sourceUrl": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/atiyahsing.pdf",
+    "sourceLabel": "Atiyah-Singer, The index of elliptic operators on compact manifolds (Bull. AMS 1963 announcement)",
+    "preciseLocator": "Sections 4-5: Prop 3 (Ell(X)), Sec 5 Cobordism, Prop 4 and remarks",
+    "evidence": "Read: states the cobordism proof program (reduction to generators of Omega tensor Q, multiplicativity, check on CP^n and S^2n, cobordism invariance of the analytic index via boundary value problems) but only as an outline with proof ideas; full details are in Palais' Seminar (not freely retrievable). The K-theory pushforward route is proved in Annals 87 (1968) instead (see 144-r3), a different proof.",
+    "sketchProblem": "Sketch mixes the 1963 cobordism proof and the 1968 K-theory/embedding proof; these are separate routes (the latter is 144-r3).",
+    "confidence": "medium"
+  },
+  {
+    "routeId": "144-r2",
+    "outcome": "partial",
+    "sourceUrl": "https://arxiv.org/pdf/1911.09766",
+    "sourceLabel": "Lecture Notes on Spin Geometry (arXiv 1911.09766)",
+    "preciseLocator": "Sec 4.4 On the heat kernel proof of the index theorem, 4.4.2 McKean-Singer (Prop 4.4.10-4.4.11), Getzler rescaling, Mehler formula (Prop 4.4.15)",
+    "evidence": "Read: McKean-Singer supertrace independence of t and limit t->infty are proved; the rescaling argument and Mehler computation giving the A-hat/ch integrand are given, but the notes say they 'will not present all the analytical details' and only sketch the rest, e.g. existence of the small-t asymptotic expansion. Complementary source: Fine-Sawin arXiv 1605.06982 cites BGV Thm 2.30 for the same expansion.",
+    "sketchProblem": "Sketch covers only Dirac-type operators; general elliptic operators need a reduction (e.g. to twisted Dirac) not mentioned.",
+    "confidence": "medium"
+  },
+  {
+    "routeId": "144-r3",
+    "outcome": "partial",
+    "sourceUrl": "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/as1.pdf",
+    "sourceLabel": "Atiyah-Singer, The index of elliptic operators I, Ann. of Math. 87 (1968) (scan hosted by Ranicki, JSTOR terms apply); also Landweber arXiv math/0504555",
+    "preciseLocator": "AS I: Sec 3-4 (topological index, uniqueness Thm 4.6), Sec 6 (analytic index, Thm 6.7), Secs 8-9 (axioms verified); Landweber Sec 3 and Appendix A",
+    "evidence": "Read (OCR) AS I: topological index via embedding and Thom isomorphism, axiomatic uniqueness theorem, analytic index and Thm 6.7 with verification of the axioms (excision, multiplicativity, normalization via Bott class). Landweber Ch 3 gives same proof with Appendix A proving Bott periodicity. However Bott periodicity/Thom isomorphism, pseudodifferential calculus and Fredholm/Sobolev facts are cited (AS I Sec 2, 5; Landweber 'see [10, 5]') not proved in the same document; Landweber's Thom isomorphism is only sketched.",
+    "sketchProblem": "Sketch's 'principal symbol is Fredholm and stable-homotopy invariant' and 'reduction to the Bott generator' are present, but the sketch is essentially the same proof as 144-r1's K-theory half, so r1/r3 overlap.",
+    "confidence": "medium"
+  },
+  {
+    "routeId": "144-r4",
+    "outcome": "partial",
+    "sourceUrl": "https://arxiv.org/pdf/1605.06982",
+    "sourceLabel": "Fine-Sawin, Path integrals, SUSY QM and the Atiyah-Singer index theorem for twisted Dirac (arXiv 1605.06982)",
+    "preciseLocator": "Secs 1-2 (time-slicing path integral, Thm 2.1-2.2), Sec 3.3 (N=1/2 SUSY QM), Sec 4 (Thm 4.1, Props 4.1-4.3, Remark 4.2)",
+    "evidence": "Read: a rigorous time-slicing construction of the path integral that equals the heat kernel and a steepest-descent/rescaling proof of the local index theorem for Dirac operators (Thm 4.1), following Friedan-Windey. It gives the 'specified regularization' the sketch asks for, but relies on cited BGV Thm 2.30 for the expansion and 'as in [BGV04]' for deducing the index from the local theorem, covers Dirac operators only, and does not present the boson/fermion nonzero-mode cancellation as such.",
+    "sketchProblem": null,
+    "confidence": "medium"
+  }
+]

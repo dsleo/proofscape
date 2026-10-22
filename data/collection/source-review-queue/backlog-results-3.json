@@ -1,0 +1,152 @@
+[
+ {
+  "routeId": "15-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Proofs_of_Fermat%27s_little_theorem",
+  "sourceLabel": "Wikipedia, Proofs of Fermat's little theorem",
+  "preciseLocator": "Section 'Proof as a particular case of Euler's theorem' with subsections 'The cancellation law' and 'The rearrangement property'",
+  "evidence": "Read the full argument: a,2a,...,(p-1)a reduce to a rearrangement of 1..p-1, multiply, collect a^(p-1)(p-1)!=(p-1)!, cancel via Euclid's lemma; rearrangement (nonzero, distinct) and a^p=a from the 'Simplifications' section are proved.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "15-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Proofs_of_Fermat%27s_little_theorem",
+  "sourceLabel": "Wikipedia, Proofs of Fermat's little theorem",
+  "preciseLocator": "Section 'Proofs using group theory' > 'Standard proof'",
+  "evidence": "Read: G={1..p-1} is a group (inverses via Bezout), order k of a gives subgroup, Lagrange gives k | p-1, so a^(p-1)=1; a=0 and the a^p form are covered in 'Simplifications'.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "15-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Proofs_of_Fermat%27s_little_theorem",
+  "sourceLabel": "Wikipedia, Proofs of Fermat's little theorem",
+  "preciseLocator": "Section 'Proofs using the binomial theorem' > 'Proof 1' (induction) and 'Proof of Lemma'",
+  "evidence": "Read: base a=0, lemma (x+y)^p=x^p+y^p mod p from p | C(p,i) for 0<i<p, induction step; a>=0 handled, negatives by reduction mod p in 'Simplifications'.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "16-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Wilson%27s_theorem",
+  "sourceLabel": "Wikipedia, Wilson's theorem",
+  "preciseLocator": "Section 'Proofs' > 'Prime modulus' > 'Elementary proof'",
+  "evidence": "Read: p=2 trivial; for odd p each nonzero residue has a unique inverse, a=a^-1 only for a=+-1 (Euclid's lemma on a^2-1), the rest pair off with product 1, giving (p-1)!=-1; worked p=11 example. Phrased via field/inverses rather than the word 'group', but the same argument.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "17-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
+  "sourceLabel": "Wikipedia, Euclidean algorithm",
+  "preciseLocator": "Section 'Proof of validity'",
+  "evidence": "Read: termination from |r_i|<|r_(i-1)|; gcd(x,0)=x and gcd(x,y)=gcd(y,x-zy) proved by common divisors, so the last nonzero remainder is gcd(a,b).",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "17-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
+  "sourceLabel": "Wikipedia, Euclidean algorithm",
+  "preciseLocator": "Sections 'Proof of validity' and 'Principal ideals and related problems'",
+  "evidence": "Termination and gcd invariance are proved by common divisors, and the ideal-of-a,b generated-by-gcd fact is stated (via Bezout), but no source I opened proves (a,b)=(b,a-qb) and chains it down the remainder sequence. Missing step: the ideal-equality invariance argument. Searched Clark LibreTexts, TAMU Math 415 notes; could not retrieve text.",
+  "sketchProblem": "Route is close to the standard divisor-invariance proof; only the ideal language differs.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "17-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://math.albany.edu/pers/hammond/course/cfrac/confrac.html",
+  "sourceLabel": "Hammond, Continued Fractions and the Euclidean Algorithm (Albany MATH 326)",
+  "preciseLocator": "Section 4 'The case of a rational number'; Section 7 Corollary 3",
+  "evidence": "Read: continued-fraction quotients coincide with Euclid quotients and finiteness follows, but termination of Euclid is simply asserted and the identification of the last nonzero remainder with gcd by invariance is not proved there (only a Bezout-type formula in sec. 7). Missing: strict descent and gcd-invariance steps.",
+  "sketchProblem": "Sketch is essentially the Euclid proof renamed; the continued-fraction content adds no independent argument.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "18-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
+  "sourceLabel": "Wikipedia, Euclidean algorithm",
+  "preciseLocator": "Section \"Bezout's identity\" (together with 'Proof of validity' for gcd = last nonzero remainder)",
+  "evidence": "Read: g=r_(N-1)=r_(N-3)-q_(N-1) r_(N-2), then successively substitute r_k=r_(k-2)-q_k r_(k-1) back to r_0=a-q_0 b, giving g=sa+tb. Last nonzero remainder = gcd is proved in 'Proof of validity'.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "18-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity",
+  "sourceLabel": "Wikipedia, Bezout's identity",
+  "preciseLocator": "Section 'Existence proof'",
+  "evidence": "Read: least positive element d of {ax+by} is shown by Euclidean division to divide a and b, and any common divisor divides d, so d=gcd. This is the subgroup/least-element argument, but the lattice-point/projection framing and 'every subgroup of Z is dZ' are not stated.",
+  "sketchProblem": "Sketch looks wrong: vectors (a,b) in Z^2 project to aZ, not aZ+bZ; should be the image of Z^2 under (x,y)->ax+by.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "19-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Chinese_remainder_theorem",
+  "sourceLabel": "Wikipedia, Chinese remainder theorem",
+  "preciseLocator": "Statement (ring isomorphism remark); 'Proof' > 'Uniqueness' and 'Existence (first proof)'",
+  "evidence": "Read: map x mod N -> (x mod n_i) shown injective via uniqueness (n_i | x-y so N | x-y), then bijective by equal cardinality. Ring-homomorphism property is asserted, not proved, and kernel language is absent. Cited Poritz LibreTexts 2.3 proves it constructively (N_j y_j), not by this route.",
+  "sketchProblem": "Cited reference (Poritz 2.3) is a route mismatch for this sketch.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "20-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/mit18_100af20_lec5.pdf",
+  "sourceLabel": "MIT 18.100A Fall 2020, Lecture 5",
+  "preciseLocator": "Density of the rationals, part ii) (case 0<=x<y, then sign cases)",
+  "evidence": "Read: Archimedean property gives n with n(y-x)>1, then m = least integer > nx (= floor(nx)+1 by well-ordering), so nx<m<=nx+1<ny, hence x<m/n<y. Floor is expressed as least element, same construction.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "20-r3",
+  "outcome": "none-found",
+  "sourceUrl": "https://abstractmath.org/MM/MMRealDensity.htm",
+  "sourceLabel": "abstractmath.org, Density of the Real Numbers",
+  "preciseLocator": "Theorem on density of rationals/irrationals",
+  "evidence": "Only a one-sentence truncation remark, not a proof that two decimal truncations leave a finite decimal strictly between a and b. Web search found no full written source for this exact decimal route.",
+  "sketchProblem": "Sketch's 'differ by more than one unit' step is only informal; the route reduces to the floor/Archimedean argument.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "21-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.ornaverum.org/reference/pdf/697.pdf",
+  "sourceLabel": "ornaverum.org, 'Rationale of Irrationality' (essay PDF)",
+  "preciseLocator": "Part B, 'To prove that sqrt p is irrational using Euclid's Lemma'",
+  "evidence": "Read: sqrt p=a/b coprime, p b^2=a^2, Euclid's lemma gives p|a, then p|b, contradiction. Informal personal essay, not a textbook.",
+  "sketchProblem": "Route title ('Prime-exponent parity') does not match its sketch (Euclid's lemma descent); titles of 21-r1 and 21-r2 appear swapped.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "21-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://proofwiki.org/wiki/Square_Root_of_Prime_is_Irrational/Proof_1",
+  "sourceLabel": "ProofWiki, Square Root of Prime is Irrational, Proof 1",
+  "preciseLocator": "Proof 1",
+  "evidence": "Read: n^2 p = m^2, prime p occurs an even number of times in m^2 but odd in n^2 p, contradiction (relies on unique factorization).",
+  "sketchProblem": "Route title ('lowest-terms divisibility') does not match its sketch (prime exponents); titles of 21-r1 and 21-r2 appear swapped.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "21-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Rational_root_theorem",
+  "sourceLabel": "Wikipedia, Rational root theorem",
+  "preciseLocator": "Section 'Proofs' > 'Elementary proof'",
+  "evidence": "The theorem is proved, but the page does not apply it to X^2-p; its examples cover other polynomials, and its square-root irrationality discussions (sqrt 2) are in other articles. Missing step: the application to X^2-p. Also ProofWiki Proof 2 uses polynomial irreducibility, not the rational-root theorem.",
+  "sketchProblem": "Sketch's sentence 'For p= square this would differ' is garbled; also needs only m|p, n|1 giving integers +-1,+-p.",
+  "confidence": "medium"
+ }
+]

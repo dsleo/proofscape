@@ -1,0 +1,107 @@
+[
+ {
+  "routeId": "2-r4",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "ProofWiki Proof 5 applies the Rational Root Theorem (named, standard) to n^2-2, lists candidates +-1,+-2, shows they fail. Read directly."
+ },
+ {
+  "routeId": "4-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "MIT 18.781 lec12: Prop 45 (cyclotomic facts), Lemma 46 (no common root with x^m-1 mod p, p not dividing n), Thm 47 (order of a mod p is n so p=1 mod n; contradiction). All steps written out. Proves primes = 1 mod n, as sketch says."
+ },
+ {
+  "routeId": "5-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Proof 2 (Gauss trick) on p.1 writes S forward and reversed, adds to 2S=n(n+1)."
+ },
+ {
+  "routeId": "5-r4",
+  "verdict": "confirmed",
+  "correctedLocator": "Proof 11 (Geometric Series + L'Hospital), p.5 (starts at bottom of p.4 in PDF page count; printed page 5)",
+  "missingStep": null,
+  "note": "Differentiates (1-x^{n+1})/(1-x), takes limit x->1 with L'Hospital twice, full computation shown. Page number corrected to p.5."
+ },
+ {
+  "routeId": "6-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia Gnomon: gnomon of n-square is 2n+1 (n to side, n to column, 1 corner); 'also provides a proof that sum of first n odd numbers is n^2', illustrated with 8-square. General step given in prose; picture-style proof, example n=8 shown."
+ },
+ {
+  "routeId": "7-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia Binomial theorem, Combinatorial proof: 2^n products, group by number k of y's, equal to count of k-subsets of {1..n}. Complete."
+ },
+ {
+  "routeId": "7-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Same Combinatorial proof section: distributive expansion into 2^n products e1...en, grouped by k; exact match."
+ },
+ {
+  "routeId": "8-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Section 'Proof using Jensen's inequality': strict concavity of ln, Jensen finite form, exponentiate; handles zeros and equality case (weighted version covering equal weights)."
+ },
+ {
+  "routeId": "10-r3",
+  "verdict": "partial",
+  "correctedLocator": null,
+  "missingStep": "Convexity of the Euclidean unit ball is only asserted ('One can use the convexity of r^2 ... to show directly', after eq 3.8); not written out.",
+  "note": "Semmes eqs (3.1)-(3.8) give the convex-combination argument in full for any N with convex unit ball. Euclidean ball convexity is only stated with a hint. The sketch itself assumes it, so the route step is present, but the source is not a complete proof for the Euclidean norm. Locator correct (p.4)."
+ },
+ {
+  "routeId": "12-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Wikipedia Heron: law of cosines, A=(1/2)ab sin gamma, sin gamma=sqrt(1-cos^2), algebra through factorization to s(s-a)(s-b)(s-c). Same method; displayed as one chain of equalities."
+ },
+ {
+  "routeId": "13-r3",
+  "verdict": "partial",
+  "correctedLocator": "Thm 2.19(2)(3), Thm 2.27 proofs; Ex 2.15, 2.23 are bare statements; Thm 2.18(2) proof is left as exercise (p.2-4)",
+  "missingStep": "Thm 2.18(2) (element prime iff generated ideal prime) is 'left as an exercise' and is needed in the last step of 2.19(3); Ex 2.15 (primes of Z are irreducible) and Ex 2.23 (Z Euclidean) are only stated.",
+  "note": "2.19(1)(2) and 2.27 (ED => PID) fully proved; 2.19(3) concludes 'maximal ideal, hence prime ideal, hence a is prime' with last step deferred. Route matches."
+ },
+ {
+  "routeId": "15-r1",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Sections 'Proof as a particular case of Euler's theorem', 'The cancellation law', 'The rearrangement property' prove a^{p-1}=1 for p not dividing a, via Euclid's lemma. Case p|a (for a^p=a) is trivial and not stated in that section; minor."
+ },
+ {
+  "routeId": "15-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Standard proof: G={1..p-1} group (inverses via Bezout), Lagrange (named) gives order k divides p-1, so a^{p-1}=1. Complete for a not divisible by p."
+ },
+ {
+  "routeId": "15-r3",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Proof 1: induction via Lemma (x+y)^p=x^p+y^p mod p, with Proof of Lemma showing p | C(p,i) for 0<i<p; base 0. For a>=0; negative integers trivially by residues."
+ },
+ {
+  "routeId": "16-r2",
+  "verdict": "confirmed",
+  "correctedLocator": null,
+  "missingStep": null,
+  "note": "Elementary proof: p=2 trivial, odd p: inverses exist (field), a=a^-1 iff a=+-1 by Euclid's lemma, pair rest, product -1. Complete, example p=11."
+ }
+]

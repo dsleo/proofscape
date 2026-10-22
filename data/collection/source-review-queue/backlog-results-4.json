@@ -1,0 +1,142 @@
+[
+ {
+  "routeId": "22-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://www.cs.uaf.edu/~maxwell/AY2005/math490/RossLectureNotes.pdf",
+  "sourceLabel": "Alex Ross, Pythagorean Triples (lecture notes, Univ. of Alaska Fairbanks math490)",
+  "preciseLocator": "Theorem 3 (p.1)",
+  "evidence": "Theorem 3 proves in full by expansion that (2pq,p^2-q^2,p^2+q^2) is a triple for p>q; q=1 gives the sketch's (t^2-1,2t,t^2+1). The notes do not state the specialisation q=1, t>=2, nor the step that distinct t give infinitely many triples.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "22-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://jansn19.gitlab-pages.liu.se/tata54-kurshemsida/lectures/lecture8.pdf",
+  "sourceLabel": "Jan Snellman, Number Theory (TATA54), Lecture 8 slides, Linkoping University",
+  "preciseLocator": "Section 'Rational parametrization': theorem that t -> ((1-t^2)/(1+t^2), 2t/(1+t^2)) bijects R onto the unit circle minus (-1,0), preserving rationality; example t=7/11 -> (36,77,85)",
+  "evidence": "Slides state the parametrization with a line-through-(-1,0) figure and a worked rational example, and the triples<->rational points correspondence. The line-intersection computation is not written out and clearing denominators for integer t is not stated.",
+  "sketchProblem": "The sketch says 'for every integer t' yet x=(1-t^2)/(1+t^2) with integer t only gives a triple after clearing denominators (1-t^2,2t,1+t^2); correct but not stated as such, and the route is really Euclid's formula again.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "22-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://jansn19.gitlab-pages.liu.se/tata54-kurshemsida/lectures/lecture8.pdf",
+  "sourceLabel": "Jan Snellman, Number Theory (TATA54), Lecture 8 slides, Linkoping University",
+  "preciseLocator": "Theorem 'PPT with y even iff exist 0<n<m, m,n of different parity...', second half of proof (slides 'Proof (contd)')",
+  "evidence": "Slides prove that coprime opposite-parity m,n give a primitive triple: x odd so p>2, p|z+x gives p|2m^2 so p|m, similarly p|n, contradiction. The identity x^2+y^2=z^2 is only announced ('Check'), not expanded, and 'vary m for infinitely many' is not stated.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "23-r1",
+  "outcome": "partial",
+  "sourceUrl": "https://documents.kenyon.edu/math/GarbettJSenEx2011.pdf",
+  "sourceLabel": "Jennifer Garbett, Lattice Point Geometry: Pick's Theorem and Minkowski's Theorem (Kenyon College senior exercise, 2010)",
+  "preciseLocator": "Section 2.1-2.2 Thm 2.5, Cor 2.6, Thm 2.8; Sec 2.6 Thm 2.19; Thm 3.12",
+  "evidence": "Complete proof exists for triangulation into lattice/primitive triangles and for area 1/2 of a primitive triangle (via primitive parallelogram/basis argument), but Pick's formula is obtained by a global Euler-formula edge/face count, not by induction adding triangles along edges. A Berkeley Math Circle handout (Tom Davis) does induct on sides via diagonals, but starts from rectangles/right triangles, not the primitive-triangle lemma.",
+  "sketchProblem": "Sketch mixes inductive and invariant formulations and gives 'determinant' for the primitive-triangle lemma; the source's proof is different (basis of Z^2).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "23-r2",
+  "outcome": "partial",
+  "sourceUrl": "https://documents.kenyon.edu/math/GarbettJSenEx2011.pdf",
+  "sourceLabel": "Jennifer Garbett, Lattice Point Geometry: Pick's Theorem and Minkowski's Theorem (Kenyon College senior exercise, 2010)",
+  "preciseLocator": "Sec 3.2 Lemma 3.11 (Euler), Thm 3.12 (Pick's theorem proof)",
+  "evidence": "Source counts triangles, edges (interior edges shared by two triangles, 3(f-1)=2e_i+e_b) and uses Euler's formula, matching the second half of the sketch, but only for primitive triangles; Pick's formula for an arbitrary lattice triangle (per-triangle sum) is not proved.",
+  "sketchProblem": "Sketch says 'each triangle satisfies Pick' then sums; this is not the same as the primitive-triangle count and the interior-edge/vertex bookkeeping is left vague.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "23-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://documents.kenyon.edu/math/GarbettJSenEx2011.pdf",
+  "sourceLabel": "Jennifer Garbett, Lattice Point Geometry: Pick's Theorem and Minkowski's Theorem (Kenyon College senior exercise, 2010)",
+  "preciseLocator": "Sec 2.2 Thm 2.8 (every lattice polygon dissects into primitive triangles); Sec 2.3-2.6 Thm 2.13, Prop 2.15/2.17, Lemma 2.18, Thm 2.19 (primitive triangle has area 1/2); Sec 3.2 Lemma 3.11 (Euler) and Thm 3.12",
+  "evidence": "Read all: subdivision by diagonals and interior/boundary lattice points until all pieces are primitive (induction on interior points), area 1/2 of a primitive triangle via visible points and bases of Z^2, then Euler's formula count giving A=I+B/2-1. Only difference: area lemma uses lattice-basis/isometry argument rather than a determinant formula.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "26-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.maths.tcd.ie/~dwilkins/Courses/MA342R/MA342R_Hil2017_Lectures/MA342R_Hil2017_Lecture12.pdf",
+  "sourceLabel": "David R. Wilkins, MA342R Lecture 12 (Trinity College Dublin, 2017)",
+  "preciseLocator": "Section 2.6, Theorem 2.13 (Fundamental Theorem of Algebra)",
+  "evidence": "Read the full proof: dominance of a_m z^m for |z|>R, winding number of P on circle radius r equals m via Dog-Walking Lemma, winding number is continuous in r hence constant and 0 at r=0 if P has no zeros, contradiction. It invokes Lemma 2.6 and Prop 2.9 from earlier lectures (not in this PDF) and uses homotopy invariance rather than the argument principle or Rouche.",
+  "sketchProblem": "Sketch says f=P/z^n and invokes the argument principle/Rouche; the source uses the topological winding-number argument. Equivalent route family but not literally the same tools.",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "26-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.jirka.org/ra/html/sec_fundalgeb.html",
+  "sourceLabel": "Jiri Lebl, Basic Analysis II, Section 11.5 (online)",
+  "preciseLocator": "Lemma 11.5.1 (d'Alembert/minimum modulus), Lemma 11.5.4 (|p|->infinity), Theorem 11.5.5",
+  "evidence": "Read: |p| grows to infinity so inf attained on a compact disc; Lemma 11.5.1 expands p(z0+w)=1+a_k w^k+..., picks angle so a_k w^k is negative real, and the higher terms are of lower order, so |p| decreases: every non-root is not a minimum. Exactly the sketch's argument.",
+  "sketchProblem": "Route title 'algebraic proof via symmetric polynomials/Galois theory' does not match the sketch, which is the analytic minimum-modulus (d'Alembert) proof. Title/sketch swapped with another route; the Galois route is untested here.",
+  "confidence": "high"
+ },
+ {
+  "routeId": "27-r3",
+  "outcome": "partial",
+  "sourceUrl": "https://faculty.etsu.edu/gardnerr/5210/notes/6-5.pdf",
+  "sourceLabel": "Robert Gardner, ETSU Real Analysis notes, Section 6.5",
+  "preciseLocator": "Theorem 6.10 (AC => f(b)-f(a)=int f'), Theorem 6.11 (statement only), Theorem 6.14 (derivative of integral = f a.e.)",
+  "evidence": "Thm 6.10 proof is written (difference quotients + Vitali) and Thm 6.14 is proved, but they rely on earlier results (Lebesgue differentiation, 6.8, 6.9, Vitali) outside this file, and Thm 6.11 (indefinite integral of L1 function is absolutely continuous) is stated without proof here.",
+  "sketchProblem": null,
+  "confidence": "medium"
+ },
+ {
+  "routeId": "28-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://en.wikiversity.org/wiki/Mathematics_for_Applied_Sciences_(Osnabr%C3%BCck_2023-2024)/Part_I/Lecture_11",
+  "sourceLabel": "Wikiversity, Mathematics for Applied Sciences (Osnabrueck 2023-24), Part I, Lecture 11",
+  "preciseLocator": "Section 'The Intermediate value theorem', Theorem and proof; also Jiri Lebl, Basic Analysis I, Lemma 3.3.7 + Thm 3.3.8 (https://www.jirka.org/ra/realanal.pdf, pp.132-133)",
+  "evidence": "Read the full proof: repeated halving keeping f(a_n)<=u<=f(b_n), nested intervals determine x, sequence-continuity gives f(x)<=u and f(x)>=u. Lebl's proof of Lemma 3.3.7 is similar (monotone bounded sequences a_n,b_n, b_n-a_n->0, pass to the limit).",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "28-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://people.math.sc.edu/sharpley/math554_08/Lectures/554_6_f08.pdf",
+  "sourceLabel": "Math 554 Handout #6 'Connectedness' (Univ. of South Carolina)",
+  "preciseLocator": "Theorem 1 (intervals connected), Theorem 3 (continuous image connected; image of [a,b] an interval), Corollary 1 (Intermediate Value Theorem)",
+  "evidence": "Read all: interval connected by a sup argument, continuous image connected by pulling back a disconnection, and the IVT as a corollary because f([a,b]) is an interval containing f(a),f(b) hence all values between. Proofs are brief but complete.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "29-r1",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.jirka.org/ra/realanal.pdf",
+  "sourceLabel": "Jiri Lebl, Basic Analysis I: Introduction to Real Analysis",
+  "preciseLocator": "Section 3.3.1, Lemma 3.3.1 and Theorem 3.3.2 (pp.130-131); also Wikipedia 'Extreme value theorem', 'Proof of the Extreme Value Theorem'",
+  "evidence": "Read: f bounded, M=sup f; pick x_n with f(x_n)->M, Bolzano-Weierstrass subsequence to c in [a,b], continuity gives f(c)=M; minimum treated simultaneously with inf. Bolzano-Weierstrass is cited from earlier (Thm 2.3.8), not reproved.",
+  "sketchProblem": null,
+  "confidence": "high"
+ },
+ {
+  "routeId": "29-r2",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://people.math.sc.edu/sharpley/math554_s96/554_6.pdf",
+  "sourceLabel": "Math 554 Compactness Handout #6, 1996 (Univ. of South Carolina)",
+  "preciseLocator": "Theorem 'continuous image of a compact set is compact'; Heine-Borel for [a,b]; TFAE (a)=>(b) via cover {(-n,n)}; Corollary: Extreme Value Theorem",
+  "evidence": "Read: continuous image of compact is compact via pulled-back open cover, [a,b] compact by sup argument, compact => bounded using nested open intervals and closed, so sup/inf lie in f(K) and are attained. The cover is applied to the image set rather than U_n={|f|<n}, which is equivalent.",
+  "sketchProblem": "Sketch's cover U_n={x:|f(x)|<n} is a slight variant of the source's cover of the image by (-n,n).",
+  "confidence": "medium"
+ },
+ {
+  "routeId": "29-r3",
+  "outcome": "complete-proof-found",
+  "sourceUrl": "https://www.jirka.org/ra/realanal.pdf",
+  "sourceLabel": "Jiri Lebl, Basic Analysis I: Introduction to Real Analysis",
+  "preciseLocator": "Section 3.3.1, Lemma 3.3.1 and Theorem 3.3.2 (pp.130-131)",
+  "evidence": "Same proof as 29-r1: Bolzano-Weierstrass applied to maximizing/minimizing sequences in [a,b] plus continuity. Bolzano-Weierstrass is cited from Section 2.3.",
+  "sketchProblem": "Route essentially duplicates 29-r1 (supremum + maximizing subsequence = sequential compactness); catalogue should merge or differentiate them.",
+  "confidence": "high"
+ }
+]
