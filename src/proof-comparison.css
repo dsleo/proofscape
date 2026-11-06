@@ -24,7 +24,7 @@
 .proof-dependency { margin: 12px 0 22px; padding: 14px; border: 1px solid #d6d0c2; background: #f9f7f0; }
 .proof-dependency-controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; color: #716148; font: 700 11px/1.4 'CMU Typewriter', monospace; text-transform: uppercase; letter-spacing: .05em; }
 .proof-dependency-controls div { display: flex; gap: 8px; }
-.proof-dependency-controls button { padding: 5px 8px; border: 1px solid #c7c0b3; background: #fffdf7; color: #385442; cursor: pointer; font: 13px 'CMU Serif', Georgia, serif; }
+.proof-dependency-controls button { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border: 1px solid #c7c0b3; background: #fffdf7; color: #385442; cursor: pointer; font: 13px 'CMU Serif', Georgia, serif; }
 .proof-dependency-controls button:focus-visible { outline: 2px solid #b9853f; outline-offset: 2px; }
 .proof-dependency .proof-comparison-code { margin-bottom: 0; }
 .proof-related-theorem { margin: -8px 0 16px; color: #5f6559; font: 14px/1.6 'CMU Serif', Georgia, serif; }

@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useState } from 'react'
-import { ExternalLink } from 'lucide-react'
+import { ArrowLeft, ExternalLink, X } from 'lucide-react'
 import { MathText } from './MathText'
 import type { MathlibDeclaration, ProofComparison as Comparison } from './proofComparisonTypes'
 import './proof-comparison.css'
@@ -128,8 +128,7 @@ export default function ProofComparison({ comparison, showStatement = false }: {
     {showStatement && <div className="proof-comparison-statement"><span>Statement in this comparison</span><MathText text={comparison.statement} /></div>}
     {comparison.scope && <p className="proof-comparison-scope">{comparison.scope}</p>}
     <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route A</span><h3>Informal proof</h3><Paragraphs text={comparison.proofA} /></section>
-    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route B</span><h3>Informal proof</h3><Paragraphs text={comparison.proofB} /></section>
-    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route A</span><h3>Mathlib proof</h3>
+    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route A</span><h3>Formal Proof from Mathlib</h3>
       <p className="proof-comparison-help">Select an underlined name to see its Mathlib definition. The proof uses Mathlib’s surrounding definitions and earlier lemmas.</p>
       {declarationView(main)}
       {(() => {
@@ -146,14 +145,14 @@ export default function ProofComparison({ comparison, showStatement = false }: {
       {selected && <div className="proof-dependency" aria-label="Selected Mathlib dependency">
         <div className="proof-dependency-controls">
           <span>Selected dependency</span>
-          <div>{history.length > 1 && <button type="button" onClick={() => setHistory((current) => current.slice(0, -1))}>← Back</button>}
-            <button type="button" onClick={closeDependency}>Close</button></div>
+          <div>{history.length > 1 && <button type="button" aria-label="Previous dependency" title="Previous dependency" onClick={() => setHistory((current) => current.slice(0, -1))}><ArrowLeft size={16} aria-hidden="true" /></button>}
+            <button type="button" aria-label="Close dependency" title="Close dependency" onClick={closeDependency}><X size={16} aria-hidden="true" /></button></div>
         </div>
         {declarationView(selected.declaration, true)}
       </div>}
     </section>
+    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route B</span><h3>Informal proof</h3><Paragraphs text={comparison.proofB} /></section>
     <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route B</span><h3>Formal proof sketch</h3>
-      <p className="proof-comparison-help">Lean-style pseudocode, not a compiled proof. <code>sorry</code> marks a remaining proof obligation; names and notation are illustrative.</p>
       <pre className="proof-comparison-code"><code>{comparison.formalSketch}</code></pre>
     </section>
     <section className="proof-comparison-section"><h3>Difficulty comparison</h3>
