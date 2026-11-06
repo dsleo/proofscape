@@ -1,7 +1,6 @@
-import { useId, useMemo, useState } from 'react'
+import { useEffect, useId, useMemo, useState } from 'react'
 import { ExternalLink } from 'lucide-react'
 import { MathText } from './MathText'
-import { dataUrl } from './collection'
 import type { MathlibDeclaration, ProofComparison as Comparison } from './proofComparisonTypes'
 import './proof-comparison.css'
 
@@ -25,15 +24,25 @@ function LinkedCode({ code, current, dependencies, onNavigate }: {
     const position = match.index
     nodes.push(code.slice(cursor, position))
     const word = match[0]
-    // Lean often applies an implication with `.mp` or `.mpr`, or reverses it with `.symm`.
+    // Lean's dot notation may prefix a lemma with a local receiver or append `.mpr`.
     const base = word.replace(/\.(?:mp|mpr|symm)$/, '')
-    const direct = dependencies.get(word)
-    const dependency = direct ?? (base !== word ? dependencies.get(base) : undefined)
-    const label = direct ? word : base
+    let start = 0
+    let dependency = dependencies.get(word) ?? (base !== word ? dependencies.get(base) : undefined)
+    if (!dependency && (/^[a-z_]/.test(base) || base === 'Nat.prime_two.irrational_sqrt')) {
+      const pieces = base.split('.')
+      for (let i = 1; i < pieces.length && !dependency; i += 1) {
+        const suffix = pieces.slice(i).join('.')
+        const candidate = dependencies.get(suffix)
+        if (candidate) { dependency = candidate; start = base.length - suffix.length }
+      }
+    }
+    const end = dependencies.has(word) ? word.length : base.length
     if (dependency && sourceKey(dependency.declaration) !== current) {
+      nodes.push(word.slice(0, start))
+      const target = dependency
       nodes.push(<button key={`${position}-${word}`} className="proof-code-reference" type="button"
-        title={`Open ${dependency.declaration.symbol} in this proof`} onClick={() => onNavigate(dependency)}>{label}</button>)
-      nodes.push(word.slice(label.length))
+        title={`Open ${target.declaration.symbol} in this proof`} onClick={() => onNavigate(target)}>{word.slice(start, end)}</button>)
+      nodes.push(word.slice(end))
     } else nodes.push(word)
     cursor = position + word.length
   }
@@ -55,8 +64,8 @@ function Declaration({ declaration, anchor, selected, dependencies, onNavigate }
 
 export default function ProofComparison({ comparison, showStatement = false }: { comparison: Comparison; showStatement?: boolean }) {
   const componentId = useId().replace(/:/g, '')
-  const [supportOpen, setSupportOpen] = useState(false)
-  const [selectedSource, setSelectedSource] = useState('')
+  const [history, setHistory] = useState<Dependency[]>([])
+  const selected = history.at(-1)
   const sources = useMemo(() => [...comparison.mathlibCore, ...comparison.mathlibSupporting], [comparison])
   const anchors = useMemo(() => new Map(sources.map((declaration, index) =>
     [sourceKey(declaration), `proof-source-${componentId}-${index}`])), [sources, componentId])
@@ -74,9 +83,11 @@ export default function ProofComparison({ comparison, showStatement = false }: {
       add(declaration.symbol, dependency)
       add(declaration.symbol.split('.').at(-1)!, dependency)
       // These namespaces are taken from the corresponding source modules.
-      const namespace = declaration.path.startsWith('Mathlib/Data/Rat/') ? 'Rat'
+      const namespace = declaration.path === 'Mathlib/Analysis/Fourier/Inversion.lean' ? 'Real'
+        : declaration.path.startsWith('Mathlib/Data/Rat/') ? 'Rat'
         : declaration.path.startsWith('Mathlib/Algebra/Ring/Int/') ? 'Int'
         : declaration.path.startsWith('Mathlib/LinearAlgebra/Matrix/') ? 'Matrix'
+        : declaration.path.startsWith('Mathlib/GroupTheory/Coset/') ? 'Subgroup'
         : declaration.path.includes('/Symmetric/NewtonIdentities.lean') ? 'NewtonIdentities'
         : ''
       if (namespace && !declaration.symbol.includes('.')) add(`${namespace}.${declaration.symbol}`, dependency)
@@ -84,38 +95,62 @@ export default function ProofComparison({ comparison, showStatement = false }: {
     return new Map([...candidates].filter((entry): entry is [string, Dependency] => entry[1] !== null))
   }, [sources, anchors])
 
-  function navigate(dependency: Dependency) {
-    setSupportOpen(true)
-    setSelectedSource(sourceKey(dependency.declaration))
-    window.requestAnimationFrame(() => {
-      const element = document.getElementById(dependency.anchor)
-      element?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+  const main = sources.find((declaration) => declaration.symbol === comparison.mathlibMain)!
+
+  useEffect(() => {
+    if (!selected) return
+    const frame = window.requestAnimationFrame(() => {
+      const element = document.getElementById(selected.anchor)
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      element?.scrollIntoView({ block: 'center', behavior: reducedMotion ? 'auto' : 'smooth' })
       element?.focus({ preventScroll: true })
     })
+    return () => window.cancelAnimationFrame(frame)
+  }, [selected])
+
+  function navigate(dependency: Dependency) {
+    if (sourceKey(dependency.declaration) === sourceKey(main)) { closeDependency(); return }
+    setHistory((current) => [...current, dependency])
   }
 
-  function declarationView(declaration: MathlibDeclaration) {
+  function closeDependency() {
+    setHistory([])
+    window.requestAnimationFrame(() => document.getElementById(anchors.get(sourceKey(main))!)?.focus({ preventScroll: true }))
+  }
+
+  function declarationView(declaration: MathlibDeclaration, selected = false) {
     const key = sourceKey(declaration)
-    return <Declaration key={key} declaration={declaration} anchor={anchors.get(key)!} selected={selectedSource === key}
+    return <Declaration key={key} declaration={declaration} anchor={anchors.get(key)!} selected={selected}
       dependencies={dependencies} onNavigate={navigate} />
   }
 
-  const attributions = [...new Map(sources.map((item) => [item.path, item.attribution])).entries()]
   return <div className="proof-comparison" aria-label="Mathlib and alternative proof comparison">
     {showStatement && <div className="proof-comparison-statement"><span>Statement in this comparison</span><MathText text={comparison.statement} /></div>}
     {comparison.scope && <p className="proof-comparison-scope">{comparison.scope}</p>}
     <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route A</span><h3>Informal proof</h3><Paragraphs text={comparison.proofA} /></section>
     <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route B</span><h3>Informal proof</h3><Paragraphs text={comparison.proofB} /></section>
     <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route A</span><h3>Mathlib proof</h3>
-      <p className="proof-comparison-help">These are the Mathlib declarations that carry the argument. Select an underlined name in the code to open its definition below. The excerpts use Mathlib’s surrounding definitions and earlier lemmas.</p>
-      {comparison.mathlibCore.map(declarationView)}
-      {comparison.mathlibSupporting.length > 0 && <details className="proof-comparison-support" open={supportOpen} onToggle={(event) => setSupportOpen(event.currentTarget.open)}>
-        <summary>{comparison.mathlibSupporting.length} further supporting declarations</summary>{comparison.mathlibSupporting.map(declarationView)}
-      </details>}
-      <details className="proof-comparison-attributions"><summary>Source authors and license notices</summary>
-        {attributions.map(([path, attribution]) => <p key={path}><strong>{path}</strong><br />{attribution}</p>)}
-        <a href={dataUrl('MATHLIB-LICENSE.txt')} target="_blank" rel="noreferrer">Mathlib license <ExternalLink size={12} aria-hidden="true" /></a>
-      </details>
+      <p className="proof-comparison-help">Select an underlined name to see its Mathlib definition. The proof uses Mathlib’s surrounding definitions and earlier lemmas.</p>
+      {declarationView(main)}
+      {(() => {
+        // Some displayed statements combine separately stated Mathlib theorems.
+        const parts: Record<string, { symbol: string; label: string }> = {
+          'original-10': { symbol: "fixedPoint_unique'", label: 'Uniqueness of the fixed point' },
+          'catalog-60': { symbol: 'tendstoInMeasure_of_tendsto_ae', label: 'Almost-sure convergence implies convergence in measure' },
+          'catalog-8': { symbol: 'geom_mean_eq_arith_mean_weighted_iff_of_pos', label: 'Equality case' },
+        }
+        const part = parts[comparison.id]
+        const dependency = part ? dependencies.get(part.symbol) : undefined
+        return dependency ? <p className="proof-related-theorem">Also used for this statement: <button type="button" className="proof-code-reference" onClick={() => navigate(dependency)}>{part.label}</button></p> : null
+      })()}
+      {selected && <div className="proof-dependency" aria-label="Selected Mathlib dependency">
+        <div className="proof-dependency-controls">
+          <span>Selected dependency</span>
+          <div>{history.length > 1 && <button type="button" onClick={() => setHistory((current) => current.slice(0, -1))}>← Back</button>}
+            <button type="button" onClick={closeDependency}>Close</button></div>
+        </div>
+        {declarationView(selected.declaration, true)}
+      </div>}
     </section>
     <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route B</span><h3>Formal proof sketch</h3>
       <p className="proof-comparison-help">Lean-style pseudocode, not a compiled proof. <code>sorry</code> marks a remaining proof obligation; names and notation are illustrative.</p>

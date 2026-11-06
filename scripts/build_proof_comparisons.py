@@ -21,6 +21,7 @@ for r in records:
     for key in ('id', 'name', 'statement', 'proofA', 'proofB', 'formalSketch', 'evidence', 'evidenceStatus'):
         assert r.get(key), f"{r.get('id')}: missing {key}"
     assert r['mathlibCore'], f"{r['id']}: missing Mathlib proof"
+    assert sum(d['symbol'] == r.get('mathlibMain') for d in r['mathlibCore'] + r['mathlibSupporting']) == 1, f"{r['id']}: invalid main Mathlib declaration"
     for declaration in r['mathlibCore'] + r['mathlibSupporting']:
         for field in ('symbol', 'code', 'url', 'attribution', 'role'):
             assert declaration.get(field), f"{r['id']}: missing declaration {field}"

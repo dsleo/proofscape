@@ -15,12 +15,16 @@
 .proof-declaration { scroll-margin-top: 30px; }
 .proof-declaration.is-target { background: #f7ebd1; box-shadow: 0 0 0 6px #f7ebd1; }
 .proof-declaration-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; font: 700 14px/1.5 'CMU Typewriter', monospace; }
-.proof-declaration-heading a, .proof-comparison-attributions a, .proof-comparison-evidence a { display: inline-flex; gap: 4px; align-items: center; font-size: 13px; }
+.proof-declaration-heading a, .proof-comparison-evidence a { display: inline-flex; gap: 4px; align-items: center; font-size: 13px; }
 .proof-declaration-role { margin: 3px 0 0; color: #6a6b60; font: 13px/1.5 'CMU Serif', Georgia, serif; }
-.proof-comparison-support, .proof-comparison-attributions { margin: 14px 0; padding: 12px 15px; border: 1px solid #d6d0c2; background: #f9f7f0; }
-.proof-comparison-support > summary, .proof-comparison-attributions > summary { cursor: pointer; color: #3f5747; font: 700 14px/1.5 'CMU Serif', Georgia, serif; }
-.proof-comparison-attributions p { white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.5 'CMU Typewriter', monospace; }
 .proof-comparison-evidence { padding: 15px 18px; margin-bottom: 14px; background: #f3ebd9; border-left: 3px solid #c4a16c; font: 15px/1.65 'CMU Serif', Georgia, serif; }
 .proof-comparison-evidence strong { color: #805d2c; font: 700 11px 'CMU Typewriter', monospace; text-transform: uppercase; letter-spacing: .05em; }
 .proof-comparison-evidence p { margin: 7px 0 0; }
 .proof-comparison-evidence a + a { margin-left: 16px; }
+.proof-dependency { margin: 12px 0 22px; padding: 14px; border: 1px solid #d6d0c2; background: #f9f7f0; }
+.proof-dependency-controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; color: #716148; font: 700 11px/1.4 'CMU Typewriter', monospace; text-transform: uppercase; letter-spacing: .05em; }
+.proof-dependency-controls div { display: flex; gap: 8px; }
+.proof-dependency-controls button { padding: 5px 8px; border: 1px solid #c7c0b3; background: #fffdf7; color: #385442; cursor: pointer; font: 13px 'CMU Serif', Georgia, serif; }
+.proof-dependency-controls button:focus-visible { outline: 2px solid #b9853f; outline-offset: 2px; }
+.proof-dependency .proof-comparison-code { margin-bottom: 0; }
+.proof-related-theorem { margin: -8px 0 16px; color: #5f6559; font: 14px/1.6 'CMU Serif', Georgia, serif; }
