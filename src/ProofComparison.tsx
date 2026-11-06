@@ -126,10 +126,9 @@ export default function ProofComparison({ comparison, showStatement = false }: {
 
   return <div className="proof-comparison" aria-label="Mathlib and alternative proof comparison">
     {showStatement && <div className="proof-comparison-statement"><span>Statement in this comparison</span><MathText text={comparison.statement} /></div>}
-    {comparison.scope && <p className="proof-comparison-scope">{comparison.scope}</p>}
-    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route A</span><h3>Informal proof</h3><Paragraphs text={comparison.proofA} /></section>
-    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route A</span><h3>Formal Proof from Mathlib</h3>
-      <p className="proof-comparison-help">Select an underlined name to see its Mathlib definition. The proof uses Mathlib’s surrounding definitions and earlier lemmas.</p>
+    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route A</span><h3>Informal proof</h3><Paragraphs text={comparison.proofA} />
+      <div className="proof-comparison-formal"><h3>Formal Proof from Mathlib</h3>
+      {comparison.scope && <p className="proof-comparison-scope"><MathText text={comparison.scope} /></p>}
       {declarationView(main)}
       {(() => {
         // Some displayed statements combine separately stated Mathlib theorems.
@@ -150,10 +149,12 @@ export default function ProofComparison({ comparison, showStatement = false }: {
         </div>
         {declarationView(selected.declaration, true)}
       </div>}
+      </div>
     </section>
-    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route B</span><h3>Informal proof</h3><Paragraphs text={comparison.proofB} /></section>
-    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route B</span><h3>Formal proof sketch</h3>
-      <pre className="proof-comparison-code"><code>{comparison.formalSketch}</code></pre>
+    <section className="proof-comparison-section"><span className="proof-comparison-kicker">Route B</span><h3>Informal proof</h3><Paragraphs text={comparison.proofB} />
+      <div className="proof-comparison-formal"><h3>Formal proof sketch</h3>
+        <pre className="proof-comparison-code"><code>{comparison.formalSketch}</code></pre>
+      </div>
     </section>
     <section className="proof-comparison-section"><h3>Difficulty comparison</h3>
       <div className="proof-comparison-evidence"><strong>{comparison.evidenceStatus}</strong><p>{comparison.evidence}</p>

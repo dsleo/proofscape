@@ -3,6 +3,7 @@
 .proof-comparison-statement > span, .proof-comparison-kicker { color: #7b5a31; font: 700 11px/1.4 'CMU Typewriter', monospace; letter-spacing: .08em; text-transform: uppercase; }
 .proof-comparison-scope { margin: 8px 0 18px; padding: 10px 14px; border-left: 3px solid #be9a62; background: #f5eedf; color: #614d31; font: 14px/1.6 'CMU Serif', Georgia, serif; }
 .proof-comparison-section { padding: 22px 0 24px; border-top: 1px solid var(--line, #d6d0c2); }
+.proof-comparison-formal { margin-top: 30px; }
 .proof-comparison-section h3 { margin: 5px 0 14px; font: 400 24px/1.2 'CMU Serif', Georgia, serif; }
 .proof-comparison-prose { font: 17px/1.75 'CMU Serif', Georgia, serif; overflow-wrap: anywhere; }
 .proof-comparison-prose p { margin: 0 0 1em; }
