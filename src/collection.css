@@ -14,7 +14,7 @@
 .collection-search input { width: 100%; border: 0; background: transparent; outline: none; color: var(--ink); font-size: 13px; }
 .collection-search input::placeholder { color: #726a61; }
 .collection-item { border-top: 1px solid var(--line); padding: 21px 0 22px; }
-.collection-item-meta { display: flex; justify-content: space-between; gap: 12px; color: #704719; font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+.collection-item-meta { display: flex; justify-content: flex-end; gap: 12px; color: #704719; font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
 .collection-item-meta span:last-child { color: #726a60; white-space: nowrap; }
 .collection-item-title { margin: 14px 0 3px; color: #5f564d; font-size: 14px; font-weight: 700; }
 .collection-statement { display: block; width: 100%; margin-top: 10px; border: 0; background: transparent; padding: 0; color: inherit; text-align: left; cursor: pointer; font: 400 clamp(20px, 2.3vw, 29px)/1.25 'CMU Serif', serif; letter-spacing: -.01em; white-space: pre-wrap; overflow-wrap: anywhere; }

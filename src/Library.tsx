@@ -10,14 +10,14 @@ import './library.css'
 type SourceId = 'proofwiki-math' | 'Nemotron-Math-Proofs-v2' | 'NuminaMath-LEAN-Proof-Artifacts' | 'proofscape-mathlib'
 
 // What each corpus really is, said where a reader chooses between them.
-const sources: { id: SourceId; label: string; badge: string; blurb: string; url: string; featured?: string }[] = [
-  { id: 'proofscape-mathlib', label: 'Mathlib comparisons', badge: 'Curated proof routes', url: `${import.meta.env.BASE_URL}data/collection/proof-comparisons.json`,
+const sources: { id: SourceId; label: string; badge: string; blurb: string; featured?: string }[] = [
+  { id: 'proofscape-mathlib', label: 'Mathlib comparisons', badge: 'Curated proof routes',
     blurb: 'Statements paired with two informal proofs, the Mathlib argument and an alternative formal sketch, for comparing their formalization.' },
-  { id: 'proofwiki-math', label: 'ProofWiki', badge: 'Written by people', featured: "Pythagoras's Theorem", url: 'https://huggingface.co/datasets/avewright/proofwiki-math',
+  { id: 'proofwiki-math', label: 'ProofWiki', badge: 'Written by people', featured: "Pythagoras's Theorem",
     blurb: 'Theorems and the proofs contributors wrote for them on ProofWiki. Several proofs of one statement are often genuinely different arguments.' },
-  { id: 'Nemotron-Math-Proofs-v2', label: 'Nemotron', badge: 'AI-generated', url: 'https://huggingface.co/datasets/nvidia/Nemotron-Math-Proofs-v2',
+  { id: 'Nemotron-Math-Proofs-v2', label: 'Nemotron', badge: 'AI-generated',
     blurb: 'Competition-style problems with proofs written by a single language model (DeepSeek-V4-Pro). Proofs of one problem are samples from the same model, so they tend to take the same route.' },
-  { id: 'NuminaMath-LEAN-Proof-Artifacts', label: 'Lean', badge: 'Formal', url: 'https://huggingface.co/datasets/iiis-lean/NuminaMath-LEAN-Proof-Artifacts',
+  { id: 'NuminaMath-LEAN-Proof-Artifacts', label: 'Lean', badge: 'Formal',
     blurb: 'Statements formalised in Lean 4, each with a proof written by a person and a proof found by an automated prover, side by side.' },
 ]
 
@@ -233,7 +233,7 @@ export default function Library({ index, indexError }: { index: CollectionIndex 
         <strong>{s.label}</strong><em>{s.badge}</em><span>{(counts.get(s.id) ?? 0).toLocaleString()}</span>
       </button>)}
     </div>
-    <p className="library-blurb">{meta.blurb} <a href={meta.url} target="_blank" rel="noreferrer">Dataset <ExternalLink size={12} /></a></p>
+    <p className="library-blurb">{meta.blurb}</p>
     {(indexError || itemsError) && <div className="collection-offline" role="alert"><strong>Library unavailable.</strong> {indexError || itemsError}</div>}
 
     <div className="library-filters">
@@ -255,7 +255,7 @@ export default function Library({ index, indexError }: { index: CollectionIndex 
 
     {!items && !itemsError && <div className="collection-loading" role="status">Loading the statements…</div>}
     {current && <article className="collection-item">
-      <div className="collection-item-meta"><span>{sourceOf(current.dataset)?.label} · {sourceOf(current.dataset)?.badge}</span><span>{current.n_proofs} {current.n_proofs === 1 ? 'proof' : 'proofs'}</span></div>
+      <div className="collection-item-meta"><span>{current.n_proofs} {current.n_proofs === 1 ? 'proof' : 'proofs'}</span></div>
       {current.title && <p className="collection-item-title"><MathText text={current.title} /></p>}
       <div className="collection-statement"><MathText text={record ? (isComparison(record) || isInformal(record) ? record.statement : record.problem) : current.statement} /></div>
       {recordError && <div className="collection-offline" role="alert">{recordError}</div>}
