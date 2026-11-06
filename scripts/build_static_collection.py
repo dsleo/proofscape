@@ -66,6 +66,9 @@ def main() -> None:
         "version": 2,
         "sources": [{"kind": kind, "dataset": dataset, "count": count} for (kind, dataset), count in sorted(source_counts.items())],
     }
+    comparisons_path = ROOT / "data" / "collection" / "proof-comparisons.json"
+    comparisons = json.loads(comparisons_path.read_text(encoding="utf-8"))
+    payload["sources"].append({"kind": "comparison", "dataset": "proofscape-mathlib", "count": len(comparisons["records"])})
     OUTPUT.mkdir(parents=True, exist_ok=True)
     for old_index in OUTPUT.glob("index*.json"):
         old_index.unlink()

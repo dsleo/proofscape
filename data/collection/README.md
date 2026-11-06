@@ -66,3 +66,9 @@ The World view's island and method positions live in [`world-layout.json`](world
 `technique-vocabulary.json` places every technique in a **family** (one island on the World map) and, inside it, a **group** (a sub-domain such as *Homological and categorical algebra*). A technique belongs where its mathematics lives, not where it is usually applied: chain complexes and exact sequences sit with algebra, not geometry. After changing a family or group, regenerate the frozen layouts with `npm run build:ring-order && npm run build:world`.
 
 Each technique also carries a `glyph`, the mathematical symbol that marks it on the World map (Σ for telescoping sums, χ for the Euler characteristic, ∫ for integral calculus, and so on). It is purely visual; keep it to one to three characters.
+
+## Mathlib and alternative proof comparisons
+
+`proof-comparisons.json` contains the 28 curated statements from the review, each with two informal proofs, verbatim excerpts from a pinned Mathlib revision, an explicitly uncompiled Lean-style sketch for the alternative, and a difficulty assessment. The Mathlib source excerpts carry their file-level attribution; their Apache 2.0 license is in `MATHLIB-LICENSE.txt`. The sketches and qualitative comparisons do not establish that one route is formally harder.
+
+The optional `historicalId` field links a comparison to the corresponding Explore statement. Twenty-seven have a matching Explore entry; Lagrange's subgroup theorem currently has no corresponding entry. Some comparisons specialize a broader Explore statement, so the interface also shows the exact scope of the comparison. `scripts/build_proof_comparisons.py` validates and publishes this dataset for both Library and Explore.

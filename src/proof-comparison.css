@@ -1,0 +1,26 @@
+.proof-comparison { color: var(--ink, #282e28); }
+.proof-comparison-statement { display: grid; gap: 8px; padding: 18px 0; font: 17px/1.6 'CMU Serif', Georgia, serif; }
+.proof-comparison-statement > span, .proof-comparison-kicker { color: #7b5a31; font: 700 11px/1.4 'CMU Typewriter', monospace; letter-spacing: .08em; text-transform: uppercase; }
+.proof-comparison-scope { margin: 8px 0 18px; padding: 10px 14px; border-left: 3px solid #be9a62; background: #f5eedf; color: #614d31; font: 14px/1.6 'CMU Serif', Georgia, serif; }
+.proof-comparison-section { padding: 22px 0 24px; border-top: 1px solid var(--line, #d6d0c2); }
+.proof-comparison-section h3 { margin: 5px 0 14px; font: 400 24px/1.2 'CMU Serif', Georgia, serif; }
+.proof-comparison-prose { font: 17px/1.75 'CMU Serif', Georgia, serif; overflow-wrap: anywhere; }
+.proof-comparison-prose p { margin: 0 0 1em; }
+.proof-comparison-prose p:last-child { margin-bottom: 0; }
+.proof-comparison-help { max-width: 76ch; margin: 0 0 16px; color: #5f6559; font: 14px/1.65 'CMU Serif', Georgia, serif; }
+.proof-comparison-code { margin: 9px 0 22px; padding: 15px; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid #d7ddd1; background: #f0f3ec; color: #27352e; font: 12.5px/1.65 'CMU Typewriter', monospace; tab-size: 2; }
+.proof-code-reference { display: inline; padding: 0; margin: 0; border: 0; border-radius: 0; background: transparent; color: #195c43; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; cursor: pointer; font: inherit; text-align: inherit; }
+.proof-code-reference:hover { color: #8a551b; text-decoration-style: solid; }
+.proof-code-reference:focus-visible, .proof-declaration:focus-visible { outline: 2px solid #b9853f; outline-offset: 2px; }
+.proof-declaration { scroll-margin-top: 30px; }
+.proof-declaration.is-target { background: #f7ebd1; box-shadow: 0 0 0 6px #f7ebd1; }
+.proof-declaration-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; font: 700 14px/1.5 'CMU Typewriter', monospace; }
+.proof-declaration-heading a, .proof-comparison-attributions a, .proof-comparison-evidence a { display: inline-flex; gap: 4px; align-items: center; font-size: 13px; }
+.proof-declaration-role { margin: 3px 0 0; color: #6a6b60; font: 13px/1.5 'CMU Serif', Georgia, serif; }
+.proof-comparison-support, .proof-comparison-attributions { margin: 14px 0; padding: 12px 15px; border: 1px solid #d6d0c2; background: #f9f7f0; }
+.proof-comparison-support > summary, .proof-comparison-attributions > summary { cursor: pointer; color: #3f5747; font: 700 14px/1.5 'CMU Serif', Georgia, serif; }
+.proof-comparison-attributions p { white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.5 'CMU Typewriter', monospace; }
+.proof-comparison-evidence { padding: 15px 18px; margin-bottom: 14px; background: #f3ebd9; border-left: 3px solid #c4a16c; font: 15px/1.65 'CMU Serif', Georgia, serif; }
+.proof-comparison-evidence strong { color: #805d2c; font: 700 11px 'CMU Typewriter', monospace; text-transform: uppercase; letter-spacing: .05em; }
+.proof-comparison-evidence p { margin: 7px 0 0; }
+.proof-comparison-evidence a + a { margin-left: 16px; }

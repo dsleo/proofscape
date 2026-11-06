@@ -2,13 +2,17 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { ChevronDown, ExternalLink, Search, Shuffle } from 'lucide-react'
 import { MathText } from './MathText'
+import ProofComparison from './ProofComparison'
+import type { ProofComparison as Comparison } from './proofComparisonTypes'
 import { loadItems, loadRecord, type CollectionIndex, type FormalProof, type FormalRecord, type InformalProof, type InformalRecord, type Item, type RecordDetail } from './collection'
 import './library.css'
 
-type SourceId = 'proofwiki-math' | 'Nemotron-Math-Proofs-v2' | 'NuminaMath-LEAN-Proof-Artifacts'
+type SourceId = 'proofwiki-math' | 'Nemotron-Math-Proofs-v2' | 'NuminaMath-LEAN-Proof-Artifacts' | 'proofscape-mathlib'
 
 // What each corpus really is, said where a reader chooses between them.
 const sources: { id: SourceId; label: string; badge: string; blurb: string; url: string; featured?: string }[] = [
+  { id: 'proofscape-mathlib', label: 'Mathlib comparisons', badge: 'Curated proof routes', url: `${import.meta.env.BASE_URL}data/collection/proof-comparisons.json`,
+    blurb: 'Statements paired with two informal proofs, the Mathlib argument and an alternative formal sketch, for comparing their formalization.' },
   { id: 'proofwiki-math', label: 'ProofWiki', badge: 'Written by people', featured: "Pythagoras's Theorem", url: 'https://huggingface.co/datasets/avewright/proofwiki-math',
     blurb: 'Theorems and the proofs contributors wrote for them on ProofWiki. Several proofs of one statement are often genuinely different arguments.' },
   { id: 'Nemotron-Math-Proofs-v2', label: 'Nemotron', badge: 'AI-generated', url: 'https://huggingface.co/datasets/nvidia/Nemotron-Math-Proofs-v2',
@@ -19,10 +23,11 @@ const sources: { id: SourceId; label: string; badge: string; blurb: string; url:
 
 const params = () => new URLSearchParams(window.location.search)
 const isInformal = (record: RecordDetail): record is InformalRecord => 'proofs' in record
+const isComparison = (record: RecordDetail): record is Comparison => 'mathlibCore' in record
 const errorText = (error: unknown) => (error instanceof Error ? error.message : 'The record could not be loaded.')
 const sourceOf = (id: string | null) => sources.find((s) => s.id === id)
 // a record's id begins with the name of its source
-const prefixSource: Record<string, SourceId> = { proofwiki: 'proofwiki-math', nemotron: 'Nemotron-Math-Proofs-v2', numina: 'NuminaMath-LEAN-Proof-Artifacts' }
+const prefixSource: Record<string, SourceId> = { proofwiki: 'proofwiki-math', nemotron: 'Nemotron-Math-Proofs-v2', numina: 'NuminaMath-LEAN-Proof-Artifacts', proofscape: 'proofscape-mathlib' }
 function startSource(): SourceId {
   const p = params()
   if (sourceOf(p.get('source'))) return p.get('source') as SourceId
@@ -251,14 +256,15 @@ export default function Library({ index, indexError }: { index: CollectionIndex 
     {!items && !itemsError && <div className="collection-loading" role="status">Loading the statements…</div>}
     {current && <article className="collection-item">
       <div className="collection-item-meta"><span>{sourceOf(current.dataset)?.label} · {sourceOf(current.dataset)?.badge}</span><span>{current.n_proofs} {current.n_proofs === 1 ? 'proof' : 'proofs'}</span></div>
-      {current.title && <p className="collection-item-title">{current.title}</p>}
-      <div className="collection-statement"><MathText text={record ? (isInformal(record) ? record.statement : record.problem) : current.statement} /></div>
+      {current.title && <p className="collection-item-title"><MathText text={current.title} /></p>}
+      <div className="collection-statement"><MathText text={record ? (isComparison(record) || isInformal(record) ? record.statement : record.problem) : current.statement} /></div>
       {recordError && <div className="collection-offline" role="alert">{recordError}</div>}
       {!record && !recordError && <div className="collection-loading" role="status">Loading proofs…</div>}
-      {record && (isInformal(record)
-        ? <InformalProofs record={record} openProof={openProof} setOpenProof={setOpenProof} selected={selected} onToggle={toggle} />
+      {record && (isComparison(record)
+        ? <ProofComparison key={record.id} comparison={record} />
+        : isInformal(record) ? <InformalProofs record={record} openProof={openProof} setOpenProof={setOpenProof} selected={selected} onToggle={toggle} />
         : <FormalDuel record={record} />)}
-      {record && <div className="collection-provenance"><span>Source ID: <code>{record.source_id}</code></span>{isInformal(record) && record.source_url && <a href={record.source_url} target="_blank" rel="noreferrer">Original <ExternalLink size={12} /></a>}</div>}
+      {record && !isComparison(record) && <div className="collection-provenance"><span>Source ID: <code>{record.source_id}</code></span>{isInformal(record) && record.source_url && <a href={record.source_url} target="_blank" rel="noreferrer">Original <ExternalLink size={12} /></a>}</div>}
     </article>}
     {items && !current && <div className="collection-empty">No statements match. Try a shorter search.</div>}
 

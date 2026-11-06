@@ -43,12 +43,12 @@ export default function App() {
         <h1>{tab === 'explore' ? 'How do different proofs establish the same theorem?' : 'Proof Diversity Explorer'}</h1>
         <p className="collection-intro-copy">{tab === 'explore'
           ? 'A curated set of 150 results from the mathematics curriculum, each with its distinct proof approaches, mapped by the methods they use.'
-          : 'One statement, many routes. Nearly ten thousand statements from three public datasets, each with the proofs written for it: read them side by side and watch different approaches arrive at the same result.'}</p>
+          : 'One statement, many routes. Explore statements and proof routes from public datasets alongside curated Mathlib and alternative-proof comparisons.'}</p>
       </header>
 
       <nav className="proof-track-tabs" aria-label="Section">
         <a href="?tab=historical" className="proof-track-tab" aria-current={tab === 'explore' ? 'page' : undefined} onClick={(event) => { if (plainClick(event)) { event.preventDefault(); go('explore') } }}>Explore <span>150 curated results</span></a>
-        <a href="?tab=library" className="proof-track-tab" aria-current={tab === 'library' ? 'page' : undefined} onClick={(event) => { if (plainClick(event)) { event.preventDefault(); go('library') } }}>Library <span>3 datasets</span></a>
+        <a href="?tab=library" className="proof-track-tab" aria-current={tab === 'library' ? 'page' : undefined} onClick={(event) => { if (plainClick(event)) { event.preventDefault(); go('library') } }}>Library <span>4 datasets</span></a>
       </nav>
 
       {tab === 'explore' ? <HistoricalResults key={homeKey} onOpenLibrary={() => go('library')} /> : <Library index={index} indexError={indexError} />}

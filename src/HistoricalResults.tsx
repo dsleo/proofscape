@@ -3,8 +3,10 @@ import type { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { ExternalLink, Search } from 'lucide-react'
 import { MathText } from './MathText'
+import ProofComparison from './ProofComparison'
+import type { ProofComparison as Comparison } from './proofComparisonTypes'
 import ErrorBoundary from './ErrorBoundary'
-import { cachedJson, dataUrl } from './collection'
+import { cachedJson, dataUrl, loadComparisons } from './collection'
 // the map carries its own code (terrain generator, selection model): load it when asked for
 const loadWorld = () => {
   void cachedJson(dataUrl('constellation.json')).catch(() => undefined) // start the map's data now; the map asks for the same request
@@ -44,6 +46,8 @@ function MapHost({ children }: { children: ReactNode }) {
 
 export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: () => void } = {}) {
   const [catalog, setCatalog] = useState<Catalog | null>(null)
+  const [comparisons, setComparisons] = useState<Comparison[]>([])
+  const [comparisonError, setComparisonError] = useState(false)
   const [error, setError] = useState('')
   const [query, setQuery] = useState('')
   const [field, setField] = useState('')
@@ -57,6 +61,7 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
   const touched = useRef(false) // the address names an entry only once the reader has moved, or arrived by a link that did
   useEffect(() => {
     cachedJson<Catalog>(catalogUrl).then(setCatalog).catch((reason: unknown) => setError(reason instanceof Error ? reason.message : 'The historical catalog could not be loaded.'))
+    loadComparisons().then(({ records }) => setComparisons(records)).catch(() => setComparisonError(true))
   }, [])
 
   const filtered = useMemo(() => {
@@ -161,7 +166,7 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
           </header>
           <div className="historical-statement"><span className="historical-statement-label">Statement</span><MathText text={entry.statement} /></div>
           <details className="historical-approaches">
-            <summary>Proof approaches ({entry.routes.length})</summary>
+            <summary>Proof approaches ({entry.routes.length + (comparisons.some((item) => item.historicalId === entry.id) ? 1 : 0)})</summary>
             <ol className="historical-routes">{entry.routes.map((route) => <li key={route.id}>
               <details className="historical-approach">
                 <summary><ProofMathText text={displayRouteTitle(route)} /></summary>
@@ -170,7 +175,15 @@ export default function HistoricalResults({ onOpenLibrary }: { onOpenLibrary?: (
                   {primaryReference(route) ? <SourceCitation reference={primaryReference(route)!} /> : <RelatedSourceLinks sourceIds={entry.sourceIds} sources={catalog?.sources ?? {}} />}
                 </div>
               </details>
-            </li>)}</ol>
+            </li>)}
+              {comparisons.filter((item) => item.historicalId === entry.id).map((item) => <li key={`comparison-${item.id}`}>
+                <details className="historical-approach">
+                  <summary>Mathlib and alternative proof comparison</summary>
+                  <div className="historical-approach-content"><ProofComparison comparison={item} showStatement /></div>
+                </details>
+              </li>)}
+            </ol>
+            {comparisonError && <p className="proof-comparison-help" role="status">The Mathlib comparisons could not be loaded.</p>}
           </details>
         </div>
       </article>)}

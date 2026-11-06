@@ -1,4 +1,6 @@
-export type Kind = 'informal' | 'formal'
+import type { ProofComparison, ProofComparisons } from './proofComparisonTypes'
+
+export type Kind = 'informal' | 'formal' | 'comparison'
 
 export type Item = {
   id: string
@@ -50,7 +52,7 @@ export type FormalRecord = {
   human_proof: FormalProof
   prover_proof: FormalProof
 }
-export type RecordDetail = InformalRecord | FormalRecord
+export type RecordDetail = InformalRecord | FormalRecord | ProofComparison
 
 const collectionBase = `${import.meta.env.BASE_URL}data/collection/`
 
@@ -70,10 +72,23 @@ export function cachedJson<T>(url: string): Promise<T> {
 
 export const dataUrl = (name: string) => `${collectionBase}${name}`
 export const loadIndex = () => cachedJson<CollectionIndex>(dataUrl('index.json'))
+export const loadComparisons = () => cachedJson<ProofComparisons>(dataUrl('proof-comparisons.json'))
 /** The statements of one source (a dataset name from the index). */
-export const loadItems = (dataset: string) => cachedJson<{ items: Item[] }>(dataUrl(`index-${dataset}.json`)).then((part) => part.items)
+export const loadItems = (dataset: string): Promise<Item[]> => dataset === 'proofscape-mathlib'
+  ? loadComparisons().then(({ records }) => records.map((record) => ({
+      id: `proofscape:${record.id}`, kind: 'comparison', dataset, title: record.name,
+      statement: record.statement, source_id: record.id, categories: [], n_proofs: 2,
+      record_file: `comparison:${record.id}`,
+    })))
+  : cachedJson<{ items: Item[] }>(dataUrl(`index-${dataset}.json`)).then((part) => part.items)
 
 export async function loadRecord(recordFile: string, signal?: AbortSignal): Promise<RecordDetail> {
+  if (recordFile.startsWith('comparison:')) {
+    const { records } = await loadComparisons()
+    const record = records.find((item) => item.id === recordFile.slice('comparison:'.length))
+    if (!record) throw new Error('The proof comparison could not be found.')
+    return record
+  }
   const path = `${collectionBase}records/${recordFile}`
   const response = await fetch(path, { signal })
   if (!response.ok) throw new Error(`Proof record request failed (${response.status}).`)
