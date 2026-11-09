@@ -20,8 +20,16 @@ assert set(matched) <= catalog_ids, 'comparison maps to an unknown Explore entry
 for r in records:
     for key in ('id', 'name', 'statement', 'proofA', 'proofB', 'formalSketch', 'evidence', 'evidenceStatus'):
         assert r.get(key), f"{r.get('id')}: missing {key}"
+    if r.get('formalProofVerified'):
+        proof = ROOT / r['formalProofSource']
+        assert proof.is_file() and proof.read_text(encoding='utf-8').strip() == r['formalSketch'].strip(), f"{r['id']}: displayed proof differs from its checked Lean source"
     assert r['mathlibCore'], f"{r['id']}: missing Mathlib proof"
     assert sum(d['symbol'] == r.get('mathlibMain') for d in r['mathlibCore'] + r['mathlibSupporting']) == 1, f"{r['id']}: invalid main Mathlib declaration"
+    steps = r['mathlibProofSteps']
+    assert len(set(steps)) == len(steps), f"{r['id']}: duplicate proof step"
+    for step in steps:
+        assert step != r['mathlibMain'], f"{r['id']}: main declaration repeated in proof steps"
+        assert sum(d['symbol'] == step for d in r['mathlibCore'] + r['mathlibSupporting']) == 1, f"{r['id']}: invalid proof step {step}"
     for declaration in r['mathlibCore'] + r['mathlibSupporting']:
         for field in ('symbol', 'code', 'url', 'attribution', 'role'):
             assert declaration.get(field), f"{r['id']}: missing declaration {field}"

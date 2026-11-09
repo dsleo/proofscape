@@ -53,7 +53,11 @@
       "evidence": "Route A uses the ring adjugate and polynomial evaluation. Route B needs complex matrix diagonalization, density and continuity; it proves the complex specialization. No matched Lean implementation has been measured.",
       "evidenceLinks": [],
       "historicalId": 40,
-      "mathlibMain": "aeval_self_charpoly"
+      "mathlibMain": "aeval_self_charpoly",
+      "mathlibProofSteps": [
+        "adjugate_mul",
+        "mul_adjugate"
+      ]
     },
     {
       "id": "original-2",
@@ -80,7 +84,7 @@
           "line": 95,
           "url": "https://github.com/leanprover-community/mathlib4/blob/539ea3019ba5bd98cbc383d07e1dce07edf7f56d/Mathlib/Analysis/Complex/Liouville.lean#L95",
           "code": "theorem liouville_theorem_aux {f : ℂ → F} (hf : Differentiable ℂ f) (hb : IsBounded (range f))\n    (z w : ℂ) : f z = f w := by\n  suffices ∀ c, deriv f c = 0 from is_const_of_deriv_eq_zero hf this z w\n  clear z w; intro c\n  obtain ⟨C, C₀, hC⟩ : ∃ C > (0 : ℝ), ∀ z, ‖f z‖ ≤ C := by\n    rcases isBounded_iff_forall_norm_le.1 hb with ⟨C, hC⟩\n    exact\n      ⟨max C 1, lt_max_iff.2 (Or.inr zero_lt_one), fun z =>\n        (hC (f z) (mem_range_self _)).trans (le_max_left _ _)⟩\n  refine norm_le_zero_iff.1 (le_of_forall_gt_imp_ge_of_dense fun ε ε₀ => ?_)\n  calc\n    ‖deriv f c‖ ≤ C / (C / ε) :=\n      norm_deriv_le_of_forall_mem_sphere_norm_le (div_pos C₀ ε₀) hf.diffContOnCl fun z _ => hC z\n    _ = ε := div_div_cancel₀ C₀.lt.ne'",
-          "role": "Main declaration or directly used specialization"
+          "role": "Liouville’s theorem: the Cauchy estimate forces the derivative to vanish."
         },
         {
           "attribution": "Copyright (c) 2022 Yury Kudryashov. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Yury Kudryashov",
@@ -116,7 +120,11 @@
       "evidence": "Route A uses Liouville and polynomial growth; Route B needs a splitting field, symmetric polynomials, 2-adic degree induction and the real IVT. Both already require substantial infrastructure; relative effort is unknown.",
       "evidenceLinks": [],
       "historicalId": 26,
-      "mathlibMain": "exists_root"
+      "mathlibMain": "exists_root",
+      "mathlibProofSteps": [
+        "liouville_theorem_aux",
+        "norm_iteratedDeriv_le_of_forall_mem_sphere_norm_le"
+      ]
     },
     {
       "id": "original-3",
@@ -125,7 +133,7 @@
       "scope": "",
       "proofA": "Fix $N\\in\\mathbb N$ and let $p$ be a prime divisor of $N!+1$. If $p\\le N$, then $p\\mid N!$, so $p\\mid(N!+1)-N!=1$, a contradiction. Therefore $p>N$. Since $N$ was arbitrary, there are infinitely many primes.",
       "proofB": "Suppose the primes are $p_1,\\ldots,p_r$. Unique factorization and geometric series yield\n\\[\\sum_{n\\ge1}\\frac1n=\\prod_{i=1}^{r}\\left(1-\\frac1{p_i}\\right)^{-1}<\\infty.\\]\nMore explicitly, every finite harmonic sum is bounded by the product. This contradicts divergence of the harmonic series.",
-      "formalSketch": "-- Assume the primes form a finite set S.\nlemma harmonic_bound (S : Finset ℕ) (hS : ∀ p, p.Prime → p ∈ S) (N : ℕ) :\n    (∑ n in 1..N, 1 / (n : ℝ)) ≤ ∏ p ∈ S, (1 - 1/(p : ℝ))⁻¹ := by\n  -- expand finite products of convergent geometric series;\n  -- unique factorization assigns every n a unique exponent vector\n  sorry\ntheorem alternative : Infinite {p : ℕ // p.Prime} := by\n  -- harmonic_bound contradicts divergence of harmonic partial sums\n  sorry",
+      "formalSketch": "import Mathlib.NumberTheory.EulerProduct.Basic\nimport Mathlib.Analysis.PSeries\nimport Mathlib.Tactic.Positivity\nimport Mathlib.Tactic.NormNum\n\nnamespace Proofscape.RouteB\n\nopen Set Nat\nopen scoped BigOperators\n\n/-- Reciprocal as a completely multiplicative function on natural numbers. -/\nnoncomputable def reciprocal : ℕ →* ℝ where\n  toFun n := (n : ℝ)⁻¹\n  map_one' := by simp\n  map_mul' := by intro m n; simp [mul_comm]\n\n/-- Euler's proof: a finite set of all primes would make the harmonic series\nconverge, since its terms form the geometric Euler product over that set. -/\ntheorem infinitely_many_primes_euler : {p : ℕ | p.Prime}.Infinite := by\n  intro hfinite\n  classical\n  let S := hfinite.toFinset\n  have hall : ∀ p : ℕ, p.Prime → p ∈ S := by\n    intro p hp\n    exact hfinite.mem_toFinset.mpr hp\n  have hsmall : ∀ {p : ℕ}, p.Prime → ‖reciprocal p‖ < 1 := by\n    intro p hp\n    have hpR : (1 : ℝ) < p := by exact_mod_cast hp.one_lt\n    have hpos : (0 : ℝ) < p := lt_trans zero_lt_one hpR\n    change ‖(p : ℝ)⁻¹‖ < 1\n    rw [Real.norm_eq_abs, abs_of_nonneg (le_of_lt (inv_pos.mpr hpos))]\n    exact (inv_lt_one₀ hpos).mpr hpR\n  obtain ⟨hsum, hproduct⟩ :=\n    EulerProduct.summable_and_hasSum_factoredNumbers_prod_filter_prime_geometric hsmall S\n  let e : ℕ → Nat.factoredNumbers S := fun n =>\n    ⟨n + 1, Nat.mem_factoredNumbers_iff_forall_le.mpr\n      ⟨Nat.succ_ne_zero n, fun p _ hp _ => hall p hp⟩⟩\n  have hinj : Function.Injective e := by\n    intro i j hij\n    have h : i + 1 = j + 1 := congrArg Subtype.val hij\n    omega\n  have hs := hsum.comp_injective hinj\n  have heval (n : ℕ) : ‖reciprocal (e n)‖ = (1 : ℝ) / (n + 1) := by\n    change ‖(((n + 1 : ℕ) : ℝ)⁻¹)‖ = (1 : ℝ) / (n + 1)\n    rw [Real.norm_eq_abs, abs_of_nonneg (by positivity), one_div]\n    simp\n  change Summable (fun n : ℕ => ‖reciprocal (e n)‖) at hs\n  simp only [heval] at hs\n  exact Real.not_summable_one_div_natCast ((summable_nat_add_iff 1).mp (by simpa using hs))\n\nend Proofscape.RouteB",
       "mathlibCore": [
         {
           "attribution": "Copyright (c) 2015 Microsoft Corporation. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Leonardo de Moura, Jeremy Avigad, Mario Carneiro",
@@ -166,11 +174,14 @@
           "role": "Positive integers up to n divide n! ."
         }
       ],
-      "evidenceStatus": "Not yet tested",
-      "evidence": "Route A uses factorial divisibility and prime factors. Route B needs geometric-series products, unique factorization and harmonic divergence. That is a distinct prerequisite profile; implementation effort has not been measured.",
+      "evidenceStatus": "Formalized; effort not measured",
+      "evidence": "The checked alternative uses the finite Euler product for reciprocal primes and divergence of the harmonic series. Mathlib’s displayed proof is Euclid’s factorial argument. The effort and dependencies have not been measured.",
       "evidenceLinks": [],
       "historicalId": 3,
-      "mathlibMain": "exists_infinite_primes"
+      "mathlibMain": "exists_infinite_primes",
+      "mathlibProofSteps": [],
+      "formalProofSource": "data/route-b-proofs/InfinitelyManyPrimesEuler.lean",
+      "formalProofVerified": true
     },
     {
       "id": "original-4",
@@ -214,7 +225,11 @@
       "evidence": "Route A is an inner-product identity; Route B needs a Euclidean dissection, set partition and area additivity. No synthetic-geometric Lean implementation is compared.",
       "evidenceLinks": [],
       "historicalId": 1,
-      "mathlibMain": "norm_add_sq_eq_norm_sq_add_norm_sq_of_inner_eq_zero"
+      "mathlibMain": "norm_add_sq_eq_norm_sq_add_norm_sq_of_inner_eq_zero",
+      "mathlibProofSteps": [
+        "norm_add_mul_self",
+        "norm_add_sq"
+      ]
     },
     {
       "id": "original-6",
@@ -223,7 +238,7 @@
       "scope": "",
       "proofA": "The interval $[a,b]$ is connected, and its continuous image $f([a,b])\\subseteq\\mathbb R$ is connected. Every connected subset of $\\mathbb R$ is an interval. Since $f(a),f(b)\\in f([a,b])$ and $f(a)\\le y\\le f(b)$, we have $y\\in f([a,b])$. Thus $y=f(c)$ for some $c\\in[a,b]$.",
       "proofB": "Endpoint equality gives the result immediately. Otherwise $f(a)<y<f(b)$. Put\n\\[S=\\{x\\in[a,b]:f(x)<y\\},\\qquad c=\\sup S.\\]\nThen $S\\ne\\varnothing$, $S$ is bounded above, and $c\\in[a,b]$.\n\nIf $f(c)<y$, continuity and $c<b$ give a point of $S$ to the right of $c$, contrary to $c$ being an upper bound. If $f(c)>y$, continuity and $c>a$ give an upper bound for $S$ strictly below $c$, contrary to the definition of $c$. Hence $f(c)=y$.",
-      "formalSketch": "-- f continuous on [a,b], f a ≤ y ≤ f b.\nlet S := {x ∈ Set.Icc a b | f x < y}\n-- First handle equality at either endpoint.\nhave hS : S.Nonempty ∧ BddAbove S := by sorry\nlet c := sSup S\nhave hc : c ∈ Set.Icc a b := by sorry\nhave hnot_lt : ¬ f c < y := by\n  -- continuity would put a point of S strictly to the right of c\n  sorry\nhave hnot_gt : ¬ y < f c := by\n  -- continuity gives a smaller upper bound for S\n  sorry\nexact ⟨c, hc, le_antisymm (le_of_not_gt hnot_gt) (le_of_not_gt hnot_lt)⟩",
+      "formalSketch": "import Mathlib.Topology.Instances.Real.Lemmas\nimport Mathlib.Algebra.Order.Archimedean.Real.Basic\nimport Mathlib.Tactic.Linarith\n\nnamespace Proofscape.RouteB\n\nopen Set\n\n/-- The intermediate value theorem via the supremum of the strict sublevel set. -/\ntheorem intermediate_value_by_supremum {a b y : ℝ} {f : ℝ → ℝ}\n    (hab : a ≤ b) (hf : ContinuousOn f (Icc a b))\n    (hay : f a ≤ y) (hyb : y ≤ f b) :\n    ∃ c ∈ Icc a b, f c = y := by\n  by_cases ha : f a = y\n  · exact ⟨a, ⟨le_rfl, hab⟩, ha⟩\n  by_cases hb : f b = y\n  · exact ⟨b, ⟨hab, le_rfl⟩, hb⟩\n  have hfa : f a < y := lt_of_le_of_ne hay ha\n  have hfb : y < f b := lt_of_le_of_ne hyb (Ne.symm hb)\n  let S : Set ℝ := {x | x ∈ Icc a b ∧ f x < y}\n  have hne : S.Nonempty := ⟨a, ⟨⟨le_rfl, hab⟩, hfa⟩⟩\n  have hbounded : BddAbove S := ⟨b, fun _ hx => hx.1.2⟩\n  let c := sSup S\n  have hca : a ≤ c := le_csSup hbounded ⟨⟨le_rfl, hab⟩, hfa⟩\n  have hcb : c ≤ b := csSup_le hne (fun _ hx => hx.1.2)\n  have hc : c ∈ Icc a b := ⟨hca, hcb⟩\n  have hnot_lt : ¬ f c < y := by\n    intro hcy\n    have hcb' : c < b := by\n      by_contra h\n      have : c = b := le_antisymm hcb (le_of_not_gt h)\n      rw [this] at hcy\n      linarith\n    obtain ⟨δ, hδ, hcont⟩ := (Metric.continuousOn_iff.mp hf) c hc (y - f c) (by linarith)\n    let z := min b (c + δ / 2)\n    have hcz : c < z := lt_min hcb' (by linarith)\n    have hzb : z ≤ b := min_le_left _ _\n    have hzbound : z ≤ c + δ / 2 := min_le_right _ _\n    have hz : z ∈ Icc a b := ⟨le_trans hca (le_of_lt hcz), hzb⟩\n    have hdist : dist z c < δ := by\n      rw [Real.dist_eq, abs_of_nonneg (by linarith)]\n      linarith\n    have hdiff := hcont z hz hdist\n    rw [Real.dist_eq, abs_lt] at hdiff\n    have hzS : z ∈ S := ⟨hz, by linarith [hdiff.2]⟩\n    have hzc : z ≤ c := le_csSup hbounded hzS\n    linarith\n  have hnot_gt : ¬ y < f c := by\n    intro hyc\n    have hac : a < c := by\n      by_contra h\n      have : c = a := le_antisymm (le_of_not_gt h) hca\n      rw [this] at hyc\n      linarith\n    obtain ⟨δ, hδ, hcont⟩ := (Metric.continuousOn_iff.mp hf) c hc (f c - y) (by linarith)\n    let z := max a (c - δ / 2)\n    have hza : a ≤ z := le_max_left _ _\n    have hzc : z < c := max_lt hac (by linarith)\n    have hzbound : c - δ / 2 ≤ z := le_max_right _ _\n    have hupper : ∀ t ∈ S, t ≤ z := by\n      intro t ht\n      by_contra htz\n      have htz' : z < t := lt_of_not_ge htz\n      have htc : t ≤ c := le_csSup hbounded ht\n      have hdist : dist t c < δ := by\n        rw [Real.dist_eq, abs_of_nonpos (by linarith)]\n        linarith\n      have hdiff := hcont t ht.1 hdist\n      rw [Real.dist_eq, abs_lt] at hdiff\n      linarith [hdiff.1, ht.2]\n    have hcz : c ≤ z := csSup_le hne hupper\n    linarith\n  exact ⟨c, hc, le_antisymm (le_of_not_gt hnot_gt) (le_of_not_gt hnot_lt)⟩\n\nend Proofscape.RouteB",
       "mathlibCore": [
         {
           "attribution": "Copyright (c) 2021 Yury Kudryashov. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Yury Kudryashov, Alistair Tucker, Wen Yang",
@@ -282,11 +297,17 @@
           "role": "Preconnectedness of the closed interval."
         }
       ],
-      "evidenceStatus": "Weak test",
-      "evidence": "Both routes use ordered real completeness and continuity. Mathlib packages the argument via preconnectedness; the supremum sketch changes the presentation but does not establish a substantial prerequisite gap.",
+      "evidenceStatus": "Formalized; effort not measured",
+      "evidence": "The checked alternative uses the supremum of a strict sublevel set and continuity at that supremum. Mathlib’s displayed route uses preconnectedness. The effort and dependencies have not been measured.",
       "evidenceLinks": [],
       "historicalId": 28,
-      "mathlibMain": "intermediate_value_Icc"
+      "mathlibMain": "intermediate_value_Icc",
+      "mathlibProofSteps": [
+        "intermediate_value_univ₂",
+        "isPreconnected_Icc_aux"
+      ],
+      "formalProofSource": "data/route-b-proofs/IntermediateValueSupremum.lean",
+      "formalProofVerified": true
     },
     {
       "id": "original-7",
@@ -295,7 +316,7 @@
       "scope": "The alternative uses descent on positive integers. Its length interpretation is geometric, but the algebraic sketch does not require a geometry library.",
       "proofA": "For $n\\in\\mathbb N$, $\\sqrt n\\in\\mathbb Q$ if and only if $n$ is a square. Indeed, write $\\sqrt n=a/b$ in lowest terms, with $b>0$. Then $n=a^2/b^2$; since $\\gcd(a^2,b^2)=1$, the reduced denominator is $b^2=1$. Thus $n=a^2$. The converse is immediate.\n\nThe prime $2$ is irreducible and hence not a square: $2=m^2$ would force $m$ to be a unit. The criterion therefore gives $\\sqrt2\\notin\\mathbb Q$.",
       "proofB": "Suppose $b/a=\\sqrt2$ for positive integers $a,b$, with $a$ minimal. Then $b^2=2a^2$ and $a<b<2a$. Set\n\\[a'=b-a,\\qquad b'=2a-b.\\]\nBoth are positive integers, $a'<a$, and\n\\[(b')^2-2(a')^2=(2a-b)^2-2(b-a)^2=2a^2-b^2=0.\\]\nThus $b'/a'=\\sqrt2$, contradicting the minimality of $a$.",
-      "formalSketch": "-- Assume a positive rational representation b/a = √2.\nlemma descend (a b : ℕ) (ha : 0 < a) (h : b^2 = 2*a^2) :\n    ∃ a' b' : ℕ, 0 < a' ∧ a' < a ∧ b'^2 = 2*a'^2 := by\n  -- a < b < 2a; take a' = b-a and b' = 2a-b\n  sorry\ntheorem alternative : Irrational (Real.sqrt 2) := by\n  -- choose a representation with least positive denominator;\n  -- descend contradicts its minimality\n  sorry",
+      "formalSketch": "import Mathlib.NumberTheory.Real.Irrational\nimport Mathlib.Tactic.Linarith\nimport Mathlib.Tactic.NormNum\nimport Mathlib.Tactic.FieldSimp\n\nnamespace Proofscape.RouteB\n\n/-- A hypothetical solution descends from (a,b) to (b-a,2a-b). -/\ntheorem sqrt_two_descent (a : ℕ) :\n    ∀ b : ℕ, 0 < a → b ^ 2 = 2 * a ^ 2 → False := by\n  induction a using Nat.strong_induction_on with\n  | ind a ih =>\n    intro b ha h\n    have hab : a < b := by nlinarith\n    have hba : b < 2 * a := by nlinarith\n    have hsub₁ : b - a + a = b := Nat.sub_add_cancel (by omega)\n    have hsub₂ : 2 * a - b + b = 2 * a := Nat.sub_add_cancel (by omega)\n    have hnew : (2 * a - b) ^ 2 = 2 * (b - a) ^ 2 := by nlinarith\n    exact ih (b - a) (by omega) (2 * a - b) (by omega) hnew\n\n/-- Irrationality of sqrt 2 by the geometric infinite descent. -/\ntheorem irrational_sqrt_two_by_descent : Irrational (Real.sqrt 2) := by\n  rw [irrational_iff_ne_rational]\n  intro a b hb h\n  have hbR : (b : ℝ) ≠ 0 := by exact_mod_cast hb\n  have hsqrt : (Real.sqrt 2) ^ 2 = (2 : ℝ) := Real.sq_sqrt (by norm_num)\n  have hmul : Real.sqrt 2 * b = a := by\n    rw [h]\n    field_simp\n  have heqR : (a : ℝ) ^ 2 = 2 * (b : ℝ) ^ 2 := by\n    calc\n      (a : ℝ) ^ 2 = (Real.sqrt 2 * b) ^ 2 := by rw [hmul]\n      _ = 2 * (b : ℝ) ^ 2 := by rw [mul_pow, hsqrt]\n  have heqZ : a ^ 2 = 2 * b ^ 2 := by exact_mod_cast heqR\n  have heqN : a.natAbs ^ 2 = 2 * b.natAbs ^ 2 := by\n    simpa [Int.natAbs_mul, Int.natAbs_pow] using congrArg Int.natAbs heqZ\n  exact sqrt_two_descent b.natAbs a.natAbs (Int.natAbs_pos.mpr hb) heqN\n\nend Proofscape.RouteB",
       "mathlibCore": [
         {
           "attribution": "Copyright (c) 2018 Mario Carneiro. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Mario Carneiro, Abhimanyu Pallavi Sudhir, Jean Lo, Calle Sönne, Yury Kudryashov",
@@ -367,7 +388,7 @@
           "line": 137,
           "url": "https://github.com/leanprover-community/mathlib4/blob/539ea3019ba5bd98cbc383d07e1dce07edf7f56d/Mathlib/NumberTheory/Real/Irrational.lean#L137",
           "code": "theorem Nat.Prime.irrational_sqrt {p : ℕ} (hp : Nat.Prime p) : Irrational (√p) :=\n  irrational_sqrt_natCast_iff.mpr hp.not_isSquare",
-          "role": "Main declaration or directly used specialization"
+          "role": "Specialize the square criterion using the nonsquareness of a prime."
         },
         {
           "attribution": "Copyright (c) 2018 Mario Carneiro. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Mario Carneiro, Abhimanyu Pallavi Sudhir, Jean Lo, Calle Sönne, Yury Kudryashov",
@@ -408,11 +429,21 @@
           "role": "Natural primality is defined as irreducibility."
         }
       ],
-      "evidenceStatus": "Not yet tested",
-      "evidence": "Mathlib proves a general square-root criterion using rational squares and irreducibility. A synthetic geometric descent needs constructions and length identities; the arithmetic version shown in the sketch may avoid geometry. Neither alternative has been measured.",
+      "evidenceStatus": "Formalized; effort not measured",
+      "evidence": "Mathlib uses a rational-square criterion and irreducibility. Route B now formalizes infinite descent in natural numbers, without a geometry library. The effort and dependencies have not been measured.",
       "evidenceLinks": [],
       "historicalId": 2,
-      "mathlibMain": "irrational_sqrt_two"
+      "mathlibMain": "irrational_sqrt_two",
+      "mathlibProofSteps": [
+        "Nat.Prime.irrational_sqrt",
+        "irrational_sqrt_natCast_iff",
+        "irrational_sqrt_ratCast_iff_of_nonneg",
+        "isSquare_iff",
+        "Irreducible.not_isSquare",
+        "not_irreducible_pow"
+      ],
+      "formalProofSource": "data/route-b-proofs/IrrationalSqrtTwo.lean",
+      "formalProofVerified": true
     },
     {
       "id": "original-9",
@@ -439,7 +470,7 @@
           "line": 687,
           "url": "https://github.com/leanprover-community/mathlib4/blob/539ea3019ba5bd98cbc383d07e1dce07edf7f56d/Mathlib/GroupTheory/Sylow.lean#L687",
           "code": "theorem exists_subgroup_card_pow_prime_ge [Finite G] (p : ℕ) :\n    ∀ {n m : ℕ} [_hp : Fact p.Prime] (_hdvd : p ^ m ∣ Nat.card G) (H : Subgroup G)\n      (_hH : Nat.card H = p ^ n) (_hnm : n ≤ m), ∃ K : Subgroup G, Nat.card K = p ^ m ∧ H ≤ K\n  | n, m => fun {hdvd H hH hnm} =>\n    (lt_or_eq_of_le hnm).elim\n      (fun hnm : n < m =>\n        have h0m : 0 < m := lt_of_le_of_lt n.zero_le hnm\n        have hnm1 : n ≤ m - 1 := le_tsub_of_add_le_right hnm\n        let ⟨K, hK⟩ :=\n          @exists_subgroup_card_pow_prime_ge _ _ n (m - 1) _\n            (Nat.pow_dvd_of_le_of_pow_dvd tsub_le_self hdvd) H hH hnm1\n        have hdvd' : p ^ (m - 1 + 1) ∣ Nat.card G := by rwa [tsub_add_cancel_of_le h0m.nat_succ_le]\n        let ⟨K', hK'⟩ := @exists_subgroup_card_pow_succ _ _ _ _ _ _ hdvd' K hK.1\n        ⟨K', by rw [hK'.1, tsub_add_cancel_of_le h0m.nat_succ_le], le_trans hK.2 hK'.2⟩)\n      fun hnm : n = m => ⟨H, by simp [hH, hnm]⟩",
-          "role": "Main declaration or directly used specialization"
+          "role": "Inductively extend a p-subgroup to the required order."
         },
         {
           "attribution": "Copyright (c) 2018 Chris Hughes. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Chris Hughes, Thomas Browning",
@@ -456,7 +487,11 @@
       "evidence": "Mathlib grows p-subgroups through normalizers and quotient Cauchy. The alternative needs a subset action, a binomial congruence and the p-group subgroup theorem. Both are finite group arguments; the cost difference is unknown.",
       "evidenceLinks": [],
       "historicalId": 45,
-      "mathlibMain": "exists_subgroup_card_pow_prime"
+      "mathlibMain": "exists_subgroup_card_pow_prime",
+      "mathlibProofSteps": [
+        "exists_subgroup_card_pow_prime_ge",
+        "exists_subgroup_card_pow_succ"
+      ]
     },
     {
       "id": "original-10",
@@ -519,7 +554,11 @@
       "evidence": "Both routes iterate the contraction and use metric completeness and a geometric bound. The nested-ball packaging does not establish the requested foundational gap.",
       "evidenceLinks": [],
       "historicalId": 66,
-      "mathlibMain": "exists_fixedPoint"
+      "mathlibMain": "exists_fixedPoint",
+      "mathlibProofSteps": [
+        "edist_iterate_succ_le_geometric",
+        "cauchySeq_of_edist_le_geometric"
+      ]
     },
     {
       "id": "original-11",
@@ -582,7 +621,11 @@
         }
       ],
       "historicalId": 48,
-      "mathlibMain": "Nat.Prime.sq_add_sq"
+      "mathlibMain": "Nat.Prime.sq_add_sq",
+      "mathlibProofSteps": [
+        "sq_add_sq_of_nat_prime_of_not_irreducible",
+        "mod_four_eq_three_of_nat_prime_of_prime"
+      ]
     },
     {
       "id": "original-12",
@@ -591,7 +634,7 @@
       "scope": "",
       "proofA": "The left cosets of $H$ partition $G$, and $h\\mapsto gh$ is a bijection $H\\to gH$ for each $g\\in G$. Hence\n\\[|G|=[G:H]|H|,\\]\nso $|H|\\mid|G|$.",
       "proofB": "Let $H$ act on $G$ by left multiplication. If $hg=g$, cancellation gives $h=1$; thus each stabilizer is trivial. Orbit–stabilizer gives $|H\\cdot g|=|H|$ for every $g$. The orbits partition $G$, so $|G|$ is a multiple of $|H|$.",
-      "formalSketch": "-- Let H act on G by left multiplication.\nlemma action_free (h : H) (g : G) (hfix : h • g = g) : h = 1 := by\n  -- cancel g\n  sorry\nlemma each_orbit_card (g : G) : card (orbit H g) = card H := by\n  -- orbit–stabilizer and action_free\n  sorry\ntheorem alternative : Nat.card H ∣ Nat.card G := by\n  -- partition G into its H-orbits and sum their equal cardinalities\n  sorry",
+      "formalSketch": "import Mathlib.GroupTheory.GroupAction.CardCommute\nimport Mathlib.Algebra.BigOperators.Ring.Finset\n\nnamespace Proofscape.RouteB\n\nopen Finset\n\n/-- Left multiplication by a subgroup is a free action. -/\ntheorem subgroup_stabilizer_trivial {G : Type*} [Group G] (H : Subgroup G) (g : G) :\n    MulAction.stabilizer H g = ⊥ := by\n  ext h\n  simp only [MulAction.mem_stabilizer_iff, Subgroup.mem_bot]\n  constructor\n  · intro hh\n    apply Subtype.ext\n    change (h : G) = 1\n    change (h : G) * g = g at hh\n    have : (h : G) * g = 1 * g := by simpa only [one_mul] using hh\n    exact mul_right_cancel this\n  · intro hh\n    subst h\n    simp\n\n/-- The orbits all have the order of H, so the orbit partition proves Lagrange. -/\ntheorem lagrange_by_orbits {G : Type*} [Group G] [Fintype G] (H : Subgroup G) [Fintype H] :\n    Fintype.card H ∣ Fintype.card G := by\n  classical\n  letI : Fintype (Quotient (MulAction.orbitRel H G)) := Fintype.ofFinite _\n  rw [MulAction.card_eq_sum_card_group_div_card_stabilizer H G]\n  apply Finset.dvd_sum\n  intro orbit _\n  have hs : Nat.card (MulAction.stabilizer H orbit.out) = 1 := by\n    rw [subgroup_stabilizer_trivial H orbit.out]\n    simp\n  have hs' : Fintype.card (MulAction.stabilizer H orbit.out) = 1 := by\n    simpa only [Nat.card_eq_fintype_card] using hs\n  rw [hs', Nat.div_one]\n\nend Proofscape.RouteB",
       "mathlibCore": [
         {
           "attribution": "Copyright (c) 2018 Mitchell Rowett. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Mitchell Rowett, Kim Morrison",
@@ -631,11 +674,18 @@
         }
       ],
       "mathlibSupporting": [],
-      "evidenceStatus": "Weak test",
-      "evidence": "Cosets and orbits of the subgroup action are the same partition, expressed through different APIs. This pair does not establish a substantial foundational gap.",
+      "evidenceStatus": "Formalized; effort not measured",
+      "evidence": "The alternative proves the subgroup action is free, then uses the class formula to sum orbit sizes. The effort and dependencies have not been measured.",
       "evidenceLinks": [],
       "historicalId": null,
-      "mathlibMain": "card_subgroup_dvd_card"
+      "mathlibMain": "card_subgroup_dvd_card",
+      "mathlibProofSteps": [
+        "card_eq_card_quotient_mul_card_subgroup",
+        "groupEquivQuotientProdSubgroup",
+        "leftCosetEquivSubgroup"
+      ],
+      "formalProofSource": "data/route-b-proofs/LagrangeOrbit.lean",
+      "formalProofVerified": true
     },
     {
       "id": "catalog-5",
@@ -644,7 +694,7 @@
       "scope": "",
       "proofA": "Set $N=n+1$ and $S=\\sum_{i=0}^{N-1}i$. The index reversal $i\\mapsto N-1-i$ gives\n\\[2S=\\sum_{i=0}^{N-1}\\bigl(i+(N-1-i)\\bigr)=N(N-1)=n(n+1).\\]\nConsequently $S=n(n+1)/2$.",
       "proofB": "For $n=0$ the formula is immediate. If $2\\sum_{i=1}^{n}i=n(n+1)$, then\n\\[2\\sum_{i=1}^{n+1}i=n(n+1)+2(n+1)=(n+1)(n+2).\\]\nThe doubled identity follows by induction; division by $2$ gives the result.",
-      "formalSketch": "lemma doubled_sum (n : ℕ) :\n    2 * (∑ i in range (n+1), i) = n*(n+1) := by\n  induction n with\n  | zero => simp\n  | succ n ih =>\n      -- expand the last summand and use ih and ring arithmetic\n      sorry\ntheorem alternative : (∑ i in range (n+1), i) = n*(n+1)/2 := by\n  -- divide the doubled equality in ℕ\n  sorry",
+      "formalSketch": "import Mathlib.Algebra.BigOperators.Ring.Finset\nimport Mathlib.Tactic.Linarith\nimport Mathlib.Tactic.NormNum\n\nnamespace Proofscape.RouteB\n\nopen Finset\n\n/-- The sum of the first n integers, doubled, proved by induction. -/\ntheorem sum_first_n_doubled (n : ℕ) :\n    2 * (∑ i ∈ range (n + 1), i) = n * (n + 1) := by\n  induction n with\n  | zero => simp\n  | succ n ih =>\n      rw [sum_range_succ]\n      nlinarith\n\n/-- The natural-number division version of the formula. -/\ntheorem sum_first_n (n : ℕ) :\n    (∑ i ∈ range (n + 1), i) = n * (n + 1) / 2 := by\n  have h := sum_first_n_doubled n\n  omega\n\nend Proofscape.RouteB",
       "mathlibCore": [
         {
           "attribution": "Copyright (c) 2017 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl",
@@ -653,7 +703,7 @@
           "line": 175,
           "url": "https://github.com/leanprover-community/mathlib4/blob/539ea3019ba5bd98cbc383d07e1dce07edf7f56d/Mathlib/Algebra/BigOperators/Intervals.lean#L175",
           "code": "theorem sum_range_id_mul_two (n : ℕ) : (∑ i ∈ range n, i) * 2 = n * (n - 1) :=\n  calc\n    (∑ i ∈ range n, i) * 2 = (∑ i ∈ range n, i) + ∑ i ∈ range n, (n - 1 - i) := by\n      rw [sum_range_reflect (fun i => i) n, mul_two]\n    _ = ∑ i ∈ range n, (i + (n - 1 - i)) := sum_add_distrib.symm\n    _ = ∑ _ ∈ range n, (n - 1) :=\n      sum_congr rfl fun _ hi => add_tsub_cancel_of_le <| Nat.le_sub_one_of_lt <| mem_range.1 hi\n    _ = n * (n - 1) := by rw [sum_const, card_range, Nat.nsmul_eq_mul]",
-          "role": "Main declaration or directly used specialization"
+          "role": "Reflect and pair the two sums to obtain the doubled formula."
         },
         {
           "attribution": "Copyright (c) 2017 Johannes Hölzl. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Johannes Hölzl",
@@ -666,11 +716,16 @@
         }
       ],
       "mathlibSupporting": [],
-      "evidenceStatus": "Weak test",
+      "evidenceStatus": "Formalized; effort not measured",
       "evidence": "Reflection and induction use finite sums and natural arithmetic. A strong foundational gap is not established.",
       "evidenceLinks": [],
       "historicalId": 5,
-      "mathlibMain": "sum_range_id"
+      "mathlibMain": "sum_range_id",
+      "mathlibProofSteps": [
+        "sum_range_id_mul_two"
+      ],
+      "formalProofSource": "data/route-b-proofs/SumFirstIntegers.lean",
+      "formalProofVerified": true
     },
     {
       "id": "catalog-7",
@@ -679,7 +734,7 @@
       "scope": "",
       "proofA": "Induct on $n$. The case $n=0$ is immediate. Multiplying the induction hypothesis by $x+y$ and using $xy=yx$, the coefficient of $x^ky^{n+1-k}$ is\n\\[\\binom n{k-1}+\\binom nk=\\binom{n+1}k\\]\nfor $1\\le k\\le n$; the endpoint coefficients are $1$. This is the required expansion for $n+1$.",
       "proofB": "Distributivity indexes the $2^n$ terms in $(x+y)^n$ by subsets $S\\subseteq\\{1,\\ldots,n\\}$, choosing $x$ on $S$ and $y$ off $S$. If $|S|=k$, commutativity gives the term $x^ky^{n-k}$. There are $\\binom nk$ such subsets, so grouping by $k$ gives\n\\[(x+y)^n=\\sum_{k=0}^n\\binom nk x^ky^{n-k}.\\]",
-      "formalSketch": "-- x and y commute in a semiring.\nlemma expand_choices : (x+y)^n =\n    ∑ S : Finset (Fin n), (∏ i ∈ S, x) * (∏ i ∉ S, y) := by\n  -- distributivity indexes each choice by a subset\n  sorry\nlemma count_choices (k : ℕ) :\n    card {S : Finset (Fin n) | S.card = k} = Nat.choose n k := by\n  sorry\ntheorem alternative : (x+y)^n = ∑ k in range (n+1), choose n k • (x^k*y^(n-k)) := by\n  -- group expand_choices by cardinality; commute x with y\n  sorry",
+      "formalSketch": "import Mathlib.Algebra.BigOperators.Ring.Finset\nimport Mathlib.Algebra.BigOperators.Group.Finset.Powerset\nimport Mathlib.Algebra.Ring.Subsemiring.Basic\n\nnamespace Proofscape.RouteB\n\nopen Finset\nopen scoped IsMulCommutative\n\n/-- Expand the choices of x and y as subsets of an n-element set. -/\ntheorem binomial_expand_subsets {R : Type*} [CommSemiring R] (x y : R) (n : ℕ) :\n    (x + y) ^ n =\n      ∑ s ∈ (univ : Finset (Fin n)).powerset, x ^ s.card * y ^ (n - s.card) := by\n  simpa using (Finset.sum_pow_mul_eq_add_pow x y (univ : Finset (Fin n))).symm\n\n/-- Group the subsets by cardinality; there are choose n k of size k. -/\ntheorem binomial_by_subsets {R : Type*} [CommSemiring R] (x y : R) (n : ℕ) :\n    (x + y) ^ n = ∑ k ∈ range (n + 1), (n.choose k) • (x ^ k * y ^ (n - k)) := by\n  rw [binomial_expand_subsets]\n  rw [Finset.sum_powerset]\n  simp only [Finset.card_univ, Fintype.card_fin]\n  apply Finset.sum_congr rfl\n  intro k hk\n  simpa using (Finset.sum_powersetCard k (univ : Finset (Fin n))\n    (fun j => x ^ j * y ^ (n - j)))\n\n/-- Two commuting elements generate a commutative subsemiring; apply the\nsubset-counting proof there and map the result back to the original semiring. -/\ntheorem binomial_by_subsets_of_commute {R : Type*} [Semiring R] (x y : R)\n    (hxy : Commute x y) (n : ℕ) :\n    (x + y) ^ n = ∑ k ∈ range (n + 1), (n.choose k) • (x ^ k * y ^ (n - k)) := by\n  classical\n  let S := Subsemiring.closure ({x, y} : Set R)\n  have hcomm : ({x, y} : Set R).Pairwise Commute := by\n    intro a ha b hb hab\n    simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at ha hb\n    rcases ha with rfl | rfl <;> rcases hb with rfl | rfl\n    · exact Commute.refl _\n    · exact hxy\n    · exact hxy.symm\n    · exact Commute.refl _\n  letI : IsMulCommutative S := Subsemiring.isMulCommutative_closure hcomm\n  let xx : S := ⟨x, Subsemiring.subset_closure (by simp)⟩\n  let yy : S := ⟨y, Subsemiring.subset_closure (by simp)⟩\n  have h := binomial_by_subsets xx yy n\n  have h' := congrArg (fun z : S => (z : R)) h\n  simpa using h'\n\nend Proofscape.RouteB",
       "mathlibCore": [
         {
           "attribution": "Copyright (c) 2018 Chris Hughes. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Chris Hughes, Patrick Stevens",
@@ -702,11 +757,14 @@
           "role": "Pascal’s recurrence for binomial coefficients."
         }
       ],
-      "evidenceStatus": "Weak test",
-      "evidence": "Both proofs use finite combinatorics and semiring arithmetic; the alternative groups subsets rather than using Pascal induction. No substantial foundational gap is established.",
+      "evidenceStatus": "Formalized; effort not measured",
+      "evidence": "The alternative counts subsets in the commutative subsemiring generated by the two commuting elements. The full statement is checked; the formalization effort and dependencies have not been measured.",
       "evidenceLinks": [],
       "historicalId": 7,
-      "mathlibMain": "add_pow"
+      "mathlibMain": "add_pow",
+      "mathlibProofSteps": [],
+      "formalProofSource": "data/route-b-proofs/BinomialTheorem.lean",
+      "formalProofVerified": true
     },
     {
       "id": "catalog-25",
@@ -741,7 +799,10 @@
       "evidence": "Mathlib proves real cardinality via rational Cauchy sequences and a Cantor injection; the alternate uses nested intervals and real completeness. Both depend on substantial real-analysis foundations, and relative Lean effort is unknown.",
       "evidenceLinks": [],
       "historicalId": 25,
-      "mathlibMain": "mk_real"
+      "mathlibMain": "mk_real",
+      "mathlibProofSteps": [
+        "cantorFunction_injective"
+      ]
     },
     {
       "id": "catalog-35",
@@ -750,7 +811,7 @@
       "scope": "Infinitely many primes is a consequence, but infinitude alone does not assert divergence of the prime reciprocal series. The Euler equivalence is between the two divergence statements.",
       "proofA": "Cauchy's condensation criterion states that, for $a_n\\ge0$ nonincreasing,\n\\[\\sum_{n\\ge1}a_n<\\infty\\quad\\Longleftrightarrow\\quad\\sum_{j\\ge0}2^ja_{2^j}<\\infty.\\]\nFor $a_n=1/n$, every condensed term equals $1$. Thus the harmonic series is not summable; its nondecreasing partial sums tend to $+\\infty$.",
       "proofB": "Suppose $\\sum_p1/p<\\infty$ and choose $y$ with $\\sum_{p>y}1/p<1/2$. At most $N\\sum_{p>y}1/p<N/2$ integers $m\\le N$ have a prime factor greater than $y$. Every remaining $m$ is a square times a squarefree product of primes at most $y$, giving at most $2^{\\pi(y)}\\sqrt N$ possibilities. For large $N$ this is $<N/2$, a contradiction. Thus $\\sum_p1/p=\\infty$, and the harmonic series diverges by comparison.\n\nConversely, unique factorization gives\n\\[H_N\\le\\prod_{p\\le N}(1-p^{-1})^{-1},\\qquad \\log\\prod_{p\\le N}(1-p^{-1})^{-1}\\le2\\sum_{p\\le N}\\frac1p.\\]\nHarmonic divergence therefore forces divergence of the prime reciprocal series. The two divergence statements are equivalent.",
-      "formalSketch": "-- Suppose the prime reciprocal sum converges and choose a tail < 1/2.\nlemma large_factor_bound :\n    card {m ≤ N | ∃ p > y, p.Prime ∧ p ∣ m} ≤ N * primeTail y := by\n  -- union bound over prime divisors\n  sorry\nlemma small_factor_bound :\n    card {m ≤ N | allPrimeFactors m ≤ y} ≤ 2^(primeCount y) * sqrt N := by\n  -- m = squarefreePart * squarePart², with finitely many squarefree parts\n  sorry\ntheorem alternative : ¬ Summable (fun n : ℕ => 1/(n+1 : ℝ)) := by\n  -- the two bounds contradict counting N integers; compare prime and harmonic sums\n  sorry",
+      "formalSketch": "/-\nThe counting argument below is adapted from Mathlib/NumberTheory/SumPrimeReciprocals.lean.\nCopyright (c) 2023 Michael Stoll. Released under the Apache License, Version 2.0.\n-/\nimport Mathlib.Analysis.PSeries\nimport Mathlib.NumberTheory.SmoothNumbers\nimport Mathlib.Algebra.Order.Group.Indicator\n\nnamespace Proofscape.RouteB\n\nopen Set Nat\nopen scoped Finset Topology\n\n/-- Union bound for numbers with a prime factor above the threshold. -/\ntheorem rough_count_bound (N k : ℕ) :\n    #(roughNumbersUpTo N k) ≤\n      N * (N.succ.primesBelow \\ k.primesBelow).sum (fun p ↦ (1 : ℝ) / p) := by\n  simp_rw [Finset.mul_sum, mul_one_div]\n  exact (Nat.cast_le.mpr <| roughNumbersUpTo_card_le N k).trans <|\n    cast_sum (R := ℝ) .. ▸ Finset.sum_le_sum fun n _ ↦ cast_div_le\n\n/-- Erdős's smooth/rough count gives a lower bound for every prime tail. -/\ntheorem prime_tail_lower_bound (k : ℕ) :\n    1 / 2 ≤ ∑ p ∈ (4 ^ (#k.primesBelow + 1)).succ.primesBelow \\ k.primesBelow,\n      (1 / p : ℝ) := by\n  set m : ℕ := 2 ^ #k.primesBelow\n  set N₀ : ℕ := 2 * m ^ 2 with hN₀\n  let S : ℝ := ((2 * N₀).succ.primesBelow \\ k.primesBelow).sum (fun p ↦ (1 / p : ℝ))\n  suffices 1 / 2 ≤ S by\n    convert this using 5\n    rw [show 4 = 2 ^ 2 by simp, pow_right_comm]\n    ring\n  suffices 2 * N₀ ≤ m * (2 * N₀).sqrt + 2 * N₀ * S by\n    rwa [hN₀, ← mul_assoc, ← pow_two 2, ← mul_pow, sqrt_eq', ← sub_le_iff_le_add',\n      cast_mul, cast_mul, cast_pow, cast_two,\n      show (2 * (2 * m ^ 2) - m * (2 * m) : ℝ) = 2 * (2 * m ^ 2) * (1 / 2) by ring,\n      mul_le_mul_iff_right₀ <| by positivity] at this\n  calc (2 * N₀ : ℝ)\n    _ = #((2 * N₀).smoothNumbersUpTo k) + #((2 * N₀).roughNumbersUpTo k) := by\n        exact mod_cast ((2 * N₀).smoothNumbersUpTo_card_add_roughNumbersUpTo_card k).symm\n    _ ≤ m * (2 * N₀).sqrt + #((2 * N₀).roughNumbersUpTo k) := by\n        exact mod_cast Nat.add_le_add_right ((2 * N₀).smoothNumbersUpTo_card_le k) _\n    _ ≤ m * (2 * N₀).sqrt + 2 * N₀ * S := by grw [rough_count_bound]; norm_cast\n\n/-- If the harmonic series converged, its prime subseries would have small tails,\ncontradicting the smooth/rough counting bound. -/\ntheorem harmonic_diverges_by_erdos :\n    ¬ Summable (fun n : ℕ => 1 / ((n + 1 : ℕ) : ℝ)) := by\n  intro h\n  have hall : Summable (fun n : ℕ => (1 : ℝ) / n) := by\n    apply (summable_nat_add_iff (f := fun n : ℕ => (1 : ℝ) / n) 1).mp\n    simpa using h\n  have hp : Summable (indicator {p : ℕ | p.Prime} (fun n : ℕ ↦ (1 : ℝ) / n)) :=\n    hall.indicator _\n  obtain ⟨k, hk⟩ := hp.nat_tsum_vanishing (Iio_mem_nhds one_half_pos : Iio (1 / 2 : ℝ) ∈ 𝓝 0)\n  specialize hk ({p | Nat.Prime p} ∩ {p | k ≤ p}) inter_subset_right\n  rw [tsum_subtype, indicator_indicator,\n    inter_eq_left.mpr fun n (hn : n ∈ {p | Nat.Prime p} ∩ {p | k ≤ p}) ↦ hn.1, mem_Iio] at hk\n  have ht : Summable (indicator ({p | Nat.Prime p} ∩ {p | k ≤ p}) fun n ↦ (1 : ℝ) / n) := by\n    convert hp.indicator {n : ℕ | k ≤ n} using 1\n    simp only [indicator_indicator, inter_comm]\n  refine ((prime_tail_lower_bound k).trans_lt <| LE.le.trans_lt ?_ hk).false\n  convert! Summable.sum_le_tsum (primesBelow ((4 ^ (#k.primesBelow + 1)).succ) \\ primesBelow k)\n      (fun n _ ↦ indicator_nonneg (fun p _ ↦ by positivity) _) ht using 2 with p hp\n  obtain ⟨hp₁, hp₂⟩ := mem_ofPred_eq ▸ Finset.mem_sdiff.mp hp\n  have hpp := prime_of_mem_primesBelow hp₁\n  refine (indicator_of_mem ?_ fun n : ℕ ↦ (1 / n : ℝ)).symm\n  exact ⟨hpp, by simpa [primesBelow, hpp] using hp₂⟩\n\nend Proofscape.RouteB",
       "mathlibCore": [
         {
           "attribution": "Copyright (c) 2020 Yury Kudryashov. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Yury Kudryashov",
@@ -800,11 +861,18 @@
           "role": "Natural exponent p-series criterion."
         }
       ],
-      "evidenceStatus": "Not yet tested",
-      "evidence": "Mathlib specializes Cauchy condensation. The alternative uses prime factorization and a counting argument for divergence of prime reciprocals, then comparison. The prime-reciprocal argument already exists elsewhere in Mathlib; a matched standalone implementation has not been measured.",
+      "evidenceStatus": "Statement formalized; effort not measured",
+      "evidence": "The checked alternative uses the Erdős smooth/rough counting argument to prove harmonic divergence. The additional converse Euler-product argument has not been formalized, and the effort and dependencies have not been measured.",
       "evidenceLinks": [],
       "historicalId": 35,
-      "mathlibMain": "not_summable_one_div_natCast"
+      "mathlibMain": "not_summable_one_div_natCast",
+      "mathlibProofSteps": [
+        "summable_nat_rpow_inv",
+        "summable_condensed_iff_of_nonneg"
+      ],
+      "formalProofSource": "data/route-b-proofs/HarmonicErdos.lean",
+      "formalProofVerified": true,
+      "formalProofScope": "The checked proof establishes harmonic divergence by the Erdős counting argument. The converse Euler-product argument described in the informal proof is not formalized here."
     },
     {
       "id": "catalog-46",
@@ -849,7 +917,10 @@
       "evidence": "Both routes use finite group actions or class counting. The alternative requires conjugacy classes, centralizers and the abelian case; no substantial foundational gap or measured cost advantage is established.",
       "evidenceLinks": [],
       "historicalId": 46,
-      "mathlibMain": "_root_.exists_prime_orderOf_dvd_card"
+      "mathlibMain": "_root_.exists_prime_orderOf_dvd_card",
+      "mathlibProofSteps": [
+        "exists_fixed_point_of_prime'"
+      ]
     },
     {
       "id": "catalog-49",
@@ -858,7 +929,7 @@
       "scope": "",
       "proofA": "Let $\\chi_p,\\chi_q$ be the quadratic characters for distinct odd primes $p,q$. In a field of characteristic $q$ containing a primitive $p$th root $\\zeta$, set\n\\[\\tau=\\sum_{a\\in\\mathbb F_p^\\times}\\chi_p(a)\\zeta^a.\\]\nExpanding $\\tau\\bar\\tau$ and using $\\sum_a\\chi_p(a)=0$ gives $\\tau\\bar\\tau=p$, while $\\bar\\tau=\\chi_p(-1)\\tau$. Hence $\\tau^2=\\chi_p(-1)p\\ne0$.\n\nFrobenius gives $\\tau^q=\\chi_p(q)\\tau$. Euler's criterion in characteristic $q$ therefore yields\n\\[\\chi_p(q)=\\tau^{q-1}=(\\chi_p(-1)p)^{(q-1)/2}\n=(-1)^{((p-1)/2)((q-1)/2)}\\chi_q(p).\\]\nMultiplication by $\\chi_q(p)$ proves quadratic reciprocity.",
       "proofB": "Put $a=(p-1)/2$ and $b=(q-1)/2$. Eisenstein's form of Gauss's lemma gives\n\\[\\left(\\frac qp\\right)=(-1)^A,\\quad A=\\sum_{x=1}^{a}\\left\\lfloor\\frac{qx}{p}\\right\\rfloor,\\qquad\n\\left(\\frac pq\\right)=(-1)^B,\\quad B=\\sum_{y=1}^{b}\\left\\lfloor\\frac{py}{q}\\right\\rfloor.\\]\n\nNo lattice point in $1\\le x\\le a$, $1\\le y\\le b$ lies on $py=qx$. The lattice points on the two sides of this line are counted by $A$ and $B$, respectively. Thus $A+B=ab$, and the product of the two symbols is $(-1)^{ab}$.",
-      "formalSketch": "-- p,q are distinct odd primes; a=(p-1)/2, b=(q-1)/2.\nlemma eisenstein (p q : ℕ) : legendre q p = (-1)^(∑ x in 1..a, floor(q*x/p)) := by\n  -- derive floor-sum parity from Gauss's lemma\n  sorry\nlemma lattice_parity :\n    (∑ x in 1..a, floor(q*x/p)) + (∑ y in 1..b, floor(p*y/q)) ≡ a*b [MOD 2] := by\n  -- count the two sides of p*y=q*x and use reflection\n  sorry\ntheorem alternative : legendre q p * legendre p q = (-1)^(a*b) := by\n  -- combine the sign formulas and lattice_parity\n  sorry",
+      "formalSketch": "import Mathlib.NumberTheory.LegendreSymbol.GaussEisensteinLemmas\n\nnamespace Proofscape.RouteB\n\nopen Finset\n\n/-- Eisenstein's form of Gauss's lemma and the lattice-point count prove\nquadratic reciprocity for distinct odd primes. -/\ntheorem quadratic_reciprocity_by_lattice {p q : ℕ} [Fact p.Prime] [Fact q.Prime]\n    (hp : p ≠ 2) (hq : q ≠ 2) (hpq : p ≠ q) :\n    legendreSym p q * legendreSym q p = (-1) ^ (p / 2 * (q / 2)) := by\n  have hpOdd : p % 2 = 1 := (Nat.Prime.mod_two_eq_one_iff_ne_two Fact.out).mpr hp\n  have hqOdd : q % 2 = 1 := (Nat.Prime.mod_two_eq_one_iff_ne_two Fact.out).mpr hq\n  have hqp : (q : ZMod p) ≠ 0 := ZMod.prime_ne_zero p q hpq\n  have hpq' : (p : ZMod q) ≠ 0 := ZMod.prime_ne_zero q p hpq.symm\n  have h₁ := ZMod.eisenstein_lemma hp hqOdd hqp\n  have h₂ := ZMod.eisenstein_lemma hq hpOdd hpq'\n  have hcount := ZMod.sum_mul_div_add_sum_mul_div_eq_mul p q hqp\n  rw [h₁, h₂, ← pow_add, hcount]\n\nend Proofscape.RouteB",
       "mathlibCore": [
         {
           "attribution": "Copyright (c) 2022 Michael Stoll. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Michael Stoll",
@@ -925,11 +996,21 @@
         }
       ],
       "mathlibSupporting": [],
-      "evidenceStatus": "Not yet tested",
-      "evidence": "Mathlib routes through finite-field characters and Gauss sums. The alternative needs Gauss’s lemma, floor sums and a lattice parity bijection. Dependency and implementation costs are not yet measured.",
+      "evidenceStatus": "Formalized; effort not measured",
+      "evidence": "The checked alternative combines Eisenstein’s lemma with Mathlib’s lattice-point count, while the displayed Mathlib route uses quadratic Gauss sums. The effort and dependencies have not been measured.",
       "evidenceLinks": [],
       "historicalId": 49,
-      "mathlibMain": "quadratic_reciprocity"
+      "mathlibMain": "quadratic_reciprocity",
+      "mathlibProofSteps": [
+        "quadraticChar_odd_prime",
+        "quadraticChar_card_card",
+        "Char.card_pow_card",
+        "Char.card_pow_char_pow",
+        "MulChar.IsQuadratic.gaussSum_frob",
+        "gaussSum_sq"
+      ],
+      "formalProofSource": "data/route-b-proofs/QuadraticReciprocityEisenstein.lean",
+      "formalProofVerified": true
     },
     {
       "id": "catalog-52",
@@ -1046,7 +1127,17 @@
       "evidence": "Mathlib uses a finite sign-reversing involution. The alternate needs formal power-series inverses, differentiation and coefficient convolution. Relative imported dependencies and effort are unknown.",
       "evidenceLinks": [],
       "historicalId": 52,
-      "mathlibMain": "mul_esymm_eq_sum"
+      "mathlibMain": "mul_esymm_eq_sum",
+      "mathlibProofSteps": [
+        "pairs",
+        "pairMap",
+        "weight",
+        "pairMap_involutive",
+        "pairMap_mem_pairs",
+        "pairMap_ne_self",
+        "weight_add_weight_pairMap",
+        "weight_sum"
+      ]
     },
     {
       "id": "catalog-60",
@@ -1136,7 +1227,7 @@
           "line": 219,
           "url": "https://github.com/leanprover-community/mathlib4/blob/539ea3019ba5bd98cbc383d07e1dce07edf7f56d/Mathlib/MeasureTheory/Function/ConvergenceInMeasure.lean#L219",
           "code": "theorem tendstoInMeasure_of_tendsto_ae [IsFiniteMeasure μ] (hf : ∀ n, AEStronglyMeasurable (f n) μ)\n    (hfg : ∀ᵐ x ∂μ, Tendsto (fun n ↦ f n x) atTop (𝓝 (g x))) : TendstoInMeasure μ f atTop g := by\n  have hg : AEStronglyMeasurable g μ := aestronglyMeasurable_of_tendsto_ae _ hf hfg\n  exact tendstoInMeasure_of_tendsto_ae_of_measurable_edist (fun n ↦ (hf n).edist hg) hfg",
-          "role": "Main declaration or directly used specialization"
+          "role": "Almost-everywhere convergence implies convergence in measure on a finite measure space."
         }
       ],
       "mathlibSupporting": [],
@@ -1144,7 +1235,17 @@
       "evidence": "The Mathlib-backed path combines the strong law with convergence in measure. The alternative needs characteristic functions, Lévy continuity and portmanteau. No exact single Mathlib declaration for the displayed corollary is shown, and neither complete route has been compared as a self-contained file.",
       "evidenceLinks": [],
       "historicalId": 60,
-      "mathlibMain": "strong_law_ae_real"
+      "mathlibMain": "strong_law_ae_real",
+      "mathlibProofSteps": [
+        "strong_law_aux7",
+        "strong_law_aux6",
+        "strong_law_aux5",
+        "strong_law_aux4",
+        "strong_law_aux3",
+        "strong_law_aux2",
+        "strong_law_aux1",
+        "tendstoInMeasure_of_tendsto_ae"
+      ]
     },
     {
       "id": "catalog-61",
@@ -1216,7 +1317,12 @@
       "evidence": "Mathlib uses characteristic-function convergence. The proposed alternative needs truncation, moment enumeration, tightness, Gaussian moment determinacy and a converging-together lemma. No matched alternative formalization has been measured.",
       "evidenceLinks": [],
       "historicalId": 61,
-      "mathlibMain": "tendstoInDistribution_inv_sqrt_mul_sum_sub"
+      "mathlibMain": "tendstoInDistribution_inv_sqrt_mul_sum_sub",
+      "mathlibProofSteps": [
+        "tendstoInDistribution_inv_sqrt_mul_sum",
+        "tendsto_charFun_inv_sqrt_mul_pow",
+        "taylor_charFun_two"
+      ]
     },
     {
       "id": "catalog-79",
@@ -1270,7 +1376,11 @@
       "evidence": "Mathlib uses Cauchy derivative estimates and a zero-derivative theorem. The alternative needs harmonic mean-value theory and a disk symmetric-difference area bound. Formalization effort has not been measured.",
       "evidenceLinks": [],
       "historicalId": 79,
-      "mathlibMain": "liouville_theorem_aux"
+      "mathlibMain": "liouville_theorem_aux",
+      "mathlibProofSteps": [
+        "norm_deriv_le_of_forall_mem_sphere_norm_le",
+        "norm_iteratedDeriv_le_of_forall_mem_sphere_norm_le"
+      ]
     },
     {
       "id": "catalog-87",
@@ -1314,7 +1424,11 @@
       "evidence": "Mathlib uses Jacobson rings and the maximal-ideal-as-point theorem. The alternative uses the weak Nullstellensatz, an extra polynomial variable and localization. Because the weak theorem itself is substantial, it must be included consistently in a cost comparison.",
       "evidenceLinks": [],
       "historicalId": 87,
-      "mathlibMain": "vanishingIdeal_zeroLocus_eq_radical"
+      "mathlibMain": "vanishingIdeal_zeroLocus_eq_radical",
+      "mathlibProofSteps": [
+        "eq_vanishingIdeal_singleton_of_isMaximal",
+        "Ideal.radical_eq_jacobson"
+      ]
     },
     {
       "id": "catalog-99",
@@ -1395,7 +1509,14 @@
       "evidence": "Mathlib uses normalized factorial limits and Wallis; the alternative uses the gamma integral, Gaussian scaling and dominated convergence. Both are analysis-heavy and have not been benchmarked.",
       "evidenceLinks": [],
       "historicalId": 99,
-      "mathlibMain": "factorial_isEquivalent_stirling"
+      "mathlibMain": "factorial_isEquivalent_stirling",
+      "mathlibProofSteps": [
+        "stirlingSeq",
+        "log_stirlingSeq_sdiff_hasSum",
+        "stirlingSeq_has_pos_limit_a",
+        "second_wallis_limit",
+        "tendsto_stirlingSeq_sqrt_pi"
+      ]
     },
     {
       "id": "catalog-106",
@@ -1458,7 +1579,7 @@
           "line": 171,
           "url": "https://github.com/leanprover-community/mathlib4/blob/539ea3019ba5bd98cbc383d07e1dce07edf7f56d/Mathlib/RingTheory/Polynomial/Cyclotomic/Roots.lean#L171",
           "code": "theorem cyclotomic_eq_minpoly {n : ℕ} {K : Type*} [Field K] {μ : K} (h : IsPrimitiveRoot μ n)\n    (hpos : 0 < n) [CharZero K] : cyclotomic n ℤ = minpoly ℤ μ := by\n  refine eq_of_monic_of_dvd_of_natDegree_le (minpoly.monic (IsPrimitiveRoot.isIntegral h hpos))\n    (cyclotomic.monic n ℤ) (h.minpoly_dvd_cyclotomic hpos) ?_\n  simpa [natDegree_cyclotomic n ℤ] using totient_le_degree_minpoly h",
-          "role": "Main declaration or directly used specialization"
+          "role": "Identify the cyclotomic polynomial with the minimal polynomial using the degree bound."
         },
         {
           "attribution": "Copyright (c) 2020 Riccardo Brasca. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Riccardo Brasca",
@@ -1494,7 +1615,15 @@
       "evidence": "Both arguments use invariance of primitive roots under prime powers. Mathlib uses modular polynomial squarefreeness; Schur’s argument uses discriminants and algebraic integers. Shared core and unmeasured prerequisites make the difficulty comparison inconclusive.",
       "evidenceLinks": [],
       "historicalId": 106,
-      "mathlibMain": "cyclotomic.irreducible_rat"
+      "mathlibMain": "cyclotomic.irreducible_rat",
+      "mathlibProofSteps": [
+        "cyclotomic_eq_minpoly",
+        "totient_le_degree_minpoly",
+        "minpoly_eq_pow_coprime",
+        "minpoly_eq_pow",
+        "squarefree_minpoly_mod",
+        "separable_minpoly_mod"
+      ]
     },
     {
       "id": "catalog-107",
@@ -1547,7 +1676,12 @@
       "evidence": "Mathlib proves the recurrence formula by strong induction and a Gosper telescoping identity. The alternative requires Dyck-path encodings, first-return and reflection bijections. Their relative Lean cost is not measured.",
       "evidenceLinks": [],
       "historicalId": 107,
-      "mathlibMain": "catalan_eq_centralBinom_div"
+      "mathlibMain": "catalan_eq_centralBinom_div",
+      "mathlibProofSteps": [
+        "gosperCatalan",
+        "gosper_trick",
+        "gosper_catalan_sub_eq_central_binom_div"
+      ]
     },
     {
       "id": "catalog-111",
@@ -1592,7 +1726,7 @@
           "line": 102,
           "url": "https://github.com/leanprover-community/mathlib4/blob/539ea3019ba5bd98cbc383d07e1dce07edf7f56d/Mathlib/NumberTheory/SumPrimeReciprocals.lean#L102",
           "code": "theorem not_summable_one_div_on_primes :\n    ¬ Summable (indicator {p | p.Prime} (fun n : ℕ ↦ (1 : ℝ) / n)) := by\n  intro h\n  obtain ⟨k, hk⟩ := h.nat_tsum_vanishing (Iio_mem_nhds one_half_pos : Iio (1 / 2 : ℝ) ∈ 𝓝 0)\n  specialize hk ({p | Nat.Prime p} ∩ {p | k ≤ p}) inter_subset_right\n  rw [tsum_subtype, indicator_indicator,\n    inter_eq_left.mpr fun n (hn : n ∈ {p | Nat.Prime p} ∩ {p | k ≤ p}) ↦ hn.1, mem_Iio] at hk\n  have h' : Summable (indicator ({p | Nat.Prime p} ∩ {p | k ≤ p}) fun n ↦ (1 : ℝ) / n) := by\n    convert h.indicator {n : ℕ | k ≤ n} using 1\n    simp only [indicator_indicator, inter_comm]\n  refine ((one_half_le_sum_primes_ge_one_div k).trans_lt <| LE.le.trans_lt ?_ hk).false\n  convert!\n    Summable.sum_le_tsum (primesBelow ((4 ^ (#k.primesBelow + 1)).succ) \\ primesBelow k)\n      (fun n _ ↦ indicator_nonneg (fun p _ ↦ by positivity) _) h' using\n    2 with p hp\n  obtain ⟨hp₁, hp₂⟩ := mem_ofPred_eq ▸ Finset.mem_sdiff.mp hp\n  have hpp := prime_of_mem_primesBelow hp₁\n  refine (indicator_of_mem ?_ fun n : ℕ ↦ (1 / n : ℝ)).symm\n  exact ⟨hpp, by simpa [primesBelow, hpp] using hp₂⟩",
-          "role": "Main declaration or directly used specialization"
+          "role": "A vanishing summable tail contradicts the lower bound on prime-reciprocal tails."
         },
         {
           "attribution": "Copyright (c) 2023 Michael Stoll. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nAuthors: Michael Stoll",
@@ -1619,7 +1753,13 @@
       "evidence": "Mathlib uses Erdős counting of smooth and rough integers. The alternative needs Euler products, factorization, logarithmic bounds and harmonic divergence. The alternatives are mathematically distinct; no matched formalization has been measured.",
       "evidenceLinks": [],
       "historicalId": 111,
-      "mathlibMain": "Nat.Primes.not_summable_one_div"
+      "mathlibMain": "Nat.Primes.not_summable_one_div",
+      "mathlibProofSteps": [
+        "not_summable_one_div_on_primes",
+        "one_half_le_sum_primes_ge_one_div",
+        "smoothNumbersUpTo_card_le",
+        "roughNumbersUpTo_card_le"
+      ]
     },
     {
       "id": "catalog-120",
@@ -1654,7 +1794,10 @@
       "evidence": "Both approaches use real-power inequalities and integration. Hölder and convexity are closely related, so a large foundational gap is not established.",
       "evidenceLinks": [],
       "historicalId": 120,
-      "mathlibMain": "lintegral_Lp_add_le"
+      "mathlibMain": "lintegral_Lp_add_le",
+      "mathlibProofSteps": [
+        "lintegral_Lp_add_le_aux"
+      ]
     },
     {
       "id": "catalog-125",
@@ -1708,7 +1851,11 @@
       "evidence": "Both arguments use Fourier integration, Fubini and approximate identities; the kernels differ. No large foundational gap or measured extra formalization cost is established.",
       "evidenceLinks": [],
       "historicalId": 125,
-      "mathlibMain": "MeasureTheory.Integrable.fourierInv_fourier_eq"
+      "mathlibMain": "MeasureTheory.Integrable.fourierInv_fourier_eq",
+      "mathlibProofSteps": [
+        "tendsto_integral_gaussian_smul",
+        "tendsto_integral_gaussian_smul'"
+      ]
     },
     {
       "id": "catalog-8",
@@ -1744,7 +1891,7 @@
           "line": 265,
           "url": "https://github.com/leanprover-community/mathlib4/blob/539ea3019ba5bd98cbc383d07e1dce07edf7f56d/Mathlib/Analysis/MeanInequalities.lean#L265",
           "code": "theorem geom_mean_eq_arith_mean_weighted_iff_of_pos (w z : ι → ℝ) (hw : ∀ i ∈ s, 0 < w i)\n    (hw' : ∑ i ∈ s, w i = 1) (hz : ∀ i ∈ s, 0 ≤ z i) :\n    ∏ i ∈ s, z i ^ w i = ∑ i ∈ s, w i * z i ↔ ∀ j ∈ s, ∀ k ∈ s, z j = z k := by\n  refine ⟨by grind [geom_mean_eq_arith_mean_weighted_iff_of_pos' s w z hw hw' hz], fun h ↦ ?_⟩\n  have ⟨k, hk⟩ : s.Nonempty := by grind [s.eq_empty_or_nonempty]\n  suffices ∏ i ∈ s, z k ^ w i = ∑ i ∈ s, w i * z k by convert this using 3 <;> grind\n  rw [← rpow_sum_of_nonneg (hz k hk) (hw · · |>.le), ← sum_mul, hw', rpow_one, one_mul]",
-          "role": "Main declaration or directly used specialization"
+          "role": "Reduce equality to the equality criterion for the weighted inequality."
         }
       ],
       "mathlibSupporting": [
@@ -1780,7 +1927,11 @@
       "evidence": "Mathlib uses analytic Jensen and exponential/logarithm. The alternative uses compactness and algebraic smoothing. These are different prerequisite profiles; no dependency or effort comparison has been measured.",
       "evidenceLinks": [],
       "historicalId": 8,
-      "mathlibMain": "geom_mean_le_arith_mean_weighted"
+      "mathlibMain": "geom_mean_le_arith_mean_weighted",
+      "mathlibProofSteps": [
+        "geom_mean_eq_arith_mean_weighted_iff_of_pos",
+        "geom_mean_eq_arith_mean_weighted_iff_of_pos'"
+      ]
     }
   ]
 }

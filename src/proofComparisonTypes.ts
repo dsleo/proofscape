@@ -16,7 +16,10 @@ export type ProofComparison = {
   proofA: string
   proofB: string
   formalSketch: string
+  formalProofVerified?: boolean
+  formalProofScope?: string
   mathlibMain: string
+  mathlibProofSteps: string[]
   mathlibCore: MathlibDeclaration[]
   mathlibSupporting: MathlibDeclaration[]
   evidenceStatus: string

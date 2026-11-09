@@ -1,31 +1,67 @@
 .proof-comparison { color: var(--ink, #282e28); }
 .proof-comparison-statement { display: grid; gap: 8px; padding: 18px 0; font: 17px/1.6 'CMU Serif', Georgia, serif; }
-.proof-comparison-statement > span, .proof-comparison-kicker { color: #7b5a31; font: 700 11px/1.4 'CMU Typewriter', monospace; letter-spacing: .08em; text-transform: uppercase; }
-.proof-comparison-scope { margin: 8px 0 18px; padding: 10px 14px; border-left: 3px solid #be9a62; background: #f5eedf; color: #614d31; font: 14px/1.6 'CMU Serif', Georgia, serif; }
-.proof-comparison-section { padding: 22px 0 24px; border-top: 1px solid var(--line, #d6d0c2); }
-.proof-comparison-formal { margin-top: 30px; }
-.proof-comparison-section h3 { margin: 5px 0 14px; font: 400 24px/1.2 'CMU Serif', Georgia, serif; }
+.proof-comparison-statement > span { color: #7b5a31; font: 700 11px/1.4 'CMU Typewriter', monospace; letter-spacing: .08em; text-transform: uppercase; }
+.route-picker { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 9px; padding: 22px 0 24px; border-top: 1px solid var(--line, #d6d0c2); }
+.route-picker-label, .mathlib-map-eyebrow, .mathlib-code-title > span { color: #806744; font: 700 10px/1.4 'CMU Typewriter', monospace; letter-spacing: .09em; text-transform: uppercase; }
+.route-tabs { position: relative; display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); padding: 3px; border: 1px solid #d8cfbe; background: #ebe5d8; isolation: isolate; }
+.route-tabs-indicator { position: absolute; z-index: -1; inset: 3px auto 3px 3px; width: calc(50% - 3px); background: #fffdf8; box-shadow: 0 1px 3px #55462c20; transition: transform 240ms cubic-bezier(.22, 1, .36, 1); }
+.route-tabs.route-b .route-tabs-indicator { transform: translateX(100%); }
+.route-tabs button { display: flex; align-items: baseline; justify-content: center; gap: 8px; border: 0; padding: 9px 14px; background: transparent; color: #6e6557; cursor: pointer; font: 15px/1.2 'CMU Serif', Georgia, serif; }
+.route-tabs button[aria-selected="true"] { color: #684718; }
+.route-tabs button:focus-visible, .mathlib-reader button:focus-visible { outline: 2px solid #a46c26; outline-offset: -2px; }
+.proof-route-panel { padding: 12px 0 30px; animation: route-reveal 220ms cubic-bezier(.22, 1, .36, 1) both; }
+@keyframes route-reveal { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.proof-route-panel h3, .proof-comparison-section h3 { margin: 5px 0 14px; font: 400 24px/1.2 'CMU Serif', Georgia, serif; }
 .proof-comparison-prose { font: 17px/1.75 'CMU Serif', Georgia, serif; overflow-wrap: anywhere; }
 .proof-comparison-prose p { margin: 0 0 1em; }
 .proof-comparison-prose p:last-child { margin-bottom: 0; }
-.proof-comparison-help { max-width: 76ch; margin: 0 0 16px; color: #5f6559; font: 14px/1.65 'CMU Serif', Georgia, serif; }
-.proof-comparison-code { margin: 9px 0 22px; padding: 15px; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid #d7ddd1; background: #f0f3ec; color: #27352e; font: 12.5px/1.65 'CMU Typewriter', monospace; tab-size: 2; }
+.proof-comparison-formal { margin-top: 36px; }
+.proof-comparison-scope { margin: 8px 0 18px; padding: 10px 14px; border-left: 3px solid #be9a62; background: #f5eedf; color: #614d31; font: 14px/1.6 'CMU Serif', Georgia, serif; }
+.mathlib-reader { border: 1px solid #d6d6c9; background: #f4f6f0; }
+.mathlib-reader-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 290px); align-items: start; }
+.mathlib-reader-code { min-width: 0; padding: 20px 20px 6px; }
+.mathlib-proof-declaration { scroll-margin-top: 24px; padding: 4px 0 6px; outline: none; }
+.mathlib-proof-declaration + .mathlib-proof-declaration { padding-top: 22px; border-top: 1px solid #d9dfd3; }
+.mathlib-proof-declaration.is-current .mathlib-code-title strong { color: #95641f; }
+.mathlib-proof-declaration:focus-visible { outline: 2px solid #a46c26; outline-offset: 4px; }
+.mathlib-code-heading { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.mathlib-code-title { display: grid; gap: 5px; min-width: 0; }
+.mathlib-code-title strong { overflow-wrap: anywhere; color: #253d31; font: 700 13px/1.4 'CMU Typewriter', monospace; }
+.mathlib-code-heading a { display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0; color: #49604e; font: 12px/1.4 'CMU Serif', Georgia, serif; }
+.mathlib-code-description { margin: 10px 0 0; color: #66715e; font: 13px/1.5 'CMU Serif', Georgia, serif; }
+.proof-comparison-code { margin: 14px 0 18px; padding: 16px; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid #d9dfd3; background: #f0f3ec; color: #27352e; font: 12.5px/1.7 'CMU Typewriter', monospace; tab-size: 2; }
+.mathlib-reader-code .proof-comparison-code { padding: 0 0 10px; border: 0; background: transparent; }
 .proof-code-reference { display: inline; padding: 0; margin: 0; border: 0; border-radius: 0; background: transparent; color: #195c43; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; cursor: pointer; font: inherit; text-align: inherit; }
 .proof-code-reference:hover { color: #8a551b; text-decoration-style: solid; }
-.proof-code-reference:focus-visible, .proof-declaration:focus-visible { outline: 2px solid #b9853f; outline-offset: 2px; }
-.proof-declaration { scroll-margin-top: 30px; }
-.proof-declaration.is-target { background: #f7ebd1; box-shadow: 0 0 0 6px #f7ebd1; }
-.proof-declaration-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; font: 700 14px/1.5 'CMU Typewriter', monospace; }
-.proof-declaration-heading a, .proof-comparison-evidence a { display: inline-flex; gap: 4px; align-items: center; font-size: 13px; }
-.proof-declaration-role { margin: 3px 0 0; color: #6a6b60; font: 13px/1.5 'CMU Serif', Georgia, serif; }
+.mathlib-map { position: sticky; top: 12px; min-width: 0; max-height: min(78vh, 820px); overflow: auto; padding: 20px 16px 18px; border-left: 1px solid #ded9c9; background: #faf7ee; }
+.mathlib-map-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; color: #a57d45; }
+.mathlib-map-heading h4 { margin: 3px 0 0; color: #382f23; font: 400 21px/1.1 'CMU Serif', Georgia, serif; }
+.mathlib-map-intro { margin: 5px 0 12px; color: #746e61; font: 12px/1.45 'CMU Serif', Georgia, serif; }
+.mathlib-network { position: relative; min-width: 0; margin-top: 14px; }
+.mathlib-network-edges { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.mathlib-network-edges > path { fill: none; stroke: #a1b69d; stroke-width: 1.15; }
+.mathlib-network-edges marker path { fill: #a1b69d; }
+.mathlib-network-node { position: absolute; right: 0; display: flex; align-items: flex-start; gap: 9px; padding: 3px 4px 3px 0; border: 0; background: transparent; color: #3d5842; text-align: left; cursor: pointer; }
+.mathlib-network-dot { width: 9px; height: 9px; flex: 0 0 9px; margin: 11px 0 0 -4.5px; border: 2px solid #789879; border-radius: 50%; background: #faf7ee; transition: background 160ms ease, border-color 160ms ease; }
+.mathlib-network-label { min-width: 0; max-width: 100%; padding: 4px 5px; background: #faf7ee; }
+.mathlib-network-label strong { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow-wrap: anywhere; color: #36523e; font: 700 11px/1.35 'CMU Typewriter', monospace; }
+.mathlib-network-label small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #817866; font: 12px/1.4 'CMU Serif', Georgia, serif; }
+.mathlib-network-node:hover .mathlib-network-label, .mathlib-network-node.is-active .mathlib-network-label { background: #f0e6d1; }
+.mathlib-network-node.is-active .mathlib-network-dot { background: #aa7737; border-color: #aa7737; }
+.proof-comparison-section { padding: 22px 0 24px; border-top: 1px solid var(--line, #d6d0c2); }
+.proof-comparison-help { max-width: 76ch; margin: 0 0 16px; color: #5f6559; font: 14px/1.65 'CMU Serif', Georgia, serif; }
 .proof-comparison-evidence { padding: 15px 18px; margin-bottom: 14px; background: #f3ebd9; border-left: 3px solid #c4a16c; font: 15px/1.65 'CMU Serif', Georgia, serif; }
-.proof-comparison-evidence strong { color: #805d2c; font: 700 11px 'CMU Typewriter', monospace; text-transform: uppercase; letter-spacing: .05em; }
 .proof-comparison-evidence p { margin: 7px 0 0; }
+.proof-comparison-evidence p:first-child { margin-top: 0; }
+.proof-comparison-evidence a { display: inline-flex; gap: 4px; align-items: center; font-size: 13px; }
 .proof-comparison-evidence a + a { margin-left: 16px; }
-.proof-dependency { margin: 12px 0 22px; padding: 14px; border: 1px solid #d6d0c2; background: #f9f7f0; }
-.proof-dependency-controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; color: #716148; font: 700 11px/1.4 'CMU Typewriter', monospace; text-transform: uppercase; letter-spacing: .05em; }
-.proof-dependency-controls div { display: flex; gap: 8px; }
-.proof-dependency-controls button { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border: 1px solid #c7c0b3; background: #fffdf7; color: #385442; cursor: pointer; font: 13px 'CMU Serif', Georgia, serif; }
-.proof-dependency-controls button:focus-visible { outline: 2px solid #b9853f; outline-offset: 2px; }
-.proof-dependency .proof-comparison-code { margin-bottom: 0; }
-.proof-related-theorem { margin: -8px 0 16px; color: #5f6559; font: 14px/1.6 'CMU Serif', Georgia, serif; }
+@media (max-width: 760px) {
+  .mathlib-reader-layout { grid-template-columns: minmax(0, 1fr); }
+  .mathlib-map { position: static; max-height: 360px; border-left: 0; border-bottom: 1px solid #ded9c9; grid-row: 1; }
+  .mathlib-reader-code { padding: 18px 15px 4px; }
+  .route-picker { align-items: center; flex-direction: column; gap: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-tabs-indicator, .mathlib-network-dot { transition: none; }
+  .proof-route-panel { animation: none; }
+}

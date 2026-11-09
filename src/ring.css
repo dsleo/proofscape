@@ -64,7 +64,7 @@
 @media (max-width: 640px) {
     .ring-card-head { grid-template-columns: 30px minmax(0, 1fr); }
   .ring-open { grid-column: 2; justify-self: start; }
-  .ring-statement, .ring-approaches, }
+}
 
 .ring-methodsub { margin: 4px 0 8px; }
 .ring-methodsubname { margin: 0 0 4px; color: #80766b; font: italic 12px 'CMU Serif', serif; }
